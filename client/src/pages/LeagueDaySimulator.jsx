@@ -239,7 +239,7 @@ export default function LeagueDaySimulator() {
                   />
                 ))}
               </div>
-              <span className="vs">vs</span>
+              <span className="rubber-vs">vs</span>
               <div className="rubber-side">
                 {slot.sideB.map((id, idx) => (
                   <PlayerSelect
