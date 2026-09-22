@@ -126,19 +126,20 @@ function bestPairing(discipline, candidatesA, candidatesB, objective) {
 // whoever has played the fewest rubbers so far, ties broken by who's waited
 // longest, skipping anyone excluded from that rubber (e.g. a protected top
 // singles player before the singles block starts).
-function buildDefaultLineup(pool, slots, isExcludedFn) {
+function buildDefaultLineup(pool, slots, isExcludedFn, pinnedFn) {
   const usage = new Map(pool.map((p) => [p.id, 0]));
   const lastUsed = new Map(pool.map((p) => [p.id, -1]));
   const assignment = {};
   slots.forEach((slot, i) => {
     const discipline = disciplineForCode(slot.code);
     const count = discipline === 'singles' ? 1 : 2;
-    const eligible = pool.filter((p) => !isExcludedFn(p, i));
+    const pinned = pinnedFn ? pinnedFn(i) : null;
+    const eligible = pool.filter((p) => !isExcludedFn(p, i) && p.id !== pinned?.id);
     const ranked = [...eligible].sort((a, b) => {
       const byUsage = usage.get(a.id) - usage.get(b.id);
       return byUsage !== 0 ? byUsage : lastUsed.get(a.id) - lastUsed.get(b.id);
     });
-    const picked = ranked.slice(0, count);
+    const picked = pinned ? [pinned, ...ranked.slice(0, count - 1)] : ranked.slice(0, count);
     for (const p of picked) {
       usage.set(p.id, usage.get(p.id) + 1);
       lastUsed.set(p.id, i);
@@ -234,27 +235,34 @@ export default function LeagueDaySimulator() {
     const poolA = filterByClub(players, clubFilterA, []);
     const poolB = filterByClub(players, clubFilterB, []);
 
-    // "Strongest singles player" per side, only computed when that filter is on.
+    // Each side's strongest singles-rated player, and whether they're
+    // excluded from rubbers before their singles turn (opt-in filter).
     const strongestSingles = (pool) => pool.reduce(
       (best, p) => (!best || ratingFor('singles', p) > ratingFor('singles', best) ? p : best), null,
     );
-    const topSinglesA = protectTopSingles ? strongestSingles(poolA) : null;
-    const topSinglesB = protectTopSingles ? strongestSingles(poolB) : null;
+    const strongestSinglesA = strongestSingles(poolA);
+    const strongestSinglesB = strongestSingles(poolB);
+    const topSinglesA = protectTopSingles ? strongestSinglesA : null;
+    const topSinglesB = protectTopSingles ? strongestSinglesB : null;
     const firstSinglesIndex = slots.findIndex((s) => disciplineForCode(s.code) === 'singles');
     const isProtectedFor = (topSingles) => (p, i) => protectTopSingles
       && firstSinglesIndex !== -1
       && i < firstSinglesIndex
       && p.id === topSingles?.id;
+    // MS1 (the first singles rubber) always goes to each side's strongest
+    // singles player - matches how real team nights typically seed singles -
+    // independent of the protect-top-singles filter above.
+    const pinnedAtFirstSingles = (strongest) => (i) => (i === firstSinglesIndex ? strongest : null);
 
     // A club too small to have any real lineup flexibility (e.g. exactly 4
     // players for an 8-rubber night) gets priority: a fixed, evenly-rotated
     // lineup instead of being optimized. The other side still optimizes for the
     // chosen objective, but against that fixed opponent for each rubber.
     const fixedA = poolA.length > 0 && poolA.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolA, slots, isProtectedFor(topSinglesA))
+      ? buildDefaultLineup(poolA, slots, isProtectedFor(topSinglesA), pinnedAtFirstSingles(strongestSinglesA))
       : null;
     const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB))
+      ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
       : null;
 
     const nextSlots = slots.map((slot, slotIndex) => {
@@ -264,16 +272,20 @@ export default function LeagueDaySimulator() {
         && firstSinglesIndex !== -1
         && slotIndex < firstSinglesIndex
         && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
+      const isFirstSingles = slotIndex === firstSinglesIndex;
+      const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
+      const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
 
-      const fixedPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : null;
-      const fixedPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : null;
+      const fixedPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
+      const fixedPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
 
       const eligibleA = poolA.filter((p) => !isProtectedHere(p));
       const eligibleB = poolB.filter((p) => !isProtectedHere(p));
 
-      // A side with a fixed lineup always faces exactly that lineup for this
-      // rubber; a free side still relaxes its own filters in priority order -
-      // cap, then protect-top-singles, then both - if every rubber must be filled.
+      // A side with a fixed lineup, or a forced MS1 pick, always faces exactly
+      // that player/pair for this rubber; a free side still relaxes its own
+      // filters in priority order - cap, then protect-top-singles, then both -
+      // if every rubber must be filled.
       const attempts = [
         [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
         [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
@@ -288,8 +300,8 @@ export default function LeagueDaySimulator() {
 
       if (!pairing) return slot; // truly impossible, e.g. a side has too few players
       const { bestA, bestB } = pairing;
-      if (!fixedPlayersA) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
-      if (!fixedPlayersB) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!fixedA) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!fixedB) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
       return { ...slot, sideA: bestA, sideB: bestB };
     });
 
