@@ -1,0 +1,19 @@
+node_modules/
+client/dist/
+client/public/data.json
+server/data
+*.log
+
+# Scraper session/output artifacts - never commit a live session cookie
+data/cookie.txt
+data/.venv/
+data/pages/
+data/__pycache__/
+data/*.log
+data/pool_fetch_progress.json
+data/fetch_events.log
+data/refresh_progress.json
+data/refresh_change_state.json
+
+.DS_Store
+data/titles_progress.json

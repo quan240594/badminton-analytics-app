@@ -1,0 +1,235 @@
+import express from 'express';
+import cors from 'cors';
+import { spawn } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { readFileSync } from 'node:fs';
+import { loadDataset } from './lib/dataset.js';
+import { computeRatings, winProbability } from './lib/elo.js';
+import { computeCareerStats } from './lib/stats.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.join(__dirname, '..', 'data');
+const PROGRESS_PATH = path.join(DATA_DIR, 'refresh_progress.json');
+
+let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPlayerFn, titleCountsFn, titleYears;
+let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
+let careerStats;
+let lastUpdated = null;
+const CURRENT_POOL_LABEL = 'Bondscompetitie 2026-2027 \u2013 Mannen Veer 2 afd. 12';
+let refreshing = false;
+
+function loadAll() {
+  ({ players, matches, rankings, rankingTop, highestDivisionPlayed: highestDivisionPlayedFn, titlesForPlayer: titlesForPlayerFn, titleCounts: titleCountsFn, titleYears } = loadDataset());
+  ({ singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H } = computeRatings(matches));
+  careerStats = computeCareerStats(matches);
+  lastUpdated = new Date().toISOString();
+}
+
+loadAll();
+
+function careerBucket(guid, discipline) {
+  return (
+    careerStats.get(guid)?.[discipline] ?? {
+      played: 0,
+      won: 0,
+      setsPlayed: 0,
+      setsWon: 0,
+      pointsPlayed: 0,
+      pointsWon: 0,
+    }
+  );
+}
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+function confidenceLabel(played) {
+  if (played >= 15) return 'high';
+  if (played >= 5) return 'medium';
+  return 'low';
+}
+
+function winRate(won, played) {
+  return played > 0 ? won / played : null;
+}
+
+function disciplineFields(prefix, rating, career) {
+  return {
+    [`${prefix}Rating`]: Math.round(rating ?? 1500),
+    [`${prefix}Played`]: career.played,
+    [`${prefix}Won`]: career.won,
+    [`${prefix}WinRate`]: winRate(career.won, career.played),
+    [`${prefix}SetsPlayed`]: career.setsPlayed,
+    [`${prefix}SetsWon`]: career.setsWon,
+    [`${prefix}SetsWinRate`]: winRate(career.setsWon, career.setsPlayed),
+    [`${prefix}PointsPlayed`]: career.pointsPlayed,
+    [`${prefix}PointsWon`]: career.pointsWon,
+    [`${prefix}PointsWinRate`]: winRate(career.pointsWon, career.pointsPlayed),
+  };
+}
+
+function nationalRanking(guid) {
+  const byDiscipline = rankings.get(guid);
+  const result = {};
+  for (const discipline of ['singles', 'doubles', 'mixed']) {
+    const entry = byDiscipline?.[discipline];
+    const top = rankingTop?.[discipline];
+    result[discipline] = entry
+      ? {
+          rank: entry.rank,
+          points: entry.points,
+          topPoints: top?.points ?? null,
+          topName: top?.name ?? null,
+          pctOfTop: top?.points ? entry.points / top.points : null,
+        }
+      : null;
+  }
+  return result;
+}
+
+function playerSummary(guid) {
+  const profile = players.get(guid);
+  if (!profile) return null;
+  const s = singles.get(guid);
+  const d = doublesPlayer.get(guid);
+  const m = mixedPlayer.get(guid);
+  return {
+    id: guid,
+    name: profile.name,
+    club: profile.club,
+    ...disciplineFields('singles', s?.rating, careerBucket(guid, 'singles')),
+    ...disciplineFields('doubles', d?.rating, careerBucket(guid, 'doubles')),
+    ...disciplineFields('mixed', m?.rating, careerBucket(guid, 'mixed')),
+    nationalRanking: nationalRanking(guid),
+    highestDivision: highestDivisionPlayedFn(matches, guid),
+    titles: titlesForPlayerFn(guid),
+    titleCounts: titleCountsFn(guid),
+  };
+}
+
+function playerDetail(id, book) {
+  const b = book.get(id);
+  const p = players.get(id);
+  return {
+    id,
+    name: p.name,
+    rating: Math.round(b?.rating ?? 1500),
+    played: b?.played ?? 0,
+    confidence: confidenceLabel(b?.played ?? 0),
+  };
+}
+
+app.get('/api/players', (req, res) => {
+  // Historical event pages where profile-GUID parsing failed left inert 0-match placeholders in career.json.
+  const list = [...players.keys()]
+    .map(playerSummary)
+    .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0));
+  list.sort((a, b) => a.name.localeCompare(b.name));
+  res.json(list);
+});
+
+app.get('/api/players/:id', (req, res) => {
+  const summary = playerSummary(req.params.id);
+  if (!summary) return res.status(404).json({ error: 'player not found' });
+  res.json(summary);
+});
+
+app.get('/api/meta', (req, res) => {
+  res.json({ lastUpdated, refreshing, playerCount: players.size, poolLabel: CURRENT_POOL_LABEL, titleYears });
+});
+
+app.get('/api/refresh/progress', (req, res) => {
+  try {
+    const raw = readFileSync(PROGRESS_PATH, 'utf-8');
+    res.json(JSON.parse(raw));
+  } catch {
+    res.json({ step: refreshing ? 'starting' : 'idle', percent: refreshing ? 0 : 100, running: refreshing, error: null });
+  }
+});
+
+app.post('/api/refresh', (req, res) => {
+  if (refreshing) return res.status(409).json({ error: 'refresh already in progress' });
+  refreshing = true;
+  const child = spawn('python3', ['refresh_data.py'], { cwd: DATA_DIR });
+  let stderrTail = '';
+  child.stderr.on('data', (chunk) => {
+    stderrTail = (stderrTail + chunk.toString()).slice(-2000);
+  });
+  child.on('close', (code) => {
+    refreshing = false;
+    if (code !== 0) {
+      console.error(`[refresh] failed with exit code ${code}`);
+      if (stderrTail) console.error(`[refresh] stderr: ${stderrTail}`);
+      return;
+    }
+    loadAll();
+    console.log(`[refresh] reloaded ${players.size} players at ${lastUpdated}`);
+  });
+  child.on('error', (err) => {
+    refreshing = false;
+    console.error(`[refresh] failed to start: ${err.message}`);
+  });
+  res.status(202).json({ started: true });
+});
+
+app.post('/api/simulate/singles', (req, res) => {
+  const { playerAId, playerBId } = req.body || {};
+  const profileA = players.get(playerAId);
+  const profileB = players.get(playerBId);
+  if (!profileA || !profileB) return res.status(400).json({ error: 'unknown player id(s)' });
+  if (playerAId === playerBId) return res.status(400).json({ error: 'players must be different' });
+
+  const a = playerDetail(playerAId, singles);
+  const b = playerDetail(playerBId, singles);
+  const probA = winProbability(a.rating, b.rating);
+
+  const h2hKey = [playerAId, playerBId].sort().join('|');
+  const h2h = singlesH2H.get(h2hKey);
+
+  res.json({
+    playerA: a,
+    playerB: b,
+    winProbabilityA: probA,
+    winProbabilityB: 1 - probA,
+    headToHead: h2h ? { playerAWins: h2h[playerAId] || 0, playerBWins: h2h[playerBId] || 0 } : null,
+  });
+});
+
+app.post('/api/simulate/doubles', (req, res) => {
+  const { teamA, teamB } = req.body || {};
+  if (!Array.isArray(teamA) || teamA.length !== 2 || !Array.isArray(teamB) || teamB.length !== 2) {
+    return res.status(400).json({ error: 'teamA and teamB must each have exactly 2 player ids' });
+  }
+  const allIds = [...teamA, ...teamB];
+  if (new Set(allIds).size !== 4) return res.status(400).json({ error: 'all four players must be different' });
+  if (allIds.some((id) => !players.get(id))) return res.status(400).json({ error: 'unknown player id(s)' });
+
+  const teamADetail = teamA.map((id) => playerDetail(id, doublesPlayer));
+  const teamBDetail = teamB.map((id) => playerDetail(id, doublesPlayer));
+  const teamARating = (teamADetail[0].rating + teamADetail[1].rating) / 2;
+  const teamBRating = (teamBDetail[0].rating + teamBDetail[1].rating) / 2;
+  const probA = winProbability(teamARating, teamBRating);
+
+  const pairKeyA = [...teamA].sort().join('+');
+  const pairKeyB = [...teamB].sort().join('+');
+  const matchupKey = [pairKeyA, pairKeyB].sort().join('_vs_');
+  const h2h = doublesPairH2H.get(matchupKey);
+
+  res.json({
+    teamA: teamADetail,
+    teamB: teamBDetail,
+    teamARating: Math.round(teamARating),
+    teamBRating: Math.round(teamBRating),
+    winProbabilityA: probA,
+    winProbabilityB: 1 - probA,
+    headToHead: h2h ? { teamAWins: h2h[pairKeyA] || 0, teamBWins: h2h[pairKeyB] || 0 } : null,
+  });
+});
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`badminton-app server listening on http://localhost:${PORT}`);
+  console.log(`loaded ${players.size} players, ${matches.length} canonical matches`);
+});

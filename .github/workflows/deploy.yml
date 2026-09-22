@@ -1,0 +1,105 @@
+name: Refresh data & deploy
+
+on:
+  schedule:
+    # Fridays 06:00 UTC - leagues in this pool play at most once a week.
+    - cron: '0 6 * * 5'
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-data:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install playwright
+        working-directory: data
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Log in and capture session cookie
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 playwright_login.py --save cookie.txt
+        working-directory: data
+
+      - name: Refresh current-season matches & rankings
+        run: python3 refresh_data.py --skip-cookie-refresh
+        working-directory: data
+
+      - name: Refresh titles/finals data
+        run: python3 fetch_titles.py
+        working-directory: data
+
+      - name: Remove session cookie before committing
+        run: rm -f data/cookie.txt
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/career.json data/rankings.json data/titles.json data/career.state.json data/refresh_change_state.json
+          git diff --cached --quiet || git commit -m "chore(data): weekly refresh"
+          git push
+
+  build-and-deploy:
+    needs: refresh-data
+    if: always() && !failure() && !cancelled()
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install server dependencies
+        run: npm ci
+        working-directory: server
+
+      - name: Build static data bundle
+        run: node build-static.js
+        working-directory: server
+
+      - name: Install client dependencies
+        run: npm ci
+        working-directory: client
+
+      - name: Build client
+        run: npm run build
+        working-directory: client
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: client/dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
