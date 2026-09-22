@@ -59,6 +59,29 @@ function otherIdsInSlot(slot, side, idx) {
   return ids.filter(Boolean);
 }
 
+function expectedScore(ratingA, ratingB) {
+  return 1 / (1 + 10 ** ((ratingB - ratingA) / 400));
+}
+
+function ratingFor(prefix, player) {
+  return player[`${prefix}Rating`] ?? 1500;
+}
+
+function combos2(list) {
+  const out = [];
+  for (let i = 0; i < list.length; i++) {
+    for (let j = i + 1; j < list.length; j++) out.push([list[i], list[j]]);
+  }
+  return out;
+}
+
+// Higher is better for whichever button was clicked: closest to 50/50 for
+// "excitement", or maximizing/minimizing Side A's win chance for the other two.
+function objectiveScore(objective, probA) {
+  if (objective === 'excitement') return -Math.abs(probA - 0.5);
+  return objective === 'clubA' ? probA : 1 - probA;
+}
+
 // Poisson-binomial distribution of total rubbers won by Side A, given each
 // rubber's independent win probability - dist[k] = P(A wins exactly k rubbers).
 function winDistribution(probs) {
@@ -133,6 +156,67 @@ export default function LeagueDaySimulator() {
   const handleClubFilterA = changeClubFilter('sideA', setClubFilterA);
   const handleClubFilterB = changeClubFilter('sideB', setClubFilterB);
 
+  // Greedily fills every rubber to optimize one objective at a time. Each rubber's
+  // win probability only depends on who's in it, so maximizing (or minimizing) the
+  // sum of those probabilities - or minimizing each one's distance from 50/50 for
+  // "closest ratings" - can be done one rubber at a time without losing optimality,
+  // aside from the appearance cap below (falls back to ignoring it if a roster is
+  // too small to fill every rubber within it).
+  const autoFill = (objective) => {
+    const usage = new Map();
+    const poolA = filterByClub(players, clubFilterA, []);
+    const poolB = filterByClub(players, clubFilterB, []);
+
+    const nextSlots = slots.map((slot) => {
+      const discipline = disciplineForCode(slot.code);
+      const withinCap = (p) => (usage.get(p.id) ?? 0) < MAX_RECOMMENDED_APPEARANCES;
+      const availA = poolA.filter(withinCap);
+      const availB = poolB.filter(withinCap);
+      const candidatesA = availA.length ? availA : poolA;
+      const candidatesB = availB.length ? availB : poolB;
+
+      let bestScore = -Infinity;
+      let bestA = null;
+      let bestB = null;
+
+      if (discipline === 'singles') {
+        for (const a of candidatesA) {
+          for (const b of candidatesB) {
+            if (a.id === b.id) continue;
+            const probA = expectedScore(ratingFor('singles', a), ratingFor('singles', b));
+            const score = objectiveScore(objective, probA);
+            if (score > bestScore) {
+              bestScore = score;
+              bestA = [a.id];
+              bestB = [b.id];
+            }
+          }
+        }
+      } else {
+        for (const [a1, a2] of combos2(candidatesA)) {
+          const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
+          for (const [b1, b2] of combos2(candidatesB)) {
+            if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
+            const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
+            const probA = expectedScore(ratingA, ratingB);
+            const score = objectiveScore(objective, probA);
+            if (score > bestScore) {
+              bestScore = score;
+              bestA = [a1.id, a2.id];
+              bestB = [b1.id, b2.id];
+            }
+          }
+        }
+      }
+
+      if (!bestA || !bestB) return slot; // not enough eligible players for this rubber
+      for (const id of [...bestA, ...bestB]) usage.set(id, (usage.get(id) ?? 0) + 1);
+      return { ...slot, sideA: bestA, sideB: bestB };
+    });
+
+    setSlots(nextSlots);
+  };
+
   // Auto-simulate every fully-filled rubber whenever the roster changes;
   // invalidates in-flight requests from a previous roster the same way the
   // single-match page does, so a slow response can't overwrite newer results.
@@ -175,6 +259,8 @@ export default function LeagueDaySimulator() {
   const pAWin = dist ? dist.slice(5).reduce((s, x) => s + x, 0) : null;
   const pTie = dist ? dist[4] : null;
   const pBWin = dist ? dist.slice(0, 4).reduce((s, x) => s + x, 0) : null;
+  const clubLabelA = clubFilterA || 'Side A';
+  const clubLabelB = clubFilterB || 'Side B';
 
   return (
     <div className="app">
@@ -201,6 +287,15 @@ export default function LeagueDaySimulator() {
             ))}
           </select>
         </label>
+        <button type="button" className="btn-outline" onClick={() => autoFill('excitement')}>
+          Match players with closest ratings
+        </button>
+        <button type="button" className="btn-outline" onClick={() => autoFill('clubA')}>
+          Match players for club A to get at least 5 wins
+        </button>
+        <button type="button" className="btn-outline" onClick={() => autoFill('clubB')}>
+          Match players for club B to get at least 5 wins
+        </button>
       </div>
 
       {overusedPlayers.length > 0 && (
@@ -284,14 +379,15 @@ export default function LeagueDaySimulator() {
         ) : (
           <>
             <p>
-              Expected rubbers: <strong>{expectedA.toFixed(1)} – {expectedB.toFixed(1)}</strong>
+              Expected rubbers — {clubLabelA}: <strong>{expectedA.toFixed(1)}</strong>,{' '}
+              {clubLabelB}: <strong>{expectedB.toFixed(1)}</strong>
               {' '}({filledResults.length}/{slots.length} rubbers set)
             </p>
             {nightComplete && (
               <p>
-                Win probability — Side A: <strong>{Math.round(pAWin * 100)}%</strong>,{' '}
+                Win probability — {clubLabelA}: <strong>{Math.round(pAWin * 100)}%</strong>,{' '}
                 Tie (4-4): <strong>{Math.round(pTie * 100)}%</strong>,{' '}
-                Side B: <strong>{Math.round(pBWin * 100)}%</strong>
+                {clubLabelB}: <strong>{Math.round(pBWin * 100)}%</strong>
               </p>
             )}
           </>
