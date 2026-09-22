@@ -7,6 +7,7 @@ import { readFileSync } from 'node:fs';
 import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
+import { currentSeasonLabel } from './lib/season.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -16,7 +17,7 @@ let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPl
 let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
 let careerStats;
 let lastUpdated = null;
-const CURRENT_POOL_LABEL = 'Bondscompetitie 2026-2027 \u2013 Mannen Veer 2 afd. 12';
+const CURRENT_POOL_LABEL = `Bondscompetitie ${currentSeasonLabel()} \u2013 Mannen Veer 2 afd. 12`;
 let refreshing = false;
 
 function loadAll() {
