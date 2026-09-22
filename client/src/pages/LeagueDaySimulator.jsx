@@ -106,6 +106,8 @@ export default function LeagueDaySimulator() {
   const [slots, setSlots] = useState(stored?.slots ?? emptySlots(stored?.format ?? 'mens'));
   const [results, setResults] = useState({});
   const [error, setError] = useState('');
+  const [capAppearances, setCapAppearances] = useState(false);
+  const [protectTopSingles, setProtectTopSingles] = useState(false);
   const simulationRequestId = useRef(0);
 
   const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
@@ -160,20 +162,36 @@ export default function LeagueDaySimulator() {
   // win probability only depends on who's in it, so maximizing (or minimizing) the
   // sum of those probabilities - or minimizing each one's distance from 50/50 for
   // "closest ratings" - can be done one rubber at a time without losing optimality,
-  // aside from the appearance cap below (falls back to ignoring it if a roster is
-  // too small to fill every rubber within it).
+  // aside from the two opt-in filters below.
   const autoFill = (objective) => {
     const usage = new Map();
     const poolA = filterByClub(players, clubFilterA, []);
     const poolB = filterByClub(players, clubFilterB, []);
 
-    const nextSlots = slots.map((slot) => {
+    // "Strongest singles player" per side, only computed when that filter is on.
+    const strongestSingles = (pool) => pool.reduce(
+      (best, p) => (!best || ratingFor('singles', p) > ratingFor('singles', best) ? p : best), null,
+    );
+    const topSinglesA = protectTopSingles ? strongestSingles(poolA) : null;
+    const topSinglesB = protectTopSingles ? strongestSingles(poolB) : null;
+    const firstSinglesIndex = slots.findIndex((s) => disciplineForCode(s.code) === 'singles');
+
+    const nextSlots = slots.map((slot, slotIndex) => {
       const discipline = disciplineForCode(slot.code);
       const withinCap = (p) => (usage.get(p.id) ?? 0) < MAX_RECOMMENDED_APPEARANCES;
-      const availA = poolA.filter(withinCap);
-      const availB = poolB.filter(withinCap);
-      const candidatesA = availA.length ? availA : poolA;
-      const candidatesB = availB.length ? availB : poolB;
+      const isProtectedHere = (p) => protectTopSingles
+        && firstSinglesIndex !== -1
+        && slotIndex < firstSinglesIndex
+        && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
+
+      const eligibleA = poolA.filter((p) => !isProtectedHere(p));
+      const eligibleB = poolB.filter((p) => !isProtectedHere(p));
+      const cappedA = eligibleA.filter(withinCap);
+      const cappedB = eligibleB.filter(withinCap);
+      // Hard cap when "max 3 matches" is checked; otherwise fall back to ignoring
+      // it only when a roster is too small to fill every rubber within it.
+      const candidatesA = capAppearances ? cappedA : (cappedA.length ? cappedA : eligibleA);
+      const candidatesB = capAppearances ? cappedB : (cappedB.length ? cappedB : eligibleB);
 
       let bestScore = -Infinity;
       let bestA = null;
@@ -296,6 +314,25 @@ export default function LeagueDaySimulator() {
         <button type="button" className="btn-outline" onClick={() => autoFill('clubB')}>
           Match players for club B to get at least 5 wins
         </button>
+      </div>
+
+      <div className="league-day-filters">
+        <label className="filter-checkbox">
+          <input
+            type="checkbox"
+            checked={capAppearances}
+            onChange={(e) => setCapAppearances(e.target.checked)}
+          />
+          No player plays more than 3 matches
+        </label>
+        <label className="filter-checkbox">
+          <input
+            type="checkbox"
+            checked={protectTopSingles}
+            onChange={(e) => setProtectTopSingles(e.target.checked)}
+          />
+          Strongest singles player doesn't play anything before their singles match
+        </label>
       </div>
 
       {overusedPlayers.length > 0 && (
