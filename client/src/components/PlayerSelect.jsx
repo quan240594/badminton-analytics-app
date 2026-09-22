@@ -61,7 +61,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
         onKeyDown={handleKeyDown}
         onBlur={() => setTimeout(() => setOpen(false), 150)}
       />
-      {!open && selected && <div className="player-select-club">{selected.club}</div>}
+      {!open && selected && <div className="player-select-club">Club: {selected.club}</div>}
       {open && (
         <ul className="player-options" ref={listRef}>
           {options.map((p, idx) => (
