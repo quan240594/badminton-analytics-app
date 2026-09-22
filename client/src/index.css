@@ -422,3 +422,14 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   pointer-events: none;
   z-index: 1;
 }
+
+/* Medal emoji render with taller line metrics than a plain "-" at the same font-size,
+   which otherwise makes a row's height depend on whether that player has a title —
+   throwing the two comparison panels out of alignment row-for-row. */
+.player-stats-table td, .player-stats-table th,
+.ranking-table td, .ranking-table th,
+.division-table td,
+.titles-table td, .titles-table th,
+.career-medals-table td, .career-medals-table th {
+  line-height: 1.3;
+}

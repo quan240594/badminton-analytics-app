@@ -28,6 +28,23 @@ function loadAll() {
 
 loadAll();
 
+// Rebuilds client/public/data.json so the static-site client (which reads that
+// bundle, not this live API) actually sees the data refresh_data.py just fetched.
+function rebuildStaticBundle() {
+  return new Promise((resolve, reject) => {
+    const build = spawn('node', ['build-static.js'], { cwd: __dirname });
+    let stderrTail = '';
+    build.stderr.on('data', (chunk) => {
+      stderrTail = (stderrTail + chunk.toString()).slice(-2000);
+    });
+    build.on('close', (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(stderrTail || `build-static.js exited with code ${code}`));
+    });
+    build.on('error', reject);
+  });
+}
+
 function careerBucket(guid, discipline) {
   return (
     careerStats.get(guid)?.[discipline] ?? {
@@ -158,14 +175,19 @@ app.post('/api/refresh', (req, res) => {
     stderrTail = (stderrTail + chunk.toString()).slice(-2000);
   });
   child.on('close', (code) => {
-    refreshing = false;
     if (code !== 0) {
+      refreshing = false;
       console.error(`[refresh] failed with exit code ${code}`);
       if (stderrTail) console.error(`[refresh] stderr: ${stderrTail}`);
       return;
     }
     loadAll();
-    console.log(`[refresh] reloaded ${players.size} players at ${lastUpdated}`);
+    rebuildStaticBundle()
+      .then(() => console.log(`[refresh] reloaded ${players.size} players and rebuilt data.json at ${lastUpdated}`))
+      .catch((err) => console.error(`[refresh] failed to rebuild static bundle: ${err.message}`))
+      .finally(() => {
+        refreshing = false;
+      });
   });
   child.on('error', (err) => {
     refreshing = false;

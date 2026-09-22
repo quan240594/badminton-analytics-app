@@ -17,6 +17,84 @@ export const fetchPlayers = () => loadBundle().then((b) => b.players);
 
 export const fetchMeta = () => loadBundle().then((b) => b.meta);
 
+// Local-dev only: triggers server/index.js's live scrape + data.json rebuild via
+// vite's dev proxy; on the static GitHub Pages build there's no backend to hit.
+export async function triggerRefresh() {
+  const res = await fetch('/api/refresh', { method: 'POST' });
+  if (res.status === 409) throw new Error('A refresh is already in progress.');
+  if (!res.ok) throw new Error(`Could not reach the local refresh server (${res.status}).`);
+}
+
+export const fetchRefreshProgress = () => fetch('/api/refresh/progress').then((res) => res.json());
+
+// Drops the cached bundle and cache-busts, so a re-read picks up a freshly
+// deployed data.json instead of a stale copy GitHub Pages/the browser cached.
+export function reloadBundle() {
+  bundlePromise = fetch(`${import.meta.env.BASE_URL}data.json?t=${Date.now()}`).then((res) => {
+    if (!res.ok) throw new Error(`Failed to load data.json: ${res.status}`);
+    return res.json();
+  });
+  return bundlePromise;
+}
+
+// Production (GitHub Pages) has no backend, so "Fetch data" instead calls the
+// GitHub Actions API directly to (re)run the same refresh-data + build-and-deploy
+// workflow the Friday cron uses. Requires a token with Actions read/write, entered
+// by the user at runtime and kept only in sessionStorage (never bundled/committed).
+const GH_OWNER = 'quan240594';
+const GH_REPO = 'badminton-analytics-app';
+const GH_WORKFLOW_FILE = 'deploy.yml';
+const GH_TOKEN_KEY = 'badminton-app-gh-token';
+const GH_API = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW_FILE}`;
+
+function getGithubToken() {
+  let token = sessionStorage.getItem(GH_TOKEN_KEY);
+  if (!token) {
+    token = window.prompt(
+      'GitHub token with Actions read/write (or "repo") scope.\n' +
+        'Used only for this browser tab (kept in sessionStorage, sent only to api.github.com).'
+    );
+    if (token) sessionStorage.setItem(GH_TOKEN_KEY, token);
+  }
+  return token;
+}
+
+function githubHeaders(token) {
+  return {
+    Authorization: `Bearer ${token}`,
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+}
+
+export async function triggerGithubWorkflowRefresh() {
+  const token = getGithubToken();
+  if (!token) throw new Error('A GitHub token is required to refresh data from the deployed site.');
+
+  const dispatchedAt = new Date().toISOString();
+  const res = await fetch(`${GH_API}/dispatches`, {
+    method: 'POST',
+    headers: { ...githubHeaders(token), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ref: 'main' }),
+  });
+  if (res.status === 401 || res.status === 403) {
+    sessionStorage.removeItem(GH_TOKEN_KEY);
+    throw new Error('GitHub rejected that token. Check its scope and try again.');
+  }
+  if (!res.ok) throw new Error(`Could not start the workflow (${res.status}).`);
+  return dispatchedAt;
+}
+
+export async function pollGithubWorkflowRun(dispatchedAt) {
+  const token = sessionStorage.getItem(GH_TOKEN_KEY);
+  const res = await fetch(`${GH_API}/runs?event=workflow_dispatch&per_page=5`, { headers: githubHeaders(token) });
+  if (!res.ok) throw new Error(`Could not check workflow status (${res.status}).`);
+  const { workflow_runs } = await res.json();
+  const run = workflow_runs.find((r) => r.created_at >= dispatchedAt) ?? null;
+  if (!run) return { status: 'queued', conclusion: null, htmlUrl: null };
+  return { status: run.status, conclusion: run.conclusion, htmlUrl: run.html_url };
+}
+
 function confidenceLabel(played) {
   if (played >= 15) return 'high';
   if (played >= 5) return 'medium';

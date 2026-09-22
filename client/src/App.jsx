@@ -1,5 +1,15 @@
 import { useEffect, useState } from 'react';
-import { fetchPlayers, fetchMeta, simulateSingles, simulateDoubles } from './api.js';
+import {
+  fetchPlayers,
+  fetchMeta,
+  simulateSingles,
+  simulateDoubles,
+  triggerRefresh,
+  fetchRefreshProgress,
+  reloadBundle,
+  triggerGithubWorkflowRefresh,
+  pollGithubWorkflowRun,
+} from './api.js';
 import PlayerSelect from './components/PlayerSelect.jsx';
 import PlayerStatsCard from './components/PlayerStatsCard.jsx';
 import RankingCard from './components/RankingCard.jsx';
@@ -99,6 +109,8 @@ export default function App() {
   const [lastUpdated, setLastUpdated] = useState(null);
   const [poolLabel, setPoolLabel] = useState('');
   const [titleYears, setTitleYears] = useState([]);
+  const [refreshState, setRefreshState] = useState({ running: false, percent: 0, detail: '', error: null });
+  const [showUnchanged, setShowUnchanged] = useState(false);
   const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
   // Show only years with real title data for the players currently being compared,
   // so both sides share a row set without dragging in the whole pool's history.
@@ -167,6 +179,93 @@ export default function App() {
     localStorage.removeItem(STORAGE_KEY);
   };
 
+  const applyRefreshedBundle = async () => {
+    const bundle = await reloadBundle();
+    setPlayers(bundle.players);
+    setLastUpdated(bundle.meta.lastUpdated);
+    setPoolLabel(bundle.meta.poolLabel);
+    setTitleYears(bundle.meta.titleYears ?? []);
+  };
+
+  // Local dev: polls server/index.js's own refresh_progress.json (see api.js).
+  const fetchDataLocal = async () => {
+    try {
+      await triggerRefresh();
+    } catch (e) {
+      setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
+      return;
+    }
+    const poll = async () => {
+      let progress;
+      try {
+        progress = await fetchRefreshProgress();
+      } catch {
+        setRefreshState({ running: false, percent: 0, detail: '', error: 'Lost connection to the refresh server.' });
+        return;
+      }
+      setRefreshState({ running: progress.running, percent: progress.percent, detail: progress.detail, error: progress.error });
+      if (progress.running) {
+        setTimeout(poll, 1000);
+        return;
+      }
+      if (progress.error) return;
+      if (progress.unchanged) {
+        setShowUnchanged(true);
+        setTimeout(() => setShowUnchanged(false), 3000);
+        return;
+      }
+      await applyRefreshedBundle();
+    };
+    poll();
+  };
+
+  // Production (GitHub Pages): no backend to hit, so trigger the deploy.yml
+  // workflow directly via the GitHub API and poll its run status instead.
+  const fetchDataGithub = async () => {
+    let dispatchedAt;
+    try {
+      dispatchedAt = await triggerGithubWorkflowRefresh();
+    } catch (e) {
+      setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
+      return;
+    }
+    const poll = async () => {
+      let run;
+      try {
+        run = await pollGithubWorkflowRun(dispatchedAt);
+      } catch (e) {
+        setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
+        return;
+      }
+      const running = run.status !== 'completed';
+      const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
+      setRefreshState({ running, percent, detail: run.status, error: null });
+      if (running) {
+        setTimeout(poll, 5000);
+        return;
+      }
+      if (run.conclusion !== 'success') {
+        setRefreshState({
+          running: false,
+          percent: 100,
+          detail: run.status,
+          error: `GitHub Actions run finished with "${run.conclusion}" — check the Actions tab for details.`,
+        });
+        return;
+      }
+      await applyRefreshedBundle();
+    };
+    // Give GitHub a moment to register the dispatched run before the first poll.
+    setTimeout(poll, 5000);
+  };
+
+  const fetchData = () => {
+    setShowUnchanged(false);
+    setRefreshState({ running: true, percent: 0, detail: 'starting…', error: null });
+    if (import.meta.env.DEV) fetchDataLocal();
+    else fetchDataGithub();
+  };
+
   return (
     <div className="app">
       <div className="header-row">
@@ -184,6 +283,19 @@ export default function App() {
           <button type="button" className="btn-outline" onClick={clearAll}>
             Clear all
           </button>
+          <div className="refresh-control">
+            {showUnchanged && <div className="unchanged-bubble">Data already up to date</div>}
+            <button type="button" className="btn-outline" onClick={fetchData} disabled={refreshState.running}>
+              {refreshState.running ? 'Fetching…' : 'Fetch data'}
+            </button>
+            {refreshState.running && (
+              <div className="progress-bar">
+                <div className="progress-bar-fill" style={{ width: `${refreshState.percent}%` }} />
+                <span className="progress-bar-label">{Math.round(refreshState.percent)}%</span>
+              </div>
+            )}
+            {refreshState.error && <p className="error">{refreshState.error}</p>}
+          </div>
         </div>
       </div>
 
