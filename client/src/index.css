@@ -408,6 +408,21 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   .matchup-form { flex-direction: column; gap: 2.5rem; }
   .matchup-form .team { width: 100%; }
   .vs { position: static; transform: none; margin: -1.25rem auto; }
+
+  /* League Day Simulator: two side-by-side player-picker columns are too
+     cramped on phones, so each rubber stacks code / Side A / vs / Side B. */
+  .rubber-header,
+  .rubber-top {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .rubber-header > div:empty { display: none; }
+  .rubber-code { text-align: center; }
+  .rubber-vs { margin: 0.25rem auto; }
+  .league-day-controls,
+  .league-day-filters { flex-direction: column; align-items: stretch; }
+  .league-day-controls .btn-outline { width: 100%; }
+  .night-bar-legend { flex-wrap: wrap; gap: 0.3rem 1rem; }
 }
 
 /* Permanent visual guide lines through the shared column boundaries (20/43/66%),
