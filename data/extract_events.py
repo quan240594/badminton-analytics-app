@@ -13,6 +13,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 from pathlib import Path
@@ -32,12 +33,12 @@ def extract_source_player(html: str) -> tuple[str, str] | None:
 
 
 def parse_player_file(path: Path) -> list[dict]:
-    html = path.read_text(encoding="utf-8", errors="replace")
-    name_match = re.search(r"<h2>\s*([^<]+?)\s*<a href=\"/player-profile/", html)
-    source_name = name_match.group(1).strip() if name_match else path.stem
+    html_text = path.read_text(encoding="utf-8", errors="replace")
+    name_match = re.search(r"<h2>\s*([^<]+?)\s*<a href=\"/player-profile/", html_text)
+    source_name = html.unescape(name_match.group(1).strip()) if name_match else path.stem
 
     # Isolate the "Events with X" tabbed section to avoid picking up unrelated links.
-    events_section_match = re.search(r"Events with.*?</div>\s*</div>", html, re.DOTALL)
+    events_section_match = re.search(r"Events with.*?</div>\s*</div>", html_text, re.DOTALL)
     section = events_section_match.group(0) if events_section_match else ""
 
     events: list[dict] = []
@@ -49,7 +50,7 @@ def parse_player_file(path: Path) -> list[dict]:
                 "source_player_name": source_name,
                 "tournament_id": tid,
                 "player_id": pid,
-                "event_name": event_name.strip(),
+                "event_name": html.unescape(event_name.strip()),
             }
         )
     return events

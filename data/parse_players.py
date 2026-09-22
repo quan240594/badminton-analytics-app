@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 from collections import defaultdict
@@ -59,19 +60,19 @@ class PlayerRecord:
 
 
 def parse_overall_stats(playerstats_path: Path) -> dict[str, PlayerRecord]:
-    html = playerstats_path.read_text(encoding="utf-8", errors="replace")
+    html_text = playerstats_path.read_text(encoding="utf-8", errors="replace")
     players: dict[str, PlayerRecord] = {}
     row_re = re.compile(
         r'<td>(\d+)</td><td><a href="player\.aspx\?id=[^"]*&player=(\d+)">([^<]+)</a></td>'
         r'<td><a href="teamplayerstats\.aspx\?id=[^"]*&team=\d+">([^<]+)</a></td>'
         r'<td>(\d+)</td><td>(\d+)</td>'
     )
-    for m in row_re.finditer(html):
+    for m in row_re.finditer(html_text):
         rank, player_id, name, team, won, played = m.groups()
         players[player_id] = PlayerRecord(
             player_id=player_id,
-            name=name,
-            team=team,
+            name=html.unescape(name),
+            team=html.unescape(team),
             overall_rank=int(rank),
             overall_won=int(won),
             overall_played=int(played),
@@ -79,19 +80,19 @@ def parse_overall_stats(playerstats_path: Path) -> dict[str, PlayerRecord]:
     return players
 
 
-def extract_team_names(html: str) -> tuple[str, str]:
+def extract_team_names(html_text: str) -> tuple[str, str]:
     m = re.search(
-        r'<h3><a href="[^"]*team=\d+">([^<]+)</a> - <a href="[^"]*team=\d+">([^<]+)</a>', html
+        r'<h3><a href="[^"]*team=\d+">([^<]+)</a> - <a href="[^"]*team=\d+">([^<]+)</a>', html_text
     )
     if m:
-        return m.group(1), m.group(2)
+        return html.unescape(m.group(1)), html.unescape(m.group(2))
     return "Home", "Away"
 
 
 def parse_match_file(match_path: Path) -> list[RubberResult]:
-    html = match_path.read_text(encoding="utf-8", errors="replace")
+    html_text = match_path.read_text(encoding="utf-8", errors="replace")
     match_id = match_path.stem.replace("match_", "")
-    home_team, away_team = extract_team_names(html)
+    home_team, away_team = extract_team_names(html_text)
 
     results: list[RubberResult] = []
     # Split on rubber rows: <td>MS1</td>...<td>MS2</td>... etc.
@@ -101,11 +102,11 @@ def parse_match_file(match_path: Path) -> list[RubberResult]:
         r'<td><span class="score">(.*?)</span></td>',
         re.DOTALL,
     )
-    for m in row_re.finditer(html):
+    for m in row_re.finditer(html_text):
         rubber, home_block, away_block, score_block = m.groups()
 
-        home_players = PLAYER_LINK_RE.findall(home_block)
-        away_players = PLAYER_LINK_RE.findall(away_block)
+        home_players = [(pid, html.unescape(nm)) for pid, nm in PLAYER_LINK_RE.findall(home_block)]
+        away_players = [(pid, html.unescape(nm)) for pid, nm in PLAYER_LINK_RE.findall(away_block)]
         home_winners = STRONG_PLAYER_RE.findall(home_block)
         away_winners = STRONG_PLAYER_RE.findall(away_block)
 

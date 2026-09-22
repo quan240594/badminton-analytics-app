@@ -10,6 +10,7 @@ widget, which is why this needs its own fetch pass keyed by profile GUID.
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import sys
@@ -72,7 +73,7 @@ def fetch_titles_for_player(guid: str, cookie: str) -> list[dict]:
             entries.append({
                 "year": year,
                 "status": m.group("status"),
-                "tournament": m.group("tournament").strip(),
+                "tournament": html.unescape(m.group("tournament").strip()),
                 "discipline": discipline_code,
                 "category": category,
             })

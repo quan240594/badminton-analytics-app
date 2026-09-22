@@ -9,6 +9,7 @@ championships) because every player page uses the same player-centric
 
 from __future__ import annotations
 
+import html
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -77,21 +78,22 @@ def parse_side(block: str) -> tuple[str, list, bool]:
     """Returns (team_name, [(player_id, name), ...], won)."""
     strong_team = STRONG_TEAM_RE.search(block)
     team_name = strong_team.group(1) if strong_team else (TEAM_NAME_RE.search(block).group(1) if TEAM_NAME_RE.search(block) else "")
-    players = PLAYER_LINK_RE.findall(block)
+    team_name = html.unescape(team_name)
+    players = [(pid, html.unescape(name)) for pid, name in PLAYER_LINK_RE.findall(block)]
     won = bool(strong_team) or bool(STRONG_PLAYER_RE.search(block))
     return team_name, players, won
 
 
 def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerPageInfo:
-    html = path.read_text(encoding="utf-8", errors="replace")
+    html_text = path.read_text(encoding="utf-8", errors="replace")
 
-    profile_match = PROFILE_RE.search(html)
-    name = profile_match.group(1).strip() if profile_match else path.stem
+    profile_match = PROFILE_RE.search(html_text)
+    name = html.unescape(profile_match.group(1).strip()) if profile_match else path.stem
     guid = profile_match.group(2) if profile_match else None
-    member_match = MEMBER_ID_RE.search(html)
+    member_match = MEMBER_ID_RE.search(html_text)
     member_id = member_match.group(1) if member_match else None
-    club_match = CLUB_RE.search(html)
-    club = normalize_club(club_match.group(1)) if club_match else None
+    club_match = CLUB_RE.search(html_text)
+    club = normalize_club(html.unescape(club_match.group(1))) if club_match else None
 
     info = PlayerPageInfo(
         tournament_id=tournament_id,
@@ -102,7 +104,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
         club=club,
     )
 
-    overview_match = re.search(r"Match overview.*?<tbody>(.*?)</tbody>", html, re.DOTALL)
+    overview_match = re.search(r"Match overview.*?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
     if not overview_match:
         return info
     overview_html = overview_match.group(1)
