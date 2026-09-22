@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function PlayerSelect({ label, players, value, onChange, excludeIds = [] }) {
+export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -61,7 +61,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
         onKeyDown={handleKeyDown}
         onBlur={() => setTimeout(() => setOpen(false), 150)}
       />
-      {!open && selected && <div className="player-select-club">Club: {selected.club}</div>}
+      {showClub && !open && selected && <div className="player-select-club">Club: {selected.club}</div>}
       {open && (
         <ul className="player-options" ref={listRef}>
           {options.map((p, idx) => (

@@ -237,6 +237,7 @@ export default function LeagueDaySimulator() {
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
+                      showClub={false}
                     />
                   ))}
                 </div>
@@ -250,6 +251,7 @@ export default function LeagueDaySimulator() {
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
+                      showClub={false}
                     />
                   ))}
                 </div>
