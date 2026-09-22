@@ -170,3 +170,48 @@ export async function simulateDoubles(teamA, teamB) {
     headToHead: h2h ? { teamAWins: h2h[pairKeyA] || 0, teamBWins: h2h[pairKeyB] || 0 } : null,
   };
 }
+
+// Generic version for League Day Simulator: works for any discipline prefix
+// ('singles', 'doubles', 'mixed'), unlike the two match-specific helpers above
+// which the single-match page's MatchupResult component depends on verbatim.
+const H2H_KEY_BY_PREFIX = { singles: 'singlesH2H', doubles: 'doublesPairH2H', mixed: 'mixedPairH2H' };
+
+export async function simulateMatch(prefix, teamA, teamB) {
+  const bundle = await loadBundle();
+  const idsA = Array.isArray(teamA) ? teamA : [teamA];
+  const idsB = Array.isArray(teamB) ? teamB : [teamB];
+  const byId = new Map(bundle.players.map((p) => [p.id, p]));
+  const allIds = [...idsA, ...idsB];
+  if (allIds.some((id) => !byId.get(id))) throw new Error('unknown player id(s)');
+  if (new Set(allIds).size !== allIds.length) throw new Error('all players in a rubber must be different');
+
+  const detailA = idsA.map((id) => playerDetail(byId.get(id), prefix));
+  const detailB = idsB.map((id) => playerDetail(byId.get(id), prefix));
+  const ratingA = detailA.reduce((sum, d) => sum + d.rating, 0) / detailA.length;
+  const ratingB = detailB.reduce((sum, d) => sum + d.rating, 0) / detailB.length;
+  const probA = expectedScore(ratingA, ratingB);
+
+  let headToHead = null;
+  const h2hMap = bundle[H2H_KEY_BY_PREFIX[prefix]] ?? {};
+  if (idsA.length === 1) {
+    const key = [idsA[0], idsB[0]].sort().join('|');
+    const h2h = h2hMap[key];
+    if (h2h) headToHead = { aWins: h2h[idsA[0]] || 0, bWins: h2h[idsB[0]] || 0 };
+  } else {
+    const pairKeyA = [...idsA].sort().join('+');
+    const pairKeyB = [...idsB].sort().join('+');
+    const key = [pairKeyA, pairKeyB].sort().join('_vs_');
+    const h2h = h2hMap[key];
+    if (h2h) headToHead = { aWins: h2h[pairKeyA] || 0, bWins: h2h[pairKeyB] || 0 };
+  }
+
+  return {
+    sideA: detailA,
+    sideB: detailB,
+    ratingA: Math.round(ratingA),
+    ratingB: Math.round(ratingB),
+    winProbabilityA: probA,
+    winProbabilityB: 1 - probA,
+    headToHead,
+  };
+}
