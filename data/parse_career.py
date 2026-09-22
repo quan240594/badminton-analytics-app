@@ -29,6 +29,19 @@ PROFILE_RE = re.compile(r'<h2>\s*([^<]+?)\s*<a href="/player-profile/([0-9A-Fa-f
 MEMBER_ID_RE = re.compile(r'<th>Member ID:</th><td>(\d+)</td>')
 CLUB_RE = re.compile(r'<th>Club:</th><td><a[^>]*>([^<]+)</a></td>')
 
+# The source site inconsistently shows a club's short vs. full name across pages
+# (e.g. "BBS" vs "BBS BODEGRAVEN" for the same club); canonicalize known aliases here.
+CLUB_ALIASES = {
+    "BBS": "BBS BODEGRAVEN",
+}
+
+
+def normalize_club(club: str | None) -> str | None:
+    if club is None:
+        return None
+    club = club.strip()
+    return CLUB_ALIASES.get(club, club)
+
 
 @dataclass
 class MatchRecord:
@@ -78,7 +91,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
     member_match = MEMBER_ID_RE.search(html)
     member_id = member_match.group(1) if member_match else None
     club_match = CLUB_RE.search(html)
-    club = club_match.group(1) if club_match else None
+    club = normalize_club(club_match.group(1)) if club_match else None
 
     info = PlayerPageInfo(
         tournament_id=tournament_id,

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   fetchPlayers,
   fetchMeta,
@@ -111,6 +111,7 @@ export default function App() {
   const [titleYears, setTitleYears] = useState([]);
   const [refreshState, setRefreshState] = useState({ running: false, percent: 0, detail: '', error: null });
   const [showUnchanged, setShowUnchanged] = useState(false);
+  const simulationRequestId = useRef(0);
   const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
   // Show only years with real title data for the players currently being compared,
   // so both sides share a row set without dragging in the whole pool's history.
@@ -148,25 +149,35 @@ export default function App() {
   const canSimulate = sameSize && allFilled && noDuplicates;
 
   const runSimulation = async () => {
+    const requestId = ++simulationRequestId.current;
     setError('');
     setResult(null);
     setLoading(true);
     try {
       const r =
         sideA.length === 1 ? await simulateSingles(sideA[0], sideB[0]) : await simulateDoubles(sideA, sideB);
-      setResult(r);
+      if (simulationRequestId.current === requestId) setResult(r);
     } catch (e) {
-      setError(e.message);
+      if (simulationRequestId.current === requestId) setError(e.message);
     } finally {
-      setLoading(false);
+      if (simulationRequestId.current === requestId) setLoading(false);
     }
   };
+
+  // Auto-run whenever the player/pairing composition changes; also invalidates
+  // any still-in-flight simulation from the previous composition so a slow
+  // response can't overwrite the result for what's selected now.
+  useEffect(() => {
+    simulationRequestId.current++;
+    setResult(null);
+    setError('');
+    if (canSimulate) runSimulation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sideA, sideB]);
 
   const removePartners = () => {
     setSideA((ids) => ids.slice(0, 1));
     setSideB((ids) => ids.slice(0, 1));
-    setResult(null);
-    setError('');
   };
 
   const clearAll = () => {
@@ -174,10 +185,21 @@ export default function App() {
     setSideB(['']);
     setClubFilterA('');
     setClubFilterB('');
-    setResult(null);
-    setError('');
     localStorage.removeItem(STORAGE_KEY);
   };
+
+  // Dropping a club filter that no longer matches the currently selected player(s)
+  // clears that slot instead of silently keeping an out-of-filter player selected.
+  const changeClubFilter = (setIds, setFilter) => (club) => {
+    setFilter(club);
+    if (!club) return;
+    setIds((ids) => ids.map((id) => {
+      const p = players.find((pl) => pl.id === id);
+      return p && p.club !== club ? '' : id;
+    }));
+  };
+  const handleClubFilterA = changeClubFilter(setSideA, setClubFilterA);
+  const handleClubFilterB = changeClubFilter(setSideB, setClubFilterB);
 
   const applyRefreshedBundle = async () => {
     const bundle = await reloadBundle();
@@ -308,7 +330,7 @@ export default function App() {
           excludeIds={sideB}
           clubs={clubs}
           clubFilter={clubFilterA}
-          onClubFilterChange={setClubFilterA}
+          onClubFilterChange={handleClubFilterA}
           titleYears={visibleTitleYears}
         />
         <span className="vs">vs</span>
@@ -320,7 +342,7 @@ export default function App() {
           excludeIds={sideA}
           clubs={clubs}
           clubFilter={clubFilterB}
-          onClubFilterChange={setClubFilterB}
+          onClubFilterChange={handleClubFilterB}
           titleYears={visibleTitleYears}
         />
       </div>
