@@ -226,31 +226,33 @@ export default function LeagueDaySimulator() {
           const pctB = result ? 100 - pctA : null;
           return (
             <div className="rubber-row" key={slot.code}>
-              <div className="rubber-code">{slot.code}</div>
-              <div className="rubber-side">
-                {slot.sideA.map((id, idx) => (
-                  <PlayerSelect
-                    key={idx}
-                    label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                    players={filterByClub(players, clubFilterA, slot.sideA)}
-                    value={id}
-                    onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
-                    excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
-                  />
-                ))}
-              </div>
-              <span className="rubber-vs">vs</span>
-              <div className="rubber-side">
-                {slot.sideB.map((id, idx) => (
-                  <PlayerSelect
-                    key={idx}
-                    label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                    players={filterByClub(players, clubFilterB, slot.sideB)}
-                    value={id}
-                    onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
-                    excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
-                  />
-                ))}
+              <div className="rubber-top">
+                <div className="rubber-code">{slot.code}</div>
+                <div className="rubber-side">
+                  {slot.sideA.map((id, idx) => (
+                    <PlayerSelect
+                      key={idx}
+                      label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
+                      players={filterByClub(players, clubFilterA, slot.sideA)}
+                      value={id}
+                      onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
+                      excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
+                    />
+                  ))}
+                </div>
+                <span className="rubber-vs">vs</span>
+                <div className="rubber-side">
+                  {slot.sideB.map((id, idx) => (
+                    <PlayerSelect
+                      key={idx}
+                      label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
+                      players={filterByClub(players, clubFilterB, slot.sideB)}
+                      value={id}
+                      onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
+                      excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="rubber-result">
                 {result ? (
@@ -259,7 +261,7 @@ export default function LeagueDaySimulator() {
                     <div className="bar-b" style={{ width: `${pctB}%` }}>{pctB > 12 ? `${pctB}%` : ''}</div>
                   </div>
                 ) : (
-                  <span className="rubber-pending">—</span>
+                  <span className="rubber-pending">Fill in both sides to see the projected result</span>
                 )}
               </div>
             </div>
