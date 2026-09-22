@@ -82,6 +82,44 @@ function objectiveScore(objective, probA) {
   return objective === 'clubA' ? probA : 1 - probA;
 }
 
+// Scores every valid pairing from two candidate pools and returns the best one,
+// or null if no valid pairing exists (e.g. a pool too small to avoid overlap).
+function bestPairing(discipline, candidatesA, candidatesB, objective) {
+  let bestScore = -Infinity;
+  let bestA = null;
+  let bestB = null;
+  if (discipline === 'singles') {
+    for (const a of candidatesA) {
+      for (const b of candidatesB) {
+        if (a.id === b.id) continue;
+        const probA = expectedScore(ratingFor('singles', a), ratingFor('singles', b));
+        const score = objectiveScore(objective, probA);
+        if (score > bestScore) {
+          bestScore = score;
+          bestA = [a.id];
+          bestB = [b.id];
+        }
+      }
+    }
+  } else {
+    for (const [a1, a2] of combos2(candidatesA)) {
+      const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
+      for (const [b1, b2] of combos2(candidatesB)) {
+        if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
+        const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
+        const probA = expectedScore(ratingA, ratingB);
+        const score = objectiveScore(objective, probA);
+        if (score > bestScore) {
+          bestScore = score;
+          bestA = [a1.id, a2.id];
+          bestB = [b1.id, b2.id];
+        }
+      }
+    }
+  }
+  return bestA && bestB ? { bestA, bestB } : null;
+}
+
 // Poisson-binomial distribution of total rubbers won by Side A, given each
 // rubber's independent win probability - dist[k] = P(A wins exactly k rubbers).
 function winDistribution(probs) {
@@ -186,48 +224,24 @@ export default function LeagueDaySimulator() {
 
       const eligibleA = poolA.filter((p) => !isProtectedHere(p));
       const eligibleB = poolB.filter((p) => !isProtectedHere(p));
-      const cappedA = eligibleA.filter(withinCap);
-      const cappedB = eligibleB.filter(withinCap);
-      // Hard cap when "max 3 matches" is checked; otherwise fall back to ignoring
-      // it only when a roster is too small to fill every rubber within it.
-      const candidatesA = capAppearances ? cappedA : (cappedA.length ? cappedA : eligibleA);
-      const candidatesB = capAppearances ? cappedB : (cappedB.length ? cappedB : eligibleB);
 
-      let bestScore = -Infinity;
-      let bestA = null;
-      let bestB = null;
-
-      if (discipline === 'singles') {
-        for (const a of candidatesA) {
-          for (const b of candidatesB) {
-            if (a.id === b.id) continue;
-            const probA = expectedScore(ratingFor('singles', a), ratingFor('singles', b));
-            const score = objectiveScore(objective, probA);
-            if (score > bestScore) {
-              bestScore = score;
-              bestA = [a.id];
-              bestB = [b.id];
-            }
-          }
-        }
-      } else {
-        for (const [a1, a2] of combos2(candidatesA)) {
-          const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
-          for (const [b1, b2] of combos2(candidatesB)) {
-            if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
-            const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
-            const probA = expectedScore(ratingA, ratingB);
-            const score = objectiveScore(objective, probA);
-            if (score > bestScore) {
-              bestScore = score;
-              bestA = [a1.id, a2.id];
-              bestB = [b1.id, b2.id];
-            }
-          }
-        }
+      // Every rubber must be filled, so both checkbox filters are relaxed - cap
+      // first, then the protect-top-singles rule, then both - if honoring them
+      // leaves no valid pairing (e.g. a roster too small for both filters at once).
+      const attempts = [
+        [eligibleA.filter(withinCap), eligibleB.filter(withinCap)],
+        [eligibleA, eligibleB],
+        [poolA.filter(withinCap), poolB.filter(withinCap)],
+        [poolA, poolB],
+      ];
+      let pairing = null;
+      for (const [candidatesA, candidatesB] of attempts) {
+        pairing = bestPairing(discipline, candidatesA, candidatesB, objective);
+        if (pairing) break;
       }
 
-      if (!bestA || !bestB) return slot; // not enough eligible players for this rubber
+      if (!pairing) return slot; // truly impossible, e.g. a side has too few players
+      const { bestA, bestB } = pairing;
       for (const id of [...bestA, ...bestB]) usage.set(id, (usage.get(id) ?? 0) + 1);
       return { ...slot, sideA: bestA, sideB: bestB };
     });
