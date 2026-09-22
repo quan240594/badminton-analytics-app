@@ -12,8 +12,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
     const q = query.trim().toLowerCase();
     return players
       .filter((p) => p.id === value || !excludeIds.includes(p.id))
-      .filter((p) => !q || p.name.toLowerCase().includes(q))
-      .slice(0, 20);
+      .filter((p) => !q || p.name.toLowerCase().includes(q));
   }, [players, query, excludeIds, value]);
 
   useEffect(() => {
@@ -50,18 +49,21 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
   return (
     <div className="player-select">
       <label>{label}</label>
-      <input
-        type="text"
-        placeholder="Search player..."
-        value={open ? query : selected ? selected.name : ''}
-        onFocus={() => {
-          setOpen(true);
-          setQuery('');
-        }}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyDown={handleKeyDown}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
-      />
+      <div className="player-select-input-wrap">
+        <input
+          type="text"
+          placeholder="Search player..."
+          value={open ? query : selected ? selected.name : ''}
+          onFocus={() => {
+            setOpen(true);
+            setQuery('');
+          }}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+          onBlur={() => setTimeout(() => setOpen(false), 150)}
+        />
+        {!open && selected && <span className="player-select-club">{selected.club}</span>}
+      </div>
       {open && (
         <ul className="player-options" ref={listRef}>
           {options.map((p, idx) => (
