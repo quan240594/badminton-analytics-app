@@ -24,7 +24,9 @@ import urllib.request
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent
-CURRENT_TOURNAMENT_ID = "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E"
+from season import resolve_current_tournament_id
+
+CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
 PROGRESS_PATH = DATA_DIR / "pool_fetch_progress.json"
 

@@ -23,7 +23,9 @@ from pathlib import Path
 
 from parse_career import parse_player_file
 
-CURRENT_TOURNAMENT_ID = "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E"
+from season import resolve_current_tournament_id  # noqa: E402
+
+CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 
 
 def discover_files(pages_dir: Path) -> list[tuple[Path, str, str]]:

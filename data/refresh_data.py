@@ -28,7 +28,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_rankings import discover_ranking_links  # noqa: E402
 
 DATA_DIR = Path(__file__).resolve().parent
-CURRENT_TOURNAMENT_ID = "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E"
+from season import resolve_current_tournament_id  # noqa: E402
+
+CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 # The current pool's drawmatches page is a cheap proxy for "did anything about our results change".
 CHANGE_CHECK_DRAW_ID = "135"
 CHANGE_STATE_PATH = DATA_DIR / "refresh_change_state.json"
