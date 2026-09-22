@@ -532,3 +532,14 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   border-radius: 10px;
 }
 .night-summary h3 { margin-top: 0; }
+
+.bar-tie { background: #64748b; display: flex; align-items: center; justify-content: center; }
+.night-bar-wrap { margin-top: 0.5rem; }
+.night-bar { height: 32px; font-size: 0.8rem; }
+.night-bar-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.3rem;
+}

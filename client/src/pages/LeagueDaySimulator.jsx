@@ -383,13 +383,25 @@ export default function LeagueDaySimulator() {
               {clubLabelB}: <strong>{expectedB.toFixed(1)}</strong>
               {' '}({filledResults.length}/{slots.length} rubbers set)
             </p>
-            {nightComplete && (
-              <p>
-                Win probability — {clubLabelA}: <strong>{Math.round(pAWin * 100)}%</strong>,{' '}
-                Tie (4-4): <strong>{Math.round(pTie * 100)}%</strong>,{' '}
-                {clubLabelB}: <strong>{Math.round(pBWin * 100)}%</strong>
-              </p>
-            )}
+            {nightComplete && (() => {
+              const pctA = Math.round(pAWin * 100);
+              const pctTieRounded = Math.round(pTie * 100);
+              const pctB = 100 - pctA - pctTieRounded; // avoids rounding error making the bar overshoot 100%
+              return (
+                <div className="night-bar-wrap">
+                  <div className="bar night-bar">
+                    <div className="bar-a" style={{ width: `${pctA}%` }}>{pctA > 8 ? `${pctA}%` : ''}</div>
+                    <div className="bar-tie" style={{ width: `${pctTieRounded}%` }}>{pctTieRounded > 8 ? `${pctTieRounded}%` : ''}</div>
+                    <div className="bar-b" style={{ width: `${pctB}%` }}>{pctB > 8 ? `${pctB}%` : ''}</div>
+                  </div>
+                  <div className="night-bar-legend">
+                    <span>{clubLabelA} win</span>
+                    <span>Tie (4-4)</span>
+                    <span>{clubLabelB} win</span>
+                  </div>
+                </div>
+              );
+            })()}
           </>
         )}
       </div>
