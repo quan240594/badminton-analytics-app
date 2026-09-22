@@ -428,7 +428,7 @@ export default function LeagueDaySimulator() {
             checked={protectTopSingles}
             onChange={(e) => setProtectTopSingles(e.target.checked)}
           />
-          Strongest singles player doesn't play anything before their singles match
+          Top singles player starts fresh
         </label>
         <label className="filter-checkbox">
           <input
