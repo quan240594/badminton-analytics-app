@@ -5,6 +5,7 @@ import ClubSelect from '../components/ClubSelect.jsx';
 
 const STORAGE_KEY = 'badminton-app-league-day-state';
 const MAX_RECOMMENDED_APPEARANCES = 3;
+const SMALL_ROSTER_MAX = 4;
 
 // Rubber composition + codes confirmed from real scraped team-match pages:
 // - all-men divisions (Mannen Veer/Nylon): 4x doubles + 4x singles, all men's.
@@ -120,6 +121,33 @@ function bestPairing(discipline, candidatesA, candidatesB, objective) {
   return bestA && bestB ? { bestA, bestB } : null;
 }
 
+// Builds a fixed, evenly-rotated lineup for a roster too small to have any real
+// flexibility (e.g. exactly 4 players for an 8-rubber night): each rubber goes to
+// whoever has played the fewest rubbers so far, ties broken by who's waited
+// longest, skipping anyone excluded from that rubber (e.g. a protected top
+// singles player before the singles block starts).
+function buildDefaultLineup(pool, slots, isExcludedFn) {
+  const usage = new Map(pool.map((p) => [p.id, 0]));
+  const lastUsed = new Map(pool.map((p) => [p.id, -1]));
+  const assignment = {};
+  slots.forEach((slot, i) => {
+    const discipline = disciplineForCode(slot.code);
+    const count = discipline === 'singles' ? 1 : 2;
+    const eligible = pool.filter((p) => !isExcludedFn(p, i));
+    const ranked = [...eligible].sort((a, b) => {
+      const byUsage = usage.get(a.id) - usage.get(b.id);
+      return byUsage !== 0 ? byUsage : lastUsed.get(a.id) - lastUsed.get(b.id);
+    });
+    const picked = ranked.slice(0, count);
+    for (const p of picked) {
+      usage.set(p.id, usage.get(p.id) + 1);
+      lastUsed.set(p.id, i);
+    }
+    assignment[slot.code] = picked.map((p) => p.id);
+  });
+  return assignment;
+}
+
 // Poisson-binomial distribution of total rubbers won by Side A, given each
 // rubber's independent win probability - dist[k] = P(A wins exactly k rubbers).
 function winDistribution(probs) {
@@ -213,6 +241,21 @@ export default function LeagueDaySimulator() {
     const topSinglesA = protectTopSingles ? strongestSingles(poolA) : null;
     const topSinglesB = protectTopSingles ? strongestSingles(poolB) : null;
     const firstSinglesIndex = slots.findIndex((s) => disciplineForCode(s.code) === 'singles');
+    const isProtectedFor = (topSingles) => (p, i) => protectTopSingles
+      && firstSinglesIndex !== -1
+      && i < firstSinglesIndex
+      && p.id === topSingles?.id;
+
+    // A club too small to have any real lineup flexibility (e.g. exactly 4
+    // players for an 8-rubber night) gets priority: a fixed, evenly-rotated
+    // lineup instead of being optimized. The other side still optimizes for the
+    // chosen objective, but against that fixed opponent for each rubber.
+    const fixedA = poolA.length > 0 && poolA.length <= SMALL_ROSTER_MAX
+      ? buildDefaultLineup(poolA, slots, isProtectedFor(topSinglesA))
+      : null;
+    const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
+      ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB))
+      : null;
 
     const nextSlots = slots.map((slot, slotIndex) => {
       const discipline = disciplineForCode(slot.code);
@@ -222,17 +265,20 @@ export default function LeagueDaySimulator() {
         && slotIndex < firstSinglesIndex
         && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
 
+      const fixedPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : null;
+      const fixedPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : null;
+
       const eligibleA = poolA.filter((p) => !isProtectedHere(p));
       const eligibleB = poolB.filter((p) => !isProtectedHere(p));
 
-      // Every rubber must be filled, so both checkbox filters are relaxed - cap
-      // first, then the protect-top-singles rule, then both - if honoring them
-      // leaves no valid pairing (e.g. a roster too small for both filters at once).
+      // A side with a fixed lineup always faces exactly that lineup for this
+      // rubber; a free side still relaxes its own filters in priority order -
+      // cap, then protect-top-singles, then both - if every rubber must be filled.
       const attempts = [
-        [eligibleA.filter(withinCap), eligibleB.filter(withinCap)],
-        [eligibleA, eligibleB],
-        [poolA.filter(withinCap), poolB.filter(withinCap)],
-        [poolA, poolB],
+        [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
+        [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
+        [fixedPlayersA ?? poolA.filter(withinCap), fixedPlayersB ?? poolB.filter(withinCap)],
+        [fixedPlayersA ?? poolA, fixedPlayersB ?? poolB],
       ];
       let pairing = null;
       for (const [candidatesA, candidatesB] of attempts) {
@@ -242,7 +288,8 @@ export default function LeagueDaySimulator() {
 
       if (!pairing) return slot; // truly impossible, e.g. a side has too few players
       const { bestA, bestB } = pairing;
-      for (const id of [...bestA, ...bestB]) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!fixedPlayersA) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!fixedPlayersB) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
       return { ...slot, sideA: bestA, sideB: bestB };
     });
 
