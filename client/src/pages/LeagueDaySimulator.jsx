@@ -5,7 +5,13 @@ import ClubSelect from '../components/ClubSelect.jsx';
 
 const STORAGE_KEY = 'badminton-app-league-day-state';
 const MAX_RECOMMENDED_APPEARANCES = 3;
+const MAX_SINGLES_APPEARANCES = 1;
 const SMALL_ROSTER_MAX = 4;
+// Scraped data has no "substitute" flag - maintain manually until/unless one exists.
+const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen'];
+function isSubstitutePlayer(player) {
+  return SUBSTITUTE_NAMES.includes(player.name);
+}
 
 // Rubber composition + codes confirmed from real scraped team-match pages:
 // - all-men divisions (Mannen Veer/Nylon): 4x doubles + 4x singles, all men's.
@@ -129,12 +135,17 @@ function bestPairing(discipline, candidatesA, candidatesB, objective) {
 function buildDefaultLineup(pool, slots, isExcludedFn, pinnedFn) {
   const usage = new Map(pool.map((p) => [p.id, 0]));
   const lastUsed = new Map(pool.map((p) => [p.id, -1]));
+  const singlesUsage = new Map(pool.map((p) => [p.id, 0]));
   const assignment = {};
   slots.forEach((slot, i) => {
     const discipline = disciplineForCode(slot.code);
     const count = discipline === 'singles' ? 1 : 2;
     const pinned = pinnedFn ? pinnedFn(i) : null;
-    const eligible = pool.filter((p) => !isExcludedFn(p, i) && p.id !== pinned?.id);
+    // A player usually plays at most one singles rubber a night, but can appear
+    // in several doubles rubbers - so this only excludes repeats within singles.
+    const alreadyPlayedSingles = (p) => discipline === 'singles'
+      && (singlesUsage.get(p.id) ?? 0) >= MAX_SINGLES_APPEARANCES;
+    const eligible = pool.filter((p) => !isExcludedFn(p, i) && p.id !== pinned?.id && !alreadyPlayedSingles(p));
     const ranked = [...eligible].sort((a, b) => {
       const byUsage = usage.get(a.id) - usage.get(b.id);
       return byUsage !== 0 ? byUsage : lastUsed.get(a.id) - lastUsed.get(b.id);
@@ -143,6 +154,7 @@ function buildDefaultLineup(pool, slots, isExcludedFn, pinnedFn) {
     for (const p of picked) {
       usage.set(p.id, usage.get(p.id) + 1);
       lastUsed.set(p.id, i);
+      if (discipline === 'singles') singlesUsage.set(p.id, (singlesUsage.get(p.id) ?? 0) + 1);
     }
     assignment[slot.code] = picked.map((p) => p.id);
   });
@@ -175,6 +187,7 @@ export default function LeagueDaySimulator() {
   const [error, setError] = useState('');
   const [capAppearances, setCapAppearances] = useState(false);
   const [protectTopSingles, setProtectTopSingles] = useState(false);
+  const [includeSubstitutes, setIncludeSubstitutes] = useState(false);
   const simulationRequestId = useRef(0);
 
   const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
@@ -232,8 +245,10 @@ export default function LeagueDaySimulator() {
   // aside from the two opt-in filters below.
   const autoFill = (objective) => {
     const usage = new Map();
-    const poolA = filterByClub(players, clubFilterA, []);
-    const poolB = filterByClub(players, clubFilterB, []);
+    const singlesUsage = new Map();
+    const excludeSubs = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p)));
+    const poolA = excludeSubs(filterByClub(players, clubFilterA, []));
+    const poolB = excludeSubs(filterByClub(players, clubFilterB, []));
 
     // Each side's strongest singles-rated player, and whether they're
     // excluded from rubbers before their singles turn (opt-in filter).
@@ -272,6 +287,11 @@ export default function LeagueDaySimulator() {
         && firstSinglesIndex !== -1
         && slotIndex < firstSinglesIndex
         && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
+      // A player usually plays at most one singles rubber a night, but can
+      // appear in several doubles rubbers - so this only excludes repeats
+      // within singles rubbers, and is always on (not an opt-in filter).
+      const alreadyPlayedSingles = (p) => discipline === 'singles'
+        && (singlesUsage.get(p.id) ?? 0) >= MAX_SINGLES_APPEARANCES;
       const isFirstSingles = slotIndex === firstSinglesIndex;
       const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
       const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
@@ -279,8 +299,8 @@ export default function LeagueDaySimulator() {
       const fixedPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
       const fixedPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
 
-      const eligibleA = poolA.filter((p) => !isProtectedHere(p));
-      const eligibleB = poolB.filter((p) => !isProtectedHere(p));
+      const eligibleA = poolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
+      const eligibleB = poolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
 
       // A side with a fixed lineup, or a forced MS1 pick, always faces exactly
       // that player/pair for this rubber; a free side still relaxes its own
@@ -302,6 +322,10 @@ export default function LeagueDaySimulator() {
       const { bestA, bestB } = pairing;
       if (!fixedA) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
       if (!fixedB) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (discipline === 'singles') {
+        if (!fixedA) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+        if (!fixedB) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+      }
       return { ...slot, sideA: bestA, sideB: bestB };
     });
 
@@ -405,6 +429,14 @@ export default function LeagueDaySimulator() {
             onChange={(e) => setProtectTopSingles(e.target.checked)}
           />
           Strongest singles player doesn't play anything before their singles match
+        </label>
+        <label className="filter-checkbox">
+          <input
+            type="checkbox"
+            checked={includeSubstitutes}
+            onChange={(e) => setIncludeSubstitutes(e.target.checked)}
+          />
+          Include substitutes
         </label>
       </div>
 
