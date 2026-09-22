@@ -201,14 +201,6 @@ export default function LeagueDaySimulator() {
             ))}
           </select>
         </label>
-        <div className="league-day-team">
-          <span>Side A</span>
-          <ClubSelect clubs={clubs} value={clubFilterA} onChange={handleClubFilterA} />
-        </div>
-        <div className="league-day-team">
-          <span>Side B</span>
-          <ClubSelect clubs={clubs} value={clubFilterB} onChange={handleClubFilterB} />
-        </div>
       </div>
 
       {overusedPlayers.length > 0 && (
@@ -219,6 +211,18 @@ export default function LeagueDaySimulator() {
       )}
 
       <div className="rubber-list">
+        <div className="rubber-header">
+          <div />
+          <div className="league-day-team">
+            <span>Club A</span>
+            <ClubSelect clubs={clubs} value={clubFilterA} onChange={handleClubFilterA} />
+          </div>
+          <div />
+          <div className="league-day-team">
+            <span>Club B</span>
+            <ClubSelect clubs={clubs} value={clubFilterB} onChange={handleClubFilterB} />
+          </div>
+        </div>
         {slots.map((slot) => {
           const discipline = disciplineForCode(slot.code);
           const result = results[slot.code];
