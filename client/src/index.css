@@ -491,12 +491,13 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .league-day-team {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  width: 12rem;
   gap: 0.35rem;
   font-size: 0.85rem;
   color: #94a3b8;
 }
-.league-day-team-row { display: flex; align-items: center; gap: 0.4rem; }
+.league-day-team-row { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
 .league-day-team-label { font-size: 0.85rem; color: #94a3b8; }
 .team-select,
 .team-label {
@@ -613,6 +614,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   .league-day-controls .btn-outline { width: 100%; }
   .format-select { justify-content: space-between; }
   .format-select select { flex: 1; min-width: 0; }
+  .league-day-team { width: auto; }
   .pool-fetch-banner { flex-direction: column; align-items: stretch; }
   .pool-fetch-banner .btn-outline { width: 100%; }
   .night-bar-legend { flex-wrap: wrap; gap: 0.3rem 1rem; }
