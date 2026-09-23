@@ -8,6 +8,7 @@ import { loadDataset } from './lib/dataset.js';
 import { computeRatings } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
+import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds } from './lib/leagueIndex.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'data.json');
@@ -103,12 +104,17 @@ const playerList = [...players.keys()]
   .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0));
 playerList.sort((a, b) => a.name.localeCompare(b.name));
 
+const currentPool = currentPoolTeams(CURRENT_POOL_LABEL);
+
 const bundle = {
   meta: {
     lastUpdated: new Date().toISOString(),
     poolLabel: CURRENT_POOL_LABEL,
     playerCount: playerList.length,
     titleYears,
+    currentPool,
+    leagueIndex: fullLeagueIndex(),
+    fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
   },
   players: playerList,
   singlesH2H: Object.fromEntries(singlesH2H),

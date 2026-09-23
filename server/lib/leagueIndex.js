@@ -1,0 +1,69 @@
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.join(__dirname, '..', '..', 'data');
+const LEAGUE_INDEX_PATH = path.join(DATA_DIR, 'league_index.json');
+const FETCHED_POOLS_PATH = path.join(DATA_DIR, 'fetched_pools.json');
+
+// Trailing squad code like "M1"/"M2"/"A2" (letters+digits) or a bare number ("1"/"2").
+const SQUAD_SUFFIX_RE = /^(.*?)\s+([A-Za-z]{0,2}\d+)$/;
+
+function splitSquad(name) {
+  const m = SQUAD_SUFFIX_RE.exec(name.trim());
+  return m ? { club: m[1].trim(), squad: m[2] } : { club: name.trim(), squad: null };
+}
+
+function loadRawLeagueIndex() {
+  try {
+    return JSON.parse(readFileSync(LEAGUE_INDEX_PATH, 'utf-8'));
+  } catch {
+    return { regions: [], divisions: {} };
+  }
+}
+
+// Whole region/division/afdeling tree, with each team's raw name split into its
+// club + squad code, so the client can drive a division -> pool -> club -> team
+// drilldown without any per-selection server round-trip.
+export function fullLeagueIndex() {
+  const raw = loadRawLeagueIndex();
+  const divisions = {};
+  for (const [division, afdelingen] of Object.entries(raw.divisions || {})) {
+    divisions[division] = afdelingen.map((a) => ({
+      drawId: a.drawId,
+      division: a.division,
+      label: a.label,
+      teams: a.teams.map((t) => ({ clubId: t.clubId, ...splitSquad(t.name) })),
+    }));
+  }
+  return { regions: raw.regions || [], divisions };
+}
+
+// The single afdeling/pool matching poolLabel's "<division> afd. <n>" suffix
+// (e.g. index.js's CURRENT_POOL_LABEL) - used only to pick a sensible default.
+export function currentPoolTeams(poolLabel) {
+  const { divisions } = fullLeagueIndex();
+  const afdelingLabel = poolLabel.split(/\s\u2013\s/)[1]?.trim();
+  for (const afdelingen of Object.values(divisions)) {
+    const afdeling = afdelingen.find((a) => a.label === afdelingLabel);
+    if (afdeling) return afdeling;
+  }
+  return { drawId: null, label: afdelingLabel ?? null, teams: [] };
+}
+
+function loadFetchedPools() {
+  try {
+    return JSON.parse(readFileSync(FETCHED_POOLS_PATH, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+// Which pools already have cached player/match data - the app's original bundled
+// pool always counts, plus anything fetch_pool.py has since fetched on demand.
+export function fetchedDrawIds(alwaysIncludeDrawId) {
+  const ids = new Set(Object.keys(loadFetchedPools()));
+  if (alwaysIncludeDrawId) ids.add(String(alwaysIncludeDrawId));
+  return [...ids];
+}

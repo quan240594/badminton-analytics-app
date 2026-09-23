@@ -496,6 +496,27 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   font-size: 0.85rem;
   color: #94a3b8;
 }
+.team-select {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+}
+.team-label { font-size: 0.75rem; color: #64748b; }
+.pool-fetch-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
 
 .rubber-list { display: flex; flex-direction: column; gap: 0.6rem; }
 .rubber-row {
@@ -586,5 +607,9 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   .league-day-controls,
   .league-day-filters { flex-direction: column; align-items: stretch; }
   .league-day-controls .btn-outline { width: 100%; }
+  .format-select { justify-content: space-between; }
+  .format-select select { flex: 1; min-width: 0; }
+  .pool-fetch-banner { flex-direction: column; align-items: stretch; }
+  .pool-fetch-banner .btn-outline { width: 100%; }
   .night-bar-legend { flex-wrap: wrap; gap: 0.3rem 1rem; }
 }

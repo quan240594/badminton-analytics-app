@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { fetchPlayers, simulateMatch } from '../api.js';
+import { fetchPlayers, fetchMeta, simulateMatch, triggerPoolRefresh, fetchPoolRefreshProgress, reloadBundle } from '../api.js';
 import useDataRefresh from '../hooks/useDataRefresh.js';
 import PageHeader from '../components/PageHeader.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
@@ -31,14 +31,29 @@ function playerPickerDetail(player, discipline) {
 // Our data has no per-player gender field, so WS/WD/XD slots aren't gender-validated.
 const FORMATS = {
   mens: {
-    label: "Men's division (Mannen Veer / Nylon)",
     codes: ['MD1', 'MD2', 'MS1', 'MS2', 'MS3', 'MS4', 'MD3', 'MD4'],
   },
   mixed: {
-    label: 'Mixed division (numbered afd., e.g. 3e-9e divisie)',
     codes: ['MD', 'WD', 'MS1', 'WS1', 'MS2', 'WS2', 'XD1', 'XD2'],
   },
 };
+
+// Which rubber composition a division uses - inferred from its name, since our
+// data has no explicit format field (see FORMATS' codes comment above).
+function formatForDivision(division) {
+  return /^Mannen (Veer|Nylon)/i.test(division || '') ? 'mens' : 'mixed';
+}
+
+function afdelingNumber(label) {
+  const m = /afd\.\s*(\d+)/i.exec(label || '');
+  return m ? Number(m[1]) : 0;
+}
+
+// "Mannen Veer 2 afd. 12" + division "Mannen Veer 2" -> "Afd. 12".
+function poolLabelSuffix(label, division) {
+  const suffix = label.startsWith(division) ? label.slice(division.length).trim() : label;
+  return suffix.charAt(0).toUpperCase() + suffix.slice(1);
+}
 
 function disciplineForCode(code) {
   if (code.startsWith('XD')) return 'mixed';
@@ -59,7 +74,7 @@ function loadStoredState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-    if (parsed.format && Array.isArray(parsed.slots)) return parsed;
+    if (parsed.division && Array.isArray(parsed.slots)) return parsed;
   } catch {
     // ignore malformed/unavailable storage
   }
@@ -191,10 +206,16 @@ function winDistribution(probs) {
 export default function LeagueDaySimulator() {
   const stored = loadStoredState();
   const [players, setPlayers] = useState([]);
-  const [format, setFormat] = useState(stored?.format ?? 'mens');
+  const [division, setDivision] = useState(stored?.division ?? 'Mannen Veer 2');
+  const [drawId, setDrawId] = useState(stored?.drawId ?? '');
+  const [leagueIndex, setLeagueIndex] = useState({ divisions: {} });
+  const [fetchedDrawIds, setFetchedDrawIds] = useState([]);
+  const [poolFetchState, setPoolFetchState] = useState({ running: false, percent: 0, error: null });
   const [clubFilterA, setClubFilterA] = useState(stored?.clubFilterA ?? 'DROP SHOT BC');
+  const [teamFilterA, setTeamFilterA] = useState(stored?.teamFilterA ?? null);
   const [clubFilterB, setClubFilterB] = useState(stored?.clubFilterB ?? '');
-  const [slots, setSlots] = useState(stored?.slots ?? emptySlots(stored?.format ?? 'mens'));
+  const [teamFilterB, setTeamFilterB] = useState(stored?.teamFilterB ?? null);
+  const [slots, setSlots] = useState(stored?.slots ?? emptySlots(formatForDivision(stored?.division ?? 'Mannen Veer 2')));
   const [results, setResults] = useState({});
   const [error, setError] = useState('');
   const [autoFillWarnings, setAutoFillWarnings] = useState([]);
@@ -204,21 +225,96 @@ export default function LeagueDaySimulator() {
   const simulationRequestId = useRef(0);
   const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => setPlayers(bundle.players));
 
-  const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
+  const format = formatForDivision(division);
+  const poolAfdelingen = leagueIndex.divisions[division] ?? [];
+  const poolTeams = useMemo(
+    () => poolAfdelingen.find((a) => a.drawId === drawId)?.teams ?? [],
+    [poolAfdelingen, drawId]
+  );
+  const poolClubs = [...new Set(poolTeams.map((t) => t.club))].sort((a, b) => a.localeCompare(b));
   const byId = useMemo(() => new Map(players.map((p) => [p.id, p])), [players]);
 
   useEffect(() => {
     fetchPlayers().then(setPlayers).catch((e) => setError(e.message));
+    fetchMeta()
+      .then((meta) => {
+        setLeagueIndex(meta.leagueIndex ?? { divisions: {} });
+        setFetchedDrawIds(meta.fetchedDrawIds ?? []);
+        if (!stored?.drawId && meta.currentPool?.drawId) setDrawId(meta.currentPool.drawId);
+      })
+      .catch(() => {});
   }, []);
 
+  // If the pool's team list arrives (or changes) after a club is already picked,
+  // auto-select its squad only when unambiguous - same rule as changeClubFilter below.
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ format, clubFilterA, clubFilterB, slots }));
-  }, [format, clubFilterA, clubFilterB, slots]);
+    if (!clubFilterA) return;
+    const teams = poolTeams.filter((t) => t.club === clubFilterA);
+    if (teams.length === 1) setTeamFilterA(teams[0].squad);
+  }, [poolTeams, clubFilterA]);
+  useEffect(() => {
+    if (!clubFilterB) return;
+    const teams = poolTeams.filter((t) => t.club === clubFilterB);
+    if (teams.length === 1) setTeamFilterB(teams[0].squad);
+  }, [poolTeams, clubFilterB]);
 
-  const changeFormat = (next) => {
-    setFormat(next);
-    setSlots(emptySlots(next));
+  useEffect(() => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ division, drawId, clubFilterA, teamFilterA, clubFilterB, teamFilterB, slots })
+    );
+  }, [division, drawId, clubFilterA, teamFilterA, clubFilterB, teamFilterB, slots]);
+
+  const changeDivision = (next) => {
+    setDivision(next);
+    setDrawId(leagueIndex.divisions[next]?.[0]?.drawId ?? '');
+    setSlots(emptySlots(formatForDivision(next)));
     setResults({});
+    setClubFilterA('');
+    setTeamFilterA(null);
+    setClubFilterB('');
+    setTeamFilterB(null);
+  };
+
+  const changePool = (nextDrawId) => {
+    setDrawId(nextDrawId);
+    setClubFilterA('');
+    setTeamFilterA(null);
+    setClubFilterB('');
+    setTeamFilterB(null);
+  };
+
+  // Scoped alternative to "Fetch data": only pulls this one pool's players/matches
+  // (fetch_pool.py), so picking an uncached pool doesn't pay for a full refresh.
+  const fetchPoolData = async () => {
+    if (!drawId) return;
+    setPoolFetchState({ running: true, percent: 0, error: null });
+    try {
+      await triggerPoolRefresh(drawId);
+    } catch (e) {
+      setPoolFetchState({ running: false, percent: 0, error: e.message });
+      return;
+    }
+    const poll = async () => {
+      let progress;
+      try {
+        progress = await fetchPoolRefreshProgress();
+      } catch {
+        setPoolFetchState({ running: false, percent: 0, error: 'Lost connection to the refresh server.' });
+        return;
+      }
+      setPoolFetchState({ running: progress.running, percent: progress.percent, error: progress.error });
+      if (progress.running) {
+        setTimeout(poll, 1000);
+        return;
+      }
+      if (progress.error) return;
+      const bundle = await reloadBundle();
+      setPlayers(bundle.players);
+      setLeagueIndex(bundle.meta.leagueIndex ?? { divisions: {} });
+      setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
+    };
+    poll();
   };
 
   const updateSlot = (code, side, idx, value) => {
@@ -238,9 +334,13 @@ export default function LeagueDaySimulator() {
   };
 
   // Dropping a club filter that no longer matches an already-selected player
-  // clears that slot instead of silently keeping an out-of-filter player.
-  const changeClubFilter = (side, setFilter) => (club) => {
+  // clears that slot instead of silently keeping an out-of-filter player. Also
+  // resolves the squad: auto-picked when the club has exactly one team in this
+  // pool, left for the user to pick (via the team select) when there's more than one.
+  const changeClubFilter = (side, setFilter, setTeamFilter) => (club) => {
     setFilter(club);
+    const teams = poolTeams.filter((t) => t.club === club);
+    setTeamFilter(teams.length === 1 ? teams[0].squad : null);
     if (!club) return;
     setSlots((prev) => prev.map((slot) => ({
       ...slot,
@@ -250,8 +350,8 @@ export default function LeagueDaySimulator() {
       }),
     })));
   };
-  const handleClubFilterA = changeClubFilter('sideA', setClubFilterA);
-  const handleClubFilterB = changeClubFilter('sideB', setClubFilterB);
+  const handleClubFilterA = changeClubFilter('sideA', setClubFilterA, setTeamFilterA);
+  const handleClubFilterB = changeClubFilter('sideB', setClubFilterB, setTeamFilterB);
 
   // Greedily fills every rubber to optimize one objective at a time. Each rubber's
   // win probability only depends on who's in it, so maximizing (or minimizing) the
@@ -433,11 +533,21 @@ export default function LeagueDaySimulator() {
 
       <div className="league-day-controls">
         <label className="format-select">
-          Format:
-          <select value={format} onChange={(e) => changeFormat(e.target.value)}>
-            {Object.entries(FORMATS).map(([key, f]) => (
-              <option key={key} value={key}>{f.label}</option>
+          Division:
+          <select value={division} onChange={(e) => changeDivision(e.target.value)}>
+            {Object.keys(leagueIndex.divisions).sort((a, b) => a.localeCompare(b)).map((d) => (
+              <option key={d} value={d}>{d}</option>
             ))}
+          </select>
+        </label>
+        <label className="format-select">
+          Pool:
+          <select value={drawId} onChange={(e) => changePool(e.target.value)} disabled={poolAfdelingen.length === 0}>
+            {[...poolAfdelingen]
+              .sort((a, b) => afdelingNumber(a.label) - afdelingNumber(b.label))
+              .map((a) => (
+                <option key={a.drawId} value={a.drawId}>{poolLabelSuffix(a.label, division)}</option>
+              ))}
           </select>
         </label>
         <button type="button" className="btn-outline" onClick={() => autoFill('excitement')}>
@@ -450,6 +560,25 @@ export default function LeagueDaySimulator() {
           Match players for club B to get at least 5 wins
         </button>
       </div>
+
+      {drawId && !fetchedDrawIds.includes(String(drawId)) && (
+        <div className="pool-fetch-banner">
+          {poolFetchState.running ? (
+            <div className="progress-bar">
+              <div className="progress-bar-fill" style={{ width: `${poolFetchState.percent}%` }} />
+              <span className="progress-bar-label">{Math.round(poolFetchState.percent)}%</span>
+            </div>
+          ) : (
+            <>
+              <span>No data cached yet for this pool.</span>
+              <button type="button" className="btn-outline" onClick={fetchPoolData}>
+                Fetch pool data
+              </button>
+            </>
+          )}
+          {poolFetchState.error && <p className="error">{poolFetchState.error}</p>}
+        </div>
+      )}
 
       <div className="league-day-filters">
         <label className="filter-checkbox">
@@ -496,12 +625,34 @@ export default function LeagueDaySimulator() {
           <div />
           <div className="league-day-team">
             <span>Club A</span>
-            <ClubSelect clubs={clubs} value={clubFilterA} onChange={handleClubFilterA} />
+            <ClubSelect clubs={poolClubs} value={clubFilterA} onChange={handleClubFilterA} />
+            {clubFilterA && (() => {
+              const teams = poolTeams.filter((t) => t.club === clubFilterA);
+              return teams.length > 1 ? (
+                <select className="team-select" value={teamFilterA ?? ''} onChange={(e) => setTeamFilterA(e.target.value)}>
+                  <option value="" disabled>Team…</option>
+                  {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
+                </select>
+              ) : teamFilterA ? (
+                <span className="team-label">{teamFilterA}</span>
+              ) : null;
+            })()}
           </div>
           <div />
           <div className="league-day-team">
             <span>Club B</span>
-            <ClubSelect clubs={clubs} value={clubFilterB} onChange={handleClubFilterB} />
+            <ClubSelect clubs={poolClubs} value={clubFilterB} onChange={handleClubFilterB} />
+            {clubFilterB && (() => {
+              const teams = poolTeams.filter((t) => t.club === clubFilterB);
+              return teams.length > 1 ? (
+                <select className="team-select" value={teamFilterB ?? ''} onChange={(e) => setTeamFilterB(e.target.value)}>
+                  <option value="" disabled>Team…</option>
+                  {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
+                </select>
+              ) : teamFilterB ? (
+                <span className="team-label">{teamFilterB}</span>
+              ) : null;
+            })()}
           </div>
         </div>
         {slots.map((slot) => {

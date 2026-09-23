@@ -8,6 +8,7 @@ import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
+import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds } from './lib/leagueIndex.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -155,7 +156,17 @@ app.get('/api/players/:id', (req, res) => {
 });
 
 app.get('/api/meta', (req, res) => {
-  res.json({ lastUpdated, refreshing, playerCount: players.size, poolLabel: CURRENT_POOL_LABEL, titleYears });
+  const currentPool = currentPoolTeams(CURRENT_POOL_LABEL);
+  res.json({
+    lastUpdated,
+    refreshing,
+    playerCount: players.size,
+    poolLabel: CURRENT_POOL_LABEL,
+    titleYears,
+    currentPool,
+    leagueIndex: fullLeagueIndex(),
+    fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
+  });
 });
 
 app.get('/api/refresh/progress', (req, res) => {
@@ -193,6 +204,49 @@ app.post('/api/refresh', (req, res) => {
   child.on('error', (err) => {
     refreshing = false;
     console.error(`[refresh] failed to start: ${err.message}`);
+  });
+  res.status(202).json({ started: true });
+});
+
+app.get('/api/refresh/pool/progress', (req, res) => {
+  try {
+    const raw = readFileSync(POOL_PROGRESS_PATH, 'utf-8');
+    res.json(JSON.parse(raw));
+  } catch {
+    res.json({ step: refreshing ? 'starting' : 'idle', percent: refreshing ? 0 : 100, running: refreshing, error: null });
+  }
+});
+
+// Scoped alternative to /api/refresh: only fetches the players/matches for one
+// pool (fetch_pool.py), so selecting a team doesn't pay for a full national refresh.
+app.post('/api/refresh/pool', (req, res) => {
+  const { drawId } = req.body || {};
+  if (!drawId) return res.status(400).json({ error: 'drawId is required' });
+  if (refreshing) return res.status(409).json({ error: 'a refresh is already in progress' });
+  refreshing = true;
+  const child = spawn('python3', ['fetch_pool.py', '--draw-id', String(drawId)], { cwd: DATA_DIR });
+  let stderrTail = '';
+  child.stderr.on('data', (chunk) => {
+    stderrTail = (stderrTail + chunk.toString()).slice(-2000);
+  });
+  child.on('close', (code) => {
+    if (code !== 0) {
+      refreshing = false;
+      console.error(`[refresh/pool] failed with exit code ${code}`);
+      if (stderrTail) console.error(`[refresh/pool] stderr: ${stderrTail}`);
+      return;
+    }
+    loadAll();
+    rebuildStaticBundle()
+      .then(() => console.log(`[refresh/pool] reloaded ${players.size} players and rebuilt data.json at ${lastUpdated}`))
+      .catch((err) => console.error(`[refresh/pool] failed to rebuild static bundle: ${err.message}`))
+      .finally(() => {
+        refreshing = false;
+      });
+  });
+  child.on('error', (err) => {
+    refreshing = false;
+    console.error(`[refresh/pool] failed to start: ${err.message}`);
   });
   res.status(202).json({ started: true });
 });

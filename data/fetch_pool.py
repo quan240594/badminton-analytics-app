@@ -29,6 +29,7 @@ from season import resolve_current_tournament_id
 CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
 PROGRESS_PATH = DATA_DIR / "pool_fetch_progress.json"
+FETCHED_POOLS_PATH = DATA_DIR / "fetched_pools.json"
 
 BROWSER_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
@@ -114,6 +115,12 @@ def main() -> None:
         write_progress("rebuild", 92, "rebuilding career.json")
         (DATA_DIR / "career.state.json").unlink(missing_ok=True)
         subprocess.run([sys.executable, "build_career_db.py", "pages", "--out", "career.json"], check=True, cwd=DATA_DIR)
+
+        fetched = {}
+        if FETCHED_POOLS_PATH.exists():
+            fetched = json.loads(FETCHED_POOLS_PATH.read_text(encoding="utf-8"))
+        fetched[args.draw_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+        FETCHED_POOLS_PATH.write_text(json.dumps(fetched, indent=2), encoding="utf-8")
 
         write_progress("done", 100, f"fetched {len(new_ids)} new players", running=False)
         print("pool fetch complete", flush=True)

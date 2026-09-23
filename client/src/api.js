@@ -27,6 +27,23 @@ export async function triggerRefresh() {
 
 export const fetchRefreshProgress = () => fetch('/api/refresh/progress').then((res) => res.json());
 
+// Local-dev only: which pool(s) a club's team(s) play in, so a team-scoped
+// refresh can target just that pool instead of the full bounded refresh.
+export const fetchClubDraws = (club) =>
+  fetch(`/api/clubs/${encodeURIComponent(club)}/draws`).then((res) => res.json()).then((body) => body.draws);
+
+export async function triggerPoolRefresh(drawId) {
+  const res = await fetch('/api/refresh/pool', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ drawId }),
+  });
+  if (res.status === 409) throw new Error('A refresh is already in progress.');
+  if (!res.ok) throw new Error(`Could not reach the local refresh server (${res.status}).`);
+}
+
+export const fetchPoolRefreshProgress = () => fetch('/api/refresh/pool/progress').then((res) => res.json());
+
 // Drops the cached bundle and cache-busts, so a re-read picks up a freshly
 // deployed data.json instead of a stale copy GitHub Pages/the browser cached.
 export function reloadBundle() {
