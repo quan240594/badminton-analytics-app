@@ -185,6 +185,7 @@ export default function LeagueDaySimulator() {
   const [slots, setSlots] = useState(stored?.slots ?? emptySlots(stored?.format ?? 'mens'));
   const [results, setResults] = useState({});
   const [error, setError] = useState('');
+  const [autoFillWarnings, setAutoFillWarnings] = useState([]);
   const [capAppearances, setCapAppearances] = useState(false);
   const [protectTopSingles, setProtectTopSingles] = useState(false);
   const [includeSubstitutes, setIncludeSubstitutes] = useState(false);
@@ -219,6 +220,7 @@ export default function LeagueDaySimulator() {
   const clearAll = () => {
     setSlots(emptySlots(format));
     setResults({});
+    setAutoFillWarnings([]);
     localStorage.removeItem(STORAGE_KEY);
   };
 
@@ -279,10 +281,12 @@ export default function LeagueDaySimulator() {
     const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
       ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
       : null;
-    // Which side is the opponent to counter, per clicked objective; null for "excitement" (unchanged).
-    const opponentLockSide = objective === 'clubA' ? 'sideB' : objective === 'clubB' ? 'sideA' : null;
 
     const nextSlots = slots.map((slot, slotIndex) => {
+      // Both sides already fully hand-entered under "closest ratings" means nothing
+      // is left to search for - leave this rubber exactly as typed.
+      if (objective === 'excitement' && slot.sideA.every(Boolean) && slot.sideB.every(Boolean)) return slot;
+
       const discipline = disciplineForCode(slot.code);
       const withinCap = (p) => (usage.get(p.id) ?? 0) < MAX_RECOMMENDED_APPEARANCES;
       const isProtectedHere = (p) => protectTopSingles
@@ -298,19 +302,29 @@ export default function LeagueDaySimulator() {
       const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
       const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
 
-      // A fully-entered opponent lineup for this rubber is explicit user input, so it
-      // overrides both the small-roster fixed lineup and the forced MS1 pick.
-      const manualLockIds = opponentLockSide && slot[opponentLockSide].every(Boolean) ? slot[opponentLockSide] : null;
+      // Which side (if any) is fixed manual input for this rubber: the declared opponent
+      // for clubA/clubB, or whichever side is already fully entered for "closest ratings" -
+      // a club's own side is never locked, only re-optimized.
+      const manualLockSide = objective === 'clubA' ? (slot.sideB.every(Boolean) ? 'sideB' : null)
+        : objective === 'clubB' ? (slot.sideA.every(Boolean) ? 'sideA' : null)
+        : slot.sideA.every(Boolean) ? 'sideA'
+          : slot.sideB.every(Boolean) ? 'sideB'
+            : null;
+
+      // manualLockSide only ever names a side that's already fully entered, so no need
+      // to re-check .every(Boolean) here; it overrides both the small-roster fixed
+      // lineup and the forced MS1 pick for whichever side it names.
+      const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
       const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
 
-      const fixedPlayersA = opponentLockSide === 'sideA' && manualLockPlayers
+      const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers
         ? manualLockPlayers
         : (fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA);
-      const fixedPlayersB = opponentLockSide === 'sideB' && manualLockPlayers
+      const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers
         ? manualLockPlayers
         : (fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB);
-      const sideALocked = Boolean(fixedA) || (opponentLockSide === 'sideA' && Boolean(manualLockPlayers));
-      const sideBLocked = Boolean(fixedB) || (opponentLockSide === 'sideB' && Boolean(manualLockPlayers));
+      const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
+      const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
 
       const eligibleA = poolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
       const eligibleB = poolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
@@ -343,6 +357,9 @@ export default function LeagueDaySimulator() {
     });
 
     setSlots(nextSlots);
+    setAutoFillWarnings(nextSlots
+      .filter((slot) => !slot.sideA.every(Boolean) || !slot.sideB.every(Boolean))
+      .map((slot) => slot.code));
   };
 
   // Auto-simulate every fully-filled rubber whenever the roster changes;
@@ -457,6 +474,12 @@ export default function LeagueDaySimulator() {
         <p className="error">
           {overusedPlayers.map((p) => `${p.name} is in ${p.count} rubbers`).join('; ')} — real match nights
           usually cap a player at {MAX_RECOMMENDED_APPEARANCES}.
+        </p>
+      )}
+
+      {autoFillWarnings.length > 0 && (
+        <p className="error">
+          Could not fill: {autoFillWarnings.join(', ')} — not enough eligible players for {autoFillWarnings.length === 1 ? 'this rubber' : 'these rubbers'}.
         </p>
       )}
 
