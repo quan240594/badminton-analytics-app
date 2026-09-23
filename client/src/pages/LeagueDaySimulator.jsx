@@ -633,34 +633,50 @@ export default function LeagueDaySimulator() {
         <div className="rubber-header">
           <div />
           <div className="league-day-team">
-            <span>Club A</span>
-            <ClubSelect clubs={poolClubs} value={clubFilterA} onChange={handleClubFilterA} />
+            <div className="league-day-team-row">
+              <span className="league-day-team-label">Club</span>
+              <ClubSelect clubs={poolClubs} value={clubFilterA} onChange={handleClubFilterA} />
+            </div>
             {clubFilterA && (() => {
               const teams = poolTeams.filter((t) => t.club === clubFilterA);
-              return teams.length > 1 ? (
-                <select className="team-select" value={teamFilterA ?? ''} onChange={(e) => setTeamFilterA(e.target.value)}>
-                  <option value="" disabled>Team…</option>
-                  {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
-                </select>
-              ) : teamFilterA ? (
-                <span className="team-label">{teamFilterA}</span>
-              ) : null;
+              if (teams.length <= 1 && !teamFilterA) return null;
+              return (
+                <div className="league-day-team-row">
+                  <span className="league-day-team-label">Team</span>
+                  {teams.length > 1 ? (
+                    <select className="team-select" value={teamFilterA ?? ''} onChange={(e) => setTeamFilterA(e.target.value)}>
+                      <option value="" disabled>Team…</option>
+                      {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
+                    </select>
+                  ) : (
+                    <span className="team-label">{teamFilterA}</span>
+                  )}
+                </div>
+              );
             })()}
           </div>
           <div />
           <div className="league-day-team">
-            <span>Club B</span>
-            <ClubSelect clubs={poolClubs} value={clubFilterB} onChange={handleClubFilterB} />
+            <div className="league-day-team-row">
+              <span className="league-day-team-label">Club</span>
+              <ClubSelect clubs={poolClubs} value={clubFilterB} onChange={handleClubFilterB} />
+            </div>
             {clubFilterB && (() => {
               const teams = poolTeams.filter((t) => t.club === clubFilterB);
-              return teams.length > 1 ? (
-                <select className="team-select" value={teamFilterB ?? ''} onChange={(e) => setTeamFilterB(e.target.value)}>
-                  <option value="" disabled>Team…</option>
-                  {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
-                </select>
-              ) : teamFilterB ? (
-                <span className="team-label">{teamFilterB}</span>
-              ) : null;
+              if (teams.length <= 1 && !teamFilterB) return null;
+              return (
+                <div className="league-day-team-row">
+                  <span className="league-day-team-label">Team</span>
+                  {teams.length > 1 ? (
+                    <select className="team-select" value={teamFilterB ?? ''} onChange={(e) => setTeamFilterB(e.target.value)}>
+                      <option value="" disabled>Team…</option>
+                      {teams.map((t) => <option key={t.squad} value={t.squad}>{t.squad}</option>)}
+                    </select>
+                  ) : (
+                    <span className="team-label">{teamFilterB}</span>
+                  )}
+                </div>
+              );
             })()}
           </div>
         </div>
