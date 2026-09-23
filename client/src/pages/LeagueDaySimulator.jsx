@@ -16,16 +16,19 @@ function isSubstitutePlayer(player) {
 }
 
 // "Sub" tag here reuses the same hardcoded list above, not a real scraped flag.
+// The badge is always rendered (just hidden for non-subs) so every player box
+// reserves the same width instead of the input growing/shrinking row to row.
 function playerPickerDetail(player, discipline) {
   if (!player) return null;
   const rating = Math.round(ratingFor(discipline, player));
   const winRate = player[`${discipline}WinRate`];
   const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
+  const sub = isSubstitutePlayer(player);
   return (
     <span className="stat-line">
       <span>Rating {rating}</span>
       <span>Win {pct}</span>
-      {isSubstitutePlayer(player) && <span className="sub-badge">Sub</span>}
+      <span className="sub-badge" style={{ visibility: sub ? 'visible' : 'hidden' }}>Sub</span>
     </span>
   );
 }
