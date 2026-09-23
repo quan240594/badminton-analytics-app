@@ -49,20 +49,22 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
   return (
     <div className="player-select">
       <label>{label}</label>
-      <input
-        type="text"
-        placeholder="Search player..."
-        value={open ? query : selected ? selected.name : ''}
-        onFocus={() => {
-          setOpen(true);
-          setQuery('');
-        }}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyDown={handleKeyDown}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
-      />
+      <div className="player-select-row">
+        <input
+          type="text"
+          placeholder="Search player..."
+          value={open ? query : selected ? selected.name : ''}
+          onFocus={() => {
+            setOpen(true);
+            setQuery('');
+          }}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+          onBlur={() => setTimeout(() => setOpen(false), 150)}
+        />
+        {detail && !open && selected && <span className="player-select-detail">{detail}</span>}
+      </div>
       {showClub && !open && selected && <div className="player-select-club">Club: {selected.club}</div>}
-      {detail && !open && selected && <div className="player-select-detail">{detail}</div>}
       {open && (
         <ul className="player-options" ref={listRef}>
           {options.map((p, idx) => (

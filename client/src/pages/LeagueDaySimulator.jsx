@@ -10,7 +10,7 @@ const MAX_RECOMMENDED_APPEARANCES = 3;
 const MAX_SINGLES_APPEARANCES = 1;
 const SMALL_ROSTER_MAX = 4;
 // Scraped data has no "substitute" flag - maintain manually until/unless one exists.
-const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen'];
+const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen', 'Lixiang ( Cliff ) Ma'];
 function isSubstitutePlayer(player) {
   return SUBSTITUTE_NAMES.includes(player.name);
 }
@@ -21,7 +21,7 @@ function playerPickerDetail(player, discipline) {
   const rating = Math.round(ratingFor(discipline, player));
   const winRate = player[`${discipline}WinRate`];
   const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
-  const sub = isSubstitutePlayer(player) ? ' · Sub' : '';
+  const sub = isSubstitutePlayer(player) ? ' (Sub)' : '';
   return `Rating ${rating} · Win ${pct}${sub}`;
 }
 
