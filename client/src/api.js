@@ -5,7 +5,9 @@ let bundlePromise = null;
 
 function loadBundle() {
   if (!bundlePromise) {
-    bundlePromise = fetch(`${import.meta.env.BASE_URL}data.json`).then((res) => {
+    // 'no-cache' forces revalidation with the server (ETag/Last-Modified) instead of
+    // silently serving a stale cached copy after a deploy ships a new data.json.
+    bundlePromise = fetch(`${import.meta.env.BASE_URL}data.json`, { cache: 'no-cache' }).then((res) => {
       if (!res.ok) throw new Error(`Failed to load data.json: ${res.status}`);
       return res.json();
     });
