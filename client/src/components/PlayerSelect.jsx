@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail }) {
+export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,6 +75,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
               onMouseDown={() => selectOption(p)}
             >
               {p.name} <span className="club">{p.club}</span>
+              {isSubstitute?.(p) && <span className="sub-tag">(Sub)</span>}
             </li>
           ))}
           {options.length === 0 && <li className="empty">No players found</li>}

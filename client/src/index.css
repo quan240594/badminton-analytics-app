@@ -192,6 +192,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .player-options li.active { background: #334155; }
 .player-options li.empty { color: #64748b; cursor: default; }
 .player-options .club { color: #64748b; font-size: 0.8rem; margin-left: 0.4rem; }
+.player-options .sub-tag { color: #f87171; font-size: 0.8rem; margin-left: 0.4rem; font-weight: 600; }
 
 .simulate-btn {
   width: 100%;

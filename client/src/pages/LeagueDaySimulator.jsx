@@ -700,6 +700,7 @@ export default function LeagueDaySimulator() {
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
                       showClub={false}
                       detail={playerPickerDetail(byId.get(id), discipline)}
+                      isSubstitute={isSubstitutePlayer}
                     />
                   ))}
                 </div>
@@ -715,6 +716,7 @@ export default function LeagueDaySimulator() {
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
                       showClub={false}
                       detail={playerPickerDetail(byId.get(id), discipline)}
+                      isSubstitute={isSubstitutePlayer}
                     />
                   ))}
                 </div>
