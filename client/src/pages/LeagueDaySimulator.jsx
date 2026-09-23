@@ -279,6 +279,8 @@ export default function LeagueDaySimulator() {
     const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
       ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
       : null;
+    // Which side is the opponent to counter, per clicked objective; null for "excitement" (unchanged).
+    const opponentLockSide = objective === 'clubA' ? 'sideB' : objective === 'clubB' ? 'sideA' : null;
 
     const nextSlots = slots.map((slot, slotIndex) => {
       const discipline = disciplineForCode(slot.code);
@@ -296,8 +298,19 @@ export default function LeagueDaySimulator() {
       const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
       const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
 
-      const fixedPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
-      const fixedPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
+      // A fully-entered opponent lineup for this rubber is explicit user input, so it
+      // overrides both the small-roster fixed lineup and the forced MS1 pick.
+      const manualLockIds = opponentLockSide && slot[opponentLockSide].every(Boolean) ? slot[opponentLockSide] : null;
+      const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
+
+      const fixedPlayersA = opponentLockSide === 'sideA' && manualLockPlayers
+        ? manualLockPlayers
+        : (fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA);
+      const fixedPlayersB = opponentLockSide === 'sideB' && manualLockPlayers
+        ? manualLockPlayers
+        : (fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB);
+      const sideALocked = Boolean(fixedA) || (opponentLockSide === 'sideA' && Boolean(manualLockPlayers));
+      const sideBLocked = Boolean(fixedB) || (opponentLockSide === 'sideB' && Boolean(manualLockPlayers));
 
       const eligibleA = poolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
       const eligibleB = poolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
@@ -320,11 +333,11 @@ export default function LeagueDaySimulator() {
 
       if (!pairing) return slot; // truly impossible, e.g. a side has too few players
       const { bestA, bestB } = pairing;
-      if (!fixedA) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
-      if (!fixedB) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!sideALocked) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
+      if (!sideBLocked) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
       if (discipline === 'singles') {
-        if (!fixedA) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
-        if (!fixedB) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+        if (!sideALocked) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+        if (!sideBLocked) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
       }
       return { ...slot, sideA: bestA, sideB: bestB };
     });

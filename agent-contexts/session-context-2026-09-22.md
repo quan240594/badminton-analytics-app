@@ -1,69 +1,180 @@
 # Badminton Analytics App — Agent Session Context Export
 
-**Exported:** 2026-09-22
-**Location:** /Users/quando/Personal_GitHub/badminton-app (moved this session from OneDrive)
+**Exported:** 2026-09-22 (re-exported, post-deployment)
+**Live site:** https://quan240594.github.io/badminton-analytics-app/ (CONFIRMED WORKING)
+**Repo:** https://github.com/quan240594/badminton-analytics-app (public)
+**Local path:** /Users/quando/Personal_GitHub/badminton-app
 
 ## 1. Overview
 
-This session is a continuation of a longer prior session covering:
-1. CSS alignment/consistency fixes across the 5 stacked player-comparison tables
-2. Building a static-site + GitHub Actions CI/CD pipeline (Playwright login, weekly Friday refresh, GitHub Pages deploy) to replace the live Express backend
-3. Fixing a real data-completeness bug in the Titles/Finals scraper
-4. Redesigning the Career-medals table to a per-year breakdown with a dynamic year range
-5. Pushing the completed work to a new private GitHub repo (`quan240594/badminton-analytics`)
-6. Moving the whole app from OneDrive to a local GitHub-projects folder
+Full session arc: CSS polish -> static-site CI/CD pipeline -> Titles/Finals scraper
+data-completeness bug fix -> Career-medals per-year redesign -> repo relocation ->
+fresh GitHub repo creation (`badminton-analytics-app`, replacing the deleted messy
+`badminton-analytics` repo) -> GitHub Pages deployment troubleshooting -> gh CLI
+installation via a Homebrew architecture-detection bug fix -> branch protection
+lockout -> npm private-registry lockfile contamination fix -> **first successful
+deployment confirmed live**.
 
 ## 2. Technical Foundation
 
 - **Frontend:** React 18.3.1 + Vite 5.4.21, plain JSX, single `client/src/index.css`
-- **Backend (being phased out):** Node/Express (`server/index.js`), superseded by a static-site build (`server/build-static.js` → `client/public/data.json`)
+- **Backend (build-time only):** `server/build-static.js` produces `client/public/data.json`
+  from raw data files; no live server in production (GitHub Pages static hosting)
 - **Scraper:** Python stdlib (`urllib`), targets `badmintonnederland.toernooi.nl`
-- **Full Titles/Finals endpoint:** `https://badmintonnederland.toernooi.nl/player-profile/{guid}/PersonHome/TitlesFinals` (async-modal endpoint, requires `Cookie` + `X-Requested-With: XMLHttpRequest`)
-- **Login form (for Playwright automation):** `https://badmintonnederland.toernooi.nl/user?returnUrl=%2F`, cookie-consent `button.js-accept-basic`, fields `#Login`/`#Password`, submit `#btnLogin`, form `id="form_login"`
-- **GitHub Actions:** `.github/workflows/deploy.yml` — `schedule` (Friday 06:00 UTC), `workflow_dispatch`, `push: branches: [main]`; jobs `refresh-data` + `build-and-deploy`; deploys via `actions/upload-pages-artifact` + `actions/deploy-pages`
+- **Full Titles/Finals endpoint:** `https://badmintonnederland.toernooi.nl/player-profile/{guid}/PersonHome/TitlesFinals`
+  (async-modal endpoint, requires `Cookie` + `X-Requested-With: XMLHttpRequest`)
+- **Login form (Playwright automation):** `https://badmintonnederland.toernooi.nl/user?returnUrl=%2F`,
+  cookie-consent `button.js-accept-basic`, fields `#Login`/`#Password`, submit `#btnLogin`
+- **GitHub Actions** (`.github/workflows/deploy.yml`):
+  - `refresh-data` job: Friday 06:00 UTC cron + manual dispatch only (`if: github.event_name != 'push'`);
+    scrapes rankings/titles/career data via Playwright login, commits changes back to `main`.
+    **Currently fails** without `TOERNOOI_USERNAME`/`TOERNOOI_PASSWORD` repo secrets (not yet added).
+  - `build-and-deploy` job: always runs (`if: always() && !failure() && !cancelled()`),
+    builds `client/public/data.json` + Vite client, deploys to GitHub Pages via
+    `actions/configure-pages` + `upload-pages-artifact` + `deploy-pages`.
+  - **Install steps use `npm install`, not `npm ci`** (deliberately changed — see Section 5).
 
 ## 3. Environment Facts (this Mac)
 
-- Intel x86_64 Mac with a broken/mismatched Xcode Command Line Tools install (`xcrun: error: unable to load libxcrun... need x86_64` — arm64 tools present instead). This blocks any Homebrew formula requiring compilation (e.g. `gh`'s `go` dependency → `CompilerSelectionError`).
-- SSH to GitHub is network-blocked on both port 22 and the 443 fallback (`Broken pipe`).
-- HTTPS anonymous git ops return `remote: Repository not found.` for the private repo (expected GitHub behavior for unauthenticated private-repo access).
-- `brew install --cask github` (GitHub Desktop, a GUI app) succeeded — this is a **different package** from the `gh` CLI (`brew install gh`), which was never actually installed (confirmed via `brew list gh` → "No such keg", and no binary at `/usr/local/bin/gh` or `/opt/homebrew/bin/gh`). The user initially conflated the two.
-- **Resolution path for the GitHub push:** use GitHub Desktop (already installed) — sign in with the personal `quan240594` account, add the local repo, and use Push/Publish branch. This avoids `gh`/PAT/compiler issues entirely.
+- **Genuine Apple Silicon (M3 Pro)**, confirmed via `uname -m`/`arch` = arm64, `sysctl machdep.cpu.brand_string`.
+- BUT Homebrew was installed at the **Intel-only prefix** `/usr/local/Homebrew` instead of the
+  native `/opt/homebrew` prefix — meaning it had been silently operating as an emulated/Intel
+  Homebrew this whole time (self-reported "Intel x86_64" in error messages), which is why
+  `brew install gh` kept failing with `CompilerSelectionError: go cannot be built with any
+  available compilers` (arm64-only Xcode Command Line Tools missing x86_64 libs Homebrew needed).
+- **Fix applied:** installed a second, native Homebrew at `/opt/homebrew` (user ran the official
+  installer themselves, entering sudo password interactively — required since `/opt` is
+  root-owned 755). `/opt/homebrew/bin/brew install gh` then succeeded instantly with a
+  precompiled arm64 bottle (`gh 2.101.0`), no compilation needed.
+- **gh authentication:** user ran `/opt/homebrew/bin/gh auth login` themselves (browser-based
+  interactive login, PAT-backed) — confirmed via `gh auth status`: logged in as `quan240594`,
+  broad token scopes (repo, workflow, admin:*, etc.).
+- **This Mac is also the user's work laptop** — global `~/.npmrc` contains the employer's
+  Artifactory registry override (`registry=https://artifactory.insim.biz/artifactory/api/npm/nn-npm/`
+  plus several scoped `@nn*:registry=...` overrides and auth tokens for internal packages).
+  This is why `npm install`/`npm ci` run locally on this machine silently resolve public npm
+  packages through the corporate mirror instead of the real npmjs.org — see Section 5 for the
+  downstream bug this caused. Direct access to `https://registry.npmjs.org` from this machine
+  is **blocked by corporate network policy** (403 Forbidden even with `--registry` override) —
+  confirmed fact, not yet worked around; only matters for local lockfile regeneration, not for
+  CI (GitHub-hosted runners have no such restriction and reach public npm natively).
 
-## 4. Codebase State (paths relative to `badminton-app/`)
+## 4. GitHub Repo History (why there are two repos)
 
-- `client/src/index.css` — finalized: shared column widths 20/23/23/34, `overflow:hidden` + ellipsis on all 5 tables, uniform right-alignment on columns 2-4, shared `.icon-cell { font-size: 1rem; }` class, `.player-card-grid`/`.grid-line` alignment guides, responsive breakpoint at 820px, `.career-medals-table` multi-row styling (`tr + tr td { border-top }`, `.total-row` bold)
-- `client/src/components/DivisionCard.jsx` — "Highest division" label shortened to "Division"
-- `client/src/components/TitlesCard.jsx` — trophy/medal icons use shared `.icon-cell`; **most recent change:** first header cell changed from `<th></th>` to `<th className="stat-label">Most recent</th>` (mirrors the "Career" label pattern in the per-year table), verified visually
-- `client/src/components/CareerMedalsCard.jsx` — rewritten to show one row per year (`titleYears` prop) plus a bold `Total` row; `fmt(count)` returns `-` for zero
-- `client/src/App.jsx` — removed all live "Refresh data" UI/state (static-site mode); added a `visibleTitleYears` computation (union of non-zero years across currently-selected Side A/B players, sorted ascending) and wired both `<SideEditor>` call sites to use it instead of a fixed year list — **verified via Playwright**: Quan Do vs Jerry Langbein shows only 2025/2026 rows; players with real older history (e.g. David Keijner: 2015-2018, 2022) are unaffected
-- `client/src/api.js` — static-site rewrite: fetches `data.json` once via `loadBundle()`, computes simulations client-side
-- `client/vite.config.js` — `base: './'`, no `/api` proxy
-- `server/lib/dataset.js` — `titleCounts(guid)` returns `{ byYear, total }`; module-level `titleYears` (all years across all players) still computed but no longer drives the UI directly (superseded by App.jsx's dynamic per-comparison range)
-- `data/fetch_titles.py` — **fixed root cause bug**: was scraping the small inline preview widget (~5 entries) instead of the full-history async-modal endpoint; now fetches `.../PersonHome/TitlesFinals` directly. Re-scraped all 539 players; Quan Do's entries went from 5 → 8 (verified: 2 gold, 6 silver, 0 bronze)
-- `data/refresh_data.py` — added `--skip-cookie-refresh` flag for CI use with a Playwright-obtained cookie
-- `data/playwright_login.py` — uses verified login selectors to authenticate and save `cookie.txt`
-- `.github/workflows/deploy.yml`, `.gitignore`, `README.md` — created, not yet run in CI (blocked on GitHub push)
+- Original repo `quan240594/badminton-analytics` (private) became "too messy" per the user
+  (branch confusion from an earlier session — a stray `init` branch, a `main` that had been
+  reset to a near-empty state, etc.) and **the user deleted it**.
+- **New repo created:** `quan240594/badminton-analytics-app` (public — required for free-tier
+  GitHub Pages, since private-repo Pages needs a paid plan). Local git history was fully
+  reinitialized (`rm -rf .git && git init -b main`) with a single clean commit before publishing
+  via GitHub Desktop (already installed from earlier troubleshooting).
+- **Branch protection lockout (resolved):** user configured a repository ruleset with required
+  status checks, required PRs, required signed commits, and a "missing successful active
+  github-pages deployment" check — which combined into a hard lockout (couldn't push directly,
+  couldn't satisfy the Pages-deployment check because nothing had deployed yet, chicken-and-egg).
+  **User temporarily disabled the ruleset** via the GitHub UI to unblock; pushes since then show
+  `remote: Bypassed rule violations for refs/heads/main: ...` (ruleset still exists but is
+  disabled, not deleted — worth revisiting with lighter rules once things stabilize).
 
-## 5. Problem Resolutions
+## 5. Root-Caused CI Bug: Private Registry Contamination in Lockfiles
 
-1. **Alignment inconsistencies** — root-caused via Playwright pixel/DOM measurement (not guesswork): missing `overflow:hidden` on 3/5 tables, too-narrow column widths, inconsistent icon `font-size`, and an intentional final switch to right-align all data columns (Year included) per explicit user request. One round of "spacing inconsistency" was investigated and found to be a false alarm (pixel-identical box models) — correctly not acted on.
-2. **Data-completeness bug** — "I've got more than 8 medals, only 5 shown" traced to the scraper hitting the wrong endpoint (main profile page's small preview widget vs. the full-history AJAX modal). Fixed and re-scraped all 539 players.
-3. **Career-table year range** — user initially asked to hardcode 2025-2026; investigation showed other players have real history back to 2006. Resolved with a **dynamic per-comparison** range (computed from currently-selected players only) rather than a global hardcode, avoiding silent data loss for other matchups.
-4. **GitHub push authentication** — extensive troubleshooting (HTTPS 404, SSH broken pipe, `gh` compiler failure, keychain-prompt terminal hang). Landed on **GitHub Desktop** (already installed via `brew install --cask github`) as the working path forward, since it needs no CLI/PAT and sidesteps the broken CLT toolchain.
-5. **"Most recent" label** — added to the Titles table's header (first cell), matching the "Career" label already used in the per-year table, per user's screenshot request.
-6. **App relocation** — moved the entire `badminton-app` directory (git repo, remote, and uncommitted working-tree changes intact) from `~/Library/CloudStorage/OneDrive-NN/Documents/Personal/badminton-app` to `~/Personal_GitHub/badminton-app`. Stopped the running Vite dev server/esbuild process tied to the old path first, since source and target were on the same volume (instant rename, no copy needed).
+- **Symptom:** `build-and-deploy` failed at "Install server dependencies" / "Install client
+  dependencies" with `npm error code ENOTFOUND ... getaddrinfo ENOTFOUND artifactory.insim.biz`.
+- **Root cause:** `server/package-lock.json` (70 occurrences) and `client/package-lock.json`
+  (110 occurrences) had `resolved` fields baked in pointing to
+  `https://artifactory.insim.biz/artifactory/api/npm/nn-npm/...` — the user's employer's
+  Artifactory npm mirror — because the lockfiles were originally generated on this same
+  machine while its global `~/.npmrc` had that registry override active. GitHub's clean
+  runners obviously can't resolve that private corporate hostname.
+- **Fix applied (two-part):**
+  1. Changed `deploy.yml`'s two install steps from `npm ci` to `npm install` (defense in depth —
+     `npm ci` strictly enforces lockfile `resolved` URLs; `npm install` is more forgiving) —
+     **this alone was insufficient**, `npm install` still attempted the stale resolved URLs first.
+  2. **Actual fix:** rewrote both lockfiles in place with
+     `sed 's#https://artifactory.insim.biz/artifactory/api/npm/nn-npm/#https://registry.npmjs.org/#g'`
+     — safe because the corporate Artifactory `nn-npm` repo is a passthrough/virtual mirror of
+     the public npm registry, so package content and integrity hashes are identical; only the
+     host/path differed. Verified 0 remaining `artifactory.insim.biz` references, 70+110 correct
+     `registry.npmjs.org` references after the rewrite.
+  3. Restored local `server/node_modules` afterward via the (working, for this host) corporate
+     registry so local dev isn't broken.
+- **Result:** next push-triggered run succeeded end-to-end — `refresh-data` correctly skipped
+  (push event), `build-and-deploy` installed both dependency sets, built the client, and
+  deployed to Pages successfully. **Confirmed live** at
+  https://quan240594.github.io/badminton-analytics-app/ (fetched and verified: shows "72 rated
+  players from Bondscompetitie 2026-2027 – Mannen Veer 2 afd. 12", full UI rendering).
 
-## 6. Outstanding / Next Steps
+## 6. Codebase State (paths relative to `badminton-app/`)
 
-- **GitHub push (primary blocker):** Sign in to GitHub Desktop with the `quan240594` personal account, add `/Users/quando/Personal_GitHub/badminton-app` as a local repository if not auto-detected, then Push/Publish the 2 local commits (plus the uncommitted `App.jsx`/`TitlesCard.jsx` changes, once committed) to `origin` (`quan240594/badminton-analytics`).
-- **Uncommitted changes at time of export:** `client/src/App.jsx` (dynamic `visibleTitleYears`) and `client/src/components/TitlesCard.jsx` ("Most recent" label) are modified but not committed — commit these before/as part of the push.
-- **Dev server:** was stopped before the move; restart with `npm run dev` (or equivalent) from the new path if local testing is needed again.
-- **Nested git repos:** `/Users/quando/Personal_GitHub` itself has its own (empty, no-commit) git repo + `.code-workspace` file, pre-existing before this move. `badminton-app` now lives as a nested subdirectory with its own independent `.git`/remote — this is intentional/harmless (same pattern as a multi-root "GitProjects" container), not a conflict.
+- All CSS/alignment fixes, the "Most recent" Titles-table header label, the dynamic
+  per-comparison `visibleTitleYears` Career-medals redesign, and the full Titles/Finals
+  scraper fix (539 players re-scraped) from earlier in this session are present and intact
+  in the current `main` branch (verified via `git log`/`grep` after the repo-history reset
+  incident earlier in the session — see prior context section below for that recovery story).
+- `client/src/components/TitlesCard.jsx` — header row: `<th className="stat-label">Most recent</th>`
+- `client/src/App.jsx` — `visibleTitleYears` computed from currently-selected Side A/B players
+- `client/src/components/CareerMedalsCard.jsx` — per-year rows + bold `Total` row
+- `data/fetch_titles.py` — fetches full history via the async-modal endpoint (not the
+  5-entry preview widget)
+- `.github/workflows/deploy.yml` — `npm install` (not `npm ci`) in both install steps
+- `server/package-lock.json`, `client/package-lock.json` — resolved URLs point to
+  `registry.npmjs.org`, not the corporate Artifactory mirror
+- `agent-contexts/` — this export directory; **note: it disappeared once earlier in the
+  session after being created** (cause unknown, possibly an external cleanup step) and was
+  recreated — if persistence matters, commit it to git rather than relying on it staying on
+  disk unmanaged (currently untracked, not yet in `.gitignore` either).
 
-## 7. Key Lessons
+## 7. Outstanding / Next Steps
 
-- Always verify visual "misalignment" complaints with real pixel/DOM measurement (Playwright) before changing CSS — most were real bugs, at least one was a false alarm.
-- A "fixed global" data-scoping decision (e.g. year range) can silently break other slices of data even when it looks correct for the one example in front of you — cross-check against the full dataset before hardcoding.
-- This machine's broken Xcode Command Line Tools + network-blocked SSH are environment limitations, not something to brute-force around (e.g. don't keep trying more SSH ports or force `gh` to compile) — pivot to a working alternative (GitHub Desktop) instead.
-- Never type secrets (PAT, passwords) into a terminal on the user's behalf — hand off credential entry to the user directly (GUI app login, VS Code Source Control, or their own terminal).
+- **Add repo secrets** `TOERNOOI_USERNAME` and `TOERNOOI_PASSWORD` (Settings -> Secrets and
+  variables -> Actions) so the Friday auto-refresh (`refresh-data` job) can actually log in
+  and scrape fresh data. Until then, scheduled/manual-dispatch runs will keep failing at the
+  "Log in and capture session cookie" step (this does NOT block `build-and-deploy`, since that
+  job only runs on `push` events in practice, where `refresh-data` is skipped).
+- **Branch protection ruleset** is currently disabled (bypassed), not redesigned. Revisit with
+  lighter rules appropriate for a solo hobby project (e.g. just "no force-push", drop PR-only
+  requirement, drop code-scanning/coverage/signed-commit requirements) once stable.
+- **Local `~/.npmrc` still has the corporate registry override** — harmless for this project
+  now that lockfiles are fixed, but worth being aware of for any *future* `npm install`
+  regenerating lockfiles on this machine (would silently reintroduce the same
+  artifactory.insim.biz contamination bug). Consider a project-local `.npmrc` with
+  `registry=https://registry.npmjs.org/` to force the public registry for this repo specifically.
+- **`gh` CLI** is now fully installed (`/opt/homebrew/bin/gh`, native arm64) and authenticated
+  as `quan240594` — available for any future direct Actions/API interaction without needing
+  the user to use the web UI.
+
+## 8. Key Lessons
+
+- A Homebrew install can silently be running as the "wrong" architecture (Intel-prefix
+  `/usr/local/Homebrew` on real Apple Silicon hardware) even when `uname`/`arch` correctly
+  report the true CPU — Homebrew's behavior is determined by which prefix it was installed
+  under, not just the live kernel architecture. Installing a second, native `/opt/homebrew`
+  Homebrew alongside the old one is a safe, additive fix (needs one sudo-gated step from the
+  user, since `/opt` is root-owned).
+- A machine's global npm/registry config can silently contaminate lockfiles with private
+  registry URLs that then break CI on GitHub's clean runners — always check `~/.npmrc` for
+  registry overrides before diagnosing "network"-flavored CI failures as environment/DNS
+  issues; check whether the *lockfile itself* has non-public resolved URLs baked in.
+  `npm ci` vs `npm install` matters here too: `npm ci` is strict about trusting the lockfile's
+  resolved URLs, `npm install` is more forgiving but can still prefer stale resolved entries.
+- Branch protection rules that require "a successful deployment already exists" as a
+  precondition for allowing pushes create a hard self-lock for a brand-new repo with zero
+  deployments yet — a chicken-and-egg situation best avoided by not enabling that specific
+  rule until after the first deployment succeeds.
+- `gh` (once properly installed/authenticated) lets the agent directly watch/diagnose/fix CI
+  runs (`gh run watch`, `gh run view --log`) without relying on the user to copy-paste
+  screenshots of the Actions UI — much faster iteration once auth is set up correctly.
+
+## 9. Follow-up (2026-09-23): League Day Simulator — Counter-Lineup Feature
+
+- Added counter-lineup behavior to `autoFill` in `client/src/pages/LeagueDaySimulator.jsx`:
+  clicking "Match players for club A/B to get at least 5 wins" now locks the OPPONENT
+  side's lineup for any rubber where it's already fully manually entered, and only
+  optimizes the clicked club's own side against it, instead of picking both sides jointly.
+- Mechanism: reuses the existing `fixedPlayersA`/`fixedPlayersB` fixed-pairing path (the same
+  one used by the small-roster `buildDefaultLineup` lineup and the forced-MS1 pick) via a new
+  `opponentLockSide` + per-slot manual-lock check (`slot[opponentLockSide].every(Boolean)`).
+  Manual entries take priority over both of those existing mechanisms, and are excluded from
+  the optimizer's own usage/cap tracking the same way `fixedA`/`fixedB` already were.
+- `'excitement'` (closest-ratings) objective is unchanged.
+- Verified with `npm run build` (client) — no errors.
