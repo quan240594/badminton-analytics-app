@@ -725,6 +725,7 @@ export default function LeagueDaySimulator() {
                       showClub={false}
                       detail={playerPickerDetail(byId.get(id), discipline)}
                       isSubstitute={isSubstitutePlayer}
+                      mirrored
                     />
                   ))}
                 </div>
