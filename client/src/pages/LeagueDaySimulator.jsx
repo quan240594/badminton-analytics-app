@@ -21,8 +21,13 @@ function playerPickerDetail(player, discipline) {
   const rating = Math.round(ratingFor(discipline, player));
   const winRate = player[`${discipline}WinRate`];
   const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
-  const sub = isSubstitutePlayer(player) ? ' (Sub)' : '';
-  return `Rating ${rating} · Win ${pct}${sub}`;
+  return (
+    <span className="stat-line">
+      <span>Rating {rating}</span>
+      <span>Win {pct}</span>
+      {isSubstitutePlayer(player) && <span className="sub-badge">Sub</span>}
+    </span>
+  );
 }
 
 // Rubber composition + codes confirmed from real scraped team-match pages:

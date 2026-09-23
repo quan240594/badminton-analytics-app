@@ -440,6 +440,15 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   font-size: 0.75rem;
   margin-top: 0.2rem;
 }
+.stat-line { display: inline-flex; align-items: center; gap: 0.65rem; }
+.stat-line > span + span:not(.sub-badge)::before { content: '·'; margin-right: 0.65rem; }
+.sub-badge {
+  background: #f87171;
+  color: #1e293b;
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+}
 .player-select-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 .player-select-row input { flex: 1 1 140px; min-width: 0; width: auto; }
 .player-select-row .player-select-detail { margin-top: 0; white-space: nowrap; }
