@@ -49,6 +49,15 @@ function afdelingNumber(label) {
   return m ? Number(m[1]) : 0;
 }
 
+// Real competitive ranking, not alphabetical: Eredivisie is the top tier, then
+// the numbered ladder (1e divisie highest, matching divisionRank in server/lib/dataset.js).
+// Non-ladder categories (Mannen Veer/Nylon etc.) have no rank and sort after, alphabetically.
+function divisionRank(division) {
+  if (/^Eredivisie$/i.test(division || '')) return 0;
+  const m = /^(\d+)e\s+divisie/i.exec(division || '');
+  return m ? Number(m[1]) : Infinity;
+}
+
 // "Mannen Veer 2 afd. 12" + division "Mannen Veer 2" -> "Afd. 12".
 function poolLabelSuffix(label, division) {
   const suffix = label.startsWith(division) ? label.slice(division.length).trim() : label;
@@ -535,7 +544,7 @@ export default function LeagueDaySimulator() {
         <label className="format-select">
           Division:
           <select value={division} onChange={(e) => changeDivision(e.target.value)}>
-            {Object.keys(leagueIndex.divisions).sort((a, b) => a.localeCompare(b)).map((d) => (
+            {Object.keys(leagueIndex.divisions).sort((a, b) => divisionRank(a) - divisionRank(b) || a.localeCompare(b)).map((d) => (
               <option key={d} value={d}>{d}</option>
             ))}
           </select>
