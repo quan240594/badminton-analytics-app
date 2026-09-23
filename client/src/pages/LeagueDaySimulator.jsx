@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchPlayers, simulateMatch } from '../api.js';
+import useDataRefresh from '../hooks/useDataRefresh.js';
+import PageHeader from '../components/PageHeader.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import ClubSelect from '../components/ClubSelect.jsx';
 
@@ -11,6 +13,16 @@ const SMALL_ROSTER_MAX = 4;
 const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen'];
 function isSubstitutePlayer(player) {
   return SUBSTITUTE_NAMES.includes(player.name);
+}
+
+// "Sub" tag here reuses the same hardcoded list above, not a real scraped flag.
+function playerPickerDetail(player, discipline) {
+  if (!player) return null;
+  const rating = Math.round(ratingFor(discipline, player));
+  const winRate = player[`${discipline}WinRate`];
+  const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
+  const sub = isSubstitutePlayer(player) ? ' · Sub' : '';
+  return `Rating ${rating} · Win ${pct}${sub}`;
 }
 
 // Rubber composition + codes confirmed from real scraped team-match pages:
@@ -190,6 +202,7 @@ export default function LeagueDaySimulator() {
   const [protectTopSingles, setProtectTopSingles] = useState(false);
   const [includeSubstitutes, setIncludeSubstitutes] = useState(false);
   const simulationRequestId = useRef(0);
+  const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => setPlayers(bundle.players));
 
   const clubs = [...new Set(players.map((p) => p.club).filter(Boolean))].sort();
   const byId = useMemo(() => new Map(players.map((p) => [p.id, p])), [players]);
@@ -409,19 +422,14 @@ export default function LeagueDaySimulator() {
 
   return (
     <div className="app">
-      <div className="header-row">
-        <div>
-          <h1>League Day Simulator</h1>
-          <p className="subtitle">
-            {players.length} rated players · simulate a full {slots.length}-rubber match night
-          </p>
-        </div>
-        <div className="header-actions">
-          <button type="button" className="btn-outline" onClick={clearAll}>
-            Clear all
-          </button>
-        </div>
-      </div>
+      <PageHeader
+        title="League Day Simulator"
+        subtitle={`${players.length} rated players · simulate a full ${slots.length}-rubber match night`}
+        onClearAll={clearAll}
+        refreshState={refreshState}
+        showUnchanged={showUnchanged}
+        onFetchData={fetchData}
+      />
 
       <div className="league-day-controls">
         <label className="format-select">
@@ -515,6 +523,7 @@ export default function LeagueDaySimulator() {
                       onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
                       showClub={false}
+                      detail={playerPickerDetail(byId.get(id), discipline)}
                     />
                   ))}
                 </div>
@@ -529,6 +538,7 @@ export default function LeagueDaySimulator() {
                       onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
                       showClub={false}
+                      detail={playerPickerDetail(byId.get(id), discipline)}
                     />
                   ))}
                 </div>

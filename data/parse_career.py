@@ -10,6 +10,7 @@ championships) because every player page uses the same player-centric
 from __future__ import annotations
 
 import html
+import json
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -36,12 +37,21 @@ CLUB_ALIASES = {
     "BBS": "BBS BODEGRAVEN",
 }
 
+# clubs.json holds the canonical (uppercase) club names; used below to fix casing.
+_CLUBS_JSON_PATH = Path(__file__).parent / "clubs.json"
+_CANONICAL_CLUB_NAMES = {
+    entry["name"].lower(): entry["name"]
+    for entry in json.loads(_CLUBS_JSON_PATH.read_text(encoding="utf-8")).values()
+}
+
 
 def normalize_club(club: str | None) -> str | None:
     if club is None:
         return None
     club = club.strip()
-    return CLUB_ALIASES.get(club, club)
+    club = CLUB_ALIASES.get(club, club)
+    # Source site renders the same club's name with inconsistent casing across page types.
+    return _CANONICAL_CLUB_NAMES.get(club.lower(), club)
 
 
 @dataclass
