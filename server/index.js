@@ -8,7 +8,7 @@ import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
-import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substitutePlayerIds } from './lib/leagueIndex.js';
+import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substitutePlayerIds, playerGenders } from './lib/leagueIndex.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -168,6 +168,7 @@ app.get('/api/meta', (req, res) => {
     fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
     poolRosters: poolRosters(aliasIndex),
     substitutePlayerIds: substitutePlayerIds(aliasIndex),
+    playerGenders: playerGenders(aliasIndex),
   });
 });
 

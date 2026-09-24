@@ -121,6 +121,26 @@ function ratingFor(prefix, player) {
   return player[`${prefix}Rating`] ?? 1500;
 }
 
+// Read-only team-strength summary shown above the lineup: each discipline's
+// strongest eligible player(s) by rating, split by gender (site data has no
+// gender field on match records, only on team roster pages - see playerGenders).
+function teamHighlights(pool, genders) {
+  const men = pool.filter((p) => genders[p.id] === 'M');
+  const women = pool.filter((p) => genders[p.id] === 'F');
+  const topByRating = (list, prefix, n) => [...list].sort((a, b) => ratingFor(prefix, b) - ratingFor(prefix, a)).slice(0, n);
+  return {
+    highestMS: topByRating(men, 'singles', 1)[0] ?? null,
+    highestWS: topByRating(women, 'singles', 1)[0] ?? null,
+    highestMD: topByRating(men, 'doubles', 2),
+    highestWD: topByRating(women, 'doubles', 2),
+    highestXD: [topByRating(men, 'mixed', 1)[0] ?? null, topByRating(women, 'mixed', 1)[0] ?? null],
+  };
+}
+
+function pairLabel(pair) {
+  return pair.length === 2 && pair.every(Boolean) ? pair.map((p) => p.name).join(' / ') : '-';
+}
+
 function combos2(list) {
   const out = [];
   for (let i = 0; i < list.length; i++) {
@@ -232,6 +252,7 @@ export default function LeagueDaySimulator() {
   const [fetchedDrawIds, setFetchedDrawIds] = useState([]);
   const [poolRosters, setPoolRosters] = useState({});
   const [substituteIds, setSubstituteIds] = useState([]);
+  const [playerGenders, setPlayerGenders] = useState({});
   const [poolFetchState, setPoolFetchState] = useState({ running: false, percent: 0, error: null });
   const [clubFilterA, setClubFilterA] = useState(stored?.clubFilterA ?? 'DROP SHOT BC');
   const [teamFilterA, setTeamFilterA] = useState(stored?.teamFilterA ?? null);
@@ -257,6 +278,9 @@ export default function LeagueDaySimulator() {
   const byId = useMemo(() => new Map(players.map((p) => [p.id, p])), [players]);
   // null (not []) when this pool has no roster data yet, so filtering falls back to club-only.
   const currentPoolRosterIds = drawId ? (poolRosters[drawId] ?? null) : null;
+  const excludeSubsForDisplay = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p, substituteIds)));
+  const highlightsA = teamHighlights(excludeSubsForDisplay(filterByClub(players, clubFilterA, [], currentPoolRosterIds)), playerGenders);
+  const highlightsB = teamHighlights(excludeSubsForDisplay(filterByClub(players, clubFilterB, [], currentPoolRosterIds)), playerGenders);
 
   useEffect(() => {
     fetchPlayers().then(setPlayers).catch((e) => setError(e.message));
@@ -266,6 +290,7 @@ export default function LeagueDaySimulator() {
         setFetchedDrawIds(meta.fetchedDrawIds ?? []);
         setPoolRosters(meta.poolRosters ?? {});
         setSubstituteIds(meta.substitutePlayerIds ?? []);
+        setPlayerGenders(meta.playerGenders ?? {});
         if (!stored?.drawId && meta.currentPool?.drawId) setDrawId(meta.currentPool.drawId);
       })
       .catch(() => {});
@@ -324,6 +349,7 @@ export default function LeagueDaySimulator() {
       setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
       setPoolRosters(bundle.meta.poolRosters ?? {});
       setSubstituteIds(bundle.meta.substitutePlayerIds ?? []);
+      setPlayerGenders(bundle.meta.playerGenders ?? {});
     };
     if (import.meta.env.DEV) {
       try {
@@ -740,6 +766,24 @@ export default function LeagueDaySimulator() {
                 </div>
               );
             })()}
+          </div>
+        </div>
+        <div className="team-highlights">
+          <div />
+          <div className="team-highlights-list">
+            <div className="team-highlights-row"><span>Highest MS player</span><span>{highlightsA.highestMS?.name ?? '-'}</span></div>
+            <div className="team-highlights-row"><span>Highest WS player</span><span>{highlightsA.highestWS?.name ?? '-'}</span></div>
+            <div className="team-highlights-row"><span>Highest MD players</span><span>{pairLabel(highlightsA.highestMD)}</span></div>
+            <div className="team-highlights-row"><span>Highest WD players</span><span>{pairLabel(highlightsA.highestWD)}</span></div>
+            <div className="team-highlights-row"><span>Highest XD players</span><span>{pairLabel(highlightsA.highestXD)}</span></div>
+          </div>
+          <div />
+          <div className="team-highlights-list">
+            <div className="team-highlights-row"><span>Highest MS player</span><span>{highlightsB.highestMS?.name ?? '-'}</span></div>
+            <div className="team-highlights-row"><span>Highest WS player</span><span>{highlightsB.highestWS?.name ?? '-'}</span></div>
+            <div className="team-highlights-row"><span>Highest MD players</span><span>{pairLabel(highlightsB.highestMD)}</span></div>
+            <div className="team-highlights-row"><span>Highest WD players</span><span>{pairLabel(highlightsB.highestWD)}</span></div>
+            <div className="team-highlights-row"><span>Highest XD players</span><span>{pairLabel(highlightsB.highestXD)}</span></div>
           </div>
         </div>
         {slots.map((slot) => {

@@ -104,10 +104,22 @@ function loadPlayerFixedStatusRaw() {
 export function substitutePlayerIds(aliasIndex) {
   const raw = loadPlayerFixedStatusRaw();
   const ids = [];
-  for (const [localId, isFixed] of Object.entries(raw)) {
-    if (isFixed) continue;
+  for (const [localId, info] of Object.entries(raw)) {
+    if (info.fixed) continue;
     const guid = aliasIndex.get(`${CURRENT_TOURNAMENT_ID}:${localId}`);
     if (guid) ids.push(guid);
   }
   return ids;
+}
+
+// {guid: "M"|"F"} - recovered from which of a team roster page's two tables
+// (Heren/Dames) a player appears in, since match data itself has no gender field.
+export function playerGenders(aliasIndex) {
+  const raw = loadPlayerFixedStatusRaw();
+  const genders = {};
+  for (const [localId, info] of Object.entries(raw)) {
+    const guid = aliasIndex.get(`${CURRENT_TOURNAMENT_ID}:${localId}`);
+    if (guid) genders[guid] = info.gender;
+  }
+  return genders;
 }

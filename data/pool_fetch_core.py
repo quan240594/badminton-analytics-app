@@ -58,14 +58,31 @@ def fetch(url: str, cookie: str, extra_headers: dict | None = None) -> str:
         return resp.read().decode("utf-8", errors="replace")
 
 
-def fetch_team_fixed_status(team_id: str, cookie: str) -> dict[str, bool]:
-    """{local_player_id: is_fixed_roster_player} for one team, current tournament."""
+def fetch_team_fixed_status(team_id: str, cookie: str) -> dict[str, dict]:
+    """{local_player_id: {"fixed": bool, "gender": "M"|"F"}} for one team.
+
+    The roster page renders two separate tables inside <td class="maleplayers">
+    and <td class="femaleplayers"> - splitting on those markers is how gender
+    is recovered, since the row itself carries no gender field."""
     html = fetch(
         f"{BASE_URL}teamplayers.aspx?id={CURRENT_TOURNAMENT_ID}&tid={team_id}",
         cookie,
         extra_headers={"X-Requested-With": "XMLHttpRequest"},
     )
-    return {pid: flag in ("Ja", "Yes") for pid, flag in TEAM_PLAYER_ROW_RE.findall(html)}
+    male_idx = html.find('maleplayers')
+    female_idx = html.find('femaleplayers')
+    end_idx = html.find('addTeamPlayerTable')
+    segments = []
+    if male_idx != -1:
+        segments.append((html[male_idx:female_idx if female_idx != -1 else end_idx], "M"))
+    if female_idx != -1:
+        segments.append((html[female_idx:end_idx if end_idx != -1 else len(html)], "F"))
+
+    result: dict[str, dict] = {}
+    for segment, gender in segments:
+        for pid, flag in TEAM_PLAYER_ROW_RE.findall(segment):
+            result[pid] = {"fixed": flag in ("Ja", "Yes"), "gender": gender}
+    return result
 
 
 def fetch_pool_players(
