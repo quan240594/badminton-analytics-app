@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { fetchPlayers, fetchMeta, simulateMatch, triggerPoolRefresh, fetchPoolRefreshProgress, reloadBundle } from '../api.js';
+import { fetchPlayers, fetchMeta, simulateMatch, triggerPoolRefresh, fetchPoolRefreshProgress, triggerGithubWorkflowPoolRefresh, pollGithubWorkflowRun, reloadBundle } from '../api.js';
 import useDataRefresh from '../hooks/useDataRefresh.js';
 import PageHeader from '../components/PageHeader.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
@@ -306,32 +306,73 @@ export default function LeagueDaySimulator() {
   const fetchPoolData = async () => {
     if (!drawId) return;
     setPoolFetchState({ running: true, percent: 0, error: null });
-    try {
-      await triggerPoolRefresh(drawId);
-    } catch (e) {
-      setPoolFetchState({ running: false, percent: 0, error: e.message });
-      return;
-    }
-    const poll = async () => {
-      let progress;
-      try {
-        progress = await fetchPoolRefreshProgress();
-      } catch {
-        setPoolFetchState({ running: false, percent: 0, error: 'Lost connection to the refresh server.' });
-        return;
-      }
-      setPoolFetchState({ running: progress.running, percent: progress.percent, error: progress.error });
-      if (progress.running) {
-        setTimeout(poll, 1000);
-        return;
-      }
-      if (progress.error) return;
+    const applyRefreshedPool = async () => {
       const bundle = await reloadBundle();
       setPlayers(bundle.players);
       setLeagueIndex(bundle.meta.leagueIndex ?? { divisions: {} });
       setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
     };
-    poll();
+    if (import.meta.env.DEV) {
+      try {
+        await triggerPoolRefresh(drawId);
+      } catch (e) {
+        setPoolFetchState({ running: false, percent: 0, error: e.message });
+        return;
+      }
+      const poll = async () => {
+        let progress;
+        try {
+          progress = await fetchPoolRefreshProgress();
+        } catch {
+          setPoolFetchState({ running: false, percent: 0, error: 'Lost connection to the refresh server.' });
+          return;
+        }
+        setPoolFetchState({ running: progress.running, percent: progress.percent, error: progress.error });
+        if (progress.running) {
+          setTimeout(poll, 1000);
+          return;
+        }
+        if (progress.error) return;
+        await applyRefreshedPool();
+      };
+      poll();
+      return;
+    }
+    // Production (GitHub Pages): no local server, so dispatch deploy.yml with draw_id and poll its run.
+    let dispatchedAt;
+    try {
+      dispatchedAt = await triggerGithubWorkflowPoolRefresh(drawId);
+    } catch (e) {
+      setPoolFetchState({ running: false, percent: 0, error: e.message });
+      return;
+    }
+    const poll = async () => {
+      let run;
+      try {
+        run = await pollGithubWorkflowRun(dispatchedAt);
+      } catch (e) {
+        setPoolFetchState({ running: false, percent: 0, error: e.message });
+        return;
+      }
+      const running = run.status !== 'completed';
+      const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
+      setPoolFetchState({ running, percent, error: null });
+      if (running) {
+        setTimeout(poll, 5000);
+        return;
+      }
+      if (run.conclusion !== 'success') {
+        setPoolFetchState({
+          running: false,
+          percent: 100,
+          error: `GitHub Actions run finished with "${run.conclusion}" — check the Actions tab for details.`,
+        });
+        return;
+      }
+      await applyRefreshedPool();
+    };
+    // Give GitHub a moment to register the dispatched run before the first poll.
+    setTimeout(poll, 5000);
   };
 
   const updateSlot = (code, side, idx, value) => {

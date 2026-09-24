@@ -4,7 +4,12 @@ on:
   schedule:
     # Fridays 06:00 UTC - leagues in this pool play at most once a week.
     - cron: '0 6 * * 5'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      draw_id:
+        description: 'Optional: only refresh one pool (afdeling) by drawId instead of the full national refresh'
+        required: false
+        type: string
   push:
     branches: [main]
 
@@ -46,11 +51,18 @@ jobs:
         working-directory: data
 
       - name: Refresh current-season matches & rankings
+        if: github.event.inputs.draw_id == ''
         run: python3 refresh_data.py --skip-cookie-refresh
         working-directory: data
 
       - name: Refresh titles/finals data
+        if: github.event.inputs.draw_id == ''
         run: python3 fetch_titles.py
+        working-directory: data
+
+      - name: Refresh single pool only
+        if: github.event.inputs.draw_id != ''
+        run: python3 fetch_pool.py --draw-id "${{ github.event.inputs.draw_id }}"
         working-directory: data
 
       - name: Remove session cookie before committing
@@ -60,8 +72,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/career.json data/rankings.json data/titles.json data/career.state.json
-          git diff --cached --quiet || git commit -m "chore(data): weekly refresh"
+          git add data/career.json data/rankings.json data/titles.json data/career.state.json data/events_index.json data/fetched_pools.json
+          # commit message reflects which refresh path ran (full national vs one scoped pool)
+          if [ -n "${{ github.event.inputs.draw_id }}" ]; then
+            MSG="chore(data): refresh pool ${{ github.event.inputs.draw_id }}"
+          else
+            MSG="chore(data): weekly refresh"
+          fi
+          git diff --cached --quiet || git commit -m "$MSG"
           git push
 
   build-and-deploy:

@@ -104,6 +104,24 @@ export async function triggerGithubWorkflowRefresh() {
   return dispatchedAt;
 }
 
+export async function triggerGithubWorkflowPoolRefresh(drawId) {
+  const token = getGithubToken();
+  if (!token) throw new Error('A GitHub token is required to refresh data from the deployed site.');
+
+  const dispatchedAt = new Date().toISOString();
+  const res = await fetch(`${GH_API}/dispatches`, {
+    method: 'POST',
+    headers: { ...githubHeaders(token), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ref: 'main', inputs: { draw_id: String(drawId) } }),
+  });
+  if (res.status === 401 || res.status === 403) {
+    sessionStorage.removeItem(GH_TOKEN_KEY);
+    throw new Error('GitHub rejected that token. Check its scope and try again.');
+  }
+  if (!res.ok) throw new Error(`Could not start the workflow (${res.status}).`);
+  return dispatchedAt;
+}
+
 export async function pollGithubWorkflowRun(dispatchedAt) {
   const token = sessionStorage.getItem(GH_TOKEN_KEY);
   const res = await fetch(`${GH_API}/runs?event=workflow_dispatch&per_page=5`, { headers: githubHeaders(token) });
