@@ -10,7 +10,7 @@ const MAX_RECOMMENDED_APPEARANCES = 3;
 const MAX_SINGLES_APPEARANCES = 1;
 const SMALL_ROSTER_MAX = 4;
 // Scraped data has no "substitute" flag - maintain manually until/unless one exists.
-const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen', 'Lixiang ( Cliff ) Ma'];
+const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen', 'Lixiang ( Cliff ) Ma', 'Jin Chen'];
 function isSubstitutePlayer(player) {
   return SUBSTITUTE_NAMES.includes(player.name);
 }
