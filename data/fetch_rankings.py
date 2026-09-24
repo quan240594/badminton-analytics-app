@@ -44,8 +44,11 @@ def fetch(url: str, cookie: str) -> str:
 
 
 def discover_ranking_links(pages_dir: Path) -> dict[str, tuple[str, str]]:
+    # Ranking links live on both the legacy root player_*.html pages and the
+    # per-tournament pages/events/*.html pages fetched by the newer pool scraper.
     found: dict[str, tuple[str, str]] = {}
-    for path in sorted(pages_dir.glob("player_*.html")):
+    paths = sorted(pages_dir.glob("player_*.html")) + sorted((pages_dir / "events").glob("*.html"))
+    for path in paths:
         local_id = path.stem.split("_", 1)[1]
         text = path.read_text(encoding="utf-8", errors="replace")
         m = RANKING_LINK_RE.search(text)
