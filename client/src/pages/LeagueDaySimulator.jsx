@@ -137,8 +137,25 @@ function teamHighlights(pool, genders) {
   };
 }
 
-function pairLabel(pair) {
-  return pair.length === 2 && pair.every(Boolean) ? pair.map((p) => p.name).join(' / ') : '-';
+// One highlights row: singles entries only ever populate the right rating slot
+// (so they line up with doubles' 2nd-player rating); doubles populate both -
+// 1st player's rating left-aligned, 2nd player's right-aligned - per an explicit
+// alignment request, so every row's numbers form two straight columns.
+function highlightRow(label, discipline, entry) {
+  const isPair = Array.isArray(entry);
+  const players = isPair ? entry : [entry];
+  const complete = players.length > 0 && players.every(Boolean) && (!isPair || players.length === 2);
+  const name = complete ? players.map((p) => p.name).join(' / ') : '-';
+  const leftRating = complete && isPair ? Math.round(ratingFor(discipline, players[0])) : '';
+  const rightRating = complete ? Math.round(ratingFor(discipline, players[players.length - 1])) : '';
+  return (
+    <div className="team-highlights-row" key={label}>
+      <span className="th-label">{label}</span>
+      <span className="th-rating th-rating-left">{leftRating}</span>
+      <span className="th-name">{name}</span>
+      <span className="th-rating th-rating-right">{rightRating}</span>
+    </div>
+  );
 }
 
 function combos2(list) {
@@ -771,19 +788,19 @@ export default function LeagueDaySimulator() {
         <div className="team-highlights">
           <div />
           <div className="team-highlights-list">
-            <div className="team-highlights-row"><span>Highest MS player</span><span>{highlightsA.highestMS?.name ?? '-'}</span></div>
-            <div className="team-highlights-row"><span>Highest WS player</span><span>{highlightsA.highestWS?.name ?? '-'}</span></div>
-            <div className="team-highlights-row"><span>Highest MD players</span><span>{pairLabel(highlightsA.highestMD)}</span></div>
-            <div className="team-highlights-row"><span>Highest WD players</span><span>{pairLabel(highlightsA.highestWD)}</span></div>
-            <div className="team-highlights-row"><span>Highest XD players</span><span>{pairLabel(highlightsA.highestXD)}</span></div>
+            {highlightRow('Highest MS player', 'singles', highlightsA.highestMS)}
+            {highlightRow('Highest WS player', 'singles', highlightsA.highestWS)}
+            {highlightRow('Highest MD players', 'doubles', highlightsA.highestMD)}
+            {highlightRow('Highest WD players', 'doubles', highlightsA.highestWD)}
+            {highlightRow('Highest XD players', 'mixed', highlightsA.highestXD)}
           </div>
           <div />
           <div className="team-highlights-list">
-            <div className="team-highlights-row"><span>Highest MS player</span><span>{highlightsB.highestMS?.name ?? '-'}</span></div>
-            <div className="team-highlights-row"><span>Highest WS player</span><span>{highlightsB.highestWS?.name ?? '-'}</span></div>
-            <div className="team-highlights-row"><span>Highest MD players</span><span>{pairLabel(highlightsB.highestMD)}</span></div>
-            <div className="team-highlights-row"><span>Highest WD players</span><span>{pairLabel(highlightsB.highestWD)}</span></div>
-            <div className="team-highlights-row"><span>Highest XD players</span><span>{pairLabel(highlightsB.highestXD)}</span></div>
+            {highlightRow('Highest MS player', 'singles', highlightsB.highestMS)}
+            {highlightRow('Highest WS player', 'singles', highlightsB.highestWS)}
+            {highlightRow('Highest MD players', 'doubles', highlightsB.highestMD)}
+            {highlightRow('Highest WD players', 'doubles', highlightsB.highestWD)}
+            {highlightRow('Highest XD players', 'mixed', highlightsB.highestXD)}
           </div>
         </div>
         {slots.map((slot) => {

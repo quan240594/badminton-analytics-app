@@ -511,9 +511,21 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   border-radius: 10px;
 }
 .team-highlights-list { display: flex; flex-direction: column; gap: 0.3rem; }
-.team-highlights-row { display: flex; justify-content: space-between; gap: 0.75rem; font-size: 0.8rem; }
-.team-highlights-row span:first-child { color: #94a3b8; }
-.team-highlights-row span:last-child { color: #e2e8f0; font-weight: 600; text-align: right; }
+/* label | 1st-player rating (left-aligned) | name(s) | 2nd-player/singles rating
+   (right-aligned) - fixed-width rating columns so numbers line up straight down
+   every row, singles included (their one rating only ever uses the right slot). */
+.team-highlights-row {
+  display: grid;
+  grid-template-columns: 1fr 2.4rem 1fr 2.4rem;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+.th-label { color: #94a3b8; }
+.th-name { color: #e2e8f0; font-weight: 600; }
+.th-rating { color: #64748b; font-variant-numeric: tabular-nums; }
+.th-rating-left { text-align: left; }
+.th-rating-right { text-align: right; }
 .league-day-team {
   display: flex;
   flex-direction: column;
