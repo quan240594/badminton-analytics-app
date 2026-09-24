@@ -2,10 +2,11 @@
 """On-demand fetch of one specific afdeling/pool's player rosters + match
 history, for the region/division/pool browser. Delegates match/player
 discovery and new-player fetching to pool_fetch_core.fetch_pool_players
-(shared with the national all-pools driver), then - because a single
-on-demand fetch should stay immediately fresh and the cost is trivial for one
-pool - always does a full career.state.json delete + rebuild and records the
-pool in fetched_pools.json right away.
+(shared with the national all-pools driver), then rebuilds career.json
+incrementally (career.state.json is NOT reset - see build_career_db.py) so a
+CI run starting from an empty local pages/ cache merges into the already-
+committed dataset instead of replacing it, and records the pool in
+fetched_pools.json right away.
 
 Writes live progress to pool_fetch_progress.json (same shape as
 refresh_data.py's refresh_progress.json) so a caller can poll real percentages.
@@ -49,7 +50,10 @@ def main() -> None:
         new_count = fetch_pool_players(args.draw_id, cookie, args.cookie_file, args.delay, write_progress)
 
         write_progress("rebuild", 92, "rebuilding career.json")
-        (DATA_DIR / "career.state.json").unlink(missing_ok=True)
+        # Incremental on purpose: deleting career.state.json here would reset the
+        # accumulated player database to just this run's local pages/ cache, which
+        # is empty on a fresh CI checkout - silently destroying every other
+        # already-committed pool's data (see 2026-09-24 incident, twice).
         subprocess.run([sys.executable, "build_career_db.py", "pages", "--out", "career.json"], check=True, cwd=DATA_DIR)
 
         fetched = {}
