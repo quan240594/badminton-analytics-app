@@ -6,6 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const LEAGUE_INDEX_PATH = path.join(DATA_DIR, 'league_index.json');
 const FETCHED_POOLS_PATH = path.join(DATA_DIR, 'fetched_pools.json');
+const POOL_ROSTERS_PATH = path.join(DATA_DIR, 'pool_rosters.json');
+const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
 
 // Trailing squad code like "M1"/"M2"/"A2" (letters+digits) or a bare number ("1"/"2").
 const SQUAD_SUFFIX_RE = /^(.*?)\s+([A-Za-z]{0,2}\d+)$/;
@@ -66,4 +68,24 @@ export function fetchedDrawIds(alwaysIncludeDrawId) {
   const ids = new Set(Object.keys(loadFetchedPools()));
   if (alwaysIncludeDrawId) ids.add(String(alwaysIncludeDrawId));
   return [...ids];
+}
+
+function loadPoolRostersRaw() {
+  try {
+    return JSON.parse(readFileSync(POOL_ROSTERS_PATH, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+// Local per-tournament ids only resolve to a guid if that player's own page was ever fetched.
+export function poolRosters(aliasIndex) {
+  const raw = loadPoolRostersRaw();
+  const result = {};
+  for (const [drawId, localIds] of Object.entries(raw)) {
+    result[drawId] = localIds
+      .map((localId) => aliasIndex.get(`${CURRENT_TOURNAMENT_ID}:${localId}`))
+      .filter(Boolean);
+  }
+  return result;
 }

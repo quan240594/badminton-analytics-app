@@ -81,6 +81,17 @@ def fetch_pool_players(
         progress("players", 5 + i / len(match_ids) * 35, f"{i}/{len(match_ids)} matches, {len(player_ids)} players found")
         time.sleep(delay)
 
+    # Persist the FULL roster discovered for this pool (not just newly-seen
+    # players), so the client can scope its club/player pickers to whoever
+    # actually plays in this specific pool instead of matching by club name
+    # alone (a club can field entirely different players across divisions).
+    rosters_path = DATA_DIR / "pool_rosters.json"
+    rosters = {}
+    if rosters_path.exists():
+        rosters = json.loads(rosters_path.read_text(encoding="utf-8"))
+    rosters[draw_id] = sorted(player_ids.keys(), key=int)
+    rosters_path.write_text(json.dumps(rosters, indent=2), encoding="utf-8")
+
     events_path = DATA_DIR / "events_index.json"
     events = json.loads(events_path.read_text(encoding="utf-8"))
     known_ids = {e["player_id"] for e in events if e["tournament_id"] == CURRENT_TOURNAMENT_ID}

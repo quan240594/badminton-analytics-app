@@ -208,5 +208,6 @@ function highestDivisionPlayed(matches, guid) {
     titlesForPlayer,
     titleCounts,
     titleYears,
+    aliasIndex,
   };
 }

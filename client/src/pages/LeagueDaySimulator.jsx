@@ -98,9 +98,13 @@ function loadStoredState() {
   return null;
 }
 
-function filterByClub(players, clubFilter, keepIds) {
-  if (!clubFilter) return players;
-  return players.filter((p) => p.club === clubFilter || keepIds.includes(p.id));
+// When a pool roster is known, only its actual squad (plus any already-selected id) is eligible.
+function filterByClub(players, clubFilter, keepIds, rosterIds = null) {
+  return players.filter((p) => {
+    if (keepIds.includes(p.id)) return true;
+    if (clubFilter && p.club !== clubFilter) return false;
+    return !rosterIds || rosterIds.includes(p.id);
+  });
 }
 
 function otherIdsInSlot(slot, side, idx) {
@@ -227,6 +231,7 @@ export default function LeagueDaySimulator() {
   const [drawId, setDrawId] = useState(stored?.drawId ?? '');
   const [leagueIndex, setLeagueIndex] = useState({ divisions: {} });
   const [fetchedDrawIds, setFetchedDrawIds] = useState([]);
+  const [poolRosters, setPoolRosters] = useState({});
   const [poolFetchState, setPoolFetchState] = useState({ running: false, percent: 0, error: null });
   const [clubFilterA, setClubFilterA] = useState(stored?.clubFilterA ?? 'DROP SHOT BC');
   const [teamFilterA, setTeamFilterA] = useState(stored?.teamFilterA ?? null);
@@ -250,6 +255,8 @@ export default function LeagueDaySimulator() {
   );
   const poolClubs = [...new Set(poolTeams.map((t) => t.club))].sort((a, b) => a.localeCompare(b));
   const byId = useMemo(() => new Map(players.map((p) => [p.id, p])), [players]);
+  // null (not []) when this pool has no roster data yet, so filtering falls back to club-only.
+  const currentPoolRosterIds = drawId ? (poolRosters[drawId] ?? null) : null;
 
   useEffect(() => {
     fetchPlayers().then(setPlayers).catch((e) => setError(e.message));
@@ -257,6 +264,7 @@ export default function LeagueDaySimulator() {
       .then((meta) => {
         setLeagueIndex(meta.leagueIndex ?? { divisions: {} });
         setFetchedDrawIds(meta.fetchedDrawIds ?? []);
+        setPoolRosters(meta.poolRosters ?? {});
         if (!stored?.drawId && meta.currentPool?.drawId) setDrawId(meta.currentPool.drawId);
       })
       .catch(() => {});
@@ -295,6 +303,8 @@ export default function LeagueDaySimulator() {
 
   const changePool = (nextDrawId) => {
     setDrawId(nextDrawId);
+    setSlots(emptySlots(format));
+    setResults({});
     setClubFilterA('');
     setTeamFilterA(null);
     setClubFilterB('');
@@ -311,6 +321,7 @@ export default function LeagueDaySimulator() {
       setPlayers(bundle.players);
       setLeagueIndex(bundle.meta.leagueIndex ?? { divisions: {} });
       setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
+      setPoolRosters(bundle.meta.poolRosters ?? {});
     };
     if (import.meta.env.DEV) {
       try {
@@ -743,7 +754,7 @@ export default function LeagueDaySimulator() {
                     <PlayerSelect
                       key={idx}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                      players={filterByClub(players, clubFilterA, slot.sideA)}
+                      players={filterByClub(players, clubFilterA, slot.sideA, currentPoolRosterIds)}
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
@@ -759,7 +770,7 @@ export default function LeagueDaySimulator() {
                     <PlayerSelect
                       key={idx}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                      players={filterByClub(players, clubFilterB, slot.sideB)}
+                      players={filterByClub(players, clubFilterB, slot.sideB, currentPoolRosterIds)}
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}

@@ -8,13 +8,13 @@ import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
-import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds } from './lib/leagueIndex.js';
+import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters } from './lib/leagueIndex.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PROGRESS_PATH = path.join(DATA_DIR, 'refresh_progress.json');
 
-let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPlayerFn, titleCountsFn, titleYears;
+let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPlayerFn, titleCountsFn, titleYears, aliasIndex;
 let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
 let careerStats;
 let lastUpdated = null;
@@ -22,7 +22,7 @@ const CURRENT_POOL_LABEL = `Bondscompetitie ${currentSeasonLabel()} \u2013 Manne
 let refreshing = false;
 
 function loadAll() {
-  ({ players, matches, rankings, rankingTop, highestDivisionPlayed: highestDivisionPlayedFn, titlesForPlayer: titlesForPlayerFn, titleCounts: titleCountsFn, titleYears } = loadDataset());
+  ({ players, matches, rankings, rankingTop, highestDivisionPlayed: highestDivisionPlayedFn, titlesForPlayer: titlesForPlayerFn, titleCounts: titleCountsFn, titleYears, aliasIndex } = loadDataset());
   ({ singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H } = computeRatings(matches));
   careerStats = computeCareerStats(matches);
   lastUpdated = new Date().toISOString();
@@ -166,6 +166,7 @@ app.get('/api/meta', (req, res) => {
     currentPool,
     leagueIndex: fullLeagueIndex(),
     fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
+    poolRosters: poolRosters(aliasIndex),
   });
 });
 

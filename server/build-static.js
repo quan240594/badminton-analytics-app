@@ -8,13 +8,13 @@ import { loadDataset } from './lib/dataset.js';
 import { computeRatings } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
-import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds } from './lib/leagueIndex.js';
+import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters } from './lib/leagueIndex.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'data.json');
 const CURRENT_POOL_LABEL = `Bondscompetitie ${currentSeasonLabel()} \u2013 Mannen Veer 2 afd. 12`;
 
-const { players, matches, rankings, rankingTop, highestDivisionPlayed, titlesForPlayer, titleCounts, titleYears } = loadDataset();
+const { players, matches, rankings, rankingTop, highestDivisionPlayed, titlesForPlayer, titleCounts, titleYears, aliasIndex } = loadDataset();
 const { singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H, mixedPairH2H } = computeRatings(matches);
 const careerStats = computeCareerStats(matches);
 
@@ -115,6 +115,7 @@ const bundle = {
     currentPool,
     leagueIndex: fullLeagueIndex(),
     fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
+    poolRosters: poolRosters(aliasIndex),
   },
   players: playerList,
   singlesH2H: Object.fromEntries(singlesH2H),

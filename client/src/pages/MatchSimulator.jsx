@@ -63,14 +63,18 @@ function loadStoredState() {
   return null;
 }
 
-function filterByClub(players, clubFilter, keepId) {
-  if (!clubFilter) return players;
-  return players.filter((p) => p.club === clubFilter || p.id === keepId);
+// When a pool roster is known, only its actual squad (plus the already-selected id) is eligible.
+function filterByClub(players, clubFilter, keepId, rosterIds = null) {
+  return players.filter((p) => {
+    if (p.id === keepId) return true;
+    if (clubFilter && p.club !== clubFilter) return false;
+    return !rosterIds || rosterIds.includes(p.id);
+  });
 }
 
 function SideEditor({
   label, players, ids, onChange, excludeIds, clubs, clubFilter, onClubFilterChange, titleYears,
-  teamFilter, onTeamFilterChange, poolTeams = [],
+  teamFilter, onTeamFilterChange, poolTeams = [], rosterIds = null,
 }) {
   const setSlot = (idx, value) => {
     const next = [...ids];
@@ -104,7 +108,7 @@ function SideEditor({
           <div key={idx} className="player-slot">
             <PlayerSelect
               label={idx === 0 ? 'Player' : 'Partner'}
-              players={filterByClub(players, clubFilter, id)}
+              players={filterByClub(players, clubFilter, id, rosterIds)}
               value={id}
               onChange={(v) => setSlot(idx, v)}
               excludeIds={[...excludeIds, ...ids.filter((_, i) => i !== idx)]}
@@ -144,6 +148,7 @@ export default function MatchSimulator() {
   const [drawId, setDrawId] = useState(stored?.drawId ?? '');
   const [leagueIndex, setLeagueIndex] = useState({ divisions: {} });
   const [fetchedDrawIds, setFetchedDrawIds] = useState([]);
+  const [poolRosters, setPoolRosters] = useState({});
   const [poolFetchState, setPoolFetchState] = useState({ running: false, percent: 0, error: null });
   const [clubFilterA, setClubFilterA] = useState(stored?.clubFilterA ?? '');
   const [teamFilterA, setTeamFilterA] = useState(stored?.teamFilterA ?? null);
@@ -168,6 +173,8 @@ export default function MatchSimulator() {
     [poolAfdelingen, drawId]
   );
   const poolClubs = [...new Set(poolTeams.map((t) => t.club))].sort((a, b) => a.localeCompare(b));
+  // null (not []) when this pool has no roster data yet, so filtering falls back to club-only.
+  const currentPoolRosterIds = drawId ? (poolRosters[drawId] ?? null) : null;
   // Show only years with real title data for the players currently being compared,
   // so both sides share a row set without dragging in the whole pool's history.
   const selectedIds = [...sideA, ...sideB].filter(Boolean);
@@ -191,6 +198,7 @@ export default function MatchSimulator() {
         setTitleYears(m.titleYears ?? []);
         setLeagueIndex(m.leagueIndex ?? { divisions: {} });
         setFetchedDrawIds(m.fetchedDrawIds ?? []);
+        setPoolRosters(m.poolRosters ?? {});
         if (!stored?.drawId && m.currentPool?.drawId) setDrawId(m.currentPool.drawId);
       })
       .catch(() => {});
@@ -265,6 +273,8 @@ export default function MatchSimulator() {
   const changeDivision = (next) => {
     setDivision(next);
     setDrawId(leagueIndex.divisions[next]?.[0]?.drawId ?? '');
+    setSideA(['']);
+    setSideB(['']);
     setClubFilterA('');
     setTeamFilterA(null);
     setClubFilterB('');
@@ -273,6 +283,8 @@ export default function MatchSimulator() {
 
   const changePool = (nextDrawId) => {
     setDrawId(nextDrawId);
+    setSideA(['']);
+    setSideB(['']);
     setClubFilterA('');
     setTeamFilterA(null);
     setClubFilterB('');
@@ -289,6 +301,7 @@ export default function MatchSimulator() {
       setPlayers(bundle.players);
       setLeagueIndex(bundle.meta.leagueIndex ?? { divisions: {} });
       setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
+      setPoolRosters(bundle.meta.poolRosters ?? {});
     };
     if (import.meta.env.DEV) {
       try {
@@ -445,6 +458,7 @@ export default function MatchSimulator() {
           teamFilter={teamFilterA}
           onTeamFilterChange={setTeamFilterA}
           poolTeams={poolTeams}
+          rosterIds={currentPoolRosterIds}
         />
         <span className="vs">vs</span>
         <SideEditor
@@ -460,6 +474,7 @@ export default function MatchSimulator() {
           teamFilter={teamFilterB}
           onTeamFilterChange={setTeamFilterB}
           poolTeams={poolTeams}
+          rosterIds={currentPoolRosterIds}
         />
       </div>
 
