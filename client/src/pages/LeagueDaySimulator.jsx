@@ -431,8 +431,8 @@ export default function LeagueDaySimulator() {
     const usage = new Map();
     const singlesUsage = new Map();
     const excludeSubs = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p)));
-    const poolA = excludeSubs(filterByClub(players, clubFilterA, []));
-    const poolB = excludeSubs(filterByClub(players, clubFilterB, []));
+    const poolA = excludeSubs(filterByClub(players, clubFilterA, [], currentPoolRosterIds));
+    const poolB = excludeSubs(filterByClub(players, clubFilterB, [], currentPoolRosterIds));
 
     // Each side's strongest singles-rated player, and whether they're
     // excluded from rubbers before their singles turn (opt-in filter).
