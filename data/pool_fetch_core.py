@@ -117,41 +117,51 @@ def fetch_pool_players(
         progress("players", 5 + i / len(match_ids) * 35, f"{i}/{len(match_ids)} matches, {len(player_ids)} players found")
         time.sleep(delay)
 
-    # Persist the FULL roster discovered for this pool (not just newly-seen
-    # players), so the client can scope its club/player pickers to whoever
-    # actually plays in this specific pool instead of matching by club name
-    # alone (a club can field entirely different players across divisions).
-    rosters_path = DATA_DIR / "pool_rosters.json"
-    rosters = {}
-    if rosters_path.exists():
-        rosters = json.loads(rosters_path.read_text(encoding="utf-8"))
-    rosters[draw_id] = sorted(player_ids.keys(), key=int)
-    rosters_path.write_text(json.dumps(rosters, indent=2), encoding="utf-8")
-
     # Each team's roster page also exposes a real "Vastspeler" (fixed player)
     # flag per member - fetch it once per team (cached across runs/pools since
     # a team's roster rarely changes) instead of the old hardcoded name list.
     fetched_teams_path = DATA_DIR / "team_fixed_status_fetched.json"
     fetched_teams = set(json.loads(fetched_teams_path.read_text(encoding="utf-8"))) if fetched_teams_path.exists() else set()
     new_team_ids = sorted(team_ids - fetched_teams, key=int)
+    # Roster members who haven't played a match yet this season never show up as
+    # a "player" via the match-participant discovery above, so they'd otherwise
+    # never get an event page (or career.json entry) at all - roster_ids closes
+    # that gap by treating every registered team member as a fetch candidate too.
+    roster_ids: set[str] = set()
     if new_team_ids:
         progress("roster", 39, f"fetching fixed-player status for {len(new_team_ids)} teams")
         fixed_status_path = DATA_DIR / "player_fixed_status.json"
         fixed_status = json.loads(fixed_status_path.read_text(encoding="utf-8")) if fixed_status_path.exists() else {}
         for tid in new_team_ids:
             try:
-                fixed_status.update(fetch_team_fixed_status(tid, cookie))
+                team_status = fetch_team_fixed_status(tid, cookie)
             except (urllib.error.HTTPError, urllib.error.URLError):
                 continue
+            fixed_status.update(team_status)
+            roster_ids.update(team_status.keys())
             fetched_teams.add(tid)
             time.sleep(delay)
         fixed_status_path.write_text(json.dumps(fixed_status, indent=2), encoding="utf-8")
         fetched_teams_path.write_text(json.dumps(sorted(fetched_teams, key=int)), encoding="utf-8")
 
+    # Persist the FULL roster discovered for this pool - match participants plus
+    # any roster-only members just found above - merged cumulatively (not
+    # overwritten) so a member found once stays even on a later run where their
+    # team is already cached and roster_ids comes back empty. Lets the client
+    # scope its club/player pickers to whoever actually plays in this specific
+    # pool instead of matching by club name alone (a club can field entirely
+    # different players across divisions).
+    rosters_path = DATA_DIR / "pool_rosters.json"
+    rosters = {}
+    if rosters_path.exists():
+        rosters = json.loads(rosters_path.read_text(encoding="utf-8"))
+    rosters[draw_id] = sorted(set(rosters.get(draw_id, [])) | set(player_ids) | roster_ids, key=int)
+    rosters_path.write_text(json.dumps(rosters, indent=2), encoding="utf-8")
+
     events_path = DATA_DIR / "events_index.json"
     events = json.loads(events_path.read_text(encoding="utf-8"))
     known_ids = {e["player_id"] for e in events if e["tournament_id"] == CURRENT_TOURNAMENT_ID}
-    new_ids = [pid for pid in player_ids if pid not in known_ids]
+    new_ids = [pid for pid in (set(player_ids) | roster_ids) if pid not in known_ids]
 
     if not new_ids:
         progress("career", 90, "all players already cached")
