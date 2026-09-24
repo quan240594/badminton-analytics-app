@@ -37,6 +37,12 @@ BROWSER_HEADERS = {
 
 MATCH_LINK_RE = re.compile(r"teammatch\.aspx\?id=([0-9A-Fa-f-]+)&match=(\d+)")
 PLAYER_LINK_RE = re.compile(r"player\.aspx\?id=([0-9A-Fa-f-]+)&player=(\d+)")
+TEAM_LINK_RE = re.compile(r"team\.aspx\?id=[0-9A-Fa-f-]+&team=(\d+)")
+# teamplayers.aspx roster row: player id, then member id, then the "Vastspeler"
+# ("fixed player") column - the closest thing that site's data model has to a
+# "starter vs substitute" flag. Locale isn't consistently Dutch across requests
+# (same cookie can get "Ja"/"Nee" or "Yes"/"No" back), so accept either.
+TEAM_PLAYER_ROW_RE = re.compile(r'player\.aspx\?id=[0-9A-Fa-f-]+&player=(\d+)">[^<]*</a></td><td>\d+</td><td>(Ja|Nee|Yes|No)</td>')
 
 ProgressCallback = Callable[[str, float, str], None]
 
@@ -45,10 +51,21 @@ def _noop_progress(step: str, percent: float, detail: str) -> None:
     return None
 
 
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
+def fetch(url: str, cookie: str, extra_headers: dict | None = None) -> str:
+    headers = {**BROWSER_HEADERS, "Cookie": cookie, **(extra_headers or {})}
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=20) as resp:
         return resp.read().decode("utf-8", errors="replace")
+
+
+def fetch_team_fixed_status(team_id: str, cookie: str) -> dict[str, bool]:
+    """{local_player_id: is_fixed_roster_player} for one team, current tournament."""
+    html = fetch(
+        f"{BASE_URL}teamplayers.aspx?id={CURRENT_TOURNAMENT_ID}&tid={team_id}",
+        cookie,
+        extra_headers={"X-Requested-With": "XMLHttpRequest"},
+    )
+    return {pid: flag in ("Ja", "Yes") for pid, flag in TEAM_PLAYER_ROW_RE.findall(html)}
 
 
 def fetch_pool_players(
@@ -71,6 +88,7 @@ def fetch_pool_players(
         raise RuntimeError("no matches found for this draw")
 
     player_ids: dict[str, None] = {}
+    team_ids: set[str] = set()
     for i, match_id in enumerate(match_ids, 1):
         try:
             html = fetch(f"{BASE_URL}teammatch.aspx?id={CURRENT_TOURNAMENT_ID}&match={match_id}", cookie)
@@ -78,6 +96,7 @@ def fetch_pool_players(
             continue
         for _, pid in PLAYER_LINK_RE.findall(html):
             player_ids[pid] = None
+        team_ids.update(TEAM_LINK_RE.findall(html))
         progress("players", 5 + i / len(match_ids) * 35, f"{i}/{len(match_ids)} matches, {len(player_ids)} players found")
         time.sleep(delay)
 
@@ -91,6 +110,26 @@ def fetch_pool_players(
         rosters = json.loads(rosters_path.read_text(encoding="utf-8"))
     rosters[draw_id] = sorted(player_ids.keys(), key=int)
     rosters_path.write_text(json.dumps(rosters, indent=2), encoding="utf-8")
+
+    # Each team's roster page also exposes a real "Vastspeler" (fixed player)
+    # flag per member - fetch it once per team (cached across runs/pools since
+    # a team's roster rarely changes) instead of the old hardcoded name list.
+    fetched_teams_path = DATA_DIR / "team_fixed_status_fetched.json"
+    fetched_teams = set(json.loads(fetched_teams_path.read_text(encoding="utf-8"))) if fetched_teams_path.exists() else set()
+    new_team_ids = sorted(team_ids - fetched_teams, key=int)
+    if new_team_ids:
+        progress("roster", 39, f"fetching fixed-player status for {len(new_team_ids)} teams")
+        fixed_status_path = DATA_DIR / "player_fixed_status.json"
+        fixed_status = json.loads(fixed_status_path.read_text(encoding="utf-8")) if fixed_status_path.exists() else {}
+        for tid in new_team_ids:
+            try:
+                fixed_status.update(fetch_team_fixed_status(tid, cookie))
+            except (urllib.error.HTTPError, urllib.error.URLError):
+                continue
+            fetched_teams.add(tid)
+            time.sleep(delay)
+        fixed_status_path.write_text(json.dumps(fixed_status, indent=2), encoding="utf-8")
+        fetched_teams_path.write_text(json.dumps(sorted(fetched_teams, key=int)), encoding="utf-8")
 
     events_path = DATA_DIR / "events_index.json"
     events = json.loads(events_path.read_text(encoding="utf-8"))

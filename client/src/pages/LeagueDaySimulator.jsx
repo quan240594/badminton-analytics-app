@@ -9,21 +9,20 @@ const STORAGE_KEY = 'badminton-app-league-day-state';
 const MAX_RECOMMENDED_APPEARANCES = 3;
 const MAX_SINGLES_APPEARANCES = 1;
 const SMALL_ROSTER_MAX = 4;
-// Scraped data has no "substitute" flag - maintain manually until/unless one exists.
-const SUBSTITUTE_NAMES = ['Vu Tien Dung (Ben) Nguyen', 'Lixiang ( Cliff ) Ma', 'Jin Chen'];
-function isSubstitutePlayer(player) {
-  return SUBSTITUTE_NAMES.includes(player.name);
+// Real "Vastspeler" (fixed player) status scraped per team, resolved server-side
+// to a list of substitute player guids (see server/lib/leagueIndex.js).
+function isSubstitutePlayer(player, substituteIds) {
+  return substituteIds.includes(player.id);
 }
 
-// "Sub" tag here reuses the same hardcoded list above, not a real scraped flag.
 // The badge is always rendered (just hidden for non-subs) so every player box
 // reserves the same width instead of the input growing/shrinking row to row.
-function playerPickerDetail(player, discipline) {
+function playerPickerDetail(player, discipline, substituteIds) {
   if (!player) return null;
   const rating = Math.round(ratingFor(discipline, player));
   const winRate = player[`${discipline}WinRate`];
   const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
-  const sub = isSubstitutePlayer(player);
+  const sub = isSubstitutePlayer(player, substituteIds);
   return (
     <span className="stat-line">
       <span>Rating {rating}</span>
@@ -232,6 +231,7 @@ export default function LeagueDaySimulator() {
   const [leagueIndex, setLeagueIndex] = useState({ divisions: {} });
   const [fetchedDrawIds, setFetchedDrawIds] = useState([]);
   const [poolRosters, setPoolRosters] = useState({});
+  const [substituteIds, setSubstituteIds] = useState([]);
   const [poolFetchState, setPoolFetchState] = useState({ running: false, percent: 0, error: null });
   const [clubFilterA, setClubFilterA] = useState(stored?.clubFilterA ?? 'DROP SHOT BC');
   const [teamFilterA, setTeamFilterA] = useState(stored?.teamFilterA ?? null);
@@ -265,6 +265,7 @@ export default function LeagueDaySimulator() {
         setLeagueIndex(meta.leagueIndex ?? { divisions: {} });
         setFetchedDrawIds(meta.fetchedDrawIds ?? []);
         setPoolRosters(meta.poolRosters ?? {});
+        setSubstituteIds(meta.substitutePlayerIds ?? []);
         if (!stored?.drawId && meta.currentPool?.drawId) setDrawId(meta.currentPool.drawId);
       })
       .catch(() => {});
@@ -322,6 +323,7 @@ export default function LeagueDaySimulator() {
       setLeagueIndex(bundle.meta.leagueIndex ?? { divisions: {} });
       setFetchedDrawIds(bundle.meta.fetchedDrawIds ?? []);
       setPoolRosters(bundle.meta.poolRosters ?? {});
+      setSubstituteIds(bundle.meta.substitutePlayerIds ?? []);
     };
     if (import.meta.env.DEV) {
       try {
@@ -430,7 +432,7 @@ export default function LeagueDaySimulator() {
   const autoFill = (objective) => {
     const usage = new Map();
     const singlesUsage = new Map();
-    const excludeSubs = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p)));
+    const excludeSubs = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p, substituteIds)));
     const poolA = excludeSubs(filterByClub(players, clubFilterA, [], currentPoolRosterIds));
     const poolB = excludeSubs(filterByClub(players, clubFilterB, [], currentPoolRosterIds));
 
@@ -759,8 +761,8 @@ export default function LeagueDaySimulator() {
                       onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
                       showClub={false}
-                      detail={playerPickerDetail(byId.get(id), discipline)}
-                      isSubstitute={isSubstitutePlayer}
+                      detail={playerPickerDetail(byId.get(id), discipline, substituteIds)}
+                      isSubstitute={(p) => isSubstitutePlayer(p, substituteIds)}
                     />
                   ))}
                 </div>
@@ -775,8 +777,8 @@ export default function LeagueDaySimulator() {
                       onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
                       showClub={false}
-                      detail={playerPickerDetail(byId.get(id), discipline)}
-                      isSubstitute={isSubstitutePlayer}
+                      detail={playerPickerDetail(byId.get(id), discipline, substituteIds)}
+                      isSubstitute={(p) => isSubstitutePlayer(p, substituteIds)}
                       mirrored
                     />
                   ))}

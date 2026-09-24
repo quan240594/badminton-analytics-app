@@ -7,6 +7,7 @@ const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const LEAGUE_INDEX_PATH = path.join(DATA_DIR, 'league_index.json');
 const FETCHED_POOLS_PATH = path.join(DATA_DIR, 'fetched_pools.json');
 const POOL_ROSTERS_PATH = path.join(DATA_DIR, 'pool_rosters.json');
+const PLAYER_FIXED_STATUS_PATH = path.join(DATA_DIR, 'player_fixed_status.json');
 const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
 
 // Trailing squad code like "M1"/"M2"/"A2" (letters+digits) or a bare number ("1"/"2").
@@ -88,4 +89,25 @@ export function poolRosters(aliasIndex) {
       .filter(Boolean);
   }
   return result;
+}
+
+function loadPlayerFixedStatusRaw() {
+  try {
+    return JSON.parse(readFileSync(PLAYER_FIXED_STATUS_PATH, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+// Guids of players scraped as NOT a team's "Vastspeler" (fixed player) - i.e.
+// substitutes - replacing the old hardcoded-by-name substitute list.
+export function substitutePlayerIds(aliasIndex) {
+  const raw = loadPlayerFixedStatusRaw();
+  const ids = [];
+  for (const [localId, isFixed] of Object.entries(raw)) {
+    if (isFixed) continue;
+    const guid = aliasIndex.get(`${CURRENT_TOURNAMENT_ID}:${localId}`);
+    if (guid) ids.push(guid);
+  }
+  return ids;
 }
