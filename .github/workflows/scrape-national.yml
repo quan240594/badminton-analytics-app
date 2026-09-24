@@ -57,6 +57,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json
+          git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json
           git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
           git push
