@@ -77,6 +77,21 @@ function disciplineForCode(code) {
   return 'singles';
 }
 
+// MS/MD slots need a man, WS/WD need a woman; XD needs one of each (handled as
+// a pairing constraint in bestPairing, not a single required gender here).
+function requiredGenderForCode(code) {
+  if (code.startsWith('MS') || code.startsWith('MD')) return 'M';
+  if (code.startsWith('WS') || code.startsWith('WD')) return 'F';
+  return null;
+}
+
+// Permissive both ways: a player with no recorded gender can fill either slot,
+// so incomplete gender data degrades to "unfiltered" instead of unfillable rubbers.
+function isValidMixedPair(p1, p2, genders) {
+  const canBe = (p, g) => !genders[p.id] || genders[p.id] === g;
+  return (canBe(p1, 'M') && canBe(p2, 'F')) || (canBe(p1, 'F') && canBe(p2, 'M'));
+}
+
 function emptySlots(format) {
   return FORMATS[format].codes.map((code) => ({
     code,
@@ -98,10 +113,12 @@ function loadStoredState() {
 }
 
 // When a pool roster is known, only its actual squad (plus any already-selected id) is eligible.
-function filterByClub(players, clubFilter, keepIds, rosterIds = null) {
+// requiredGender/genders optionally scope the picker to MS/WS/MD/WD's gender requirement.
+function filterByClub(players, clubFilter, keepIds, rosterIds = null, requiredGender = null, genders = {}) {
   return players.filter((p) => {
     if (keepIds.includes(p.id)) return true;
     if (clubFilter && p.club !== clubFilter) return false;
+    if (requiredGender && genders[p.id] && genders[p.id] !== requiredGender) return false;
     return !rosterIds || rosterIds.includes(p.id);
   });
 }
@@ -121,19 +138,36 @@ function ratingFor(prefix, player) {
   return player[`${prefix}Rating`] ?? 1500;
 }
 
+// A real national ranking (years of actual competitive results) is a far more
+// reliable "who's actually strongest" signal than our own computed rating, which
+// is only ever built from this app's own scraped match sample - easy to be
+// misleadingly low for an established player who simply has few (or a rough)
+// recorded run of matches in that sample, and easy to look "average" (the 1500
+// default) for someone with zero recorded matches instead of genuinely average.
+// So: rank nationally-ranked players by rank (lower is better) ahead of everyone
+// else, and only fall back to our own rating to order/compare the unranked rest.
+function compareStrength(prefix, a, b) {
+  const rankA = a.nationalRanking?.[prefix]?.rank;
+  const rankB = b.nationalRanking?.[prefix]?.rank;
+  if (rankA != null && rankB != null) return rankA - rankB;
+  if (rankA != null) return -1;
+  if (rankB != null) return 1;
+  return ratingFor(prefix, b) - ratingFor(prefix, a);
+}
+
 // Read-only team-strength summary shown above the lineup: each discipline's
-// strongest eligible player(s) by rating, split by gender (site data has no
-// gender field on match records, only on team roster pages - see playerGenders).
+// strongest eligible player(s), split by gender (site data has no gender field
+// on match records, only on team roster pages - see playerGenders).
 function teamHighlights(pool, genders) {
   const men = pool.filter((p) => genders[p.id] === 'M');
   const women = pool.filter((p) => genders[p.id] === 'F');
-  const topByRating = (list, prefix, n) => [...list].sort((a, b) => ratingFor(prefix, b) - ratingFor(prefix, a)).slice(0, n);
+  const topByStrength = (list, prefix, n) => [...list].sort((a, b) => compareStrength(prefix, a, b)).slice(0, n);
   return {
-    highestMS: topByRating(men, 'singles', 1)[0] ?? null,
-    highestWS: topByRating(women, 'singles', 1)[0] ?? null,
-    highestMD: topByRating(men, 'doubles', 2),
-    highestWD: topByRating(women, 'doubles', 2),
-    highestXD: [topByRating(men, 'mixed', 1)[0] ?? null, topByRating(women, 'mixed', 1)[0] ?? null],
+    highestMS: topByStrength(men, 'singles', 1)[0] ?? null,
+    highestWS: topByStrength(women, 'singles', 1)[0] ?? null,
+    highestMD: topByStrength(men, 'doubles', 2),
+    highestWD: topByStrength(women, 'doubles', 2),
+    highestXD: [topByStrength(men, 'mixed', 1)[0] ?? null, topByStrength(women, 'mixed', 1)[0] ?? null],
   };
 }
 
@@ -175,7 +209,7 @@ function objectiveScore(objective, probA) {
 
 // Scores every valid pairing from two candidate pools and returns the best one,
 // or null if no valid pairing exists (e.g. a pool too small to avoid overlap).
-function bestPairing(discipline, candidatesA, candidatesB, objective) {
+function bestPairing(discipline, candidatesA, candidatesB, objective, genders = {}) {
   let bestScore = -Infinity;
   let bestA = null;
   let bestB = null;
@@ -193,9 +227,13 @@ function bestPairing(discipline, candidatesA, candidatesB, objective) {
       }
     }
   } else {
-    for (const [a1, a2] of combos2(candidatesA)) {
+    // MD/WD candidates are already scoped to one gender by the caller; XD isn't
+    // (it needs one of each), so only XD pairs get validated here.
+    const pairsA = combos2(candidatesA).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
+    const pairsB = combos2(candidatesB).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
+    for (const [a1, a2] of pairsA) {
       const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
-      for (const [b1, b2] of combos2(candidatesB)) {
+      for (const [b1, b2] of pairsB) {
         if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
         const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
         const probA = expectedScore(ratingA, ratingB);
@@ -479,11 +517,14 @@ export default function LeagueDaySimulator() {
     const poolA = excludeSubs(filterByClub(players, clubFilterA, [], currentPoolRosterIds));
     const poolB = excludeSubs(filterByClub(players, clubFilterB, [], currentPoolRosterIds));
 
-    // Each side's strongest singles-rated player, and whether they're
-    // excluded from rubbers before their singles turn (opt-in filter).
-    const strongestSingles = (pool) => pool.reduce(
-      (best, p) => (!best || ratingFor('singles', p) > ratingFor('singles', best) ? p : best), null,
-    );
+    // Each side's strongest MEN's-singles player (MS1 is a men's slot) - ranked
+    // by real national ranking first, our own rating only as a fallback (see
+    // compareStrength) - and whether they're excluded from rubbers before their
+    // singles turn (opt-in filter).
+    const strongestSingles = (pool) => {
+      const men = pool.filter((p) => !playerGenders[p.id] || playerGenders[p.id] === 'M');
+      return men.reduce((best, p) => (!best || compareStrength('singles', p, best) < 0 ? p : best), null);
+    };
     const strongestSinglesA = strongestSingles(poolA);
     const strongestSinglesB = strongestSingles(poolB);
     const topSinglesA = protectTopSingles ? strongestSinglesA : null;
@@ -497,16 +538,23 @@ export default function LeagueDaySimulator() {
     // singles player - matches how real team nights typically seed singles -
     // independent of the protect-top-singles filter above.
     const pinnedAtFirstSingles = (strongest) => (i) => (i === firstSinglesIndex ? strongest : null);
+    // A rubber's slot code determines which gender is required (MS/MD -> men,
+    // WS/WD -> women; XD needs one of each, validated in bestPairing instead).
+    const isWrongGenderFor = (code) => (p) => {
+      const required = requiredGenderForCode(code);
+      return Boolean(required) && Boolean(playerGenders[p.id]) && playerGenders[p.id] !== required;
+    };
 
     // A club too small to have any real lineup flexibility (e.g. exactly 4
     // players for an 8-rubber night) gets priority: a fixed, evenly-rotated
     // lineup instead of being optimized. The other side still optimizes for the
     // chosen objective, but against that fixed opponent for each rubber.
+    const excludeForFixed = (topSingles) => (p, i) => isProtectedFor(topSingles)(p, i) || isWrongGenderFor(slots[i].code)(p);
     const fixedA = poolA.length > 0 && poolA.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolA, slots, isProtectedFor(topSinglesA), pinnedAtFirstSingles(strongestSinglesA))
+      ? buildDefaultLineup(poolA, slots, excludeForFixed(topSinglesA), pinnedAtFirstSingles(strongestSinglesA))
       : null;
     const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolB, slots, isProtectedFor(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
+      ? buildDefaultLineup(poolB, slots, excludeForFixed(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
       : null;
 
     const nextSlots = slots.map((slot, slotIndex) => {
@@ -553,8 +601,14 @@ export default function LeagueDaySimulator() {
       const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
       const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
 
-      const eligibleA = poolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
-      const eligibleB = poolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
+      // MD/WD candidates are pre-scoped to their required gender here (XD's
+      // one-of-each-gender constraint is instead validated inside bestPairing,
+      // since it's a pairing rule, not a per-player filter).
+      const genderOkHere = (p) => !isWrongGenderFor(slot.code)(p);
+      const genderPoolA = poolA.filter(genderOkHere);
+      const genderPoolB = poolB.filter(genderOkHere);
+      const eligibleA = genderPoolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
+      const eligibleB = genderPoolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
 
       // A side with a fixed lineup, or a forced MS1 pick, always faces exactly
       // that player/pair for this rubber; a free side still relaxes its own
@@ -563,12 +617,12 @@ export default function LeagueDaySimulator() {
       const attempts = [
         [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
         [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
-        [fixedPlayersA ?? poolA.filter(withinCap), fixedPlayersB ?? poolB.filter(withinCap)],
-        [fixedPlayersA ?? poolA, fixedPlayersB ?? poolB],
+        [fixedPlayersA ?? genderPoolA.filter(withinCap), fixedPlayersB ?? genderPoolB.filter(withinCap)],
+        [fixedPlayersA ?? genderPoolA, fixedPlayersB ?? genderPoolB],
       ];
       let pairing = null;
       for (const [candidatesA, candidatesB] of attempts) {
-        pairing = bestPairing(discipline, candidatesA, candidatesB, objective);
+        pairing = bestPairing(discipline, candidatesA, candidatesB, objective, playerGenders);
         if (pairing) break;
       }
 
@@ -817,7 +871,7 @@ export default function LeagueDaySimulator() {
                     <PlayerSelect
                       key={idx}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                      players={filterByClub(players, clubFilterA, slot.sideA, currentPoolRosterIds)}
+                      players={filterByClub(players, clubFilterA, slot.sideA, currentPoolRosterIds, requiredGenderForCode(slot.code), playerGenders)}
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideA', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideA', idx)}
@@ -833,7 +887,7 @@ export default function LeagueDaySimulator() {
                     <PlayerSelect
                       key={idx}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
-                      players={filterByClub(players, clubFilterB, slot.sideB, currentPoolRosterIds)}
+                      players={filterByClub(players, clubFilterB, slot.sideB, currentPoolRosterIds, requiredGenderForCode(slot.code), playerGenders)}
                       value={id}
                       onChange={(v) => updateSlot(slot.code, 'sideB', idx, v)}
                       excludeIds={otherIdsInSlot(slot, 'sideB', idx)}
