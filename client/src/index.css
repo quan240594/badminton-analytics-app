@@ -522,7 +522,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   font-size: 0.8rem;
 }
 .th-label { color: #94a3b8; }
-.th-name { color: #e2e8f0; font-weight: 600; }
+.th-name { color: #e2e8f0; font-weight: 600; text-align: right; }
 .th-rating { color: #64748b; font-variant-numeric: tabular-nums; }
 .th-rating-left { text-align: left; }
 .th-rating-right { text-align: right; }
