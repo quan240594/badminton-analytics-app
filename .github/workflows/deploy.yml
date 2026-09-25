@@ -27,12 +27,12 @@ jobs:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
           token: ${{ secrets.DATA_FETCHING_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -72,7 +72,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/career.json data/rankings.json data/titles.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/last_refreshed.json
+          git add data/career.json data/rankings.json data/titles.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json
+          # Only produced by the full refresh path (refresh_data.py), not the scoped single-pool one (fetch_pool.py).
+          [ -f data/last_refreshed.json ] && git add data/last_refreshed.json || true
           # commit message reflects which refresh path ran (full national vs one scoped pool)
           if [ -n "${{ github.event.inputs.draw_id }}" ]; then
             MSG="chore(data): refresh pool ${{ github.event.inputs.draw_id }}"
@@ -90,11 +92,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
 
