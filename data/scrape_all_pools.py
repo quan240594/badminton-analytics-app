@@ -32,6 +32,10 @@ DRAW_TEAMS_PATH = DATA_DIR / "draw_teams.json"
 FETCHED_POOLS_PATH = DATA_DIR / "fetched_pools.json"
 DAILY_BUDGET_PATH = DATA_DIR / "scrape_daily_budget.json"
 
+# Distinct exit code so the workflow's calling loop can tell "budget/pools exhausted,
+# stop looping" apart from a real failure (exit 1) or a completed fetch (exit 0).
+NOTHING_TO_DO = 3
+
 
 def load_fetched_pools() -> dict:
     if FETCHED_POOLS_PATH.exists():
@@ -86,7 +90,7 @@ def main() -> None:
             flush=True,
         )
         save_daily_budget(budget)  # persist a freshly-rolled-over boundary even when skipping
-        return
+        sys.exit(NOTHING_TO_DO)
 
     draw_teams = json.loads(DRAW_TEAMS_PATH.read_text(encoding="utf-8"))
     fetched = load_fetched_pools()
@@ -95,7 +99,7 @@ def main() -> None:
 
     if not pending:
         print(f"All {total_pools} pools already fetched - nothing left to do.", flush=True)
-        return
+        sys.exit(NOTHING_TO_DO)
 
     draw_id = pending[0]
     label = draw_teams[draw_id].get("afdelingLabel", draw_id)

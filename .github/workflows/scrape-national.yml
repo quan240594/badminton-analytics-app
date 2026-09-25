@@ -2,16 +2,16 @@ name: National pool scrape (incremental)
 
 on:
   schedule:
-    # Every 10 min, 08:00-15:59 UTC ("day" starts 08:00, per scrape_all_pools.py's
-    # own --day-start-hour). This window is a generous outer bound, not the real
-    # throttle - each tick fetches at most one pool and the script's own persisted
-    # daily budget (120 real scraping minutes/day) is what actually caps work; the
-    # "pause" between pools is simply the gap between ticks, so it costs nothing.
-    - cron: '*/10 8-15 * * *'
+    # A single daily trigger, which GitHub Actions honors reliably (unlike a
+    # sub-hourly schedule - */10 was tried first but real runs showed GitHub
+    # silently drops/delays most ticks on a lower-priority queue like this repo's,
+    # firing maybe once every several hours instead of every 10 min). The pacing
+    # itself now comes from the loop inside this job, not from repeated triggers.
+    - cron: '0 8 * * *'
   workflow_dispatch:
     inputs:
       force:
-        description: 'Fetch a pool even if today''s budget is already used up'
+        description: 'Ignore today''s budget for this run (manual catch-up)'
         required: false
         type: boolean
         default: false
@@ -26,7 +26,11 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # one pool (a few min typically, more for a large pool) + login/setup overhead
+    # A day's session can legitimately run for hours (up to 120 min of real
+    # scraping plus a 10-min pause after every pool) - kept safely under GitHub's
+    # 6-hour hard per-job ceiling, since a kill mid-session only loses whichever
+    # single pool was in flight (everything before it was already committed).
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
         with:
@@ -51,17 +55,41 @@ jobs:
         run: python3 playwright_login.py --save cookie.txt
         working-directory: data
 
-      - name: Scrape one pending pool against today's budget
-        run: python3 scrape_all_pools.py ${{ github.event.inputs.force == 'true' && '--force' || '' }}
-        working-directory: data
-
-      - name: Remove session cookie before committing
-        run: rm -f data/cookie.txt
-
-      - name: Commit and push progress
+      # One login/cookie serves the whole day's session. Loops: fetch one pool,
+      # commit+push immediately (so a later timeout/failure only loses the pool
+      # in flight), then pause 10 min before the next - until today's budget or
+      # the pool list is exhausted (exit code 3, see scrape_all_pools.py), or a
+      # real failure (any other non-zero exit) stops the run.
+      - name: Scrape pools for the day, 10-min pause between each
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json
-          git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
-          git push
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          while true; do
+            set +e
+            (cd data && python3 scrape_all_pools.py $FORCE_FLAG)
+            code=$?
+            set -e
+
+            git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json
+            git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
+            git push
+
+            if [ "$code" -eq 3 ]; then
+              echo "Nothing more to do for today - stopping."
+              break
+            elif [ "$code" -ne 0 ]; then
+              echo "scrape_all_pools.py failed (exit $code) - stopping."
+              exit "$code"
+            fi
+
+            echo "Pausing 10 minutes before the next pool..."
+            sleep 600
+          done
+
+      - name: Remove session cookie
+        if: always()
+        run: rm -f data/cookie.txt
