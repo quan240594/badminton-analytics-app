@@ -98,10 +98,19 @@ function confidenceLabel(played) {
   return 'low';
 }
 
-// Historical event pages where profile-GUID parsing failed left inert 0-match placeholders in career.json.
+// Historical event pages where profile-GUID parsing failed left inert 0-match
+// placeholders in career.json - filtered out, unless the profile is a genuine
+// current-season roster member (has a current-tournament alias even with 0
+// matches), since a player who's registered but hasn't played yet is real data,
+// not a parse failure (see: roster-only player discovery in pool_fetch_core.py).
+const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
+const currentSeasonGuids = new Set();
+for (const [key, guid] of aliasIndex) {
+  if (key.startsWith(`${CURRENT_TOURNAMENT_ID}:`)) currentSeasonGuids.add(guid);
+}
 const playerList = [...players.keys()]
   .map(playerSummary)
-  .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0));
+  .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0 || currentSeasonGuids.has(p.id)));
 playerList.sort((a, b) => a.name.localeCompare(b.name));
 
 const currentPool = currentPoolTeams(CURRENT_POOL_LABEL);
