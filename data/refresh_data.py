@@ -17,11 +17,11 @@ import argparse
 import hashlib
 import json
 import re
-import shutil
 import subprocess
 import sys
 import time
 import urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -37,6 +37,12 @@ CHANGE_STATE_PATH = DATA_DIR / "refresh_change_state.json"
 # get_cookie.py needs browser_cookie3, only installed in this venv (not the interpreter running this script).
 VENV_PYTHON = DATA_DIR / ".venv" / "bin" / "python3"
 PROGRESS_PATH = DATA_DIR / "refresh_progress.json"
+# Which event/ranking pages were force-refreshed and when - lets a run skip
+# anyone refreshed recently instead of unconditionally re-fetching the entire
+# current season's pages (event pages AND ranking pages) every single time,
+# which only gets slower as the national scraper grows the current-season
+# player pool. Keyed "event:{tournament_id}:{player_id}" / "ranking:{local_id}".
+LAST_REFRESHED_PATH = DATA_DIR / "last_refreshed.json"
 
 
 def write_progress(step: str, percent: float, detail: str = "", running: bool = True, error: str | None = None, unchanged: bool = False) -> None:
@@ -100,6 +106,23 @@ def run_with_progress(cmd: list[str], expected_paths: list[Path], step: str, bas
     write_progress(step, base_pct + span_pct, f"{target}/{target}")
 
 
+def load_last_refreshed() -> dict:
+    if LAST_REFRESHED_PATH.exists():
+        return json.loads(LAST_REFRESHED_PATH.read_text(encoding="utf-8"))
+    return {}
+
+
+def save_last_refreshed(state: dict) -> None:
+    LAST_REFRESHED_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+
+def is_stale(state: dict, key: str, min_refresh_days: float, now: datetime) -> bool:
+    last = state.get(key)
+    if last is None:
+        return True
+    return datetime.fromisoformat(last) < now - timedelta(days=min_refresh_days)
+
+
 def refresh_cookie(cookie_file: Path, browser: str) -> None:
     """Pull a fresh session cookie from the local browser before scraping, so a
     stale cookie.txt never has to be manually refreshed via get_cookie.py."""
@@ -118,6 +141,10 @@ def main() -> None:
         "--skip-cookie-refresh",
         action="store_true",
         help="Use --cookie-file as-is (e.g. one just written by playwright_login.py in CI) instead of pulling it from a local browser profile.",
+    )
+    parser.add_argument(
+        "--min-refresh-days", type=float, default=3,
+        help="Skip re-fetching an event/ranking page refreshed more recently than this many days ago",
     )
     args = parser.parse_args()
 
@@ -140,25 +167,44 @@ def main() -> None:
         events = json.loads((DATA_DIR / "events_index.json").read_text(encoding="utf-8"))
         current_season = [e for e in events if e["tournament_id"] == CURRENT_TOURNAMENT_ID]
 
-        # Force re-fetch of current-season pages (fetch_events.py skips files that already exist).
+        now = datetime.now(timezone.utc)
+        last_refreshed = load_last_refreshed()
+
+        # Only force-refetch pages not refreshed within --min-refresh-days - the
+        # rest keep whatever was already cached (fetch_events.py/fetch_rankings.py
+        # skip files that already exist, so leaving a fresh-enough page alone is
+        # exactly the same as "already up to date, nothing to do" for it). This is
+        # what keeps a full-season refresh cheap as the current-season player
+        # pool keeps growing, instead of re-fetching everyone every single run.
+        events_to_refresh = [
+            e for e in current_season
+            if is_stale(last_refreshed, f"event:{e['tournament_id']}:{e['player_id']}", args.min_refresh_days, now)
+        ]
         events_dir = DATA_DIR / "pages" / "events"
-        for e in current_season:
+        for e in events_to_refresh:
             (events_dir / f"{e['tournament_id']}_{e['player_id']}.html").unlink(missing_ok=True)
 
         filtered_index = DATA_DIR / "events_index.current.json"
-        filtered_index.write_text(json.dumps(current_season), encoding="utf-8")
+        filtered_index.write_text(json.dumps(events_to_refresh), encoding="utf-8")
 
-        # Force re-fetch of all ranking pages (fetch_rankings.py also skips existing files).
         rankings_dir = DATA_DIR / "pages" / "rankings"
-        if rankings_dir.exists():
-            shutil.rmtree(rankings_dir)
         rankings_dir.mkdir(parents=True, exist_ok=True)
+        ranking_local_ids = discover_ranking_links(DATA_DIR / "pages")
+        ranking_ids_to_refresh = {
+            local_id for local_id in ranking_local_ids
+            if is_stale(last_refreshed, f"ranking:{local_id}", args.min_refresh_days, now)
+        }
+        for local_id in ranking_ids_to_refresh:
+            (rankings_dir / f"player_{local_id}.html").unlink(missing_ok=True)
+        # The 3 category "top of list" pages are cheap - always keep them current.
+        for cat in ("491", "493", "495"):
+            (rankings_dir / f"category_{cat}.html").unlink(missing_ok=True)
 
         # Force build_career_db.py to reprocess every local page (local parsing only, no network cost).
         (DATA_DIR / "career.state.json").unlink(missing_ok=True)
 
-        expected_event_paths = [events_dir / f"{e['tournament_id']}_{e['player_id']}.html" for e in current_season]
-        expected_ranking_paths = [rankings_dir / f"player_{local_id}.html" for local_id in discover_ranking_links(DATA_DIR / "pages")]
+        expected_event_paths = [events_dir / f"{e['tournament_id']}_{e['player_id']}.html" for e in events_to_refresh]
+        expected_ranking_paths = [rankings_dir / f"player_{local_id}.html" for local_id in ranking_ids_to_refresh]
         expected_ranking_paths += [rankings_dir / f"category_{cat}.html" for cat in ("491", "493", "495")]
 
         try:
@@ -172,6 +218,13 @@ def main() -> None:
             )
         finally:
             filtered_index.unlink(missing_ok=True)
+
+        refreshed_at = now.isoformat()
+        for e in events_to_refresh:
+            last_refreshed[f"event:{e['tournament_id']}:{e['player_id']}"] = refreshed_at
+        for local_id in ranking_ids_to_refresh:
+            last_refreshed[f"ranking:{local_id}"] = refreshed_at
+        save_last_refreshed(last_refreshed)
 
         write_progress("rebuild", 96, "rebuilding career.json")
         run(sys.executable, "build_career_db.py", "pages", "--out", "career.json")

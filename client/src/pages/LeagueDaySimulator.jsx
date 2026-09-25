@@ -321,7 +321,7 @@ export default function LeagueDaySimulator() {
   const [protectTopSingles, setProtectTopSingles] = useState(false);
   const [includeSubstitutes, setIncludeSubstitutes] = useState(false);
   const simulationRequestId = useRef(0);
-  const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => setPlayers(bundle.players));
+  const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => setPlayers(bundle.players), drawId);
 
   const format = formatForDivision(division);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];

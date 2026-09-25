@@ -165,7 +165,7 @@ export default function MatchSimulator() {
     setLastUpdated(bundle.meta.lastUpdated);
     setPoolLabel(bundle.meta.poolLabel);
     setTitleYears(bundle.meta.titleYears ?? []);
-  });
+  }, drawId);
   const simulationRequestId = useRef(0);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];
   const poolTeams = useMemo(

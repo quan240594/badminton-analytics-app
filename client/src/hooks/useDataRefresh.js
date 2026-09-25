@@ -2,14 +2,21 @@ import { useState } from 'react';
 import {
   triggerRefresh,
   fetchRefreshProgress,
+  triggerPoolRefresh,
+  fetchPoolRefreshProgress,
   reloadBundle,
   triggerGithubWorkflowRefresh,
+  triggerGithubWorkflowPoolRefresh,
   pollGithubWorkflowRun,
 } from '../api.js';
 
 // Extracted from MatchSimulator so any page can share the same "Fetch data"
 // mechanics: local-dev polling vs. GitHub Actions polling in production.
-export default function useDataRefresh(onRefreshed) {
+// When drawId is given, this scopes to just that pool (fetch_pool.py) instead
+// of a full current-season refresh - fetching "everything" every time a user
+// just wants their currently-selected pool's data only gets slower as the
+// national scraper grows the current-season player pool.
+export default function useDataRefresh(onRefreshed, drawId) {
   const [refreshState, setRefreshState] = useState({ running: false, percent: 0, detail: '', error: null });
   const [showUnchanged, setShowUnchanged] = useState(false);
 
@@ -18,10 +25,12 @@ export default function useDataRefresh(onRefreshed) {
     onRefreshed(bundle);
   };
 
-  // Local dev: polls server/index.js's own refresh_progress.json (see api.js).
+  // Local dev: polls server/index.js's own refresh_progress.json/refresh_pool_progress.json (see api.js).
   const fetchDataLocal = async () => {
+    const trigger = drawId ? () => triggerPoolRefresh(drawId) : triggerRefresh;
+    const fetchProgress = drawId ? fetchPoolRefreshProgress : fetchRefreshProgress;
     try {
-      await triggerRefresh();
+      await trigger();
     } catch (e) {
       setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
       return;
@@ -29,7 +38,7 @@ export default function useDataRefresh(onRefreshed) {
     const poll = async () => {
       let progress;
       try {
-        progress = await fetchRefreshProgress();
+        progress = await fetchProgress();
       } catch {
         setRefreshState({ running: false, percent: 0, detail: '', error: 'Lost connection to the refresh server.' });
         return;
@@ -53,9 +62,10 @@ export default function useDataRefresh(onRefreshed) {
   // Production (GitHub Pages): no backend to hit, so trigger the deploy.yml
   // workflow directly via the GitHub API and poll its run status instead.
   const fetchDataGithub = async () => {
+    const trigger = drawId ? () => triggerGithubWorkflowPoolRefresh(drawId) : triggerGithubWorkflowRefresh;
     let dispatchedAt;
     try {
-      dispatchedAt = await triggerGithubWorkflowRefresh();
+      dispatchedAt = await trigger();
     } catch (e) {
       setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
       return;
