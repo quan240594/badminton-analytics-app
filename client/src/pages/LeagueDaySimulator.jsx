@@ -17,15 +17,19 @@ function isSubstitutePlayer(player, substituteIds) {
 
 // The badge is always rendered (just hidden for non-subs) so every player box
 // reserves the same width instead of the input growing/shrinking row to row.
+// Shows real national ranking points, not our own computed rating - same
+// reasoning as the team-highlights panel: our rating defaults to a meaningless
+// 1500 for anyone with zero recorded league matches, which looked like a bug
+// even for players (e.g. roster-only ones) with a real, confirmed national
+// ranking (see rankingPoints() below).
 function playerPickerDetail(player, discipline, substituteIds) {
   if (!player) return null;
-  const rating = Math.round(ratingFor(discipline, player));
   const winRate = player[`${discipline}WinRate`];
   const pct = winRate == null ? '—' : `${Math.round(winRate * 100)}%`;
   const sub = isSubstitutePlayer(player, substituteIds);
   return (
     <span className="stat-line">
-      <span>Rating {rating}</span>
+      <span>Pts {rankingPoints(discipline, player)}</span>
       <span>Win {pct}</span>
       <span className="sub-badge" style={{ visibility: sub ? 'visible' : 'hidden' }}>Sub</span>
     </span>
