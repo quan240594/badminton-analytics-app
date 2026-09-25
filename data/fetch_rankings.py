@@ -18,6 +18,12 @@ from pathlib import Path
 
 BASE_URL = "https://badmintonnederland.toernooi.nl/ranking/"
 RANKING_LIST_ID = "52448"
+# A player's event page can link to more than one ranking list (e.g. the adult
+# "Nationale Badminton Ranking" AND a junior list) - rid=75 is the adult list's
+# consistent identifier sitewide; other rid values use a different category-id
+# scheme our parser below doesn't recognize, so picking the wrong one silently
+# yields zero parsed rows instead of an error.
+MAIN_RANKING_RID = "75"
 CATEGORIES = {"491": "singles", "493": "doubles", "495": "mixed"}
 RANKING_LINK_RE = re.compile(r"ranking/player\.aspx\?rid=(\d+)&player=(\d+)")
 
@@ -51,9 +57,14 @@ def discover_ranking_links(pages_dir: Path) -> dict[str, tuple[str, str]]:
     for path in paths:
         local_id = path.stem.split("_", 1)[1]
         text = path.read_text(encoding="utf-8", errors="replace")
-        m = RANKING_LINK_RE.search(text)
-        if m:
-            found[local_id] = (m.group(1), m.group(2))
+        matches = RANKING_LINK_RE.findall(text)
+        if not matches:
+            continue
+        # Prefer the adult main-list link if the player has more than one; fall
+        # back to whichever was found so a player with only a specialty list
+        # (e.g. junior-only) still gets something rather than nothing.
+        main_match = next((m for m in matches if m[0] == MAIN_RANKING_RID), None)
+        found[local_id] = main_match or matches[0]
     return found
 
 

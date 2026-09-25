@@ -8,7 +8,11 @@ import json
 import re
 from pathlib import Path
 
-CATEGORY_TO_DISCIPLINE = {"491": "singles", "493": "doubles", "495": "mixed"}
+# Category ids are gender-specific for singles/doubles (491=Mannen Enkel,
+# 492=Vrouwen Enkel, 493=Mannen Dubbel, 494=Vrouwen Dubbel) but shared for mixed
+# (495=Gemengd Dubbel) - missing 492/494 here silently dropped every woman's
+# singles/doubles ranking (only mixed ever parsed for them).
+CATEGORY_TO_DISCIPLINE = {"491": "singles", "492": "singles", "493": "doubles", "494": "doubles", "495": "mixed"}
 
 SUMMARY_ROW_RE = re.compile(
     r'<td><a href="category\.aspx\?id=\d+&category=(\d+)">[^<]*</a></td>'
