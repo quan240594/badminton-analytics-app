@@ -171,17 +171,27 @@ function teamHighlights(pool, genders) {
   };
 }
 
-// One highlights row: singles entries only ever populate the right rating slot
-// (so they line up with doubles' 2nd-player rating); doubles populate both -
-// 1st player's rating left-aligned, 2nd player's right-aligned - per an explicit
+// Always the real national ranking points here, not our own computed rating -
+// a player with zero recorded league matches still has a meaningful national
+// history (or genuinely none, shown as '-'), whereas our own rating would just
+// be the meaningless 1500 default for anyone who hasn't played a league match
+// yet, which was confusing since compareStrength already uses real ranking to
+// pick who's "highest" - the displayed number should match that reasoning.
+function rankingPoints(discipline, player) {
+  return player.nationalRanking?.[discipline]?.points ?? '-';
+}
+
+// One highlights row: singles entries only ever populate the right slot (so
+// they line up with doubles' 2nd-player value); doubles populate both - 1st
+// player's left-aligned, 2nd player's right-aligned - per an explicit
 // alignment request, so every row's numbers form two straight columns.
 function highlightRow(label, discipline, entry) {
   const isPair = Array.isArray(entry);
   const players = isPair ? entry : [entry];
   const complete = players.length > 0 && players.every(Boolean) && (!isPair || players.length === 2);
   const name = complete ? players.map((p) => p.name).join(' / ') : '-';
-  const leftRating = complete && isPair ? Math.round(ratingFor(discipline, players[0])) : '';
-  const rightRating = complete ? Math.round(ratingFor(discipline, players[players.length - 1])) : '';
+  const leftRating = complete && isPair ? rankingPoints(discipline, players[0]) : '';
+  const rightRating = complete ? rankingPoints(discipline, players[players.length - 1]) : '';
   return (
     <div className="team-highlights-row" key={label}>
       <span className="th-label">{label}</span>
