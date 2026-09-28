@@ -1,0 +1,24 @@
+name: SonarCloud analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history so Sonar can compute accurate blame/new-code diffs.
+          fetch-depth: 0
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,0 +1,35 @@
+#!/bin/sh
+# Enforces "always scan locally before pushing" - see sonar-local-scan instructions.
+# Bypass in a genuine emergency with: SKIP_SONAR=1 git push
+
+if [ -n "$SKIP_SONAR" ]; then
+  echo "pre-push: SKIP_SONAR set, skipping local Sonar scan" >&2
+  exit 0
+fi
+
+if ! command -v sonar-scanner >/dev/null 2>&1; then
+  echo "pre-push: sonar-scanner not found on PATH (brew install sonar-scanner), aborting push." >&2
+  echo "pre-push: bypass once with SKIP_SONAR=1 git push if truly needed." >&2
+  exit 1
+fi
+
+if [ -z "$SONAR_TOKEN" ]; then
+  echo "pre-push: SONAR_TOKEN is not set in your environment, aborting push." >&2
+  echo "pre-push: export SONAR_TOKEN=<token> first, or bypass with SKIP_SONAR=1 git push." >&2
+  exit 1
+fi
+
+# A dirty tree skews Sonar's SCM blame and misdates pre-existing issues as new.
+if [ -n "$(git status --porcelain)" ]; then
+  echo "pre-push: working tree has uncommitted changes, aborting push." >&2
+  echo "pre-push: commit everything first so Sonar's blame/new-code detection is accurate." >&2
+  exit 1
+fi
+
+echo "pre-push: running local Sonar scan..."
+if ! sonar-scanner; then
+  echo "pre-push: Sonar scan failed, aborting push." >&2
+  exit 1
+fi
+
+echo "pre-push: Sonar scan complete - check https://sonarcloud.io/dashboard?id=quan240594_badminton-analytics-app for the quality gate result."
