@@ -19,6 +19,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from sanitize import clean_json_value
+
 DATA_DIR = Path(__file__).parent
 COOKIE_FILE = DATA_DIR / "cookie.txt"
 CAREER_FILE = DATA_DIR / "career.json"
@@ -113,12 +115,12 @@ def main() -> None:
             print(f"[{i+1}/{total}] {guid} ERROR {e}", file=sys.stderr)
 
         if (i + 1) % 20 == 0 or i + 1 == total:
-            TITLES_FILE.write_text(json.dumps(titles, ensure_ascii=False, indent=2), encoding="utf-8")
+            TITLES_FILE.write_text(json.dumps(clean_json_value(titles), ensure_ascii=False, indent=2), encoding="utf-8")
             write_progress(i + 1, total, True)
             print(f"[{i+1}/{total}] saved", file=sys.stderr)
         time.sleep(0.3)
 
-    TITLES_FILE.write_text(json.dumps(titles, ensure_ascii=False, indent=2), encoding="utf-8")
+    TITLES_FILE.write_text(json.dumps(clean_json_value(titles), ensure_ascii=False, indent=2), encoding="utf-8")
     write_progress(total, total, False)
     print(f"done: {len(titles)} players")
 

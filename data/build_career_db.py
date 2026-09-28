@@ -22,6 +22,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from safe_path import safe_path
+from sanitize import clean_json_value
 
 from parse_career import parse_player_file
 
@@ -53,7 +54,7 @@ def load_state(state_path: Path) -> dict:
 
 
 def save_state(state_path: Path, state: dict) -> None:
-    state_path.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
+    state_path.write_text(json.dumps(clean_json_value(state), indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 # The redesigned standalone-tournament template (see parse_career.py) never links
@@ -158,7 +159,7 @@ def main() -> None:
     state = load_state(state_path)
 
     def write_output():
-        args.out.write_text(json.dumps(state["players"], indent=2, ensure_ascii=False), encoding="utf-8")
+        args.out.write_text(json.dumps(clean_json_value(state["players"]), indent=2, ensure_ascii=False), encoding="utf-8")
 
     if args.watch is None:
         new = run_pass(args.pages_dir, state)

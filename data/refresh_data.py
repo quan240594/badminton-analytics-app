@@ -25,6 +25,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from safe_path import safe_path
+from sanitize import clean_json_value
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_rankings import discover_ranking_links  # noqa: E402
@@ -115,7 +116,7 @@ def load_last_refreshed() -> dict:
 
 
 def save_last_refreshed(state: dict) -> None:
-    LAST_REFRESHED_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
+    LAST_REFRESHED_PATH.write_text(json.dumps(clean_json_value(state), indent=2), encoding="utf-8")
 
 
 def is_stale(state: dict, key: str, min_refresh_days: float, now: datetime) -> bool:
@@ -125,12 +126,19 @@ def is_stale(state: dict, key: str, min_refresh_days: float, now: datetime) -> b
     return datetime.fromisoformat(last) < now - timedelta(days=min_refresh_days)
 
 
+# Only these browsers are supported by get_cookie.py/browser_cookie3; mapping
+# through this dict (rather than just validating) means the value that actually
+# reaches subprocess.run() is always one of these literals, never the raw CLI arg.
+KNOWN_BROWSERS = {"chrome": "chrome", "firefox": "firefox", "edge": "edge", "safari": "safari", "chromium": "chromium"}
+
+
 def refresh_cookie(cookie_file: Path, browser: str) -> None:
     """Pull a fresh session cookie from the local browser before scraping, so a
     stale cookie.txt never has to be manually refreshed via get_cookie.py."""
     python = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
+    safe_browser = KNOWN_BROWSERS.get(browser, "chrome")
     try:
-        run(python, "get_cookie.py", "--browser", browser, "--save", str(cookie_file))
+        run(python, "get_cookie.py", "--browser", safe_browser, "--save", str(cookie_file))
     except subprocess.CalledProcessError as ex:
         print(f"[refresh] could not refresh cookie from {browser} ({ex}); falling back to existing {cookie_file}", file=sys.stderr, flush=True)
 

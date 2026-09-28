@@ -81,7 +81,7 @@ function poolLabelSuffix(label, division) {
   return suffix.charAt(0).toUpperCase() + suffix.slice(1);
 }
 
-function disciplineForCode(code) {
+export function disciplineForCode(code) {
   if (code.startsWith('XD')) return 'mixed';
   if (code.startsWith('MD') || code.startsWith('WD')) return 'doubles';
   return 'singles';
@@ -89,7 +89,7 @@ function disciplineForCode(code) {
 
 // MS/MD slots need a man, WS/WD need a woman; XD needs one of each (handled as
 // a pairing constraint in bestPairing, not a single required gender here).
-function requiredGenderForCode(code) {
+export function requiredGenderForCode(code) {
   if (code.startsWith('MS') || code.startsWith('MD')) return 'M';
   if (code.startsWith('WS') || code.startsWith('WD')) return 'F';
   return null;
@@ -97,7 +97,7 @@ function requiredGenderForCode(code) {
 
 // Permissive both ways: a player with no recorded gender can fill either slot,
 // so incomplete gender data degrades to "unfiltered" instead of unfillable rubbers.
-function isValidMixedPair(p1, p2, genders) {
+export function isValidMixedPair(p1, p2, genders) {
   const canBe = (p, g) => !genders[p.id] || genders[p.id] === g;
   return (canBe(p1, 'M') && canBe(p2, 'F')) || (canBe(p1, 'F') && canBe(p2, 'M'));
 }
@@ -156,7 +156,7 @@ function ratingFor(prefix, player) {
 // default) for someone with zero recorded matches instead of genuinely average.
 // So: rank nationally-ranked players by rank (lower is better) ahead of everyone
 // else, and only fall back to our own rating to order/compare the unranked rest.
-function compareStrength(prefix, a, b) {
+export function compareStrength(prefix, a, b) {
   const rankA = a.nationalRanking?.[prefix]?.rank;
   const rankB = b.nationalRanking?.[prefix]?.rank;
   if (rankA != null && rankB != null) return rankA - rankB;
@@ -273,7 +273,7 @@ function bestDoublesPairing(discipline, candidatesA, candidatesB, objective, gen
 
 // Scores every valid pairing from two candidate pools and returns the best one,
 // or null if no valid pairing exists (e.g. a pool too small to avoid overlap).
-function bestPairing(discipline, candidatesA, candidatesB, objective, genders = {}) {
+export function bestPairing(discipline, candidatesA, candidatesB, objective, genders = {}) {
   const { bestA, bestB } = discipline === 'singles'
     ? bestSinglesPairing(candidatesA, candidatesB, objective)
     : bestDoublesPairing(discipline, candidatesA, candidatesB, objective, genders);
@@ -285,7 +285,7 @@ function bestPairing(discipline, candidatesA, candidatesB, objective, genders = 
 // whoever has played the fewest rubbers so far, ties broken by who's waited
 // longest, skipping anyone excluded from that rubber (e.g. a protected top
 // singles player before the singles block starts).
-function buildDefaultLineup(pool, slots, isExcludedFn, pinnedFn) {
+export function buildDefaultLineup(pool, slots, isExcludedFn, pinnedFn) {
   const usage = new Map(pool.map((p) => [p.id, 0]));
   const lastUsed = new Map(pool.map((p) => [p.id, -1]));
   const singlesUsage = new Map(pool.map((p) => [p.id, 0]));
@@ -340,6 +340,129 @@ function clearIdIfClubMismatch(id, club, byId) {
 // .map() callback isn't itself another nested level inside changeClubFilter.
 function clearMismatchedIds(ids, club, byId) {
   return ids.map((id) => clearIdIfClubMismatch(id, club, byId));
+}
+
+// Each side's strongest MEN's-singles player (MS1 is a men's slot) - ranked by
+// real national ranking first, our own rating only as a fallback (see compareStrength).
+export function strongestSinglesFor(pool, playerGenders) {
+  const men = pool.filter((p) => !playerGenders[p.id] || playerGenders[p.id] === 'M');
+  return men.reduce((best, p) => (!best || compareStrength('singles', p, best) < 0 ? p : best), null);
+}
+
+// MS1 (the first singles rubber) always goes to each side's strongest singles
+// player - matches how real team nights typically seed singles - independent
+// of the protect-top-singles filter.
+function pinnedAtFirstSingles(strongest, firstSinglesIndex) {
+  return (i) => (i === firstSinglesIndex ? strongest : null);
+}
+
+function isProtectedTopSingles(topSingles, protectTopSingles, firstSinglesIndex, p, i) {
+  return protectTopSingles && firstSinglesIndex !== -1 && i < firstSinglesIndex && p.id === topSingles?.id;
+}
+
+// A rubber's slot code determines which gender is required (MS/MD -> men,
+// WS/WD -> women; XD needs one of each, validated in bestPairing instead).
+export function isWrongGenderForCode(code, player, playerGenders) {
+  const required = requiredGenderForCode(code);
+  return Boolean(required) && Boolean(playerGenders[player.id]) && playerGenders[player.id] !== required;
+}
+
+// A club too small to have any real lineup flexibility (e.g. exactly 4 players
+// for an 8-rubber night) gets priority: a fixed, evenly-rotated lineup instead
+// of being optimized (see buildDefaultLineup). This is its per-player exclusion
+// rule: excluded before their protected singles turn, or simply the wrong
+// gender for that rubber.
+function buildFixedRosterExclusion(topSingles, protectTopSingles, firstSinglesIndex, playerGenders, slots) {
+  return (p, i) => isProtectedTopSingles(topSingles, protectTopSingles, firstSinglesIndex, p, i)
+    || isWrongGenderForCode(slots[i].code, p, playerGenders);
+}
+
+// Computes the auto-filled pairing for a single rubber (slot). Extracted out of
+// autoFill to keep autoFill's own cognitive complexity within Sonar's threshold;
+// ctx bundles the loop-invariant state needed to build any rubber, plus the two
+// usage/singlesUsage Maps that are mutated across the whole slots.map() pass
+// (appearance caps only make sense measured across the full night, not per-rubber).
+export function computeSlotAssignment(slot, slotIndex, ctx) {
+  const {
+    objective, poolA, poolB, byId, playerGenders, protectTopSingles, firstSinglesIndex,
+    topSinglesA, topSinglesB, strongestSinglesA, strongestSinglesB, fixedA, fixedB,
+    usage, singlesUsage,
+  } = ctx;
+
+  // Both sides already fully hand-entered under "closest ratings" means nothing
+  // is left to search for - leave this rubber exactly as typed.
+  if (objective === 'excitement' && slot.sideA.every(Boolean) && slot.sideB.every(Boolean)) return slot;
+
+  const discipline = disciplineForCode(slot.code);
+  const withinCap = (p) => (usage.get(p.id) ?? 0) < MAX_RECOMMENDED_APPEARANCES;
+  const isProtectedHere = (p) => protectTopSingles
+    && firstSinglesIndex !== -1
+    && slotIndex < firstSinglesIndex
+    && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
+  // A player usually plays at most one singles rubber a night, but can appear
+  // in several doubles rubbers - so this only excludes repeats within singles.
+  const alreadyPlayedSingles = (p) => discipline === 'singles'
+    && (singlesUsage.get(p.id) ?? 0) >= MAX_SINGLES_APPEARANCES;
+  const isFirstSingles = slotIndex === firstSinglesIndex;
+  const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
+  const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
+
+  // Which side (if any) is fixed manual input for this rubber: the declared
+  // opponent for clubA/clubB, or whichever side is already fully entered for
+  // "closest ratings" - a club's own side is never locked, only re-optimized.
+  let manualLockSide = null;
+  if (objective === 'clubA') manualLockSide = slot.sideB.every(Boolean) ? 'sideB' : null;
+  else if (objective === 'clubB') manualLockSide = slot.sideA.every(Boolean) ? 'sideA' : null;
+  else if (slot.sideA.every(Boolean)) manualLockSide = 'sideA';
+  else if (slot.sideB.every(Boolean)) manualLockSide = 'sideB';
+
+  // manualLockSide only ever names a side that's already fully entered, so no
+  // need to re-check .every(Boolean) here; it overrides both the small-roster
+  // fixed lineup and the forced MS1 pick for whichever side it names.
+  const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
+  const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
+
+  const fallbackPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
+  const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers ? manualLockPlayers : fallbackPlayersA;
+  const fallbackPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
+  const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers ? manualLockPlayers : fallbackPlayersB;
+  const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
+  const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
+
+  // MD/WD candidates are pre-scoped to their required gender here (XD's
+  // one-of-each-gender constraint is instead validated inside bestPairing,
+  // since it's a pairing rule, not a per-player filter).
+  const genderOkHere = (p) => !isWrongGenderForCode(slot.code, p, playerGenders);
+  const genderPoolA = poolA.filter(genderOkHere);
+  const genderPoolB = poolB.filter(genderOkHere);
+  const eligibleA = genderPoolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
+  const eligibleB = genderPoolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
+
+  // A side with a fixed lineup, or a forced MS1 pick, always faces exactly that
+  // player/pair for this rubber; a free side still relaxes its own filters in
+  // priority order - cap, then protect-top-singles, then both - if every
+  // rubber must be filled.
+  const attempts = [
+    [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
+    [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
+    [fixedPlayersA ?? genderPoolA.filter(withinCap), fixedPlayersB ?? genderPoolB.filter(withinCap)],
+    [fixedPlayersA ?? genderPoolA, fixedPlayersB ?? genderPoolB],
+  ];
+  let pairing = null;
+  for (const [candidatesA, candidatesB] of attempts) {
+    pairing = bestPairing(discipline, candidatesA, candidatesB, objective, playerGenders);
+    if (pairing) break;
+  }
+
+  if (!pairing) return slot; // truly impossible, e.g. a side has too few players
+  const { bestA, bestB } = pairing;
+  if (!sideALocked) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
+  if (!sideBLocked) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
+  if (discipline === 'singles') {
+    if (!sideALocked) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+    if (!sideBLocked) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+  }
+  return { ...slot, sideA: bestA, sideB: bestB };
 }
 
 export default function LeagueDaySimulator() {
@@ -550,131 +673,36 @@ export default function LeagueDaySimulator() {
   // win probability only depends on who's in it, so maximizing (or minimizing) the
   // sum of those probabilities - or minimizing each one's distance from 50/50 for
   // "closest ratings" - can be done one rubber at a time without losing optimality,
-  // aside from the two opt-in filters below.
+  // aside from the two opt-in filters below. Per-rubber logic lives in
+  // computeSlotAssignment (extracted so this function stays simple).
   const autoFill = (objective) => {
-    const usage = new Map();
-    const singlesUsage = new Map();
     const excludeSubs = (pool) => (includeSubstitutes ? pool : pool.filter((p) => !isSubstitutePlayer(p, substituteIds)));
     const poolA = excludeSubs(filterByClub(players, clubFilterA, [], currentPoolRosterIds));
     const poolB = excludeSubs(filterByClub(players, clubFilterB, [], currentPoolRosterIds));
 
-    // Each side's strongest MEN's-singles player (MS1 is a men's slot) - ranked
-    // by real national ranking first, our own rating only as a fallback (see
-    // compareStrength) - and whether they're excluded from rubbers before their
-    // singles turn (opt-in filter).
-    const strongestSingles = (pool) => {
-      const men = pool.filter((p) => !playerGenders[p.id] || playerGenders[p.id] === 'M');
-      return men.reduce((best, p) => (!best || compareStrength('singles', p, best) < 0 ? p : best), null);
-    };
-    const strongestSinglesA = strongestSingles(poolA);
-    const strongestSinglesB = strongestSingles(poolB);
+    const strongestSinglesA = strongestSinglesFor(poolA, playerGenders);
+    const strongestSinglesB = strongestSinglesFor(poolB, playerGenders);
     const topSinglesA = protectTopSingles ? strongestSinglesA : null;
     const topSinglesB = protectTopSingles ? strongestSinglesB : null;
     const firstSinglesIndex = slots.findIndex((s) => disciplineForCode(s.code) === 'singles');
-    const isProtectedFor = (topSingles) => (p, i) => protectTopSingles
-      && firstSinglesIndex !== -1
-      && i < firstSinglesIndex
-      && p.id === topSingles?.id;
-    // MS1 (the first singles rubber) always goes to each side's strongest
-    // singles player - matches how real team nights typically seed singles -
-    // independent of the protect-top-singles filter above.
-    const pinnedAtFirstSingles = (strongest) => (i) => (i === firstSinglesIndex ? strongest : null);
-    // A rubber's slot code determines which gender is required (MS/MD -> men,
-    // WS/WD -> women; XD needs one of each, validated in bestPairing instead).
-    const isWrongGenderFor = (code) => (p) => {
-      const required = requiredGenderForCode(code);
-      return Boolean(required) && Boolean(playerGenders[p.id]) && playerGenders[p.id] !== required;
-    };
 
     // A club too small to have any real lineup flexibility (e.g. exactly 4
     // players for an 8-rubber night) gets priority: a fixed, evenly-rotated
-    // lineup instead of being optimized. The other side still optimizes for the
-    // chosen objective, but against that fixed opponent for each rubber.
-    const excludeForFixed = (topSingles) => (p, i) => isProtectedFor(topSingles)(p, i) || isWrongGenderFor(slots[i].code)(p);
+    // lineup instead of being optimized. The other side still optimizes for
+    // the chosen objective, but against that fixed opponent for each rubber.
     const fixedA = poolA.length > 0 && poolA.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolA, slots, excludeForFixed(topSinglesA), pinnedAtFirstSingles(strongestSinglesA))
+      ? buildDefaultLineup(poolA, slots, buildFixedRosterExclusion(topSinglesA, protectTopSingles, firstSinglesIndex, playerGenders, slots), pinnedAtFirstSingles(strongestSinglesA, firstSinglesIndex))
       : null;
     const fixedB = poolB.length > 0 && poolB.length <= SMALL_ROSTER_MAX
-      ? buildDefaultLineup(poolB, slots, excludeForFixed(topSinglesB), pinnedAtFirstSingles(strongestSinglesB))
+      ? buildDefaultLineup(poolB, slots, buildFixedRosterExclusion(topSinglesB, protectTopSingles, firstSinglesIndex, playerGenders, slots), pinnedAtFirstSingles(strongestSinglesB, firstSinglesIndex))
       : null;
 
-    const nextSlots = slots.map((slot, slotIndex) => {
-      // Both sides already fully hand-entered under "closest ratings" means nothing
-      // is left to search for - leave this rubber exactly as typed.
-      if (objective === 'excitement' && slot.sideA.every(Boolean) && slot.sideB.every(Boolean)) return slot;
-
-      const discipline = disciplineForCode(slot.code);
-      const withinCap = (p) => (usage.get(p.id) ?? 0) < MAX_RECOMMENDED_APPEARANCES;
-      const isProtectedHere = (p) => protectTopSingles
-        && firstSinglesIndex !== -1
-        && slotIndex < firstSinglesIndex
-        && (p.id === topSinglesA?.id || p.id === topSinglesB?.id);
-      // A player usually plays at most one singles rubber a night, but can
-      // appear in several doubles rubbers - so this only excludes repeats
-      // within singles rubbers, and is always on (not an opt-in filter).
-      const alreadyPlayedSingles = (p) => discipline === 'singles'
-        && (singlesUsage.get(p.id) ?? 0) >= MAX_SINGLES_APPEARANCES;
-      const isFirstSingles = slotIndex === firstSinglesIndex;
-      const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
-      const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
-
-      // Which side (if any) is fixed manual input for this rubber: the declared opponent
-      // for clubA/clubB, or whichever side is already fully entered for "closest ratings" -
-      // a club's own side is never locked, only re-optimized.
-      let manualLockSide = null;
-      if (objective === 'clubA') manualLockSide = slot.sideB.every(Boolean) ? 'sideB' : null;
-      else if (objective === 'clubB') manualLockSide = slot.sideA.every(Boolean) ? 'sideA' : null;
-      else if (slot.sideA.every(Boolean)) manualLockSide = 'sideA';
-      else if (slot.sideB.every(Boolean)) manualLockSide = 'sideB';
-
-      // manualLockSide only ever names a side that's already fully entered, so no need
-      // to re-check .every(Boolean) here; it overrides both the small-roster fixed
-      // lineup and the forced MS1 pick for whichever side it names.
-      const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
-      const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
-
-      const fallbackPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
-      const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers ? manualLockPlayers : fallbackPlayersA;
-      const fallbackPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
-      const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers ? manualLockPlayers : fallbackPlayersB;
-      const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
-      const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
-
-      // MD/WD candidates are pre-scoped to their required gender here (XD's
-      // one-of-each-gender constraint is instead validated inside bestPairing,
-      // since it's a pairing rule, not a per-player filter).
-      const genderOkHere = (p) => !isWrongGenderFor(slot.code)(p);
-      const genderPoolA = poolA.filter(genderOkHere);
-      const genderPoolB = poolB.filter(genderOkHere);
-      const eligibleA = genderPoolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
-      const eligibleB = genderPoolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
-
-      // A side with a fixed lineup, or a forced MS1 pick, always faces exactly
-      // that player/pair for this rubber; a free side still relaxes its own
-      // filters in priority order - cap, then protect-top-singles, then both -
-      // if every rubber must be filled.
-      const attempts = [
-        [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
-        [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
-        [fixedPlayersA ?? genderPoolA.filter(withinCap), fixedPlayersB ?? genderPoolB.filter(withinCap)],
-        [fixedPlayersA ?? genderPoolA, fixedPlayersB ?? genderPoolB],
-      ];
-      let pairing = null;
-      for (const [candidatesA, candidatesB] of attempts) {
-        pairing = bestPairing(discipline, candidatesA, candidatesB, objective, playerGenders);
-        if (pairing) break;
-      }
-
-      if (!pairing) return slot; // truly impossible, e.g. a side has too few players
-      const { bestA, bestB } = pairing;
-      if (!sideALocked) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
-      if (!sideBLocked) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
-      if (discipline === 'singles') {
-        if (!sideALocked) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
-        if (!sideBLocked) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
-      }
-      return { ...slot, sideA: bestA, sideB: bestB };
-    });
+    const ctx = {
+      objective, poolA, poolB, byId, playerGenders, protectTopSingles, firstSinglesIndex,
+      topSinglesA, topSinglesB, strongestSinglesA, strongestSinglesB, fixedA, fixedB,
+      usage: new Map(), singlesUsage: new Map(),
+    };
+    const nextSlots = slots.map((slot, slotIndex) => computeSlotAssignment(slot, slotIndex, ctx));
 
     setSlots(nextSlots);
     setAutoFillWarnings(nextSlots

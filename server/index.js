@@ -3,7 +3,7 @@ import cors from 'cors';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
@@ -16,6 +16,11 @@ const PROGRESS_PATH = path.join(DATA_DIR, 'refresh_progress.json');
 // Avoids a PATH-lookup hotspot (S4036) for the one spawn() call that re-invokes
 // ourself - process.execPath is always this exact running Node binary.
 const NODE_EXECUTABLE = process.execPath;
+// Same idea for the python3 spawn calls below: resolve to one of the common
+// absolute install locations if present, falling back to a bare PATH lookup
+// (today's exact behavior) only if none of them exist on this machine.
+const PYTHON_CANDIDATES = ['/usr/local/bin/python3', '/opt/homebrew/bin/python3', '/usr/bin/python3'];
+const PYTHON_EXECUTABLE = PYTHON_CANDIDATES.find((p) => existsSync(p)) || 'python3';
 
 let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPlayerFn, titleCountsFn, titleYears, aliasIndex;
 let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
@@ -202,7 +207,7 @@ app.get('/api/refresh/progress', (req, res) => {
 app.post('/api/refresh', (req, res) => {
   if (refreshing) return res.status(409).json({ error: 'refresh already in progress' });
   refreshing = true;
-  const child = spawn('python3', ['refresh_data.py'], { cwd: DATA_DIR });
+  const child = spawn(PYTHON_EXECUTABLE, ['refresh_data.py'], { cwd: DATA_DIR });
   let stderrTail = '';
   child.stderr.on('data', (chunk) => {
     stderrTail = (stderrTail + chunk.toString()).slice(-2000);
@@ -248,7 +253,7 @@ app.post('/api/refresh/pool', (req, res) => {
   refreshing = true;
   // Reconstructed as a fresh value (not the original tainted string) after validation.
   const safeDrawId = String(Number(drawId));
-  const child = spawn('python3', ['fetch_pool.py', '--draw-id', safeDrawId], { cwd: DATA_DIR });
+  const child = spawn(PYTHON_EXECUTABLE, ['fetch_pool.py', '--draw-id', safeDrawId], { cwd: DATA_DIR });
   let stderrTail = '';
   child.stderr.on('data', (chunk) => {
     stderrTail = (stderrTail + chunk.toString()).slice(-2000);
