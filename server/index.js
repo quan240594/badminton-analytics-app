@@ -246,7 +246,9 @@ app.post('/api/refresh/pool', (req, res) => {
   if (!/^\d+$/.test(String(drawId))) return res.status(400).json({ error: 'drawId must be numeric' });
   if (refreshing) return res.status(409).json({ error: 'a refresh is already in progress' });
   refreshing = true;
-  const child = spawn('python3', ['fetch_pool.py', '--draw-id', String(drawId)], { cwd: DATA_DIR });
+  // Reconstructed as a fresh value (not the original tainted string) after validation.
+  const safeDrawId = String(Number(drawId));
+  const child = spawn('python3', ['fetch_pool.py', '--draw-id', safeDrawId], { cwd: DATA_DIR });
   let stderrTail = '';
   child.stderr.on('data', (chunk) => {
     stderrTail = (stderrTail + chunk.toString()).slice(-2000);

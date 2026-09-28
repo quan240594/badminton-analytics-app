@@ -336,6 +336,12 @@ function clearIdIfClubMismatch(id, club, byId) {
   return p && p.club !== club ? '' : id;
 }
 
+// Extracted as its own named function (not inlined at the call site) so the
+// .map() callback isn't itself another nested level inside changeClubFilter.
+function clearMismatchedIds(ids, club, byId) {
+  return ids.map((id) => clearIdIfClubMismatch(id, club, byId));
+}
+
 export default function LeagueDaySimulator() {
   const stored = loadStoredState();
   const [players, setPlayers] = useState([]);
@@ -534,7 +540,7 @@ export default function LeagueDaySimulator() {
     if (!club) return;
     setSlots((prev) => prev.map((slot) => ({
       ...slot,
-      [side]: slot[side].map((id) => clearIdIfClubMismatch(id, club, byId)),
+      [side]: clearMismatchedIds(slot[side], club, byId),
     })));
   };
   const handleClubFilterA = changeClubFilter('sideA', setClubFilterA, setTeamFilterA);
