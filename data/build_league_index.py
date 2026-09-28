@@ -22,7 +22,7 @@ DATA_DIR = Path(__file__).resolve().parent
 
 def normalize(name: str) -> str:
     # Strip a trailing team-number suffix, e.g. "DROP SHOT BC M1" / "DROP SHOT BC  1" -> "DROP SHOT BC".
-    name = re.sub(r"\s+[A-Za-z]{0,2}\d+$", "", name.strip())
+    name = re.sub(r"\s{1,10}[A-Za-z]{0,2}\d+$", "", name.strip())
     return re.sub(r"\s+", " ", name).strip().upper()
 
 

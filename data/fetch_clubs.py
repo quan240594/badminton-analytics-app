@@ -28,7 +28,7 @@ BROWSER_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-CLUB_LINK_RE = re.compile(r'<a[^>]*href="(club\.aspx\?[^"]+)"[^>]*>([^<]*)</a>')
+CLUB_LINK_RE = re.compile(r'<a[^>]{0,50}href="(club\.aspx\?[^"]+)"[^>]{0,50}>([^<]*)</a>')
 CLUB_ID_RE = re.compile(r"club=(\d+)")
 ADDRESS_RE = re.compile(r'<th>Address:</th>\s*<td[^>]*><table class="clean"><tr><td>([^<]+)</td>', re.S)
 

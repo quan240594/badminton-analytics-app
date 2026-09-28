@@ -15,10 +15,10 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-PLAYER_LINK_RE = re.compile(r'<a href="[^"]*player\.aspx\?id=[^"]*&player=(\d+)">([^<]+)</a>')
-STRONG_PLAYER_RE = re.compile(r'<strong>\s*<a[^>]*href="[^"]*player\.aspx\?id=[^"]*&player=(\d+)">([^<]+)</a>\s*</strong>')
-TEAM_NAME_RE = re.compile(r'<a[^>]*class="teamname"[^>]*>([^<]+)</a>')
-STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]*class="teamname"[^>]*>([^<]+)</a>\s*</strong>')
+PLAYER_LINK_RE = re.compile(r'<a href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>')
+STRONG_PLAYER_RE = re.compile(r'<strong>\s*<a[^>]{0,50}href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>\s*</strong>')
+TEAM_NAME_RE = re.compile(r'<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>')
+STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>\s*</strong>')
 
 ROW_RE = re.compile(
     r'<td align="right">(?P<time>.*?)</td><td>(?P<event>[^<]*)</td><td>(?P<draw>.*?)</td>'
@@ -86,7 +86,7 @@ def parse_new_template_matches(html_text: str, tournament_id: str, player_id: st
         )
     return matches
 
-PROFILE_RE = re.compile(r'<h2>\s*([^<]+?)\s*<a href="/player-profile/([0-9A-Fa-f-]+)"', re.DOTALL)
+PROFILE_RE = re.compile(r'<h2>([^<]+)<a href="/player-profile/([0-9A-Fa-f-]+)"', re.DOTALL)
 MEMBER_ID_RE = re.compile(r'<th>Member ID:</th><td>(\d+)</td>')
 CLUB_RE = re.compile(r'<th>Club:</th><td><a[^>]*>([^<]+)</a></td>')
 
@@ -185,7 +185,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
         club=club,
     )
 
-    overview_match = re.search(r"Match overview.*?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
+    overview_match = re.search(r"Match overview.{0,2000}?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
     if not overview_match:
         info.matches = parse_new_template_matches(html_text, tournament_id, player_id)
         return info

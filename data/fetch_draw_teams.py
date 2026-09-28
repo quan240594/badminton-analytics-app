@@ -31,7 +31,7 @@ BROWSER_HEADERS = {
 }
 
 DRAW_LINK_RE = re.compile(r'<a href="draw\.aspx\?id=([0-9A-Fa-f-]+)&draw=(\d+)"[^>]*>([^<]+)</a>')
-TEAM_LINK_RE = re.compile(r'<a[^>]*href="teammatch\.aspx\?[^"]+"[^>]*>([^<]*)</a>')
+TEAM_LINK_RE = re.compile(r'<a[^>]{0,50}href="teammatch\.aspx\?[^"]+"[^>]{0,50}>([^<]*)</a>')
 
 
 def fetch(url: str, cookie: str) -> str:
@@ -70,7 +70,7 @@ def main() -> None:
         except urllib.error.URLError as ex:
             print(f"[{i}/{len(draws)}] FAILED draw={draw_id} -> {ex}")
             continue
-        team_names = sorted({re.sub(r"\s+\d+$", "", t.strip()) for t in TEAM_LINK_RE.findall(html) if t.strip() and t.strip() != "Modify"})
+        team_names = sorted({re.sub(r"\s{1,10}\d+$", "", t.strip()) for t in TEAM_LINK_RE.findall(html) if t.strip() and t.strip() != "Modify"})
         existing[draw_id] = {"division": division, "afdelingLabel": afdeling_label, "teams": team_names}
         if i % 10 == 0:
             print(f"[{i}/{len(draws)}] draw={draw_id} {afdeling_label} -> {len(team_names)} teams")

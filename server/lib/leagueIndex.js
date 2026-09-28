@@ -11,7 +11,7 @@ const PLAYER_FIXED_STATUS_PATH = path.join(DATA_DIR, 'player_fixed_status.json')
 const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
 
 // Trailing squad code like "M1"/"M2"/"A2" (letters+digits) or a bare number ("1"/"2").
-const SQUAD_SUFFIX_RE = /^(.*?)\s+([A-Za-z]{0,2}\d+)$/;
+const SQUAD_SUFFIX_RE = /^(.{0,80}?)\s+([A-Za-z]{0,2}\d+)$/;
 
 function splitSquad(name) {
   const m = SQUAD_SUFFIX_RE.exec(name.trim());
