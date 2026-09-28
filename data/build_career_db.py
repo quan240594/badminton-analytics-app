@@ -54,8 +54,38 @@ def save_state(state_path: Path, state: dict) -> None:
     state_path.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+# The redesigned standalone-tournament template (see parse_career.py) never links
+# back to the page subject's own /player-profile/<guid> - it only ever links to
+# whichever account's session cookie fetched the page. So profile_guid comes back
+# None for those files, and we have to identify the real person another way: fall
+# back to events_index.json's record of *which already-known player's own current-
+# season page* discovered this event, then resolve that local id through aliases
+# already recorded from processing the current season (which always happens first,
+# since discover_files lists "pages/player_*.html" before "pages/events/*.html").
+def load_event_source_map(pages_dir: Path) -> dict:
+    events_path = pages_dir.parent / "events_index.json"
+    if not events_path.exists():
+        return {}
+    events = json.loads(events_path.read_text(encoding="utf-8"))
+    return {
+        (e["tournament_id"], e["player_id"]): (e["source_player_file"], e.get("source_player_name"))
+        for e in events
+        if e.get("source_player_file", "").startswith("player_")
+    }
+
+
+def build_alias_reverse_index(players: dict) -> dict:
+    index = {}
+    for guid, profile in players.items():
+        for key in profile.get("aliases", {}):
+            index[key] = guid
+    return index
+
+
 def run_pass(pages_dir: Path, state: dict) -> int:
     parsed_set = set(state["parsed_files"])
+    event_source_map = load_event_source_map(pages_dir)
+    alias_to_guid = build_alias_reverse_index(state["players"])
     new_count = 0
     for path, tid, pid in discover_files(pages_dir):
         key = str(path.relative_to(pages_dir))
@@ -68,14 +98,24 @@ def run_pass(pages_dir: Path, state: dict) -> int:
             parsed_set.add(key)
             continue
 
-        guid = info.profile_guid or f"noguid:{info.name}"
+        guid = info.profile_guid
+        source_name = None
+        if not guid:
+            source = event_source_map.get((tid, pid))
+            if source:
+                source_file, source_name = source
+                local_id = source_file[len("player_"):]
+                guid = alias_to_guid.get(f"{CURRENT_TOURNAMENT_ID}:{local_id}")
+        name = source_name or info.name
+        guid = guid or f"noguid:{name}"
         player_entry = state["players"].setdefault(
             guid,
-            {"name": info.name, "member_id": info.member_id, "club": info.club, "aliases": {}, "matches": []},
+            {"name": name, "member_id": info.member_id, "club": info.club, "aliases": {}, "matches": []},
         )
         # Track every (tournament_id, player_id, name, club) this real person has used.
         alias_key = f"{tid}:{pid}"
-        player_entry["aliases"][alias_key] = {"name": info.name, "club": info.club}
+        player_entry["aliases"][alias_key] = {"name": name, "club": info.club}
+        alias_to_guid[alias_key] = guid
         if info.club:
             player_entry["club"] = info.club  # keep most-recently-seen club as current
 

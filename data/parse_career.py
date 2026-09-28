@@ -27,6 +27,65 @@ ROW_RE = re.compile(
     re.DOTALL,
 )
 
+# toernooi.nl redesigned standalone-tournament pages (opens, club championships) onto a
+# different template than the classic league player.aspx above - same underlying data,
+# but rendered as "<div class="match">" cards instead of a "Match overview" <table>.
+# League pages haven't been migrated yet, so both templates are live at once.
+NEW_MATCH_ITEM_SPLIT_RE = re.compile(r'<li class="match-group__item">')
+NEW_DRAW_LABEL_RE = re.compile(
+    r'draw\.aspx\?id=[^"&]*&amp;draw=\d+"[^>]*>\s*<span class="nav-link__value">([^<]+)</span>'
+)
+NEW_MATCH_TIME_RE = re.compile(r'<span class="nav-link__value">(\w{3} \d{2}/\d{2}/\d{4} \d{2}:\d{2})</span>')
+NEW_MATCH_ROW_SPLIT_RE = re.compile(r'<div class="match__row( has-won)?\s*">')
+NEW_MATCH_PLAYER_RE = re.compile(
+    r'data-player-id="(\d+)"[^>]*>\s*<span class="nav-link__value">(.*?)</span>\s*</a>', re.DOTALL
+)
+NEW_POINTS_UL_RE = re.compile(r'<ul class="points">(.*?)</ul>', re.DOTALL)
+NEW_POINTS_CELL_RE = re.compile(r'<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
+
+
+def parse_new_template_matches(html_text: str, tournament_id: str, player_id: str) -> list:
+    """Parses the redesigned "<div class="match">" card layout used by standalone
+    tournaments (see module docstring for why this differs from ROW_RE)."""
+    matches = []
+    for chunk in NEW_MATCH_ITEM_SPLIT_RE.split(html_text)[1:]:
+        draw_match = NEW_DRAW_LABEL_RE.search(chunk)
+        event = html.unescape(draw_match.group(1).strip()) if draw_match else ""
+        time_match = NEW_MATCH_TIME_RE.search(chunk)
+        time = time_match.group(1) if time_match else ""
+
+        parts = NEW_MATCH_ROW_SPLIT_RE.split(chunk)
+        if len(parts) < 5:
+            continue  # unexpected shape (e.g. a bye) - skip rather than guess
+        home_won, away_won = parts[1] is not None, parts[3] is not None
+        home_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[2])]
+        away_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[4])]
+        if not home_players or not away_players:
+            continue
+
+        sets = []
+        for points_ul in NEW_POINTS_UL_RE.findall(chunk):
+            cells = NEW_POINTS_CELL_RE.findall(points_ul)
+            if len(cells) == 2:
+                sets.append(f"{cells[0]}-{cells[1]}")
+
+        matches.append(
+            MatchRecord(
+                tournament_id=tournament_id,
+                source_player_id=player_id,
+                time=time,
+                event=event,
+                draw="",
+                home_team="",
+                home_players=home_players,
+                away_team="",
+                away_players=away_players,
+                score=" ".join(sets),
+                winner_side="home" if home_won else ("away" if away_won else ""),
+            )
+        )
+    return matches
+
 PROFILE_RE = re.compile(r'<h2>\s*([^<]+?)\s*<a href="/player-profile/([0-9A-Fa-f-]+)"', re.DOTALL)
 MEMBER_ID_RE = re.compile(r'<th>Member ID:</th><td>(\d+)</td>')
 CLUB_RE = re.compile(r'<th>Club:</th><td><a[^>]*>([^<]+)</a></td>')
@@ -116,6 +175,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
 
     overview_match = re.search(r"Match overview.*?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
     if not overview_match:
+        info.matches = parse_new_template_matches(html_text, tournament_id, player_id)
         return info
     overview_html = overview_match.group(1)
 

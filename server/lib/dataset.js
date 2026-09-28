@@ -36,19 +36,27 @@ function parseYearFromTime(time) {
   return m ? Number(m[1]) : null;
 }
 
+// Legacy league pages use English codes (MS/WS/XD/MD/WD); the redesigned standalone-
+// tournament template (see data/parse_career.py) uses Dutch ones instead (Heren/Mannen =
+// men, Dames/Vrouwen = women, Gemengd = mixed, Enkel = singles, Dubbel = doubles).
 function disciplineFromEvent(event) {
   if (!event) return null;
-  if (/^(MS|WS|Single)/.test(event)) return 'singles';
-  if (/^XD/.test(event)) return 'mixed';
-  if (/^(MD|WD)/.test(event)) return 'doubles';
+  if (/^(MS|WS|Single|HE|ME|DE|VE|Heren Enkel|Dames Enkel)/.test(event)) return 'singles';
+  if (/^(XD|GD|Gemengd)/.test(event)) return 'mixed';
+  if (/^(MD|WD|HD|DD|VD|Heren Dubbel|Dames Dubbel)/.test(event)) return 'doubles';
   return null;
 }
 
-// Opponents are hyperlinked on a player's own page, but the page owner never links to
-// themselves — so the owner is always missing from whichever side's roster is short.
+// On legacy league pages, opponents are hyperlinked but the page owner never links to
+// themselves, so the owner is always missing from whichever side's roster is short. The
+// redesigned standalone-tournament template does link the owner like everyone else, so
+// only synthesize an entry when they're genuinely absent (avoids double-counting them).
 function reconstructRoster(match, ownerId, ownerName) {
   const home = [...match.home_players];
   const away = [...match.away_players];
+  if (home.some(([id]) => id === ownerId) || away.some(([id]) => id === ownerId)) {
+    return { home, away };
+  }
   const ownerEntry = [ownerId, ownerName];
   if (home.length <= away.length) {
     home.push(ownerEntry);
