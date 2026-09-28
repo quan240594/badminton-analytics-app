@@ -70,14 +70,24 @@ export default function useDataRefresh(onRefreshed, drawId) {
       setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
       return;
     }
+    // Mobile connections drop briefly mid-poll; don't let one blip kill an otherwise-succeeding run.
+    let consecutiveFailures = 0;
+    const MAX_POLL_FAILURES = 8;
     const poll = async () => {
       let run;
       try {
         run = await pollGithubWorkflowRun(dispatchedAt);
       } catch (e) {
+        consecutiveFailures += 1;
+        if (consecutiveFailures <= MAX_POLL_FAILURES) {
+          setRefreshState({ running: true, percent: 0, detail: 'reconnecting…', error: null });
+          setTimeout(poll, 5000);
+          return;
+        }
         setRefreshState({ running: false, percent: 0, detail: '', error: e.message });
         return;
       }
+      consecutiveFailures = 0;
       const running = run.status !== 'completed';
       const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
       setRefreshState({ running, percent, detail: run.status, error: null });
