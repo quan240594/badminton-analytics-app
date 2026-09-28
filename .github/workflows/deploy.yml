@@ -18,7 +18,40 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Runs first, before any data refresh or deploy work. Non-blocking (continue-on-error) -
+  # a red quality gate is visible on the run but never stops the refresh/deploy stages below.
+  sonar:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history so Sonar can compute accurate blame/new-code diffs.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      # Coverage must be produced before the scan step so the scanner can pick
+      # up each package's lcov.info (see sonar.javascript.lcov.reportPaths).
+      - name: Client tests & coverage
+        run: npm install && npm run test:coverage
+        working-directory: client
+
+      - name: Server tests & coverage
+        run: npm install && npm run test:coverage
+        working-directory: server
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   refresh-data:
+    needs: sonar
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
@@ -82,7 +115,7 @@ jobs:
           git push
 
   build-and-deploy:
-    needs: refresh-data
+    needs: [sonar, refresh-data]
     if: always() && !failure() && !cancelled()
     runs-on: ubuntu-latest
     permissions:

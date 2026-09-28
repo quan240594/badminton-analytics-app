@@ -1,8 +1,8 @@
 name: SonarCloud analysis
 
+# Push-to-main scans now happen as the "sonar" stage inside deploy.yml (runs
+# first, non-blocking) - this workflow only needs to cover PRs and manual runs.
 on:
-  push:
-    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch: {}
