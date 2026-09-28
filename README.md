@@ -29,3 +29,21 @@ secrets:
 Set these under Settings → Secrets and variables → Actions before the first
 scheduled run. GitHub Pages must also be enabled (Settings → Pages → Source:
 GitHub Actions) once.
+
+## Authentication
+
+The client requires a [Supabase](https://supabase.com) project for user
+registration/login with email-verification-code confirmation (free tier is
+enough for this app).
+
+1. Create a Supabase project, then grab the Project URL and anon public key
+   from Settings → API.
+2. Authentication → Sign In / Providers → Email: enable "Confirm email".
+3. Authentication → Emails → Confirm signup template: replace the confirmation
+   link with `{{ .Token }}` so users get a 6-digit code instead of a link (the
+   app's verify-email page expects a code, not a link).
+4. Local dev: copy `client/.env.example` to `client/.env` and fill in the two
+   values above.
+5. Deployed build (GitHub Pages): add `VITE_SUPABASE_URL` and
+   `VITE_SUPABASE_ANON_KEY` as repo secrets (Settings → Secrets and variables →
+   Actions) — `deploy.yml` injects them at build time.

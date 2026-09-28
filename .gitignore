@@ -18,3 +18,7 @@ data/refresh_change_state.json
 
 .DS_Store
 data/titles_progress.json
+
+# Local secrets - never commit real Supabase keys
+client/.env
+client/.env.local

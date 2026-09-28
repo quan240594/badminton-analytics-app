@@ -147,6 +147,11 @@ jobs:
         working-directory: client
 
       - name: Build client
+        # Supabase URL/anon key are baked into the static bundle at build time -
+        # the anon key is meant to be public (see client/.env.example).
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build
         working-directory: client
 

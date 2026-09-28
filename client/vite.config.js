@@ -11,7 +11,9 @@ export default defineConfig({
     proxy: { '/api': 'http://localhost:4000' },
   },
   test: {
-    environment: 'node',
+    // jsdom (not 'node') since auth pages/hooks are tested with React Testing Library.
+    environment: 'jsdom',
+    setupFiles: ['./src/setupTests.js'],
     coverage: {
       provider: 'v8',
       // lcov is what SonarQube Cloud's javascript.lcov.reportPaths expects.
