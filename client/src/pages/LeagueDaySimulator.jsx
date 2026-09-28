@@ -329,6 +329,13 @@ function winDistribution(probs) {
   return dist;
 }
 
+// Clears an id from a slot if its player's club no longer matches the filter.
+// Extracted to a named function so changeClubFilter doesn't nest 5+ levels deep.
+function clearIdIfClubMismatch(id, club, byId) {
+  const p = byId.get(id);
+  return p && p.club !== club ? '' : id;
+}
+
 export default function LeagueDaySimulator() {
   const stored = loadStoredState();
   const [players, setPlayers] = useState([]);
@@ -527,10 +534,7 @@ export default function LeagueDaySimulator() {
     if (!club) return;
     setSlots((prev) => prev.map((slot) => ({
       ...slot,
-      [side]: slot[side].map((id) => {
-        const p = byId.get(id);
-        return p && p.club !== club ? '' : id;
-      }),
+      [side]: slot[side].map((id) => clearIdIfClubMismatch(id, club, byId)),
     })));
   };
   const handleClubFilterA = changeClubFilter('sideA', setClubFilterA, setTeamFilterA);

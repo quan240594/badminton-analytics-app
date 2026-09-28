@@ -199,14 +199,14 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   padding: 0.75rem;
   border-radius: 10px;
   border: none;
-  background: #16a34a;
+  background: #15803d;
   color: white;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 0.5rem;
 }
-.simulate-btn:disabled { background: #334155; color: #64748b; cursor: not-allowed; }
+.simulate-btn:disabled { background: #334155; color: #cbd5e1; cursor: not-allowed; }
 
 .error { color: #fca5a5; margin-top: 1rem; }
 
@@ -306,15 +306,18 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   border-radius: 8px;
   font-size: 0.72rem;
 }
-.division-table td {
+.division-table td,
+.division-table th {
   padding: 0.35rem 0.5rem;
   text-align: right;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.division-table td:nth-child(1) { text-align: left; }
-.division-table td.stat-label { color: #93c5fd; font-weight: 600; }
+.division-table td:nth-child(1),
+.division-table th:nth-child(1) { text-align: left; }
+.division-table td.stat-label,
+.division-table th.stat-label { color: #93c5fd; font-weight: 600; }
 .titles-table {
   width: 100%;
   table-layout: fixed;
@@ -383,7 +386,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
    free text (division/tournament names, "vs #1" names) may still ellipsize on narrow viewports. */
 .player-stats-table td:nth-child(1), .player-stats-table th:nth-child(1),
 .ranking-table td:nth-child(1), .ranking-table th:nth-child(1),
-.division-table td:nth-child(1),
+.division-table td:nth-child(1), .division-table th:nth-child(1),
 .titles-table td:nth-child(1), .titles-table th:nth-child(1),
 .career-medals-table td:nth-child(1), .career-medals-table th:nth-child(1) { width: 20%; }
 
@@ -395,7 +398,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 .player-stats-table td:nth-child(3), .player-stats-table th:nth-child(3),
 .ranking-table td:nth-child(3), .ranking-table th:nth-child(3),
-.division-table td:nth-child(3),
+.division-table td:nth-child(3), .division-table th:nth-child(3),
 .titles-table td:nth-child(3), .titles-table th:nth-child(3),
 .career-medals-table td:nth-child(3), .career-medals-table th:nth-child(3) { width: 23%; }
 
@@ -429,7 +432,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
    throwing the two comparison panels out of alignment row-for-row. */
 .player-stats-table td, .player-stats-table th,
 .ranking-table td, .ranking-table th,
-.division-table td,
+.division-table td, .division-table th,
 .titles-table td, .titles-table th,
 .career-medals-table td, .career-medals-table th {
   line-height: 1.3;

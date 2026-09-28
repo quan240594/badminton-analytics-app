@@ -69,7 +69,7 @@ def categorize(href: str) -> str:
     for needle, category in CATEGORY_PATTERNS:
         if needle in href:
             return category
-    if href.startswith("#") or href.startswith("mailto:") or href.startswith("tel:"):
+    if href.startswith(("#", "mailto:", "tel:")):
         return "misc"
     if any(href.lower().endswith(ext) for ext in (".css", ".js", ".svg", ".png", ".gif", ".jpg", ".ico", ".json")):
         return "asset"

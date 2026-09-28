@@ -61,7 +61,7 @@ export default function ClubSelect({ clubs, value, onChange }) {
         onBlur={() => setTimeout(() => setOpen(false), 150)}
       />
       {open && (
-        <ul className="player-options club-options" ref={listRef}>
+        <ul className="player-options club-options" role="listbox" ref={listRef}>
           <li
             role="option"
             aria-selected={activeIndex === 0}

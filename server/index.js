@@ -13,6 +13,9 @@ import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substit
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PROGRESS_PATH = path.join(DATA_DIR, 'refresh_progress.json');
+// Avoids a PATH-lookup hotspot (S4036) for the one spawn() call that re-invokes
+// ourself - process.execPath is always this exact running Node binary.
+const NODE_EXECUTABLE = process.execPath;
 
 let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPlayerFn, titleCountsFn, titleYears, aliasIndex;
 let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
@@ -34,7 +37,7 @@ loadAll();
 // bundle, not this live API) actually sees the data refresh_data.py just fetched.
 function rebuildStaticBundle() {
   return new Promise((resolve, reject) => {
-    const build = spawn('node', ['build-static.js'], { cwd: __dirname });
+    const build = spawn(NODE_EXECUTABLE, ['build-static.js'], { cwd: __dirname });
     let stderrTail = '';
     build.stderr.on('data', (chunk) => {
       stderrTail = (stderrTail + chunk.toString()).slice(-2000);
@@ -61,7 +64,12 @@ function careerBucket(guid, discipline) {
 }
 
 const app = express();
-app.use(cors());
+app.disable('x-powered-by');
+// Local dev only: the client either hits this API through Vite's dev proxy
+// (browser origin :5173, see client/vite.config.js) or, rarely, directly
+// against this server's own port - production (GitHub Pages) ships a static
+// data.json and never calls this API at all (see client/src/api.js).
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4000'] }));
 app.use(express.json());
 
 function confidenceLabel(played) {
@@ -235,6 +243,7 @@ app.get('/api/refresh/pool/progress', (req, res) => {
 app.post('/api/refresh/pool', (req, res) => {
   const { drawId } = req.body || {};
   if (!drawId) return res.status(400).json({ error: 'drawId is required' });
+  if (!/^\d+$/.test(String(drawId))) return res.status(400).json({ error: 'drawId must be numeric' });
   if (refreshing) return res.status(409).json({ error: 'a refresh is already in progress' });
   refreshing = true;
   const child = spawn('python3', ['fetch_pool.py', '--draw-id', String(drawId)], { cwd: DATA_DIR });

@@ -25,7 +25,7 @@ export default function RankingCard({ nationalRanking }) {
               <td className="stat-label">{label}</td>
               <td>{r ? `#${r.rank}` : '-'}</td>
               <td>{r ? r.points : '-'}</td>
-              <td>{r && r.topPoints ? `${Math.round(r.pctOfTop * 100)}% of ${r.topName}` : '-'}</td>
+              <td>{r?.topPoints ? `${Math.round(r.pctOfTop * 100)}% of ${r.topName}` : '-'}</td>
             </tr>
           );
         })}

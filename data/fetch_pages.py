@@ -57,7 +57,7 @@ def load_links(links_path: Path, categories: list[str]) -> list[dict]:
 def slugify(href: str) -> str:
     # e.g. "/sport/team.aspx?id=...&team=1022" -> "team_1022"
     params = href.split("?", 1)[-1] if "?" in href else ""
-    parts = dict(p.split("=", 1) for p in params.split("&") if "=" in p)
+    parts = {k: v for k, v in (p.split("=", 1) for p in params.split("&") if "=" in p)}
     if "team" in parts:
         return f"team_{parts['team']}"
     if "match" in parts:

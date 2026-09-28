@@ -46,6 +46,10 @@ def main() -> None:
     parser.add_argument("--cookie-file", type=Path, default=DATA_DIR / "cookie.txt")
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
+    # Defense in depth: server/index.js already validates drawId is numeric before
+    # spawning this script, but this script is also runnable directly/manually.
+    if not args.draw_id.isdigit():
+        raise ValueError(f"--draw-id must be numeric, got: {args.draw_id!r}")
     args.cookie_file = safe_path(args.cookie_file)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
 

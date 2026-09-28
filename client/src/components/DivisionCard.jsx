@@ -3,9 +3,9 @@ export default function DivisionCard({ highestDivision }) {
     <table className="division-table">
       <tbody>
         <tr>
-          <td className="stat-label">Division</td>
+          <th scope="row" className="stat-label">Division</th>
           <td>{highestDivision?.division ?? '-'}</td>
-          <td className="stat-label">Year</td>
+          <th scope="row" className="stat-label">Year</th>
           <td>{highestDivision?.year ?? '-'}</td>
         </tr>
       </tbody>

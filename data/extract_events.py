@@ -25,13 +25,6 @@ YEAR_HEADER_RE = re.compile(r'<th colspan="2">(\d{4})</th>')
 DATES_RE = re.compile(r'<td class="dates">([^<]*)</td>')
 
 
-def extract_source_player(html: str) -> tuple[str, str] | None:
-    m = re.search(r"<h2>([^<]+)<a href=\"/player-profile/", html)
-    name = m.group(1).strip() if m else None
-    m2 = re.search(r"Match overview.*?id=([0-9A-Fa-f-]+)&id=(\d+)&LCID", html, re.DOTALL)
-    return name, None
-
-
 def parse_player_file(path: Path) -> list[dict]:
     html_text = path.read_text(encoding="utf-8", errors="replace")
     name_match = re.search(r"<h2>([^<]+)<a href=\"/player-profile/", html_text)

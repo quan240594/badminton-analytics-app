@@ -111,7 +111,7 @@ function SideEditor({
       {ids.map((id, idx) => {
         const selectedPlayer = players.find((p) => p.id === id);
         return (
-          <div key={`slot-${idx}`} className="player-slot">
+          <div key={`${label}-slot-${idx}`} className="player-slot">
             <PlayerSelect
               label={idx === 0 ? 'Player' : 'Partner'}
               players={filterByClub(players, clubFilter, id, rosterIds)}
@@ -145,6 +145,13 @@ function SideEditor({
   );
 }
 
+// Clears an id from a slot if its player's club no longer matches the filter.
+// Extracted to a named function so changeClubFilter doesn't nest 5+ levels deep.
+function clearIdIfClubMismatch(id, club, players) {
+  const p = players.find((pl) => pl.id === id);
+  return p && p.club !== club ? '' : id;
+}
+
 export default function MatchSimulator() {
   const stored = loadStoredState();
   const [players, setPlayers] = useState([]);
@@ -165,12 +172,10 @@ export default function MatchSimulator() {
   const [loading, setLoading] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
   const [poolLabel, setPoolLabel] = useState('');
-  const [titleYears, setTitleYears] = useState([]);
   const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => {
     setPlayers(bundle.players);
     setLastUpdated(bundle.meta.lastUpdated);
     setPoolLabel(bundle.meta.poolLabel);
-    setTitleYears(bundle.meta.titleYears ?? []);
   }, drawId);
   const simulationRequestId = useRef(0);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];
@@ -201,7 +206,6 @@ export default function MatchSimulator() {
       .then((m) => {
         setLastUpdated(m.lastUpdated);
         setPoolLabel(m.poolLabel);
-        setTitleYears(m.titleYears ?? []);
         setLeagueIndex(m.leagueIndex ?? { divisions: {} });
         setFetchedDrawIds(m.fetchedDrawIds ?? []);
         setPoolRosters(m.poolRosters ?? {});
@@ -381,10 +385,7 @@ export default function MatchSimulator() {
     const teams = poolTeams.filter((t) => t.club === club);
     setTeamFilter(teams.length === 1 ? teams[0].squad : null);
     if (!club) return;
-    setIds((ids) => ids.map((id) => {
-      const p = players.find((pl) => pl.id === id);
-      return p && p.club !== club ? '' : id;
-    }));
+    setIds((ids) => ids.map((id) => clearIdIfClubMismatch(id, club, players)));
   };
   const handleClubFilterA = changeClubFilter(setSideA, setClubFilterA, setTeamFilterA);
   const handleClubFilterB = changeClubFilter(setSideB, setClubFilterB, setTeamFilterB);

@@ -67,7 +67,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
       </div>
       {showClub && !open && selected && <div className="player-select-club">Club: {selected.club}</div>}
       {open && (
-        <ul className="player-options" ref={listRef}>
+        <ul className="player-options" role="listbox" ref={listRef}>
           {options.map((p, idx) => (
             <li
               key={p.id}
