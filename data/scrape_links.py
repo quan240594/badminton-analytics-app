@@ -16,6 +16,8 @@ import sys
 from collections import defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
+
+from safe_path import safe_path
 from urllib.parse import parse_qs, urlparse
 
 # Maps a substring found in the href path to a human-readable category name.
@@ -86,6 +88,9 @@ def main() -> None:
     parser.add_argument("--json", type=Path, help="Write full results as JSON to this path")
     parser.add_argument("--unique", action="store_true", help="Deduplicate by href")
     args = parser.parse_args()
+    args.html_file = safe_path(args.html_file)
+    if args.json is not None:
+        args.json = safe_path(args.json)
 
     html = args.html_file.read_text(encoding="utf-8", errors="replace")
 

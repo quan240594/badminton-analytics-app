@@ -21,6 +21,8 @@ import time
 from dataclasses import asdict
 from pathlib import Path
 
+from safe_path import safe_path
+
 from parse_career import parse_player_file
 
 from season import resolve_current_tournament_id  # noqa: E402
@@ -137,6 +139,10 @@ def main() -> None:
     parser.add_argument("--watch", type=float, default=None, help="Re-scan every N seconds instead of running once")
     parser.add_argument("--until-count", type=int, default=None, help="With --watch, stop once this many files are parsed")
     args = parser.parse_args()
+    args.pages_dir = safe_path(args.pages_dir)
+    args.out = safe_path(args.out)
+    if args.state is not None:
+        args.state = safe_path(args.state)
 
     state_path = args.state or args.out.with_suffix(".state.json")
     state = load_state(state_path)

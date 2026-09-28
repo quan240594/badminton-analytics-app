@@ -24,6 +24,8 @@ import sys
 import time
 from pathlib import Path
 
+from safe_path import safe_path
+
 from pool_fetch_core import fetch_pool_players
 
 DATA_DIR = Path(__file__).resolve().parent
@@ -44,6 +46,7 @@ def main() -> None:
     parser.add_argument("--cookie-file", type=Path, default=DATA_DIR / "cookie.txt")
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
+    args.cookie_file = safe_path(args.cookie_file)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
 
     try:

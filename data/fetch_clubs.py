@@ -16,6 +16,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from safe_path import safe_path
+
 from season import resolve_current_tournament_id
 
 CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
@@ -43,6 +45,8 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("clubs.json"))
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
+    args.cookie_file = safe_path(args.cookie_file)
+    args.out = safe_path(args.out)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
 
     clubs_html = fetch(f"{BASE_URL}clubs.aspx?id={CURRENT_TOURNAMENT_ID}", cookie)
@@ -60,7 +64,7 @@ def main() -> None:
         url = f"{BASE_URL}{href}"
         try:
             html = fetch(url, cookie)
-        except (urllib.error.HTTPError, urllib.error.URLError) as ex:
+        except urllib.error.URLError as ex:
             print(f"[{i}/{len(entries)}] FAILED club={club_id} ({name}) -> {ex}")
             continue
         m = ADDRESS_RE.search(html)

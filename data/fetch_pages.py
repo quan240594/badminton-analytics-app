@@ -20,6 +20,8 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+from safe_path import safe_path
 from urllib.parse import urljoin
 
 TOURNAMENT_ID = "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E"
@@ -101,6 +103,11 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=DELAY_SECONDS, help="Delay between requests in seconds")
     parser.add_argument("--player-ids", help="Comma-separated player IDs to fetch directly (bypasses links.json)")
     args = parser.parse_args()
+    if args.links_json is not None:
+        args.links_json = safe_path(args.links_json)
+    if args.cookie_file is not None:
+        args.cookie_file = safe_path(args.cookie_file)
+    args.out = safe_path(args.out)
 
     cookie = args.cookie or (args.cookie_file.read_text(encoding="utf-8").strip() if args.cookie_file else None)
     if not cookie:

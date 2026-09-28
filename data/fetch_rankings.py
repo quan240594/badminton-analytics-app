@@ -16,6 +16,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from safe_path import safe_path
+
 BASE_URL = "https://badmintonnederland.toernooi.nl/ranking/"
 RANKING_LIST_ID = "52448"
 # A player's event page can link to more than one ranking list (e.g. the adult
@@ -75,6 +77,9 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("pages/rankings"))
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
+    args.pages_dir = safe_path(args.pages_dir)
+    args.cookie_file = safe_path(args.cookie_file)
+    args.out = safe_path(args.out)
 
     args.out.mkdir(parents=True, exist_ok=True)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
@@ -90,7 +95,7 @@ def main() -> None:
         url = f"{BASE_URL}player.aspx?rid={rid}&player={ranking_player_id}"
         try:
             html = fetch(url, cookie)
-        except (urllib.error.HTTPError, urllib.error.URLError) as ex:
+        except urllib.error.URLError as ex:
             print(f"FAILED {local_id} -> {ex}")
             continue
         out_path.write_text(html, encoding="utf-8")
@@ -105,7 +110,7 @@ def main() -> None:
         url = f"{BASE_URL}category.aspx?id={RANKING_LIST_ID}&category={cat_id}"
         try:
             html = fetch(url, cookie)
-        except (urllib.error.HTTPError, urllib.error.URLError) as ex:
+        except urllib.error.URLError as ex:
             print(f"FAILED category {label} -> {ex}")
             continue
         out_path.write_text(html, encoding="utf-8")

@@ -109,7 +109,7 @@ def fetch_pool_players(
     for i, match_id in enumerate(match_ids, 1):
         try:
             html = fetch(f"{BASE_URL}teammatch.aspx?id={CURRENT_TOURNAMENT_ID}&match={match_id}", cookie)
-        except (urllib.error.HTTPError, urllib.error.URLError):
+        except urllib.error.URLError:
             continue
         for _, pid in PLAYER_LINK_RE.findall(html):
             player_ids[pid] = None
@@ -135,7 +135,7 @@ def fetch_pool_players(
         for tid in new_team_ids:
             try:
                 team_status = fetch_team_fixed_status(tid, cookie)
-            except (urllib.error.HTTPError, urllib.error.URLError):
+            except urllib.error.URLError:
                 continue
             fixed_status.update(team_status)
             roster_ids.update(team_status.keys())

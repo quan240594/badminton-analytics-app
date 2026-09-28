@@ -24,6 +24,8 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from safe_path import safe_path
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_rankings import discover_ranking_links  # noqa: E402
 
@@ -147,6 +149,7 @@ def main() -> None:
         help="Skip re-fetching an event/ranking page refreshed more recently than this many days ago",
     )
     args = parser.parse_args()
+    args.cookie_file = safe_path(args.cookie_file)
 
     try:
         if args.skip_cookie_refresh:

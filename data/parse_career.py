@@ -81,7 +81,7 @@ def parse_new_template_matches(html_text: str, tournament_id: str, player_id: st
                 away_team="",
                 away_players=away_players,
                 score=" ".join(sets),
-                winner_side="home" if home_won else ("away" if away_won else ""),
+                winner_side=winner_side_of(home_won, away_won),
             )
         )
     return matches
@@ -143,10 +143,22 @@ def strip_tags(s: str) -> str:
     return re.sub(r"<[^>]+>", "", s).strip()
 
 
+def winner_side_of(home_won: bool, away_won: bool) -> str:
+    if home_won:
+        return "home"
+    if away_won:
+        return "away"
+    return ""
+
+
 def parse_side(block: str) -> tuple[str, list, bool]:
     """Returns (team_name, [(player_id, name), ...], won)."""
     strong_team = STRONG_TEAM_RE.search(block)
-    team_name = strong_team.group(1) if strong_team else (TEAM_NAME_RE.search(block).group(1) if TEAM_NAME_RE.search(block) else "")
+    if strong_team:
+        team_name = strong_team.group(1)
+    else:
+        team_name_match = TEAM_NAME_RE.search(block)
+        team_name = team_name_match.group(1) if team_name_match else ""
     team_name = html.unescape(team_name)
     players = [(pid, html.unescape(name)) for pid, name in PLAYER_LINK_RE.findall(block)]
     won = bool(strong_team) or bool(STRONG_PLAYER_RE.search(block))
@@ -182,7 +194,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
     for m in ROW_RE.finditer(overview_html):
         home_team, home_players, home_won = parse_side(m.group("home"))
         away_team, away_players, away_won = parse_side(m.group("away"))
-        winner_side = "home" if home_won else ("away" if away_won else "")
+        winner_side = winner_side_of(home_won, away_won)
         info.matches.append(
             MatchRecord(
                 tournament_id=tournament_id,

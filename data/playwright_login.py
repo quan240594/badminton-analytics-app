@@ -20,6 +20,8 @@ import os
 import sys
 from pathlib import Path
 
+from safe_path import safe_path
+
 from playwright.sync_api import sync_playwright
 
 LOGIN_URL = "https://badmintonnederland.toernooi.nl/user?returnUrl=%2F"
@@ -60,6 +62,7 @@ def main() -> None:
     parser.add_argument("--save", type=Path, default=Path("cookie.txt"))
     parser.add_argument("--headed", action="store_true", help="Run with a visible browser (for local debugging)")
     args = parser.parse_args()
+    args.save = safe_path(args.save)
 
     username = os.environ.get("TOERNOOI_USERNAME")
     password = os.environ.get("TOERNOOI_PASSWORD")

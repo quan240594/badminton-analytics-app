@@ -25,6 +25,8 @@ import urllib.error
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from safe_path import safe_path
+
 from pool_fetch_core import fetch_pool_players
 
 DATA_DIR = Path(__file__).resolve().parent
@@ -77,6 +79,7 @@ def main() -> None:
     parser.add_argument("--day-start-hour", type=int, default=8, help="UTC hour the daily budget resets at")
     parser.add_argument("--force", action="store_true", help="Fetch a pool even if today's budget is used up")
     args = parser.parse_args()
+    args.cookie_file = safe_path(args.cookie_file)
 
     now = datetime.now(timezone.utc)
     budget = load_daily_budget(now, args.day_start_hour)

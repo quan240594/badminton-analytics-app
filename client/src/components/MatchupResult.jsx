@@ -12,11 +12,10 @@ export default function MatchupResult({ result }) {
   const nameOf = (side) => side.map((p) => p.name).join(' & ');
 
   const h2h = result.headToHead;
-  const h2hText = h2h
-    ? mode === 'singles'
-      ? `${h2h.playerAWins} - ${h2h.playerBWins}`
-      : `${h2h.teamAWins} - ${h2h.teamBWins}`
-    : null;
+  let h2hText = null;
+  if (h2h) {
+    h2hText = mode === 'singles' ? `${h2h.playerAWins} - ${h2h.playerBWins}` : `${h2h.teamAWins} - ${h2h.teamBWins}`;
+  }
 
   return (
     <div className="result">

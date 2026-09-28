@@ -21,6 +21,12 @@ import CareerMedalsCard from '../components/CareerMedalsCard.jsx';
 import ClubSelect from '../components/ClubSelect.jsx';
 import MatchupResult from '../components/MatchupResult.jsx';
 
+function percentForRunStatus(status) {
+  if (status === 'completed') return 100;
+  if (status === 'in_progress') return 60;
+  return 15;
+}
+
 const STORAGE_KEY = 'badminton-app-state';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -105,7 +111,7 @@ function SideEditor({
       {ids.map((id, idx) => {
         const selectedPlayer = players.find((p) => p.id === id);
         return (
-          <div key={idx} className="player-slot">
+          <div key={`slot-${idx}`} className="player-slot">
             <PlayerSelect
               label={idx === 0 ? 'Player' : 'Partner'}
               players={filterByClub(players, clubFilter, id, rosterIds)}
@@ -346,7 +352,7 @@ export default function MatchSimulator() {
         return;
       }
       const running = run.status !== 'completed';
-      const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
+      const percent = percentForRunStatus(run.status);
       setPoolFetchState({ running, percent, error: null });
       if (running) {
         setTimeout(poll, 5000);
@@ -406,7 +412,7 @@ export default function MatchSimulator() {
 
       <div className="league-day-controls">
         <label className="format-select">
-          Division:
+          Division:{' '}
           <select value={division} onChange={(e) => changeDivision(e.target.value)}>
             {Object.keys(leagueIndex.divisions).sort((a, b) => divisionRank(a) - divisionRank(b) || a.localeCompare(b)).map((d) => (
               <option key={d} value={d}>{d}</option>
@@ -414,7 +420,7 @@ export default function MatchSimulator() {
           </select>
         </label>
         <label className="format-select">
-          Pool:
+          Pool:{' '}
           <select value={drawId} onChange={(e) => changePool(e.target.value)} disabled={poolAfdelingen.length === 0}>
             {[...poolAfdelingen]
               .sort((a, b) => afdelingNumber(a.label) - afdelingNumber(b.label))

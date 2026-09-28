@@ -5,6 +5,12 @@ import PageHeader from '../components/PageHeader.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import ClubSelect from '../components/ClubSelect.jsx';
 
+function percentForRunStatus(status) {
+  if (status === 'completed') return 100;
+  if (status === 'in_progress') return 60;
+  return 15;
+}
+
 const STORAGE_KEY = 'badminton-app-league-day-state';
 const MAX_RECOMMENDED_APPEARANCES = 3;
 const MAX_SINGLES_APPEARANCES = 1;
@@ -195,7 +201,7 @@ function highlightRow(label, discipline, entry) {
   const complete = players.length > 0 && players.every(Boolean) && (!isPair || players.length === 2);
   const name = complete ? players.map((p) => p.name).join(' / ') : '-';
   const leftRating = complete && isPair ? rankingPoints(discipline, players[0]) : '';
-  const rightRating = complete ? rankingPoints(discipline, players[players.length - 1]) : '';
+  const rightRating = complete ? rankingPoints(discipline, players.at(-1)) : '';
   return (
     <div className="team-highlights-row" key={label}>
       <span className="th-label">{label}</span>
@@ -463,7 +469,7 @@ export default function LeagueDaySimulator() {
         return;
       }
       const running = run.status !== 'completed';
-      const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
+      const percent = percentForRunStatus(run.status);
       setPoolFetchState({ running, percent, error: null });
       if (running) {
         setTimeout(poll, 5000);
@@ -594,11 +600,11 @@ export default function LeagueDaySimulator() {
       // Which side (if any) is fixed manual input for this rubber: the declared opponent
       // for clubA/clubB, or whichever side is already fully entered for "closest ratings" -
       // a club's own side is never locked, only re-optimized.
-      const manualLockSide = objective === 'clubA' ? (slot.sideB.every(Boolean) ? 'sideB' : null)
-        : objective === 'clubB' ? (slot.sideA.every(Boolean) ? 'sideA' : null)
-        : slot.sideA.every(Boolean) ? 'sideA'
-          : slot.sideB.every(Boolean) ? 'sideB'
-            : null;
+      let manualLockSide = null;
+      if (objective === 'clubA') manualLockSide = slot.sideB.every(Boolean) ? 'sideB' : null;
+      else if (objective === 'clubB') manualLockSide = slot.sideA.every(Boolean) ? 'sideA' : null;
+      else if (slot.sideA.every(Boolean)) manualLockSide = 'sideA';
+      else if (slot.sideB.every(Boolean)) manualLockSide = 'sideB';
 
       // manualLockSide only ever names a side that's already fully entered, so no need
       // to re-check .every(Boolean) here; it overrides both the small-roster fixed
@@ -606,12 +612,10 @@ export default function LeagueDaySimulator() {
       const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
       const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
 
-      const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers
-        ? manualLockPlayers
-        : (fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA);
-      const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers
-        ? manualLockPlayers
-        : (fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB);
+      const fallbackPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
+      const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers ? manualLockPlayers : fallbackPlayersA;
+      const fallbackPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
+      const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers ? manualLockPlayers : fallbackPlayersB;
       const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
       const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
 
@@ -698,7 +702,6 @@ export default function LeagueDaySimulator() {
   const dist = nightComplete ? winDistribution(probs) : null;
   const pAWin = dist ? dist.slice(5).reduce((s, x) => s + x, 0) : null;
   const pTie = dist ? dist[4] : null;
-  const pBWin = dist ? dist.slice(0, 4).reduce((s, x) => s + x, 0) : null;
   const clubLabelA = clubFilterA || 'Side A';
   const clubLabelB = clubFilterB || 'Side B';
 
@@ -715,7 +718,7 @@ export default function LeagueDaySimulator() {
 
       <div className="league-day-controls">
         <label className="format-select">
-          Division:
+          Division:{' '}
           <select value={division} onChange={(e) => changeDivision(e.target.value)}>
             {Object.keys(leagueIndex.divisions).sort((a, b) => divisionRank(a) - divisionRank(b) || a.localeCompare(b)).map((d) => (
               <option key={d} value={d}>{d}</option>
@@ -723,7 +726,7 @@ export default function LeagueDaySimulator() {
           </select>
         </label>
         <label className="format-select">
-          Pool:
+          Pool:{' '}
           <select value={drawId} onChange={(e) => changePool(e.target.value)} disabled={poolAfdelingen.length === 0}>
             {[...poolAfdelingen]
               .sort((a, b) => afdelingNumber(a.label) - afdelingNumber(b.label))
@@ -768,7 +771,7 @@ export default function LeagueDaySimulator() {
             type="checkbox"
             checked={capAppearances}
             onChange={(e) => setCapAppearances(e.target.checked)}
-          />
+          />{' '}
           No player plays more than 3 matches
         </label>
         <label className="filter-checkbox">
@@ -776,7 +779,7 @@ export default function LeagueDaySimulator() {
             type="checkbox"
             checked={protectTopSingles}
             onChange={(e) => setProtectTopSingles(e.target.checked)}
-          />
+          />{' '}
           Top singles player starts fresh
         </label>
         <label className="filter-checkbox">
@@ -784,7 +787,7 @@ export default function LeagueDaySimulator() {
             type="checkbox"
             checked={includeSubstitutes}
             onChange={(e) => setIncludeSubstitutes(e.target.checked)}
-          />
+          />{' '}
           Include substitutes
         </label>
       </div>
@@ -883,7 +886,7 @@ export default function LeagueDaySimulator() {
                 <div className="rubber-side">
                   {slot.sideA.map((id, idx) => (
                     <PlayerSelect
-                      key={idx}
+                      key={`${slot.code}-sideA-${idx}`}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
                       players={filterByClub(players, clubFilterA, slot.sideA, currentPoolRosterIds, requiredGenderForCode(slot.code), playerGenders)}
                       value={id}
@@ -899,7 +902,7 @@ export default function LeagueDaySimulator() {
                 <div className="rubber-side">
                   {slot.sideB.map((id, idx) => (
                     <PlayerSelect
-                      key={idx}
+                      key={`${slot.code}-sideB-${idx}`}
                       label={discipline === 'singles' ? 'Player' : `Player ${idx + 1}`}
                       players={filterByClub(players, clubFilterB, slot.sideB, currentPoolRosterIds, requiredGenderForCode(slot.code), playerGenders)}
                       value={id}

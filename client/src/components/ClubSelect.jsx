@@ -63,6 +63,8 @@ export default function ClubSelect({ clubs, value, onChange }) {
       {open && (
         <ul className="player-options club-options" ref={listRef}>
           <li
+            role="option"
+            aria-selected={activeIndex === 0}
             className={activeIndex === 0 ? 'active' : ''}
             onMouseEnter={() => setActiveIndex(0)}
             onMouseDown={() => selectClub('')}
@@ -72,6 +74,8 @@ export default function ClubSelect({ clubs, value, onChange }) {
           {options.map((club, idx) => (
             <li
               key={club}
+              role="option"
+              aria-selected={idx + 1 === activeIndex}
               className={idx + 1 === activeIndex ? 'active' : ''}
               onMouseEnter={() => setActiveIndex(idx + 1)}
               onMouseDown={() => selectClub(club)}

@@ -15,6 +15,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from safe_path import safe_path
+
 PLAYER_URL = "https://badmintonnederland.toernooi.nl/sport/league/player?id={tournament_id}&player={player_id}"
 
 BROWSER_HEADERS = {
@@ -49,6 +51,9 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=1.3)
     parser.add_argument("--limit", type=int, default=None, help="Only fetch the first N (for testing)")
     args = parser.parse_args()
+    args.events_json = safe_path(args.events_json)
+    args.cookie_file = safe_path(args.cookie_file)
+    args.out = safe_path(args.out)
 
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
     args.out.mkdir(parents=True, exist_ok=True)

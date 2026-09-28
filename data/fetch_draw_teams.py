@@ -18,6 +18,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from safe_path import safe_path
+
 from season import resolve_current_tournament_id
 
 CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
@@ -44,6 +46,8 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("draw_teams.json"))
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
+    args.cookie_file = safe_path(args.cookie_file)
+    args.out = safe_path(args.out)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
 
     draws_html = fetch(f"{BASE_URL}draws.aspx?id={CURRENT_TOURNAMENT_ID}", cookie)
@@ -63,7 +67,7 @@ def main() -> None:
         url = f"{BASE_URL}drawmatches.aspx?id={tid}&draw={draw_id}"
         try:
             html = fetch(url, cookie)
-        except (urllib.error.HTTPError, urllib.error.URLError) as ex:
+        except urllib.error.URLError as ex:
             print(f"[{i}/{len(draws)}] FAILED draw={draw_id} -> {ex}")
             continue
         team_names = sorted({re.sub(r"\s+\d+$", "", t.strip()) for t in TEAM_LINK_RE.findall(html) if t.strip() and t.strip() != "Modify"})

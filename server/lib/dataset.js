@@ -66,6 +66,30 @@ function reconstructRoster(match, ownerId, ownerName) {
   return { home, away };
 }
 
+function highestDivisionPlayed(matches, guid) {
+  let best = null;
+  for (const m of matches) {
+    if (!m.division) continue;
+    const inMatch = m.home.some((p) => p.guid === guid) || m.away.some((p) => p.guid === guid);
+    if (!inMatch) continue;
+    const rank = divisionRank(m.division);
+    if (!best || rank < best.rank || (rank === best.rank && (m.year ?? 0) > (best.year ?? 0))) {
+      best = { division: m.division, year: m.year, rank };
+    }
+  }
+  return best ? { division: best.division, year: best.year } : null;
+}
+
+function emptyMedalCounts() {
+  return { gold: 0, silver: 0, bronze: 0 };
+}
+
+function tallyMedals(counts, status) {
+  if (status === 'Winner') counts.gold += 1;
+  else if (status === 'Finalist') counts.silver += 1;
+  else if (status === 'Semi-finalist') counts.bronze += 1;
+}
+
 export function loadDataset() {
   const raw = JSON.parse(readFileSync(CAREER_PATH, 'utf-8'));
   const players = new Map();
@@ -134,20 +158,6 @@ export function loadDataset() {
     if (guid) rankingsByGuid.set(guid, byDiscipline);
   }
 
-function highestDivisionPlayed(matches, guid) {
-  let best = null;
-  for (const m of matches) {
-    if (!m.division) continue;
-    const inMatch = m.home.some((p) => p.guid === guid) || m.away.some((p) => p.guid === guid);
-    if (!inMatch) continue;
-    const rank = divisionRank(m.division);
-    if (!best || rank < best.rank || (rank === best.rank && (m.year ?? 0) > (best.year ?? 0))) {
-      best = { division: m.division, year: m.year, rank };
-    }
-  }
-  return best ? { division: best.division, year: best.year } : null;
-}
-
   // Entries per player are already ordered most-recent-first (year desc, then page order).
   let titlesRaw = {};
   try {
@@ -175,16 +185,6 @@ function highestDivisionPlayed(matches, guid) {
       result[key] = best[key] ? { status: best[key].status, tournament: best[key].tournament, year: best[key].year } : null;
     }
     return result;
-  }
-
-  function emptyMedalCounts() {
-    return { gold: 0, silver: 0, bronze: 0 };
-  }
-
-  function tallyMedals(counts, status) {
-    if (status === 'Winner') counts.gold += 1;
-    else if (status === 'Finalist') counts.silver += 1;
-    else if (status === 'Semi-finalist') counts.bronze += 1;
   }
 
   // Every player's card shows the same fixed set of years (ascending) so the

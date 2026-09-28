@@ -7,6 +7,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
   const listRef = useRef(null);
 
   const selected = players.find((p) => p.id === value);
+  const selectedName = selected ? selected.name : '';
 
   const options = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -53,7 +54,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
         <input
           type="text"
           placeholder="Search player..."
-          value={open ? query : selected ? selected.name : ''}
+          value={open ? query : selectedName}
           onFocus={() => {
             setOpen(true);
             setQuery('');
@@ -70,6 +71,8 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
           {options.map((p, idx) => (
             <li
               key={p.id}
+              role="option"
+              aria-selected={idx === activeIndex}
               className={idx === activeIndex ? 'active' : ''}
               onMouseEnter={() => setActiveIndex(idx)}
               onMouseDown={() => selectOption(p)}

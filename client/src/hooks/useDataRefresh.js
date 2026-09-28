@@ -10,6 +10,12 @@ import {
   pollGithubWorkflowRun,
 } from '../api.js';
 
+function percentForRunStatus(status) {
+  if (status === 'completed') return 100;
+  if (status === 'in_progress') return 60;
+  return 15;
+}
+
 // Extracted from MatchSimulator so any page can share the same "Fetch data"
 // mechanics: local-dev polling vs. GitHub Actions polling in production.
 // When drawId is given, this scopes to just that pool (fetch_pool.py) instead
@@ -89,7 +95,7 @@ export default function useDataRefresh(onRefreshed, drawId) {
       }
       consecutiveFailures = 0;
       const running = run.status !== 'completed';
-      const percent = run.status === 'completed' ? 100 : run.status === 'in_progress' ? 60 : 15;
+      const percent = percentForRunStatus(run.status);
       setRefreshState({ running, percent, detail: run.status, error: null });
       if (running) {
         setTimeout(poll, 5000);

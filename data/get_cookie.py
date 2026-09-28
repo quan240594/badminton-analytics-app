@@ -19,6 +19,8 @@ import argparse
 import sys
 from pathlib import Path
 
+from safe_path import safe_path
+
 import browser_cookie3
 
 DOMAIN = "badmintonnederland.toernooi.nl"
@@ -50,6 +52,8 @@ def main() -> None:
     parser.add_argument("--domain", default=DOMAIN)
     parser.add_argument("--save", type=Path, help="Write the Cookie header to this file instead of stdout")
     args = parser.parse_args()
+    if args.save is not None:
+        args.save = safe_path(args.save)
 
     try:
         cookie = build_cookie_header(args.browser, args.domain)
