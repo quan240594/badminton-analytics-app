@@ -377,11 +377,62 @@ function buildFixedRosterExclusion(topSingles, protectTopSingles, firstSinglesIn
     || isWrongGenderForCode(slots[i].code, p, playerGenders);
 }
 
+// Which side (if any) is fixed manual input for this rubber: the declared
+// opponent for clubA/clubB, or whichever side is already fully entered for
+// "closest ratings" - a club's own side is never locked, only re-optimized.
+function resolveManualLockSide(slot, objective) {
+  if (objective === 'clubA') return slot.sideB.every(Boolean) ? 'sideB' : null;
+  if (objective === 'clubB') return slot.sideA.every(Boolean) ? 'sideA' : null;
+  if (slot.sideA.every(Boolean)) return 'sideA';
+  if (slot.sideB.every(Boolean)) return 'sideB';
+  return null;
+}
+
+// Resolves which players (if any) are non-negotiable for this rubber: a
+// small-roster fixed lineup, a forced MS1 pick, or a manual lock (highest
+// priority, since manualLockSide only ever names an already fully-entered side).
+function resolveFixedPlayers(slot, manualLockSide, fixedSide, forcedSide, byId) {
+  const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
+  const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
+  const fallback = fixedSide ? fixedSide[slot.code].map((id) => byId.get(id)) : forcedSide;
+  return manualLockPlayers ? manualLockPlayers : fallback;
+}
+
+// A side with a fixed lineup, or a forced MS1 pick, always faces exactly that
+// player/pair for this rubber; a free side still relaxes its own filters in
+// priority order - cap, then protect-top-singles, then both - if every rubber
+// must be filled.
+function findBestPairingWithFallbacks(discipline, objective, playerGenders, candidates) {
+  const { fixedPlayersA, fixedPlayersB, eligibleA, eligibleB, genderPoolA, genderPoolB, withinCap } = candidates;
+  const attempts = [
+    [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
+    [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
+    [fixedPlayersA ?? genderPoolA.filter(withinCap), fixedPlayersB ?? genderPoolB.filter(withinCap)],
+    [fixedPlayersA ?? genderPoolA, fixedPlayersB ?? genderPoolB],
+  ];
+  for (const [candidatesA, candidatesB] of attempts) {
+    const pairing = bestPairing(discipline, candidatesA, candidatesB, objective, playerGenders);
+    if (pairing) return pairing;
+  }
+  return null;
+}
+
+// Appearance caps (both the general one and the singles-only one) only make
+// sense measured across the whole night, so usage/singlesUsage are mutated
+// here rather than returned - every rubber in the same autoFill pass shares
+// the same two Maps (see ctx in computeSlotAssignment).
+function recordUsage(discipline, bestA, bestB, sideALocked, sideBLocked, usage, singlesUsage) {
+  if (!sideALocked) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
+  if (!sideBLocked) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
+  if (discipline !== 'singles') return;
+  if (!sideALocked) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+  if (!sideBLocked) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
+}
+
 // Computes the auto-filled pairing for a single rubber (slot). Extracted out of
 // autoFill to keep autoFill's own cognitive complexity within Sonar's threshold;
 // ctx bundles the loop-invariant state needed to build any rubber, plus the two
-// usage/singlesUsage Maps that are mutated across the whole slots.map() pass
-// (appearance caps only make sense measured across the full night, not per-rubber).
+// usage/singlesUsage Maps that are mutated across the whole slots.map() pass.
 export function computeSlotAssignment(slot, slotIndex, ctx) {
   const {
     objective, poolA, poolB, byId, playerGenders, protectTopSingles, firstSinglesIndex,
@@ -407,27 +458,11 @@ export function computeSlotAssignment(slot, slotIndex, ctx) {
   const forcedA = !fixedA && isFirstSingles && strongestSinglesA ? [strongestSinglesA] : null;
   const forcedB = !fixedB && isFirstSingles && strongestSinglesB ? [strongestSinglesB] : null;
 
-  // Which side (if any) is fixed manual input for this rubber: the declared
-  // opponent for clubA/clubB, or whichever side is already fully entered for
-  // "closest ratings" - a club's own side is never locked, only re-optimized.
-  let manualLockSide = null;
-  if (objective === 'clubA') manualLockSide = slot.sideB.every(Boolean) ? 'sideB' : null;
-  else if (objective === 'clubB') manualLockSide = slot.sideA.every(Boolean) ? 'sideA' : null;
-  else if (slot.sideA.every(Boolean)) manualLockSide = 'sideA';
-  else if (slot.sideB.every(Boolean)) manualLockSide = 'sideB';
-
-  // manualLockSide only ever names a side that's already fully entered, so no
-  // need to re-check .every(Boolean) here; it overrides both the small-roster
-  // fixed lineup and the forced MS1 pick for whichever side it names.
-  const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
-  const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
-
-  const fallbackPlayersA = fixedA ? fixedA[slot.code].map((id) => byId.get(id)) : forcedA;
-  const fixedPlayersA = manualLockSide === 'sideA' && manualLockPlayers ? manualLockPlayers : fallbackPlayersA;
-  const fallbackPlayersB = fixedB ? fixedB[slot.code].map((id) => byId.get(id)) : forcedB;
-  const fixedPlayersB = manualLockSide === 'sideB' && manualLockPlayers ? manualLockPlayers : fallbackPlayersB;
-  const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(manualLockPlayers));
-  const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(manualLockPlayers));
+  const manualLockSide = resolveManualLockSide(slot, objective);
+  const fixedPlayersA = resolveFixedPlayers(slot, manualLockSide === 'sideA' ? manualLockSide : null, fixedA, forcedA, byId);
+  const fixedPlayersB = resolveFixedPlayers(slot, manualLockSide === 'sideB' ? manualLockSide : null, fixedB, forcedB, byId);
+  const sideALocked = Boolean(fixedA) || (manualLockSide === 'sideA' && Boolean(fixedPlayersA));
+  const sideBLocked = Boolean(fixedB) || (manualLockSide === 'sideB' && Boolean(fixedPlayersB));
 
   // MD/WD candidates are pre-scoped to their required gender here (XD's
   // one-of-each-gender constraint is instead validated inside bestPairing,
@@ -438,30 +473,13 @@ export function computeSlotAssignment(slot, slotIndex, ctx) {
   const eligibleA = genderPoolA.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
   const eligibleB = genderPoolB.filter((p) => !isProtectedHere(p) && !alreadyPlayedSingles(p));
 
-  // A side with a fixed lineup, or a forced MS1 pick, always faces exactly that
-  // player/pair for this rubber; a free side still relaxes its own filters in
-  // priority order - cap, then protect-top-singles, then both - if every
-  // rubber must be filled.
-  const attempts = [
-    [fixedPlayersA ?? eligibleA.filter(withinCap), fixedPlayersB ?? eligibleB.filter(withinCap)],
-    [fixedPlayersA ?? eligibleA, fixedPlayersB ?? eligibleB],
-    [fixedPlayersA ?? genderPoolA.filter(withinCap), fixedPlayersB ?? genderPoolB.filter(withinCap)],
-    [fixedPlayersA ?? genderPoolA, fixedPlayersB ?? genderPoolB],
-  ];
-  let pairing = null;
-  for (const [candidatesA, candidatesB] of attempts) {
-    pairing = bestPairing(discipline, candidatesA, candidatesB, objective, playerGenders);
-    if (pairing) break;
-  }
-
+  const pairing = findBestPairingWithFallbacks(discipline, objective, playerGenders, {
+    fixedPlayersA, fixedPlayersB, eligibleA, eligibleB, genderPoolA, genderPoolB, withinCap,
+  });
   if (!pairing) return slot; // truly impossible, e.g. a side has too few players
+
   const { bestA, bestB } = pairing;
-  if (!sideALocked) for (const id of bestA) usage.set(id, (usage.get(id) ?? 0) + 1);
-  if (!sideBLocked) for (const id of bestB) usage.set(id, (usage.get(id) ?? 0) + 1);
-  if (discipline === 'singles') {
-    if (!sideALocked) for (const id of bestA) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
-    if (!sideBLocked) for (const id of bestB) singlesUsage.set(id, (singlesUsage.get(id) ?? 0) + 1);
-  }
+  recordUsage(discipline, bestA, bestB, sideALocked, sideBLocked, usage, singlesUsage);
   return { ...slot, sideA: bestA, sideB: bestB };
 }
 
