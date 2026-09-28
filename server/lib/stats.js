@@ -17,6 +17,19 @@ function parseSets(score) {
 // Participation-based counts (unlike Elo's "played", these don't require the opponent
 // to also resolve to a tracked guid) — needed for accurate mixed-doubles totals, since
 // mixed partners are almost never among an all-one-gender league pool.
+function applyStatsForPlayer(bucket, won, isHome, sets) {
+  bucket.played += 1;
+  if (won) bucket.won += 1;
+  for (const [homePts, awayPts] of sets) {
+    const ownPts = isHome ? homePts : awayPts;
+    const oppPts = isHome ? awayPts : homePts;
+    bucket.setsPlayed += 1;
+    if (ownPts > oppPts) bucket.setsWon += 1;
+    bucket.pointsPlayed += ownPts + oppPts;
+    bucket.pointsWon += ownPts;
+  }
+}
+
 export function computeCareerStats(matches) {
   const stats = new Map();
 
@@ -38,17 +51,7 @@ export function computeCareerStats(matches) {
     for (const side of sides) {
       for (const p of side.roster) {
         if (!p.guid) continue;
-        const bucket = bucketFor(p.guid, discipline);
-        bucket.played += 1;
-        if (side.won) bucket.won += 1;
-        for (const [homePts, awayPts] of sets) {
-          const ownPts = side.isHome ? homePts : awayPts;
-          const oppPts = side.isHome ? awayPts : homePts;
-          bucket.setsPlayed += 1;
-          if (ownPts > oppPts) bucket.setsWon += 1;
-          bucket.pointsPlayed += ownPts + oppPts;
-          bucket.pointsWon += ownPts;
-        }
+        applyStatsForPlayer(bucketFor(p.guid, discipline), side.won, side.isHome, sets);
       }
     }
   }

@@ -50,6 +50,28 @@ function applyDoublesMatch(book, h2hMap, homeGuids, awayGuids, homeWon) {
   rec[winnerKey] = (rec[winnerKey] || 0) + 1;
 }
 
+// Skips same-player matches (shouldn't happen, but a guid resolution bug could
+// otherwise self-play a player against themselves and corrupt their own rating).
+function applySinglesMatch(book, h2hMap, homeGuid, awayGuid, homeWon) {
+  if (homeGuid === awayGuid) return;
+  const ra = book.get(homeGuid);
+  const rb = book.get(awayGuid);
+  const expA = expectedScore(ra.rating, rb.rating);
+  const delta = K * ((homeWon ? 1 : 0) - expA);
+  ra.rating += delta;
+  rb.rating -= delta;
+  ra.played += 1;
+  rb.played += 1;
+  if (homeWon) ra.won += 1;
+  else rb.won += 1;
+
+  const h2hKey = [homeGuid, awayGuid].sort((a, b) => a.localeCompare(b)).join('|');
+  if (!h2hMap.has(h2hKey)) h2hMap.set(h2hKey, {});
+  const rec = h2hMap.get(h2hKey);
+  const winner = homeWon ? homeGuid : awayGuid;
+  rec[winner] = (rec[winner] || 0) + 1;
+}
+
 export function computeRatings(matches) {
   const singlesBook = makeRatingBook();
   const doublesBook = makeRatingBook();
@@ -65,25 +87,7 @@ export function computeRatings(matches) {
 
     // Skip matches where an opponent never had their own page fetched (no resolvable guid).
     if (match.discipline === 'singles' && homeGuids.length === 1 && awayGuids.length === 1) {
-      const [a] = homeGuids;
-      const [b] = awayGuids;
-      if (a === b) continue;
-      const ra = singlesBook.get(a);
-      const rb = singlesBook.get(b);
-      const expA = expectedScore(ra.rating, rb.rating);
-      const delta = K * ((homeWon ? 1 : 0) - expA);
-      ra.rating += delta;
-      rb.rating -= delta;
-      ra.played += 1;
-      rb.played += 1;
-      if (homeWon) ra.won += 1;
-      else rb.won += 1;
-
-      const h2hKey = [a, b].sort((a, b) => a.localeCompare(b)).join('|');
-      if (!singlesH2H.has(h2hKey)) singlesH2H.set(h2hKey, {});
-      const rec = singlesH2H.get(h2hKey);
-      const winner = homeWon ? a : b;
-      rec[winner] = (rec[winner] || 0) + 1;
+      applySinglesMatch(singlesBook, singlesH2H, homeGuids[0], awayGuids[0], homeWon);
     } else if (match.discipline === 'doubles' && homeGuids.length === 2 && awayGuids.length === 2) {
       applyDoublesMatch(doublesBook, doublesPairH2H, homeGuids, awayGuids, homeWon);
     } else if (match.discipline === 'mixed' && homeGuids.length === 2 && awayGuids.length === 2) {

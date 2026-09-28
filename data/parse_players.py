@@ -134,20 +134,24 @@ def parse_match_file(match_path: Path) -> list[RubberResult]:
     return results
 
 
+def register_rubber_players(players: dict[str, PlayerRecord], rubber: RubberResult) -> None:
+    all_ids = rubber.home_players + rubber.away_players
+    for pid, name in all_ids:
+        if pid not in players:
+            players[pid] = PlayerRecord(player_id=pid, name=name)
+        if rubber.rubber.startswith("MS"):
+            players[pid].singles.append(rubber)
+        else:
+            players[pid].doubles.append(rubber)
+
+
 def build_database(pages_dir: Path) -> dict[str, PlayerRecord]:
     playerstats_path = pages_dir / "playerstats.html"
     players = parse_overall_stats(playerstats_path) if playerstats_path.exists() else {}
 
     for match_path in sorted(pages_dir.glob("match_*.html")):
         for rubber in parse_match_file(match_path):
-            all_ids = rubber.home_players + rubber.away_players
-            for pid, name in all_ids:
-                if pid not in players:
-                    players[pid] = PlayerRecord(player_id=pid, name=name)
-                if rubber.rubber.startswith("MS"):
-                    players[pid].singles.append(rubber)
-                else:
-                    players[pid].doubles.append(rubber)
+            register_rubber_players(players, rubber)
     return players
 
 

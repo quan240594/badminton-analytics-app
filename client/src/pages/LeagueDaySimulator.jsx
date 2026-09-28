@@ -227,45 +227,56 @@ function objectiveScore(objective, probA) {
   return objective === 'clubA' ? probA : 1 - probA;
 }
 
-// Scores every valid pairing from two candidate pools and returns the best one,
-// or null if no valid pairing exists (e.g. a pool too small to avoid overlap).
-function bestPairing(discipline, candidatesA, candidatesB, objective, genders = {}) {
+function bestSinglesPairing(candidatesA, candidatesB, objective) {
   let bestScore = -Infinity;
   let bestA = null;
   let bestB = null;
-  if (discipline === 'singles') {
-    for (const a of candidatesA) {
-      for (const b of candidatesB) {
-        if (a.id === b.id) continue;
-        const probA = expectedScore(ratingFor('singles', a), ratingFor('singles', b));
-        const score = objectiveScore(objective, probA);
-        if (score > bestScore) {
-          bestScore = score;
-          bestA = [a.id];
-          bestB = [b.id];
-        }
-      }
-    }
-  } else {
-    // MD/WD candidates are already scoped to one gender by the caller; XD isn't
-    // (it needs one of each), so only XD pairs get validated here.
-    const pairsA = combos2(candidatesA).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
-    const pairsB = combos2(candidatesB).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
-    for (const [a1, a2] of pairsA) {
-      const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
-      for (const [b1, b2] of pairsB) {
-        if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
-        const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
-        const probA = expectedScore(ratingA, ratingB);
-        const score = objectiveScore(objective, probA);
-        if (score > bestScore) {
-          bestScore = score;
-          bestA = [a1.id, a2.id];
-          bestB = [b1.id, b2.id];
-        }
+  for (const a of candidatesA) {
+    for (const b of candidatesB) {
+      if (a.id === b.id) continue;
+      const probA = expectedScore(ratingFor('singles', a), ratingFor('singles', b));
+      const score = objectiveScore(objective, probA);
+      if (score > bestScore) {
+        bestScore = score;
+        bestA = [a.id];
+        bestB = [b.id];
       }
     }
   }
+  return { bestA, bestB };
+}
+
+// MD/WD candidates are already scoped to one gender by the caller; XD isn't
+// (it needs one of each), so only XD pairs get validated here.
+function bestDoublesPairing(discipline, candidatesA, candidatesB, objective, genders) {
+  let bestScore = -Infinity;
+  let bestA = null;
+  let bestB = null;
+  const pairsA = combos2(candidatesA).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
+  const pairsB = combos2(candidatesB).filter(([p1, p2]) => discipline !== 'mixed' || isValidMixedPair(p1, p2, genders));
+  for (const [a1, a2] of pairsA) {
+    const ratingA = (ratingFor(discipline, a1) + ratingFor(discipline, a2)) / 2;
+    for (const [b1, b2] of pairsB) {
+      if (a1.id === b1.id || a1.id === b2.id || a2.id === b1.id || a2.id === b2.id) continue;
+      const ratingB = (ratingFor(discipline, b1) + ratingFor(discipline, b2)) / 2;
+      const probA = expectedScore(ratingA, ratingB);
+      const score = objectiveScore(objective, probA);
+      if (score > bestScore) {
+        bestScore = score;
+        bestA = [a1.id, a2.id];
+        bestB = [b1.id, b2.id];
+      }
+    }
+  }
+  return { bestA, bestB };
+}
+
+// Scores every valid pairing from two candidate pools and returns the best one,
+// or null if no valid pairing exists (e.g. a pool too small to avoid overlap).
+function bestPairing(discipline, candidatesA, candidatesB, objective, genders = {}) {
+  const { bestA, bestB } = discipline === 'singles'
+    ? bestSinglesPairing(candidatesA, candidatesB, objective)
+    : bestDoublesPairing(discipline, candidatesA, candidatesB, objective, genders);
   return bestA && bestB ? { bestA, bestB } : null;
 }
 

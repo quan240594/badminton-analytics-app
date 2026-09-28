@@ -90,81 +90,108 @@ function tallyMedals(counts, status) {
   else if (status === 'Semi-finalist') counts.bronze += 1;
 }
 
-export function loadDataset() {
-  const raw = JSON.parse(readFileSync(CAREER_PATH, 'utf-8'));
+function buildPlayersMap(raw) {
   const players = new Map();
-  const seenMatchKeys = new Set();
-  const canonicalMatches = [];
-
   for (const [guid, profile] of Object.entries(raw)) {
     players.set(guid, { id: guid, name: profile.name, club: profile.club });
   }
+  return players;
+}
 
-  // Per-tournament numeric ids only resolve to a global guid if that alias was seen
-  // while building career.json (i.e. that participant's own page was fetched too).
+// Per-tournament numeric ids only resolve to a global guid if that alias was seen
+// while building career.json (i.e. that participant's own page was fetched too).
+function buildAliasIndex(raw) {
   const aliasIndex = new Map();
   for (const [guid, profile] of Object.entries(raw)) {
     for (const key of Object.keys(profile.aliases || {})) {
       aliasIndex.set(key, guid);
     }
   }
+  return aliasIndex;
+}
 
+// Builds one canonical match record from a raw per-tournament match entry, or
+// null if it should be skipped (unrecognized discipline, wrong roster size for
+// its discipline, or already seen via another participant's page).
+function canonicalizeMatch(match, profile, aliasIndex, seenMatchKeys) {
+  const { tournament_id, source_player_id, event, time, draw, home_team, away_team, score, winner_side } = match;
+  const { home, away } = reconstructRoster(match, source_player_id, profile.name);
+  const total = home.length + away.length;
+  // Doubles vs. mixed doubles can't be inferred from roster size alone (both are 2v2),
+  // so unrecognized event codes (e.g. generic "D"/"T") only fall back to singles.
+  const discipline = disciplineFromEvent(event) || (total === 2 ? 'singles' : null);
+  if (!discipline) return null;
+  if (discipline === 'singles' && (home.length !== 1 || away.length !== 1)) return null;
+  if ((discipline === 'doubles' || discipline === 'mixed') && (home.length !== 2 || away.length !== 2)) return null;
+
+  const homeIds = home.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
+  const awayIds = away.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
+  const key = [tournament_id, time, event, home_team, away_team, homeIds, awayIds, score].join('|');
+  if (seenMatchKeys.has(key)) return null;
+  seenMatchKeys.add(key);
+
+  const resolveGuid = (localId) => aliasIndex.get(`${tournament_id}:${localId}`) || null;
+
+  return {
+    tournamentId: tournament_id,
+    time,
+    timestamp: parseDutchDateTime(time),
+    year: parseYearFromTime(time),
+    division: parseDivisionFromDraw(draw),
+    discipline,
+    event,
+    homeTeam: home_team,
+    awayTeam: away_team,
+    home: home.map(([id, name]) => ({ id, name, guid: resolveGuid(id) })),
+    away: away.map(([id, name]) => ({ id, name, guid: resolveGuid(id) })),
+    score,
+    winnerSide: winner_side,
+  };
+}
+
+function buildCanonicalMatches(raw, aliasIndex) {
+  const seenMatchKeys = new Set();
+  const canonicalMatches = [];
   for (const profile of Object.values(raw)) {
     for (const match of profile.matches) {
-      const { tournament_id, source_player_id, event, time, draw, home_team, away_team, score, winner_side } = match;
-      const { home, away } = reconstructRoster(match, source_player_id, profile.name);
-      const total = home.length + away.length;
-      // Doubles vs. mixed doubles can't be inferred from roster size alone (both are 2v2),
-      // so unrecognized event codes (e.g. generic "D"/"T") only fall back to singles.
-      const discipline = disciplineFromEvent(event) || (total === 2 ? 'singles' : null);
-      if (!discipline) continue;
-      if (discipline === 'singles' && (home.length !== 1 || away.length !== 1)) continue;
-      if ((discipline === 'doubles' || discipline === 'mixed') && (home.length !== 2 || away.length !== 2)) continue;
-
-      const homeIds = home.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
-      const awayIds = away.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
-      const key = [tournament_id, time, event, home_team, away_team, homeIds, awayIds, score].join('|');
-      if (seenMatchKeys.has(key)) continue;
-      seenMatchKeys.add(key);
-
-      const resolveGuid = (localId) => aliasIndex.get(`${tournament_id}:${localId}`) || null;
-
-      canonicalMatches.push({
-        tournamentId: tournament_id,
-        time,
-        timestamp: parseDutchDateTime(time),
-        year: parseYearFromTime(time),
-        division: parseDivisionFromDraw(draw),
-        discipline,
-        event,
-        homeTeam: home_team,
-        awayTeam: away_team,
-        home: home.map(([id, name]) => ({ id, name, guid: resolveGuid(id) })),
-        away: away.map(([id, name]) => ({ id, name, guid: resolveGuid(id) })),
-        score,
-        winnerSide: winner_side,
-      });
+      const canonical = canonicalizeMatch(match, profile, aliasIndex, seenMatchKeys);
+      if (canonical) canonicalMatches.push(canonical);
     }
   }
-
   canonicalMatches.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0));
+  return canonicalMatches;
+}
 
-  // Ranking pages were fetched keyed by this season's local player id, so resolve
-  // them to a guid the same way opponents are resolved (via the alias index).
-  const rankingsRaw = JSON.parse(readFileSync(RANKINGS_PATH, 'utf-8'));
+// Ranking pages were fetched keyed by this season's local player id, so resolve
+// them to a guid the same way opponents are resolved (via the alias index).
+function buildRankingsByGuid(rankingsRaw, aliasIndex) {
   const rankingsByGuid = new Map();
   for (const [localId, byDiscipline] of Object.entries(rankingsRaw.players)) {
     const guid = aliasIndex.get(`${CURRENT_TOURNAMENT_ID}:${localId}`);
     if (guid) rankingsByGuid.set(guid, byDiscipline);
   }
+  return rankingsByGuid;
+}
+
+function loadTitlesRaw() {
+  try {
+    return JSON.parse(readFileSync(TITLES_PATH, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+export function loadDataset() {
+  const raw = JSON.parse(readFileSync(CAREER_PATH, 'utf-8'));
+  const players = buildPlayersMap(raw);
+  const aliasIndex = buildAliasIndex(raw);
+  const canonicalMatches = buildCanonicalMatches(raw, aliasIndex);
+
+  const rankingsRaw = JSON.parse(readFileSync(RANKINGS_PATH, 'utf-8'));
+  const rankingsByGuid = buildRankingsByGuid(rankingsRaw, aliasIndex);
 
   // Entries per player are already ordered most-recent-first (year desc, then page order).
-  let titlesRaw = {};
-  try {
-    titlesRaw = JSON.parse(readFileSync(TITLES_PATH, 'utf-8'));
-  } catch {
-    titlesRaw = {};
-  }
+  const titlesRaw = loadTitlesRaw();
 
   // Lower rank = better placement; unrecognized statuses sort after known ones.
   const STATUS_RANK = { Winner: 0, Finalist: 1, 'Semi-finalist': 2, 'Quarter-finalist': 3 };

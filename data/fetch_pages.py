@@ -93,6 +93,38 @@ def fetch_one(url: str, out_path: Path, cookie: str, referer: str | None = None)
     return True
 
 
+def fetch_by_player_ids(player_ids_arg: str, out: Path, cookie: str, delay: float) -> int:
+    fetched = 0
+    for player_id in player_ids_arg.split(","):
+        player_id = player_id.strip()
+        if not player_id:
+            continue
+        url = PLAYER_URL.format(player_id=player_id)
+        out_path = out / f"player_{player_id}.html"
+        if fetch_one(url, out_path, cookie):
+            fetched += 1
+            time.sleep(delay)
+    return fetched
+
+
+def fetch_by_links(links_json: Path, categories_arg: str, out: Path, cookie: str, delay: float) -> int:
+    categories = [c.strip() for c in categories_arg.split(",") if c.strip()]
+    items = load_links(links_json, categories)
+    seen_hrefs: set[str] = set()
+    fetched = 0
+    for item in items:
+        href = item["href"]
+        if href in seen_hrefs:
+            continue
+        seen_hrefs.add(href)
+        url = urljoin(BASE_URL, href)
+        out_path = out / f"{slugify(href)}.html"
+        if fetch_one(url, out_path, cookie):
+            fetched += 1
+            time.sleep(delay)
+    return fetched
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("links_json", type=Path, nargs="?", help="Path to links.json produced by scrape_links.py")
@@ -117,30 +149,10 @@ def main() -> None:
     fetched = 0
 
     if args.player_ids:
-        for player_id in args.player_ids.split(","):
-            player_id = player_id.strip()
-            if not player_id:
-                continue
-            url = PLAYER_URL.format(player_id=player_id)
-            out_path = args.out / f"player_{player_id}.html"
-            if fetch_one(url, out_path, cookie):
-                fetched += 1
-                time.sleep(args.delay)
+        fetched += fetch_by_player_ids(args.player_ids, args.out, cookie, args.delay)
 
     if args.links_json:
-        categories = [c.strip() for c in args.categories.split(",") if c.strip()]
-        items = load_links(args.links_json, categories)
-        seen_hrefs: set[str] = set()
-        for item in items:
-            href = item["href"]
-            if href in seen_hrefs:
-                continue
-            seen_hrefs.add(href)
-            url = urljoin(BASE_URL, href)
-            out_path = args.out / f"{slugify(href)}.html"
-            if fetch_one(url, out_path, cookie):
-                fetched += 1
-                time.sleep(args.delay)
+        fetched += fetch_by_links(args.links_json, args.categories, args.out, cookie, args.delay)
 
     print(f"\nDone. Fetched {fetched} new pages into {args.out}/")
 

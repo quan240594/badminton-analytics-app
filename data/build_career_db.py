@@ -84,6 +84,37 @@ def build_alias_reverse_index(players: dict) -> dict:
     return index
 
 
+# The redesigned standalone-tournament template (see parse_career.py) never exposes
+# the page subject's own profile guid, so fall back to resolving them via whichever
+# already-known player's current-season page discovered this event (see module docstring).
+def resolve_guid_and_name(info, tid: str, pid: str, event_source_map: dict, alias_to_guid: dict) -> tuple[str, str]:
+    guid = info.profile_guid
+    source_name = None
+    if not guid:
+        source = event_source_map.get((tid, pid))
+        if source:
+            source_file, source_name = source
+            local_id = source_file[len("player_"):]
+            guid = alias_to_guid.get(f"{CURRENT_TOURNAMENT_ID}:{local_id}")
+    name = source_name or info.name
+    return guid or f"noguid:{name}", name
+
+
+def record_player_file(state: dict, alias_to_guid: dict, tid: str, pid: str, info, guid: str, name: str) -> None:
+    player_entry = state["players"].setdefault(
+        guid,
+        {"name": name, "member_id": info.member_id, "club": info.club, "aliases": {}, "matches": []},
+    )
+    # Track every (tournament_id, player_id, name, club) this real person has used.
+    alias_key = f"{tid}:{pid}"
+    player_entry["aliases"][alias_key] = {"name": name, "club": info.club}
+    alias_to_guid[alias_key] = guid
+    if info.club:
+        player_entry["club"] = info.club  # keep most-recently-seen club as current
+    for match in info.matches:
+        player_entry["matches"].append(asdict(match))
+
+
 def run_pass(pages_dir: Path, state: dict) -> int:
     parsed_set = set(state["parsed_files"])
     event_source_map = load_event_source_map(pages_dir)
@@ -100,29 +131,8 @@ def run_pass(pages_dir: Path, state: dict) -> int:
             parsed_set.add(key)
             continue
 
-        guid = info.profile_guid
-        source_name = None
-        if not guid:
-            source = event_source_map.get((tid, pid))
-            if source:
-                source_file, source_name = source
-                local_id = source_file[len("player_"):]
-                guid = alias_to_guid.get(f"{CURRENT_TOURNAMENT_ID}:{local_id}")
-        name = source_name or info.name
-        guid = guid or f"noguid:{name}"
-        player_entry = state["players"].setdefault(
-            guid,
-            {"name": name, "member_id": info.member_id, "club": info.club, "aliases": {}, "matches": []},
-        )
-        # Track every (tournament_id, player_id, name, club) this real person has used.
-        alias_key = f"{tid}:{pid}"
-        player_entry["aliases"][alias_key] = {"name": name, "club": info.club}
-        alias_to_guid[alias_key] = guid
-        if info.club:
-            player_entry["club"] = info.club  # keep most-recently-seen club as current
-
-        for match in info.matches:
-            player_entry["matches"].append(asdict(match))
+        guid, name = resolve_guid_and_name(info, tid, pid, event_source_map, alias_to_guid)
+        record_player_file(state, alias_to_guid, tid, pid, info, guid, name)
 
         parsed_set.add(key)
         new_count += 1
