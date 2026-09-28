@@ -2,11 +2,10 @@ name: National pool scrape (incremental)
 
 on:
   schedule:
-    # A single daily trigger, which GitHub Actions honors reliably (unlike a
-    # sub-hourly schedule - */10 was tried first but real runs showed GitHub
-    # silently drops/delays most ticks on a lower-priority queue like this repo's,
-    # firing maybe once every several hours instead of every 10 min). The pacing
-    # itself now comes from the loop inside this job, not from repeated triggers.
+    # Only the daily kickoff - a single tick a day is reliable. From there the
+    # job chains itself (see the last step) instead of relying on further cron
+    # ticks, since sub-hourly cron was tried before and GitHub silently
+    # drops/delays most ticks on a lower-priority queue like this repo's.
     - cron: '0 8 * * *'
   workflow_dispatch:
     inputs:
@@ -18,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: national-scrape
@@ -26,11 +26,12 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # A day's session can legitimately run for hours (up to 120 min of real
-    # scraping plus a 10-min pause after every pool) - kept safely under GitHub's
-    # 6-hour hard per-job ceiling, since a kill mid-session only loses whichever
-    # single pool was in flight (everything before it was already committed).
-    timeout-minutes: 330
+    # Each run only ever does ~15 min of real work (see the time-boxed loop
+    # below) plus setup/login overhead - this ceiling is just a safety margin,
+    # never meant to be hit. Long-lived single runs used to get silently
+    # killed by GitHub after ~5.5h regardless of this setting; short, chained
+    # runs avoid that entirely.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7
         with:
@@ -55,12 +56,13 @@ jobs:
         run: python3 playwright_login.py --save cookie.txt
         working-directory: data
 
-      # One login/cookie serves the whole day's session. Loops: fetch one pool,
-      # commit+push immediately (so a later timeout/failure only loses the pool
-      # in flight), then pause 10 min before the next - until today's budget or
-      # the pool list is exhausted (exit code 3, see scrape_all_pools.py), or a
-      # real failure (any other non-zero exit) stops the run.
-      - name: Scrape pools for the day, 10-min pause between each
+      # Fetches pools back-to-back for at most 15 minutes (no in-process sleep),
+      # committing+pushing after each one so a hard stop only loses whichever
+      # single pool was in flight. Stops early on exit code 3 (today's budget or
+      # the whole pool list is exhausted, see scrape_all_pools.py) or a real
+      # failure (any other non-zero exit).
+      - name: Scrape pools for up to 15 minutes
+        id: scrape
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -68,7 +70,10 @@ jobs:
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             FORCE_FLAG="--force"
           fi
-          while true; do
+
+          deadline=$(( $(date +%s) + 15 * 60 ))
+          code=0
+          while [ "$(date +%s)" -lt "$deadline" ]; do
             set +e
             (cd data && python3 scrape_all_pools.py $FORCE_FLAG)
             code=$?
@@ -76,20 +81,30 @@ jobs:
 
             git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json
             git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
-            git push
 
-            if [ "$code" -eq 3 ]; then
-              echo "Nothing more to do for today - stopping."
-              break
-            elif [ "$code" -ne 0 ]; then
-              echo "scrape_all_pools.py failed (exit $code) - stopping."
-              exit "$code"
+            # An unrelated commit landing on main mid-run shouldn't kill the whole
+            # run - rebase onto the latest main and retry the push once.
+            if ! git push; then
+              git pull --rebase origin main
+              git push
             fi
 
-            echo "Pausing 10 minutes before the next pool..."
-            sleep 600
+            if [ "$code" -ne 0 ]; then
+              break
+            fi
           done
+
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Remove session cookie
         if: always()
         run: rm -f data/cookie.txt
+
+      # code 0 means the 15-min window ran out while pools/budget still remain -
+      # hand off to a fresh run instead of sleeping in place. code 3 (nothing
+      # left for today) or a real failure both stop the chain here.
+      - name: Trigger the next chained run
+        if: steps.scrape.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run scrape-national.yml --ref main
