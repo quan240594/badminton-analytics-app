@@ -10,4 +10,12 @@ export default defineConfig({
     // Local dev only ("Fetch data" button) — GitHub Pages serves no live backend.
     proxy: { '/api': 'http://localhost:4000' },
   },
+  test: {
+    environment: 'node',
+    coverage: {
+      provider: 'v8',
+      // lcov is what SonarQube Cloud's javascript.lcov.reportPaths expects.
+      reporter: ['lcov', 'text'],
+    },
+  },
 });

@@ -18,6 +18,20 @@ jobs:
           # Full history so Sonar can compute accurate blame/new-code diffs.
           fetch-depth: 0
 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      # Coverage must be produced before the scan step so the scanner can pick
+      # up each package's lcov.info (see sonar.javascript.lcov.reportPaths).
+      - name: Client tests & coverage
+        run: npm install && npm run test:coverage
+        working-directory: client
+
+      - name: Server tests & coverage
+        run: npm install && npm run test:coverage
+        working-directory: server
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:

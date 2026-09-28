@@ -26,6 +26,14 @@ if [ -n "$(git status --porcelain)" ]; then
   exit 1
 fi
 
+# Regenerate lcov.info for both packages so the scan reflects current coverage,
+# same as the CI job (see sonar.javascript.lcov.reportPaths).
+echo "pre-push: running client/server test coverage..."
+if ! (cd client && npm run test:coverage) || ! (cd server && npm run test:coverage); then
+  echo "pre-push: tests failed, aborting push." >&2
+  exit 1
+fi
+
 echo "pre-push: running local Sonar scan..."
 if ! sonar-scanner; then
   echo "pre-push: Sonar scan failed, aborting push." >&2
