@@ -97,8 +97,8 @@ export function loadDataset() {
       if (discipline === 'singles' && (home.length !== 1 || away.length !== 1)) continue;
       if ((discipline === 'doubles' || discipline === 'mixed') && (home.length !== 2 || away.length !== 2)) continue;
 
-      const homeIds = home.map(([id]) => id).sort().join('+');
-      const awayIds = away.map(([id]) => id).sort().join('+');
+      const homeIds = home.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
+      const awayIds = away.map(([id]) => id).sort((a, b) => a.localeCompare(b)).join('+');
       const key = [tournament_id, time, event, home_team, away_team, homeIds, awayIds, score].join('|');
       if (seenMatchKeys.has(key)) continue;
       seenMatchKeys.add(key);

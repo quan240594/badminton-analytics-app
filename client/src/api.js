@@ -163,7 +163,7 @@ export async function simulateSingles(playerAId, playerBId) {
   const b = playerDetail(profileB, 'singles');
   const probA = expectedScore(a.rating, b.rating);
 
-  const h2hKey = [playerAId, playerBId].sort().join('|');
+  const h2hKey = [playerAId, playerBId].sort((a, b) => a.localeCompare(b)).join('|');
   const h2h = singlesH2H[h2hKey];
 
   return {
@@ -192,9 +192,9 @@ export async function simulateDoubles(teamA, teamB) {
   const teamBRating = (teamBDetail[0].rating + teamBDetail[1].rating) / 2;
   const probA = expectedScore(teamARating, teamBRating);
 
-  const pairKeyA = [...teamA].sort().join('+');
-  const pairKeyB = [...teamB].sort().join('+');
-  const matchupKey = [pairKeyA, pairKeyB].sort().join('_vs_');
+  const pairKeyA = [...teamA].sort((a, b) => a.localeCompare(b)).join('+');
+  const pairKeyB = [...teamB].sort((a, b) => a.localeCompare(b)).join('+');
+  const matchupKey = [pairKeyA, pairKeyB].sort((a, b) => a.localeCompare(b)).join('_vs_');
   const h2h = doublesPairH2H[matchupKey];
 
   return {
@@ -231,13 +231,13 @@ export async function simulateMatch(prefix, teamA, teamB) {
   let headToHead = null;
   const h2hMap = bundle[H2H_KEY_BY_PREFIX[prefix]] ?? {};
   if (idsA.length === 1) {
-    const key = [idsA[0], idsB[0]].sort().join('|');
+    const key = [idsA[0], idsB[0]].sort((a, b) => a.localeCompare(b)).join('|');
     const h2h = h2hMap[key];
     if (h2h) headToHead = { aWins: h2h[idsA[0]] || 0, bWins: h2h[idsB[0]] || 0 };
   } else {
-    const pairKeyA = [...idsA].sort().join('+');
-    const pairKeyB = [...idsB].sort().join('+');
-    const key = [pairKeyA, pairKeyB].sort().join('_vs_');
+    const pairKeyA = [...idsA].sort((a, b) => a.localeCompare(b)).join('+');
+    const pairKeyB = [...idsB].sort((a, b) => a.localeCompare(b)).join('+');
+    const key = [pairKeyA, pairKeyB].sort((a, b) => a.localeCompare(b)).join('_vs_');
     const h2h = h2hMap[key];
     if (h2h) headToHead = { aWins: h2h[pairKeyA] || 0, bWins: h2h[pairKeyB] || 0 };
   }

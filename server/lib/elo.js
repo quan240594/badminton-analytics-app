@@ -41,9 +41,9 @@ function applyDoublesMatch(book, h2hMap, homeGuids, awayGuids, homeWon) {
     rb2.won += 1;
   }
 
-  const pairKeyA = [a1, a2].sort().join('+');
-  const pairKeyB = [b1, b2].sort().join('+');
-  const matchupKey = [pairKeyA, pairKeyB].sort().join('_vs_');
+  const pairKeyA = [a1, a2].sort((a, b) => a.localeCompare(b)).join('+');
+  const pairKeyB = [b1, b2].sort((a, b) => a.localeCompare(b)).join('+');
+  const matchupKey = [pairKeyA, pairKeyB].sort((a, b) => a.localeCompare(b)).join('_vs_');
   if (!h2hMap.has(matchupKey)) h2hMap.set(matchupKey, {});
   const rec = h2hMap.get(matchupKey);
   const winnerKey = homeWon ? pairKeyA : pairKeyB;
@@ -79,7 +79,7 @@ export function computeRatings(matches) {
       if (homeWon) ra.won += 1;
       else rb.won += 1;
 
-      const h2hKey = [a, b].sort().join('|');
+      const h2hKey = [a, b].sort((a, b) => a.localeCompare(b)).join('|');
       if (!singlesH2H.has(h2hKey)) singlesH2H.set(h2hKey, {});
       const rec = singlesH2H.get(h2hKey);
       const winner = homeWon ? a : b;

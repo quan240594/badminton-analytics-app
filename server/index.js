@@ -275,7 +275,7 @@ app.post('/api/simulate/singles', (req, res) => {
   const b = playerDetail(playerBId, singles);
   const probA = winProbability(a.rating, b.rating);
 
-  const h2hKey = [playerAId, playerBId].sort().join('|');
+  const h2hKey = [playerAId, playerBId].sort((a, b) => a.localeCompare(b)).join('|');
   const h2h = singlesH2H.get(h2hKey);
 
   res.json({
@@ -302,9 +302,9 @@ app.post('/api/simulate/doubles', (req, res) => {
   const teamBRating = (teamBDetail[0].rating + teamBDetail[1].rating) / 2;
   const probA = winProbability(teamARating, teamBRating);
 
-  const pairKeyA = [...teamA].sort().join('+');
-  const pairKeyB = [...teamB].sort().join('+');
-  const matchupKey = [pairKeyA, pairKeyB].sort().join('_vs_');
+  const pairKeyA = [...teamA].sort((a, b) => a.localeCompare(b)).join('+');
+  const pairKeyB = [...teamB].sort((a, b) => a.localeCompare(b)).join('+');
+  const matchupKey = [pairKeyA, pairKeyB].sort((a, b) => a.localeCompare(b)).join('_vs_');
   const h2h = doublesPairH2H.get(matchupKey);
 
   res.json({
