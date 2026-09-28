@@ -156,7 +156,7 @@ def find_new_player_ids(player_ids: dict[str, None], roster_ids: set[str], event
     return [pid for pid in (set(player_ids) | roster_ids) if pid not in known_ids]
 
 
-def fetch_new_player_events(new_ids: list[str], draw_id: str, cookie_file: Path, progress: ProgressCallback) -> None:
+def fetch_new_player_events(new_ids: list[str], draw_id: str, cookie_file: Path, progress: ProgressCallback, events: list[dict]) -> None:
     new_entries = [
         {"tournament_id": CURRENT_TOURNAMENT_ID, "player_id": pid, "event_name": "Bondscompetitie 2026-2027"} for pid in new_ids
     ]
@@ -214,5 +214,5 @@ def fetch_pool_players(
         progress("career", 90, "all players already cached")
         return 0
 
-    fetch_new_player_events(new_ids, draw_id, cookie_file, progress)
+    fetch_new_player_events(new_ids, draw_id, cookie_file, progress, events)
     return len(new_ids)
