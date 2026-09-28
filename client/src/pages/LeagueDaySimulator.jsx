@@ -395,7 +395,7 @@ function resolveFixedPlayers(slot, manualLockSide, fixedSide, forcedSide, byId) 
   const manualLockIds = manualLockSide ? slot[manualLockSide] : null;
   const manualLockPlayers = manualLockIds ? manualLockIds.map((id) => byId.get(id)) : null;
   const fallback = fixedSide ? fixedSide[slot.code].map((id) => byId.get(id)) : forcedSide;
-  return manualLockPlayers ? manualLockPlayers : fallback;
+  return manualLockPlayers || fallback;
 }
 
 // A side with a fixed lineup, or a forced MS1 pick, always faces exactly that
