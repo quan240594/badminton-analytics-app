@@ -33,11 +33,11 @@ export default function Login() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <h1>Log in</h1>
         <label>
-          Email
+          <span>Email</span>
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
         </label>
         <label>
-          Password
+          <span>Password</span>
           <input
             type="password"
             required

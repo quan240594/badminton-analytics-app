@@ -46,11 +46,11 @@ export default function VerifyEmail() {
         <h1>Verify your email</h1>
         <p className="subtitle">Enter the verification code we emailed you to activate your account.</p>
         <label>
-          Email
+          <span>Email</span>
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
         </label>
         <label>
-          Verification code
+          <span>Verification code</span>
           <input
             type="text"
             inputMode="numeric"

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { supabase } from '../lib/supabaseClient.js';
 
 const AuthContext = createContext(null);
@@ -35,16 +35,21 @@ export function AuthProvider({ children }) {
 
   const signOut = () => supabase.auth.signOut();
 
-  const value = {
-    session,
-    user: session?.user ?? null,
-    loading,
-    signUp,
-    verifySignupCode,
-    resendSignupCode,
-    signIn,
-    signOut,
-  };
+  // Memoized so consumers don't re-render on every AuthProvider render - only
+  // when session/loading actually change (the action functions are stable).
+  const value = useMemo(
+    () => ({
+      session,
+      user: session?.user ?? null,
+      loading,
+      signUp,
+      verifySignupCode,
+      resendSignupCode,
+      signIn,
+      signOut,
+    }),
+    [session, loading],
+  );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

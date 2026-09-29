@@ -41,11 +41,11 @@ export default function Register() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <h1>Create account</h1>
         <label>
-          Email
+          <span>Email</span>
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
         </label>
         <label>
-          Password
+          <span>Password</span>
           <input
             type="password"
             required
@@ -56,7 +56,7 @@ export default function Register() {
           />
         </label>
         <label>
-          Confirm password
+          <span>Confirm password</span>
           <input
             type="password"
             required
