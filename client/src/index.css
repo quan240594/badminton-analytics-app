@@ -478,6 +478,19 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .top-nav a:hover { color: #cbd5e1; }
 .top-nav a.active { color: #60a5fa; border-bottom-color: #60a5fa; }
 
+/* --- Simulator mode tabs (League vs Tournament) --- */
+.simulator-mode-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.simulator-mode-tabs button {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.simulator-mode-tabs button.is-active { color: #e2e8f0; border-color: #60a5fa; background: #0f172a; }
+
 /* --- League Day Simulator --- */
 .league-day-controls {
   display: flex;

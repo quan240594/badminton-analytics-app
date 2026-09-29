@@ -21,6 +21,8 @@ import TitlesCard from '../components/TitlesCard.jsx';
 import CareerMedalsCard from '../components/CareerMedalsCard.jsx';
 import ClubSelect from '../components/ClubSelect.jsx';
 import MatchupResult from '../components/MatchupResult.jsx';
+import SimulatorModeTabs from '../components/SimulatorModeTabs.jsx';
+import TournamentMatchSimulator from './TournamentMatchSimulator.jsx';
 
 function percentForRunStatus(status) {
   if (status === 'completed') return 100;
@@ -155,6 +157,7 @@ function clearIdIfClubMismatch(id, club, players) {
 
 export default function MatchSimulator() {
   const stored = loadStoredState();
+  const [mode, setMode] = useState(() => localStorage.getItem('badminton-app-simulator-mode') ?? 'league');
   const [players, setPlayers] = useState([]);
   const [sideA, setSideA] = useState(stored?.sideA ?? ['']);
   const [sideB, setSideB] = useState(stored?.sideB ?? ['']);
@@ -392,6 +395,21 @@ export default function MatchSimulator() {
   const handleClubFilterA = changeClubFilter(setSideA, setClubFilterA, setTeamFilterA);
   const handleClubFilterB = changeClubFilter(setSideB, setClubFilterB, setTeamFilterB);
 
+  const changeMode = (next) => {
+    setMode(next);
+    localStorage.setItem('badminton-app-simulator-mode', next);
+  };
+
+  if (mode === 'tournament') {
+    return (
+      <div className="app">
+        <PageHeader title="Match Simulator" subtitle="Tournament entrants, rated by national ranking" />
+        <SimulatorModeTabs mode={mode} onChange={changeMode} />
+        <TournamentMatchSimulator />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <PageHeader
@@ -413,6 +431,8 @@ export default function MatchSimulator() {
           </button>
         )}
       />
+
+      <SimulatorModeTabs mode={mode} onChange={changeMode} />
 
       <div className="league-day-controls">
         <label className="format-select">
