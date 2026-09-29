@@ -1,0 +1,23 @@
+name: Sync Supabase auth config
+
+# Manual only for now: `supabase config push` has no --dry-run, so the first
+# few runs should be reviewed by hand before wiring this to auto-run on push.
+on:
+  workflow_dispatch:
+
+jobs:
+  push-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Push config to Supabase
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_SMTP_USER: ${{ secrets.SUPABASE_SMTP_USER }}
+          SUPABASE_SMTP_PASS: ${{ secrets.SUPABASE_SMTP_PASS }}
+        run: supabase config push --project-ref odshocbgyyerocmnhess
