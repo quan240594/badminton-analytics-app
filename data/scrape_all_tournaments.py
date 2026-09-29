@@ -32,6 +32,7 @@ TOURNAMENTS_PATH = DATA_DIR / "tournaments.json"
 FETCHED_TOURNAMENTS_PATH = DATA_DIR / "fetched_tournaments.json"
 DAILY_BUDGET_PATH = DATA_DIR / "tournament_scrape_daily_budget.json"
 DETAILS_PATH = DATA_DIR / "tournament_details.json"
+MY_TOURNAMENTS_PATH = DATA_DIR / "my_tournaments.json"
 
 # Distinct exit code so the calling workflow loop can tell "budget/tournaments
 # exhausted, stop looping" apart from a real failure (exit 1).
@@ -102,7 +103,15 @@ def main() -> None:
 
     fetched = load_json(FETCHED_TOURNAMENTS_PATH, {})
     total = len(tournaments)
-    pending = sorted(tid for tid in tournaments if tid not in fetched)
+    # Same priority rule as scrape_all_draws.py: registered/favorited
+    # tournaments first, since a national tournament list can be large enough
+    # (600+) that plain id order might not reach the ones the user actually
+    # cares about for a long time within the daily budget.
+    my_tournament_ids = set(load_json(MY_TOURNAMENTS_PATH, []))
+    pending = sorted(
+        (tid for tid in tournaments if tid not in fetched),
+        key=lambda tid: (tid not in my_tournament_ids, tid),
+    )
 
     if not pending:
         print(f"All {total} known tournaments already fetched - nothing left to do.", flush=True)
@@ -110,9 +119,10 @@ def main() -> None:
 
     tournament_id = pending[0]
     name = tournaments[tournament_id].get("name", tournament_id)
+    priority = " (priority: your tournament)" if tournament_id in my_tournament_ids else ""
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
     print(
-        f"Tournament {tournament_id} ({name})... "
+        f"Tournament {tournament_id} ({name}){priority}... "
         f"[{len(fetched)}/{total} done before this run, "
         f"{budget['workSeconds'] / 60:.1f}/{args.budget_minutes:.0f} min of today's budget used]",
         flush=True,
