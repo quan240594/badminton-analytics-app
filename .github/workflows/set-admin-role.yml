@@ -1,0 +1,33 @@
+name: Grant admin role
+
+# Programmatic alternative to editing a user's role in the Supabase dashboard:
+# gh workflow run set-admin-role.yml -f email=someone@example.com
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'Email of an already-registered user to grant the admin role to'
+        required: true
+        type: string
+
+jobs:
+  set-admin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install script dependencies
+        run: npm install
+        working-directory: scripts/admin
+
+      - name: Grant admin role
+        env:
+          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TARGET_EMAIL: ${{ inputs.email }}
+        run: node set-admin-role.mjs
+        working-directory: scripts/admin

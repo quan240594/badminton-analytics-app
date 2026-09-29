@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchPlayers, fetchMeta, simulateMatch, triggerPoolRefresh, fetchPoolRefreshProgress, triggerGithubWorkflowPoolRefresh, pollGithubWorkflowRun, reloadBundle } from '../api.js';
 import useDataRefresh from '../hooks/useDataRefresh.js';
 import PageHeader from '../components/PageHeader.jsx';
+import { useAuth } from '../hooks/useAuth.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import ClubSelect from '../components/ClubSelect.jsx';
 
@@ -507,6 +508,7 @@ export default function LeagueDaySimulator() {
   const [includeSubstitutes, setIncludeSubstitutes] = useState(false);
   const simulationRequestId = useRef(0);
   const { refreshState, showUnchanged, fetchData } = useDataRefresh((bundle) => setPlayers(bundle.players), drawId);
+  const { isAdmin } = useAuth();
 
   const format = formatForDivision(division);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];
@@ -781,6 +783,7 @@ export default function LeagueDaySimulator() {
         refreshState={refreshState}
         showUnchanged={showUnchanged}
         onFetchData={fetchData}
+        isAdmin={isAdmin}
       />
 
       <div className="league-day-controls">
@@ -823,9 +826,13 @@ export default function LeagueDaySimulator() {
           ) : (
             <>
               <span>No data cached yet for this pool.</span>
-              <button type="button" className="btn-outline" onClick={fetchPoolData}>
-                Fetch pool data
-              </button>
+              {isAdmin ? (
+                <button type="button" className="btn-outline" onClick={fetchPoolData}>
+                  Fetch pool data
+                </button>
+              ) : (
+                <span>Ask an admin to fetch it.</span>
+              )}
             </>
           )}
           {poolFetchState.error && <p className="error">{poolFetchState.error}</p>}

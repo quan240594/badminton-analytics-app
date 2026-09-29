@@ -35,20 +35,29 @@ export function AuthProvider({ children }) {
 
   const signOut = () => supabase.auth.signOut();
 
+  const updatePassword = (password) => supabase.auth.updateUser({ password });
+
+  // app_metadata (unlike user_metadata) can only be written by the service-role
+  // key (see scripts/admin/set-admin-role.mjs), never by the user themselves -
+  // safe to trust client-side for gating the admin-only "Fetch data" controls.
+  const isAdmin = session?.user?.app_metadata?.role === 'admin';
+
   // Memoized so consumers don't re-render on every AuthProvider render - only
   // when session/loading actually change (the action functions are stable).
   const value = useMemo(
     () => ({
       session,
       user: session?.user ?? null,
+      isAdmin,
       loading,
       signUp,
       verifySignupCode,
       resendSignupCode,
       signIn,
       signOut,
+      updatePassword,
     }),
-    [session, loading],
+    [session, loading, isAdmin],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

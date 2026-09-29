@@ -12,6 +12,7 @@ import {
 } from '../api.js';
 import useDataRefresh from '../hooks/useDataRefresh.js';
 import PageHeader from '../components/PageHeader.jsx';
+import { useAuth } from '../hooks/useAuth.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import PlayerStatsCard from '../components/PlayerStatsCard.jsx';
 import RankingCard from '../components/RankingCard.jsx';
@@ -177,6 +178,7 @@ export default function MatchSimulator() {
     setLastUpdated(bundle.meta.lastUpdated);
     setPoolLabel(bundle.meta.poolLabel);
   }, drawId);
+  const { isAdmin } = useAuth();
   const simulationRequestId = useRef(0);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];
   const poolTeams = useMemo(
@@ -404,6 +406,7 @@ export default function MatchSimulator() {
         refreshState={refreshState}
         showUnchanged={showUnchanged}
         onFetchData={fetchData}
+        isAdmin={isAdmin}
         extraActions={(
           <button type="button" className="btn-outline" onClick={removePartners}>
             Remove partners
@@ -442,9 +445,13 @@ export default function MatchSimulator() {
           ) : (
             <>
               <span>No data cached yet for this pool.</span>
-              <button type="button" className="btn-outline" onClick={fetchPoolData}>
-                Fetch pool data
-              </button>
+              {isAdmin ? (
+                <button type="button" className="btn-outline" onClick={fetchPoolData}>
+                  Fetch pool data
+                </button>
+              ) : (
+                <span>Ask an admin to fetch it.</span>
+              )}
             </>
           )}
           {poolFetchState.error && <p className="error">{poolFetchState.error}</p>}
