@@ -1,0 +1,38 @@
+# Declarative Supabase Auth config, pushed to the live project via
+# `supabase config push` (see .github/workflows/supabase-config.yml) instead of
+# clicking through the dashboard. Run `supabase login` once locally if you want
+# to push manually; CI authenticates via the SUPABASE_ACCESS_TOKEN secret.
+project_id = "badminton-app"
+
+[auth]
+enabled = true
+# Not used by this app's OTP-code flow (no magic-link/OAuth redirects today),
+# but kept accurate for any future auth method that does redirect.
+site_url = "https://quan240594.github.io/badminton-analytics-app"
+additional_redirect_urls = ["http://localhost:5173"]
+jwt_expiry = 3600
+enable_signup = true
+
+# auth.sessions.timebox / inactivity_timeout are intentionally left unset
+# (Supabase default: unlimited) so a logged-in session never force-expires -
+# this is what keeps mobile users logged in indefinitely (see README).
+[auth.sessions]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+# Must be 6-10 per Supabase's schema; 8 matches what this project already sends.
+otp_length = 8
+
+[auth.email.smtp]
+enabled = true
+host = "smtp.gmail.com"
+port = 587
+user = "env(SUPABASE_SMTP_USER)"
+pass = "env(SUPABASE_SMTP_PASS)"
+admin_email = "env(SUPABASE_SMTP_USER)"
+sender_name = "Badminton App"
+
+[auth.email.template.confirmation]
+subject = "Confirm your email address"
+content_path = "./supabase/templates/confirmation.html"
