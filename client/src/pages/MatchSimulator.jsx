@@ -181,6 +181,15 @@ export default function MatchSimulator() {
   const { isAdmin } = useAuth();
   const simulationRequestId = useRef(0);
   const poolAfdelingen = leagueIndex.divisions[division] ?? [];
+  // poolLabel is only ever refreshed by a data fetch (mount or "Fetch data"),
+  // so it goes stale the moment the user picks a different division/pool from
+  // the dropdowns below - recombine its season prefix with whichever
+  // afdeling is actually selected right now instead of showing the fetched one.
+  const displayPoolLabel = (() => {
+    const seasonPrefix = poolLabel.split(/\s\u2013\s/)[0];
+    const selectedAfdeling = poolAfdelingen.find((a) => a.drawId === drawId);
+    return selectedAfdeling && seasonPrefix ? `${seasonPrefix} \u2013 ${selectedAfdeling.label}` : poolLabel;
+  })();
   const poolTeams = useMemo(
     () => poolAfdelingen.find((a) => a.drawId === drawId)?.teams ?? [],
     [poolAfdelingen, drawId]
@@ -398,7 +407,7 @@ export default function MatchSimulator() {
         title="Match Simulator"
         subtitle={(
           <>
-            {players.length} rated players from {poolLabel || 'your league pool'}
+            {players.length} rated players from {displayPoolLabel || 'your league pool'}
             {lastUpdated && ` · data as of ${formatTimestamp(lastUpdated)}`}
           </>
         )}
