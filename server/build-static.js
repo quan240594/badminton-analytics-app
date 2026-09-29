@@ -9,6 +9,7 @@ import { computeRatings } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { currentSeasonLabel } from './lib/season.js';
 import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substitutePlayerIds, playerGenders } from './lib/leagueIndex.js';
+import { buildTournaments } from './lib/tournaments.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'data.json');
@@ -132,6 +133,7 @@ const bundle = {
   singlesH2H: Object.fromEntries(singlesH2H),
   doublesPairH2H: Object.fromEntries(doublesPairH2H),
   mixedPairH2H: Object.fromEntries(mixedPairH2H),
+  tournaments: buildTournaments(),
 };
 
 mkdirSync(path.dirname(OUT_PATH), { recursive: true });
