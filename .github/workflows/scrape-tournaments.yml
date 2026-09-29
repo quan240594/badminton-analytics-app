@@ -1,0 +1,137 @@
+name: Tournament scrape (incremental)
+
+on:
+  schedule:
+    # Offset from the national league scrape's 08:00 kickoff so the two don't
+    # hit the same site at the same moment - a single daily tick, same
+    # reasoning as scrape-national.yml (sub-hourly cron isn't reliable here).
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Ignore today''s budget for this run (manual catch-up)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tournament-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # Bounded + self-chaining (see the last step), not one long-lived job - see
+    # scrape-national.yml for why.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.DATA_FETCHING_TOKEN }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install playwright
+        working-directory: data
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Log in to badmintonnederland.toernooi.nl (tournament details/entries)
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 playwright_login.py --save cookie.txt
+        working-directory: data
+
+      - name: Accept consent on www.toernooi.nl (tournament search - public, no login)
+        run: python3 get_tournament_search_cookie.py --save tournament_cookie.txt
+        working-directory: data
+
+      # Best-effort: finds tournaments the account is registered in or has
+      # favorited, so scrape_all_draws.py fetches those draws first. Not yet
+      # validated against a real logged-in session (see the script's own
+      # docstring) - degrades to an empty priority list rather than failing
+      # the run if the expected page content isn't where anticipated.
+      - name: Find registered/favorited tournaments (priority list)
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 get_my_tournaments.py --save my_tournaments.json
+        working-directory: data
+        continue-on-error: true
+
+      # Same bounded-loop + self-dispatch-chain shape as scrape-national.yml.
+      # Each iteration: one tournament's details, one draw (priority
+      # tournaments' draws first), then a batch pass over any newly
+      # discovered ranking ids - commit+push after each, stop early on a
+      # combined "nothing left" signal or a real failure from either driver.
+      - name: Scrape tournaments for up to 15 minutes
+        id: scrape
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+
+          deadline=$(( $(date +%s) + 15 * 60 ))
+          code=0
+          while [ "$(date +%s)" -lt "$deadline" ]; do
+            set +e
+            (cd data && python3 scrape_all_tournaments.py $FORCE_FLAG)
+            tournaments_code=$?
+            (cd data && python3 scrape_all_draws.py)
+            draws_code=$?
+            (cd data && python3 fetch_tournament_rankings.py)
+            (cd data && python3 parse_rankings.py)
+            set -e
+
+            git add data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/pages/rankings data/rankings.json
+            git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
+
+            if ! git push; then
+              git pull --rebase origin main
+              git push
+            fi
+
+            if [ "$tournaments_code" -ne 0 ] && [ "$tournaments_code" -ne 3 ]; then
+              code="$tournaments_code"
+              break
+            fi
+            if [ "$draws_code" -ne 0 ] && [ "$draws_code" -ne 3 ]; then
+              code="$draws_code"
+              break
+            fi
+            if [ "$tournaments_code" -eq 3 ] && [ "$draws_code" -eq 3 ]; then
+              code=3
+              break
+            fi
+            code=0
+          done
+
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then
+            echo "A scrape driver failed (exit $code) - failing this run." >&2
+            exit "$code"
+          fi
+
+      - name: Remove session cookies
+        if: always()
+        run: rm -f data/cookie.txt data/tournament_cookie.txt
+
+      - name: Trigger the next chained run
+        if: steps.scrape.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run scrape-tournaments.yml --ref main

@@ -208,6 +208,53 @@ export async function simulateDoubles(teamA, teamB) {
   };
 }
 
+export const fetchTournaments = () => loadBundle().then((b) => b.tournaments ?? []);
+
+// Synthetic rating on the same scale expectedScore() already uses (its /400
+// divisor assumes ~1000-2000-range inputs), built from pctOfTop (ranking
+// points as a % of that discipline's #1 player) since raw ranking points
+// aren't comparable across categories the way ELO ratings are.
+function nationalRankingRating(entry) {
+  if (!entry || entry.pctOfTop == null) return null;
+  return 1000 + entry.pctOfTop * 1000;
+}
+
+// Tournament entrants mostly have no league match history (no ELO rating) -
+// national ranking is the only real signal for them, and not something to
+// silently default: if either player has no ranking data for this
+// discipline, the match can't be simulated, full stop.
+export async function simulateTournamentMatch(tournamentId, prefix, playerAId, playerBId) {
+  const bundle = await loadBundle();
+  const tournament = (bundle.tournaments ?? []).find((t) => t.id === tournamentId);
+  if (!tournament) throw new Error('unknown tournament id');
+  const byId = new Map(tournament.players.map((p) => [p.id, p]));
+  const playerA = byId.get(playerAId);
+  const playerB = byId.get(playerBId);
+  if (!playerA || !playerB) throw new Error('unknown player id(s)');
+  if (playerAId === playerBId) throw new Error('players must be different');
+
+  const entryA = playerA.nationalRanking?.[prefix] ?? null;
+  const entryB = playerB.nationalRanking?.[prefix] ?? null;
+  const ratingA = nationalRankingRating(entryA);
+  const ratingB = nationalRankingRating(entryB);
+
+  if (ratingA == null || ratingB == null) {
+    const missing = [ratingA == null ? playerA.name : null, ratingB == null ? playerB.name : null].filter(Boolean);
+    return {
+      error: true,
+      message: `${missing.join(' and ')} ${missing.length > 1 ? 'have' : 'has'} no national ranking data to simulate this match with.`,
+    };
+  }
+
+  const probA = expectedScore(ratingA, ratingB);
+  return {
+    sideA: { id: playerA.id, name: playerA.name, ranking: entryA },
+    sideB: { id: playerB.id, name: playerB.name, ranking: entryB },
+    winProbabilityA: probA,
+    winProbabilityB: 1 - probA,
+  };
+}
+
 // Generic version for League Day Simulator: works for any discipline prefix
 // ('singles', 'doubles', 'mixed'), unlike the two match-specific helpers above
 // which the single-match page's MatchupResult component depends on verbatim.
