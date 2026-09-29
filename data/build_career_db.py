@@ -54,7 +54,7 @@ def load_state(state_path: Path) -> dict:
 
 
 def save_state(state_path: Path, state: dict) -> None:
-    state_path.write_text(json.dumps(clean_json_value(state), indent=2, ensure_ascii=False), encoding="utf-8")
+    state_path.write_text(json.dumps(clean_json_value(state), indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR: path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
 
 
 # The redesigned standalone-tournament template (see parse_career.py) never links

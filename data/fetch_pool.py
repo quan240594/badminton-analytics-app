@@ -69,7 +69,7 @@ def main() -> None:
         if FETCHED_POOLS_PATH.exists():
             fetched = json.loads(FETCHED_POOLS_PATH.read_text(encoding="utf-8"))
         fetched[args.draw_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
-        FETCHED_POOLS_PATH.write_text(json.dumps(clean_json_value(fetched), indent=2), encoding="utf-8")
+        FETCHED_POOLS_PATH.write_text(json.dumps(clean_json_value(fetched), indent=2), encoding="utf-8")  # NOSONAR: hard-coded DATA_DIR constant, not derived from any input
 
         write_progress("done", 100, f"fetched {new_count} new players", running=False)
         print("pool fetch complete", flush=True)

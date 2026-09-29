@@ -73,10 +73,10 @@ def main() -> None:
         existing[club_id] = {"name": name.strip(), "city": city}
         if i % 20 == 0:
             print(f"[{i}/{len(entries)}] fetched club={club_id} {name.strip()} -> {city}")
-            args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")
+            args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR: path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
         time.sleep(args.delay)
 
-    args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")
+    args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR: path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
     print(f"done. wrote {len(existing)} clubs to {args.out}")
 
 

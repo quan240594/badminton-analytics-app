@@ -13,6 +13,7 @@ import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substit
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PROGRESS_PATH = path.join(DATA_DIR, 'refresh_progress.json');
+const POOL_PROGRESS_PATH = path.join(DATA_DIR, 'pool_fetch_progress.json'); // was never declared - /api/refresh/pool/progress silently fell back every call
 // Avoids a PATH-lookup hotspot (S4036) for the one spawn() call that re-invokes
 // ourself - process.execPath is always this exact running Node binary.
 const NODE_EXECUTABLE = process.execPath;
@@ -335,7 +336,9 @@ app.post('/api/simulate/doubles', (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log(`badminton-app server listening on http://localhost:${PORT}`);
   console.log(`loaded ${players.size} players, ${matches.length} canonical matches`);
 });
+
+export { app };
