@@ -66,3 +66,27 @@ Required repo secrets for that workflow:
 Sessions never force-expire (`auth.sessions.timebox`/`inactivity_timeout` are
 left unset in `config.toml`), so once a user verifies their email they stay
 logged in indefinitely on that device until they explicitly log out.
+
+### Roles: admin-only data fetching
+
+Only users with `app_metadata.role === "admin"` see the "Fetch data" /
+"Fetch pool data" controls (`app_metadata` can only be written by the
+service-role key, never by the user themselves, so it's safe to trust
+client-side). Regular users can register/log in/change their password but
+cannot trigger a refresh.
+
+Granting the admin role is done via a workflow, not the Supabase dashboard:
+
+```bash
+gh workflow run set-admin-role.yml -f email=someone@example.com
+```
+
+Requires one more repo secret: `SUPABASE_SERVICE_ROLE_KEY` (the **secret**
+key from Project Settings → API Keys — never the publishable/anon key, and
+never used client-side). The target user must already be registered in the
+app before running this.
+
+### Account page
+
+Signed-in users can change their password at `#/account` (linked from the
+top nav) via `supabase.auth.updateUser`.

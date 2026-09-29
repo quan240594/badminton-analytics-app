@@ -14,6 +14,7 @@ vi.mock('../lib/supabaseClient.js', () => ({
       resend: vi.fn(),
       signInWithPassword: vi.fn(),
       signOut: vi.fn(),
+      updateUser: vi.fn(),
     },
   },
 }));
@@ -84,5 +85,34 @@ describe('useAuth', () => {
 
     await result.current.signOut();
     expect(supabase.auth.signOut).toHaveBeenCalled();
+  });
+
+  it('delegates updatePassword to supabase.auth.updateUser', async () => {
+    supabase.auth.updateUser.mockResolvedValue({ data: {}, error: null });
+    const { result } = renderUseAuth();
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    await result.current.updatePassword('newpassword123');
+    expect(supabase.auth.updateUser).toHaveBeenCalledWith({ password: 'newpassword123' });
+  });
+
+  it('derives isAdmin from app_metadata.role', async () => {
+    const session = { user: { id: 'u1', email: 'admin@example.com', app_metadata: { role: 'admin' } } };
+    supabase.auth.getSession.mockResolvedValue({ data: { session } });
+
+    const { result } = renderUseAuth();
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.isAdmin).toBe(true);
+  });
+
+  it('isAdmin is false for a session without the admin role', async () => {
+    const session = { user: { id: 'u1', email: 'player@example.com', app_metadata: {} } };
+    supabase.auth.getSession.mockResolvedValue({ data: { session } });
+
+    const { result } = renderUseAuth();
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.isAdmin).toBe(false);
   });
 });

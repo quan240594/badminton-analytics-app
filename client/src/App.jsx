@@ -4,6 +4,7 @@ import LeagueDaySimulator from './pages/LeagueDaySimulator.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import VerifyEmail from './pages/VerifyEmail.jsx';
+import Account from './pages/Account.jsx';
 import { useAuth } from './hooks/useAuth.jsx';
 
 // Lightweight hash-based routing (no react-router) since this is just a
@@ -23,12 +24,19 @@ const AUTH_PAGES = [
   { prefix: '#/verify-email', Component: VerifyEmail },
 ];
 
+// Authenticated-only routes that sit outside the main nav tabs.
+const EXTRA_PAGES = [{ prefix: '#/account', Component: Account }];
+
 function resolvePage(hash) {
   return PAGES.find((p) => p.hash === hash) ?? PAGES[0];
 }
 
 function resolveAuthPage(hash) {
   return AUTH_PAGES.find((p) => hash.startsWith(p.prefix));
+}
+
+function resolveExtraPage(hash) {
+  return EXTRA_PAGES.find((p) => hash.startsWith(p.prefix));
 }
 
 export default function App() {
@@ -59,17 +67,21 @@ export default function App() {
   if (authPage) return <authPage.Component />;
   if (!session) return null; // redirect effect above is about to fire
 
-  const { Component } = resolvePage(hash);
+  const extraPage = resolveExtraPage(hash);
+  const { Component } = extraPage ?? resolvePage(hash);
 
   return (
     <>
       <nav className="top-nav">
         {PAGES.map((p) => (
-          <a key={p.hash} href={p.hash} className={resolvePage(hash).hash === p.hash ? 'active' : ''}>
+          <a key={p.hash} href={p.hash} className={!extraPage && resolvePage(hash).hash === p.hash ? 'active' : ''}>
             {p.label}
           </a>
         ))}
         <span className="nav-spacer" />
+        <a href="#/account" className={extraPage ? 'active' : ''}>
+          Account
+        </a>
         <span className="nav-user">{session.user.email}</span>
         <button type="button" className="link-btn" onClick={() => signOut()}>
           Log out
