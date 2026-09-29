@@ -23,3 +23,9 @@ data/titles_progress.json
 # Local secrets - never commit real Supabase keys
 client/.env
 client/.env.local
+
+# Local SonarCloud token for scripts/sonar-scan.sh - never commit
+.env.sonar.local
+
+# sonar-scanner's local working/cache directory
+.scannerwork/
