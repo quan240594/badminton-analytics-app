@@ -56,9 +56,24 @@ jobs:
         run: python3 get_tournament_search_cookie.py --save tournament_cookie.txt
         working-directory: data
 
-      # Same bounded-loop + self-dispatch-chain shape as scrape-national.yml:
-      # fetch tournaments back-to-back for up to 15 min, commit+push after
-      # each, stop early on exit code 3 (nothing left today) or a real failure.
+      # Best-effort: finds tournaments the account is registered in or has
+      # favorited, so scrape_all_draws.py fetches those draws first. Not yet
+      # validated against a real logged-in session (see the script's own
+      # docstring) - degrades to an empty priority list rather than failing
+      # the run if the expected page content isn't where anticipated.
+      - name: Find registered/favorited tournaments (priority list)
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 get_my_tournaments.py --save my_tournaments.json
+        working-directory: data
+        continue-on-error: true
+
+      # Same bounded-loop + self-dispatch-chain shape as scrape-national.yml.
+      # Each iteration: one tournament's details, one draw (priority
+      # tournaments' draws first), then a batch pass over any newly
+      # discovered ranking ids - commit+push after each, stop early on a
+      # combined "nothing left" signal or a real failure from either driver.
       - name: Scrape tournaments for up to 15 minutes
         id: scrape
         run: |
@@ -74,10 +89,14 @@ jobs:
           while [ "$(date +%s)" -lt "$deadline" ]; do
             set +e
             (cd data && python3 scrape_all_tournaments.py $FORCE_FLAG)
-            code=$?
+            tournaments_code=$?
+            (cd data && python3 scrape_all_draws.py)
+            draws_code=$?
+            (cd data && python3 fetch_tournament_rankings.py)
+            (cd data && python3 parse_rankings.py)
             set -e
 
-            git add data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json
+            git add data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/pages/rankings data/rankings.json
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
 
             if ! git push; then
@@ -85,15 +104,25 @@ jobs:
               git push
             fi
 
-            if [ "$code" -ne 0 ]; then
+            if [ "$tournaments_code" -ne 0 ] && [ "$tournaments_code" -ne 3 ]; then
+              code="$tournaments_code"
               break
             fi
+            if [ "$draws_code" -ne 0 ] && [ "$draws_code" -ne 3 ]; then
+              code="$draws_code"
+              break
+            fi
+            if [ "$tournaments_code" -eq 3 ] && [ "$draws_code" -eq 3 ]; then
+              code=3
+              break
+            fi
+            code=0
           done
 
           echo "code=$code" >> "$GITHUB_OUTPUT"
 
           if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then
-            echo "scrape_all_tournaments.py failed (exit $code) - failing this run." >&2
+            echo "A scrape driver failed (exit $code) - failing this run." >&2
             exit "$code"
           fi
 

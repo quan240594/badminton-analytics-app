@@ -46,6 +46,13 @@ PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]*data-nationality-id="([A-Z]*
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 
+# The tournament-scoped player.aspx page has no ranking-list link at all (that
+# widget is apparently league-context-only) - but each match's head-2-head
+# button embeds every player's site-wide MemberID, which the existing
+# rankings.json pipeline's ranking/player.aspx?rid=..&player=<id> URLs use.
+# This is the only place that global id is exposed for a plain tournament.
+H2H_MEMBER_ID_RE = re.compile(r'T\dP\dMemberID=(\d+)')
+
 
 def fetch(url: str, cookie: str) -> str:
     req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
@@ -80,6 +87,15 @@ def parse_matches(html: str) -> list[dict]:
             sides.append({"won": won_flag == " has-won", "players": players})
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
+
+        # Zip the h2h link's T1P1/T1P2/T2P1/T2P2 MemberIDs against the same
+        # players in document order - both lists follow the same side-by-side
+        # rendering order, there's no other shared key to join on here.
+        member_ids = H2H_MEMBER_ID_RE.findall(block)
+        all_players = [player for side in sides for player in side["players"]]
+        for player, member_id in zip(all_players, member_ids):
+            player["member_id"] = member_id
+
         matches.append(
             {
                 "match_id": match_id,

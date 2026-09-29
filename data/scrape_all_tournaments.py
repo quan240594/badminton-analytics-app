@@ -76,7 +76,7 @@ def main() -> None:
     parser.add_argument("--days-back", type=int, default=30)
     parser.add_argument("--days-forward", type=int, default=365)
     parser.add_argument("--delay", type=float, default=1.0)
-    parser.add_argument("--budget-minutes", type=float, default=60, help="Real scraping time allowed per day")
+    parser.add_argument("--budget-minutes", type=float, default=30, help="Real scraping time allowed per day")
     parser.add_argument("--day-start-hour", type=int, default=8, help="UTC hour the daily budget resets at")
     parser.add_argument("--force", action="store_true", help="Fetch a tournament even if today's budget is used up")
     args = parser.parse_args()
