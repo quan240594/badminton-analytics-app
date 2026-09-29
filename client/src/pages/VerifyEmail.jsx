@@ -6,7 +6,6 @@ function emailFromHash(hash) {
   return new URLSearchParams(query).get('email') ?? '';
 }
 
-// TODO: requires Supabase custom SMTP + the {{ .Token }} template edit (see README) - until then, users get no code to type here.
 export default function VerifyEmail() {
   const { verifySignupCode, resendSignupCode } = useAuth();
   const initialEmail = useMemo(() => emailFromHash(window.location.hash), []);
@@ -45,7 +44,7 @@ export default function VerifyEmail() {
     <div className="auth-page">
       <form className="auth-form" onSubmit={handleSubmit}>
         <h1>Verify your email</h1>
-        <p className="subtitle">Enter the 6-digit code we emailed you to activate your account.</p>
+        <p className="subtitle">Enter the verification code we emailed you to activate your account.</p>
         <label>
           Email
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
@@ -57,7 +56,7 @@ export default function VerifyEmail() {
             inputMode="numeric"
             pattern="[0-9]*"
             required
-            maxLength={6}
+            maxLength={12}
             value={code}
             onChange={(e) => setCode(e.target.value)}
             autoComplete="one-time-code"

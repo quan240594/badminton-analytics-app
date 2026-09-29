@@ -40,13 +40,10 @@ enough for this app).
    from Settings → API.
 2. Authentication → Sign In / Providers → Email: enable "Confirm email".
 3. Authentication → Emails → Confirm signup template: replace the confirmation
-   link with `{{ .Token }}` so users get a 6-digit code instead of a link (the
-   app's verify-email page expects a code, not a link).
-   - TODO: this template edit is gated behind custom SMTP on Supabase's free
-     tier (Authentication → Emails → SMTP Settings). Set up a dedicated Gmail
-     account for this (not a personal inbox) and configure SMTP before relying
-     on real user signups - until then, confirmation emails only contain a
-     link, and the code-entry verify-email page has nothing to show users.
+   link with `{{ .Token }}` so users get a numeric code instead of a link (the
+   app's verify-email page expects a code, not a link). Requires custom SMTP
+   (Authentication → Emails → SMTP Settings) since template edits are gated
+   behind it on Supabase's free tier.
 4. Local dev: copy `client/.env.example` to `client/.env` and fill in the two
    values above.
 5. Deployed build (GitHub Pages): add `VITE_SUPABASE_URL` and
