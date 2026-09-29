@@ -20,6 +20,7 @@ import sys
 from pathlib import Path
 
 from safe_path import safe_path
+from sanitize import clean_json_value
 
 import browser_cookie3
 
@@ -62,7 +63,7 @@ def main() -> None:
         sys.exit(1)
 
     if args.save:
-        args.save.write_text(cookie, encoding="utf-8")
+        args.save.write_text(clean_json_value(cookie, max_len=20000), encoding="utf-8")
         args.save.chmod(0o600)
         print(f"Wrote cookie ({len(cookie)} chars) to {args.save}")
     else:

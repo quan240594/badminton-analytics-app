@@ -25,6 +25,7 @@ import time
 from pathlib import Path
 
 from safe_path import safe_path
+from sanitize import clean_json_value
 
 from pool_fetch_core import fetch_pool_players
 
@@ -48,8 +49,9 @@ def main() -> None:
     args = parser.parse_args()
     # Defense in depth: server/index.js already validates drawId is numeric before
     # spawning this script, but this script is also runnable directly/manually.
-    if not args.draw_id.isdigit():
-        raise ValueError(f"--draw-id must be numeric, got: {args.draw_id!r}")
+    # Reconstructed (not just validated) via int()/str() round-trip, raising
+    # ValueError on anything non-numeric.
+    args.draw_id = str(int(args.draw_id))
     args.cookie_file = safe_path(args.cookie_file)
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
 
@@ -67,7 +69,7 @@ def main() -> None:
         if FETCHED_POOLS_PATH.exists():
             fetched = json.loads(FETCHED_POOLS_PATH.read_text(encoding="utf-8"))
         fetched[args.draw_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
-        FETCHED_POOLS_PATH.write_text(json.dumps(fetched, indent=2), encoding="utf-8")
+        FETCHED_POOLS_PATH.write_text(json.dumps(clean_json_value(fetched), indent=2), encoding="utf-8")
 
         write_progress("done", 100, f"fetched {new_count} new players", running=False)
         print("pool fetch complete", flush=True)

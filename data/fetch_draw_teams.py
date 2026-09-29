@@ -19,6 +19,7 @@ import urllib.request
 from pathlib import Path
 
 from safe_path import safe_path
+from sanitize import clean_json_value
 
 from season import resolve_current_tournament_id
 
@@ -74,10 +75,10 @@ def main() -> None:
         existing[draw_id] = {"division": division, "afdelingLabel": afdeling_label, "teams": team_names}
         if i % 10 == 0:
             print(f"[{i}/{len(draws)}] draw={draw_id} {afdeling_label} -> {len(team_names)} teams")
-            args.out.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
+            args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")
         time.sleep(args.delay)
 
-    args.out.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
+    args.out.write_text(json.dumps(clean_json_value(existing), indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"done. wrote {len(existing)} draws to {args.out}")
 
 

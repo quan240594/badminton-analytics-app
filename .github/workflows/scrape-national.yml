@@ -96,6 +96,14 @@ jobs:
 
           echo "code=$code" >> "$GITHUB_OUTPUT"
 
+          # 0 (still more to do) and 3 (nothing left today) are both clean stops -
+          # anything else is a real scraper failure and must fail the run loudly,
+          # not get silently swallowed as green.
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then
+            echo "scrape_all_pools.py failed (exit $code) - failing this run." >&2
+            exit "$code"
+          fi
+
       - name: Remove session cookie
         if: always()
         run: rm -f data/cookie.txt

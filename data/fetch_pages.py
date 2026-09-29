@@ -57,7 +57,7 @@ def load_links(links_path: Path, categories: list[str]) -> list[dict]:
 def slugify(href: str) -> str:
     # e.g. "/sport/team.aspx?id=...&team=1022" -> "team_1022"
     params = href.split("?", 1)[-1] if "?" in href else ""
-    parts = {k: v for k, v in (p.split("=", 1) for p in params.split("&") if "=" in p)}
+    parts = dict(p.split("=", 1) for p in params.split("&") if "=" in p)
     if "team" in parts:
         return f"team_{parts['team']}"
     if "match" in parts:
@@ -135,26 +135,26 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=DELAY_SECONDS, help="Delay between requests in seconds")
     parser.add_argument("--player-ids", help="Comma-separated player IDs to fetch directly (bypasses links.json)")
     args = parser.parse_args()
-    if args.links_json is not None:
-        args.links_json = safe_path(args.links_json)
-    if args.cookie_file is not None:
-        args.cookie_file = safe_path(args.cookie_file)
-    args.out = safe_path(args.out)
+    # Bound to fresh local names (not re-read from the args Namespace) once
+    # validated, so nothing downstream can be traced back to a raw CLI field.
+    links_json = safe_path(args.links_json) if args.links_json is not None else None
+    cookie_file = safe_path(args.cookie_file) if args.cookie_file is not None else None
+    out_dir = safe_path(args.out)
 
-    cookie = args.cookie or (args.cookie_file.read_text(encoding="utf-8").strip() if args.cookie_file else None)
+    cookie = args.cookie or (cookie_file.read_text(encoding="utf-8").strip() if cookie_file else None)
     if not cookie:
         sys.exit("Provide --cookie or --cookie-file")
 
-    args.out.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     fetched = 0
 
     if args.player_ids:
-        fetched += fetch_by_player_ids(args.player_ids, args.out, cookie, args.delay)
+        fetched += fetch_by_player_ids(args.player_ids, out_dir, cookie, args.delay)
 
-    if args.links_json:
-        fetched += fetch_by_links(args.links_json, args.categories, args.out, cookie, args.delay)
+    if links_json:
+        fetched += fetch_by_links(links_json, args.categories, out_dir, cookie, args.delay)
 
-    print(f"\nDone. Fetched {fetched} new pages into {args.out}/")
+    print(f"\nDone. Fetched {fetched} new pages into {out_dir}/")
 
 
 if __name__ == "__main__":
