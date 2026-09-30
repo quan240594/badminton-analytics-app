@@ -77,9 +77,16 @@ jobs:
             set +e
             (cd data && python3 scrape_all_pools.py $FORCE_FLAG)
             code=$?
+            # Ranking links only exist on whichever player pages this iteration
+            # just (re-)fetched (data/pages/ isn't persisted between runs), so
+            # this only ever looks up new/just-scraped players - never a full
+            # rescan - keeping each iteration's added work small and bounded.
+            (cd data && python3 fetch_rankings.py --cookie-file cookie.txt)
+            (cd data && python3 parse_rankings.py)
             set -e
 
             git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json
+            [ -f data/rankings.json ] && git add data/rankings.json
             git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
 
             # An unrelated commit landing on main mid-run shouldn't kill the whole
