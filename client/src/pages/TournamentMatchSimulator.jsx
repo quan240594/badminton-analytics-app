@@ -20,9 +20,9 @@ function loadStoredState() {
 // only 3 disciplines national ranking data actually distinguishes.
 function disciplineForDraw(name) {
   if (!name) return null;
-  if (/^GD\b|Gemengd/i.test(name)) return 'mixed';
-  if (/^(JE|ME|HE|DE)\b|Enkel/i.test(name)) return 'singles';
-  if (/^(JD|MD|HD|DD|D)\b|Dubbel/i.test(name)) return 'doubles';
+  if (/(?:^GD\b)|(?:Gemengd)/i.test(name)) return 'mixed';
+  if (/(?:^(?:JE|ME|HE|DE)\b)|(?:Enkel)/i.test(name)) return 'singles';
+  if (/(?:^(?:JD|MD|HD|DD|D)\b)|(?:Dubbel)/i.test(name)) return 'doubles';
   return null;
 }
 

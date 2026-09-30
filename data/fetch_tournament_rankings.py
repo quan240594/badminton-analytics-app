@@ -24,6 +24,7 @@ import json
 import time
 import urllib.error
 import urllib.request
+from collections.abc import Iterator
 from pathlib import Path
 
 from safe_path import safe_path
@@ -46,6 +47,16 @@ def has_ranking_rows(html: str) -> bool:
     return '<td class="right rankingpoints">' in html
 
 
+# Split out of discover_member_ids() to keep each function's nesting (and
+# Cognitive Complexity) within Sonar's threshold.
+def _member_ids_in_draw(draw: dict) -> Iterator[str]:
+    for match in draw.get("matches", []):
+        for side in match.get("sides", []):
+            for player in side.get("players", []):
+                if player.get("member_id"):
+                    yield player["member_id"]
+
+
 def discover_member_ids(draws_path: Path) -> set[str]:
     if not draws_path.exists():
         return set()
@@ -53,11 +64,7 @@ def discover_member_ids(draws_path: Path) -> set[str]:
     member_ids: set[str] = set()
     for draws_by_id in all_draws.values():
         for draw in draws_by_id.values():
-            for match in draw.get("matches", []):
-                for side in match.get("sides", []):
-                    for player in side.get("players", []):
-                        if player.get("member_id"):
-                            member_ids.add(player["member_id"])
+            member_ids.update(_member_ids_in_draw(draw))
     return member_ids
 
 
