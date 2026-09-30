@@ -164,6 +164,169 @@
           "played_at": "zo 20-9-2026 11:00"
         }
       ]
+    },
+    "2": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "78",
+              "name": "Maaike BAARSLAG"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-14"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "57",
+              "name": "Kristine De WEERDT"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "36-43"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "76",
+              "name": "Thiya van PEL"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "21-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "18",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Maaike BAARSLAG",
+                  "member_id": "50009874"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Thiya van PEL",
+                  "member_id": "50025520"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              6
+            ],
+            [
+              15,
+              2
+            ]
+          ],
+          "played_at": "zo 20-9-2026 10:00"
+        },
+        {
+          "match_id": "17",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Kristine De WEERDT",
+                  "member_id": "50025520"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Thiya van PEL"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              4
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "played_at": "zo 20-9-2026 10:30"
+        },
+        {
+          "match_id": "15",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Kristine De WEERDT",
+                  "member_id": "50009874"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Maaike BAARSLAG"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              15
+            ],
+            [
+              3,
+              15
+            ]
+          ],
+          "played_at": "zo 20-9-2026 11:00"
+        }
+      ]
     }
   }
 }
