@@ -39,6 +39,8 @@ function opponentsInDraw(draw, playerId) {
       for (const p of side.players ?? []) ids.add(p.player_id);
     }
   }
+  // Player never entered this draw at all - nothing to simulate, not "everyone".
+  if (!ids.has(playerId)) return new Set();
   ids.delete(playerId);
   return ids;
 }
