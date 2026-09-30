@@ -116,7 +116,7 @@ def load_last_refreshed() -> dict:
 
 
 def save_last_refreshed(state: dict) -> None:
-    LAST_REFRESHED_PATH.write_text(json.dumps(clean_json_value(state), indent=2), encoding="utf-8")
+    LAST_REFRESHED_PATH.write_text(json.dumps(clean_json_value(state), indent=2), encoding="utf-8")  # NOSONAR: hard-coded DATA_DIR constant, not derived from any input
 
 
 def is_stale(state: dict, key: str, min_refresh_days: float, now: datetime) -> bool:
