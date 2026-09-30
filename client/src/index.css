@@ -478,6 +478,25 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .top-nav a:hover { color: #cbd5e1; }
 .top-nav a.active { color: #60a5fa; border-bottom-color: #60a5fa; }
 
+/* Tournament simulator: PlayerSelect is normally a stacked label-over-input
+   block (see .player-select rules above) meant for a card grid - inline it to
+   match the compact "Label: control" look of the other league-day-controls
+   items instead of stretching full-width with a label on its own line. */
+.tournament-simulator .league-day-controls .player-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 1 280px;
+}
+.tournament-simulator .league-day-controls .player-select label {
+  display: inline;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+.tournament-simulator .league-day-controls .player-select-row { flex: 1; min-width: 0; }
+.tournament-simulator .league-day-controls .player-select input { padding: 0.3rem 0.5rem; }
+
 /* --- Simulator mode tabs (League vs Tournament) --- */
 .simulator-mode-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
 .simulator-mode-tabs button {

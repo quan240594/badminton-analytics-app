@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { fetchTournaments, simulateTournamentMatch } from '../api.js';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import RankingCard from '../components/RankingCard.jsx';
@@ -26,17 +26,31 @@ function disciplineForDraw(name) {
   return null;
 }
 
+// Every other entrant sharing a draw with the given player - from standings
+// when present (pools always list the full field there), otherwise from
+// actual match participants (knockout draws may not expose standings rows).
+function opponentsInDraw(draw, playerId) {
+  const ids = new Set();
+  for (const row of draw.standings ?? []) {
+    for (const p of row.players) ids.add(p.player_id);
+  }
+  for (const match of draw.matches ?? []) {
+    for (const side of match.sides ?? []) {
+      for (const p of side.players ?? []) ids.add(p.player_id);
+    }
+  }
+  ids.delete(playerId);
+  return ids;
+}
+
 export default function TournamentMatchSimulator() {
   const stored = loadStoredState();
   const [tournaments, setTournaments] = useState([]);
   const [tournamentId, setTournamentId] = useState(stored?.tournamentId ?? '');
-  const [drawId, setDrawId] = useState(stored?.drawId ?? '');
-  const [playerAId, setPlayerAId] = useState(stored?.playerAId ?? '');
-  const [playerBId, setPlayerBId] = useState(stored?.playerBId ?? '');
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState('');
+  const [playerId, setPlayerId] = useState(stored?.playerId ?? '');
+  const [drawResults, setDrawResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const simulationRequestId = useRef(0);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchTournaments()
@@ -45,56 +59,62 @@ export default function TournamentMatchSimulator() {
   }, []);
 
   const tournament = tournaments.find((t) => t.id === tournamentId) ?? null;
-  const draws = useMemo(() => (tournament?.draws ?? []).filter((d) => disciplineForDraw(d.name)), [tournament]);
-  const draw = draws.find((d) => d.draw_id === drawId) ?? null;
-  const discipline = disciplineForDraw(draw?.name);
   const players = tournament?.players ?? [];
+  const player = players.find((p) => p.id === playerId);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournamentId, drawId, playerAId, playerBId }));
-  }, [tournamentId, drawId, playerAId, playerBId]);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournamentId, playerId }));
+  }, [tournamentId, playerId]);
 
   const changeTournament = (nextId) => {
     setTournamentId(nextId);
-    setDrawId('');
-    setPlayerAId('');
-    setPlayerBId('');
-    setResult(null);
+    setPlayerId('');
+    setDrawResults([]);
   };
 
-  const changeDraw = (nextDrawId) => {
-    setDrawId(nextDrawId);
-    setPlayerAId('');
-    setPlayerBId('');
-    setResult(null);
-  };
-
-  const canSimulate = Boolean(tournamentId && discipline && playerAId && playerBId && playerAId !== playerBId);
+  // Every draw in this tournament the selected player actually appears in.
+  const relevantDraws = useMemo(() => {
+    if (!tournament || !playerId) return [];
+    return (tournament.draws ?? [])
+      .map((draw) => ({ draw, discipline: disciplineForDraw(draw.name), opponents: opponentsInDraw(draw, playerId) }))
+      .filter(({ discipline, opponents }) => discipline && opponents.size > 0);
+  }, [tournament, playerId]);
 
   useEffect(() => {
-    if (!canSimulate) {
-      setResult(null);
+    if (relevantDraws.length === 0) {
+      setDrawResults([]);
       setError('');
       return;
     }
-    const requestId = ++simulationRequestId.current;
-    setError('');
+    let cancelled = false;
     setLoading(true);
-    simulateTournamentMatch(tournamentId, discipline, playerAId, playerBId)
-      .then((r) => {
-        if (simulationRequestId.current === requestId) setResult(r);
+    setError('');
+    Promise.all(
+      relevantDraws.map(async ({ draw, discipline, opponents }) => ({
+        draw,
+        opponentResults: await Promise.all(
+          [...opponents].map(async (opponentId) => ({
+            opponentId,
+            opponent: players.find((p) => p.id === opponentId),
+            result: await simulateTournamentMatch(tournamentId, discipline, playerId, opponentId),
+          }))
+        ),
+      }))
+    )
+      .then((results) => {
+        if (!cancelled) setDrawResults(results);
       })
       .catch((e) => {
-        if (simulationRequestId.current === requestId) setError(e.message);
+        if (!cancelled) setError(e.message);
       })
       .finally(() => {
-        if (simulationRequestId.current === requestId) setLoading(false);
+        if (!cancelled) setLoading(false);
       });
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tournamentId, discipline, playerAId, playerBId]);
-
-  const playerA = players.find((p) => p.id === playerAId);
-  const playerB = players.find((p) => p.id === playerBId);
+  }, [tournamentId, playerId, relevantDraws]);
 
   return (
     <div className="tournament-simulator">
@@ -108,57 +128,50 @@ export default function TournamentMatchSimulator() {
             ))}
           </select>
         </label>
-        <label className="format-select">
-          Draw:{' '}
-          <select value={drawId} onChange={(e) => changeDraw(e.target.value)} disabled={!tournament}>
-            <option value="" disabled>Select a draw…</option>
-            {draws.map((d) => (
-              <option key={d.draw_id} value={d.draw_id}>{d.name}</option>
-            ))}
-          </select>
-        </label>
+        <PlayerSelect label="Player" players={players} value={playerId} onChange={setPlayerId} />
       </div>
 
       {tournamentId && !tournament && <p className="muted">No entrants/draws scraped for this tournament yet.</p>}
 
-      {tournament && (
+      {player && (
         <div className="player-card-grid">
-          <PlayerSelect label="Player" players={players} value={playerAId} onChange={setPlayerAId} excludeIds={[playerBId].filter(Boolean)} />
-          <PlayerSelect label="Opponent" players={players} value={playerBId} onChange={setPlayerBId} excludeIds={[playerAId].filter(Boolean)} />
-          {playerA && <RankingCard nationalRanking={playerA.nationalRanking} />}
-          {playerB && <RankingCard nationalRanking={playerB.nationalRanking} />}
+          <RankingCard nationalRanking={player.nationalRanking} />
         </div>
       )}
 
       {loading && <p className="muted">Simulating…</p>}
       {error && <p className="error">{error}</p>}
 
-      {result?.error && (
-        <p className="error">{result.message}</p>
+      {playerId && !loading && relevantDraws.length === 0 && (
+        <p className="muted">This player isn't in any scraped draw for this tournament yet.</p>
       )}
 
-      {result && !result.error && (
-        <div className="result">
-          <div className="bar">
-            <div className="bar-a" style={{ width: `${Math.round(result.winProbabilityA * 100)}%` }}>
-              {Math.round(result.winProbabilityA * 100)}%
+      {drawResults.map(({ draw, opponentResults }) => (
+        <div key={draw.draw_id} className="result">
+          <h3>{draw.name}</h3>
+          {opponentResults.map(({ opponentId, opponent, result }) => (
+            <div key={opponentId} className="sides">
+              {result.error ? (
+                <p className="error">{result.message}</p>
+              ) : (
+                <>
+                  <div className="bar">
+                    <div className="bar-a" style={{ width: `${Math.round(result.winProbabilityA * 100)}%` }}>
+                      {Math.round(result.winProbabilityA * 100)}%
+                    </div>
+                    <div className="bar-b" style={{ width: `${Math.round(result.winProbabilityB * 100)}%` }}>
+                      {Math.round(result.winProbabilityB * 100)}%
+                    </div>
+                  </div>
+                  <p className="rating">
+                    vs {result.sideB.name} — #{result.sideB.ranking.rank} ({result.sideB.ranking.points} pts)
+                  </p>
+                </>
+              )}
             </div>
-            <div className="bar-b" style={{ width: `${Math.round(result.winProbabilityB * 100)}%` }}>
-              {Math.round(result.winProbabilityB * 100)}%
-            </div>
-          </div>
-          <div className="sides">
-            <div className="side">
-              <h3>{result.sideA.name}</h3>
-              <p className="rating">Rank #{result.sideA.ranking.rank} ({result.sideA.ranking.points} pts)</p>
-            </div>
-            <div className="side">
-              <h3>{result.sideB.name}</h3>
-              <p className="rating">Rank #{result.sideB.ranking.rank} ({result.sideB.ranking.points} pts)</p>
-            </div>
-          </div>
+          ))}
         </div>
-      )}
+      ))}
     </div>
   );
 }
