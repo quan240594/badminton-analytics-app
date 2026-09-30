@@ -265,7 +265,7 @@ export default function MatchSimulator() {
     simulationRequestId.current++;
     setResult(null);
     setError('');
-    if (canSimulate) runSimulation();
+    if (canSimulate) void runSimulation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sideA, sideB]);
 
@@ -338,7 +338,7 @@ export default function MatchSimulator() {
         if (progress.error) return;
         await applyRefreshedPool();
       };
-      poll();
+      void poll();
       return;
     }
     // Production (GitHub Pages): no local server, so dispatch deploy.yml with draw_id and poll its run.

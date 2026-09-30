@@ -61,6 +61,21 @@ def discover_member_ids(draws_path: Path) -> set[str]:
     return member_ids
 
 
+# Tries both adult/junior ranking lists (see RANKING_RIDS); writes and returns
+# True on the first one with actual rows, False if the player has none yet.
+def fetch_member_ranking(member_id: str, out_path: Path, cookie: str, index: int, total: int) -> bool:
+    for rid in RANKING_RIDS:
+        try:
+            html = fetch(f"{BASE_URL}player.aspx?rid={rid}&player={member_id}", cookie)
+        except urllib.error.URLError as ex:
+            print(f"[{index}/{total}] FAILED player={member_id} rid={rid} -> {ex}", flush=True)
+            continue
+        if has_ranking_rows(html):
+            out_path.write_text(html, encoding="utf-8")
+            return True
+    return False
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cookie-file", type=Path, default=Path("cookie.txt"))
@@ -81,18 +96,7 @@ def main() -> None:
     fetched = failed = 0
     for i, member_id in enumerate(pending, 1):
         out_path = args.out / f"player_{member_id}.html"
-        found = False
-        for rid in RANKING_RIDS:
-            try:
-                html = fetch(f"{BASE_URL}player.aspx?rid={rid}&player={member_id}", cookie)
-            except urllib.error.URLError as ex:
-                print(f"[{i}/{len(pending)}] FAILED player={member_id} rid={rid} -> {ex}", flush=True)
-                continue
-            if has_ranking_rows(html):
-                out_path.write_text(html, encoding="utf-8")
-                found = True
-                break
-        if found:
+        if fetch_member_ranking(member_id, out_path, cookie, i, len(pending)):
             fetched += 1
         else:
             failed += 1  # no ranking on either list yet (e.g. a brand-new player) - not a real error

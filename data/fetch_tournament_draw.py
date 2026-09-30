@@ -36,13 +36,13 @@ STANDING_ROW_RE = re.compile(
     re.DOTALL,
 )
 STANDING_PLAYER_RE = re.compile(r'/Player/(\d+)"[^>]*><span class="nav-link__value">([^<]+)</span>')
-STANDING_CELL_RE = re.compile(r'<td class="cell-points">\s*([^<]*?)\s*</td>')
+STANDING_CELL_RE = re.compile(r'<td class="cell-points">([^<]*)</td>')
 STANDING_CELL_NAMES = ["played", "won", "drawn", "lost", "match_record", "game_record", "points_record", "ranking_points"]
 
 MATCH_SPLIT_RE = re.compile(r'<li class="match-group__item" id="match_(\d+)">')
 ROUND_RE = re.compile(r'title="(Ronde[^"]*)"')
 SIDE_SPLIT_RE = re.compile(r'<div class="match__row( has-won)?\s*">')
-PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]*data-nationality-id="([A-Z]*)"[^>]*><span class="nav-link__value">([^<]+)</span>')
+PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^">]*data-nationality-id="([A-Z]*)"[^">]*><span class="nav-link__value">([^<]+)</span>')
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 
@@ -64,7 +64,7 @@ def parse_standings(html: str) -> list[dict]:
     standings = []
     for rank, players_block, rest in STANDING_ROW_RE.findall(html):
         players = [{"player_id": pid, "name": name} for pid, name in STANDING_PLAYER_RE.findall(players_block)]
-        cells = STANDING_CELL_RE.findall(rest)
+        cells = [c.strip() for c in STANDING_CELL_RE.findall(rest)]
         row = dict(zip(STANDING_CELL_NAMES, cells))
         for key in ("played", "won", "drawn", "lost", "ranking_points"):
             if key in row and row[key].strip().lstrip("-").isdigit():
@@ -130,7 +130,8 @@ def main() -> None:
 
     all_draws = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     all_draws.setdefault(args.tournament_id.upper(), {})[args.draw_id] = draw
-    args.out.write_text(json.dumps(all_draws, indent=2, ensure_ascii=False), encoding="utf-8")
+    # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+    args.out.write_text(json.dumps(all_draws, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
     print(f"Done. {len(draw['standings'])} standings rows, {len(draw['matches'])} matches for draw {args.draw_id}")
 

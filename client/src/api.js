@@ -215,7 +215,7 @@ export const fetchTournaments = () => loadBundle().then((b) => b.tournaments ?? 
 // points as a % of that discipline's #1 player) since raw ranking points
 // aren't comparable across categories the way ELO ratings are.
 function nationalRankingRating(entry) {
-  if (!entry || entry.pctOfTop == null) return null;
+  if (entry?.pctOfTop == null) return null;
   return 1000 + entry.pctOfTop * 1000;
 }
 

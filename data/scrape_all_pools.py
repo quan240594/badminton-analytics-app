@@ -47,7 +47,8 @@ def load_fetched_pools() -> dict:
 
 
 def save_fetched_pools(fetched: dict) -> None:
-    FETCHED_POOLS_PATH.write_text(json.dumps(clean_json_value(fetched), indent=2), encoding="utf-8")  # NOSONAR: hard-coded DATA_DIR constant, not derived from any input
+    # hard-coded DATA_DIR constant, not derived from any input
+    FETCHED_POOLS_PATH.write_text(json.dumps(clean_json_value(fetched), indent=2), encoding="utf-8")  # NOSONAR
 
 
 # The most recent day-start boundary at or before `now` - e.g. with
@@ -69,7 +70,8 @@ def load_daily_budget(now: datetime, day_start_hour: int) -> dict:
 
 
 def save_daily_budget(state: dict) -> None:
-    DAILY_BUDGET_PATH.write_text(json.dumps(clean_json_value(state), indent=2), encoding="utf-8")  # NOSONAR: hard-coded DATA_DIR constant, not derived from any input
+    # hard-coded DATA_DIR constant, not derived from any input
+    DAILY_BUDGET_PATH.write_text(json.dumps(clean_json_value(state), indent=2), encoding="utf-8")  # NOSONAR
 
 
 def main() -> None:
