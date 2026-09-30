@@ -781,5 +781,483 @@
         "name": "Zwan, Koen van der"
       }
     ]
+  },
+  "07575142-CDC3-4CDB-BD6A-DF3532680356": {
+    "events": [
+      {
+        "event_id": "32",
+        "name": "Rol VE C",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "21",
+        "name": "Rol Enkel A",
+        "draws": 4,
+        "entries": 11
+      },
+      {
+        "event_id": "27",
+        "name": "Rol Enkel B",
+        "draws": 3,
+        "entries": 6
+      },
+      {
+        "event_id": "26",
+        "name": "Rol ME B",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "31",
+        "name": "Rol ME C",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "42",
+        "name": "Staand Enkel A",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "36",
+        "name": "Staand Enkel B",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "47",
+        "name": "Staand Enkel C",
+        "draws": 4,
+        "entries": 10
+      },
+      {
+        "event_id": "41",
+        "name": "Staand ME B",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "46",
+        "name": "Staand ME C",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "58",
+        "name": "Rol VD B",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "61",
+        "name": "Staand VD B",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "62",
+        "name": "Staand VD C",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "57",
+        "name": "Rol Dubbel B",
+        "draws": 1,
+        "entries": 6
+      },
+      {
+        "event_id": "23",
+        "name": "Rol MD A",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "28",
+        "name": "Rol MD B",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "51",
+        "name": "Rol MD C",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "38",
+        "name": "Staand Dubbel A",
+        "draws": 1,
+        "entries": 3
+      },
+      {
+        "event_id": "43",
+        "name": "Staand Dubbel B",
+        "draws": 4,
+        "entries": 6
+      },
+      {
+        "event_id": "52",
+        "name": "Staand MD C",
+        "draws": 0,
+        "entries": 0
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "24",
+        "name": "Rol Enkel A",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "Rol Enkel A - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "Rol Enkel A - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "Rol Enkel A - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "Rol Enkel B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "1",
+        "name": "Rol Enkel B - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "Rol Enkel B - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "Staand Enkel A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "Staand Enkel B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "13",
+        "name": "Staand Enkel C",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "Staand Enkel C - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "Staand Enkel C - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "Staand Enkel C - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "Rol Dubbel B",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "15",
+        "name": "Rol MD A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "16",
+        "name": "Staand Dubbel A",
+        "size": 3,
+        "type": "Poule - Thuis en Uit",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "19",
+        "name": "Staand Dubbel B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "20",
+        "name": "Staand Dubbel B",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "17",
+        "name": "Staand Dubbel B - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "18",
+        "name": "Staand Dubbel B - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": [
+      {
+        "country": "NED",
+        "player_id": "78",
+        "name": "BAARSLAG, Maaike"
+      },
+      {
+        "country": "NED",
+        "player_id": "52",
+        "name": "BEELEN, Bart"
+      },
+      {
+        "country": "NED",
+        "player_id": "53",
+        "name": "BRAAKMAN, Jessica"
+      },
+      {
+        "country": "NED",
+        "player_id": "71",
+        "name": "BROEKHUIZEN, Hanneke"
+      },
+      {
+        "country": "NED",
+        "player_id": "43",
+        "name": "BURGERING, Mariette"
+      },
+      {
+        "country": "BEL",
+        "player_id": "60",
+        "name": "DEPUTTER, David"
+      },
+      {
+        "country": "NED",
+        "player_id": "73",
+        "name": "GOOSSENS, Kelly"
+      },
+      {
+        "country": "NED",
+        "player_id": "56",
+        "name": "GORTEL, Chantal van"
+      },
+      {
+        "country": "NED",
+        "player_id": "66",
+        "name": "GROENVELD, Patty"
+      },
+      {
+        "country": "NED",
+        "player_id": "44",
+        "name": "HARMELINK, Jimmy"
+      },
+      {
+        "country": "NED",
+        "player_id": "79",
+        "name": "JORINK, Bram"
+      },
+      {
+        "country": "NED",
+        "player_id": "81",
+        "name": "KLJAJIC, Sandra"
+      },
+      {
+        "country": "NED",
+        "player_id": "80",
+        "name": "KLJAJIC, Tanja"
+      },
+      {
+        "country": "NED",
+        "player_id": "50",
+        "name": "KOEKOEK, Erikjan"
+      },
+      {
+        "country": "NED",
+        "player_id": "72",
+        "name": "KONTER, Anne"
+      },
+      {
+        "country": "NED",
+        "player_id": "45",
+        "name": "LIEMBURG, Mathijs"
+      },
+      {
+        "country": "NED",
+        "player_id": "46",
+        "name": "MACDANIEL, Hans"
+      },
+      {
+        "country": "BEL",
+        "player_id": "58",
+        "name": "MONDELAERS, Alexandra"
+      },
+      {
+        "country": "BEL",
+        "player_id": "59",
+        "name": "MONDELAERS, Alicia"
+      },
+      {
+        "country": "NED",
+        "player_id": "67",
+        "name": "NIJMAN, Esther"
+      },
+      {
+        "country": "NED",
+        "player_id": "76",
+        "name": "PEL, Thiya van"
+      },
+      {
+        "country": "NED",
+        "player_id": "75",
+        "name": "RUNHART, Michel"
+      },
+      {
+        "country": "BEL",
+        "player_id": "63",
+        "name": "SCHEPERS, Kwinten"
+      },
+      {
+        "country": "BEL",
+        "player_id": "47",
+        "name": "SEYS, Rudi"
+      },
+      {
+        "country": "NED",
+        "player_id": "54",
+        "name": "STAPELBROEK, Ronald"
+      },
+      {
+        "country": "NED",
+        "player_id": "68",
+        "name": "STEMPHER, Jan"
+      },
+      {
+        "country": "NED",
+        "player_id": "70",
+        "name": "STRUIK, Han"
+      },
+      {
+        "country": "BEL",
+        "player_id": "55",
+        "name": "SWINNEN, Geert"
+      },
+      {
+        "country": "NED",
+        "player_id": "74",
+        "name": "TEMMINK, Mariska"
+      },
+      {
+        "country": "NED",
+        "player_id": "64",
+        "name": "VEENHUIS, Saskia"
+      },
+      {
+        "country": "BEL",
+        "player_id": "65",
+        "name": "VERLINDEN, Jonas"
+      },
+      {
+        "country": "BEL",
+        "player_id": "51",
+        "name": "VERPRAET, Ivo"
+      },
+      {
+        "country": "NED",
+        "player_id": "62",
+        "name": "VOORHORST, Sylvia"
+      },
+      {
+        "country": "NED",
+        "player_id": "69",
+        "name": "VULINK, Jeroen"
+      },
+      {
+        "country": "BEL",
+        "player_id": "57",
+        "name": "WEERDT, Kristine De"
+      },
+      {
+        "country": "NED",
+        "player_id": "82",
+        "name": "WEIJDEN, Jareth van der"
+      },
+      {
+        "country": "NED",
+        "player_id": "48",
+        "name": "WIGINK, Mike"
+      },
+      {
+        "country": "NED",
+        "player_id": "49",
+        "name": "WOUD, Sander"
+      }
+    ]
   }
 }
