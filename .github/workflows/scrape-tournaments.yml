@@ -103,7 +103,6 @@ jobs:
             for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json; do
               [ -f "$f" ] && git add "$f"
             done
-            [ -d data/pages/rankings ] && git add data/pages/rankings
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
 
             if ! git push; then
