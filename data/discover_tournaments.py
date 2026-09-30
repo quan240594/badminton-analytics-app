@@ -39,9 +39,9 @@ BROWSER_HEADERS = {
 ITEM_SPLIT_RE = re.compile(r'<div class="media">')
 ID_RE = re.compile(r'tournament\?id=([0-9A-Fa-f-]+)')
 NAME_RE = re.compile(r'title="([^"]+)"\s+class="media__link"')
-CLUB_LOCATION_RE = re.compile(r'icon-marker.*?<span class="nav-link__value">\s*([^<]+?)\s*</span>', re.DOTALL)
+CLUB_LOCATION_RE = re.compile(r'icon-marker.*?<span class="nav-link__value">([^<]+)</span>', re.DOTALL)
 TIME_RE = re.compile(r'<time datetime="([^"]+)">')
-TAG_RE = re.compile(r'<span class="tag">\s*([^<]+?)\s*</span>')
+TAG_RE = re.compile(r'<span class="tag">([^<]+)</span>')
 TAG_DUO_RE = re.compile(
     r'<span class="tag-duo__title">\s*([^<]+?)\s*</span>\s*'
     r'<span class="tag-duo__value">\s*([^<]+?)\s*</span>'
@@ -85,7 +85,7 @@ def parse_items(html: str) -> list[dict]:
                 "club": club.strip(),
                 "location": location.strip(),
                 "dates": TIME_RE.findall(block),
-                "tags": TAG_RE.findall(block) + [f"{title}: {value}" for title, value in TAG_DUO_RE.findall(block)],
+                "tags": [t.strip() for t in TAG_RE.findall(block)] + [f"{title}: {value}" for title, value in TAG_DUO_RE.findall(block)],
             }
         )
     return items

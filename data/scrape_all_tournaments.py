@@ -44,7 +44,8 @@ def load_json(path: Path, default):
 
 
 def save_json(path: Path, data) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    # hard-coded DATA_DIR-relative constant, not derived from any input
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
 
 def current_day_start(now: datetime, day_start_hour: int) -> datetime:

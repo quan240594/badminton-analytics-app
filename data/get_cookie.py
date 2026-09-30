@@ -63,7 +63,8 @@ def main() -> None:
         sys.exit(1)
 
     if args.save:
-        args.save.write_text(clean_json_value(cookie, max_len=20000), encoding="utf-8")  # NOSONAR: path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+        # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+        args.save.write_text(clean_json_value(cookie, max_len=20000), encoding="utf-8")  # NOSONAR
         args.save.chmod(0o600)
         print(f"Wrote cookie ({len(cookie)} chars) to {args.save}")
     else:

@@ -616,7 +616,7 @@ export default function LeagueDaySimulator() {
         if (progress.error) return;
         await applyRefreshedPool();
       };
-      poll();
+      void poll();
       return;
     }
     // Production (GitHub Pages): no local server, so dispatch deploy.yml with draw_id and poll its run.
@@ -735,17 +735,18 @@ export default function LeagueDaySimulator() {
   // single-match page does, so a slow response can't overwrite newer results.
   useEffect(() => {
     const requestId = ++simulationRequestId.current;
-    (async () => {
-      const next = {};
-      for (const slot of slots) {
-        if (!slot.sideA.every(Boolean) || !slot.sideB.every(Boolean)) continue;
-        try {
-          next[slot.code] = await simulateMatch(disciplineForCode(slot.code), slot.sideA, slot.sideB);
-        } catch {
-          // leave this rubber out of the summary (e.g. same player picked on both sides)
-        }
-      }
-      if (simulationRequestId.current === requestId) setResults(next);
+    void (async () => {
+      const filledSlots = slots.filter((slot) => slot.sideA.every(Boolean) && slot.sideB.every(Boolean));
+      const settled = await Promise.all(
+        filledSlots.map(async (slot) => {
+          try {
+            return [slot.code, await simulateMatch(disciplineForCode(slot.code), slot.sideA, slot.sideB)];
+          } catch {
+            return null; // leave this rubber out of the summary (e.g. same player picked on both sides)
+          }
+        })
+      );
+      if (simulationRequestId.current === requestId) setResults(Object.fromEntries(settled.filter(Boolean)));
     })();
   }, [slots]);
 

@@ -62,7 +62,7 @@ export default function useDataRefresh(onRefreshed, drawId) {
       }
       await applyRefreshedBundle();
     };
-    poll();
+    void poll();
   };
 
   // Production (GitHub Pages): no backend to hit, so trigger the deploy.yml
@@ -119,8 +119,8 @@ export default function useDataRefresh(onRefreshed, drawId) {
   const fetchData = () => {
     setShowUnchanged(false);
     setRefreshState({ running: true, percent: 0, detail: 'starting…', error: null });
-    if (import.meta.env.DEV) fetchDataLocal();
-    else fetchDataGithub();
+    if (import.meta.env.DEV) void fetchDataLocal();
+    else void fetchDataGithub();
   };
 
   return { refreshState, showUnchanged, fetchData };

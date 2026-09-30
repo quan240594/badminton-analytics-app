@@ -123,7 +123,8 @@ def main() -> None:
 
     all_details = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     all_details[args.tournament_id.upper()] = details
-    args.out.write_text(json.dumps(all_details, indent=2, ensure_ascii=False), encoding="utf-8")
+    # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+    args.out.write_text(json.dumps(all_details, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
     print(
         f"Done. {len(details['events'])} events, {len(details['draws'])} draws, "

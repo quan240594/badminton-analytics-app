@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
       setLoading(false);
-    });
+    }).catch(() => setLoading(false));
 
     // Keeps state in sync with token refreshes, sign-outs in other tabs, etc.
     const { data: subscription } = supabase.auth.onAuthStateChange((_event, newSession) => {

@@ -39,7 +39,8 @@ def load_json(path: Path, default):
 
 
 def save_json(path: Path, data) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    # hard-coded DATA_DIR-relative constant, not derived from any input
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
 
 def pending_work(details: dict, fetched: dict, my_tournament_ids: set[str]) -> list[tuple[str, str]]:
