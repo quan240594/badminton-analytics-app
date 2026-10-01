@@ -10244,6 +10244,165 @@
           "played_at": "za 5-9-2026 12:50"
         }
       ]
+    },
+    "9": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "75",
+              "name": "Kyan Stam"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-0",
+          "points_record": "42-22"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "Bhavik Raj"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "0-2",
+          "points_record": "22-42"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Wenmao Wu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "122",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 09:30"
+        },
+        {
+          "match_id": "118",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 11:30"
+        },
+        {
+          "match_id": "121",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 12:50"
+        }
+      ]
     }
   }
 }
