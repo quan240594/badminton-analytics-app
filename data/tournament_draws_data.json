@@ -8211,6 +8211,117 @@
           "played_at": "za 5-9-2026 19:15"
         }
       ]
+    },
+    "26": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Geethika Reddy Yanamala"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-0",
+          "points_record": "42-26"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "Sunrita Chakraborty"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "0-2",
+          "points_record": "26-42"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "Sanjana Sureshkumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "479",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 5-9-2026 10:00"
+        },
+        {
+          "match_id": "476",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 13:00"
+        },
+        {
+          "match_id": "478",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 15:15"
+        }
+      ]
     }
   }
 }
