@@ -10148,5 +10148,791 @@
         "name": "Groot, Merel de"
       }
     ]
+  },
+  "9B4A11D0-357C-4C75-BC55-63F3C2F2D2E5": {
+    "events": [
+      {
+        "event_id": "25",
+        "name": "Opstap enkel",
+        "draws": 4,
+        "entries": 10
+      },
+      {
+        "event_id": "26",
+        "name": "Opstap dubbel",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "10",
+        "name": "JE U13",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "11",
+        "name": "ME U13",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "14",
+        "name": "GD U13",
+        "draws": 1,
+        "entries": 3
+      },
+      {
+        "event_id": "12",
+        "name": "JD U13",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "13",
+        "name": "MD U13",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "15",
+        "name": "JE U15",
+        "draws": 1,
+        "entries": 5
+      },
+      {
+        "event_id": "16",
+        "name": "ME U13/15",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "19",
+        "name": "GD U15",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "17",
+        "name": "JD U15",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "18",
+        "name": "MD U15",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "20",
+        "name": "JE U17",
+        "draws": 1,
+        "entries": 4
+      },
+      {
+        "event_id": "21",
+        "name": "ME U17",
+        "draws": 1,
+        "entries": 3
+      },
+      {
+        "event_id": "24",
+        "name": "GD U17",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "22",
+        "name": "JD U13/15/17",
+        "draws": 1,
+        "entries": 5
+      },
+      {
+        "event_id": "23",
+        "name": "MD U17",
+        "draws": 0,
+        "entries": 0
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "43",
+        "name": "Opstap enkel",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "40",
+        "name": "Opstap enkel - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "41",
+        "name": "Opstap enkel - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "42",
+        "name": "Opstap enkel - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Opstap dubbel",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "JE U13",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "GD U13",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "JE U15",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "ME U13/15",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "JE U17",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "ME U17",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "JD U13/15/17",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": [
+      {
+        "country": "NED",
+        "player_id": "108",
+        "name": "Aarendonk, Sanne"
+      },
+      {
+        "country": "NED",
+        "player_id": "93",
+        "name": "Adeoye, Ayomikun"
+      },
+      {
+        "country": "NED",
+        "player_id": "5",
+        "name": "Adeoye, Poju"
+      },
+      {
+        "country": "NED",
+        "player_id": "58",
+        "name": "Alfrink, Paul"
+      },
+      {
+        "country": "NED",
+        "player_id": "21",
+        "name": "Analbers, Dorine"
+      },
+      {
+        "country": "NED",
+        "player_id": "22",
+        "name": "Bakker, Milah"
+      },
+      {
+        "country": "NED",
+        "player_id": "15",
+        "name": "Beljaars, Jill"
+      },
+      {
+        "country": "NED",
+        "player_id": "20",
+        "name": "Beljaars, Mike"
+      },
+      {
+        "country": "NED",
+        "player_id": "121",
+        "name": "Bloem, Roene"
+      },
+      {
+        "country": "NED",
+        "player_id": "90",
+        "name": "Boomkamp, Scotty"
+      },
+      {
+        "country": "NED",
+        "player_id": "109",
+        "name": "Bos, Jeroen"
+      },
+      {
+        "country": "NED",
+        "player_id": "23",
+        "name": "Bosch, Marianne"
+      },
+      {
+        "country": "NED",
+        "player_id": "16",
+        "name": "Bosma, Luuk"
+      },
+      {
+        "country": "NED",
+        "player_id": "24",
+        "name": "Brandenburg, Quinten"
+      },
+      {
+        "country": "NED",
+        "player_id": "3",
+        "name": "Christiaans, Sophie"
+      },
+      {
+        "country": "NED",
+        "player_id": "73",
+        "name": "Clarisse, Eline"
+      },
+      {
+        "country": "NED",
+        "player_id": "106",
+        "name": "Cominotto, Carlo"
+      },
+      {
+        "country": "NED",
+        "player_id": "110",
+        "name": "Degenhart, Thijs"
+      },
+      {
+        "country": "NED",
+        "player_id": "111",
+        "name": "Deijk, Kaedan van"
+      },
+      {
+        "country": "NED",
+        "player_id": "122",
+        "name": "Deijk, Nolan van"
+      },
+      {
+        "country": "NED",
+        "player_id": "55",
+        "name": "Deuning, Maja"
+      },
+      {
+        "country": "NED",
+        "player_id": "117",
+        "name": "Donkelaar, Linde ten"
+      },
+      {
+        "country": "NED",
+        "player_id": "54",
+        "name": "Dulk, Dieudonn&#233;e Den"
+      },
+      {
+        "country": "NED",
+        "player_id": "63",
+        "name": "Elbracht, Thomas"
+      },
+      {
+        "country": "GER",
+        "player_id": "107",
+        "name": "Engbers, Taiken"
+      },
+      {
+        "country": "NED",
+        "player_id": "91",
+        "name": "Fanseda, Sean"
+      },
+      {
+        "country": "NED",
+        "player_id": "50",
+        "name": "Gateshka, Eva"
+      },
+      {
+        "country": "NED",
+        "player_id": "74",
+        "name": "Germs, Kyan"
+      },
+      {
+        "country": "NED",
+        "player_id": "75",
+        "name": "Germs, Yent"
+      },
+      {
+        "country": "NED",
+        "player_id": "56",
+        "name": "Gouriev, Oleg"
+      },
+      {
+        "country": "NED",
+        "player_id": "10",
+        "name": "Haan, Miranda de"
+      },
+      {
+        "country": "NED",
+        "player_id": "112",
+        "name": "Haase, Noah"
+      },
+      {
+        "country": null,
+        "player_id": "127",
+        "name": "Haeren, Thimo van"
+      },
+      {
+        "country": "NED",
+        "player_id": "84",
+        "name": "Heide, Ties van der"
+      },
+      {
+        "country": "NED",
+        "player_id": "72",
+        "name": "Heitkamp, Mees"
+      },
+      {
+        "country": "INA",
+        "player_id": "85",
+        "name": "Hendra,"
+      },
+      {
+        "country": "NED",
+        "player_id": "123",
+        "name": "Hove, Elise ten"
+      },
+      {
+        "country": "NED",
+        "player_id": "77",
+        "name": "Ibrahim, Manar"
+      },
+      {
+        "country": "NED",
+        "player_id": "118",
+        "name": "Jacobs, Jasper"
+      },
+      {
+        "country": "NED",
+        "player_id": "25",
+        "name": "Jong, Johan de"
+      },
+      {
+        "country": "NED",
+        "player_id": "46",
+        "name": "Kamp, Erin van der"
+      },
+      {
+        "country": "GRE",
+        "player_id": "94",
+        "name": "Karkantzia, Ioanna"
+      },
+      {
+        "country": "NED",
+        "player_id": "78",
+        "name": "Kerssies, Linda"
+      },
+      {
+        "country": "NED",
+        "player_id": "88",
+        "name": "Koerkamp, Bram"
+      },
+      {
+        "country": "NED",
+        "player_id": "79",
+        "name": "K&#246;kk&#252;, Eliz"
+      },
+      {
+        "country": "NED",
+        "player_id": "7",
+        "name": "Koopman, Ruben"
+      },
+      {
+        "country": "NED",
+        "player_id": "11",
+        "name": "Koppik, Kira"
+      },
+      {
+        "country": "NED",
+        "player_id": "80",
+        "name": "Korpershoek, Merel"
+      },
+      {
+        "country": "NED",
+        "player_id": "18",
+        "name": "Kruiswijk, Sepp"
+      },
+      {
+        "country": "NED",
+        "player_id": "45",
+        "name": "Laan, Anna van der"
+      },
+      {
+        "country": "NED",
+        "player_id": "19",
+        "name": "Leemhuis, Jesper"
+      },
+      {
+        "country": "NED",
+        "player_id": "64",
+        "name": "Leiter, Lisanne"
+      },
+      {
+        "country": "NED",
+        "player_id": "8",
+        "name": "Li, Sebastiaan"
+      },
+      {
+        "country": "NED",
+        "player_id": "81",
+        "name": "Linders, Vera"
+      },
+      {
+        "country": "NED",
+        "player_id": "68",
+        "name": "Lipman, Cas"
+      },
+      {
+        "country": "NED",
+        "player_id": "69",
+        "name": "Lipman, Sam"
+      },
+      {
+        "country": "NED",
+        "player_id": "124",
+        "name": "Lock, Florian"
+      },
+      {
+        "country": "NED",
+        "player_id": "26",
+        "name": "Lubbers, Lisette"
+      },
+      {
+        "country": "NED",
+        "player_id": "65",
+        "name": "Manenschijn, Lotte"
+      },
+      {
+        "country": "NED",
+        "player_id": "89",
+        "name": "Meijneken, Fabian"
+      },
+      {
+        "country": "NED",
+        "player_id": "27",
+        "name": "Meyer, Marco"
+      },
+      {
+        "country": "NED",
+        "player_id": "92",
+        "name": "Minsi, Li"
+      },
+      {
+        "country": "NED",
+        "player_id": "113",
+        "name": "Nicolai, Nanette"
+      },
+      {
+        "country": "NED",
+        "player_id": "28",
+        "name": "Noortman, Jos&#233;"
+      },
+      {
+        "country": "NED",
+        "player_id": "86",
+        "name": "Notkamp, Iris"
+      },
+      {
+        "country": "NED",
+        "player_id": "47",
+        "name": "Olthof, Ja&#235;l"
+      },
+      {
+        "country": "NED",
+        "player_id": "95",
+        "name": "Oosting, Lara"
+      },
+      {
+        "country": "NED",
+        "player_id": "103",
+        "name": "Perez, Alberto"
+      },
+      {
+        "country": "NED",
+        "player_id": "12",
+        "name": "Peters, Kyano"
+      },
+      {
+        "country": "NED",
+        "player_id": "59",
+        "name": "Petersen, Gerard"
+      },
+      {
+        "country": "NED",
+        "player_id": "57",
+        "name": "Pham, Damian"
+      },
+      {
+        "country": "NED",
+        "player_id": "115",
+        "name": "Pham, David"
+      },
+      {
+        "country": "NED",
+        "player_id": "96",
+        "name": "Pieper, Manon"
+      },
+      {
+        "country": "NED",
+        "player_id": "13",
+        "name": "Pluim-Bruins, Inge"
+      },
+      {
+        "country": null,
+        "player_id": "126",
+        "name": "Pol, Bente"
+      },
+      {
+        "country": "NED",
+        "player_id": "87",
+        "name": "Pol, Duncan"
+      },
+      {
+        "country": "NED",
+        "player_id": "29",
+        "name": "Potjewijd, Vincent"
+      },
+      {
+        "country": "NED",
+        "player_id": "97",
+        "name": "Pots, Kayleigh"
+      },
+      {
+        "country": "NED",
+        "player_id": "30",
+        "name": "Raat, Rens"
+      },
+      {
+        "country": "NED",
+        "player_id": "98",
+        "name": "Rajendra, Anojh Kumaran"
+      },
+      {
+        "country": "NED",
+        "player_id": "31",
+        "name": "Reuver, Dean"
+      },
+      {
+        "country": "NED",
+        "player_id": "32",
+        "name": "Reuver, Glenn"
+      },
+      {
+        "country": "NED",
+        "player_id": "33",
+        "name": "Reuver-Biemans, Carla"
+      },
+      {
+        "country": "NED",
+        "player_id": "14",
+        "name": "Santen, Brent van"
+      },
+      {
+        "country": "NED",
+        "player_id": "82",
+        "name": "Schoonhoven, Jesper van"
+      },
+      {
+        "country": "NED",
+        "player_id": "71",
+        "name": "Schreven, Maartje"
+      },
+      {
+        "country": "NED",
+        "player_id": "66",
+        "name": "Senff, Jasper"
+      },
+      {
+        "country": "NED",
+        "player_id": "104",
+        "name": "Simon, Jim"
+      },
+      {
+        "country": "NED",
+        "player_id": "4",
+        "name": "Singh, Jaspreet"
+      },
+      {
+        "country": "NED",
+        "player_id": "60",
+        "name": "Snijders-Altena, Jorien"
+      },
+      {
+        "country": "NED",
+        "player_id": "119",
+        "name": "Spaaij, Menno"
+      },
+      {
+        "country": "NED",
+        "player_id": "51",
+        "name": "Sproates, Nadia"
+      },
+      {
+        "country": "NED",
+        "player_id": "83",
+        "name": "Srinivasan, Aaditya"
+      },
+      {
+        "country": "NED",
+        "player_id": "34",
+        "name": "Srinivasan, Akshaya"
+      },
+      {
+        "country": "NED",
+        "player_id": "9",
+        "name": "Stoffelen, Timo"
+      },
+      {
+        "country": "NED",
+        "player_id": "35",
+        "name": "Tang, Winson"
+      },
+      {
+        "country": "NED",
+        "player_id": "120",
+        "name": "Van Oosten, Britt van"
+      },
+      {
+        "country": "NED",
+        "player_id": "99",
+        "name": "Veenhof, Larissa"
+      },
+      {
+        "country": "NED",
+        "player_id": "100",
+        "name": "Veenhof, Rafael"
+      },
+      {
+        "country": "NED",
+        "player_id": "36",
+        "name": "Veer, Randel van de"
+      },
+      {
+        "country": "NED",
+        "player_id": "67",
+        "name": "Veldkamp, Max"
+      },
+      {
+        "country": "NED",
+        "player_id": "37",
+        "name": "Vredegoor, Freddy"
+      },
+      {
+        "country": "NED",
+        "player_id": "41",
+        "name": "Walle, Marcel van der"
+      },
+      {
+        "country": "NED",
+        "player_id": "38",
+        "name": "Wang, Andy"
+      },
+      {
+        "country": "NED",
+        "player_id": "2",
+        "name": "Wassink, Milan"
+      },
+      {
+        "country": "NED",
+        "player_id": "39",
+        "name": "Weert, Joella van"
+      },
+      {
+        "country": "NED",
+        "player_id": "40",
+        "name": "Werkman, Linde"
+      },
+      {
+        "country": "NED",
+        "player_id": "114",
+        "name": "Wijgerden, Tom van"
+      },
+      {
+        "country": "NED",
+        "player_id": "52",
+        "name": "Wijk, Zoa van"
+      },
+      {
+        "country": "NED",
+        "player_id": "102",
+        "name": "Wit, Kirsten de"
+      },
+      {
+        "country": "NED",
+        "player_id": "1",
+        "name": "Wit, Sabine de"
+      },
+      {
+        "country": "NED",
+        "player_id": "49",
+        "name": "Woudstra, Gitte"
+      },
+      {
+        "country": "NED",
+        "player_id": "61",
+        "name": "Woudstra, Robin"
+      },
+      {
+        "country": "NED",
+        "player_id": "62",
+        "name": "Woudstra, Silke"
+      },
+      {
+        "country": "NED",
+        "player_id": "42",
+        "name": "Wuring, Bart"
+      },
+      {
+        "country": "NED",
+        "player_id": "101",
+        "name": "Zanderink, Ly-Sanne"
+      }
+    ]
   }
 }
