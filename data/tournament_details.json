@@ -5584,5 +5584,496 @@
         "name": "YAKULT,"
       }
     ]
+  },
+  "3A2AF373-F6F5-444E-9E0E-39D734D77418": {
+    "events": [
+      {
+        "event_id": "3",
+        "name": "Jongens Enkel Zilver",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "2",
+        "name": "Meisjes Enkel Zilver",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "4",
+        "name": "Dubbel Zilver",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "6",
+        "name": "Jongens Enkel Goud",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "5",
+        "name": "Meisjes Enkel Goud",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "7",
+        "name": "Dubbel Goud",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "16",
+        "name": "Jongens Enkel A+",
+        "draws": 6,
+        "entries": 0
+      },
+      {
+        "event_id": "19",
+        "name": "Jongens Enkel B",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "13",
+        "name": "Jongens Enkel C",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "10",
+        "name": "Jongens Enkel D",
+        "draws": 5,
+        "entries": 0
+      },
+      {
+        "event_id": "23",
+        "name": "Meisjes Enkel A+",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "17",
+        "name": "Meisjes Enkel B",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "14",
+        "name": "Meisjes Enkel C",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "11",
+        "name": "Meisjes Enkel D",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "21",
+        "name": "Dubbel A+",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "18",
+        "name": "Dubbel B",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "15",
+        "name": "Dubbel C",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "12",
+        "name": "Dubbel D",
+        "draws": 3,
+        "entries": 0
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "1",
+        "name": "Jongens Enkel Zilver",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "Meisjes Enkel Zilver",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "Dubbel Zilver",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "52",
+        "name": "Jongens Enkel Goud",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "50",
+        "name": "Jongens Enkel Goud - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "51",
+        "name": "Jongens Enkel Goud - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "45",
+        "name": "Meisjes Enkel Goud",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "42",
+        "name": "Meisjes Enkel Goud - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "43",
+        "name": "Meisjes Enkel Goud - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "44",
+        "name": "Meisjes Enkel Goud - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "49",
+        "name": "Dubbel Goud",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "46",
+        "name": "Dubbel Goud - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "47",
+        "name": "Dubbel Goud - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "48",
+        "name": "Dubbel Goud - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "Jongens Enkel A+ - Enkel B",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "Jongens Enkel A+ - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "Jongens Enkel A+ - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "Jongens Enkel A+ - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "Jongens Enkel A+ - Groep D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "13",
+        "name": "Jongens Enkel A+ - Groep E",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "Jongens Enkel B - Jongens Enkel A+",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Jongens Enkel B - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "Jongens Enkel B - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "62",
+        "name": "Jongens Enkel C",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "59",
+        "name": "Jongens Enkel C - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "60",
+        "name": "Jongens Enkel C - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "61",
+        "name": "Jongens Enkel C - Groep C",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "27",
+        "name": "Jongens Enkel D",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "Jongens Enkel D - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "Jongens Enkel D - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "Jongens Enkel D - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "Jongens Enkel D - Groep D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "4",
+        "name": "Meisjes Enkel B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "30",
+        "name": "Meisjes Enkel C",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "28",
+        "name": "Meisjes Enkel C - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "29",
+        "name": "Meisjes Enkel C - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "Dubbel A+",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "18",
+        "name": "Dubbel B",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "15",
+        "name": "Dubbel B - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "16",
+        "name": "Dubbel B - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "34",
+        "name": "Dubbel C",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "31",
+        "name": "Dubbel C - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "32",
+        "name": "Dubbel C - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "33",
+        "name": "Dubbel C - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "37",
+        "name": "Dubbel D",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "35",
+        "name": "Dubbel D - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "36",
+        "name": "Dubbel D - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": []
   }
 }
