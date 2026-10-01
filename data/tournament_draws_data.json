@@ -14286,6 +14286,135 @@
           "played_at": "za 5-9-2026 19:30"
         }
       ]
+    },
+    "36": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Aadhith Vinodh"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-32"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "62",
+              "name": "Naman Gowtham Prakash"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-46"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "72",
+              "name": "Pim Smits"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "10-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "455",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              3,
+              21
+            ],
+            [
+              1,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 09:30"
+        },
+        {
+          "match_id": "452",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 5-9-2026 10:30"
+        },
+        {
+          "match_id": "454",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 5-9-2026 12:10"
+        }
+      ]
     }
   }
 }
