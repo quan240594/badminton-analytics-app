@@ -8882,6 +8882,187 @@
           "played_at": "za 5-9-2026 14:15"
         }
       ]
+    },
+    "31": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "88",
+              "name": "Alisa Misha"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-19"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Isabella Panarello"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "58-62"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "91",
+              "name": "Aaradhya Achanta"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "35-72"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "535",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              0,
+              15
+            ],
+            [
+              3,
+              15
+            ]
+          ],
+          "played_at": "za 5-9-2026 09:40"
+        },
+        {
+          "match_id": "531",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              12,
+              15
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              8
+            ]
+          ],
+          "played_at": "za 5-9-2026 12:00"
+        },
+        {
+          "match_id": "534",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              6,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "played_at": "za 5-9-2026 14:15"
+        }
+      ]
     }
   }
 }
