@@ -16,6 +16,8 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -50,10 +52,24 @@ ENTRY_PLAYER_RE = re.compile(
 )
 
 
+# Toernooi.nl occasionally refuses a single connection transiently (seen live:
+# one Connection-refused mid-run while everything around it succeeded) - a
+# short retry absorbs that instead of failing the whole bounded CI run and
+# stalling the self-chaining loop until the next scheduled tick.
+RETRY_DELAYS = (2, 5, 10)
+
+
 def fetch(url: str, cookie: str) -> str:
     req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    for attempt, delay in enumerate((*RETRY_DELAYS, None)):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except (urllib.error.URLError, TimeoutError):
+            if delay is None:
+                raise
+            print(f"  fetch failed (attempt {attempt + 1}/{len(RETRY_DELAYS) + 1}), retrying in {delay}s...", flush=True)
+            time.sleep(delay)
 
 
 # The entries list is loaded client-side (unlike events.aspx/draws.aspx, which

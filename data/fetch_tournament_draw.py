@@ -16,6 +16,8 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -54,10 +56,21 @@ DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4
 H2H_MEMBER_ID_RE = re.compile(r'T\dP\dMemberID=(\d+)')
 
 
+# See fetch_tournament_details.py's identical helper for why this retries.
+RETRY_DELAYS = (2, 5, 10)
+
+
 def fetch(url: str, cookie: str) -> str:
     req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    for attempt, delay in enumerate((*RETRY_DELAYS, None)):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except (urllib.error.URLError, TimeoutError):
+            if delay is None:
+                raise
+            print(f"  fetch failed (attempt {attempt + 1}/{len(RETRY_DELAYS) + 1}), retrying in {delay}s...", flush=True)
+            time.sleep(delay)
 
 
 def parse_standings(html: str) -> list[dict]:
