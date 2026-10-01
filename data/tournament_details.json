@@ -4587,5 +4587,266 @@
         "name": "Yeh, Victor"
       }
     ]
+  },
+  "21BD0BA0-6A41-4E6F-AC9E-7EFCA0E586C9": {
+    "events": [
+      {
+        "event_id": "11",
+        "name": "Enkel A",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "13",
+        "name": "Enkel B",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "16",
+        "name": "Enkel C",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "18",
+        "name": "Enkel D",
+        "draws": 3,
+        "entries": 0
+      },
+      {
+        "event_id": "20",
+        "name": "Enkel E",
+        "draws": 5,
+        "entries": 0
+      },
+      {
+        "event_id": "12",
+        "name": "Dubbel A+B",
+        "draws": 4,
+        "entries": 0
+      },
+      {
+        "event_id": "17",
+        "name": "Dubbel C",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "19",
+        "name": "Dubbel D",
+        "draws": 1,
+        "entries": 0
+      },
+      {
+        "event_id": "21",
+        "name": "Dubbel E",
+        "draws": 3,
+        "entries": 0
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "105",
+        "name": "Enkel A",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "103",
+        "name": "Enkel A - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "104",
+        "name": "Enkel A - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "133",
+        "name": "Enkel B",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "137",
+        "name": "Enkel C",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "134",
+        "name": "Enkel C - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "135",
+        "name": "Enkel C - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "136",
+        "name": "Enkel C - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "118",
+        "name": "Enkel D",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "115",
+        "name": "Enkel D - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "116",
+        "name": "Enkel D - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "123",
+        "name": "Enkel E",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "119",
+        "name": "Enkel E - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "120",
+        "name": "Enkel E - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "121",
+        "name": "Enkel E - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "122",
+        "name": "Enkel E - Groep D",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "152",
+        "name": "Dubbel A+B - Positie 1-2",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "153",
+        "name": "Dubbel A+B - Positie 3-4",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "150",
+        "name": "Dubbel A+B - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "151",
+        "name": "Dubbel A+B - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "126",
+        "name": "Dubbel C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "138",
+        "name": "Dubbel D",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "132",
+        "name": "Dubbel E",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "130",
+        "name": "Dubbel E - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "131",
+        "name": "Dubbel E - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": []
   }
 }
