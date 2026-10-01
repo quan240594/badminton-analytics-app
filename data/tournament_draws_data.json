@@ -6516,6 +6516,121 @@
           "played_at": "za 5-9-2026 18:15"
         }
       ]
+    },
+    "15": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "Helin Chow"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-1",
+          "points_record": "61-44"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Aariz Lalani"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "1-2",
+          "points_record": "44-61"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "105",
+              "name": "Sai Pranav Sukka"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "304",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 10:00"
+        },
+        {
+          "match_id": "301",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 12:30"
+        },
+        {
+          "match_id": "303",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 5-9-2026 15:15"
+        }
+      ]
     }
   }
 }
