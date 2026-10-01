@@ -13997,6 +13997,120 @@
           "played_at": "za 5-9-2026 19:30"
         }
       ]
+    },
+    "33": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "89",
+              "name": "Lola Heinen"
+            },
+            {
+              "player_id": "86",
+              "name": "Joni Meens"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "93",
+              "name": "Devika Kulangara"
+            },
+            {
+              "player_id": "33",
+              "name": "Dnyanada Misal"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Varshini Arun Balaji"
+            },
+            {
+              "player_id": "12",
+              "name": "Jinxuan Wu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "434",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 15:00"
+        },
+        {
+          "match_id": "431",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 16:30"
+        },
+        {
+          "match_id": "433",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 17:15"
+        }
+      ]
     }
   }
 }
