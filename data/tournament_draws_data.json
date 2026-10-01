@@ -11495,6 +11495,250 @@
           "played_at": "za 5-9-2026 19:30"
         }
       ]
+    },
+    "17": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "83",
+              "name": "Mihikaa Mukund"
+            },
+            {
+              "player_id": "59",
+              "name": "Lisha Timmanagoudar"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "143-95"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Lineysha Attry"
+            },
+            {
+              "player_id": "13",
+              "name": "Chenna van Rosmalen"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-2",
+          "points_record": "132-117"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "77",
+              "name": "Mirthe van Adrichem"
+            },
+            {
+              "player_id": "87",
+              "name": "Emma Pennings"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-5",
+          "points_record": "107-135"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "63",
+              "name": "Aashi Gupta"
+            },
+            {
+              "player_id": "80",
+              "name": "Audrey Herben"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "1-6",
+          "points_record": "102-137"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "225",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 5-9-2026 14:10"
+        },
+        {
+          "match_id": "227",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 5-9-2026 14:10"
+        },
+        {
+          "match_id": "221",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "za 5-9-2026 15:00"
+        },
+        {
+          "match_id": "229",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              11,
+              21
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 5-9-2026 15:00"
+        },
+        {
+          "match_id": "224",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 5-9-2026 19:30"
+        },
+        {
+          "match_id": "228",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 5-9-2026 19:30"
+        }
+      ]
     }
   }
 }
