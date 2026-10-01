@@ -33,10 +33,22 @@ FETCHED_TOURNAMENTS_PATH = DATA_DIR / "fetched_tournaments.json"
 DAILY_BUDGET_PATH = DATA_DIR / "tournament_scrape_daily_budget.json"
 DETAILS_PATH = DATA_DIR / "tournament_details.json"
 MY_TOURNAMENTS_PATH = DATA_DIR / "my_tournaments.json"
+FETCH_ERRORS_PATH = DATA_DIR / "tournament_fetch_errors.json"
 
 # Distinct exit code so the calling workflow loop can tell "budget/tournaments
 # exhausted, stop looping" apart from a real failure (exit 1).
 NOTHING_TO_DO = 3
+
+# A single bad tournament (seen live: one whose detail pages consistently time
+# out even after in-process retries - something broken/unpublished on the
+# site's end, not a transient blip) would otherwise be reselected and fail
+# every single run forever, since it's never added to "fetched" and nothing
+# else moves it down the priority queue - blocking all 50+ others behind it
+# indefinitely. fetch() already retries 3x with backoff before raising, so a
+# failure that reaches here is already a strong signal, not a random blip -
+# deprioritize below every other pending tournament after just one (still
+# retried last if truly nothing else is left, never deleted).
+SKIP_AFTER_FAILURES = 1
 
 
 def load_json(path: Path, default):
@@ -104,14 +116,21 @@ def main() -> None:
 
     fetched = load_json(FETCHED_TOURNAMENTS_PATH, {})
     total = len(tournaments)
+    fetch_errors = load_json(FETCH_ERRORS_PATH, {})
     # Same priority rule as scrape_all_draws.py: registered/favorited
     # tournaments first, since a national tournament list can be large enough
     # (600+) that plain id order might not reach the ones the user actually
-    # cares about for a long time within the daily budget.
+    # cares about for a long time within the daily budget. A tournament that's
+    # already failed repeatedly (see SKIP_AFTER_FAILURES) sorts dead last
+    # instead of blocking everything behind it.
     my_tournament_ids = set(load_json(MY_TOURNAMENTS_PATH, []))
     pending = sorted(
         (tid for tid in tournaments if tid not in fetched),
-        key=lambda tid: (tid not in my_tournament_ids, tid),
+        key=lambda tid: (
+            fetch_errors.get(tid, {}).get("count", 0) >= SKIP_AFTER_FAILURES,
+            tid not in my_tournament_ids,
+            tid,
+        ),
     )
 
     if not pending:
@@ -135,8 +154,19 @@ def main() -> None:
     except (RuntimeError, OSError) as ex:
         budget["workSeconds"] += time.monotonic() - started
         save_json(DAILY_BUDGET_PATH, budget)
-        print(f"  FAILED: {ex}", flush=True)
+        error_entry = fetch_errors.get(tournament_id, {"count": 0})
+        error_entry["count"] += 1
+        error_entry["lastError"] = str(ex)
+        error_entry["lastAttempt"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        fetch_errors[tournament_id] = error_entry
+        save_json(FETCH_ERRORS_PATH, fetch_errors)
+        print(f"  FAILED (attempt {error_entry['count']} for this tournament): {ex}", flush=True)
         sys.exit(1)
+
+    # A previously-failing tournament that just succeeded shouldn't keep being
+    # deprioritized below everything else next time.
+    fetch_errors.pop(tournament_id, None)
+    save_json(FETCH_ERRORS_PATH, fetch_errors)
 
     elapsed = time.monotonic() - started
     budget["workSeconds"] += elapsed
