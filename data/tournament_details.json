@@ -1572,5 +1572,785 @@
     ],
     "draws": [],
     "entries": []
+  },
+  "1986A9C1-3571-4F1E-960E-513061718FA9": {
+    "events": [
+      {
+        "event_id": "1",
+        "name": "JE U11 Zilver",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "2",
+        "name": "ME U11 zilver",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "3",
+        "name": "Dubbel U11",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "4",
+        "name": "JE U13 Goud",
+        "draws": 3,
+        "entries": 7
+      },
+      {
+        "event_id": "5",
+        "name": "ME U13 Goud",
+        "draws": 4,
+        "entries": 10
+      },
+      {
+        "event_id": "6",
+        "name": "Dubbel U13",
+        "draws": 0,
+        "entries": 0
+      },
+      {
+        "event_id": "7",
+        "name": "JE U15",
+        "draws": 1,
+        "entries": 43
+      },
+      {
+        "event_id": "8",
+        "name": "ME U15",
+        "draws": 6,
+        "entries": 17
+      },
+      {
+        "event_id": "9",
+        "name": "JD U15",
+        "draws": 1,
+        "entries": 13
+      },
+      {
+        "event_id": "10",
+        "name": "MD U15",
+        "draws": 3,
+        "entries": 8
+      },
+      {
+        "event_id": "12",
+        "name": "JE U17",
+        "draws": 4,
+        "entries": 9
+      },
+      {
+        "event_id": "13",
+        "name": "ME U17",
+        "draws": 3,
+        "entries": 6
+      },
+      {
+        "event_id": "14",
+        "name": "JD U17",
+        "draws": 1,
+        "entries": 5
+      },
+      {
+        "event_id": "15",
+        "name": "MD U17",
+        "draws": 0,
+        "entries": 0
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "3",
+        "name": "JE U13 Goud",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "1",
+        "name": "JE U13 Goud - Groep JE U13 GOUD A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "JE U13 Goud - Groep JE U13 GOUD B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "32",
+        "name": "ME U13 Goud",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "29",
+        "name": "ME U13 Goud - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "30",
+        "name": "ME U13 Goud - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "31",
+        "name": "ME U13 Goud - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "JE U15",
+        "size": 64,
+        "type": "Afvalschema",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "ME U15",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "ME U15 - Groep ME U15 A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "ME U15 - Groep ME U15 B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "ME U15 - Groep ME U15 C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "ME U15 - Groep ME U15 D",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "13",
+        "name": "ME U15 - Groep ME U15 E",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "JD U15",
+        "size": 16,
+        "type": "Afvalschema",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "MD U15",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "MD U15 - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "MD U15 - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "18",
+        "name": "JE U17",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "15",
+        "name": "JE U17 - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "16",
+        "name": "JE U17 - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "17",
+        "name": "JE U17 - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "28",
+        "name": "ME U17",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "ME U17 - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "27",
+        "name": "ME U17 - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "JD U17",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": [
+      {
+        "country": null,
+        "player_id": "91",
+        "name": "Achanta, Aaradhya"
+      },
+      {
+        "country": null,
+        "player_id": "92",
+        "name": "Achanta, Laasya"
+      },
+      {
+        "country": null,
+        "player_id": "17",
+        "name": "Akhylbek, Zere"
+      },
+      {
+        "country": null,
+        "player_id": "18",
+        "name": "Andrea, Thomas"
+      },
+      {
+        "country": null,
+        "player_id": "8",
+        "name": "Anil Nambiar, Arav"
+      },
+      {
+        "country": null,
+        "player_id": "79",
+        "name": "Arcot, Tushanth"
+      },
+      {
+        "country": null,
+        "player_id": "96",
+        "name": "Attassery, Vihaan"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Baak, Bram van"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Baak, Lotte Van"
+      },
+      {
+        "country": null,
+        "player_id": "67",
+        "name": "Bagave, Daksh"
+      },
+      {
+        "country": null,
+        "player_id": "93",
+        "name": "Balamurugan, Narein"
+      },
+      {
+        "country": null,
+        "player_id": "80",
+        "name": "Bharath Kumar, Avantika"
+      },
+      {
+        "country": null,
+        "player_id": "68",
+        "name": "Bharel, Manya"
+      },
+      {
+        "country": null,
+        "player_id": "63",
+        "name": "Boer, Thomas De"
+      },
+      {
+        "country": null,
+        "player_id": "75",
+        "name": "Brar, Naisha"
+      },
+      {
+        "country": null,
+        "player_id": "106",
+        "name": "Chakraborty, Sunrita"
+      },
+      {
+        "country": null,
+        "player_id": "54",
+        "name": "Chamarthi, Tanvi"
+      },
+      {
+        "country": null,
+        "player_id": "35",
+        "name": "Chan, Kyan"
+      },
+      {
+        "country": null,
+        "player_id": "36",
+        "name": "Chan, Quentin"
+      },
+      {
+        "country": null,
+        "player_id": "21",
+        "name": "Cheung, Shinto"
+      },
+      {
+        "country": null,
+        "player_id": "57",
+        "name": "Chintha, Vajun"
+      },
+      {
+        "country": null,
+        "player_id": "27",
+        "name": "Chong, Kyano"
+      },
+      {
+        "country": null,
+        "player_id": "50",
+        "name": "Chow, Hekang"
+      },
+      {
+        "country": null,
+        "player_id": "51",
+        "name": "Chow, Helin"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "Chung, Ella"
+      },
+      {
+        "country": null,
+        "player_id": "14",
+        "name": "Chung, Kayleigh"
+      },
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Dimyati, Zhian"
+      },
+      {
+        "country": null,
+        "player_id": "46",
+        "name": "Dinakaran, Shresta"
+      },
+      {
+        "country": null,
+        "player_id": "97",
+        "name": "Furniturewala, Burhanuddin"
+      },
+      {
+        "country": null,
+        "player_id": "52",
+        "name": "Groot, Winston de"
+      },
+      {
+        "country": null,
+        "player_id": "34",
+        "name": "Haak, Kyra van den"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "Haan, Bram den"
+      },
+      {
+        "country": null,
+        "player_id": "23",
+        "name": "Haan, Stijn den"
+      },
+      {
+        "country": null,
+        "player_id": "55",
+        "name": "Heap, Wilfred"
+      },
+      {
+        "country": null,
+        "player_id": "15",
+        "name": "Honingh, Leanna"
+      },
+      {
+        "country": null,
+        "player_id": "19",
+        "name": "Hoog, Thijs de"
+      },
+      {
+        "country": null,
+        "player_id": "74",
+        "name": "Jonnakuti, Aryan"
+      },
+      {
+        "country": null,
+        "player_id": "104",
+        "name": "Kalleti, Karthik"
+      },
+      {
+        "country": null,
+        "player_id": "98",
+        "name": "Kalra, Sehar"
+      },
+      {
+        "country": null,
+        "player_id": "56",
+        "name": "Karthikeyan, Dishitha"
+      },
+      {
+        "country": null,
+        "player_id": "87",
+        "name": "Karunapathiranage, Siyathi Kivethma"
+      },
+      {
+        "country": null,
+        "player_id": "85",
+        "name": "Karunapathiranage, Isara Levmitha"
+      },
+      {
+        "country": null,
+        "player_id": "94",
+        "name": "Kashyap, Sushruta"
+      },
+      {
+        "country": null,
+        "player_id": "20",
+        "name": "Kok, Paskal"
+      },
+      {
+        "country": null,
+        "player_id": "11",
+        "name": "K&#246;pe, Julia"
+      },
+      {
+        "country": null,
+        "player_id": "53",
+        "name": "Koster, Pepijn"
+      },
+      {
+        "country": null,
+        "player_id": "108",
+        "name": "Kota, Ricky"
+      },
+      {
+        "country": null,
+        "player_id": "24",
+        "name": "Kulkarni, Swara"
+      },
+      {
+        "country": null,
+        "player_id": "37",
+        "name": "Lalani, Aariz"
+      },
+      {
+        "country": null,
+        "player_id": "5",
+        "name": "Marla, Samyak"
+      },
+      {
+        "country": null,
+        "player_id": "88",
+        "name": "Misha, Alisa"
+      },
+      {
+        "country": null,
+        "player_id": "58",
+        "name": "Mithun, Varsha"
+      },
+      {
+        "country": null,
+        "player_id": "81",
+        "name": "Moorman, Nathan"
+      },
+      {
+        "country": null,
+        "player_id": "38",
+        "name": "Naik, Rishabh"
+      },
+      {
+        "country": null,
+        "player_id": "89",
+        "name": "Namuduri, Kriti"
+      },
+      {
+        "country": null,
+        "player_id": "99",
+        "name": "Naphade, Aryan"
+      },
+      {
+        "country": null,
+        "player_id": "100",
+        "name": "Naphade, Soham"
+      },
+      {
+        "country": null,
+        "player_id": "16",
+        "name": "Nieuwhoff, Thirza"
+      },
+      {
+        "country": null,
+        "player_id": "64",
+        "name": "Ny&#237;ri, David"
+      },
+      {
+        "country": null,
+        "player_id": "48",
+        "name": "Paap, Tristan"
+      },
+      {
+        "country": null,
+        "player_id": "28",
+        "name": "Pabba, Rishik"
+      },
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Pabba, Srithik"
+      },
+      {
+        "country": null,
+        "player_id": "71",
+        "name": "Panarello, Isabella"
+      },
+      {
+        "country": null,
+        "player_id": "45",
+        "name": "Patel, Joaquin"
+      },
+      {
+        "country": null,
+        "player_id": "72",
+        "name": "Prajapati, Hriday"
+      },
+      {
+        "country": null,
+        "player_id": "59",
+        "name": "Pruis, David"
+      },
+      {
+        "country": null,
+        "player_id": "73",
+        "name": "Prykhodko, Dmytro"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "Rajesh, Mukunth"
+      },
+      {
+        "country": null,
+        "player_id": "95",
+        "name": "Rajkumar, Arya"
+      },
+      {
+        "country": null,
+        "player_id": "107",
+        "name": "Rajput, Rayaan Singh"
+      },
+      {
+        "country": null,
+        "player_id": "6",
+        "name": "Reddy Yanamala, Geethika"
+      },
+      {
+        "country": null,
+        "player_id": "86",
+        "name": "Rooij, Bram van"
+      },
+      {
+        "country": null,
+        "player_id": "33",
+        "name": "Sail, Shlok"
+      },
+      {
+        "country": null,
+        "player_id": "60",
+        "name": "Santing, Tom"
+      },
+      {
+        "country": null,
+        "player_id": "61",
+        "name": "Sato, Nana"
+      },
+      {
+        "country": null,
+        "player_id": "25",
+        "name": "Schie, Lisa Van"
+      },
+      {
+        "country": null,
+        "player_id": "39",
+        "name": "Schreuder, Beau"
+      },
+      {
+        "country": null,
+        "player_id": "78",
+        "name": "Sonare, Anaira"
+      },
+      {
+        "country": null,
+        "player_id": "26",
+        "name": "Sujeev Kumar, Vishakh"
+      },
+      {
+        "country": null,
+        "player_id": "105",
+        "name": "Sukka, Sai Pranav"
+      },
+      {
+        "country": null,
+        "player_id": "47",
+        "name": "Sureka, Ishana"
+      },
+      {
+        "country": null,
+        "player_id": "103",
+        "name": "Sureshkumar, Sanjana"
+      },
+      {
+        "country": null,
+        "player_id": "42",
+        "name": "Tang, Rui"
+      },
+      {
+        "country": null,
+        "player_id": "43",
+        "name": "Tang, Xiao"
+      },
+      {
+        "country": null,
+        "player_id": "40",
+        "name": "Truong, Soraya"
+      },
+      {
+        "country": null,
+        "player_id": "90",
+        "name": "Tsui, Dominic"
+      },
+      {
+        "country": null,
+        "player_id": "101",
+        "name": "Tsui, Kayley"
+      },
+      {
+        "country": null,
+        "player_id": "69",
+        "name": "Vaddipalle, Vihaan Reddy"
+      },
+      {
+        "country": null,
+        "player_id": "102",
+        "name": "Velamuri, Saket"
+      },
+      {
+        "country": null,
+        "player_id": "41",
+        "name": "Vries, Femke de"
+      },
+      {
+        "country": null,
+        "player_id": "49",
+        "name": "Wang, Ze (Allen)"
+      },
+      {
+        "country": null,
+        "player_id": "77",
+        "name": "Westera, Esmee"
+      },
+      {
+        "country": null,
+        "player_id": "7",
+        "name": "Yanamala, Mahatej Reddy"
+      },
+      {
+        "country": null,
+        "player_id": "65",
+        "name": "Yu, Eva"
+      },
+      {
+        "country": null,
+        "player_id": "66",
+        "name": "Zijderveld, Joah van"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "Zijlstra, Jessie"
+      }
+    ]
   }
 }
