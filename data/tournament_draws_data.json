@@ -2680,6 +2680,147 @@
           "played_at": "zo 20-9-2026 15:15"
         }
       ]
+    },
+    "18": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Hanneke BROEKHUIZEN"
+            },
+            {
+              "player_id": "72",
+              "name": "Anne KONTER"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-35"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "58",
+              "name": "Alexandra MONDELAERS"
+            },
+            {
+              "player_id": "59",
+              "name": "Alicia MONDELAERS"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "47-39"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "73",
+              "name": "Kelly GOOSSENS"
+            },
+            {
+              "player_id": "56",
+              "name": "Chantal van GORTEL"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "27-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "240",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              15,
+              8
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "played_at": "zo 20-9-2026 14:05"
+        },
+        {
+          "match_id": "237",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              12,
+              15
+            ],
+            [
+              6,
+              15
+            ]
+          ],
+          "played_at": "zo 20-9-2026 14:40"
+        },
+        {
+          "match_id": "239",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              3,
+              15
+            ],
+            [
+              6,
+              15
+            ]
+          ],
+          "played_at": "zo 20-9-2026 15:15"
+        }
+      ]
     }
   }
 }
