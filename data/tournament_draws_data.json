@@ -8705,6 +8705,183 @@
           "played_at": "za 5-9-2026 13:45"
         }
       ]
+    },
+    "30": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "58",
+              "name": "Varsha Mithun"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-21"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Julia K&#246;pe"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "38-52"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Nana Sato"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "35-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "519",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              10,
+              15
+            ],
+            [
+              12,
+              15
+            ]
+          ],
+          "played_at": "za 5-9-2026 09:20"
+        },
+        {
+          "match_id": "515",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              15,
+              4
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "played_at": "za 5-9-2026 12:00"
+        },
+        {
+          "match_id": "518",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              15,
+              6
+            ],
+            [
+              15,
+              2
+            ]
+          ],
+          "played_at": "za 5-9-2026 14:15"
+        }
+      ]
     }
   }
 }
