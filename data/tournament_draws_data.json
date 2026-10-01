@@ -12093,6 +12093,203 @@
           "played_at": "za 5-9-2026 12:50"
         }
       ]
+    },
+    "20": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Kaj Riedl"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "101-50"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Kushal Dhyan Dinakaran"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "84-74"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "92",
+              "name": "Koen Delahaye"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "23-84"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Ahaan Jain"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "273",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 10:00"
+        },
+        {
+          "match_id": "275",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 10:00"
+        },
+        {
+          "match_id": "269",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              3
+            ]
+          ],
+          "played_at": "za 5-9-2026 11:00"
+        },
+        {
+          "match_id": "277",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 11:00"
+        },
+        {
+          "match_id": "272",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 5-9-2026 13:30"
+        },
+        {
+          "match_id": "276",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 5-9-2026 13:30"
+        }
+      ]
     }
   }
 }
