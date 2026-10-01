@@ -100,7 +100,7 @@ jobs:
             # (unlike a glob with zero matches) - several of these only get
             # created once there's actually a draw/ranking to write, so check
             # existence first instead of assuming they're always present.
-            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json; do
+            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json data/tournament_fetch_errors.json; do
               [ -f "$f" ] && git add "$f"
             done
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
