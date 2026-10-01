@@ -23974,6 +23974,81 @@
           "played_at": "za 5-9-2026 12:30"
         }
       ]
+    },
+    "43": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "579",
+          "round": null,
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "580",
+          "round": null,
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 5-9-2026 15:30"
+        },
+        {
+          "match_id": "578",
+          "round": null,
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 5-9-2026 16:30"
+        }
+      ]
     }
   }
 }
