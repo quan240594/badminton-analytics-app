@@ -6764,6 +6764,139 @@
           "played_at": "za 5-9-2026 15:15"
         }
       ]
+    },
+    "17": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Rishabh Naik"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "103-82"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "64",
+              "name": "David Ny&#237;ri"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "76-76"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Winston de Groot"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "82-103"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "322",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 5-9-2026 10:00"
+        },
+        {
+          "match_id": "319",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 5-9-2026 13:00"
+        },
+        {
+          "match_id": "321",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 5-9-2026 15:15"
+        }
+      ]
     }
   }
 }
