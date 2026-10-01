@@ -23492,6 +23492,135 @@
           "played_at": "za 5-9-2026 16:30"
         }
       ]
+    },
+    "40": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Sam Lipman"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-38"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Kyan Germs"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "54-62"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "88",
+              "name": "Bram Koerkamp"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "46-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "541",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 09:00"
+        },
+        {
+          "match_id": "537",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 10:30"
+        },
+        {
+          "match_id": "540",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 5-9-2026 12:00"
+        }
+      ]
     }
   }
 }
