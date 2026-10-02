@@ -1,0 +1,78 @@
+name: Watch for registered tournament draw publication
+
+on:
+  schedule:
+    # Hourly, not every-2-hours - recheck_tournament_draws.py's own schedule
+    # (Monday-Thursday once at 8am local, then every 2 hours from 8am local on
+    # the day(s) immediately before a weekend tournament) is expressed in
+    # Europe/Amsterdam local time, which shifts by an hour across the DST
+    # boundary relative to this cron's fixed UTC grid - ticking hourly lets the
+    # script catch the correct local hour every day regardless of DST, at the
+    # cost of some no-op ticks (cheap: a quick date/time check, no network
+    # calls, when nothing is actually due).
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tournament-draw-watch
+  cancel-in-progress: false
+
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.DATA_FETCHING_TOKEN }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install playwright
+        working-directory: data
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Log in to badmintonnederland.toernooi.nl (tournament details)
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 playwright_login.py --save cookie.txt
+        working-directory: data
+
+      # Refreshed every run rather than reused from a committed file - it's
+      # gitignored/ephemeral by design (see get_my_tournaments.py).
+      - name: Find registered/favorited tournaments
+        env:
+          TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
+          TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
+        run: python3 get_my_tournaments.py --save my_tournaments.json
+        working-directory: data
+        continue-on-error: true
+
+      - name: Recheck draws for tournaments due/overdue for publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          python3 data/recheck_tournament_draws.py --cookie-file cookie.txt
+
+          [ -f data/tournament_details.json ] && git add data/tournament_details.json
+          git diff --cached --quiet || git commit -m "chore(data): tournament draw recheck"
+
+          if ! git push; then
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Remove session cookie
+        if: always()
+        run: rm -f data/cookie.txt data/my_tournaments.json
