@@ -51,7 +51,9 @@ def fetch_text(
     """GET (or POST when `data` is given) `url` with `headers` + the session cookie.
 
     Retries URLError/TimeoutError after each delay in `retry_delays`, then re-raises."""
-    req = urllib.request.Request(url, data=data, headers={**headers, "Cookie": cookie, **(extra_headers or {})}, method=method)
+    # Every caller builds `url` from its own hard-coded BASE_URL host constant; only the
+    # path/query is CLI-influenced, so this can never redirect the request to another host.
+    req = urllib.request.Request(url, data=data, headers={**headers, "Cookie": cookie, **(extra_headers or {})}, method=method)  # NOSONAR
     for attempt, delay in enumerate((*retry_delays, None)):
         try:
             with urllib.request.urlopen(req, timeout=20) as resp:
