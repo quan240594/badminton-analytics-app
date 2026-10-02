@@ -18,17 +18,17 @@ import re
 import time
 import urllib.error
 import urllib.parse
-import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
 
+from http_fetch import USER_AGENT, fetch_text
 from safe_path import safe_path
 
 SEARCH_URL = "https://www.toernooi.nl/find/tournament/DoSearch"
 BADMINTON_SPORT_ID = 2
 
 BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+    "User-Agent": USER_AGENT,
     "X-Requested-With": "XMLHttpRequest",
     "Content-Type": "application/x-www-form-urlencoded",
 }
@@ -64,9 +64,7 @@ def fetch_page(cookie: str, start_date: str, end_date: str, page: int) -> str:
             "TournamentExtendedFilter.StatusFilterID": "false",
         }
     ).encode()
-    req = urllib.request.Request(SEARCH_URL, data=data, headers={**BROWSER_HEADERS, "Cookie": cookie}, method="POST")
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    return fetch_text(SEARCH_URL, cookie, headers=BROWSER_HEADERS, data=data, method="POST")
 
 
 def parse_items(html: str) -> list[dict]:

@@ -13,9 +13,9 @@ import json
 import re
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
 
+from http_fetch import fetch_basic
 from safe_path import safe_path
 from sanitize import clean_json_value
 
@@ -24,20 +24,13 @@ from season import resolve_current_tournament_id
 CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 CLUB_LINK_RE = re.compile(r'<a[^>]{0,50}href="(club\.aspx\?[^"]+)"[^>]{0,50}>([^<]*)</a>')
 CLUB_ID_RE = re.compile(r"club=(\d+)")
 ADDRESS_RE = re.compile(r'<th>Address:</th>\s*<td[^>]*><table class="clean"><tr><td>([^<]+)</td>', re.S)
 
 
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = fetch_basic
 
 
 def main() -> None:

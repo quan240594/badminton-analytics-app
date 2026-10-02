@@ -273,3 +273,66 @@ describe('loadDataset', () => {
     expect(counts.byYear[2024]).toEqual({ gold: 1, silver: 1, bronze: 1 });
   });
 });
+
+describe('loadDataset - missing optional fields', () => {
+  const careerFor = (matches, profile = {}) => ({
+    g1: { name: 'Owner', club: 'C1', aliases: { 'T1:p1': {} }, matches, ...profile },
+  });
+
+  it('keeps a match that has no event, time or draw as an undated singles match without a division', async () => {
+    setCareer(careerFor([match({ event: undefined, time: undefined, draw: undefined })]));
+    const { loadDataset } = await importFresh();
+
+    const [m] = loadDataset().matches;
+
+    expect(m).toMatchObject({ discipline: 'singles', timestamp: null, year: null, division: null });
+  });
+
+  it('classifies XD events as mixed doubles', async () => {
+    setCareer(careerFor([match({
+      event: 'XD',
+      home_players: [['p1', 'Owner'], ['p3', 'Partner']],
+      away_players: [['p2', 'Opp'], ['p4', 'Opp Partner']],
+    })]));
+    const { loadDataset } = await importFresh();
+
+    expect(loadDataset().matches[0].discipline).toBe('mixed');
+  });
+
+  it('drops a singles match whose away side has more than one player', async () => {
+    setCareer(careerFor([match({ away_players: [['p2', 'Opp'], ['p3', 'Opp Partner']] })]));
+    const { loadDataset } = await importFresh();
+
+    expect(loadDataset().matches).toEqual([]);
+  });
+
+  it('tolerates a profile without aliases', async () => {
+    setCareer(careerFor([], { aliases: undefined }));
+    const { loadDataset } = await importFresh();
+
+    expect(loadDataset().aliasIndex.size).toBe(0);
+  });
+
+  it('skips division-less matches and keeps the first of equal-rank matches with unknown years', async () => {
+    setCareer(careerFor([
+      match({ draw: undefined, score: '21-1' }),
+      match({ time: undefined, score: '21-2' }),
+      match({ time: undefined, score: '21-3' }),
+    ]));
+    const { loadDataset } = await importFresh();
+    const ds = loadDataset();
+
+    expect(ds.highestDivisionPlayed(ds.matches, 'g1')).toEqual({ division: '2e divisie', year: null });
+  });
+
+  it('ranks an unrecognized title status after known ones and returns empty titles for an unknown guid', async () => {
+    setTitles({ g1: [{ category: 'singles', status: 'Participant', tournament: 'Open', year: 2024 }] });
+    setCareer(careerFor([]));
+    const { loadDataset } = await importFresh();
+    const ds = loadDataset();
+
+    expect(ds.titlesForPlayer('g1').singles).toEqual({ status: 'Participant', tournament: 'Open', year: 2024 });
+    expect(ds.titlesForPlayer('nobody')).toEqual({ singles: null, doubles: null, mixed: null });
+    expect(ds.titleCounts('nobody').total).toEqual({ gold: 0, silver: 0, bronze: 0 });
+  });
+});

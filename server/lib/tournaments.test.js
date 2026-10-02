@@ -93,3 +93,26 @@ describe('buildTournaments', () => {
     expect(buildTournaments()).toEqual([]);
   });
 });
+
+describe('buildTournaments - sparse draw data', () => {
+  it('defaults standings/matches for draws missing from the draw data and tolerates matches without sides or players', async () => {
+    files['tournament_details.json'] = JSON.stringify({
+      t1: { draws: [{ draw_id: 'd1' }, { draw_id: 'd2' }, { draw_id: 'd3' }] },
+    });
+    files['tournament_draws_data.json'] = JSON.stringify({
+      t1: {
+        d1: { matches: [{}, { sides: [{}] }] },
+        d3: { standings: [{ rank: 1 }] },
+      },
+    });
+
+    const { buildTournaments } = await importFresh();
+    const [{ draws }] = buildTournaments();
+
+    expect(draws.map((d) => [d.standings, d.matches])).toEqual([
+      [[], [{}, { sides: [{}] }]],
+      [[], []],
+      [[{ rank: 1 }], []],
+    ]);
+  });
+});

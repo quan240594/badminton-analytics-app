@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import TournamentMatchSimulator from './TournamentMatchSimulator.jsx';
 
 const fetchTournaments = vi.fn();
@@ -77,5 +77,101 @@ describe('TournamentMatchSimulator', () => {
 
     expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
     expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+});
+
+describe('TournamentMatchSimulator - draws and persistence', () => {
+  const STORAGE_KEY = 'badminton-app-tournament-state';
+  const WIN_RESULT = {
+    sideB: { name: 'Cara Gamma', ranking: { rank: 42, points: 300 } },
+    winProbabilityA: 0.7,
+    winProbabilityB: 0.3,
+  };
+  const standings = (...ids) => ids.map((id) => ({ players: [{ player_id: id }] }));
+  const withDraws = (draws) => fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, draws }]);
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    fetchTournaments.mockResolvedValue([TOURNAMENT]);
+    simulateTournamentMatch.mockResolvedValue(WIN_RESULT);
+  });
+
+  it('restores the saved tournament and player', async () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournamentId: 't1', playerId: 'p1' }));
+    render(<TournamentMatchSimulator />);
+
+    expect(await screen.findByText('#5')).toBeInTheDocument();
+    expect(await screen.findAllByText(/vs Cara Gamma/)).toHaveLength(2);
+  });
+
+  it('ignores malformed saved state', async () => {
+    localStorage.setItem(STORAGE_KEY, '{not json');
+    render(<TournamentMatchSimulator />);
+
+    expect(await screen.findByText('Test Open 2026')).toBeInTheDocument();
+    expect(screen.getByRole('combobox')).toHaveValue('');
+  });
+
+  it('says so when the saved tournament has no scraped data', async () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournamentId: 'gone', playerId: '' }));
+    render(<TournamentMatchSimulator />);
+
+    expect(await screen.findByText('No entrants/draws scraped for this tournament yet.')).toBeInTheDocument();
+  });
+
+  it.each([
+    ['GD', 'mixed'], ['Gemengd A', 'mixed'], ['ME', 'singles'], ['Enkel B', 'singles'], ['JD', 'doubles'], ['Dubbel C', 'doubles'],
+  ])('infers the discipline of a "%s" draw as %s', async (name, discipline) => {
+    withDraws([{ draw_id: 'd1', name, standings: standings('p1', 'p3') }]);
+
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    await waitFor(() => expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', discipline, 'p1', 'p3'));
+  });
+
+  it.each([['an unrecognised name', 'XYZ'], ['no name', undefined]])('skips a draw with %s', async (_case, name) => {
+    withDraws([{ draw_id: 'd1', name, standings: standings('p1', 'p3') }]);
+
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
+    expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+
+  it('finds opponents from knockout matches when a draw has no standings', async () => {
+    withDraws([{
+      draw_id: 'k1',
+      name: 'HE',
+      matches: [{ sides: [{ players: [{ player_id: 'p1' }] }, { players: [{ player_id: 'p3' }] }] }, { sides: [{}] }, {}],
+    }]);
+
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    await waitFor(() => expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', 'singles', 'p1', 'p3'));
+    expect(simulateTournamentMatch).toHaveBeenCalledTimes(1);
+  });
+
+  it('copes with a tournament that has no draws at all', async () => {
+    withDraws(undefined);
+
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
+  });
+
+  it('shows the error when a simulation fails', async () => {
+    simulateTournamentMatch.mockRejectedValue(new Error('unknown player id(s)'));
+
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText('unknown player id(s)')).toBeInTheDocument();
+  });
+
+  it('shows the error when the tournaments cannot be loaded', async () => {
+    fetchTournaments.mockRejectedValue(new Error('bundle missing'));
+    render(<TournamentMatchSimulator />);
+
+    expect(await screen.findByText('bundle missing')).toBeInTheDocument();
   });
 });

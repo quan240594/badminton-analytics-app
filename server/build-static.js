@@ -7,127 +7,27 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { loadDataset } from './lib/dataset.js';
 import { computeRatings } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
-import { currentSeasonLabel } from './lib/season.js';
-import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substitutePlayerIds, playerGenders } from './lib/leagueIndex.js';
+import { listPlayerSummaries, poolMeta } from './lib/summary.js';
 import { buildTournaments } from './lib/tournaments.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'data.json');
-const CURRENT_POOL_LABEL = `Bondscompetitie ${currentSeasonLabel()} \u2013 Mannen Veer 2 afd. 12`;
 
 const { players, matches, rankings, rankingTop, highestDivisionPlayed, titlesForPlayer, titleCounts, titleYears, aliasIndex } = loadDataset();
 const { singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H, mixedPairH2H } = computeRatings(matches);
 const careerStats = computeCareerStats(matches);
 
-function careerBucket(guid, discipline) {
-  return (
-    careerStats.get(guid)?.[discipline] ?? {
-      played: 0,
-      won: 0,
-      setsPlayed: 0,
-      setsWon: 0,
-      pointsPlayed: 0,
-      pointsWon: 0,
-    }
-  );
-}
-
-function winRate(won, played) {
-  return played > 0 ? won / played : null;
-}
-
-function disciplineFields(prefix, rating, career) {
-  return {
-    [`${prefix}Rating`]: Math.round(rating ?? 1500),
-    [`${prefix}Played`]: career.played,
-    [`${prefix}Won`]: career.won,
-    [`${prefix}WinRate`]: winRate(career.won, career.played),
-    [`${prefix}SetsPlayed`]: career.setsPlayed,
-    [`${prefix}SetsWon`]: career.setsWon,
-    [`${prefix}SetsWinRate`]: winRate(career.setsWon, career.setsPlayed),
-    [`${prefix}PointsPlayed`]: career.pointsPlayed,
-    [`${prefix}PointsWon`]: career.pointsWon,
-    [`${prefix}PointsWinRate`]: winRate(career.pointsWon, career.pointsPlayed),
-  };
-}
-
-function nationalRanking(guid) {
-  const byDiscipline = rankings.get(guid);
-  const result = {};
-  for (const discipline of ['singles', 'doubles', 'mixed']) {
-    const entry = byDiscipline?.[discipline];
-    const top = rankingTop?.[discipline];
-    result[discipline] = entry
-      ? {
-          rank: entry.rank,
-          points: entry.points,
-          topPoints: top?.points ?? null,
-          topName: top?.name ?? null,
-          pctOfTop: top?.points ? entry.points / top.points : null,
-        }
-      : null;
-  }
-  return result;
-}
-
-function playerSummary(guid) {
-  const profile = players.get(guid);
-  if (!profile) return null;
-  const s = singles.get(guid);
-  const d = doublesPlayer.get(guid);
-  const m = mixedPlayer.get(guid);
-  return {
-    id: guid,
-    name: profile.name,
-    club: profile.club,
-    ...disciplineFields('singles', s?.rating, careerBucket(guid, 'singles')),
-    ...disciplineFields('doubles', d?.rating, careerBucket(guid, 'doubles')),
-    ...disciplineFields('mixed', m?.rating, careerBucket(guid, 'mixed')),
-    nationalRanking: nationalRanking(guid),
-    highestDivision: highestDivisionPlayed(matches, guid),
-    titles: titlesForPlayer(guid),
-    titleCounts: titleCounts(guid),
-    singlesConfidence: confidenceLabel(s?.played ?? 0),
-    doublesConfidence: confidenceLabel(d?.played ?? 0),
-    mixedConfidence: confidenceLabel(m?.played ?? 0),
-  };
-}
-
-function confidenceLabel(played) {
-  if (played >= 15) return 'high';
-  if (played >= 5) return 'medium';
-  return 'low';
-}
-
-// Historical event pages where profile-GUID parsing failed left inert 0-match
-// placeholders in career.json - filtered out, unless the profile is a genuine
-// current-season roster member (has a current-tournament alias even with 0
-// matches), since a player who's registered but hasn't played yet is real data,
-// not a parse failure (see: roster-only player discovery in pool_fetch_core.py).
-const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
-const currentSeasonGuids = new Set();
-for (const [key, guid] of aliasIndex) {
-  if (key.startsWith(`${CURRENT_TOURNAMENT_ID}:`)) currentSeasonGuids.add(guid);
-}
-const playerList = [...players.keys()]
-  .map(playerSummary)
-  .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0 || currentSeasonGuids.has(p.id)));
-playerList.sort((a, b) => a.name.localeCompare(b.name));
-
-const currentPool = currentPoolTeams(CURRENT_POOL_LABEL);
+const playerList = listPlayerSummaries(
+  { players, matches, singles, doublesPlayer, mixedPlayer, careerStats, rankings, rankingTop, highestDivisionPlayed, titlesForPlayer, titleCounts },
+  aliasIndex,
+  { withConfidence: true }
+);
 
 const bundle = {
   meta: {
     lastUpdated: new Date().toISOString(),
-    poolLabel: CURRENT_POOL_LABEL,
     playerCount: playerList.length,
-    titleYears,
-    currentPool,
-    leagueIndex: fullLeagueIndex(),
-    fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
-    poolRosters: poolRosters(aliasIndex),
-    substitutePlayerIds: substitutePlayerIds(aliasIndex),
-    playerGenders: playerGenders(aliasIndex),
+    ...poolMeta(aliasIndex, titleYears),
   },
   players: playerList,
   singlesH2H: Object.fromEntries(singlesH2H),

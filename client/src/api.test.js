@@ -106,6 +106,34 @@ describe('simulateTournamentMatch', () => {
   });
 });
 
+describe('simulateTournamentMatch - invalid input', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  function mockBundle(bundle) {
+    global.fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ players: [], meta: {}, ...bundle }) });
+  }
+
+  it.each([
+    ['an unknown tournament', ['nope', 'singles', 'p1', 'p2'], 'unknown tournament id'],
+    ['an unknown player', ['t1', 'singles', 'p1', 'ghost'], 'unknown player id(s)'],
+    ['the same player on both sides', ['t1', 'singles', 'p1', 'p1'], 'players must be different'],
+  ])('rejects %s', async (_case, args, message) => {
+    mockBundle({ tournaments: [{ id: 't1', players: [{ id: 'p1', name: 'Alice' }, { id: 'p2', name: 'Bob' }] }] });
+    const { simulateTournamentMatch } = await freshApi();
+
+    await expect(simulateTournamentMatch(...args)).rejects.toThrow(message);
+  });
+
+  it('treats a bundle without tournaments as having none', async () => {
+    mockBundle({});
+    const { simulateTournamentMatch } = await freshApi();
+
+    await expect(simulateTournamentMatch('t1', 'singles', 'p1', 'p2')).rejects.toThrow('unknown tournament id');
+  });
+});
+
 describe('local-dev refresh endpoints', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
@@ -237,6 +265,31 @@ describe('GitHub Actions workflow refresh', () => {
     await expect(triggerGithubWorkflowRefresh()).rejects.toThrow('Could not start the workflow (500).');
   });
 
+  it.each([
+    ['throws when the user declines to provide a token', () => vi.spyOn(window, 'prompt').mockReturnValue(null), 'A GitHub token is required'],
+    [
+      'clears the stored token and throws when GitHub rejects it',
+      () => {
+        sessionStorage.setItem('badminton-app-gh-token', 'bad-token');
+        global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 403 });
+      },
+      'GitHub rejected that token',
+    ],
+    [
+      'throws a generic error for other dispatch failures',
+      () => {
+        sessionStorage.setItem('badminton-app-gh-token', 'tok');
+        global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 500 });
+      },
+      'Could not start the workflow (500).',
+    ],
+  ])('triggerGithubWorkflowPoolRefresh %s', async (_case, arrange, message) => {
+    arrange();
+    const { triggerGithubWorkflowPoolRefresh } = await freshApi();
+
+    await expect(triggerGithubWorkflowPoolRefresh('12')).rejects.toThrow(message);
+  });
+
   it('triggerGithubWorkflowPoolRefresh includes the draw_id input', async () => {
     sessionStorage.setItem('badminton-app-gh-token', 'tok');
     global.fetch = vi.fn().mockResolvedValue({ ok: true, status: 204 });
@@ -325,6 +378,38 @@ describe('simulateSingles / simulateDoubles / fetchTournaments / simulateMatch',
     const result = await simulateDoubles(['p1', 'p3'], ['p2', 'p4']);
     expect(result.teamARating).toBe(Math.round((1550 + 1500) / 2));
     expect(result.headToHead).toBeNull();
+  });
+
+  it('zero-fills the side without recorded wins in a head-to-head record', async () => {
+    mockPlayersBundle({
+      singlesH2H: { 'p1|p3': { p1: 2 } },
+      doublesPairH2H: { 'p1+p3_vs_p2+p4': { 'p1+p3': 2 } },
+    });
+    const { simulateSingles, simulateDoubles, simulateMatch } = await freshApi();
+
+    expect((await simulateSingles('p1', 'p3')).headToHead).toEqual({ playerAWins: 2, playerBWins: 0 });
+    expect((await simulateSingles('p3', 'p1')).headToHead).toEqual({ playerAWins: 0, playerBWins: 2 });
+    expect((await simulateDoubles(['p1', 'p3'], ['p2', 'p4'])).headToHead).toEqual({ teamAWins: 2, teamBWins: 0 });
+    expect((await simulateDoubles(['p2', 'p4'], ['p1', 'p3'])).headToHead).toEqual({ teamAWins: 0, teamBWins: 2 });
+    expect((await simulateMatch('singles', 'p1', 'p3')).headToHead).toEqual({ aWins: 2, bWins: 0 });
+    expect((await simulateMatch('singles', 'p3', 'p1')).headToHead).toEqual({ aWins: 0, bWins: 2 });
+    expect((await simulateMatch('doubles', ['p1', 'p3'], ['p2', 'p4'])).headToHead).toEqual({ aWins: 2, bWins: 0 });
+    expect((await simulateMatch('doubles', ['p2', 'p4'], ['p1', 'p3'])).headToHead).toEqual({ aWins: 0, bWins: 2 });
+  });
+
+  it('has no head-to-head for players who never met', async () => {
+    mockPlayersBundle();
+    const { simulateSingles, simulateMatch } = await freshApi();
+
+    expect((await simulateSingles('p1', 'p4')).headToHead).toBeNull();
+    expect((await simulateMatch('singles', 'p1', 'p4')).headToHead).toBeNull();
+  });
+
+  it('simulateMatch has no head-to-head for a discipline the bundle carries no map for', async () => {
+    mockPlayersBundle();
+    const { simulateMatch } = await freshApi();
+
+    expect((await simulateMatch('mixed', ['p1', 'p3'], ['p2', 'p4'])).headToHead).toBeNull();
   });
 
   it('fetchTournaments returns the bundle tournaments, defaulting to an empty array', async () => {

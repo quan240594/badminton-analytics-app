@@ -94,3 +94,16 @@ describe('ClubSelect', () => {
     vi.useRealTimers();
   });
 });
+
+describe('ClubSelect - hover', () => {
+  it('highlights the hovered option, including "All clubs"', () => {
+    render(<ClubSelect clubs={['Club A', 'Club B']} value="" onChange={() => {}} />);
+    fireEvent.focus(screen.getByPlaceholderText('Club filter'));
+
+    fireEvent.mouseEnter(screen.getByText('Club B'));
+    expect(screen.getByText('Club B')).toHaveClass('active');
+
+    fireEvent.mouseEnter(screen.getByText('All clubs'));
+    expect(screen.getByText('All clubs')).toHaveClass('active');
+  });
+});

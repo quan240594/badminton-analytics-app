@@ -1,3 +1,5 @@
+import ProgressBar from './ProgressBar.jsx';
+
 // Shared header-row: title/subtitle plus the always-present Clear all control;
 // Fetch data (admin-only) and page-specific extras go in extraActions.
 export default function PageHeader({ title, subtitle, onClearAll, refreshState, showUnchanged, onFetchData, isAdmin, extraActions }) {
@@ -18,12 +20,7 @@ export default function PageHeader({ title, subtitle, onClearAll, refreshState, 
             <button type="button" className="btn-outline" onClick={onFetchData} disabled={refreshState.running}>
               {refreshState.running ? 'Fetching…' : 'Fetch data'}
             </button>
-            {refreshState.running && (
-              <div className="progress-bar">
-                <div className="progress-bar-fill" style={{ width: `${refreshState.percent}%` }} />
-                <span className="progress-bar-label">{Math.round(refreshState.percent)}%</span>
-              </div>
-            )}
+            {refreshState.running && <ProgressBar percent={refreshState.percent} />}
             {refreshState.error && <p className="error">{refreshState.error}</p>}
           </div>
         )}

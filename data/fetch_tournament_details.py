@@ -16,11 +16,9 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import time
-import urllib.error
-import urllib.request
 from pathlib import Path
 
+from http_fetch import BASIC_HEADERS, fetch_basic_retry, fetch_text
 from safe_path import safe_path
 
 # Individual-tournament pages on www.toernooi.nl redirect here - same domain
@@ -28,11 +26,6 @@ from safe_path import safe_path
 # cookie.txt (from playwright_login.py), not the www.toernooi.nl-only
 # tournament_cookie.txt used for discovery.
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
-
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 EVENT_ROW_RE = re.compile(
     r'<td class="eventname nowrap "><a href="event\.aspx\?id=[^&]+&(?:amp;)?event=(\d+)">([^<]+)</a></td>'
@@ -52,24 +45,7 @@ ENTRY_PLAYER_RE = re.compile(
 )
 
 
-# Toernooi.nl occasionally refuses a single connection transiently (seen live:
-# one Connection-refused mid-run while everything around it succeeded) - a
-# short retry absorbs that instead of failing the whole bounded CI run and
-# stalling the self-chaining loop until the next scheduled tick.
-RETRY_DELAYS = (2, 5, 10)
-
-
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    for attempt, delay in enumerate((*RETRY_DELAYS, None)):
-        try:
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return resp.read().decode("utf-8", errors="replace")
-        except (urllib.error.URLError, TimeoutError):
-            if delay is None:
-                raise
-            print(f"  fetch failed (attempt {attempt + 1}/{len(RETRY_DELAYS) + 1}), retrying in {delay}s...", flush=True)
-            time.sleep(delay)
+fetch = fetch_basic_retry
 
 
 # The entries list is loaded client-side (unlike events.aspx/draws.aspx, which
@@ -78,14 +54,14 @@ def fetch(url: str, cookie: str) -> str:
 def fetch_entries_fragment(tournament_id: str, cookie: str) -> str:
     url = f"https://badmintonnederland.toernooi.nl/tournament/{tournament_id.lower()}/Players/GetPlayersContent"
     data = b"X-Requested-With=XMLHttpRequest"
-    req = urllib.request.Request(
+    return fetch_text(
         url,
+        cookie,
+        {"Content-Type": "application/x-www-form-urlencoded", "X-Requested-With": "XMLHttpRequest"},
+        headers=BASIC_HEADERS,
         data=data,
-        headers={**BROWSER_HEADERS, "Cookie": cookie, "Content-Type": "application/x-www-form-urlencoded", "X-Requested-With": "XMLHttpRequest"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
 
 
 def parse_events(html: str) -> list[dict]:

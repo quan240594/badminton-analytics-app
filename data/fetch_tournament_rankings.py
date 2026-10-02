@@ -23,24 +23,17 @@ import argparse
 import json
 import time
 import urllib.error
-import urllib.request
 from collections.abc import Iterator
+from functools import partial
 from pathlib import Path
 
+from http_fetch import USER_AGENT, fetch_text
 from safe_path import safe_path
 
 BASE_URL = "https://badmintonnederland.toernooi.nl/ranking/"
 RANKING_RIDS = ("75", "164")  # adult, then junior
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-}
-
-
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = partial(fetch_text, headers={"User-Agent": USER_AGENT})
 
 
 def has_ranking_rows(html: str) -> bool:

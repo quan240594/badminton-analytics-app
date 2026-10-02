@@ -5,6 +5,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { nationalRankingFor } from './nationalRanking.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
@@ -20,29 +21,6 @@ function loadJson(filePath, fallback) {
   } catch {
     return fallback;
   }
-}
-
-// Same shape as build-static.js's nationalRanking(guid), but keyed directly by
-// MemberID - tournament entrants aren't in the league's alias index, and
-// rankings.json's "players" dict is already keyed by whatever id fetched each
-// page under, which for these is the MemberID (see fetch_tournament_rankings.py).
-function nationalRankingFor(rankingsRaw, memberId) {
-  const byDiscipline = rankingsRaw.players?.[memberId];
-  const result = {};
-  for (const discipline of ['singles', 'doubles', 'mixed']) {
-    const entry = byDiscipline?.[discipline];
-    const top = rankingsRaw.top?.[discipline];
-    result[discipline] = entry
-      ? {
-          rank: entry.rank,
-          points: entry.points,
-          topPoints: top?.points ?? null,
-          topName: top?.name ?? null,
-          pctOfTop: top?.points ? entry.points / top.points : null,
-        }
-      : null;
-  }
-  return result;
 }
 
 // An entrant's local (per-tournament) player id only resolves to their
@@ -80,7 +58,7 @@ export function buildTournaments() {
         id: entry.player_id,
         name: entry.name,
         country: entry.country,
-        nationalRanking: memberId ? nationalRankingFor(rankingsRaw, memberId) : null,
+        nationalRanking: memberId ? nationalRankingFor(rankingsRaw.players?.[memberId], rankingsRaw.top) : null,
       };
     });
 

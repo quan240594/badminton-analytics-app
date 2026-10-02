@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import PlayerSelect from './PlayerSelect.jsx';
 
 const players = [
@@ -83,5 +83,51 @@ describe('PlayerSelect', () => {
   it('applies the mirrored row class when mirrored is true', () => {
     render(<PlayerSelect label="Player A" players={players} value="" onChange={() => {}} mirrored />);
     expect(document.querySelector('.player-select-row--mirrored')).not.toBeNull();
+  });
+});
+
+describe('PlayerSelect - hover, blur and empty Enter', () => {
+  it('highlights an option on hover', () => {
+    render(<PlayerSelect label="Player A" players={players} value="" onChange={() => {}} />);
+    fireEvent.focus(screen.getByPlaceholderText('Search player...'));
+
+    fireEvent.mouseEnter(screen.getByText('Bob'));
+
+    expect(screen.getByText('Bob').closest('li')).toHaveClass('active');
+  });
+
+  it('closes the list shortly after the input loses focus', () => {
+    vi.useFakeTimers();
+    render(<PlayerSelect label="Player A" players={players} value="" onChange={() => {}} />);
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+
+    fireEvent.blur(input);
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(150));
+
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    vi.useRealTimers();
+  });
+
+  it('does nothing on Enter when no option matches the query', () => {
+    const onChange = vi.fn();
+    render(<PlayerSelect label="Player A" players={players} value="" onChange={onChange} />);
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'zzz' } });
+
+    fireEvent.keyDown(input, { key: 'Enter' });
+
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('ignores key presses while the list is closed', () => {
+    const onChange = vi.fn();
+    render(<PlayerSelect label="Player A" players={players} value="" onChange={onChange} />);
+
+    fireEvent.keyDown(screen.getByPlaceholderText('Search player...'), { key: 'Enter' });
+
+    expect(onChange).not.toHaveBeenCalled();
   });
 });
