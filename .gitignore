@@ -29,3 +29,8 @@ client/.env.local
 
 # sonar-scanner's local working/cache directory
 .scannerwork/
+
+# Python test/coverage artifacts
+coverage.xml
+.coverage
+.pytest_cache/

@@ -34,6 +34,15 @@ if ! (cd client && npm run test:coverage) || ! (cd server && npm run test:covera
   exit 1
 fi
 
+# Python scripts under data/ report coverage via coverage.xml (see sonar.python.coverage.reportPaths).
+echo "pre-push: running Python test coverage..."
+PYTHON_BIN="data/.venv/bin/python"
+[ -x "$PYTHON_BIN" ] || PYTHON_BIN="python3"
+if ! "$PYTHON_BIN" -m pytest --cov --cov-report=xml:coverage.xml; then
+  echo "pre-push: Python tests failed, aborting push." >&2
+  exit 1
+fi
+
 echo "pre-push: running local Sonar scan..."
 if ! sonar-scanner; then
   echo "pre-push: Sonar scan failed, aborting push." >&2
