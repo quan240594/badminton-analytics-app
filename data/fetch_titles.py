@@ -16,9 +16,9 @@ import re
 import sys
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
 
+from http_fetch import fetch_text
 from sanitize import clean_json_value
 
 DATA_DIR = Path(__file__).parent
@@ -59,11 +59,7 @@ def fetch_titles_for_player(guid: str, cookie: str) -> list[dict]:
     # recent entries; the full history only loads via this async-modal endpoint
     # (found via the widget's "All" link, class="nav-link js-asyncmodal").
     url = f"https://badmintonnederland.toernooi.nl/player-profile/{guid}/PersonHome/TitlesFinals"
-    req = urllib.request.Request(
-        url, headers={"Cookie": cookie, "User-Agent": "Mozilla/5.0", "X-Requested-With": "XMLHttpRequest"}
-    )
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        module_html = resp.read().decode("utf-8", errors="replace")
+    module_html = fetch_text(url, cookie, headers={"User-Agent": "Mozilla/5.0", "X-Requested-With": "XMLHttpRequest"})
 
     entries = []
     for year_match in YEAR_BLOCK_RE.finditer(module_html):

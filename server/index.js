@@ -7,8 +7,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { loadDataset } from './lib/dataset.js';
 import { computeRatings, winProbability } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
-import { currentSeasonLabel } from './lib/season.js';
-import { fullLeagueIndex, currentPoolTeams, fetchedDrawIds, poolRosters, substitutePlayerIds, playerGenders } from './lib/leagueIndex.js';
+import { confidenceLabel, listPlayerSummaries, playerSummary, poolMeta } from './lib/summary.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -27,7 +26,6 @@ let players, matches, rankings, rankingTop, highestDivisionPlayedFn, titlesForPl
 let singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H;
 let careerStats;
 let lastUpdated = null;
-const CURRENT_POOL_LABEL = `Bondscompetitie ${currentSeasonLabel()} \u2013 Mannen Veer 2 afd. 12`;
 let refreshing = false;
 
 function loadAll() {
@@ -39,34 +37,73 @@ function loadAll() {
 
 loadAll();
 
+// Keeps only the last 2000 chars of a child's stderr, for error reporting on exit.
+function trackStderrTail(child) {
+  const tail = { text: '' };
+  child.stderr.on('data', (chunk) => {
+    tail.text = (tail.text + chunk.toString()).slice(-2000);
+  });
+  return tail;
+}
+
 // Rebuilds client/public/data.json so the static-site client (which reads that
 // bundle, not this live API) actually sees the data refresh_data.py just fetched.
 function rebuildStaticBundle() {
   return new Promise((resolve, reject) => {
     const build = spawn(NODE_EXECUTABLE, ['build-static.js'], { cwd: __dirname });
-    let stderrTail = '';
-    build.stderr.on('data', (chunk) => {
-      stderrTail = (stderrTail + chunk.toString()).slice(-2000);
-    });
+    const stderr = trackStderrTail(build);
     build.on('close', (code) => {
       if (code === 0) resolve();
-      else reject(new Error(stderrTail || `build-static.js exited with code ${code}`));
+      else reject(new Error(stderr.text || `build-static.js exited with code ${code}`));
     });
     build.on('error', reject);
   });
 }
 
-function careerBucket(guid, discipline) {
-  return (
-    careerStats.get(guid)?.[discipline] ?? {
-      played: 0,
-      won: 0,
-      setsPlayed: 0,
-      setsWon: 0,
-      pointsPlayed: 0,
-      pointsWon: 0,
+// Runs one data-refresh script, then reloads the in-memory dataset and rebuilds data.json.
+function runRefreshJob(label, args) {
+  refreshing = true;
+  const child = spawn(PYTHON_EXECUTABLE, args, { cwd: DATA_DIR });
+  const stderr = trackStderrTail(child);
+  child.on('close', (code) => {
+    if (code !== 0) {
+      refreshing = false;
+      console.error(`[${label}] failed with exit code ${code}`);
+      if (stderr.text) console.error(`[${label}] stderr: ${stderr.text}`);
+      return;
     }
-  );
+    loadAll();
+    rebuildStaticBundle()
+      .then(() => console.log(`[${label}] reloaded ${players.size} players and rebuilt data.json at ${lastUpdated}`))
+      .catch((err) => console.error(`[${label}] failed to rebuild static bundle: ${err.message}`))
+      .finally(() => {
+        refreshing = false;
+      });
+  });
+  child.on('error', (err) => {
+    refreshing = false;
+    console.error(`[${label}] failed to start: ${err.message}`);
+  });
+}
+
+function progressHandler(progressPath) {
+  return (req, res) => {
+    try {
+      const raw = readFileSync(progressPath, 'utf-8');
+      res.json(JSON.parse(raw));
+    } catch {
+      res.json({ step: refreshing ? 'starting' : 'idle', percent: refreshing ? 0 : 100, running: refreshing, error: null });
+    }
+  };
+}
+
+function summaryContext() {
+  return {
+    players, matches, singles, doublesPlayer, mixedPlayer, careerStats, rankings, rankingTop,
+    highestDivisionPlayed: highestDivisionPlayedFn,
+    titlesForPlayer: titlesForPlayerFn,
+    titleCounts: titleCountsFn,
+  };
 }
 
 const app = express();
@@ -77,70 +114,6 @@ app.disable('x-powered-by');
 // data.json and never calls this API at all (see client/src/api.js).
 app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4000'] }));
 app.use(express.json());
-
-function confidenceLabel(played) {
-  if (played >= 15) return 'high';
-  if (played >= 5) return 'medium';
-  return 'low';
-}
-
-function winRate(won, played) {
-  return played > 0 ? won / played : null;
-}
-
-function disciplineFields(prefix, rating, career) {
-  return {
-    [`${prefix}Rating`]: Math.round(rating ?? 1500),
-    [`${prefix}Played`]: career.played,
-    [`${prefix}Won`]: career.won,
-    [`${prefix}WinRate`]: winRate(career.won, career.played),
-    [`${prefix}SetsPlayed`]: career.setsPlayed,
-    [`${prefix}SetsWon`]: career.setsWon,
-    [`${prefix}SetsWinRate`]: winRate(career.setsWon, career.setsPlayed),
-    [`${prefix}PointsPlayed`]: career.pointsPlayed,
-    [`${prefix}PointsWon`]: career.pointsWon,
-    [`${prefix}PointsWinRate`]: winRate(career.pointsWon, career.pointsPlayed),
-  };
-}
-
-function nationalRanking(guid) {
-  const byDiscipline = rankings.get(guid);
-  const result = {};
-  for (const discipline of ['singles', 'doubles', 'mixed']) {
-    const entry = byDiscipline?.[discipline];
-    const top = rankingTop?.[discipline];
-    result[discipline] = entry
-      ? {
-          rank: entry.rank,
-          points: entry.points,
-          topPoints: top?.points ?? null,
-          topName: top?.name ?? null,
-          pctOfTop: top?.points ? entry.points / top.points : null,
-        }
-      : null;
-  }
-  return result;
-}
-
-function playerSummary(guid) {
-  const profile = players.get(guid);
-  if (!profile) return null;
-  const s = singles.get(guid);
-  const d = doublesPlayer.get(guid);
-  const m = mixedPlayer.get(guid);
-  return {
-    id: guid,
-    name: profile.name,
-    club: profile.club,
-    ...disciplineFields('singles', s?.rating, careerBucket(guid, 'singles')),
-    ...disciplineFields('doubles', d?.rating, careerBucket(guid, 'doubles')),
-    ...disciplineFields('mixed', m?.rating, careerBucket(guid, 'mixed')),
-    nationalRanking: nationalRanking(guid),
-    highestDivision: highestDivisionPlayedFn(matches, guid),
-    titles: titlesForPlayerFn(guid),
-    titleCounts: titleCountsFn(guid),
-  };
-}
 
 function playerDetail(id, book) {
   const b = book.get(id);
@@ -154,95 +127,34 @@ function playerDetail(id, book) {
   };
 }
 
-const CURRENT_TOURNAMENT_ID = '9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E';
-
 app.get('/api/players', (req, res) => {
-  // Historical event pages where profile-GUID parsing failed left inert 0-match
-  // placeholders in career.json - filtered out, unless the profile is a genuine
-  // current-season roster member (has a current-tournament alias even with 0
-  // matches), since a player who's registered but hasn't played yet is real
-  // data, not a parse failure.
-  const currentSeasonGuids = new Set();
-  for (const [key, guid] of aliasIndex) {
-    if (key.startsWith(`${CURRENT_TOURNAMENT_ID}:`)) currentSeasonGuids.add(guid);
-  }
-  const list = [...players.keys()]
-    .map(playerSummary)
-    .filter((p) => p && (p.singlesPlayed > 0 || p.doublesPlayed > 0 || p.mixedPlayed > 0 || currentSeasonGuids.has(p.id)));
-  list.sort((a, b) => a.name.localeCompare(b.name));
-  res.json(list);
+  res.json(listPlayerSummaries(summaryContext(), aliasIndex));
 });
 
 app.get('/api/players/:id', (req, res) => {
-  const summary = playerSummary(req.params.id);
+  const summary = playerSummary(summaryContext(), req.params.id);
   if (!summary) return res.status(404).json({ error: 'player not found' });
   res.json(summary);
 });
 
 app.get('/api/meta', (req, res) => {
-  const currentPool = currentPoolTeams(CURRENT_POOL_LABEL);
   res.json({
     lastUpdated,
     refreshing,
     playerCount: players.size,
-    poolLabel: CURRENT_POOL_LABEL,
-    titleYears,
-    currentPool,
-    leagueIndex: fullLeagueIndex(),
-    fetchedDrawIds: fetchedDrawIds(currentPool.drawId),
-    poolRosters: poolRosters(aliasIndex),
-    substitutePlayerIds: substitutePlayerIds(aliasIndex),
-    playerGenders: playerGenders(aliasIndex),
+    ...poolMeta(aliasIndex, titleYears),
   });
 });
 
-app.get('/api/refresh/progress', (req, res) => {
-  try {
-    const raw = readFileSync(PROGRESS_PATH, 'utf-8');
-    res.json(JSON.parse(raw));
-  } catch {
-    res.json({ step: refreshing ? 'starting' : 'idle', percent: refreshing ? 0 : 100, running: refreshing, error: null });
-  }
-});
+app.get('/api/refresh/progress', progressHandler(PROGRESS_PATH));
 
 app.post('/api/refresh', (req, res) => {
   if (refreshing) return res.status(409).json({ error: 'refresh already in progress' });
-  refreshing = true;
-  const child = spawn(PYTHON_EXECUTABLE, ['refresh_data.py'], { cwd: DATA_DIR });
-  let stderrTail = '';
-  child.stderr.on('data', (chunk) => {
-    stderrTail = (stderrTail + chunk.toString()).slice(-2000);
-  });
-  child.on('close', (code) => {
-    if (code !== 0) {
-      refreshing = false;
-      console.error(`[refresh] failed with exit code ${code}`);
-      if (stderrTail) console.error(`[refresh] stderr: ${stderrTail}`);
-      return;
-    }
-    loadAll();
-    rebuildStaticBundle()
-      .then(() => console.log(`[refresh] reloaded ${players.size} players and rebuilt data.json at ${lastUpdated}`))
-      .catch((err) => console.error(`[refresh] failed to rebuild static bundle: ${err.message}`))
-      .finally(() => {
-        refreshing = false;
-      });
-  });
-  child.on('error', (err) => {
-    refreshing = false;
-    console.error(`[refresh] failed to start: ${err.message}`);
-  });
+  runRefreshJob('refresh', ['refresh_data.py']);
   res.status(202).json({ started: true });
 });
 
-app.get('/api/refresh/pool/progress', (req, res) => {
-  try {
-    const raw = readFileSync(POOL_PROGRESS_PATH, 'utf-8');
-    res.json(JSON.parse(raw));
-  } catch {
-    res.json({ step: refreshing ? 'starting' : 'idle', percent: refreshing ? 0 : 100, running: refreshing, error: null });
-  }
-});
+app.get('/api/refresh/pool/progress', progressHandler(POOL_PROGRESS_PATH));
 
 // Scoped alternative to /api/refresh: only fetches the players/matches for one
 // pool (fetch_pool.py), so selecting a team doesn't pay for a full national refresh.
@@ -251,33 +163,9 @@ app.post('/api/refresh/pool', (req, res) => {
   if (!drawId) return res.status(400).json({ error: 'drawId is required' });
   if (!/^\d+$/.test(String(drawId))) return res.status(400).json({ error: 'drawId must be numeric' });
   if (refreshing) return res.status(409).json({ error: 'a refresh is already in progress' });
-  refreshing = true;
   // Reconstructed as a fresh value (not the original tainted string) after validation.
   const safeDrawId = String(Number(drawId));
-  const child = spawn(PYTHON_EXECUTABLE, ['fetch_pool.py', '--draw-id', safeDrawId], { cwd: DATA_DIR });
-  let stderrTail = '';
-  child.stderr.on('data', (chunk) => {
-    stderrTail = (stderrTail + chunk.toString()).slice(-2000);
-  });
-  child.on('close', (code) => {
-    if (code !== 0) {
-      refreshing = false;
-      console.error(`[refresh/pool] failed with exit code ${code}`);
-      if (stderrTail) console.error(`[refresh/pool] stderr: ${stderrTail}`);
-      return;
-    }
-    loadAll();
-    rebuildStaticBundle()
-      .then(() => console.log(`[refresh/pool] reloaded ${players.size} players and rebuilt data.json at ${lastUpdated}`))
-      .catch((err) => console.error(`[refresh/pool] failed to rebuild static bundle: ${err.message}`))
-      .finally(() => {
-        refreshing = false;
-      });
-  });
-  child.on('error', (err) => {
-    refreshing = false;
-    console.error(`[refresh/pool] failed to start: ${err.message}`);
-  });
+  runRefreshJob('refresh/pool', ['fetch_pool.py', '--draw-id', safeDrawId]);
   res.status(202).json({ started: true });
 });
 

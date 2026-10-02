@@ -78,3 +78,19 @@ describe('computeCareerStats', () => {
     expect(stats.get('guid-b').singles).toEqual({ played: 1, won: 0, setsPlayed: 1, setsWon: 0, pointsPlayed: 31, pointsWon: 10 });
   });
 });
+
+describe('computeCareerStats - missing score', () => {
+  it('counts the match but no sets or points when the score is absent', () => {
+    const stats = computeCareerStats([
+      makeMatch({
+        discipline: 'singles',
+        home: [{ id: 'h1', name: 'Home', guid: 'guid-a' }],
+        away: [{ id: 'a1', name: 'Away', guid: 'guid-b' }],
+        winnerSide: 'home',
+        score: undefined,
+      }),
+    ]);
+
+    expect(stats.get('guid-a').singles).toEqual({ played: 1, won: 1, setsPlayed: 0, setsWon: 0, pointsPlayed: 0, pointsWon: 0 });
+  });
+});

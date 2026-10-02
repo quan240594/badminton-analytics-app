@@ -45,6 +45,13 @@ jobs:
         run: npm install && npm run test:coverage
         working-directory: server
 
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Python tests & coverage
+        run: pip install -r data/requirements-dev.txt && python -m pytest --cov --cov-report=xml:coverage.xml
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v8
         env:

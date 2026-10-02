@@ -7,6 +7,8 @@ import {
   isWrongGenderForCode,
   disciplineForCode,
   requiredGenderForCode,
+  compareStrength,
+  isValidMixedPair,
 } from './LeagueDaySimulator.jsx';
 
 function player(id, club, rating, extra = {}) {
@@ -202,5 +204,135 @@ describe('buildDefaultLineup', () => {
     const assignment = buildDefaultLineup([p1, p2], slots, () => false, () => null);
     expect(assignment.MS1).toHaveLength(1);
     expect(assignment.MD1).toEqual(expect.arrayContaining(['p1', 'p2']));
+  });
+});
+
+describe('compareStrength', () => {
+  const ranked = (rank) => player(`r${rank}`, 'ClubA', 1500, { nationalRanking: { singles: { rank } } });
+
+  it.each([
+    ['both ranked: the lower rank is stronger', ranked(2), ranked(5), -3],
+    ['only the first is ranked', ranked(9), player('u', 'ClubA', 2000), -1],
+    ['only the second is ranked', player('u', 'ClubA', 2000), ranked(9), 1],
+    ['neither ranked: the higher rating is stronger', player('u1', 'ClubA', 1400), player('u2', 'ClubA', 1600), 200],
+    ['a missing rating counts as 1500', { id: 'x' }, player('u', 'ClubA', 1600), 100],
+  ])('%s', (_case, a, b, expected) => {
+    expect(compareStrength('singles', a, b)).toBe(expected);
+  });
+});
+
+describe('isValidMixedPair', () => {
+  const genders = { m1: 'M', m2: 'M', f1: 'F' };
+
+  it.each([
+    ['a man and a woman', 'm1', 'f1', true],
+    ['two men', 'm1', 'm2', false],
+    ['a player with unknown gender next to a man', 'x', 'm1', true],
+    ['two players with unknown gender', 'x', 'y', true],
+  ])('accepts %s: %s', (_case, id1, id2, expected) => {
+    expect(isValidMixedPair({ id: id1 }, { id: id2 }, genders)).toBe(expected);
+  });
+});
+
+describe('computeSlotAssignment - objectives and locks', () => {
+  const a1 = player('a1', 'ClubA', 1700);
+  const a2 = player('a2', 'ClubA', 1400);
+  const b1 = player('b1', 'ClubB', 1600);
+  const b2 = player('b2', 'ClubB', 1000);
+  const byId = new Map([a1, a2, b1, b2].map((p) => [p.id, p]));
+  const open = { code: 'MS1', sideA: [''], sideB: [''] };
+
+  it.each([
+    ['clubA', ['a1'], ['b2']],
+    ['clubB', ['a2'], ['b1']],
+  ])('"%s" picks the pairing that is best for that club', (objective, sideA, sideB) => {
+    const result = computeSlotAssignment(open, 0, makeCtx({ objective, poolA: [a1, a2], poolB: [b1, b2], byId }));
+
+    expect([result.sideA, result.sideB]).toEqual([sideA, sideB]);
+  });
+
+  it.each([
+    ['clubB', { code: 'MS1', sideA: ['a1'], sideB: [''] }, 'sideA'],
+    ['excitement', { code: 'MS1', sideA: ['a1'], sideB: [''] }, 'sideA'],
+    ['excitement', { code: 'MS1', sideA: [''], sideB: ['b1'] }, 'sideB'],
+  ])('keeps the already-entered %s side locked for "%s"', (objective, slot, lockedSide) => {
+    const freeSide = lockedSide === 'sideA' ? 'sideB' : 'sideA';
+    const result = computeSlotAssignment(slot, 0, makeCtx({ objective, poolA: [a1, a2], poolB: [b1, b2], byId }));
+
+    expect(result[lockedSide]).toEqual(slot[lockedSide]);
+    expect(result[freeSide][0]).not.toBe('');
+  });
+
+  it('does not count a locked side towards the appearance caps', () => {
+    const ctx = makeCtx({ objective: 'clubA', poolA: [a1, a2], poolB: [b1], byId });
+
+    computeSlotAssignment({ code: 'MS1', sideA: [''], sideB: ['b1'] }, 0, ctx);
+
+    expect(ctx.usage.get('b1')).toBeUndefined();
+    expect(ctx.singlesUsage.get('b1')).toBeUndefined();
+    expect(ctx.usage.get('a1')).toBe(1);
+    expect(ctx.singlesUsage.get('a1')).toBe(1);
+  });
+
+  it('does not pair a player with themselves when both clubs list them', () => {
+    const shared = player('shared', 'ClubA', 1500);
+    const result = computeSlotAssignment(open, 0, makeCtx({ poolA: [shared, a2], poolB: [shared, b2], byId }));
+
+    expect(result.sideA[0]).not.toBe(result.sideB[0]);
+  });
+
+  it('leaves the rubber untouched when no valid doubles pairing exists', () => {
+    const shared = player('shared', 'ClubA', 1500);
+    const slot = { code: 'MD1', sideA: ['', ''], sideB: ['', ''] };
+
+    expect(computeSlotAssignment(slot, 0, makeCtx({ poolA: [shared, a2], poolB: [shared, b2], byId }))).toBe(slot);
+  });
+
+  it('falls back to a player who already played singles when nobody else is left', () => {
+    const ctx = makeCtx({ poolA: [a1], poolB: [b1], byId, singlesUsage: new Map([['a1', 1]]) });
+
+    const result = computeSlotAssignment({ code: 'MS2', sideA: [''], sideB: [''] }, 3, ctx);
+
+    expect(result.sideA).toEqual(['a1']);
+  });
+
+  it('keeps the protected top singles player out of earlier rubbers and seeds him into the first singles', () => {
+    const top = player('top', 'ClubA', 1900);
+    const mid = player('mid', 'ClubA', 1500);
+    const low = player('low', 'ClubA', 1400);
+    const poolB = [b1, b2, player('b3', 'ClubB', 1300)];
+    const ctx = makeCtx({
+      objective: 'excitement', poolA: [top, mid, low], poolB, byId, protectTopSingles: true, firstSinglesIndex: 2,
+      topSinglesA: top, topSinglesB: b1, strongestSinglesA: top, strongestSinglesB: b1,
+    });
+
+    const doubles = computeSlotAssignment({ code: 'MD1', sideA: ['', ''], sideB: ['', ''] }, 0, ctx);
+    const firstSingles = computeSlotAssignment({ code: 'MS1', sideA: [''], sideB: [''] }, 2, ctx);
+
+    expect(doubles.sideA).not.toContain('top');
+    expect(doubles.sideB).not.toContain('b1');
+    expect([firstSingles.sideA, firstSingles.sideB]).toEqual([['top'], ['b1']]);
+  });
+
+  it('defaults a missing rating to 1500 when pairing', () => {
+    const unrated = { id: 'unrated', club: 'ClubA' };
+    const result = computeSlotAssignment(open, 0, makeCtx({ poolA: [unrated], poolB: [player('even', 'ClubB', 1500)], byId }));
+
+    expect([result.sideA, result.sideB]).toEqual([['unrated'], ['even']]);
+  });
+});
+
+describe('buildDefaultLineup without a pinned player', () => {
+  it('rotates players by usage when there is no pin function', () => {
+    const pool = [player('p1', 'ClubA', 1500), player('p2', 'ClubA', 1500), player('p3', 'ClubA', 1500)];
+    const slots = [
+      { code: 'MS1', sideA: [''], sideB: [''] },
+      { code: 'MS2', sideA: [''], sideB: [''] },
+      { code: 'MS3', sideA: [''], sideB: [''] },
+    ];
+
+    const lineup = buildDefaultLineup(pool, slots, () => false);
+
+    expect(Object.values(lineup).flat().sort()).toEqual(['p1', 'p2', 'p3']);
   });
 });

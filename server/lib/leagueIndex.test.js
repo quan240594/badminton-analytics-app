@@ -141,3 +141,19 @@ describe('playerGenders', () => {
     expect(playerGenders(new Map())).toEqual({});
   });
 });
+
+describe('leagueIndex without data', () => {
+  it('defaults to empty regions/divisions when the index file lacks them', async () => {
+    files['league_index.json'] = '{}';
+    const { fullLeagueIndex } = await importFresh();
+
+    expect(fullLeagueIndex()).toEqual({ regions: [], divisions: {} });
+  });
+
+  it('returns an unlabelled empty pool when the pool label has no division separator', async () => {
+    files['league_index.json'] = '{}';
+    const { currentPoolTeams } = await importFresh();
+
+    expect(currentPoolTeams('Just a label')).toEqual({ drawId: null, label: null, teams: [] });
+  });
+});

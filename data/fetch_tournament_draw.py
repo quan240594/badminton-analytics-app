@@ -16,17 +16,13 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import time
-import urllib.error
-import urllib.request
+from functools import partial
 from pathlib import Path
 
+from http_fetch import RETRY_DELAYS, USER_AGENT, fetch_text
 from safe_path import safe_path
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "X-Requested-With": "XMLHttpRequest",
-}
+XHR_HEADERS = {"User-Agent": USER_AGENT, "X-Requested-With": "XMLHttpRequest"}
 
 # Header order (see GetStandings): GS=played, W=won, O=drawn, V=lost,
 # then three compound "x-y" record strings (matches, games, rally points),
@@ -56,21 +52,7 @@ DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4
 H2H_MEMBER_ID_RE = re.compile(r'T\dP\dMemberID=(\d+)')
 
 
-# See fetch_tournament_details.py's identical helper for why this retries.
-RETRY_DELAYS = (2, 5, 10)
-
-
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    for attempt, delay in enumerate((*RETRY_DELAYS, None)):
-        try:
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return resp.read().decode("utf-8", errors="replace")
-        except (urllib.error.URLError, TimeoutError):
-            if delay is None:
-                raise
-            print(f"  fetch failed (attempt {attempt + 1}/{len(RETRY_DELAYS) + 1}), retrying in {delay}s...", flush=True)
-            time.sleep(delay)
+fetch = partial(fetch_text, headers=XHR_HEADERS, retry_delays=RETRY_DELAYS)
 
 
 def parse_standings(html: str) -> list[dict]:

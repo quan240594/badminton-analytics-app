@@ -18,9 +18,9 @@ import json
 import sys
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
 
+from http_fetch import CHROME_HEADERS, fetch_text
 from safe_path import safe_path
 from urllib.parse import urljoin
 
@@ -29,21 +29,6 @@ BASE_URL = "https://badmintonnederland.toernooi.nl/sport/league/"
 PLAYER_URL = f"https://badmintonnederland.toernooi.nl/sport/league/player?id={TOURNAMENT_ID}&player={{player_id}}"
 DEFAULT_CATEGORIES = ["team", "match", "player_stats"]
 DELAY_SECONDS = 1.0  # be polite to the server
-
-BROWSER_HEADERS = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "max-age=0",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-User": "?1",
-    "Upgrade-Insecure-Requests": "1",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "sec-ch-ua": '"Google Chrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"macOS"',
-}
 
 
 def load_links(links_path: Path, categories: list[str]) -> list[dict]:
@@ -71,13 +56,7 @@ def slugify(href: str) -> str:
 
 
 def fetch(url: str, cookie: str, referer: str | None = None) -> str:
-    headers = dict(BROWSER_HEADERS)
-    headers["Cookie"] = cookie
-    if referer:
-        headers["Referer"] = referer
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    return fetch_text(url, cookie, {"Referer": referer} if referer else None, headers=CHROME_HEADERS)
 
 
 def fetch_one(url: str, out_path: Path, cookie: str, referer: str | None = None) -> bool:
