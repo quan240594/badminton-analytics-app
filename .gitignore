@@ -10,7 +10,8 @@ data/cookie.txt
 data/tournament_cookie.txt
 data/.venv/
 data/pages/
-data/__pycache__/
+**/__pycache__/
+*.pyc
 data/*.log
 data/pool_fetch_progress.json
 data/fetch_events.log
