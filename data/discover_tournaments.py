@@ -19,6 +19,7 @@ import time
 import urllib.error
 import urllib.parse
 from datetime import date, timedelta
+from html import unescape
 from pathlib import Path
 
 from http_fetch import USER_AGENT, fetch_text
@@ -79,9 +80,9 @@ def parse_items(html: str) -> list[dict]:
         items.append(
             {
                 "id": id_match.group(1).upper(),
-                "name": name_match.group(1),
-                "club": club.strip(),
-                "location": location.strip(),
+                "name": unescape(name_match.group(1)),
+                "club": unescape(club.strip()),
+                "location": unescape(location.strip()),
                 "dates": TIME_RE.findall(block),
                 "tags": [t.strip() for t in TAG_RE.findall(block)] + [f"{title}: {value}" for title, value in TAG_DUO_RE.findall(block)],
             }

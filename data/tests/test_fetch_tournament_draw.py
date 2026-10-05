@@ -108,3 +108,11 @@ def test_main_creates_output_file(monkeypatch, tmp_path):
     out = tmp_path / "new.json"
     run_main(monkeypatch, ftd, "T", "1", "--cookie-file", str(write_cookie(tmp_path)), "--out", str(out))
     assert read_json(out) == {"T": {"1": {"standings": [], "matches": []}}}
+
+
+def test_parsers_decode_html_entities_in_player_names_and_rounds():
+    standings = ftd.parse_standings(standing_row(1, [("10", "Dieudonn&#233;e Den Dulk")], ["1"]))
+    assert standings[0]["players"][0]["name"] == "Dieudonn\u00e9e Den Dulk"
+    matches = ftd.parse_matches("<ul>" + match_block(1, [side(True, [("10", "Bj&#246;rn")])], round_title="Ronde &amp; 1"))
+    assert matches[0]["sides"][0]["players"][0]["name"] == "Bj\u00f6rn"
+    assert matches[0]["round"] == "Ronde & 1"

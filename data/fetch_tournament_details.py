@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from html import unescape
 from pathlib import Path
 
 from http_fetch import BASIC_HEADERS, fetch_basic_retry, fetch_text
@@ -66,14 +67,14 @@ def fetch_entries_fragment(tournament_id: str, cookie: str) -> str:
 
 def parse_events(html: str) -> list[dict]:
     return [
-        {"event_id": eid, "name": name, "draws": int(draws), "entries": int(entries)}
+        {"event_id": eid, "name": unescape(name), "draws": int(draws), "entries": int(entries)}
         for eid, name, draws, entries in EVENT_ROW_RE.findall(html)
     ]
 
 
 def parse_draws(html: str) -> list[dict]:
     return [
-        {"draw_id": did, "name": name, "size": int(size) if size else None, "type": dtype, "stage": stage, "loser_round": loser_round or None}
+        {"draw_id": did, "name": unescape(name), "size": int(size) if size else None, "type": unescape(dtype), "stage": unescape(stage), "loser_round": unescape(loser_round) or None}
         for did, name, size, dtype, stage, loser_round in DRAW_ROW_RE.findall(html)
     ]
 
@@ -86,7 +87,7 @@ def parse_entries(html: str) -> list[dict]:
             continue
         flag_match = ENTRY_FLAG_RE.search(block)
         pid, name = player_match.groups()
-        entries.append({"country": flag_match.group(1) if flag_match else None, "player_id": pid, "name": name})
+        entries.append({"country": flag_match.group(1) if flag_match else None, "player_id": pid, "name": unescape(name)})
     return entries
 
 

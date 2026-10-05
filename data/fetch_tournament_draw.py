@@ -17,6 +17,7 @@ import argparse
 import json
 import re
 from functools import partial
+from html import unescape
 from pathlib import Path
 
 from http_fetch import RETRY_DELAYS, USER_AGENT, fetch_text
@@ -58,7 +59,7 @@ fetch = partial(fetch_text, headers=XHR_HEADERS, retry_delays=RETRY_DELAYS)
 def parse_standings(html: str) -> list[dict]:
     standings = []
     for rank, players_block, rest in STANDING_ROW_RE.findall(html):
-        players = [{"player_id": pid, "name": name} for pid, name in STANDING_PLAYER_RE.findall(players_block)]
+        players = [{"player_id": pid, "name": unescape(name)} for pid, name in STANDING_PLAYER_RE.findall(players_block)]
         cells = [c.strip() for c in STANDING_CELL_RE.findall(rest)]
         row = dict(zip(STANDING_CELL_NAMES, cells))
         for key in ("played", "won", "drawn", "lost", "ranking_points"):
@@ -78,7 +79,7 @@ def parse_matches(html: str) -> list[dict]:
         side_parts = SIDE_SPLIT_RE.split(block)[1:]  # [flag, body, flag, body, ...]
         sides = []
         for won_flag, body in zip(side_parts[0::2], side_parts[1::2]):
-            players = [{"player_id": pid, "name": name} for pid, _country, name in PLAYER_RE.findall(body)]
+            players = [{"player_id": pid, "name": unescape(name)} for pid, _country, name in PLAYER_RE.findall(body)]
             sides.append({"won": won_flag == " has-won", "players": players})
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
@@ -94,7 +95,7 @@ def parse_matches(html: str) -> list[dict]:
         matches.append(
             {
                 "match_id": match_id,
-                "round": round_match.group(1) if round_match else None,
+                "round": unescape(round_match.group(1)) if round_match else None,
                 "sides": sides,
                 "games": [[int(a), int(b)] for a, b in games],
                 "played_at": date_match.group(1) if date_match else None,

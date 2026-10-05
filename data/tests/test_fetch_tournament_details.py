@@ -87,3 +87,9 @@ def test_main_creates_output_file(monkeypatch, tmp_path):
     out = tmp_path / "new.json"
     run_main(monkeypatch, ftd, "T", "--cookie-file", str(write_cookie(tmp_path)), "--out", str(out))
     assert read_json(out) == {"T": {"events": [], "draws": [], "entries": []}}
+
+
+def test_parsers_decode_html_entities():
+    assert ftd.parse_events(EVENTS_HTML.replace("Heren Enkel", "ME&lt;11 &amp; Co"))[0]["name"] == "ME<11 & Co"
+    assert ftd.parse_draws(DRAWS_HTML.replace("HE A", "D&#39;n A"))[0]["name"] == "D'n A"
+    assert ftd.parse_entries(entry(9, "Bj&#246;rn Dulk&#233;e"))[0]["name"] == "Bj\u00f6rn Dulk\u00e9e"
