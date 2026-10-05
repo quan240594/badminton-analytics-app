@@ -16387,13 +16387,22 @@
         "event_id": "1",
         "name": "MS",
         "draws": 0,
-        "entries": 2
+        "entries": 2,
+        "participants": [
+          [
+            "1"
+          ],
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "2",
         "name": "WS",
         "draws": 0,
-        "entries": 0
+        "entries": 0,
+        "participants": []
       }
     ],
     "draws": [],
