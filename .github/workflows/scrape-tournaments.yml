@@ -72,7 +72,8 @@ jobs:
       # Same bounded-loop + self-dispatch-chain shape as scrape-national.yml.
       # Each iteration: one tournament's details, one draw (priority
       # tournaments' draws first), then a batch pass over any newly
-      # discovered ranking ids - commit+push after each, stop early on a
+      # discovered ranking ids and a bounded batch of entrants still to be
+      # resolved to a national ranking - commit+push after each, stop early on a
       # combined "nothing left" signal or a real failure from either driver.
       - name: Scrape tournaments for up to 15 minutes
         id: scrape
@@ -94,13 +95,15 @@ jobs:
             draws_code=$?
             (cd data && python3 fetch_tournament_rankings.py)
             (cd data && python3 parse_rankings.py)
+            (cd data && python3 fetch_entrant_rankings.py)
+            entrants_code=$?
             set -e
 
             # Plain `git add <path>` is a fatal error if a path doesn't exist yet
             # (unlike a glob with zero matches) - several of these only get
             # created once there's actually a draw/ranking to write, so check
             # existence first instead of assuming they're always present.
-            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json data/tournament_fetch_errors.json; do
+            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json data/entrant_rankings.json data/tournament_fetch_errors.json; do
               [ -f "$f" ] && git add "$f"
             done
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
@@ -118,7 +121,11 @@ jobs:
               code="$draws_code"
               break
             fi
-            if [ "$tournaments_code" -eq 3 ] && [ "$draws_code" -eq 3 ]; then
+            if [ "$entrants_code" -ne 0 ] && [ "$entrants_code" -ne 3 ]; then
+              code="$entrants_code"
+              break
+            fi
+            if [ "$tournaments_code" -eq 3 ] && [ "$draws_code" -eq 3 ] && [ "$entrants_code" -eq 3 ]; then
               code=3
               break
             fi

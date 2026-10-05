@@ -3,9 +3,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const files = {};
 
 vi.mock('node:fs', () => ({
-  existsSync: vi.fn((path) => Object.keys(files).some((k) => String(path).endsWith(k))),
+  existsSync: vi.fn((path) => Object.keys(files).some((k) => String(path).endsWith(`/${k}`))),
   readFileSync: vi.fn((path) => {
-    const key = Object.keys(files).find((k) => String(path).endsWith(k));
+    const key = Object.keys(files).find((k) => String(path).endsWith(`/${k}`));
     return files[key];
   }),
 }));
@@ -179,5 +179,53 @@ describe('buildTournaments - league ranking by name', () => {
     const { buildTournaments } = await importFresh();
     const [t] = buildTournaments([{ name: 'Quan Do', nationalRanking: ranking }]);
     expect(t.players[0].nationalRanking.singles.rank).toBe(2);
+  });
+});
+
+describe('buildTournaments - ranking resolved from the entrant profile', () => {
+  function setup(entrantRankings, entries = [{ player_id: 'p1', name: 'Chawla, Ritvik' }]) {
+    files['tournaments.json'] = JSON.stringify({ T1: { name: 'Open' } });
+    files['tournament_details.json'] = JSON.stringify({ T1: { entries, draws: [] } });
+    files['rankings.json'] = JSON.stringify({ players: { m9: { singles: { rank: 3, points: 700 } } }, top: { singles: { points: 1000, name: 'Top' } } });
+    if (entrantRankings) files['entrant_rankings.json'] = JSON.stringify(entrantRankings);
+  }
+
+  it('ranks an entrant who has never played a match, from the MemberID resolved off their profile', async () => {
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { ranking: { singles: { rank: 2802, points: 313 } } } } });
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments();
+    expect(t.players[0].nationalRanking.singles).toEqual({ rank: 2802, points: 313, topPoints: 1000, topName: 'Top', pctOfTop: 0.313 });
+    expect(t.players[0].nationalRanking.doubles).toBeNull();
+  });
+
+  it('prefers the profile ranking over a league player of the same name', async () => {
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { ranking: { singles: { rank: 10, points: 100 } } } } });
+    const { buildTournaments } = await importFresh();
+    const leagueRanking = { singles: { rank: 1, points: 999 }, doubles: null, mixed: null };
+    const [t] = buildTournaments([{ name: 'Ritvik Chawla', nationalRanking: leagueRanking }]);
+    expect(t.players[0].nationalRanking.singles.rank).toBe(10);
+  });
+
+  it('falls back to rankings.json when the resolved MemberID has no stored profile ranking', async () => {
+    setup({ entries: { 'T1:p1': 'm9' }, rankings: {} });
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments();
+    expect(t.players[0].nationalRanking.singles.rank).toBe(3);
+  });
+
+  it('uses the name match for a resolved but unranked player, and null when there is none', async () => {
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { ranking: {} } } });
+    const { buildTournaments } = await importFresh();
+    expect(buildTournaments()[0].players[0].nationalRanking).toBeNull();
+    const leagueRanking = { singles: { rank: 1, points: 999 }, doubles: null, mixed: null };
+    expect(buildTournaments([{ name: 'Ritvik Chawla', nationalRanking: leagueRanking }])[0].players[0].nationalRanking).toEqual(leagueRanking);
+  });
+
+  it('is a no-op when entrant_rankings.json does not exist or the entrant is unresolved', async () => {
+    setup(null);
+    const { buildTournaments } = await importFresh();
+    expect(buildTournaments()[0].players[0].nationalRanking).toBeNull();
+    setup({ entries: {}, rankings: {} });
+    expect((await importFresh()).buildTournaments()[0].players[0].nationalRanking).toBeNull();
   });
 });

@@ -13,6 +13,7 @@ const TOURNAMENTS_PATH = path.join(DATA_DIR, 'tournaments.json');
 const DETAILS_PATH = path.join(DATA_DIR, 'tournament_details.json');
 const DRAWS_DATA_PATH = path.join(DATA_DIR, 'tournament_draws_data.json');
 const RANKINGS_PATH = path.join(DATA_DIR, 'rankings.json');
+const ENTRANT_RANKINGS_PATH = path.join(DATA_DIR, 'entrant_rankings.json');
 
 function loadJson(filePath, fallback) {
   if (!existsSync(filePath)) return fallback;
@@ -23,11 +24,10 @@ function loadJson(filePath, fallback) {
   }
 }
 
-// An entrant's local (per-tournament) player id only resolves to their
-// site-wide MemberID once they've actually played a scraped match - the
-// head-to-head link on a match row is the only place that id is exposed (see
-// fetch_tournament_draw.py). Entrants who haven't played yet simply have no
-// known MemberID yet, and so no ranking data - a real data gap, not a bug.
+// An entrant's local (per-tournament) player id resolves to their site-wide
+// MemberID once they've played a scraped match - the head-to-head link on a
+// match row exposes it (see fetch_tournament_draw.py). Entrants who haven't
+// played yet are resolved separately by fetch_entrant_rankings.py instead.
 function localIdToMemberId(drawsForTournament) {
   const map = new Map();
   for (const draw of Object.values(drawsForTournament || {})) {
@@ -70,16 +70,17 @@ function uniqueLeagueRankingsByName(leaguePlayers) {
 
 const hasAnyRanking = (ranking) => Boolean(ranking) && ['singles', 'doubles', 'mixed'].some((d) => ranking[d]);
 
-// leaguePlayers is optional: when given, an entrant with no match-derived
-// ranking falls back to the league player of the same name (the entry list
-// carries no site-wide id, and a draw's matches - the only other source - only
-// exist once the draw is published).
+// Ranking sources for an entrant, most to least exact: the MemberID seen in a
+// played match, the MemberID resolved from the player's site profile
+// (fetch_entrant_rankings.py), and finally - only when given leaguePlayers - the
+// league player of the same name.
 export function buildTournaments(leaguePlayers = []) {
   const leagueRankingByName = uniqueLeagueRankingsByName(leaguePlayers);
   const tournamentsRaw = loadJson(TOURNAMENTS_PATH, {});
   const details = loadJson(DETAILS_PATH, {});
   const drawsData = loadJson(DRAWS_DATA_PATH, {});
   const rankingsRaw = loadJson(RANKINGS_PATH, { players: {}, top: {} });
+  const entrantState = loadJson(ENTRANT_RANKINGS_PATH, { entries: {}, rankings: {} });
 
   const tournaments = Object.entries(details).map(([id, detail]) => {
     const meta = tournamentsRaw[id] ?? {};
@@ -88,12 +89,16 @@ export function buildTournaments(leaguePlayers = []) {
     const players = (detail.entries || []).map((entry) => {
       const memberId = idToMember.get(entry.player_id) ?? null;
       const fromMatches = memberId ? nationalRankingFor(rankingsRaw.players?.[memberId], rankingsRaw.top) : null;
+      const entrantMemberId = entrantState.entries?.[`${id}:${entry.player_id}`] ?? null;
+      const fromProfile = entrantMemberId
+        ? nationalRankingFor(entrantState.rankings?.[entrantMemberId]?.ranking ?? rankingsRaw.players?.[entrantMemberId], rankingsRaw.top)
+        : null;
       const fromLeague = leagueRankingByName.get(nameKey(entry.name)) ?? null;
       return {
         id: entry.player_id,
         name: entry.name,
         country: entry.country,
-        nationalRanking: hasAnyRanking(fromMatches) ? fromMatches : (hasAnyRanking(fromLeague) ? fromLeague : fromMatches),
+        nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
       };
     });
 
