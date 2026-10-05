@@ -116,3 +116,68 @@ describe('buildTournaments - sparse draw data', () => {
     ]);
   });
 });
+
+describe('nameKey', () => {
+  it.each([
+    ['Do, Quan', 'Quan Do'],
+    ['Nguyen, Dung Vu Tien', 'Vu Tien Dung (Ben) Nguyen'],
+    ['Dulk, Dieudonn\u00e9e Den', 'Dieudonnee Den Dulk'],
+    ['Lee, Doris van der', 'Doris van der Lee'],
+  ])('treats %s and %s as the same name', async (a, b) => {
+    const { nameKey } = await importFresh();
+    expect(nameKey(a)).toBe(nameKey(b));
+  });
+
+  it('keeps different people apart and tolerates missing names', async () => {
+    const { nameKey } = await importFresh();
+    expect(nameKey('Do, Quan')).not.toBe(nameKey('Do, Quang'));
+    expect(nameKey(undefined)).toBe('');
+  });
+});
+
+describe('buildTournaments - league ranking by name', () => {
+  const ranking = { singles: { rank: 7, points: 500, topPoints: 1000, topName: 'Top', pctOfTop: 0.5 }, doubles: null, mixed: null };
+  const unranked = { singles: null, doubles: null, mixed: null };
+
+  function setup(entries, draws) {
+    files['tournaments.json'] = JSON.stringify({ t1: { name: 'Open' } });
+    files['tournament_details.json'] = JSON.stringify({ t1: { entries, draws: [{ draw_id: 'd1', name: 'HE' }] } });
+    files['tournament_draws_data.json'] = JSON.stringify(draws ? { t1: { d1: draws } } : {});
+    files['rankings.json'] = JSON.stringify({ players: { m1: { singles: { rank: 2, points: 900 } } }, top: { singles: { points: 1800, name: 'Top' } } });
+  }
+
+  it('gives an entrant the ranking of the one league player with the same name', async () => {
+    setup([{ player_id: 'p1', name: 'Do, Quan' }]);
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments([{ name: 'Quan Do', nationalRanking: ranking }]);
+    expect(t.players[0].nationalRanking).toEqual(ranking);
+  });
+
+  it('does not guess when two league players share the name', async () => {
+    setup([{ player_id: 'p1', name: 'Do, Quan' }]);
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments([
+      { name: 'Quan Do', nationalRanking: ranking },
+      { name: 'Do Quan', nationalRanking: unranked },
+    ]);
+    expect(t.players[0].nationalRanking).toBeNull();
+  });
+
+  it('leaves entrants without a namesake, or whose namesake is unranked, without ranking data', async () => {
+    setup([{ player_id: 'p1', name: 'Nobody, Known' }, { player_id: 'p2', name: 'Nguyen, Ben' }]);
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments([{ name: 'Ben Nguyen', nationalRanking: unranked }]);
+    expect(t.players[0].nationalRanking).toBeNull();
+    expect(t.players[1].nationalRanking).toBeNull();
+  });
+
+  it('prefers the ranking derived from match data over the name match', async () => {
+    setup(
+      [{ player_id: 'p1', name: 'Do, Quan' }],
+      { standings: [], matches: [{ sides: [{ players: [{ player_id: 'p1', member_id: 'm1' }] }] }] },
+    );
+    const { buildTournaments } = await importFresh();
+    const [t] = buildTournaments([{ name: 'Quan Do', nationalRanking: ranking }]);
+    expect(t.players[0].nationalRanking.singles.rank).toBe(2);
+  });
+});

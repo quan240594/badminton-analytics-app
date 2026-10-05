@@ -33,7 +33,7 @@ const bundle = {
   singlesH2H: Object.fromEntries(singlesH2H),
   doublesPairH2H: Object.fromEntries(doublesPairH2H),
   mixedPairH2H: Object.fromEntries(mixedPairH2H),
-  tournaments: buildTournaments(),
+  tournaments: buildTournaments(playerList),
 };
 
 mkdirSync(path.dirname(OUT_PATH), { recursive: true });
