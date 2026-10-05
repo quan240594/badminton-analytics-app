@@ -26,6 +26,7 @@ from safe_path import safe_path
 
 from discover_tournaments import discover
 from fetch_tournament_details import fetch_tournament_details
+from recheck_tournament_draws import parse_tournament_dates
 
 DATA_DIR = Path(__file__).resolve().parent
 TOURNAMENTS_PATH = DATA_DIR / "tournaments.json"
@@ -50,6 +51,14 @@ NOTHING_TO_DO = 3
 # retried last if truly nothing else is left, never deleted).
 SKIP_AFTER_FAILURES = 1
 
+# Entries keep arriving until a tournament starts, but a tournament used to be
+# scraped exactly once and never again - so anyone registering afterwards (seen
+# live: a player missing from the 57ste Hoofdstadtoernooi days after signing
+# up) never appeared. A fetched tournament becomes due again once its data is
+# this old, until the tournament has ended. Under 24h so the daily cron always
+# catches it; a refresh resets the clock, so the self-chaining loop still ends.
+STALE_AFTER_HOURS = 20
+
 
 def load_json(path: Path, default):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
@@ -71,6 +80,19 @@ def load_daily_budget(now: datetime, day_start_hour: int) -> dict:
     if state.get("dayStart") != boundary.isoformat():
         state = {"dayStart": boundary.isoformat(), "workSeconds": 0.0}
     return state
+
+
+def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime) -> bool:
+    # No usable timestamp = unknown age: treat as fresh rather than re-scraping
+    # everything at once.
+    try:
+        fetched_at = datetime.strptime(fetched_entry["fetchedAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except (KeyError, TypeError, ValueError):
+        return False
+    dates = parse_tournament_dates(tournament.get("dates", []))
+    if dates and dates[1] < now.date():
+        return False  # already over - its entry list can't change any more
+    return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS)
 
 
 def refresh_inventory(tournament_cookie_file: Path, days_back: int, days_forward: int, delay: float) -> dict:
@@ -125,10 +147,11 @@ def main() -> None:
     # instead of blocking everything behind it.
     my_tournament_ids = set(load_json(MY_TOURNAMENTS_PATH, []))
     pending = sorted(
-        (tid for tid in tournaments if tid not in fetched),
+        (tid for tid in tournaments if tid not in fetched or is_refresh_due(tournaments[tid], fetched[tid], now)),
         key=lambda tid: (
             fetch_errors.get(tid, {}).get("count", 0) >= SKIP_AFTER_FAILURES,
             tid not in my_tournament_ids,
+            tid in fetched,  # never-scraped before a refresh, within a priority tier
             tid,
         ),
     )

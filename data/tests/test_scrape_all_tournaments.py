@@ -5,6 +5,7 @@ import pytest
 import scrape_all_tournaments as sat
 from helpers_orchestrators import (
     FIXED_DAY_START,
+    FIXED_NOW,
     STAMP,
     check_current_day_start,
     check_load_daily_budget,
@@ -172,3 +173,53 @@ def test_main_reports_nothing_left_when_all_tournaments_fetched(env, monkeypatch
     assert exit_code(monkeypatch, sat, *args(env)) == sat.NOTHING_TO_DO
     assert "All 3 known tournaments already fetched" in capsys.readouterr().out
     assert env.fetches == []
+
+
+OLD = "2026-10-01T08:00:00Z"  # 28h before the frozen clock
+RECENT = "2026-10-02T06:00:00Z"  # 6h before the frozen clock
+
+
+@pytest.mark.parametrize("tournament,fetched_entry,due", [
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": OLD}, True),
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": RECENT}, False),
+    ({"dates": ["2026-09-20 00:00", "2026-09-21 23:59"]}, {"fetchedAt": OLD}, False),  # already over
+    ({"dates": ["2026-10-02 00:00"]}, {"fetchedAt": OLD}, True),  # happening today
+    ({}, {"fetchedAt": OLD}, True),  # no dates known: keep refreshing
+    ({"dates": ["2026-12-06 00:00"]}, {}, False),  # no timestamp: leave alone
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": "garbage"}, False),
+])
+def test_is_refresh_due(tournament, fetched_entry, due):
+    assert sat.is_refresh_due(tournament, fetched_entry, FIXED_NOW) is due
+
+
+def test_main_refetches_a_stale_tournament_and_updates_its_timestamp(env, monkeypatch):
+    env.tournaments = {"a": {"name": "Alpha", "dates": ["2026-12-06 00:00"]}}
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": OLD}})
+    fake_clock(monkeypatch, sat, 0.0, 1.0)
+    run_main(monkeypatch, sat, *args(env))
+    assert env.fetches == [("a", "sess=1")]
+    assert read_json(env.paths["FETCHED_TOURNAMENTS_PATH"]) == {"a": {"fetchedAt": STAMP}}
+
+
+def test_main_leaves_fresh_and_finished_tournaments_alone(env, monkeypatch):
+    env.tournaments = {"a": {"dates": ["2026-12-06 00:00"]}, "b": {"dates": ["2026-09-20 00:00"]}}
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": RECENT}, "b": {"fetchedAt": OLD}})
+    assert exit_code(monkeypatch, sat, *args(env)) == sat.NOTHING_TO_DO
+    assert env.fetches == []
+
+
+def test_main_scrapes_never_fetched_before_refreshing_stale_ones(env, monkeypatch):
+    env.tournaments = {"a": {"dates": ["2026-12-06 00:00"]}, "z": {}}
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": OLD}})
+    fake_clock(monkeypatch, sat, 0.0, 1.0)
+    run_main(monkeypatch, sat, *args(env))
+    assert env.fetches[0][0] == "z"
+
+
+def test_main_refreshes_my_stale_tournament_before_other_unfetched_ones(env, monkeypatch):
+    env.tournaments = {"a": {"dates": ["2026-12-06 00:00"]}, "z": {}}
+    write_json(env.paths["MY_TOURNAMENTS_PATH"], ["a"])
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": OLD}})
+    fake_clock(monkeypatch, sat, 0.0, 1.0)
+    run_main(monkeypatch, sat, *args(env))
+    assert env.fetches[0][0] == "a"
