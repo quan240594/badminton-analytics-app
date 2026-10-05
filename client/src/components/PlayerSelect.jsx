@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false, placeholder = 'Search player...', emptyText = 'No players found' }) {
+export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false, placeholder = 'Search player...', emptyText = 'No players found', className = '' }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -48,7 +48,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
   };
 
   return (
-    <div className="player-select">
+    <div className={className ? `player-select ${className}` : 'player-select'}>
       <label>{label}</label>
       <div className={mirrored ? 'player-select-row player-select-row--mirrored' : 'player-select-row'}>
         <input
