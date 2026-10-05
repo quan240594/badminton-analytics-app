@@ -116,3 +116,23 @@ def test_parsers_decode_html_entities_in_player_names_and_rounds():
     matches = ftd.parse_matches("<ul>" + match_block(1, [side(True, [("10", "Bj&#246;rn")])], round_title="Ronde &amp; 1"))
     assert matches[0]["sides"][0]["players"][0]["name"] == "Bj\u00f6rn"
     assert matches[0]["round"] == "Ronde & 1"
+
+
+def test_parse_matches_reads_players_whose_link_has_more_attributes():
+    link = '<a href="/x" data-player-id="73" data-club-id="28" data-nationality-id="" class="nav-link"><span class="nav-link__value">Dmytro</span> </a>'
+    [match] = ftd.parse_matches('<li class="match-group__item" id="match_1"><div class="match__row has-won">' + link + "</div>")
+    assert match["sides"] == [{"won": True, "players": [{"player_id": "73", "name": "Dmytro"}]}]
+
+
+def test_parse_matches_reads_knockout_round_names_seeds_and_byes():
+    rounds = ["Ronde van 64", "Kwartfinale", "Halve finale", "Finale"]
+    blocks = "".join(match_block(i, [side(False, [("1", "A")])], round_title=r) for i, r in enumerate(rounds))
+    assert [m["round"] for m in ftd.parse_matches(blocks)] == rounds
+
+    seeded = side(True, [("48", "Tristan Paap [1]"), ("49", "Sam Jansen [3/4]")])
+    bye = '<div class="match__row "><span> Bye </span></div>'
+    [match] = ftd.parse_matches(match_block(5, [seeded, bye]))
+    assert match["sides"] == [
+        {"won": True, "players": [{"player_id": "48", "name": "Tristan Paap", "seed": 1}, {"player_id": "49", "name": "Sam Jansen", "seed": 3}]},
+        {"won": False, "players": [], "bye": True},
+    ]

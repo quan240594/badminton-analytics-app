@@ -19,7 +19,7 @@ so every entrant is resolved once, and a ranking is only refreshed (weekly) for
 players in a tournament that has not ended yet.
 
 Usage:
-    python3 fetch_entrant_rankings.py [--cookie-file cookie.txt] [--limit 100]
+    python3 fetch_entrant_rankings.py [--cookie-file cookie.txt] [--limit 25]
 """
 
 from __future__ import annotations
@@ -239,7 +239,7 @@ def run(state: dict, entrants: Iterator[tuple[str, str, bool]], cookie: str, lim
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cookie-file", type=Path, default=Path("cookie.txt"))
-    parser.add_argument("--limit", type=int, default=100, help="max entrants to work on per invocation")
+    parser.add_argument("--limit", type=int, default=25, help="max entrants to work on per invocation")
     parser.add_argument("--delay", type=float, default=1.2)
     args = parser.parse_args()
     args.cookie_file = safe_path(args.cookie_file)

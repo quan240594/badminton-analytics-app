@@ -39,9 +39,16 @@ STANDING_CELL_RE = re.compile(r'<td class="cell-points">([^<]*)</td>')
 STANDING_CELL_NAMES = ["played", "won", "drawn", "lost", "match_record", "game_record", "points_record", "ranking_points"]
 
 MATCH_SPLIT_RE = re.compile(r'<li class="match-group__item" id="match_(\d+)">')
-ROUND_RE = re.compile(r'title="(Ronde[^"]*)"')
+# Pool rounds are "Ronde N"; a knockout names its first round "Ronde van N" but
+# the later ones are only "Kwartfinale"/"Halve finale"/"Finale".
+ROUND_RE = re.compile(r'title="((?:Ronde|Voorronde|Kwartfinale|Halve finale|Finale)[^"]*)"')
 SIDE_SPLIT_RE = re.compile(r'<div class="match__row( has-won)?\s*">')
-PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^">]*data-nationality-id="([A-Z]*)"[^">]*><span class="nav-link__value">([^<]+)</span>')
+# Attributes may follow data-nationality-id (e.g. class="nav-link"), so only the
+# opening tag's end is anchored - requiring none after it dropped every such player.
+PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]*data-nationality-id="([A-Z]*)"[^>]*>\s*<span class="nav-link__value">([^<]+)</span>')
+# A knockout shows the seed after the name ("Name [3]", doubles "[3/4]").
+SEED_RE = re.compile(r"^(.*?)\s*\[(\d+)(?:/\d+)?\]$")
+BYE_RE = re.compile(r">\s*Bye\s*<")
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 
@@ -69,6 +76,14 @@ def parse_standings(html: str) -> list[dict]:
     return standings
 
 
+def parse_match_player(player_id: str, raw_name: str) -> dict:
+    name = unescape(raw_name)
+    seeded = SEED_RE.match(name)
+    if not seeded:
+        return {"player_id": player_id, "name": name}
+    return {"player_id": player_id, "name": seeded.group(1), "seed": int(seeded.group(2))}
+
+
 def parse_matches(html: str) -> list[dict]:
     matches = []
     blocks = MATCH_SPLIT_RE.split(html)
@@ -79,8 +94,11 @@ def parse_matches(html: str) -> list[dict]:
         side_parts = SIDE_SPLIT_RE.split(block)[1:]  # [flag, body, flag, body, ...]
         sides = []
         for won_flag, body in zip(side_parts[0::2], side_parts[1::2]):
-            players = [{"player_id": pid, "name": unescape(name)} for pid, _country, name in PLAYER_RE.findall(body)]
-            sides.append({"won": won_flag == " has-won", "players": players})
+            players = [parse_match_player(pid, name) for pid, _country, name in PLAYER_RE.findall(body)]
+            side = {"won": won_flag == " has-won", "players": players}
+            if not players and BYE_RE.search(body):
+                side["bye"] = True
+            sides.append(side)
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
 

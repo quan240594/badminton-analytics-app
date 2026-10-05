@@ -264,6 +264,29 @@ export async function simulateTournamentMatch(tournamentId, prefix, sideA, sideB
   };
 }
 
+// Ratings for every entrant of one tournament in one discipline, for callers
+// that need many pairwise probabilities at once (a knockout bracket). A team
+// with any unranked member has no rating - and so no probability, never a guess.
+export async function tournamentWinModel(tournamentId, prefix) {
+  const bundle = await loadBundle();
+  const tournament = (bundle.tournaments ?? []).find((t) => t.id === tournamentId);
+  if (!tournament) throw new Error('unknown tournament id');
+  const byId = new Map(tournament.players.map((p) => [p.id, p]));
+  const memberRating = (id) => nationalRankingRating(byId.get(id)?.nationalRanking?.[prefix]);
+  const teamRating = (team) => {
+    const ratings = team.map(memberRating);
+    return ratings.some((r) => r == null) ? null : ratings.reduce((sum, r) => sum + r, 0) / ratings.length;
+  };
+  return {
+    isRated: (team) => teamRating(team) != null,
+    winProbability: (teamA, teamB) => {
+      const [ratingA, ratingB] = [teamRating(teamA), teamRating(teamB)];
+      return ratingA == null || ratingB == null ? null : expectedScore(ratingA, ratingB);
+    },
+    nameOf: (id) => byId.get(id)?.name ?? id,
+  };
+}
+
 // Generic version for League Day Simulator: works for any discipline prefix
 // ('singles', 'doubles', 'mixed'), unlike the two match-specific helpers above
 // which the single-match page's MatchupResult component depends on verbatim.

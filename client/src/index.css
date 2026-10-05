@@ -528,6 +528,22 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   vertical-align: middle;
 }
 
+.mock-format { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #94a3b8; }
+.mock-format select {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+}
+
+.knockout-round { margin-top: 1rem; }
+.knockout-round h4 { margin: 0 0 0.4rem; font-size: 0.85rem; color: #94a3b8; }
+.knockout-round .bar { max-width: 28rem; }
+.knockout-round p { margin: 0.3rem 0 0; }
+.knockout-opponents { margin: 0.4rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; }
+.knockout-title { margin-top: 1rem; font-weight: 600; }
+
 /* --- Simulator mode tabs (League vs Tournament) --- */
 .simulator-mode-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
 .simulator-mode-tabs button {
