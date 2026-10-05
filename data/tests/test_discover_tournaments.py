@@ -89,3 +89,9 @@ def test_main_exits_on_http_error(monkeypatch, tmp_path, frozen_today):
     with pytest.raises(SystemExit, match="Search request failed: HTTP 403"):
         run_main(monkeypatch, dt, "--cookie-file", str(write_cookie(tmp_path)), "--out", str(out))
     assert not out.exists()
+
+
+def test_parse_items_decodes_html_entities():
+    html = card(name="17e ABC&#39;14 Teamtoernooi &amp; Co", location="Club &amp; Co | Den Bosch")
+    assert dt.parse_items(html)[0]["name"] == "17e ABC'14 Teamtoernooi & Co"
+    assert dt.parse_items(html)[0]["club"] == "Club & Co"
