@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false }) {
+export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false, placeholder = 'Search player...', emptyText = 'No players found' }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -53,7 +53,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
       <div className={mirrored ? 'player-select-row player-select-row--mirrored' : 'player-select-row'}>
         <input
           type="text"
-          placeholder="Search player..."
+          placeholder={placeholder}
           value={open ? query : selectedName}
           onFocus={() => {
             setOpen(true);
@@ -77,11 +77,11 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
               onMouseEnter={() => setActiveIndex(idx)}
               onMouseDown={() => selectOption(p)}
             >
-              {p.name} <span className="club">{p.club}</span>
+              {p.name}{p.club && <> <span className="club">{p.club}</span></>}
               {isSubstitute?.(p) && <span className="sub-tag">(Sub)</span>}
             </li>
           ))}
-          {options.length === 0 && <li className="empty">No players found</li>}
+          {options.length === 0 && <li className="empty">{emptyText}</li>}
         </ul>
       )}
     </div>

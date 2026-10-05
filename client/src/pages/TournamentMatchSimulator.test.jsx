@@ -32,10 +32,16 @@ const TOURNAMENT = {
   ],
 };
 
+async function pickTournament() {
+  const tournamentInput = screen.getByPlaceholderText('Search tournament...');
+  fireEvent.focus(tournamentInput);
+  fireEvent.change(tournamentInput, { target: { value: 'test open' } });
+  fireEvent.mouseDown(await screen.findByText('Test Open 2026'));
+}
+
 async function selectTournamentAndPlayer(playerName) {
   render(<TournamentMatchSimulator />);
-  await screen.findByText('Test Open 2026');
-  fireEvent.change(screen.getByRole('combobox'), { target: { value: 't1' } });
+  await pickTournament();
 
   const input = screen.getByPlaceholderText('Search player...');
   fireEvent.focus(input);
@@ -103,14 +109,26 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
 
     expect(await screen.findByText('#5')).toBeInTheDocument();
     expect(await screen.findAllByText(/vs Cara Gamma/)).toHaveLength(2);
+    expect(screen.getByPlaceholderText('Search tournament...')).toHaveValue('Test Open 2026');
+  });
+
+  it('filters the tournament list by what is typed', async () => {
+    render(<TournamentMatchSimulator />);
+    await waitFor(() => expect(fetchTournaments).toHaveBeenCalled());
+
+    const input = screen.getByPlaceholderText('Search tournament...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'zzz' } });
+
+    expect(await screen.findByText('No tournaments found')).toBeInTheDocument();
   });
 
   it('ignores malformed saved state', async () => {
     localStorage.setItem(STORAGE_KEY, '{not json');
     render(<TournamentMatchSimulator />);
 
-    expect(await screen.findByText('Test Open 2026')).toBeInTheDocument();
-    expect(screen.getByRole('combobox')).toHaveValue('');
+    await waitFor(() => expect(fetchTournaments).toHaveBeenCalled());
+    expect(screen.getByPlaceholderText('Search tournament...')).toHaveValue('');
   });
 
   it('says so when the saved tournament has no scraped data', async () => {
