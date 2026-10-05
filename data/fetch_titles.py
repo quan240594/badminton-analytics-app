@@ -65,7 +65,7 @@ def fetch_titles_for_player(guid: str, cookie: str) -> list[dict]:
     for year_match in YEAR_BLOCK_RE.finditer(module_html):
         year = int(year_match.group("year"))
         for m in ENTRY_RE.finditer(year_match.group("body")):
-            discipline_code = m.group("discipline").strip()
+            discipline_code = html.unescape(m.group("discipline").strip())
             prefix = discipline_code[:2].upper()
             category = DISCIPLINE_MAP.get(prefix)
             entries.append({

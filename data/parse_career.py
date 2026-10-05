@@ -58,8 +58,8 @@ def parse_new_template_matches(html_text: str, tournament_id: str, player_id: st
         if len(parts) < 5:
             continue  # unexpected shape (e.g. a bye) - skip rather than guess
         home_won, away_won = parts[1] is not None, parts[3] is not None
-        home_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[2])]
-        away_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[4])]
+        home_players = [(pid, decode_name(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[2])]
+        away_players = [(pid, decode_name(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[4])]
         if not home_players or not away_players:
             continue
 
@@ -141,6 +141,18 @@ class PlayerPageInfo:
 
 def strip_tags(s: str) -> str:
     return re.sub(r"<[^>]+>", "", s).strip()
+
+
+def decode_name(s: str) -> str:
+    # toernooi.nl double-encodes an apostrophe in some names and prefixes a
+    # backslash (served as Noah \&amp;#039;t Jong), so one html.unescape pass still
+    # leaves \&#039; behind - decode until stable, then drop the backslash.
+    for _ in range(3):
+        decoded = html.unescape(s)
+        if decoded == s:
+            break
+        s = decoded
+    return s.replace("\\'", "'")
 
 
 def winner_side_of(home_won: bool, away_won: bool) -> str:
