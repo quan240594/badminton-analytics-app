@@ -31,7 +31,8 @@ function simulateAgainst(tournamentId, discipline, ownTeam, opponents) {
 
 function describeSide(side) {
   if (side.members?.length > 1) {
-    return `${side.name} — ${side.members.map((m) => `#${m.ranking.rank}`).join(' / ')}`;
+    const ranks = side.members.map((m) => `#${m.ranking.rank}`).join(' / ');
+    return `${side.name} — ${ranks}`;
   }
   return `${side.name} — #${side.ranking.rank} (${side.ranking.points} pts)`;
 }
@@ -167,9 +168,11 @@ export default function TournamentMatchSimulator() {
           if (opponents.length === 0) return { ...base, opponentResults: [], note: 'Nobody else is registered in this event yet.' };
           const unit = discipline === 'singles' ? 'players' : 'pairs';
           const leftOut = (event.participants ?? []).length - teams.length;
+          const leftOutNote = leftOut > 0 ? `; ${leftOut} without a partner left out` : '';
+          const poolWord = poolCount === 1 ? 'pool' : 'pools';
           return {
             ...base,
-            note: `Random pool of ${poolSize} (${poolCount} ${poolCount === 1 ? 'pool' : 'pools'} for ${teams.length} ${unit}${leftOut > 0 ? `; ${leftOut} without a partner left out` : ''})`,
+            note: `Random pool of ${poolSize} (${poolCount} ${poolWord} for ${teams.length} ${unit}${leftOutNote})`,
             opponentResults: await simulateAgainst(tournamentId, discipline, entry, opponents),
           };
         })
