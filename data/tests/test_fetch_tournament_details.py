@@ -20,6 +20,24 @@ def entry(pid, name, flag=None):
 ENTRIES_HTML = "<ul>" + entry(1, "Jan", "NED") + entry(2, "Piet") + '<li class="list__item js-alphabet-list-item">no player</li>' + entry(3, "Kees", "GER")
 
 
+EVENT_PAGE_HTML = (
+    "<caption>Inschrijvingen (3)</caption><table><tbody>"
+    '<tr><td class="green elt1">Hoofdschema</td><td><a href="player.aspx?id=X&amp;player=78">Quan Do</a></td><td>&nbsp;</td></tr>'
+    '<tr><td class="green elt1">Hoofdschema</td><td><p><a href="player.aspx?id=X&amp;player=83">Helin Chow</a></p>'
+    '<p><a href="player.aspx?id=X&amp;player=85">Tristan Paap</a></p></td><td>&nbsp;</td></tr>'
+    "<tr><td>no player here</td></tr>"
+    '</tbody></table><a href="player.aspx?id=X&amp;player=999">outside the table</a>'
+)
+
+
+def test_parse_event_participants_reads_singles_and_pairs_only_from_the_entries_table():
+    assert ftd.parse_event_participants(EVENT_PAGE_HTML) == [["78"], ["83", "85"]]
+
+
+def test_parse_event_participants_without_an_entries_table():
+    assert ftd.parse_event_participants("<html>nothing</html>") == []
+
+
 def test_parse_events():
     assert ftd.parse_events(EVENTS_HTML) == [
         {"event_id": "5", "name": "Heren Enkel", "draws": 3, "entries": 40},
@@ -64,16 +82,26 @@ def test_fetch_entries_fragment_posts_form_xhr(monkeypatch):
     assert headers["x-requested-with"] == "XMLHttpRequest"
 
 
-def test_fetch_tournament_details_combines_three_requests(monkeypatch):
-    fake = install_urlopen(monkeypatch, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML})
+def test_fetch_tournament_details_combines_three_requests_plus_one_per_event(monkeypatch):
+    fake = install_urlopen(monkeypatch, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML, "event.aspx": EVENT_PAGE_HTML})
     details = ftd.fetch_tournament_details("AB-CD", "c")
     assert [len(details[key]) for key in ("events", "draws", "entries")] == [2, 2, 3]
     assert fake.urls[0] == "https://badmintonnederland.toernooi.nl/sport/events.aspx?id=AB-CD"
     assert fake.urls[1].endswith("draws.aspx?id=AB-CD")
+    assert [e["participants"] for e in details["events"]] == [[["78"], ["83", "85"]]] * 2
+    assert sorted(u.split("event.aspx?id=AB-CD&event=")[1] for u in fake.urls if "event.aspx" in u) == ["5", "6"]
+
+
+def test_fetch_tournament_details_skips_the_event_page_when_nobody_entered(monkeypatch):
+    empty_events = EVENTS_HTML.replace('<td class="right">40</td>', '<td class="right">0</td>')
+    fake = install_urlopen(monkeypatch, {"events.aspx": empty_events, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML, "event.aspx": EVENT_PAGE_HTML})
+    details = ftd.fetch_tournament_details("AB-CD", "c")
+    assert [e["participants"] for e in details["events"]] == [[], [["78"], ["83", "85"]]]
+    assert sum("event.aspx" in u for u in fake.urls) == 1
 
 
 def test_main_merges_details_into_output(monkeypatch, tmp_path, capsys):
-    patch_io(monkeypatch, ftd, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML})
+    patch_io(monkeypatch, ftd, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML, "event.aspx": EVENT_PAGE_HTML})
     out = write_json(tmp_path / "details.json", {"OTHER": {"events": []}})
     run_main(monkeypatch, ftd, "ab-cd", "--cookie-file", str(write_cookie(tmp_path)), "--out", str(out))
     saved = read_json(out)

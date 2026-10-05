@@ -58,6 +58,11 @@ SKIP_AFTER_FAILURES = 1
 # this old, until the tournament has ended. Under 24h so the daily cron always
 # catches it; a refresh resets the clock, so the self-chaining loop still ends.
 STALE_AFTER_HOURS = 20
+# Bump when fetch_tournament_details starts collecting more (or different) data,
+# so tournaments fetched in the old shape are re-fetched once (unless already
+# over) instead of waiting for entry-list staleness to catch up.
+# 2 = events carry per-event participants.
+FETCH_SCHEMA = 2
 
 
 def load_json(path: Path, default):
@@ -83,15 +88,17 @@ def load_daily_budget(now: datetime, day_start_hour: int) -> dict:
 
 
 def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime) -> bool:
+    dates = parse_tournament_dates(tournament.get("dates", []))
+    if dates and dates[1] < now.date():
+        return False  # already over - its entry list can't change any more
+    if fetched_entry.get("schema", 1) < FETCH_SCHEMA:
+        return True  # fetched before the current data shape existed
     # No usable timestamp = unknown age: treat as fresh rather than re-scraping
     # everything at once.
     try:
         fetched_at = datetime.strptime(fetched_entry["fetchedAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     except (KeyError, TypeError, ValueError):
         return False
-    dates = parse_tournament_dates(tournament.get("dates", []))
-    if dates and dates[1] < now.date():
-        return False  # already over - its entry list can't change any more
     return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS)
 
 
@@ -199,7 +206,7 @@ def main() -> None:
     all_details[tournament_id] = details
     save_json(DETAILS_PATH, all_details)
 
-    fetched[tournament_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    fetched[tournament_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "schema": FETCH_SCHEMA}
     save_json(FETCHED_TOURNAMENTS_PATH, fetched)
 
     print(

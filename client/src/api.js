@@ -207,35 +207,58 @@ function nationalRankingRating(entry) {
 
 // Tournament entrants mostly have no league match history (no ELO rating) -
 // national ranking is the only real signal for them, and not something to
-// silently default: if either player has no ranking data for this
+// silently default: if anyone on either side has no ranking data for this
 // discipline, the match can't be simulated, full stop.
-export async function simulateTournamentMatch(tournamentId, prefix, playerAId, playerBId) {
+//
+// Each side is a player id, or an array of ids for a doubles/mixed pair - a
+// pair is rated as the mean of its members' ratings, like the league simulator.
+const toIds = (side) => (Array.isArray(side) ? side : [side]);
+
+// Entrant names are "Last, First", so commas can't also separate a list of them.
+const joinNames = (names) => {
+  if (names.length < 3) return names.join(' and ');
+  const separator = names.some((name) => name.includes(',')) ? '; ' : ', ';
+  return `${names.slice(0, -1).join(separator)} and ${names.at(-1)}`;
+};
+
+export async function simulateTournamentMatch(tournamentId, prefix, sideA, sideB) {
   const bundle = await loadBundle();
   const tournament = (bundle.tournaments ?? []).find((t) => t.id === tournamentId);
   if (!tournament) throw new Error('unknown tournament id');
   const byId = new Map(tournament.players.map((p) => [p.id, p]));
-  const playerA = byId.get(playerAId);
-  const playerB = byId.get(playerBId);
-  if (!playerA || !playerB) throw new Error('unknown player id(s)');
-  if (playerAId === playerBId) throw new Error('players must be different');
+  const idsA = toIds(sideA);
+  const idsB = toIds(sideB);
+  const members = [...idsA, ...idsB].map((id) => byId.get(id));
+  if (members.some((p) => !p)) throw new Error('unknown player id(s)');
+  if (new Set([...idsA, ...idsB]).size !== idsA.length + idsB.length) throw new Error('players must be different');
 
-  const entryA = playerA.nationalRanking?.[prefix] ?? null;
-  const entryB = playerB.nationalRanking?.[prefix] ?? null;
-  const ratingA = nationalRankingRating(entryA);
-  const ratingB = nationalRankingRating(entryB);
+  const describe = (ids) => ids.map((id) => {
+    const player = byId.get(id);
+    return { id, name: player.name, ranking: player.nationalRanking?.[prefix] ?? null };
+  });
+  const detailA = describe(idsA);
+  const detailB = describe(idsB);
 
-  if (ratingA == null || ratingB == null) {
-    const missing = [ratingA == null ? playerA.name : null, ratingB == null ? playerB.name : null].filter(Boolean);
+  const ratings = [...detailA, ...detailB].map((m) => nationalRankingRating(m.ranking));
+  if (ratings.some((r) => r == null)) {
+    const missing = [...detailA, ...detailB].filter((m) => nationalRankingRating(m.ranking) == null).map((m) => m.name);
     return {
       error: true,
-      message: `${missing.join(' and ')} ${missing.length > 1 ? 'have' : 'has'} no national ranking data to simulate this match with.`,
+      message: `${joinNames(missing)} ${missing.length > 1 ? 'have' : 'has'} no national ranking data to simulate this match with.`,
     };
   }
 
-  const probA = expectedScore(ratingA, ratingB);
+  const mean = (side) => side.reduce((sum, m) => sum + nationalRankingRating(m.ranking), 0) / side.length;
+  const probA = expectedScore(mean(detailA), mean(detailB));
+  const summarize = (detail) => ({
+    id: detail.map((m) => m.id).join('+'),
+    name: detail.map((m) => m.name).join(' / '),
+    ranking: detail.length === 1 ? detail[0].ranking : null,
+    members: detail,
+  });
   return {
-    sideA: { id: playerA.id, name: playerA.name, ranking: entryA },
-    sideB: { id: playerB.id, name: playerB.name, ranking: entryB },
+    sideA: summarize(detailA),
+    sideB: summarize(detailB),
     winProbabilityA: probA,
     winProbabilityB: 1 - probA,
   };

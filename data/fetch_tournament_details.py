@@ -40,6 +40,9 @@ DRAW_ROW_RE = re.compile(
 # players without a recorded nationality, so it can't be a required anchor.
 ENTRY_SPLIT_RE = re.compile(r'<li class="list__item js-alphabet-list-item"')
 ENTRY_FLAG_RE = re.compile(r'flags/([A-Z]+)\.svg')
+# One row of an event page's "Inschrijvingen" table = one entry: a single link
+# for singles (or a doubles player still without a partner), two links for a pair.
+EVENT_ROW_PLAYER_RE = re.compile(r'player\.aspx\?id=[^&"]+&(?:amp;)?player=(\d+)')
 ENTRY_PLAYER_RE = re.compile(
     r'<a href="/sport/player\.aspx\?id=[^&]+&(?:amp;)?player=(\d+)" class="nav-link media__link">'
     r'<span class="nav-link__value">([^<]+)</span>'
@@ -91,12 +94,34 @@ def parse_entries(html: str) -> list[dict]:
     return entries
 
 
+def parse_event_participants(html: str) -> list[list[str]]:
+    # The overall entry list says who is in the tournament, not who is in which
+    # event - this per-event table does. Each entry is the list of its player
+    # ids (two for a doubles pair), which join straight onto the entries' ids.
+    _, _, after = html.partition("Inschrijvingen")
+    table = after.split("</table>", 1)[0]
+    participants = []
+    for row in re.findall(r"<tr>(.*?)</tr>", table, re.DOTALL):
+        ids = EVENT_ROW_PLAYER_RE.findall(row)
+        if ids:
+            participants.append(ids)
+    return participants
+
+
+def fetch_event_participants(tournament_id: str, event_id: str, cookie: str) -> list[list[str]]:
+    return parse_event_participants(fetch(f"{BASE_URL}event.aspx?id={tournament_id}&event={event_id}", cookie))
+
+
 def fetch_tournament_details(tournament_id: str, cookie: str) -> dict:
     events_html = fetch(f"{BASE_URL}events.aspx?id={tournament_id}", cookie)
     draws_html = fetch(f"{BASE_URL}draws.aspx?id={tournament_id}", cookie)
     entries_html = fetch_entries_fragment(tournament_id, cookie)
+    events = parse_events(events_html)
+    for event in events:
+        # An event with no entries has no table to fetch.
+        event["participants"] = fetch_event_participants(tournament_id, event["event_id"], cookie) if event["entries"] else []
     return {
-        "events": parse_events(events_html),
+        "events": events,
         "draws": parse_draws(draws_html),
         "entries": parse_entries(entries_html),
     }

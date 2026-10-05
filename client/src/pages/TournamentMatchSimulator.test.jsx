@@ -81,7 +81,7 @@ describe('TournamentMatchSimulator', () => {
   it("tells the user when the selected player isn't entered in any draw", async () => {
     await selectTournamentAndPlayer('Dana Delta');
 
-    expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
+    expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
     expect(simulateTournamentMatch).not.toHaveBeenCalled();
   });
 });
@@ -153,7 +153,7 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
 
     await selectTournamentAndPlayer('Alice Alpha');
 
-    expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
+    expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
     expect(simulateTournamentMatch).not.toHaveBeenCalled();
   });
 
@@ -175,7 +175,7 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
 
     await selectTournamentAndPlayer('Alice Alpha');
 
-    expect(await screen.findByText("This player isn't in any scraped draw for this tournament yet.")).toBeInTheDocument();
+    expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
   });
 
   it('shows the error when a simulation fails', async () => {
@@ -191,5 +191,198 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
     render(<TournamentMatchSimulator />);
 
     expect(await screen.findByText('bundle missing')).toBeInTheDocument();
+  });
+});
+
+describe('TournamentMatchSimulator - mocked draws', () => {
+  const doublesRank = (rank, pct) => ({ doubles: { rank, points: 100 * pct, topPoints: 100, pctOfTop: pct } });
+  const singlesRank = (rank, pct) => ({ singles: { rank, points: 100 * pct, topPoints: 100, pctOfTop: pct } });
+  const BUTTON = { name: 'Simulate matches with mocked draws' };
+  const NO_DRAWS_YET = {
+    id: 't1',
+    name: 'Test Open 2026',
+    players: [
+      { id: 'me', name: 'Do, Quan', nationalRanking: { ...singlesRank(1761, 0.5), ...doublesRank(1688, 0.5) } },
+      { id: 'pa', name: 'Nguyen, Dung', nationalRanking: doublesRank(900, 0.4) },
+      { id: 'o1', name: 'One, Opp', nationalRanking: singlesRank(10, 0.9) },
+      { id: 'o2', name: 'Two, Opp', nationalRanking: singlesRank(20, 0.8) },
+      { id: 'o3', name: 'Three, Opp', nationalRanking: singlesRank(30, 0.7) },
+      { id: 'q1', name: 'Q, One', nationalRanking: doublesRank(5, 0.9) },
+      { id: 'q2', name: 'Q, Two', nationalRanking: doublesRank(6, 0.8) },
+      { id: 'lone', name: 'Lone, Wolf', nationalRanking: null },
+    ],
+    draws: [],
+    events: [
+      { event_id: '11', name: 'Categorie 7 -  Heren Enkel', entries: 4, participants: [['me'], ['o1'], ['o2'], ['o3']] },
+      { event_id: '13', name: 'Categorie 7 -  Heren Dubbel', entries: 3, participants: [['me', 'pa'], ['q1', 'q2'], ['lone']] },
+    ],
+  };
+  const withEvents = (events, extra = {}) => ({ ...NO_DRAWS_YET, ...extra, events });
+
+  async function selectPlayer(tournament, playerName) {
+    fetchTournaments.mockResolvedValue([tournament]);
+    render(<TournamentMatchSimulator />);
+    await pickTournament();
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: playerName } });
+    fireEvent.mouseDown(await screen.findByText(playerName));
+  }
+  const selectMe = (tournament = NO_DRAWS_YET) => selectPlayer(tournament, 'Do, Quan');
+  const clickMock = async () => fireEvent.click(await screen.findByRole('button', BUTTON));
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    simulateTournamentMatch.mockImplementation((_t, _d, _a, b) => Promise.resolve({
+      sideB: Array.isArray(b)
+        ? { name: 'Q, One / Q, Two', ranking: null, members: [{ ranking: { rank: 5 } }, { ranking: { rank: 6 } }] }
+        : { name: `Opp ${b}`, ranking: { rank: 10, points: 90 }, members: [{ ranking: { rank: 10 } }] },
+      winProbabilityA: 0.6,
+      winProbabilityB: 0.4,
+    }));
+  });
+
+  it('offers a mocked draw next to the empty-state text, and simulates nothing until it is clicked', async () => {
+    await selectMe();
+
+    const text = await screen.findByText('No draw data available yet');
+    expect(screen.getByRole('button', BUTTON).parentElement).toContainElement(text);
+    expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+
+  it('simulates every discipline the player is entered in, with the doubles partner', async () => {
+    await selectMe();
+    await clickMock();
+
+    expect(await screen.findByText('Categorie 7 - Heren Enkel')).toBeInTheDocument();
+    expect(screen.getByText('Categorie 7 - Heren Dubbel')).toBeInTheDocument();
+    expect(screen.getAllByText('Mocked draw')).toHaveLength(2);
+    expect(screen.getByText('Playing with Nguyen, Dung')).toBeInTheDocument();
+
+    const singles = simulateTournamentMatch.mock.calls.filter(([, d]) => d === 'singles');
+    expect(singles.every(([t, , a]) => t === 't1' && a === 'me')).toBe(true);
+    expect(singles.map(([, , , b]) => b).sort()).toEqual(['o1', 'o2', 'o3']);
+    expect(simulateTournamentMatch.mock.calls.filter(([, d]) => d === 'doubles')).toEqual([['t1', 'doubles', ['me', 'pa'], ['q1', 'q2']]]);
+    expect(screen.getByText(/vs Q, One \/ Q, Two — #5 \/ #6/)).toBeInTheDocument();
+  });
+
+  it('describes the random pool, counting only complete pairs for doubles', async () => {
+    await selectMe();
+    await clickMock();
+
+    expect(await screen.findByText('Random pool of 4 (1 pool for 4 players)')).toBeInTheDocument();
+    expect(screen.getByText('Random pool of 2 (1 pool for 2 pairs; 1 without a partner left out)')).toBeInTheDocument();
+  });
+
+  it('leaves out a doubles entry that has no partner yet', async () => {
+    await selectMe();
+    await clickMock();
+    await screen.findByText('Categorie 7 - Heren Dubbel');
+
+    expect(JSON.stringify(simulateTournamentMatch.mock.calls)).not.toContain('lone');
+  });
+
+  it('draws a different random pool on every click', async () => {
+    const xs = Array.from({ length: 12 }, (_, i) => `x${i}`);
+    const big = withEvents(
+      [{ event_id: '11', name: 'Categorie 7 -  Heren Enkel', entries: 13, participants: [['me'], ...xs.map((id) => [id])] }],
+      { players: [...NO_DRAWS_YET.players, ...xs.map((id, i) => ({ id, name: id, nationalRanking: singlesRank(i, 0.5) }))] },
+    );
+    await selectMe(big);
+    const random = vi.spyOn(Math, 'random');
+    const opponentsAfterClick = async (randomValue) => {
+      random.mockReturnValue(randomValue);
+      simulateTournamentMatch.mockClear();
+      await clickMock();
+      await waitFor(() => expect(simulateTournamentMatch).toHaveBeenCalled());
+      await screen.findByText('Mocked draw');
+      return simulateTournamentMatch.mock.calls.map(([, , , b]) => b).sort();
+    };
+
+    const first = await opponentsAfterClick(0.05);
+    const second = await opponentsAfterClick(0.95);
+    random.mockRestore();
+
+    expect(first.length).toBeGreaterThanOrEqual(3);
+    expect(second.length).toBeGreaterThanOrEqual(3);
+    expect(first).not.toEqual(second);
+  });
+
+  it('shows the no-national-data message for an unranked opponent', async () => {
+    simulateTournamentMatch.mockResolvedValue({ error: true, message: 'Two, Opp has no national ranking data to simulate this match with.' });
+    await selectMe();
+    await clickMock();
+
+    expect((await screen.findAllByText(/has no national ranking data/)).length).toBeGreaterThan(0);
+  });
+
+  it("explains when the player's own doubles entry has no partner yet", async () => {
+    await selectMe(withEvents([{ event_id: '13', name: 'Categorie 7 -  Heren Dubbel', entries: 2, participants: [['me'], ['q1', 'q2']] }]));
+    await clickMock();
+
+    expect(await screen.findByText('Still waiting for a partner to be registered.')).toBeInTheDocument();
+    expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+
+  it('says so when nobody else is registered in the event', async () => {
+    await selectMe(withEvents([{ event_id: '11', name: 'Categorie 7 -  Heren Enkel', entries: 1, participants: [['me']] }]));
+    await clickMock();
+
+    expect(await screen.findByText('Nobody else is registered in this event yet.')).toBeInTheDocument();
+  });
+
+  it('shows no button when per-event entrants are not known', async () => {
+    await selectMe(withEvents([{ event_id: '11', name: 'Categorie 7 -  Heren Enkel', entries: 4 }]));
+
+    expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
+    expect(screen.queryByRole('button', BUTTON)).not.toBeInTheDocument();
+  });
+
+  it('only mocks the events that still lack a published draw, next to the real ones', async () => {
+    await selectMe(withEvents(NO_DRAWS_YET.events, {
+      draws: [{ draw_id: 'd1', name: 'Categorie 7 - Heren Enkel', standings: [{ players: [{ player_id: 'me' }] }, { players: [{ player_id: 'o1' }] }] }],
+    }));
+
+    expect(await screen.findByText('No draw data available yet for Categorie 7 - Heren Dubbel')).toBeInTheDocument();
+    await clickMock();
+    await screen.findAllByText('Mocked draw');
+
+    expect(screen.getAllByText('Mocked draw')).toHaveLength(1);
+    expect(simulateTournamentMatch.mock.calls.filter(([, d]) => d === 'doubles')).toHaveLength(1);
+  });
+
+  it('simulates a published doubles draw as pair against pair', async () => {
+    await selectMe(withEvents([], {
+      draws: [{
+        draw_id: 'd2',
+        name: 'Categorie 7 - Heren Dubbel',
+        standings: [{ players: [{ player_id: 'me' }, { player_id: 'pa' }] }, { players: [{ player_id: 'q1' }, { player_id: 'q2' }] }],
+      }],
+    }));
+
+    await waitFor(() => expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', 'doubles', ['me', 'pa'], ['q1', 'q2']));
+    expect(await screen.findByText('Playing with Nguyen, Dung')).toBeInTheDocument();
+  });
+
+  it('clears the mocked results when another player is picked', async () => {
+    await selectMe();
+    await clickMock();
+    await screen.findAllByText('Mocked draw');
+
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'Lone' } });
+    fireEvent.mouseDown(await screen.findByText('Lone, Wolf'));
+
+    await waitFor(() => expect(screen.queryByText('Mocked draw')).not.toBeInTheDocument());
+  });
+
+  it('shows the error when a mocked simulation fails', async () => {
+    simulateTournamentMatch.mockRejectedValue(new Error('boom'));
+    await selectMe();
+    await clickMock();
+
+    expect(await screen.findByText('boom')).toBeInTheDocument();
   });
 });
