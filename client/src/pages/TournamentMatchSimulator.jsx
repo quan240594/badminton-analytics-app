@@ -129,6 +129,7 @@ export default function TournamentMatchSimulator() {
           showClub={false}
           placeholder="Search tournament..."
           emptyText="No tournaments found"
+          className="tournament-select"
         />
         <PlayerSelect label="Player" players={players} value={playerId} onChange={setPlayerId} />
       </div>

@@ -497,6 +497,17 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .tournament-simulator .league-day-controls .player-select-row { flex: 1; min-width: 0; }
 .tournament-simulator .league-day-controls .player-select input { padding: 0.3rem 0.5rem; }
 
+/* Tournament names are long (up to ~65 chars) and there are dozens - give this
+   picker room for a full name on one line and a taller list than the 220px
+   player lists, which the old native select effectively had. */
+.tournament-simulator .league-day-controls .player-select.tournament-select {
+  flex: 1 1 36rem;
+  max-width: 100%;
+  min-width: 0;
+}
+.tournament-select .player-options { max-height: min(60vh, 28rem); }
+.tournament-select .player-options li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 /* --- Simulator mode tabs (League vs Tournament) --- */
 .simulator-mode-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
 .simulator-mode-tabs button {

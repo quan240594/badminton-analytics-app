@@ -131,3 +131,16 @@ describe('PlayerSelect - hover, blur and empty Enter', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 });
+
+
+describe('PlayerSelect - className', () => {
+  it('adds an extra class to the root without losing the base class', () => {
+    const { container } = render(<PlayerSelect label="Tournament" players={players} value="" onChange={() => {}} className="tournament-select" />);
+    expect(container.firstChild).toHaveClass('player-select', 'tournament-select');
+  });
+
+  it('keeps just the base class by default', () => {
+    const { container } = render(<PlayerSelect label="Player A" players={players} value="" onChange={() => {}} />);
+    expect(container.firstChild.className).toBe('player-select');
+  });
+});
