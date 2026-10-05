@@ -92,7 +92,7 @@ def test_main_success_records_details_and_clears_previous_errors(env, monkeypatc
     assert env.fetches == [("a", "sess=1")]
     assert read_json(env.paths["FETCH_ERRORS_PATH"]) == {}
     assert read_json(env.paths["DETAILS_PATH"]) == {"zzz": {"events": []}, "a": DETAILS}
-    assert read_json(env.paths["FETCHED_TOURNAMENTS_PATH"]) == {"a": {"fetchedAt": STAMP}}
+    assert read_json(env.paths["FETCHED_TOURNAMENTS_PATH"]) == {"a": {"fetchedAt": STAMP, "schema": sat.FETCH_SCHEMA}}
     assert read_json(env.paths["DAILY_BUDGET_PATH"])["workSeconds"] == 180.0
     out = capsys.readouterr().out
     assert "Tournament a (Alpha)... [0/1 done before this run" in out
@@ -169,7 +169,7 @@ def test_main_force_ignores_exhausted_budget(env, monkeypatch):
 
 
 def test_main_reports_nothing_left_when_all_tournaments_fetched(env, monkeypatch, capsys):
-    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {}, "b": {}, "c": {}})
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {k: {"schema": sat.FETCH_SCHEMA} for k in "abc"})
     assert exit_code(monkeypatch, sat, *args(env)) == sat.NOTHING_TO_DO
     assert "All 3 known tournaments already fetched" in capsys.readouterr().out
     assert env.fetches == []
@@ -177,16 +177,20 @@ def test_main_reports_nothing_left_when_all_tournaments_fetched(env, monkeypatch
 
 OLD = "2026-10-01T08:00:00Z"  # 28h before the frozen clock
 RECENT = "2026-10-02T06:00:00Z"  # 6h before the frozen clock
+CURRENT = sat.FETCH_SCHEMA
 
 
 @pytest.mark.parametrize("tournament,fetched_entry,due", [
-    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": OLD}, True),
-    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": RECENT}, False),
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": OLD, "schema": CURRENT}, True),
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": RECENT, "schema": CURRENT}, False),
     ({"dates": ["2026-09-20 00:00", "2026-09-21 23:59"]}, {"fetchedAt": OLD}, False),  # already over
-    ({"dates": ["2026-10-02 00:00"]}, {"fetchedAt": OLD}, True),  # happening today
-    ({}, {"fetchedAt": OLD}, True),  # no dates known: keep refreshing
-    ({"dates": ["2026-12-06 00:00"]}, {}, False),  # no timestamp: leave alone
-    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": "garbage"}, False),
+    ({"dates": ["2026-10-02 00:00"]}, {"fetchedAt": OLD, "schema": CURRENT}, True),  # happening today
+    ({}, {"fetchedAt": OLD, "schema": CURRENT}, True),  # no dates known: keep refreshing
+    ({"dates": ["2026-12-06 00:00"]}, {"schema": CURRENT}, False),  # no timestamp: leave alone
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": "garbage", "schema": CURRENT}, False),
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": RECENT}, True),  # fetched before the current schema, even if recent
+    ({"dates": ["2026-12-06 00:00"]}, {"fetchedAt": RECENT, "schema": CURRENT - 1}, True),
+    ({"dates": ["2026-09-20 00:00"]}, {"fetchedAt": RECENT}, False),  # old schema but already over: nothing to gain
 ])
 def test_is_refresh_due(tournament, fetched_entry, due):
     assert sat.is_refresh_due(tournament, fetched_entry, FIXED_NOW) is due
@@ -194,16 +198,16 @@ def test_is_refresh_due(tournament, fetched_entry, due):
 
 def test_main_refetches_a_stale_tournament_and_updates_its_timestamp(env, monkeypatch):
     env.tournaments = {"a": {"name": "Alpha", "dates": ["2026-12-06 00:00"]}}
-    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": OLD}})
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": OLD, "schema": CURRENT}})
     fake_clock(monkeypatch, sat, 0.0, 1.0)
     run_main(monkeypatch, sat, *args(env))
     assert env.fetches == [("a", "sess=1")]
-    assert read_json(env.paths["FETCHED_TOURNAMENTS_PATH"]) == {"a": {"fetchedAt": STAMP}}
+    assert read_json(env.paths["FETCHED_TOURNAMENTS_PATH"]) == {"a": {"fetchedAt": STAMP, "schema": sat.FETCH_SCHEMA}}
 
 
 def test_main_leaves_fresh_and_finished_tournaments_alone(env, monkeypatch):
     env.tournaments = {"a": {"dates": ["2026-12-06 00:00"]}, "b": {"dates": ["2026-09-20 00:00"]}}
-    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": RECENT}, "b": {"fetchedAt": OLD}})
+    write_json(env.paths["FETCHED_TOURNAMENTS_PATH"], {"a": {"fetchedAt": RECENT, "schema": CURRENT}, "b": {"fetchedAt": OLD, "schema": CURRENT}})
     assert exit_code(monkeypatch, sat, *args(env)) == sat.NOTHING_TO_DO
     assert env.fetches == []
 

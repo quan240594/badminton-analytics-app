@@ -106,6 +106,89 @@ describe('simulateTournamentMatch', () => {
   });
 });
 
+describe('simulateTournamentMatch - teams', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  const ranked = (pct) => ({ doubles: { rank: 1, points: 100 * pct, topPoints: 100, pctOfTop: pct } });
+  function mockPlayers(players) {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ players: [], meta: {}, tournaments: [{ id: 't1', name: 'Open', players }] }),
+    });
+  }
+
+  it('rates a pair as the mean of its members and reports each member', async () => {
+    mockPlayers([
+      { id: 'a', name: 'Ann', nationalRanking: ranked(0.9) },
+      { id: 'b', name: 'Bo', nationalRanking: ranked(0.5) },
+      { id: 'c', name: 'Cy', nationalRanking: ranked(0.7) },
+      { id: 'd', name: 'Di', nationalRanking: ranked(0.7) },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+    const result = await simulateTournamentMatch('t1', 'doubles', ['a', 'b'], ['c', 'd']);
+
+    // 0.9 and 0.5 average to exactly 0.7, the opposing pair's rating.
+    expect(result.winProbabilityA).toBeCloseTo(0.5);
+    expect(result.sideA).toMatchObject({ id: 'a+b', name: 'Ann / Bo', ranking: null });
+    expect(result.sideA.members.map((m) => m.name)).toEqual(['Ann', 'Bo']);
+    expect(result.sideB.members).toHaveLength(2);
+  });
+
+  it('keeps a singles side as one member with its own ranking', async () => {
+    mockPlayers([
+      { id: 'a', name: 'Ann', nationalRanking: ranked(0.9) },
+      { id: 'c', name: 'Cy', nationalRanking: ranked(0.7) },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+    const result = await simulateTournamentMatch('t1', 'doubles', 'a', ['c']);
+
+    expect(result.sideA).toMatchObject({ id: 'a', name: 'Ann', ranking: ranked(0.9).doubles });
+    expect(result.sideB.members).toHaveLength(1);
+    expect(result.winProbabilityA).toBeGreaterThan(0.5);
+  });
+
+  it('names everyone without ranking data across both pairs', async () => {
+    mockPlayers([
+      { id: 'a', name: 'Ann', nationalRanking: ranked(0.9) },
+      { id: 'b', name: 'Bo', nationalRanking: null },
+      { id: 'c', name: 'Cy', nationalRanking: null },
+      { id: 'd', name: 'Di', nationalRanking: null },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+
+    expect((await simulateTournamentMatch('t1', 'doubles', ['a', 'b'], ['c', 'd'])).message)
+      .toBe('Bo, Cy and Di have no national ranking data to simulate this match with.');
+    expect((await simulateTournamentMatch('t1', 'doubles', ['a', 'b'], ['c'])).message)
+      .toBe('Bo and Cy have no national ranking data to simulate this match with.');
+  });
+
+  it('separates "Last, First" names with semicolons so the list stays readable', async () => {
+    mockPlayers([
+      { id: 'a', name: 'Do, Quan', nationalRanking: ranked(0.9) },
+      { id: 'b', name: 'Nguyen, Dung', nationalRanking: null },
+      { id: 'c', name: 'Geels, Maarten', nationalRanking: null },
+      { id: 'd', name: 'Reichardt, Bj\u00f6rn', nationalRanking: null },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+
+    expect((await simulateTournamentMatch('t1', 'doubles', ['a', 'b'], ['c', 'd'])).message)
+      .toBe('Nguyen, Dung; Geels, Maarten and Reichardt, Bj\u00f6rn have no national ranking data to simulate this match with.');
+  });
+
+  it('rejects a player appearing on both sides or an unknown member', async () => {
+    mockPlayers([
+      { id: 'a', name: 'Ann', nationalRanking: ranked(0.9) },
+      { id: 'b', name: 'Bo', nationalRanking: ranked(0.5) },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+
+    await expect(simulateTournamentMatch('t1', 'doubles', ['a', 'b'], ['b'])).rejects.toThrow('players must be different');
+    await expect(simulateTournamentMatch('t1', 'doubles', ['a', 'ghost'], ['b'])).rejects.toThrow('unknown player id(s)');
+  });
+});
+
 describe('simulateTournamentMatch - invalid input', () => {
   beforeEach(() => {
     vi.restoreAllMocks();

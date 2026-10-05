@@ -508,6 +508,26 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .tournament-select .player-options { max-height: min(60vh, 28rem); }
 .tournament-select .player-options li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+/* .sides is a row of two cards elsewhere; here it holds one probability bar and
+   its label, and the bar would otherwise shrink to the width of its text. */
+.tournament-simulator .sides { align-items: center; }
+.tournament-simulator .sides .bar { flex: 0 1 28rem; min-width: 12rem; }
+.tournament-simulator .sides .bar > div { white-space: nowrap; }
+.tournament-simulator .sides .rating { margin: 0; }
+
+.no-draw-row { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+.no-draw-row p { margin: 0; }
+.mock-badge {
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #f59e0b;
+  color: #fbbf24;
+  font-size: 0.7rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
 /* --- Simulator mode tabs (League vs Tournament) --- */
 .simulator-mode-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
 .simulator-mode-tabs button {
