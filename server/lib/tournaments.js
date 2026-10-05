@@ -47,7 +47,7 @@ function localIdToMemberId(drawsForTournament) {
 // sorted set of accent-stripped words (nicknames in brackets dropped), which
 // makes the word order irrelevant.
 export function nameKey(name) {
-  return (String(name ?? '').replace(/\([^)]*\)/g, ' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().match(/[a-z0-9]+/g) ?? []).sort().join(' ');
+  return (String(name ?? '').replace(/\([^)]{0,100}\)/g, ' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().match(/[a-z0-9]+/g) ?? []).sort().join(' ');
 }
 
 // League players grouped by name key. A name only counts as identifying when

@@ -29,6 +29,7 @@ from fetch_tournament_details import fetch_tournament_details
 from recheck_tournament_draws import parse_tournament_dates
 
 DATA_DIR = Path(__file__).resolve().parent
+TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 TOURNAMENTS_PATH = DATA_DIR / "tournaments.json"
 FETCHED_TOURNAMENTS_PATH = DATA_DIR / "fetched_tournaments.json"
 DAILY_BUDGET_PATH = DATA_DIR / "tournament_scrape_daily_budget.json"
@@ -96,7 +97,7 @@ def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime) -> bool
     # No usable timestamp = unknown age: treat as fresh rather than re-scraping
     # everything at once.
     try:
-        fetched_at = datetime.strptime(fetched_entry["fetchedAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        fetched_at = datetime.strptime(fetched_entry["fetchedAt"], TIMESTAMP_FORMAT).replace(tzinfo=timezone.utc)
     except (KeyError, TypeError, ValueError):
         return False
     return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS)
@@ -187,7 +188,7 @@ def main() -> None:
         error_entry = fetch_errors.get(tournament_id, {"count": 0})
         error_entry["count"] += 1
         error_entry["lastError"] = str(ex)
-        error_entry["lastAttempt"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        error_entry["lastAttempt"] = time.strftime(TIMESTAMP_FORMAT, time.gmtime())
         fetch_errors[tournament_id] = error_entry
         save_json(FETCH_ERRORS_PATH, fetch_errors)
         print(f"  FAILED (attempt {error_entry['count']} for this tournament): {ex}", flush=True)
@@ -206,7 +207,7 @@ def main() -> None:
     all_details[tournament_id] = details
     save_json(DETAILS_PATH, all_details)
 
-    fetched[tournament_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "schema": FETCH_SCHEMA}
+    fetched[tournament_id] = {"fetchedAt": time.strftime(TIMESTAMP_FORMAT, time.gmtime()), "schema": FETCH_SCHEMA}
     save_json(FETCHED_TOURNAMENTS_PATH, fetched)
 
     print(

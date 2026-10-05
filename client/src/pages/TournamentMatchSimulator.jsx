@@ -70,9 +70,13 @@ async function simulatePublishedDraw(tournamentId, { draw, format, discipline, o
 const percent = (p) => `${Math.round(p * 100)}%`;
 const MAX_OPPONENTS_SHOWN = 3;
 
+// A certain opponent is just named; otherwise show how likely the meeting is.
+const opponentLabel = (opponent, certain) => (certain ? `vs ${opponent.name}` : `${percent(opponent.p)} ${opponent.name}`);
+
 function describeSide(side) {
   if (side.members?.length > 1) {
-    return `${side.name} — ${side.members.map((m) => `#${m.ranking.rank}`).join(' / ')}`;
+    const ranks = side.members.map((m) => `#${m.ranking.rank}`).join(' / ');
+    return `${side.name} — ${ranks}`;
   }
   return `${side.name} — #${side.ranking.rank} (${side.ranking.points} pts)`;
 }
@@ -133,7 +137,7 @@ function KnockoutRound({ round }) {
           <ul className="knockout-opponents">
             {opponents.slice(0, MAX_OPPONENTS_SHOWN).map((opponent) => (
               <li key={opponent.name}>
-                {opponents.length === 1 ? `vs ${opponent.name}` : `${percent(opponent.p)} ${opponent.name}`} - you win {percent(opponent.winP)}
+                {opponentLabel(opponent, opponents.length === 1)} - you win {percent(opponent.winP)}
               </li>
             ))}
             {opponents.length > MAX_OPPONENTS_SHOWN && <li className="muted">and {opponents.length - MAX_OPPONENTS_SHOWN} more possible opponents</li>}
@@ -268,16 +272,20 @@ export default function TournamentMatchSimulator() {
           if (teams.length < 2) return { ...base, opponentResults: [], note: 'Nobody else is registered in this event yet.' };
           const unit = discipline === 'singles' ? 'players' : 'pairs';
           const leftOut = (event.participants ?? []).length - teams.length;
-          const field = `${teams.length} ${unit}${leftOut > 0 ? `; ${leftOut} without a partner left out` : ''}`;
+          const leftOutNote = leftOut > 0 ? `; ${leftOut} without a partner left out` : '';
+          const field = `${teams.length} ${unit}${leftOutNote}`;
           if (mockFormat === 'knockout') {
             const byes = 2 ** Math.ceil(Math.log2(teams.length)) - teams.length;
+            const byeWord = byes === 1 ? 'bye' : 'byes';
+            const byeNote = byes > 0 ? `, ${byes} ${byeWord}` : '';
             const outlook = await knockoutOutlook(tournamentId, discipline, buildMockBracket(teams), entry);
-            return { ...base, outlook, note: `Random knockout bracket for ${field}${byes > 0 ? `, ${byes} ${byes === 1 ? 'bye' : 'byes'}` : ''}` };
+            return { ...base, outlook, note: `Random knockout bracket for ${field}${byeNote}` };
           }
           const { opponents, poolSize, poolCount } = mockPoolFor(teams, entry);
+          const poolWord = poolCount === 1 ? 'pool' : 'pools';
           return {
             ...base,
-            note: `Random pool of ${poolSize} (${poolCount} ${poolCount === 1 ? 'pool' : 'pools'} for ${field})`,
+            note: `Random pool of ${poolSize} (${poolCount} ${poolWord} for ${field})`,
             opponentResults: await simulateAgainst(tournamentId, discipline, entry, opponents),
           };
         })
