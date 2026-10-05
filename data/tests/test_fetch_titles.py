@@ -96,3 +96,11 @@ def test_main_saves_every_twenty_players(monkeypatch, env, capsys):
     err = capsys.readouterr().err
     assert "[20/21] saved" in err and "[21/21] saved" in err
     assert len(read_json(env.titles)) == 21
+
+
+def test_fetch_titles_for_player_decodes_entities_in_discipline(monkeypatch):
+    body = year_block(2025, title_entry("Winner", "Cup", "ME&lt;11"), title_entry("Winner", "Cup", "MD A&amp;R Sports"))
+    install_urlopen(monkeypatch, {"/player-profile/GUID-1/PersonHome/TitlesFinals": body})
+    entries = fetch_titles.fetch_titles_for_player("GUID-1", "c=1")
+    assert [e["discipline"] for e in entries] == ["ME<11", "MD A&R Sports"]
+    assert [e["category"] for e in entries] == ["singles", "doubles"]

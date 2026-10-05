@@ -147,3 +147,21 @@ def test_new_template_matches_skip_unusable_cards():
 
 def test_new_template_matches_without_cards_is_empty():
     assert pc.parse_new_template_matches("<html></html>", "T", "1") == []
+
+
+@pytest.mark.parametrize("raw,expected", [
+    ("Noah \\&amp;#039;t Jong", "Noah 't Jong"),
+    ("d\\&#039;Coutho", "d'Coutho"),
+    ("Piet &amp; Co", "Piet & Co"),
+    ("Plain Name", "Plain Name"),
+])
+def test_decode_name_handles_the_sites_double_encoded_apostrophes(raw, expected):
+    assert pc.decode_name(raw) == expected
+
+
+def test_new_template_matches_decode_double_encoded_names():
+    html = new_template_item(home=[("1", "Noah \\&amp;#039;t Jong")], away=[("2", "Piet")], home_won=True)
+
+    (match,) = pc.parse_new_template_matches(html, "TID", "1")
+
+    assert match.home_players == [("1", "Noah 't Jong")]
