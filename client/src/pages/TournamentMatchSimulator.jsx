@@ -121,15 +121,15 @@ export default function TournamentMatchSimulator() {
   return (
     <div className="tournament-simulator">
       <div className="league-day-controls">
-        <label className="format-select">
-          Tournament:{' '}
-          <select value={tournamentId} onChange={(e) => changeTournament(e.target.value)}>
-            <option value="" disabled>Select a tournament…</option>
-            {tournaments.map((t) => (
-              <option key={t.id} value={t.id}>{t.name}</option>
-            ))}
-          </select>
-        </label>
+        <PlayerSelect
+          label="Tournament"
+          players={tournaments}
+          value={tournamentId}
+          onChange={changeTournament}
+          showClub={false}
+          placeholder="Search tournament..."
+          emptyText="No tournaments found"
+        />
         <PlayerSelect label="Player" players={players} value={playerId} onChange={setPlayerId} />
       </div>
 
