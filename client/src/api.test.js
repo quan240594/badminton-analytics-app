@@ -520,3 +520,48 @@ describe('simulateSingles / simulateDoubles / fetchTournaments / simulateMatch',
     expect(result.headToHead).toBeNull();
   });
 });
+
+describe('tournamentWinModel', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  const ranked = (pct) => ({ doubles: { rank: 1, points: 100 * pct, topPoints: 100, pctOfTop: pct }, singles: { rank: 1, points: 100 * pct, topPoints: 100, pctOfTop: pct } });
+  async function modelFor(players) {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ players: [], meta: {}, tournaments: [{ id: 't1', name: 'Open', players }] }),
+    });
+    const { tournamentWinModel } = await freshApi();
+    return tournamentWinModel('t1', 'singles');
+  }
+
+  it('gives symmetric win probabilities, stronger player favoured', async () => {
+    const model = await modelFor([{ id: 'a', name: 'Ann', nationalRanking: ranked(0.9) }, { id: 'b', name: 'Bo', nationalRanking: ranked(0.5) }]);
+    expect(model.winProbability(['a'], ['b'])).toBeGreaterThan(0.5);
+    expect(model.winProbability(['a'], ['b']) + model.winProbability(['b'], ['a'])).toBeCloseTo(1);
+    expect(model.isRated(['a'])).toBe(true);
+    expect(model.nameOf('a')).toBe('Ann');
+  });
+
+  it('rates a pair by its members and has no rating if any member is unranked', async () => {
+    const model = await modelFor([
+      { id: 'a', name: 'Ann', nationalRanking: ranked(0.9) },
+      { id: 'b', name: 'Bo', nationalRanking: ranked(0.5) },
+      { id: 'c', name: 'Cy', nationalRanking: ranked(0.7) },
+      { id: 'd', name: 'Di', nationalRanking: null },
+    ]);
+    expect(model.winProbability(['a', 'b'], ['c'])).toBeCloseTo(0.5);
+    expect(model.isRated(['c', 'd'])).toBe(false);
+    expect(model.winProbability(['a'], ['c', 'd'])).toBeNull();
+    expect(model.winProbability(['d'], ['a'])).toBeNull();
+  });
+
+  it('falls back to the id for an unknown player, and rejects an unknown tournament', async () => {
+    const model = await modelFor([]);
+    expect(model.nameOf('zz')).toBe('zz');
+    expect(model.isRated(['zz'])).toBe(false);
+    const { tournamentWinModel } = await freshApi();
+    await expect(tournamentWinModel('nope', 'singles')).rejects.toThrow('unknown tournament id');
+  });
+});

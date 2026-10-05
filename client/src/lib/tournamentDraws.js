@@ -55,14 +55,35 @@ export function playerEvents(tournament, playerId) {
   return found;
 }
 
-// Whether a published draw already covers this event: real draws are named
-// after their event ("<event>", "<event> - Groep A").
-export function eventHasDraw(event, draws) {
+// Whether a published draw belongs to this event: real draws are named after
+// their event ("<event>", "<event> - Groep A").
+export function drawIsForEvent(event, draw) {
   const eventName = normalizeName(event.name);
-  return (draws ?? []).some((draw) => {
-    const drawName = normalizeName(draw.name);
-    return drawName === eventName || drawName.startsWith(`${eventName} -`);
-  });
+  const drawName = normalizeName(draw.name);
+  return drawName === eventName || drawName.startsWith(`${eventName} -`);
+}
+
+export function eventHasDraw(event, draws) {
+  return (draws ?? []).some((draw) => drawIsForEvent(event, draw));
+}
+
+// How a draw is played, from the site's draw type: "Poule" is a round robin
+// (everyone in the pool plays everyone), "Poule - Thuis en Uit" the same twice,
+// "Afvalschema" a single-elimination bracket. Anything else is not modelled.
+export function drawFormat(draw) {
+  const type = normalizeName(draw?.type);
+  if (type.startsWith('poule')) return type.includes('thuis en uit') ? 'doubleRoundRobin' : 'roundRobin';
+  if (type === 'afvalschema') return 'knockout';
+  return null;
+}
+
+// Which format a mocked draw should use by default: whatever this tournament's
+// main stages are played as. Playoffs are skipped - they follow a pool stage.
+export function defaultMockFormat(tournament) {
+  const main = (tournament?.draws ?? []).filter((draw) => draw.stage === 'Hoofdschema').map(drawFormat);
+  const knockouts = main.filter((format) => format === 'knockout').length;
+  const pools = main.filter((format) => format === 'roundRobin' || format === 'doubleRoundRobin').length;
+  return knockouts > pools ? 'knockout' : 'pools';
 }
 
 // An event's entries as complete teams: a doubles/mixed entry with a single

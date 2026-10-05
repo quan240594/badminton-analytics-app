@@ -4,9 +4,11 @@ import TournamentMatchSimulator from './TournamentMatchSimulator.jsx';
 
 const fetchTournaments = vi.fn();
 const simulateTournamentMatch = vi.fn();
+const tournamentWinModel = vi.fn();
 vi.mock('../api.js', () => ({
   fetchTournaments: (...args) => fetchTournaments(...args),
   simulateTournamentMatch: (...args) => simulateTournamentMatch(...args),
+  tournamentWinModel: (...args) => tournamentWinModel(...args),
 }));
 
 const TOURNAMENT = {
@@ -22,6 +24,7 @@ const TOURNAMENT = {
     {
       draw_id: 'd1',
       name: 'HE',
+      type: 'Poule',
       standings: [
         { players: [{ player_id: 'p1' }] },
         { players: [{ player_id: 'p2' }] },
@@ -94,7 +97,7 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
     winProbabilityB: 0.3,
   };
   const standings = (...ids) => ids.map((id) => ({ players: [{ player_id: id }] }));
-  const withDraws = (draws) => fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, draws }]);
+  const withDraws = (draws) => fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, draws: draws?.map((draw) => ({ type: 'Poule', ...draw })) }]);
 
   beforeEach(() => {
     vi.resetAllMocks();
@@ -155,19 +158,6 @@ describe('TournamentMatchSimulator - draws and persistence', () => {
 
     expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
     expect(simulateTournamentMatch).not.toHaveBeenCalled();
-  });
-
-  it('finds opponents from knockout matches when a draw has no standings', async () => {
-    withDraws([{
-      draw_id: 'k1',
-      name: 'HE',
-      matches: [{ sides: [{ players: [{ player_id: 'p1' }] }, { players: [{ player_id: 'p3' }] }] }, { sides: [{}] }, {}],
-    }]);
-
-    await selectTournamentAndPlayer('Alice Alpha');
-
-    await waitFor(() => expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', 'singles', 'p1', 'p3'));
-    expect(simulateTournamentMatch).toHaveBeenCalledTimes(1);
   });
 
   it('copes with a tournament that has no draws at all', async () => {
@@ -341,7 +331,7 @@ describe('TournamentMatchSimulator - mocked draws', () => {
 
   it('only mocks the events that still lack a published draw, next to the real ones', async () => {
     await selectMe(withEvents(NO_DRAWS_YET.events, {
-      draws: [{ draw_id: 'd1', name: 'Categorie 7 - Heren Enkel', standings: [{ players: [{ player_id: 'me' }] }, { players: [{ player_id: 'o1' }] }] }],
+      draws: [{ draw_id: 'd1', type: 'Poule', name: 'Categorie 7 - Heren Enkel', standings: [{ players: [{ player_id: 'me' }] }, { players: [{ player_id: 'o1' }] }] }],
     }));
 
     expect(await screen.findByText('No draw data available yet for Categorie 7 - Heren Dubbel')).toBeInTheDocument();
@@ -356,6 +346,7 @@ describe('TournamentMatchSimulator - mocked draws', () => {
     await selectMe(withEvents([], {
       draws: [{
         draw_id: 'd2',
+        type: 'Poule',
         name: 'Categorie 7 - Heren Dubbel',
         standings: [{ players: [{ player_id: 'me' }, { player_id: 'pa' }] }, { players: [{ player_id: 'q1' }, { player_id: 'q2' }] }],
       }],
@@ -384,5 +375,134 @@ describe('TournamentMatchSimulator - mocked draws', () => {
     await clickMock();
 
     expect(await screen.findByText('boom')).toBeInTheDocument();
+  });
+});
+
+describe('TournamentMatchSimulator - draw formats', () => {
+  const WIN_RESULT = { sideB: { name: 'Cara Gamma', ranking: { rank: 42, points: 300 } }, winProbabilityA: 0.7, winProbabilityB: 0.3 };
+  const standings = (...ids) => ids.map((id) => ({ players: [{ player_id: id }] }));
+  const side = (id) => ({ won: false, players: id ? [{ player_id: id }] : [] });
+  const tie = (round, a, b) => ({ round, sides: [side(a), side(b)] });
+  const BRACKET = [tie('Halve finale', 'p1', 'p3'), tie('Halve finale', 'p2', 'p4'), tie('Finale')];
+  const withDraws = (draws) => fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, draws }]);
+  const names = { p1: 'Alice Alpha', p2: 'Bob Beta', p3: 'Cara Gamma', p4: 'Dana Delta' };
+  const model = (unrated = []) => ({
+    isRated: (team) => !team.some((id) => unrated.includes(id)),
+    winProbability: (a, b) => (a.join() < b.join() ? 0.6 : 0.4),
+    nameOf: (id) => names[id] ?? id,
+  });
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    simulateTournamentMatch.mockResolvedValue(WIN_RESULT);
+    tournamentWinModel.mockResolvedValue(model());
+  });
+
+  it('plays a knockout draw round by round instead of against everyone in it', async () => {
+    withDraws([{ draw_id: 'k1', name: 'HE', type: 'Afvalschema', stage: 'Hoofdschema', matches: BRACKET }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText('Halve finale')).toBeInTheDocument();
+    expect(screen.getByText('Finale')).toBeInTheDocument();
+    expect(screen.getByText('vs Cara Gamma - you win 60%')).toBeInTheDocument();
+    expect(screen.getByText('60% Bob Beta - you win 60%')).toBeInTheDocument();
+    expect(screen.getByText('40% Dana Delta - you win 60%')).toBeInTheDocument();
+    expect(screen.getByText('Chance to win the draw: 36%')).toBeInTheDocument();
+    expect(tournamentWinModel).toHaveBeenCalledWith('t1', 'singles');
+    expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+
+  it('does not guess when someone later in the bracket has no ranking', async () => {
+    tournamentWinModel.mockResolvedValue(model(['p2']));
+    withDraws([{ draw_id: 'k1', name: 'HE', type: 'Afvalschema', stage: 'Hoofdschema', matches: BRACKET }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText("Can't be simulated: Bob Beta has no national ranking data.")).toBeInTheDocument();
+    expect(screen.getByText('vs Cara Gamma - you win 60%')).toBeInTheDocument();
+    expect(screen.queryByText(/Chance to win the draw/)).not.toBeInTheDocument();
+  });
+
+  it('says so when a bracket cannot be worked out from the published draw', async () => {
+    withDraws([{ draw_id: 'k1', name: 'HE', type: 'Afvalschema', matches: [tie('Finale', 'p1', undefined)] }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText("This bracket can't be worked out from the published draw yet.")).toBeInTheDocument();
+  });
+
+  it('plays a home-and-away pool against each opponent twice, and says so', async () => {
+    withDraws([{ draw_id: 'd1', name: 'HE', type: 'Poule - Thuis en Uit', standings: standings('p1', 'p3') }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText('Home and away: each opponent is played twice.')).toBeInTheDocument();
+    expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', 'singles', 'p1', 'p3');
+  });
+
+  it('does not treat a format it does not know as a round robin', async () => {
+    withDraws([{ draw_id: 'd1', name: 'HE', type: 'Zwitsers', standings: standings('p1', 'p3') }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText('The "Zwitsers" draw format is not supported by the simulator.')).toBeInTheDocument();
+    expect(simulateTournamentMatch).not.toHaveBeenCalled();
+  });
+
+  describe('mocked draws', () => {
+    const EVENT = { event_id: '11', name: 'Categorie 7 -  Heren Enkel', entries: 5, participants: [['p1'], ['p2'], ['p3'], ['p4'], ['p5']] };
+    const tournament = (draws = []) => ({
+      ...TOURNAMENT,
+      players: [...TOURNAMENT.players, { id: 'p5', name: 'Eve Epsilon', club: 'Club E', nationalRanking: null }],
+      events: [EVENT],
+      draws,
+    });
+    const poolDraw = { draw_id: 'x', name: 'Other', type: 'Poule', stage: 'Hoofdschema', standings: standings('p9', 'p8') };
+    const knockoutDraw = { draw_id: 'y', name: 'Other', type: 'Afvalschema', stage: 'Hoofdschema', matches: [] };
+    const mockButton = { name: 'Simulate matches with mocked draws' };
+
+    async function open(draws) {
+      fetchTournaments.mockResolvedValue([tournament(draws)]);
+      render(<TournamentMatchSimulator />);
+      await pickTournament();
+      const input = screen.getByPlaceholderText('Search player...');
+      fireEvent.focus(input);
+      fireEvent.change(input, { target: { value: 'Alice Alpha' } });
+      fireEvent.mouseDown(await screen.findByText('Alice Alpha'));
+    }
+
+    it('defaults to pools, or to a bracket when the tournament published brackets', async () => {
+      await open([poolDraw]);
+      expect(await screen.findByLabelText('Mocked draw format')).toHaveValue('pools');
+    });
+
+    it('follows the tournament: brackets when its main draws are brackets', async () => {
+      await open([knockoutDraw, { ...knockoutDraw, draw_id: 'z' }, poolDraw]);
+      expect(await screen.findByLabelText('Mocked draw format')).toHaveValue('knockout');
+    });
+
+    it('ignores playoffs when working out the default', async () => {
+      await open([poolDraw, { ...knockoutDraw, stage: 'Playoff' }, { ...knockoutDraw, draw_id: 'z', stage: 'Playoff' }]);
+      expect(await screen.findByLabelText('Mocked draw format')).toHaveValue('pools');
+    });
+
+    it('deals a random bracket and plays it round by round when knockout is chosen', async () => {
+      tournamentWinModel.mockResolvedValue(model(['p2']));
+      await open([poolDraw]);
+      fireEvent.change(await screen.findByLabelText('Mocked draw format'), { target: { value: 'knockout' } });
+      fireEvent.click(screen.getByRole('button', mockButton));
+
+      expect(await screen.findByText('Random knockout bracket for 5 players, 3 byes')).toBeInTheDocument();
+      expect(screen.getByText('Mocked draw')).toBeInTheDocument();
+      expect(screen.getAllByText(/Finale|Halve finale|Kwartfinale/).length).toBeGreaterThan(0);
+      expect(simulateTournamentMatch).not.toHaveBeenCalled();
+    });
+
+    it('keeps the pool behaviour when pools are chosen, and clears results when the format changes', async () => {
+      await open([knockoutDraw, { ...knockoutDraw, draw_id: 'z' }]);
+      fireEvent.change(await screen.findByLabelText('Mocked draw format'), { target: { value: 'pools' } });
+      fireEvent.click(screen.getByRole('button', mockButton));
+      expect(await screen.findByText(/Random pool of/)).toBeInTheDocument();
+
+      fireEvent.change(screen.getByLabelText('Mocked draw format'), { target: { value: 'knockout' } });
+      await waitFor(() => expect(screen.queryByText('Mocked draw')).not.toBeInTheDocument());
+    });
   });
 });

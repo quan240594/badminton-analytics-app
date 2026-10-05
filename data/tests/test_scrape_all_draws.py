@@ -7,6 +7,7 @@ from helpers_orchestrators import STAMP, exit_code, fake_clock, isolate_module, 
 
 PATH_CONSTANTS = ("DETAILS_PATH", "MY_TOURNAMENTS_PATH", "FETCHED_DRAWS_PATH", "DRAWS_DATA_PATH")
 DRAW = {"standings": [1, 2], "matches": [1]}
+CURRENT = {"schema": sad.DRAW_SCHEMA}
 DETAILS = {
     "T1": {"draws": [{"draw_id": "10"}, {"draw_id": "9"}]},
     "T2": {"draws": [{"draw_id": "1"}]},
@@ -45,7 +46,9 @@ def test_json_helpers_roundtrip(tmp_path):
 @pytest.mark.parametrize("mine,fetched,expected", [
     (set(), {}, [("T1", "9"), ("T1", "10"), ("T2", "1")]),
     ({"T2"}, {}, [("T2", "1"), ("T1", "9"), ("T1", "10")]),
-    ({"T2"}, {"T1:9": {}, "T2:1": {}}, [("T1", "10")]),
+    ({"T2"}, {"T1:9": CURRENT, "T2:1": CURRENT}, [("T1", "10")]),
+    # a draw stored before the current schema (no marker, or an older one) is fetched again
+    (set(), {"T1:9": {}, "T1:10": {"schema": 1}, "T2:1": CURRENT}, [("T1", "9"), ("T1", "10")]),
 ])
 def test_pending_work_orders_priority_then_tournament_then_numeric_draw(mine, fetched, expected):
     assert sad.pending_work(DETAILS, fetched, mine) == expected
@@ -61,7 +64,7 @@ def test_main_fetches_priority_draw_and_persists_results(env, monkeypatch, capsy
 
     assert env.fetches == [("T2", "1", "sess=1")]
     assert read_json(env.paths["DRAWS_DATA_PATH"]) == {"T1": {"9": "existing"}, "T2": {"1": DRAW}}
-    assert read_json(env.paths["FETCHED_DRAWS_PATH"]) == {"T2:1": {"fetchedAt": STAMP}}
+    assert read_json(env.paths["FETCHED_DRAWS_PATH"]) == {"T2:1": {"fetchedAt": STAMP, "schema": sad.DRAW_SCHEMA}}
     out = capsys.readouterr().out
     assert "Draw 1 of tournament T2 (priority: your tournament)... [3 draws remaining]" in out
     assert "OK: 2 standings rows, 1 matches, took 2.0 min" in out
@@ -83,7 +86,7 @@ def test_main_exits_3_without_any_tournament_details(env, monkeypatch, capsys):
 
 def test_main_exits_3_when_every_draw_already_fetched(env, monkeypatch, capsys):
     write_json(env.paths["DETAILS_PATH"], DETAILS)
-    write_json(env.paths["FETCHED_DRAWS_PATH"], {"T1:9": {}, "T1:10": {}, "T2:1": {}})
+    write_json(env.paths["FETCHED_DRAWS_PATH"], {"T1:9": CURRENT, "T1:10": CURRENT, "T2:1": CURRENT})
     assert exit_code(monkeypatch, sad, *args(env)) == sad.NOTHING_TO_DO
     assert "All known draws already fetched" in capsys.readouterr().out
     assert env.fetches == []

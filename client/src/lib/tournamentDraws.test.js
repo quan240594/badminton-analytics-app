@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  disciplineForDraw, teamKey, teamsInDraw, opponentsInDraw, playerEvents, eventHasDraw, completeTeams, shuffle, mockPoolFor,
+  disciplineForDraw, teamKey, teamsInDraw, opponentsInDraw, playerEvents, eventHasDraw, completeTeams, shuffle, mockPoolFor, drawFormat, drawIsForEvent, defaultMockFormat,
 } from './tournamentDraws.js';
 
 const row = (...ids) => ({ players: ids.map((player_id) => ({ player_id })) });
@@ -141,5 +141,41 @@ describe('mockPoolFor', () => {
     const result = mockPoolFor([['a'], ['b']], ['me']);
     expect(result.poolSize).toBe(result.opponents.length + 1);
     expect(result.opponents.flat()).not.toContain('me');
+  });
+});
+
+describe('drawFormat', () => {
+  it.each([
+    ['Poule', 'roundRobin'], ['Poule - Thuis en Uit', 'doubleRoundRobin'], ['  poule ', 'roundRobin'],
+    ['Afvalschema', 'knockout'], ['Zwitsers', null], [undefined, null],
+  ])('reads "%s" as %s', (type, expected) => {
+    expect(drawFormat({ type })).toBe(expected);
+  });
+
+  it('has no format for a missing draw', () => {
+    expect(drawFormat(undefined)).toBeNull();
+  });
+});
+
+describe('drawIsForEvent', () => {
+  const event = { name: 'Categorie 7 -  Heren Enkel' };
+  it('matches a draw named after the event or one of its groups, ignoring spacing', () => {
+    expect(drawIsForEvent(event, { name: 'Categorie 7 - Heren Enkel' })).toBe(true);
+    expect(drawIsForEvent(event, { name: 'Categorie 7 - Heren Enkel - Groep A' })).toBe(true);
+    expect(drawIsForEvent(event, { name: 'Categorie 7 - Heren Dubbel' })).toBe(false);
+  });
+});
+
+describe('defaultMockFormat', () => {
+  const draw = (type, stage = 'Hoofdschema') => ({ type, stage });
+  it('follows the majority of the main draws', () => {
+    expect(defaultMockFormat({ draws: [draw('Afvalschema'), draw('Afvalschema'), draw('Poule')] })).toBe('knockout');
+    expect(defaultMockFormat({ draws: [draw('Poule'), draw('Poule - Thuis en Uit'), draw('Afvalschema')] })).toBe('pools');
+  });
+  it('defaults to pools on a tie, with nothing published, or when only playoffs are', () => {
+    expect(defaultMockFormat({ draws: [draw('Afvalschema'), draw('Poule')] })).toBe('pools');
+    expect(defaultMockFormat({ draws: [] })).toBe('pools');
+    expect(defaultMockFormat(null)).toBe('pools');
+    expect(defaultMockFormat({ draws: [draw('Afvalschema', 'Playoff'), draw('Afvalschema', 'Playoff')] })).toBe('pools');
   });
 });
