@@ -21723,5 +21723,345 @@
     "events": [],
     "draws": [],
     "entries": []
+  },
+  "9132ABB7-3BEF-4399-9DC9-B2D730C0E231": {
+    "events": [
+      {
+        "event_id": "3",
+        "name": "Dames Enkel - Senior",
+        "draws": 1,
+        "entries": 3,
+        "participants": []
+      },
+      {
+        "event_id": "6",
+        "name": "Dames Dubbel - Senior",
+        "draws": 1,
+        "entries": 4,
+        "participants": []
+      },
+      {
+        "event_id": "9",
+        "name": "Jongens/Meiden - Enkel - U15",
+        "draws": 6,
+        "entries": 10,
+        "participants": []
+      },
+      {
+        "event_id": "11",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15",
+        "draws": 5,
+        "entries": 6,
+        "participants": []
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "48",
+        "name": "Dames Enkel - Senior",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "Dames Dubbel - Senior",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "44",
+        "name": "Jongens/Meiden - Enkel - U15 - Positie 01-03",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "45",
+        "name": "Jongens/Meiden - Enkel - U15 - Positie 04-06",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "46",
+        "name": "Jongens/Meiden - Enkel - U15 - Positie 07-10",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "41",
+        "name": "Jongens/Meiden - Enkel - U15 - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "42",
+        "name": "Jongens/Meiden - Enkel - U15 - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "43",
+        "name": "Jongens/Meiden - Enkel - U15 - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15 - Positie 1-2",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15 - Positie 3-4",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15 - Positie 5-6",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15 - Poule A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "Jongens/Meiden - Dubbel/Mix - U15 - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
+    "entries": [
+      {
+        "country": null,
+        "player_id": "19",
+        "name": "Assenbergh, Marloes van"
+      },
+      {
+        "country": null,
+        "player_id": "23",
+        "name": "Beek, Bart van de"
+      },
+      {
+        "country": null,
+        "player_id": "24",
+        "name": "Beek, Koen van de"
+      },
+      {
+        "country": null,
+        "player_id": "40",
+        "name": "Beek, Lara van de"
+      },
+      {
+        "country": null,
+        "player_id": "28",
+        "name": "Bergkamp, Sander"
+      },
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Bloemendal, Gert"
+      },
+      {
+        "country": null,
+        "player_id": "36",
+        "name": "Brandhof, Anne van de"
+      },
+      {
+        "country": null,
+        "player_id": "35",
+        "name": "Broek, Luc van de"
+      },
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Brummer, Ed"
+      },
+      {
+        "country": null,
+        "player_id": "20",
+        "name": "Damen, Bart"
+      },
+      {
+        "country": null,
+        "player_id": "15",
+        "name": "Den Dulk, Jurrian"
+      },
+      {
+        "country": null,
+        "player_id": "10",
+        "name": "Dijk, Chris van"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Duits, Ewan"
+      },
+      {
+        "country": null,
+        "player_id": "12",
+        "name": "Dusschooten, Jesse"
+      },
+      {
+        "country": null,
+        "player_id": "16",
+        "name": "Dusschooten, Niels"
+      },
+      {
+        "country": null,
+        "player_id": "17",
+        "name": "Evers, Henk-Jan"
+      },
+      {
+        "country": null,
+        "player_id": "26",
+        "name": "Floor, Theo"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "Gent, Jaap van"
+      },
+      {
+        "country": null,
+        "player_id": "39",
+        "name": "Hardeman, Julia"
+      },
+      {
+        "country": null,
+        "player_id": "41",
+        "name": "Hoitsma, Luuk"
+      },
+      {
+        "country": null,
+        "player_id": "33",
+        "name": "Hoven-Van De Waerdt, Stefanie ten"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Jong, Arthur de"
+      },
+      {
+        "country": null,
+        "player_id": "18",
+        "name": "Jong, Rianne de"
+      },
+      {
+        "country": null,
+        "player_id": "27",
+        "name": "Kamp, Wesley van de"
+      },
+      {
+        "country": null,
+        "player_id": "25",
+        "name": "Kaptein, Ethan"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "Koeijer, Beppie de"
+      },
+      {
+        "country": null,
+        "player_id": "34",
+        "name": "Lijbers, Frans"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "Lin, Barnett"
+      },
+      {
+        "country": null,
+        "player_id": "4",
+        "name": "Meijer, Hanneke"
+      },
+      {
+        "country": null,
+        "player_id": "5",
+        "name": "Noordzij, Mark"
+      },
+      {
+        "country": null,
+        "player_id": "32",
+        "name": "Pol, Cor van de"
+      },
+      {
+        "country": null,
+        "player_id": "6",
+        "name": "Rakhorst, Caroline"
+      },
+      {
+        "country": null,
+        "player_id": "37",
+        "name": "Salian, Kiara"
+      },
+      {
+        "country": null,
+        "player_id": "38",
+        "name": "Salian, Neil"
+      },
+      {
+        "country": null,
+        "player_id": "7",
+        "name": "Sittrop, Renate"
+      },
+      {
+        "country": null,
+        "player_id": "21",
+        "name": "Verharen, Edwin"
+      },
+      {
+        "country": null,
+        "player_id": "8",
+        "name": "Voskuil, Wijnand"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "Wincoop, G.J. van"
+      },
+      {
+        "country": null,
+        "player_id": "14",
+        "name": "Wingerden, Jessica Van"
+      },
+      {
+        "country": null,
+        "player_id": "11",
+        "name": "Wisse, Manuel"
+      }
+    ]
   }
 }
