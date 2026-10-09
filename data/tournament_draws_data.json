@@ -32981,6 +32981,211 @@
           "played_at": "za 6-6-2026 11:00"
         }
       ]
+    },
+    "23": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "2",
+              "name": "Ewan Duits"
+            },
+            {
+              "player_id": "11",
+              "name": "Manuel Wisse"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-41"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "36",
+              "name": "Anne van de Brandhof"
+            },
+            {
+              "player_id": "39",
+              "name": "Julia Hardeman"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-52"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Kiara Salian"
+            },
+            {
+              "player_id": "38",
+              "name": "Neil Salian"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "25-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "224",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Ewan Duits",
+                  "member_id": "50012143"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Manuel Wisse",
+                  "member_id": "5002044"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Anne van de Brandhof",
+                  "member_id": "5008062"
+                },
+                {
+                  "player_id": "39",
+                  "name": "Julia Hardeman"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 6-6-2026 09:40"
+        },
+        {
+          "match_id": "227",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Anne van de Brandhof",
+                  "member_id": "5008062"
+                },
+                {
+                  "player_id": "39",
+                  "name": "Julia Hardeman",
+                  "member_id": "50018937"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Kiara Salian",
+                  "member_id": "50018938"
+                },
+                {
+                  "player_id": "38",
+                  "name": "Neil Salian"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 6-6-2026 10:20"
+        },
+        {
+          "match_id": "226",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Ewan Duits",
+                  "member_id": "50012143"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Manuel Wisse",
+                  "member_id": "5002044"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Kiara Salian",
+                  "member_id": "50018937"
+                },
+                {
+                  "player_id": "38",
+                  "name": "Neil Salian",
+                  "member_id": "50018938"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 6-6-2026 11:00"
+        }
+      ]
     }
   }
 }
