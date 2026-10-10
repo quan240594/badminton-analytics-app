@@ -33186,6 +33186,58 @@
           "played_at": "za 6-6-2026 11:00"
         }
       ]
+    },
+    "24": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "228",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Luuk Hoitsma",
+                  "member_id": "5008527"
+                },
+                {
+                  "player_id": "25",
+                  "name": "Ethan Kaptein",
+                  "member_id": "50012404"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Ewan Duits",
+                  "member_id": "50012143"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Manuel Wisse",
+                  "member_id": "5002044"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 6-6-2026 11:40"
+        }
+      ]
     }
   }
 }
