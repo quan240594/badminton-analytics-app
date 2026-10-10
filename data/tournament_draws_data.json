@@ -33289,6 +33289,58 @@
           "played_at": "za 6-6-2026 11:40"
         }
       ]
+    },
+    "26": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "234",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Lara van de Beek",
+                  "member_id": "50012496"
+                },
+                {
+                  "player_id": "35",
+                  "name": "Luc van de Broek",
+                  "member_id": "5101313"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Kiara Salian",
+                  "member_id": "50018937"
+                },
+                {
+                  "player_id": "38",
+                  "name": "Neil Salian",
+                  "member_id": "50018938"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 6-6-2026 11:40"
+        }
+      ]
     }
   }
 }
