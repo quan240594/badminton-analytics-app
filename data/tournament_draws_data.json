@@ -33633,6 +33633,171 @@
           "played_at": "za 6-6-2026 10:00"
         }
       ]
+    },
+    "42": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "2",
+              "name": "Ewan Duits"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-59"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "Bart van de Beek"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "76-48"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "35",
+              "name": "Luc van de Broek"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "31-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "420",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Bart van de Beek",
+                  "member_id": "50011376"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Luc van de Broek",
+                  "member_id": "5101313"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              1
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 6-6-2026 09:00"
+        },
+        {
+          "match_id": "416",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Ewan Duits",
+                  "member_id": "50012143"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Bart van de Beek",
+                  "member_id": "50011376"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "za 6-6-2026 09:20"
+        },
+        {
+          "match_id": "419",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Ewan Duits",
+                  "member_id": "50012143"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Luc van de Broek",
+                  "member_id": "5101313"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 6-6-2026 10:00"
+        }
+      ]
     }
   }
 }
