@@ -33238,6 +33238,57 @@
           "played_at": "za 6-6-2026 11:40"
         }
       ]
+    },
+    "25": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "231",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Bart van de Beek",
+                  "member_id": "50011376"
+                },
+                {
+                  "player_id": "24",
+                  "name": "Koen van de Beek",
+                  "member_id": "50011377"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Anne van de Brandhof",
+                  "member_id": "5008062"
+                },
+                {
+                  "player_id": "39",
+                  "name": "Julia Hardeman"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 6-6-2026 11:40"
+        }
+      ]
     }
   }
 }
