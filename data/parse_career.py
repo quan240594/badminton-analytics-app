@@ -94,6 +94,7 @@ CLUB_RE = re.compile(r'<th>Club:</th><td><a[^>]*>([^<]+)</a></td>')
 # (e.g. "BBS" vs "BBS BODEGRAVEN" for the same club); canonicalize known aliases here.
 CLUB_ALIASES = {
     "BBS": "BBS BODEGRAVEN",
+    "NIEUWERKERK BC": "NIEUWERKERK A/D IJSSEL BC",
 }
 
 # clubs.json holds the canonical (uppercase) club names; used below to fix casing
@@ -106,6 +107,8 @@ def _club_key(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", name.lower()).strip()
 
 
+_CLUB_ALIAS_KEYS = {_club_key(alias): name for alias, name in CLUB_ALIASES.items()}
+
 _CANONICAL_CLUB_NAMES = {
     _club_key(entry["name"]): entry["name"]
     for entry in json.loads(_CLUBS_JSON_PATH.read_text(encoding="utf-8")).values()
@@ -116,7 +119,7 @@ def normalize_club(club: str | None) -> str | None:
     if club is None:
         return None
     club = club.strip()
-    club = CLUB_ALIASES.get(club, club)
+    club = _CLUB_ALIAS_KEYS.get(_club_key(club), club)
     return _CANONICAL_CLUB_NAMES.get(_club_key(club), club)
 
 
