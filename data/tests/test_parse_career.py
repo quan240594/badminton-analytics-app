@@ -15,7 +15,7 @@ from helpers_parsers import (
 
 @pytest.fixture(autouse=True)
 def canonical_clubs(monkeypatch):
-    monkeypatch.setattr(pc, "_CANONICAL_CLUB_NAMES", {"drop shot bc": "DROP SHOT BC", "bbs bodegraven": "BBS BODEGRAVEN"})
+    monkeypatch.setattr(pc, "_CANONICAL_CLUB_NAMES", {"drop shot bc": "DROP SHOT BC", "bbs bodegraven": "BBS BODEGRAVEN", "deo bv": "DEO BV", "selecta bc": "SELECTA BC"})
 
 
 def write_page(tmp_path, html, name="player_1.html"):
@@ -54,6 +54,10 @@ def test_parse_side(block, team, players, won):
         ("  BBS ", "BBS BODEGRAVEN"),
         ("drop shot bc", "DROP SHOT BC"),
         ("Unknown Club", "Unknown Club"),
+        ("DEO, BV", "DEO BV"),
+        ("Selecta, BC", "SELECTA BC"),
+        ("deo  bv", "DEO BV"),
+        ("Nieuwerkerk, BC", "Nieuwerkerk, BC"),  # not a canonical club name: left alone, never guessed
     ],
 )
 def test_normalize_club(club, expected):

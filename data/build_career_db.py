@@ -24,7 +24,7 @@ from pathlib import Path
 from safe_path import safe_path
 from sanitize import clean_json_value
 
-from parse_career import parse_player_file
+from parse_career import normalize_club, parse_player_file
 
 from season import resolve_current_tournament_id  # noqa: E402
 
@@ -47,9 +47,19 @@ def discover_files(pages_dir: Path) -> list[tuple[Path, str, str]]:
     return out
 
 
+def normalize_state_clubs(state: dict) -> dict:
+    # The parsed page files are not kept between runs, so clubs cached under an
+    # older spelling can only be corrected here.
+    for player in state["players"].values():
+        player["club"] = normalize_club(player.get("club"))
+        for alias in player.get("aliases", {}).values():
+            alias["club"] = normalize_club(alias.get("club"))
+    return state
+
+
 def load_state(state_path: Path) -> dict:
     if state_path.exists():
-        return json.loads(state_path.read_text(encoding="utf-8"))
+        return normalize_state_clubs(json.loads(state_path.read_text(encoding="utf-8")))
     return {"parsed_files": [], "players": {}}
 
 

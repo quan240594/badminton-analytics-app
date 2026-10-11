@@ -6,6 +6,7 @@ from types import SimpleNamespace
 import pytest
 
 import build_career_db as bc
+import parse_career as pc
 from parse_career import MatchRecord
 from helpers_parsers import classic_player_page, classic_row, classic_side, new_template_item
 
@@ -224,3 +225,20 @@ def test_main_watch_keeps_polling_until_interrupted(pages, monkeypatch, capsys, 
 
     assert fake_clock == [5.0, 5.0]
     assert capsys.readouterr().out.count("new ->") == 1
+
+
+def test_load_state_corrects_clubs_cached_under_a_variant_spelling(tmp_path, monkeypatch):
+    path = tmp_path / "state.json"
+    path.write_text(json.dumps({
+        "parsed_files": [],
+        "players": {
+            "g1": {"name": "Marcel", "club": "DEO, BV", "aliases": {"t:1": {"name": "Marcel", "club": "DEO, BV"}, "t:2": {"name": "Marcel", "club": None}}, "matches": []},
+            "g2": {"name": "No club", "aliases": {}, "matches": []},
+        },
+    }), encoding="utf-8")
+    monkeypatch.setattr(pc, "_CANONICAL_CLUB_NAMES", {"deo bv": "DEO BV"})
+    players = bc.load_state(path)["players"]
+    assert players["g1"]["club"] == "DEO BV"
+    assert players["g1"]["aliases"]["t:1"]["club"] == "DEO BV"
+    assert players["g1"]["aliases"]["t:2"]["club"] is None
+    assert players["g2"]["club"] is None
