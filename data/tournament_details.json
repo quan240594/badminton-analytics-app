@@ -5245,47 +5245,23 @@
       {
         "event_id": "22",
         "name": "Rol VE A",
-        "draws": 0,
+        "draws": 1,
         "entries": 3,
-        "participants": [
-          [
-            "18"
-          ],
-          [
-            "16"
-          ],
-          [
-            "12"
-          ]
-        ]
+        "participants": []
       },
       {
         "event_id": "27",
         "name": "Rol VE B",
-        "draws": 0,
-        "entries": 3,
-        "participants": [
-          [
-            "15"
-          ],
-          [
-            "2"
-          ],
-          [
-            "13"
-          ]
-        ]
+        "draws": 1,
+        "entries": 4,
+        "participants": []
       },
       {
         "event_id": "32",
         "name": "Rol VE C",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "26"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "37",
@@ -5297,76 +5273,30 @@
       {
         "event_id": "42",
         "name": "Staand VE B",
-        "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "6"
-          ],
-          [
-            "7"
-          ]
-        ]
+        "draws": 3,
+        "entries": 7,
+        "participants": []
       },
       {
         "event_id": "47",
         "name": "Staand VE C",
         "draws": 0,
-        "entries": 5,
-        "participants": [
-          [
-            "17"
-          ],
-          [
-            "21"
-          ],
-          [
-            "11"
-          ],
-          [
-            "4"
-          ],
-          [
-            "22"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "21",
         "name": "Rol ME A",
-        "draws": 0,
-        "entries": 5,
-        "participants": [
-          [
-            "14"
-          ],
-          [
-            "1"
-          ],
-          [
-            "5"
-          ],
-          [
-            "8"
-          ],
-          [
-            "10"
-          ]
-        ]
+        "draws": 1,
+        "entries": 4,
+        "participants": []
       },
       {
         "event_id": "26",
         "name": "Rol ME B",
-        "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "19"
-          ],
-          [
-            "25"
-          ]
-        ]
+        "draws": 1,
+        "entries": 3,
+        "participants": []
       },
       {
         "event_id": "31",
@@ -5385,88 +5315,37 @@
       {
         "event_id": "41",
         "name": "Staand ME B",
-        "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "3"
-          ]
-        ]
+        "draws": 1,
+        "entries": 4,
+        "participants": []
       },
       {
         "event_id": "46",
         "name": "Staand ME C",
         "draws": 0,
-        "entries": 3,
-        "participants": [
-          [
-            "23"
-          ],
-          [
-            "20"
-          ],
-          [
-            "27"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "25",
         "name": "Rol GD A",
-        "draws": 0,
-        "entries": 5,
-        "participants": [
-          [
-            "16",
-            "24"
-          ],
-          [
-            "12",
-            "14"
-          ],
-          [
-            "18",
-            "9"
-          ],
-          [
-            "1"
-          ],
-          [
-            "10",
-            "5"
-          ]
-        ]
+        "draws": 1,
+        "entries": 4,
+        "participants": []
       },
       {
         "event_id": "30",
         "name": "Rol GD B",
-        "draws": 0,
-        "entries": 3,
-        "participants": [
-          [
-            "15",
-            "13"
-          ],
-          [
-            "2"
-          ],
-          [
-            "19",
-            "8"
-          ]
-        ]
+        "draws": 1,
+        "entries": 4,
+        "participants": []
       },
       {
         "event_id": "55",
         "name": "Rol GD C",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "26",
-            "25"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "40",
@@ -5478,52 +5357,118 @@
       {
         "event_id": "45",
         "name": "Staand GD B",
-        "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "6"
-          ],
-          [
-            "7"
-          ]
-        ]
+        "draws": 1,
+        "entries": 5,
+        "participants": []
       },
       {
         "event_id": "56",
         "name": "Staand GD C",
         "draws": 0,
-        "entries": 6,
-        "participants": [
-          [
-            "17",
-            "22"
-          ],
-          [
-            "21",
-            "20"
-          ],
-          [
-            "11"
-          ],
-          [
-            "4"
-          ],
-          [
-            "23"
-          ],
-          [
-            "27"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       }
     ],
-    "draws": [],
+    "draws": [
+      {
+        "draw_id": "1",
+        "name": "Rol VE A",
+        "size": 3,
+        "type": "Poule - Thuis en Uit",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "Rol VE B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Staand VE B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "Staand VE B - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "4",
+        "name": "Staand VE B - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "Rol ME A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "Rol ME B",
+        "size": 3,
+        "type": "Poule - Thuis en Uit",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "Staand ME B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "Rol GD A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "Rol GD B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "Staand GD B",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": "NED",
         "player_id": "15",
         "name": "BAARSLAG, Maaike"
+      },
+      {
+        "country": "NED",
+        "player_id": "27",
+        "name": "BEELEN, Bart"
       },
       {
         "country": "NED",
@@ -5649,11 +5594,6 @@
         "country": "NED",
         "player_id": "14",
         "name": "WIGINK, Mike"
-      },
-      {
-        "country": "NED",
-        "player_id": "27",
-        "name": "WOUD, Sander"
       }
     ]
   },
