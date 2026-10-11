@@ -34593,6 +34593,166 @@
           "played_at": "za 6-6-2026 12:00"
         }
       ]
+    },
+    "48": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "18",
+              "name": "Rianne de Jong"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "102-91"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Hanneke Meijer"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "0-2",
+          "points_record": "30-42"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "19",
+              "name": "Marloes van Assenbergh"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "1-2",
+          "points_record": "61-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "489",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Rianne de Jong",
+                  "member_id": "5005069"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Hanneke Meijer",
+                  "member_id": "878265"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "ma 8-6-2026 20:00"
+        },
+        {
+          "match_id": "491",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Rianne de Jong",
+                  "member_id": "5005069"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Marloes van Assenbergh",
+                  "member_id": "841790"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              26,
+              24
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "ma 15-6-2026 20:00"
+        },
+        {
+          "match_id": "492",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Hanneke Meijer",
+                  "member_id": "878265"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Marloes van Assenbergh",
+                  "member_id": "841790"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "wo 24-6-2026 20:00"
+        }
+      ]
     }
   }
 }
