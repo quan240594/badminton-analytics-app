@@ -153,6 +153,21 @@ class PlayerPageInfo:
     matches: list = field(default_factory=list)
 
 
+# Match times are stored as "Sat 12/09/2026 13:30" and the server parses exactly that.
+# A page served in Dutch writes "za 12-9-2026 13:30" instead.
+STANDARD_TIME_RE = re.compile(r"^[A-Z][a-z]{2} \d{2}/\d{2}/\d{4} \d{2}:\d{2}$")
+DUTCH_TIME_RE = re.compile(r"^(ma|di|wo|do|vr|za|zo) (\d{1,2})-(\d{1,2})-(\d{4}) (\d{2}:\d{2})$")
+DUTCH_WEEKDAYS = {"ma": "Mon", "di": "Tue", "wo": "Wed", "do": "Thu", "vr": "Fri", "za": "Sat", "zo": "Sun"}
+
+
+def normalize_match_time(time: str) -> str:
+    dutch = DUTCH_TIME_RE.match(time.strip())
+    if not dutch:
+        return time
+    weekday, day, month, year, clock = dutch.groups()
+    return f"{DUTCH_WEEKDAYS[weekday]} {int(day):02d}/{int(month):02d}/{year} {clock}"
+
+
 def strip_tags(s: str) -> str:
     return re.sub(r"<[^>]+>", "", s).strip()
 
@@ -225,7 +240,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
             MatchRecord(
                 tournament_id=tournament_id,
                 source_player_id=player_id,
-                time=strip_tags(m.group("time")),
+                time=normalize_match_time(strip_tags(m.group("time"))),
                 event=m.group("event").strip(),
                 draw=strip_tags(m.group("draw")),
                 home_team=home_team,

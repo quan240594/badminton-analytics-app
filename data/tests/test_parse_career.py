@@ -206,3 +206,24 @@ def test_matches_are_read_when_the_site_serves_the_page_in_dutch(tmp_path):
     assert len(parse_html(tmp_path, dutch).matches) == 1
     unknown_heading = english.replace("<h3>Match overview</h3><table>", '<table class="ruler matches player"><caption>Something else</caption>')
     assert len(parse_html(tmp_path, unknown_heading).matches) == 1
+
+
+@pytest.mark.parametrize("raw,expected", [
+    ("za 10-10-2026 13:30", "Sat 10/10/2026 13:30"),
+    ("zo 6-9-2026 09:05", "Sun 06/09/2026 09:05"),
+    ("ma 1-2-2027 19:30", "Mon 01/02/2027 19:30"),
+    ("di 3-3-2026 19:30", "Tue 03/03/2026 19:30"),
+    ("wo 4-11-2026 20:00", "Wed 04/11/2026 20:00"),
+    ("do 5-5-2026 19:45", "Thu 05/05/2026 19:45"),
+    ("vr 18-9-2026 19:45", "Fri 18/09/2026 19:45"),
+    ("Sat 12/09/2026 13:30", "Sat 12/09/2026 13:30"),
+    ("not a date", "not a date"),
+])
+def test_normalize_match_time_puts_dutch_dates_in_the_stored_format(raw, expected):
+    assert pc.normalize_match_time(raw) == expected
+    assert pc.normalize_match_time(f"  {raw}  ") in (expected, f"  {raw}  ")
+
+
+def test_a_dutch_page_stores_matches_in_the_standard_time_format(tmp_path):
+    [match] = parse_html(tmp_path, classic_player_page(rows=(real_row().replace("za 10-10-2026", "za 10-10-2026"),))).matches
+    assert match.time == "Sat 10/10/2026 13:30" and pc.STANDARD_TIME_RE.match(match.time)
