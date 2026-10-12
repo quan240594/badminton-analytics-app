@@ -32,7 +32,7 @@ def player_page(*rows, guid=GUID, name="Jan Jansen"):
     return classic_player_page(name=name, guid=guid, rows=tuple(rows))
 
 
-def match_row(opponent="Piet", score="21-15 21-10", time="Sat 12-9-2026 13:30"):
+def match_row(opponent="Piet", score="21-15 21-10", time="Sat 12/09/2026 13:30"):
     return classic_row(
         classic_side("DEO BV M2", (("5", "Jan Jansen"),), "team"),
         classic_side("VELO M1", (("9", opponent),)),
@@ -89,7 +89,7 @@ def career(*, matches=None, alias="5"):
 
 def stored(opponent="Piet", score="21-15 21-10", tournament=TID, source="5"):
     return {
-        "tournament_id": tournament, "source_player_id": source, "time": "Sat 12-9-2026 13:30", "event": "MS", "draw": "Afd 1A",
+        "tournament_id": tournament, "source_player_id": source, "time": "Sat 12/09/2026 13:30", "event": "MS", "draw": "Afd 1A",
         "home_team": "DEO BV M2", "home_players": [["5", "Jan Jansen"]], "away_team": "VELO M1", "away_players": [["9", opponent]],
         "score": score, "winner_side": "home",
     }
@@ -185,7 +185,7 @@ def test_refresh_player_replaces_their_matches_and_keeps_everyone_elses(env):
     other_season = stored(tournament="OLD")
     someone_else = stored(opponent="Kees", source="7")
     old = stored(score="")
-    status, state = refresh(env, player_page(match_row(score="21-15 21-10"), match_row("Kees", "21-9 21-9", "Sun 13-9-2026 10:00")), career(matches=[old, other_season, someone_else]))
+    status, state = refresh(env, player_page(match_row(score="21-15 21-10"), match_row("Kees", "21-9 21-9", "Sun 13/09/2026 10:00")), career(matches=[old, other_season, someone_else]))
 
     matches = state["players"][GUID]["matches"]
     assert status == "updated"
@@ -353,6 +353,17 @@ def test_main_fails_loudly_when_every_request_fails(env, monkeypatch):
 
 
 def test_refresh_player_keeps_the_data_when_a_parse_lost_the_team_names(env):
-    no_teams = classic_row(classic_side("", (("5", "Jan Jansen"),)), classic_side("", (("9", "Piet"),)), time="Sat 12-9-2026 13:30")
+    no_teams = classic_row(classic_side("", (("5", "Jan Jansen"),)), classic_side("", (("9", "Piet"),)), time="Sat 12/09/2026 13:30")
     status, state = refresh(env, player_page(no_teams), career(matches=[stored()]))
+    assert status == "kept" and state["players"][GUID]["matches"] == [stored()]
+
+
+def test_refresh_player_stores_a_dutch_page_in_the_standard_time_format(env):
+    dutch = match_row(time="za 10-10-2026 13:30")
+    status, state = refresh(env, player_page(dutch), career())
+    assert status == "updated" and state["players"][GUID]["matches"][0]["time"] == "Sat 10/10/2026 13:30"
+
+
+def test_refresh_player_keeps_the_data_when_a_time_is_in_an_unrecognised_format(env):
+    status, state = refresh(env, player_page(match_row(time="2026-10-10 13:30")), career(matches=[stored()]))
     assert status == "kept" and state["players"][GUID]["matches"] == [stored()]

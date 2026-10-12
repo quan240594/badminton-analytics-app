@@ -42,7 +42,7 @@ from build_career_db import (
     save_state as save_career_state,
 )
 from http_fetch import CHROME_HEADERS, RETRY_DELAYS, fetch_basic_retry, fetch_text
-from parse_career import parse_player_file
+from parse_career import STANDARD_TIME_RE, parse_player_file
 from pool_fetch_core import BASE_URL, CURRENT_TOURNAMENT_ID
 from safe_path import safe_path
 from sanitize import clean_json_value
@@ -189,8 +189,8 @@ def refresh_player(career: dict, player_id: str, cookie: str, event_source_map: 
     previous = matches_of(career, guid, CURRENT_TOURNAMENT_ID, player_id)
     if previous and not info.matches:
         return "kept"  # a player does not lose their matches - an expired session looks exactly like this
-    if any(not (m.home_team and m.away_team) for m in info.matches):
-        return "kept"  # a parse that lost the team names would overwrite good rows with worse ones
+    if any(not (m.home_team and m.away_team and STANDARD_TIME_RE.match(m.time)) for m in info.matches):
+        return "kept"  # lost team names or an unrecognised date format would overwrite good rows with worse ones
 
     if previous:
         career["players"][guid]["matches"] = [m for m in career["players"][guid]["matches"] if m not in previous]

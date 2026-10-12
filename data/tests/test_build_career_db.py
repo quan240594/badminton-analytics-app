@@ -232,7 +232,7 @@ def test_load_state_corrects_clubs_cached_under_a_variant_spelling(tmp_path, mon
     path.write_text(json.dumps({
         "parsed_files": [],
         "players": {
-            "g1": {"name": "Marcel", "club": "DEO, BV", "aliases": {"t:1": {"name": "Marcel", "club": "DEO, BV"}, "t:2": {"name": "Marcel", "club": None}}, "matches": []},
+            "g1": {"name": "Marcel", "club": "DEO, BV", "aliases": {"t:1": {"name": "Marcel", "club": "DEO, BV"}, "t:2": {"name": "Marcel", "club": None}}, "matches": [{"time": "zo 13-9-2026 13:00"}, {"time": "Sun 13/09/2026 13:00"}]},
             "g2": {"name": "No club", "aliases": {}, "matches": []},
         },
     }), encoding="utf-8")
@@ -241,4 +241,5 @@ def test_load_state_corrects_clubs_cached_under_a_variant_spelling(tmp_path, mon
     assert players["g1"]["club"] == "DEO BV"
     assert players["g1"]["aliases"]["t:1"]["club"] == "DEO BV"
     assert players["g1"]["aliases"]["t:2"]["club"] is None
+    assert [m["time"] for m in players["g1"]["matches"]] == ["Sun 13/09/2026 13:00", "Sun 13/09/2026 13:00"]
     assert players["g2"]["club"] is None
