@@ -56,11 +56,11 @@ jobs:
         run: python3 playwright_login.py --save cookie.txt
         working-directory: data
 
-      # Fetches pools back-to-back for at most 15 minutes (no in-process sleep),
-      # committing+pushing after each one so a hard stop only loses whichever
-      # single pool was in flight. Stops early on exit code 3 (today's budget or
-      # the whole pool list is exhausted, see scrape_all_pools.py) or a real
-      # failure (any other non-zero exit).
+      # Each iteration fetches one pending pool, then re-reads the players of
+      # pools whose results changed (refresh_league_results.py, in slices of at
+      # most 5 minutes), committing+pushing after each so a hard stop only
+      # loses one slice. Stops early once both drivers exit 3 (nothing left)
+      # or on a real failure (any other non-zero exit).
       - name: Scrape pools for up to 15 minutes
         id: scrape
         run: |
@@ -76,7 +76,12 @@ jobs:
           while [ "$(date +%s)" -lt "$deadline" ]; do
             set +e
             (cd data && python3 scrape_all_pools.py $FORCE_FLAG)
-            code=$?
+            pools_code=$?
+            slice_minutes=$(( (deadline - $(date +%s)) / 60 ))
+            [ "$slice_minutes" -gt 5 ] && slice_minutes=5
+            [ "$slice_minutes" -lt 1 ] && slice_minutes=1
+            (cd data && python3 refresh_league_results.py --cookie-file cookie.txt --slice-minutes "$slice_minutes" $FORCE_FLAG)
+            refresh_code=$?
             # Ranking links only exist on whichever player pages this iteration
             # just (re-)fetched (data/pages/ isn't persisted between runs), so
             # this only ever looks up new/just-scraped players - never a full
@@ -85,7 +90,7 @@ jobs:
             (cd data && python3 parse_rankings.py)
             set -e
 
-            git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json
+            git add data/career.json data/career.state.json data/events_index.json data/fetched_pools.json data/pool_rosters.json data/player_fixed_status.json data/team_fixed_status_fetched.json data/scrape_daily_budget.json data/league_results_state.json
             [ -f data/rankings.json ] && git add data/rankings.json
             git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
 
@@ -96,7 +101,17 @@ jobs:
               git push
             fi
 
-            if [ "$code" -ne 0 ]; then
+            code=0
+            if [ "$pools_code" -ne 0 ] && [ "$pools_code" -ne 3 ]; then
+              code="$pools_code"
+              break
+            fi
+            if [ "$refresh_code" -ne 0 ] && [ "$refresh_code" -ne 3 ]; then
+              code="$refresh_code"
+              break
+            fi
+            if [ "$pools_code" -eq 3 ] && [ "$refresh_code" -eq 3 ]; then
+              code=3
               break
             fi
           done
@@ -107,7 +122,7 @@ jobs:
           # anything else is a real scraper failure and must fail the run loudly,
           # not get silently swallowed as green.
           if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then
-            echo "scrape_all_pools.py failed (exit $code) - failing this run." >&2
+            echo "A scrape driver failed (exit $code) - failing this run." >&2
             exit "$code"
           fi
 
