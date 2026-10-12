@@ -5,6 +5,7 @@ from helpers_parsers import (
     classic_player_page,
     classic_row,
     classic_side,
+    real_team_link,
     new_template_item,
     new_template_player,
     player_link,
@@ -171,3 +172,37 @@ def test_new_template_matches_decode_double_encoded_names():
     (match,) = pc.parse_new_template_matches(html, "TID", "1")
 
     assert match.home_players == [("1", "Noah 't Jong")]
+
+
+def parse_html(tmp_path, html):
+    path = tmp_path / "player_5.html"
+    path.write_text(html, encoding="utf-8")
+    return pc.parse_player_file(path, "T1", "5")
+
+
+def real_row(home_win=False):
+    home = real_team_link("DEO BV M2") + player_link("5", "Jan Jansen") + player_link("6", "Kees")
+    away = real_team_link("DROP SHOT BC M2") + player_link("7", "Quan Do")
+    if home_win:
+        home = strong(real_team_link("DEO BV M2")) + player_link("5", "Jan Jansen")
+    return classic_row(home, away, time="za 10-10-2026 13:30", event="MD1", score="12-21 14-21")
+
+
+def test_team_names_are_read_from_links_as_long_as_the_real_site_renders_them(tmp_path):
+    [match] = parse_html(tmp_path, classic_player_page(rows=(real_row(),))).matches
+    assert (match.home_team, match.away_team) == ("DEO BV M2", "DROP SHOT BC M2")
+    assert match.home_players == [("5", "Jan Jansen"), ("6", "Kees")]
+
+
+def test_winning_team_is_found_through_a_long_real_link(tmp_path):
+    [match] = parse_html(tmp_path, classic_player_page(rows=(real_row(home_win=True),))).matches
+    assert match.winner_side == "home" and match.home_team == "DEO BV M2"
+
+
+def test_matches_are_read_when_the_site_serves_the_page_in_dutch(tmp_path):
+    english = classic_player_page(rows=(real_row(),))
+    assert "Match overview" in english
+    dutch = english.replace("<h3>Match overview</h3><table>", '<table class="ruler matches player"><caption>Wedstrijdoverzicht</caption>')
+    assert len(parse_html(tmp_path, dutch).matches) == 1
+    unknown_heading = english.replace("<h3>Match overview</h3><table>", '<table class="ruler matches player"><caption>Something else</caption>')
+    assert len(parse_html(tmp_path, unknown_heading).matches) == 1

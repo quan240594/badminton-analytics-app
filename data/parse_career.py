@@ -17,9 +17,13 @@ from pathlib import Path
 
 PLAYER_LINK_RE = re.compile(r'<a href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>')
 STRONG_PLAYER_RE = re.compile(r'<strong>\s*<a[^>]{0,50}href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>\s*</strong>')
-TEAM_NAME_RE = re.compile(r'<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>')
-STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>\s*</strong>')
+# A team link carries its href after the class (~80 characters on real pages).
+TEAM_NAME_RE = re.compile(r'<a[^>]{0,50}class="teamname"[^>]{0,200}>([^<]+)</a>')
+STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]{0,50}class="teamname"[^>]{0,200}>([^<]+)</a>\s*</strong>')
 
+# The heading is "Match overview" or, when the site serves Dutch (it does for some
+# sessions), "Wedstrijdoverzicht" - the table's own class is the same either way.
+OVERVIEW_RE = re.compile(r'(?:Match overview|Wedstrijdoverzicht|class="ruler matches player").{0,2000}?<tbody>(.*?)</tbody>', re.DOTALL)
 ROW_RE = re.compile(
     r'<td align="right">(?P<time>.*?)</td><td>(?P<event>[^<]*)</td><td>(?P<draw>.*?)</td>'
     r'<td class="nowrap" align="right">(?P<home>.*?)</td><td align="center">-</td>'
@@ -207,7 +211,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
         club=club,
     )
 
-    overview_match = re.search(r"Match overview.{0,2000}?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
+    overview_match = OVERVIEW_RE.search(html_text)
     if not overview_match:
         info.matches = parse_new_template_matches(html_text, tournament_id, player_id)
         return info
