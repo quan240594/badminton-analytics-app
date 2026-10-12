@@ -189,6 +189,8 @@ def refresh_player(career: dict, player_id: str, cookie: str, event_source_map: 
     previous = matches_of(career, guid, CURRENT_TOURNAMENT_ID, player_id)
     if previous and not info.matches:
         return "kept"  # a player does not lose their matches - an expired session looks exactly like this
+    if any(not (m.home_team and m.away_team) for m in info.matches):
+        return "kept"  # a parse that lost the team names would overwrite good rows with worse ones
 
     if previous:
         career["players"][guid]["matches"] = [m for m in career["players"][guid]["matches"] if m not in previous]

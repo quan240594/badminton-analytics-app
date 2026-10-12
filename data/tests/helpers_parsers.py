@@ -15,6 +15,12 @@ def team_link(name: str) -> str:
     return f'<a class="teamname" href="team.aspx?id=T1&team=1">{name}</a>'
 
 
+def real_team_link(name: str, match: int = 8612) -> str:
+    """A team link as the site really renders it: the href follows the class and is ~80 chars long."""
+    href = f"../teammatch.aspx?id=9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E&match={match}"
+    return f'<a class="teamname" href="{href}">{name}</a>'
+
+
 def classic_side(team: str = "", players: tuple = (), winner: str | None = None) -> str:
     """One side of a classic match row; winner is None, "team" or "player"."""
     team_html = team_link(team) if team else ""

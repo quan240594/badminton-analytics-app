@@ -350,3 +350,9 @@ def test_main_fails_loudly_when_every_request_fails(env, monkeypatch):
     env.site.players = {"5": urllib.error.URLError("down")}
     setup_main(env)
     assert exit_code(monkeypatch, rlr, "--cookie-file", str(env.cookie), "--delay", "0") == 1
+
+
+def test_refresh_player_keeps_the_data_when_a_parse_lost_the_team_names(env):
+    no_teams = classic_row(classic_side("", (("5", "Jan Jansen"),)), classic_side("", (("9", "Piet"),)), time="Sat 12-9-2026 13:30")
+    status, state = refresh(env, player_page(no_teams), career(matches=[stored()]))
+    assert status == "kept" and state["players"][GUID]["matches"] == [stored()]
