@@ -61,6 +61,7 @@ jobs:
     needs: sonar
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     permissions:
       contents: write
     steps:
@@ -87,8 +88,10 @@ jobs:
         run: python3 playwright_login.py --save cookie.txt
         working-directory: data
 
+      # Re-fetching every player in one go outlasts GitHub's 6h job limit and commits
+      # nothing; scrape-national.yml now keeps results current incrementally.
       - name: Refresh current-season matches & rankings
-        if: github.event.inputs.draw_id == ''
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.draw_id == ''
         run: python3 refresh_data.py --skip-cookie-refresh
         working-directory: data
 
