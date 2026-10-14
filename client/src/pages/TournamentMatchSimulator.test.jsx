@@ -231,7 +231,8 @@ describe('TournamentMatchSimulator - upcoming tournaments', () => {
 
     const card = (await screen.findByText('Upcoming tournaments')).closest('.upcoming');
     expect(within(card).getByRole('link', { name: 'Winter Masters 2099' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=t2'));
-    expect(within(card).getByText('5 Dec 2099 – 6 Dec 2099 · Breda · HE 7, HD 7')).toBeInTheDocument();
+    const row = within(card).getByRole('link', { name: 'Winter Masters 2099' }).closest('tr');
+    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Winter Masters 2099', '5 Dec 2099 – 6 Dec 2099', 'Breda', 'HE 7, HD 7']);
     expect(within(card).queryByText('Old Open')).not.toBeInTheDocument();
   });
 
