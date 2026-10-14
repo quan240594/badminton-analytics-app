@@ -243,3 +243,46 @@ describe('buildTournaments - ranking resolved from the entrant profile', () => {
     expect((await importFresh()).buildTournaments()[0].players[0].profile).toEqual({ guid: 'G-1', stats: {} });
   });
 });
+
+describe('buildTournaments - the tournaments a player is entered in', () => {
+  function setup(entrantEntries, draws = undefined) {
+    files['tournaments.json'] = JSON.stringify({ T1: { name: 'Open' }, T2: { name: 'Masters' }, T3: { name: 'Cup' } });
+    files['tournament_details.json'] = JSON.stringify({
+      T1: {
+        entries: [{ player_id: 'a', name: 'Chow, Helin' }, { player_id: 'b', name: 'Other, Person' }],
+        events: [{ name: 'HE 7', participants: [['a'], ['b']] }, { name: 'HD 7', participants: [['a', 'b']] }],
+        draws: [],
+      },
+      T2: { entries: [{ player_id: 'x', name: 'Chow, Helin' }], events: [{ name: 'HE 5', participants: [['x']] }], draws: [] },
+      T3: { entries: [{ player_id: 'y', name: 'Chow, Helin' }], events: [], draws: [] },
+    });
+    files['entrant_rankings.json'] = JSON.stringify({ entries: entrantEntries, rankings: {} });
+    if (draws) files['tournament_draws_data.json'] = JSON.stringify(draws);
+  }
+  const playerOf = (tournaments, tid, pid) => tournaments.find((t) => t.id === tid).players.find((p) => p.id === pid);
+
+  it('lists the same member\'s entries in every tournament, with the events entered', async () => {
+    setup({ 'T1:a': 'm1', 'T2:x': 'm1', 'T3:y': 'm1', 'T1:b': 'm2' });
+    const tournaments = (await importFresh()).buildTournaments();
+    expect(playerOf(tournaments, 'T1', 'a').tournaments).toEqual([
+      { id: 'T1', events: ['HE 7', 'HD 7'] },
+      { id: 'T2', events: ['HE 5'] },
+      { id: 'T3', events: [] },
+    ]);
+    expect(playerOf(tournaments, 'T2', 'x').tournaments).toHaveLength(3);
+    expect(playerOf(tournaments, 'T1', 'b').tournaments).toEqual([{ id: 'T1', events: ['HE 7', 'HD 7'] }]);
+  });
+
+  it('does not join entries by name, so an unresolved player lists nothing', async () => {
+    setup({ 'T1:a': 'm1' });
+    const tournaments = (await importFresh()).buildTournaments();
+    expect(playerOf(tournaments, 'T1', 'a').tournaments).toEqual([{ id: 'T1', events: ['HE 7', 'HD 7'] }]);
+    expect(playerOf(tournaments, 'T2', 'x').tournaments).toEqual([]);
+  });
+
+  it('also joins through the member id seen in a played match', async () => {
+    setup({}, { T1: { d1: { matches: [{ sides: [{ players: [{ player_id: 'a', member_id: 'm7' }] }] }] } }, T2: { d2: { matches: [{ sides: [{ players: [{ player_id: 'x', member_id: 'm7' }] }] }] } } });
+    const tournaments = (await importFresh()).buildTournaments();
+    expect(playerOf(tournaments, 'T1', 'a').tournaments.map((t) => t.id)).toEqual(['T1', 'T2']);
+  });
+});

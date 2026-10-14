@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchTournaments, simulateTournamentMatch, tournamentWinModel } from '../api.js';
 import PlayerSelect from '../components/PlayerSelect.jsx';
 import { SideNames } from '../components/PlayerLink.jsx';
 import ProfileStatsCard from '../components/ProfileStatsCard.jsx';
+import UpcomingTournaments from '../components/UpcomingTournaments.jsx';
 import RankingCard from '../components/RankingCard.jsx';
 import { recordSummary } from '../lib/profile.js';
 import {
@@ -81,7 +82,7 @@ function rankingSummary(side) {
   return `#${side.ranking.rank} (${side.ranking.points} pts)`;
 }
 
-function OpponentSummary({ side, discipline }) {
+function OpponentSummary({ side, discipline, tournaments }) {
   const members = side.members ?? [];
   const pair = members.length > 1;
   return (
@@ -91,17 +92,27 @@ function OpponentSummary({ side, discipline }) {
       </p>
       {members.map((member) => {
         const summary = recordSummary(member.profile?.stats?.[discipline]);
-        return summary ? (
-          <p key={member.id} className="profile-record">
-            {pair && `${member.name}: `}{summary}
-          </p>
-        ) : null;
+        return (
+          <Fragment key={member.id}>
+            {summary && (
+              <p className="profile-record">
+                {pair && `${member.name}: `}{summary}
+              </p>
+            )}
+            <UpcomingTournaments
+              entries={member.tournaments}
+              tournaments={tournaments}
+              title={pair ? `${member.name}: upcoming tournaments` : 'Upcoming tournaments'}
+              collapsible
+            />
+          </Fragment>
+        );
       })}
     </>
   );
 }
 
-function DrawResult({ title, badge, partners, note, opponentResults }) {
+function DrawResult({ title, badge, partners, note, opponentResults, tournaments }) {
   return (
     <div className="result">
       <h3>
@@ -124,7 +135,7 @@ function DrawResult({ title, badge, partners, note, opponentResults }) {
                   {Math.round(result.winProbabilityB * 100)}%
                 </div>
               </div>
-              <OpponentSummary side={result.sideB} discipline={result.discipline} />
+              <OpponentSummary side={result.sideB} discipline={result.discipline} tournaments={tournaments} />
             </>
           )}
         </div>
@@ -347,6 +358,7 @@ export default function TournamentMatchSimulator() {
         <div className="player-card-grid">
           <RankingCard nationalRanking={player.nationalRanking} />
           <ProfileStatsCard profile={player.profile} />
+          <UpcomingTournaments entries={player.tournaments} tournaments={tournaments} />
         </div>
       )}
 
@@ -356,7 +368,7 @@ export default function TournamentMatchSimulator() {
       {drawResults.map(({ draw, own, note, outlook, opponentResults }) => (
         outlook
           ? <KnockoutResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} outlook={outlook} memberOf={memberOf} />
-          : <DrawResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} opponentResults={opponentResults ?? []} />
+          : <DrawResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} opponentResults={opponentResults ?? []} tournaments={tournaments} />
       ))}
 
       {showNoDrawRow && (
@@ -385,7 +397,7 @@ export default function TournamentMatchSimulator() {
       {mockLoading && <p className="muted">Simulating…</p>}
 
       {mockResults.map(({ event, own, note, outlook, opponentResults }) => {
-        const shared = { title: event.name.replace(/\s+/g, ' '), badge: 'Mocked draw', partners: partnersOf(own), note };
+        const shared = { title: event.name.replace(/\s+/g, ' '), badge: 'Mocked draw', partners: partnersOf(own), note, tournaments };
         return outlook
           ? <KnockoutResult key={event.event_id} {...shared} outlook={outlook} memberOf={memberOf} />
           : <DrawResult key={event.event_id} {...shared} opponentResults={opponentResults} />;

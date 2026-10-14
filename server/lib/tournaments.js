@@ -70,6 +70,28 @@ function uniqueLeagueRankingsByName(leaguePlayers) {
 
 const hasAnyRanking = (ranking) => Boolean(ranking) && ['singles', 'doubles', 'mixed'].some((d) => ranking[d]);
 
+// Event participants are teams of local player ids.
+const eventsOf = (detail, localId) => (detail.events || [])
+  .filter((event) => (event.participants || []).some((team) => team.includes(localId)))
+  .map((event) => event.name);
+
+// Every tournament each site-wide MemberID is entered in, so a player's other
+// (upcoming) tournaments can be listed from any one of them. Local ids are only
+// unique within a tournament, so only a resolved MemberID joins entries - never a name.
+function tournamentsByMember(details, drawsData, entrantState) {
+  const byMember = new Map();
+  for (const [id, detail] of Object.entries(details)) {
+    const idToMember = localIdToMemberId(drawsData[id]);
+    for (const entry of detail.entries || []) {
+      const memberId = entrantState.entries?.[`${id}:${entry.player_id}`] ?? idToMember.get(entry.player_id);
+      if (!memberId) continue;
+      if (!byMember.has(memberId)) byMember.set(memberId, []);
+      byMember.get(memberId).push({ id, events: eventsOf(detail, entry.player_id) });
+    }
+  }
+  return byMember;
+}
+
 // Ranking sources for an entrant, most to least exact: the MemberID seen in a
 // played match, the MemberID resolved from the player's site profile
 // (fetch_entrant_rankings.py), and finally - only when given leaguePlayers - the
@@ -81,6 +103,7 @@ export function buildTournaments(leaguePlayers = []) {
   const drawsData = loadJson(DRAWS_DATA_PATH, {});
   const rankingsRaw = loadJson(RANKINGS_PATH, { players: {}, top: {} });
   const entrantState = loadJson(ENTRANT_RANKINGS_PATH, { entries: {}, rankings: {} });
+  const entriesByMember = tournamentsByMember(details, drawsData, entrantState);
 
   const tournaments = Object.entries(details).map(([id, detail]) => {
     const meta = tournamentsRaw[id] ?? {};
@@ -101,6 +124,7 @@ export function buildTournaments(leaguePlayers = []) {
         country: entry.country,
         nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
         profile: profileRecord?.guid ? { guid: profileRecord.guid, stats: profileRecord.stats ?? {} } : null,
+        tournaments: entriesByMember.get(entrantMemberId ?? memberId) ?? [],
       };
     });
 

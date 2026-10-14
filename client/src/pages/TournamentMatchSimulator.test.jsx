@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import TournamentMatchSimulator from './TournamentMatchSimulator.jsx';
 
 const fetchTournaments = vi.fn();
@@ -199,6 +199,47 @@ describe('TournamentMatchSimulator - player profiles', () => {
 
     expect(await screen.findByRole('link', { name: 'Cara Gamma' })).toHaveAttribute('href', profileUrl(CARA));
     expect(screen.getByText('60% Bob Beta - you win 60%')).toBeInTheDocument();
+  });
+});
+
+describe('TournamentMatchSimulator - upcoming tournaments', () => {
+  // Far-future dates keep these upcoming whenever the tests run.
+  const OTHER = { id: 't2', name: 'Winter Masters 2099', club: 'BC X', location: 'Breda', dates: ['2099-12-05 00:00', '2099-12-06 23:59'], players: [], draws: [] };
+  const OLD = { id: 't3', name: 'Old Open', dates: ['2020-01-01 00:00'], players: [], draws: [] };
+  const aliceEntries = [{ id: 't1', events: ['HE 1'] }, { id: 't2', events: ['HE 7', 'HD 7'] }, { id: 't3', events: ['HE 2'] }];
+  const caraEntries = [{ id: 't2', events: ['HE 9'] }];
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    const players = TOURNAMENT.players.map((p) => {
+      if (p.id === 'p1') return { ...p, tournaments: aliceEntries };
+      if (p.id === 'p3') return { ...p, tournaments: caraEntries };
+      return p;
+    });
+    fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, dates: ['2099-11-01 00:00'], players }, OTHER, OLD]);
+    simulateTournamentMatch.mockResolvedValue({
+      discipline: 'singles',
+      sideB: { ...rankedSide('p3', 'Cara Gamma'), members: [{ ...rankedSide('p3', 'Cara Gamma').members[0], tournaments: caraEntries }] },
+      winProbabilityA: 0.7,
+      winProbabilityB: 0.3,
+    });
+  });
+
+  it('lists the selected player\'s upcoming tournaments with the events entered, and leaves out finished ones', async () => {
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    const card = (await screen.findByText('Upcoming tournaments')).closest('.upcoming');
+    expect(within(card).getByRole('link', { name: 'Winter Masters 2099' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=t2'));
+    expect(within(card).getByText('5 Dec 2099 – 6 Dec 2099 · Breda · HE 7, HD 7')).toBeInTheDocument();
+    expect(within(card).queryByText('Old Open')).not.toBeInTheDocument();
+  });
+
+  it('offers an opponent\'s upcoming tournaments collapsed beneath their line', async () => {
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findAllByText('Upcoming tournaments (1)')).not.toHaveLength(0);
+    expect(screen.getAllByRole('link', { name: 'Winter Masters 2099' }).length).toBeGreaterThan(1);
   });
 });
 
