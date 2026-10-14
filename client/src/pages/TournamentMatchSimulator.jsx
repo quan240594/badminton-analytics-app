@@ -86,7 +86,7 @@ function OpponentSummary({ side, discipline, tournaments }) {
   const members = side.members ?? [];
   const pair = members.length > 1;
   return (
-    <>
+    <div className="opponent">
       <p className="rating">
         vs <SideNames members={members} /> — {rankingSummary(side)}
       </p>
@@ -102,13 +102,13 @@ function OpponentSummary({ side, discipline, tournaments }) {
             <UpcomingTournaments
               entries={member.tournaments}
               tournaments={tournaments}
-              title={pair ? `${member.name}: upcoming tournaments` : 'Upcoming tournaments'}
+              title={`${member.name}: upcoming tournaments`}
               collapsible
             />
           </Fragment>
         );
       })}
-    </>
+    </div>
   );
 }
 
@@ -357,7 +357,7 @@ export default function TournamentMatchSimulator() {
         <div className="player-card-grid">
           <RankingCard nationalRanking={player.nationalRanking} />
           <ProfileStatsCard profile={player.profile} />
-          <UpcomingTournaments entries={player.tournaments} tournaments={tournaments} />
+          <UpcomingTournaments entries={player.tournaments} tournaments={tournaments} title={`${player.name}: upcoming tournaments`} />
         </div>
       )}
 
