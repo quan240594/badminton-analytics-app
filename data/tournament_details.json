@@ -5330,6 +5330,13 @@
         "participants": []
       },
       {
+        "event_id": "31",
+        "name": "Rol Enkel A",
+        "draws": 3,
+        "entries": 6,
+        "participants": []
+      },
+      {
         "event_id": "21",
         "name": "Rol ME A",
         "draws": 1,
@@ -5341,13 +5348,6 @@
         "name": "Rol ME B",
         "draws": 1,
         "entries": 3,
-        "participants": []
-      },
-      {
-        "event_id": "31",
-        "name": "Rol ME C",
-        "draws": 0,
-        "entries": 0,
         "participants": []
       },
       {
@@ -5451,6 +5451,30 @@
         "draw_id": "4",
         "name": "Staand VE B - Groep B",
         "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "Rol Enkel A",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "Rol Enkel A - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "13",
+        "name": "Rol Enkel A - Groep B",
+        "size": 3,
         "type": "Poule",
         "stage": "Hoofdschema",
         "loser_round": null
