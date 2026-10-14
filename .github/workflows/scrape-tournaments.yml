@@ -91,6 +91,7 @@ jobs:
           # cancelled by the job timeout, and a cancelled run never chains to the next.
           hard_deadline=$(( start + 21 * 60 ))
           longest=0
+          failures=0
           code=0
           while [ "$(date +%s)" -lt "$deadline" ]; do
             if [ $(( $(date +%s) + longest )) -ge "$hard_deadline" ]; then
@@ -122,13 +123,24 @@ jobs:
               git push
             fi
 
+            # One timed-out request makes a driver exit 1 and the same item is retried
+            # next iteration, so a lone failure must not end the run (a failed run never
+            # chains); two iterations in a row that fail means something is really wrong.
+            failed_code=0
             if [ "$tournaments_code" -ne 0 ] && [ "$tournaments_code" -ne 3 ]; then
-              code="$tournaments_code"
-              break
+              failed_code="$tournaments_code"
             fi
             if [ "$draws_code" -ne 0 ] && [ "$draws_code" -ne 3 ]; then
-              code="$draws_code"
-              break
+              failed_code="$draws_code"
+            fi
+            if [ "$failed_code" -ne 0 ]; then
+              failures=$(( failures + 1 ))
+              if [ "$failures" -ge 2 ]; then
+                code="$failed_code"
+                break
+              fi
+            else
+              failures=0
             fi
             if [ "$entrants_code" -ne 0 ] && [ "$entrants_code" -ne 3 ]; then
               code="$entrants_code"
