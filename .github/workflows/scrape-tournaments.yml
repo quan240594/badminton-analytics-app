@@ -85,9 +85,18 @@ jobs:
             FORCE_FLAG="--force"
           fi
 
-          deadline=$(( $(date +%s) + 15 * 60 ))
+          start=$(date +%s)
+          deadline=$(( start + 15 * 60 ))
+          # An iteration takes ~14 minutes; one that cannot finish before this would be
+          # cancelled by the job timeout, and a cancelled run never chains to the next.
+          hard_deadline=$(( start + 21 * 60 ))
+          longest=0
           code=0
           while [ "$(date +%s)" -lt "$deadline" ]; do
+            if [ $(( $(date +%s) + longest )) -ge "$hard_deadline" ]; then
+              break
+            fi
+            iteration_start=$(date +%s)
             set +e
             (cd data && python3 scrape_all_tournaments.py $FORCE_FLAG)
             tournaments_code=$?
@@ -130,6 +139,10 @@ jobs:
               break
             fi
             code=0
+            elapsed=$(( $(date +%s) - iteration_start ))
+            if [ "$elapsed" -gt "$longest" ]; then
+              longest=$elapsed
+            fi
           done
 
           echo "code=$code" >> "$GITHUB_OUTPUT"
