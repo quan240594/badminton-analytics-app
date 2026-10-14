@@ -221,7 +221,6 @@ export default function TournamentMatchSimulator() {
   const tournament = tournaments.find((t) => t.id === tournamentId) ?? null;
   const players = tournament?.players ?? [];
   const player = players.find((p) => p.id === playerId);
-  const nameOf = (id) => players.find((p) => p.id === id)?.name ?? id;
   const memberOf = (id) => {
     const found = players.find((p) => p.id === id);
     return { id, name: found?.name ?? id, profile: found?.profile ?? null };
