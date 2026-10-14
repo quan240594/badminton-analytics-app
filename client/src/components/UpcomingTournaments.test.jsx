@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import UpcomingTournaments from './UpcomingTournaments.jsx';
 
 const TOURNAMENTS = [
@@ -14,9 +14,19 @@ describe('UpcomingTournaments', () => {
     render(<UpcomingTournaments entries={ENTRIES} tournaments={TOURNAMENTS} now={NOW} />);
 
     expect(screen.getByText('Upcoming tournaments')).toBeInTheDocument();
+    expect(screen.getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Tournament', 'Date', 'Location', 'Events']);
+    const row = screen.getByRole('link', { name: 'Open A' }).closest('tr');
     expect(screen.getByRole('link', { name: 'Open A' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=A'));
-    expect(screen.getByText('21 Nov 2026 – 22 Nov 2026 · Breda · HE 7, HD 7')).toBeInTheDocument();
+    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Open A', '21 Nov 2026 – 22 Nov 2026', 'Breda', 'HE 7, HD 7']);
     expect(screen.queryByText('Cup B')).not.toBeInTheDocument();
+  });
+
+  it('fills a missing location or event list with a dash', () => {
+    const tournaments = [{ id: 'C', name: 'Cup C', dates: ['2026-12-01 00:00'] }];
+    render(<UpcomingTournaments entries={[{ id: 'C', events: [] }]} tournaments={tournaments} now={NOW} />);
+
+    const row = screen.getByRole('link', { name: 'Cup C' }).closest('tr');
+    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Cup C', '1 Dec 2026', '-', '-']);
   });
 
   it('says none are known when there is nothing upcoming', () => {
