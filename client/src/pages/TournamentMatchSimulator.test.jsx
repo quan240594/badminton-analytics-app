@@ -229,7 +229,7 @@ describe('TournamentMatchSimulator - upcoming tournaments', () => {
   it('lists the selected player\'s upcoming tournaments with the events entered, and leaves out finished ones', async () => {
     await selectTournamentAndPlayer('Alice Alpha');
 
-    const card = (await screen.findByText('Upcoming tournaments')).closest('.upcoming');
+    const card = (await screen.findByText('Alice Alpha: upcoming tournaments')).closest('.upcoming');
     expect(within(card).getByRole('link', { name: 'Winter Masters 2099' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=t2'));
     const row = within(card).getByRole('link', { name: 'Winter Masters 2099' }).closest('tr');
     expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Winter Masters 2099', '5 Dec 2099 – 6 Dec 2099', 'Breda', 'HE 7, HD 7']);
@@ -239,7 +239,7 @@ describe('TournamentMatchSimulator - upcoming tournaments', () => {
   it('offers an opponent\'s upcoming tournaments collapsed beneath their line', async () => {
     await selectTournamentAndPlayer('Alice Alpha');
 
-    expect(await screen.findAllByText('Upcoming tournaments (1)')).not.toHaveLength(0);
+    expect(await screen.findAllByText('Cara Gamma: upcoming tournaments (1)')).not.toHaveLength(0);
     expect(screen.getAllByRole('link', { name: 'Winter Masters 2099' }).length).toBeGreaterThan(1);
   });
 });

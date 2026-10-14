@@ -528,10 +528,13 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 /* .sides is a row of two cards elsewhere; here it holds one probability bar and
    its label, and the bar would otherwise shrink to the width of its text. */
-.tournament-simulator .sides { align-items: center; }
+.tournament-simulator .sides { align-items: flex-start; }
 .tournament-simulator .sides .bar { flex: 0 1 28rem; min-width: 12rem; }
 .tournament-simulator .sides .bar > div { white-space: nowrap; }
 .tournament-simulator .sides .rating { margin: 0; }
+.tournament-simulator .opponent { display: flex; flex: 1 1 0; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.tournament-simulator .opponent .rating { display: flex; align-items: center; min-height: 40px; }
+.tournament-simulator .opponent .profile-record { margin: 0; }
 
 .no-draw-row { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
 .no-draw-row p { margin: 0; }
