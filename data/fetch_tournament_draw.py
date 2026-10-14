@@ -45,9 +45,9 @@ ROUND_RE = re.compile(r'title="((?:Ronde|Voorronde|Kwartfinale|Halve finale|Fina
 SIDE_SPLIT_RE = re.compile(r'<div class="match__row( has-won)?\s*">')
 # Attributes may follow data-nationality-id (e.g. class="nav-link"), so only the
 # opening tag's end is anchored - requiring none after it dropped every such player.
-PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]*data-nationality-id="([A-Z]*)"[^>]*>\s*<span class="nav-link__value">([^<]+)</span>')
+PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]{0,300}data-nationality-id="([A-Z]*)"[^>]{0,300}>\s*<span class="nav-link__value">([^<]+)</span>')
 # A knockout shows the seed after the name ("Name [3]", doubles "[3/4]").
-SEED_RE = re.compile(r"^(.*?)\s*\[(\d+)(?:/\d+)?\]$")
+SEED_RE = re.compile(r"^(.*)\[(\d+)(?:/\d+)?\]$")
 BYE_RE = re.compile(r">\s*Bye\s*<")
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
@@ -81,7 +81,7 @@ def parse_match_player(player_id: str, raw_name: str) -> dict:
     seeded = SEED_RE.match(name)
     if not seeded:
         return {"player_id": player_id, "name": name}
-    return {"player_id": player_id, "name": seeded.group(1), "seed": int(seeded.group(2))}
+    return {"player_id": player_id, "name": seeded.group(1).strip(), "seed": int(seeded.group(2))}
 
 
 def parse_matches(html: str) -> list[dict]:
