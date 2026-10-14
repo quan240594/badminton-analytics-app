@@ -344,7 +344,7 @@ export default function TournamentMatchSimulator() {
           {undrawnEvents.length > 0 && (
             <>
               <label className="mock-format">
-                Mocked draw format
+                Mocked draw format{' '}
                 <select value={mockFormat} onChange={(e) => changeMockFormat(e.target.value)}>
                   {MOCK_FORMATS.map(({ value, label }) => <option key={value} value={value}>{label}</option>)}
                 </select>
