@@ -297,6 +297,16 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .ranking-table tr + tr td { border-top: 1px solid #1e293b; }
 .ranking-table .total-row td { font-weight: 700; border-top: 2px solid #334155; color: #e2e8f0; }
 
+.profile-link { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+.profile-link:hover { color: #93c5fd; }
+.profile-stats { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem; }
+.profile-stats > .profile-link { color: #93c5fd; align-self: flex-start; }
+.profile-form { margin: 0; color: #94a3b8; }
+.form-chip { display: inline-block; min-width: 1.3rem; margin-left: 0.2rem; text-align: center; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
+.form-chip.won { background: #14532d; color: #86efac; }
+.form-chip.lost { background: #7f1d1d; color: #fca5a5; }
+.profile-record { margin: -0.3rem 0 0.5rem; font-size: 0.75rem; color: #94a3b8; }
+
 .division-table {
   width: 100%;
   table-layout: fixed;

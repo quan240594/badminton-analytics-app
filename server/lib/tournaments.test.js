@@ -228,4 +228,18 @@ describe('buildTournaments - ranking resolved from the entrant profile', () => {
     setup({ entries: {}, rankings: {} });
     expect((await importFresh()).buildTournaments()[0].players[0].nationalRanking).toBeNull();
   });
+
+  it('carries the profile guid and statistics of a resolved entrant', async () => {
+    const stats = { total: { career: { wins: 97, losses: 60 } } };
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { guid: 'G-1', ranking: {}, stats } } });
+    const { buildTournaments } = await importFresh();
+    expect(buildTournaments()[0].players[0].profile).toEqual({ guid: 'G-1', stats });
+  });
+
+  it('has no profile without a stored guid, and empty stats when none were read', async () => {
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { guid: null, ranking: {} } } });
+    expect((await importFresh()).buildTournaments()[0].players[0].profile).toBeNull();
+    setup({ entries: { 'T1:p1': 'm1' }, rankings: { m1: { guid: 'G-1', ranking: {} } } });
+    expect((await importFresh()).buildTournaments()[0].players[0].profile).toEqual({ guid: 'G-1', stats: {} });
+  });
 });

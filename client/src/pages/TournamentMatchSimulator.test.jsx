@@ -11,6 +11,13 @@ vi.mock('../api.js', () => ({
   tournamentWinModel: (...args) => tournamentWinModel(...args),
 }));
 
+// A simulated side as the API returns it: one member per player.
+const rankedSide = (id, name, ranking = { rank: 42, points: 300 }, profile = null) => ({
+  name,
+  ranking,
+  members: [{ id, name, ranking, profile }],
+});
+
 const TOURNAMENT = {
   id: 't1',
   name: 'Test Open 2026',
@@ -65,7 +72,7 @@ describe('TournamentMatchSimulator', () => {
         return Promise.resolve({ error: true, message: 'Bob Beta has no national ranking data to simulate this match with.' });
       }
       return Promise.resolve({
-        sideB: { name: 'Cara Gamma', ranking: { rank: 42, points: 300 } },
+        sideB: rankedSide('p3', 'Cara Gamma'),
         winProbabilityA: 0.7,
         winProbabilityB: 0.3,
       });
@@ -87,12 +94,118 @@ describe('TournamentMatchSimulator', () => {
     expect(await screen.findByText('No draw data available yet')).toBeInTheDocument();
     expect(simulateTournamentMatch).not.toHaveBeenCalled();
   });
+
+  it('leaves names as plain text when no profile is known', async () => {
+    simulateTournamentMatch.mockResolvedValue({ sideB: rankedSide('p3', 'Cara Gamma'), winProbabilityA: 0.7, winProbabilityB: 0.3 });
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findAllByText(/vs Cara Gamma/)).not.toHaveLength(0);
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+  });
+});
+
+describe('TournamentMatchSimulator - player profiles', () => {
+  const CARA = '615c2c92-eee8-494c-8ac8-9cf6b2deb0a8';
+  const ALICE = '8d5d4da6-555d-461d-9713-eb531f630bcc';
+  const total = {
+    career: { wins: 97, losses: 60 },
+    thisYear: { wins: 77, losses: 39 },
+    form: [{ date: '2026-09-25', won: true }, { date: '2026-10-10', won: false }],
+  };
+  const singles = { career: { wins: 45, losses: 22 }, thisYear: { wins: 34, losses: 15 } };
+  const caraProfile = { guid: CARA, stats: { total, singles } };
+  const aliceProfile = { guid: ALICE, stats: { total, singles } };
+  const profileUrl = (guid) => `https://badmintonnederland.toernooi.nl/player-profile/${guid}`;
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    const players = TOURNAMENT.players.map((p) => {
+      if (p.id === 'p1') return { ...p, profile: aliceProfile };
+      if (p.id === 'p3') return { ...p, profile: caraProfile };
+      return p;
+    });
+    fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, players }]);
+    simulateTournamentMatch.mockResolvedValue({
+      discipline: 'singles',
+      sideB: rankedSide('p3', 'Cara Gamma', { rank: 42, points: 300 }, caraProfile),
+      winProbabilityA: 0.7,
+      winProbabilityB: 0.3,
+    });
+  });
+
+  it('links an opponent to their profile and shows their record in the discipline', async () => {
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    const [link] = await screen.findAllByRole('link', { name: 'Cara Gamma' });
+    expect(link).toHaveAttribute('href', profileUrl(CARA));
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
+    expect(screen.getAllByText('Career 45–22 (67%) · This year 34–15 (69%)')).not.toHaveLength(0);
+  });
+
+  it('shows the selected player\'s statistics, recent form and a link to their profile', async () => {
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByText('97–60 (62%)')).toBeInTheDocument();
+    expect(screen.getByText('77–39 (66%)')).toBeInTheDocument();
+    expect(screen.getByText('45–22 (67%)')).toBeInTheDocument();
+    expect(screen.getByTitle('2026-09-25')).toHaveTextContent('W');
+    expect(screen.getByTitle('2026-10-10')).toHaveTextContent('L');
+    expect(screen.getByRole('link', { name: 'View profile on Badminton Nederland' })).toHaveAttribute('href', profileUrl(ALICE));
+  });
+
+  it('links the doubles partner and each member of an opposing pair', async () => {
+    const players = [
+      { id: 'me', name: 'Do, Quan', nationalRanking: { doubles: { rank: 3, points: 9 } } },
+      { id: 'pa', name: 'Nguyen, Dung', nationalRanking: { doubles: { rank: 4, points: 8 } }, profile: { guid: 'G-PARTNER', stats: {} } },
+    ];
+    const draw = { draw_id: 'dd', name: 'HD', type: 'Poule', standings: [{ players: [{ player_id: 'me' }, { player_id: 'pa' }] }, { players: [{ player_id: 'q1' }, { player_id: 'q2' }] }], matches: [] };
+    const pair = [
+      { id: 'q1', name: 'Q, One', ranking: { rank: 5 }, profile: { guid: 'G-Q1', stats: { doubles: { career: { wins: 1, losses: 1 } } } } },
+      { id: 'q2', name: 'Q, Two', ranking: { rank: 6 }, profile: null },
+    ];
+    fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, players: [...players, { id: 'q1', name: 'Q, One' }, { id: 'q2', name: 'Q, Two' }], draws: [draw] }]);
+    simulateTournamentMatch.mockResolvedValue({
+      discipline: 'doubles',
+      sideB: { name: 'Q, One / Q, Two', ranking: null, members: pair },
+      winProbabilityA: 0.5,
+      winProbabilityB: 0.5,
+    });
+    await selectTournamentAndPlayer('Do, Quan');
+
+    expect(await screen.findByRole('link', { name: 'Nguyen, Dung' })).toHaveAttribute('href', profileUrl('G-PARTNER'));
+    expect(screen.getByRole('link', { name: 'Q, One' })).toHaveAttribute('href', profileUrl('G-Q1'));
+    expect(screen.queryByRole('link', { name: 'Q, Two' })).not.toBeInTheDocument();
+    expect(screen.getByText('Q, One: Career 1–1 (50%)')).toBeInTheDocument();
+  });
+
+  it('links the possible opponents in a knockout bracket', async () => {
+    const names = { p1: 'Alice Alpha', p2: 'Bob Beta', p3: 'Cara Gamma', p4: 'Dana Delta' };
+    tournamentWinModel.mockResolvedValue({
+      isRated: () => true,
+      winProbability: () => 0.6,
+      nameOf: (id) => names[id] ?? id,
+    });
+    const side = (id) => ({ won: false, players: id ? [{ player_id: id }] : [] });
+    const tie = (round, a, b) => ({ round, sides: [side(a), side(b)] });
+    const bracket = [tie('Halve finale', 'p1', 'p3'), tie('Halve finale', 'p2', 'p4'), tie('Finale')];
+    fetchTournaments.mockResolvedValue([{
+      ...TOURNAMENT,
+      players: TOURNAMENT.players.map((p) => (p.id === 'p3' ? { ...p, profile: caraProfile } : p)),
+      draws: [{ draw_id: 'k1', name: 'HE', type: 'Afvalschema', stage: 'Hoofdschema', matches: bracket }],
+    }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    expect(await screen.findByRole('link', { name: 'Cara Gamma' })).toHaveAttribute('href', profileUrl(CARA));
+    expect(screen.getByText('60% Bob Beta - you win 60%')).toBeInTheDocument();
+  });
 });
 
 describe('TournamentMatchSimulator - draws and persistence', () => {
   const STORAGE_KEY = 'badminton-app-tournament-state';
   const WIN_RESULT = {
-    sideB: { name: 'Cara Gamma', ranking: { rank: 42, points: 300 } },
+    sideB: rankedSide('p3', 'Cara Gamma'),
     winProbabilityA: 0.7,
     winProbabilityB: 0.3,
   };
@@ -226,8 +339,12 @@ describe('TournamentMatchSimulator - mocked draws', () => {
     localStorage.clear();
     simulateTournamentMatch.mockImplementation((_t, _d, _a, b) => Promise.resolve({
       sideB: Array.isArray(b)
-        ? { name: 'Q, One / Q, Two', ranking: null, members: [{ ranking: { rank: 5 } }, { ranking: { rank: 6 } }] }
-        : { name: `Opp ${b}`, ranking: { rank: 10, points: 90 }, members: [{ ranking: { rank: 10 } }] },
+        ? {
+          name: 'Q, One / Q, Two',
+          ranking: null,
+          members: [{ id: 'q1', name: 'Q, One', ranking: { rank: 5 } }, { id: 'q2', name: 'Q, Two', ranking: { rank: 6 } }],
+        }
+        : rankedSide(b, `Opp ${b}`, { rank: 10, points: 90 }),
       winProbabilityA: 0.6,
       winProbabilityB: 0.4,
     }));
@@ -379,7 +496,7 @@ describe('TournamentMatchSimulator - mocked draws', () => {
 });
 
 describe('TournamentMatchSimulator - draw formats', () => {
-  const WIN_RESULT = { sideB: { name: 'Cara Gamma', ranking: { rank: 42, points: 300 } }, winProbabilityA: 0.7, winProbabilityB: 0.3 };
+  const WIN_RESULT = { sideB: rankedSide('p3', 'Cara Gamma'), winProbabilityA: 0.7, winProbabilityB: 0.3 };
   const standings = (...ids) => ids.map((id) => ({ players: [{ player_id: id }] }));
   const side = (id) => ({ won: false, players: id ? [{ player_id: id }] : [] });
   const tie = (round, a, b) => ({ round, sides: [side(a), side(b)] });

@@ -72,6 +72,19 @@ describe('simulateTournamentMatch', () => {
     expect(result.winProbabilityA + result.winProbabilityB).toBeCloseTo(1);
   });
 
+  it('reports the discipline and hands each member\'s profile through', async () => {
+    const profile = { guid: 'G-2', stats: { singles: { career: { wins: 1, losses: 0 } } } };
+    mockBundle([
+      { id: 'p1', name: 'Alice', nationalRanking: { singles: { rank: 10, points: 900, topPoints: 1000, pctOfTop: 0.9 } } },
+      { id: 'p2', name: 'Bob', nationalRanking: { singles: { rank: 50, points: 400, topPoints: 1000, pctOfTop: 0.4 } }, profile },
+    ]);
+    const { simulateTournamentMatch } = await freshApi();
+    const result = await simulateTournamentMatch('t1', 'singles', 'p1', 'p2');
+    expect(result.discipline).toBe('singles');
+    expect(result.sideA.members[0].profile).toBeNull();
+    expect(result.sideB.members[0].profile).toEqual(profile);
+  });
+
   it('refuses to simulate when one player has no national ranking data', async () => {
     mockBundle([
       { id: 'p1', name: 'Alice', nationalRanking: { singles: { rank: 10, points: 900, topPoints: 1000, pctOfTop: 0.9 } } },
