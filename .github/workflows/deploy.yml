@@ -18,8 +18,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Runs first, before any data refresh or deploy work. Non-blocking (continue-on-error) -
-  # a red quality gate is visible on the run but never stops the refresh/deploy stages below.
+  # Starts immediately and runs in parallel with the refresh/deploy stages (nothing waits
+  # for it). Non-blocking (continue-on-error) - a red quality gate is visible on the run
+  # but never affects the refresh or deploy.
   sonar:
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -58,7 +59,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   refresh-data:
-    needs: sonar
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 90
@@ -125,7 +125,7 @@ jobs:
           git push
 
   build-and-deploy:
-    needs: [sonar, refresh-data]
+    needs: refresh-data
     if: always() && !failure() && !cancelled()
     runs-on: ubuntu-latest
     permissions:
