@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchTournaments, simulateTournamentMatch, tournamentWinModel } from '../api.js';
 import PlayerSelect from '../components/PlayerSelect.jsx';
+import { SideNames } from '../components/PlayerLink.jsx';
+import ProfileStatsCard from '../components/ProfileStatsCard.jsx';
 import RankingCard from '../components/RankingCard.jsx';
+import { recordSummary } from '../lib/profile.js';
 import {
   disciplineForDraw, opponentsInDraw, playerEvents, drawIsForEvent, drawFormat, defaultMockFormat, completeTeams,
   mockPoolFor, teamKey,
@@ -41,7 +44,7 @@ async function knockoutOutlook(tournamentId, discipline, bracket, own) {
     titleP: outlook.titleP,
     rounds: outlook.rounds.map((round) => ({
       ...round,
-      opponents: round.opponents?.map(({ team, p, winP }) => ({ name: name(team), p, winP })),
+      opponents: round.opponents?.map(({ team, p, winP }) => ({ name: name(team), team, p, winP })),
       missing: round.missing?.map(name),
     })),
   };
@@ -71,24 +74,41 @@ const percent = (p) => `${Math.round(p * 100)}%`;
 const MAX_OPPONENTS_SHOWN = 3;
 
 // A certain opponent is just named; otherwise show how likely the meeting is.
-const opponentLabel = (opponent, certain) => (certain ? `vs ${opponent.name}` : `${percent(opponent.p)} ${opponent.name}`);
+const opponentPrefix = (opponent, certain) => (certain ? 'vs ' : `${percent(opponent.p)} `);
 
-function describeSide(side) {
-  if (side.members?.length > 1) {
-    const ranks = side.members.map((m) => `#${m.ranking.rank}`).join(' / ');
-    return `${side.name} — ${ranks}`;
-  }
-  return `${side.name} — #${side.ranking.rank} (${side.ranking.points} pts)`;
+function rankingSummary(side) {
+  if (side.members?.length > 1) return side.members.map((m) => `#${m.ranking.rank}`).join(' / ');
+  return `#${side.ranking.rank} (${side.ranking.points} pts)`;
 }
 
-function DrawResult({ title, badge, partner, note, opponentResults }) {
+function OpponentSummary({ side, discipline }) {
+  const members = side.members ?? [];
+  const pair = members.length > 1;
+  return (
+    <>
+      <p className="rating">
+        vs <SideNames members={members} /> — {rankingSummary(side)}
+      </p>
+      {members.map((member) => {
+        const summary = recordSummary(member.profile?.stats?.[discipline]);
+        return summary ? (
+          <p key={member.id} className="profile-record">
+            {pair && `${member.name}: `}{summary}
+          </p>
+        ) : null;
+      })}
+    </>
+  );
+}
+
+function DrawResult({ title, badge, partners, note, opponentResults }) {
   return (
     <div className="result">
       <h3>
         {title}
         {badge && <span className="mock-badge">{badge}</span>}
       </h3>
-      {partner && <p className="muted">Playing with {partner}</p>}
+      {partners && <p className="muted">Playing with <SideNames members={partners} /></p>}
       {note && <p className="muted">{note}</p>}
       {opponentResults.map(({ opponentKey, result }) => (
         <div key={opponentKey} className="sides">
@@ -104,7 +124,7 @@ function DrawResult({ title, badge, partner, note, opponentResults }) {
                   {Math.round(result.winProbabilityB * 100)}%
                 </div>
               </div>
-              <p className="rating">vs {describeSide(result.sideB)}</p>
+              <OpponentSummary side={result.sideB} discipline={result.discipline} />
             </>
           )}
         </div>
@@ -113,7 +133,7 @@ function DrawResult({ title, badge, partner, note, opponentResults }) {
   );
 }
 
-function KnockoutRound({ round }) {
+function KnockoutRound({ round, memberOf }) {
   if (round.status === 'out') return null;
   const { opponents = [] } = round;
   return (
@@ -137,7 +157,7 @@ function KnockoutRound({ round }) {
           <ul className="knockout-opponents">
             {opponents.slice(0, MAX_OPPONENTS_SHOWN).map((opponent) => (
               <li key={opponent.name}>
-                {opponentLabel(opponent, opponents.length === 1)} - you win {percent(opponent.winP)}
+                {opponentPrefix(opponent, opponents.length === 1)}<SideNames members={opponent.team.map(memberOf)} /> - you win {percent(opponent.winP)}
               </li>
             ))}
             {opponents.length > MAX_OPPONENTS_SHOWN && <li className="muted">and {opponents.length - MAX_OPPONENTS_SHOWN} more possible opponents</li>}
@@ -148,16 +168,16 @@ function KnockoutRound({ round }) {
   );
 }
 
-function KnockoutResult({ title, badge, partner, note, outlook }) {
+function KnockoutResult({ title, badge, partners, note, outlook, memberOf }) {
   return (
     <div className="result">
       <h3>
         {title}
         {badge && <span className="mock-badge">{badge}</span>}
       </h3>
-      {partner && <p className="muted">Playing with {partner}</p>}
+      {partners && <p className="muted">Playing with <SideNames members={partners} /></p>}
       {note && <p className="muted">{note}</p>}
-      {outlook.rounds.map((round) => <KnockoutRound key={round.round} round={round} />)}
+      {outlook.rounds.map((round) => <KnockoutRound key={round.round} round={round} memberOf={memberOf} />)}
       {outlook.titleP != null && <p className="knockout-title">Chance to win the draw: {percent(outlook.titleP)}</p>}
     </div>
   );
@@ -191,6 +211,10 @@ export default function TournamentMatchSimulator() {
   const players = tournament?.players ?? [];
   const player = players.find((p) => p.id === playerId);
   const nameOf = (id) => players.find((p) => p.id === id)?.name ?? id;
+  const memberOf = (id) => {
+    const found = players.find((p) => p.id === id);
+    return { id, name: found?.name ?? id, profile: found?.profile ?? null };
+  };
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournamentId, playerId }));
@@ -298,7 +322,7 @@ export default function TournamentMatchSimulator() {
     }
   };
 
-  const partnerOf = (own) => (own.length > 1 ? own.filter((id) => id !== playerId).map(nameOf).join(' / ') : null);
+  const partnersOf = (own) => (own.length > 1 ? own.filter((id) => id !== playerId).map(memberOf) : null);
   const showNoDrawRow = Boolean(playerId) && !loading && (relevantDraws.length === 0 || undrawnEvents.length > 0);
 
   return (
@@ -322,6 +346,7 @@ export default function TournamentMatchSimulator() {
       {player && (
         <div className="player-card-grid">
           <RankingCard nationalRanking={player.nationalRanking} />
+          <ProfileStatsCard profile={player.profile} />
         </div>
       )}
 
@@ -330,8 +355,8 @@ export default function TournamentMatchSimulator() {
 
       {drawResults.map(({ draw, own, note, outlook, opponentResults }) => (
         outlook
-          ? <KnockoutResult key={draw.draw_id} title={draw.name} partner={partnerOf(own)} note={note} outlook={outlook} />
-          : <DrawResult key={draw.draw_id} title={draw.name} partner={partnerOf(own)} note={note} opponentResults={opponentResults ?? []} />
+          ? <KnockoutResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} outlook={outlook} memberOf={memberOf} />
+          : <DrawResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} opponentResults={opponentResults ?? []} />
       ))}
 
       {showNoDrawRow && (
@@ -360,9 +385,9 @@ export default function TournamentMatchSimulator() {
       {mockLoading && <p className="muted">Simulating…</p>}
 
       {mockResults.map(({ event, own, note, outlook, opponentResults }) => {
-        const shared = { title: event.name.replace(/\s+/g, ' '), badge: 'Mocked draw', partner: partnerOf(own), note };
+        const shared = { title: event.name.replace(/\s+/g, ' '), badge: 'Mocked draw', partners: partnersOf(own), note };
         return outlook
-          ? <KnockoutResult key={event.event_id} {...shared} outlook={outlook} />
+          ? <KnockoutResult key={event.event_id} {...shared} outlook={outlook} memberOf={memberOf} />
           : <DrawResult key={event.event_id} {...shared} opponentResults={opponentResults} />;
       })}
     </div>

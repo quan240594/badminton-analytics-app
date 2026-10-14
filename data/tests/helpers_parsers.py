@@ -93,3 +93,49 @@ def new_template_item(
         f'<div class="match__row{home_cls}">{home_html}</div>'
         f'<div class="match__row{away_cls}">{away_html}</div>{points}{extra_ul}</li>'
     )
+
+
+def stats_item(label: str, wins: int, losses: int) -> str:
+    """One win-loss row of a profile's Statistieken tab, with the progress bar the site adds."""
+    return (
+        f'<div class="list__item">\n  <dt class="list__label">{label}</dt>\n  <dd class="list__value">\n'
+        '    <div class="flex-container flex-container--center">\n'
+        f'      <span class="list__value-start">\n        {wins} / {losses} ({wins + losses})\n      </span>\n'
+        '<div data-toggle="tooltip" data-placement="bottom" title="61% winst" class="progress-bar">\n'
+        ' <span role="progressbar" aria-valuenow="61" class="progress-bar__line" style="width: 61%;"></span>\n'
+        "</div>\n    </div>\n  </dd>\n</div>\n"
+    )
+
+
+def stats_form_item(results: tuple[tuple[str, str], ...]) -> str:
+    """The "Historie" row: (d-m-yyyy, outcome tag class) per match, W for success and V for danger."""
+    tags = "".join(
+        f'<li class="list__item">\n<span class="tag--round tag--{kind} tag match__status" title="{day}" '
+        f'data-toggle="tooltip" data-placement="bottom">{"W" if kind == "success" else "V"}</span>\n</li>\n'
+        for day, kind in results
+    )
+    return (
+        '<div class="list__item">\n  <dt class="list__label">Historie</dt>\n  <dd class="list__value">\n'
+        '    <div class="flex-container flex-container--center">\n      <span class="list__value-start">\n'
+        f'    <ul class="list--inline list">\n{tags}    </ul>\n      </span>\n    </div>\n  </dd>\n</div>\n'
+    )
+
+
+def stats_tab(name: str, *items: str) -> str:
+    return (
+        f'<div id="tabStats{name}" class="module"><div class="subheader">\n  <h5 class="subheading">Winst-Verlies</h5>\n'
+        '<a role="button" href="/head-2-head?OrganizationCode=X&amp;T1P1MemberID=1" class="btn btn--small btn--link">'
+        'Head to Head</a></div>\n<ul class="list list--bordered list--flex margin-bottom">\n'
+        + "".join(items)
+        + "</ul>\n</div>\n"
+    )
+
+
+def profile_stats_module(*tabs: str) -> str:
+    """A profile page up to and including its Statistieken module, followed by the next module's title."""
+    return (
+        '<div class="module__banner"><h3 class="module__title "><span class="module__title-main">Statistieken</span></h3>'
+        '</div><ul class="page-nav--pills js-tabstrip page-nav" role="tablist" id="playerStatsTabs"></ul>'
+        + "".join(tabs)
+        + '<div class="module__banner"><span class="module__title-main"> Toernooien </span></div>'
+    )

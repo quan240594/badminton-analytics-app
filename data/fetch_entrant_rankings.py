@@ -11,10 +11,13 @@ profile with one. Three public, login-free hops close that gap:
 2. player search by MemberID -> the player's profile GUID
 3. profile /ranking tab      -> rank + points per discipline, for the adult
                                 list (rid 75) and the junior list (rid 164)
+4. profile page              -> the win-loss statistics (career, this year,
+                                last matches) per discipline
 
 State lives in entrant_rankings.json (committed, like the other scrape state):
     entries:  "<tournament id>:<local player id>" -> MemberID
-    rankings: MemberID -> {fetched_at, ranking: {singles/doubles/mixed: {rank, points}}}
+    rankings: MemberID -> {fetched_at, guid, ranking: {singles/doubles/mixed: {rank, points}},
+                           stats: {total/singles/doubles/mixed: ...}}
 so every entrant is resolved once, and a ranking is only refreshed (weekly) for
 players in a tournament that has not ended yet.
 
@@ -35,6 +38,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from http_fetch import fetch_basic_retry
+from profile_stats import parse_profile_stats
 from recheck_tournament_draws import parse_tournament_dates
 from safe_path import safe_path
 
@@ -127,17 +131,24 @@ def fetch_member_id(tournament_id: str, local_id: str, cookie: str) -> str | Non
     return parse_player_page_member_id(html)
 
 
-def fetch_ranking_for_member(member_id: str, cookie: str, delay: float) -> dict[str, dict]:
+def fetch_profile_for_member(member_id: str, cookie: str, delay: float) -> dict:
+    """The profile GUID, national ranking and win-loss statistics of a MemberID."""
     search = fetch_basic_retry(
         f"{SITE_URL}/find/player/DoSearch?Page=1&SportID=2&Query={member_id}&X-Requested-With=XMLHttpRequest",
         cookie,
     )
     guid = parse_search_profile_guid(search, member_id)
     if not guid:
-        return {}
+        return {"guid": None, "ranking": {}, "stats": {}}
     time.sleep(delay)
-    profile = fetch_basic_retry(f"{SITE_URL}/player-profile/{guid}/ranking", cookie)
-    return pick_ranking_list(parse_profile_ranking_lists(profile))
+    ranking_tab = fetch_basic_retry(f"{SITE_URL}/player-profile/{guid}/ranking", cookie)
+    time.sleep(delay)
+    profile = fetch_basic_retry(f"{SITE_URL}/player-profile/{guid}", cookie)
+    return {
+        "guid": guid,
+        "ranking": pick_ranking_list(parse_profile_ranking_lists(ranking_tab)),
+        "stats": parse_profile_stats(profile),
+    }
 
 
 def load_state(path: Path) -> dict:
@@ -187,7 +198,7 @@ def iter_entrants(
 
 def needs_ranking(state: dict, member_id: str, active: bool, now: datetime) -> bool:
     record = state["rankings"].get(member_id)
-    if record is None:
+    if record is None or "guid" not in record:  # records from before profiles were stored
         return True
     fetched_at = datetime.fromisoformat(record["fetched_at"])
     return active and now - fetched_at >= RANKING_MAX_AGE
@@ -206,8 +217,8 @@ def process_entrant(state: dict, tid: str, local_id: str, active: bool, cookie: 
         state["entries"][key] = member_id
         time.sleep(delay)
     if needs_ranking(state, member_id, active, now):
-        ranking = fetch_ranking_for_member(member_id, cookie, delay)
-        state["rankings"][member_id] = {"fetched_at": now.isoformat(timespec="seconds"), "ranking": ranking}
+        profile = fetch_profile_for_member(member_id, cookie, delay)
+        state["rankings"][member_id] = {"fetched_at": now.isoformat(timespec="seconds"), **profile}
         worked = True
         time.sleep(delay)
     return worked

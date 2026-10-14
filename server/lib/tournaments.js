@@ -94,11 +94,13 @@ export function buildTournaments(leaguePlayers = []) {
         ? nationalRankingFor(entrantState.rankings?.[entrantMemberId]?.ranking ?? rankingsRaw.players?.[entrantMemberId], rankingsRaw.top)
         : null;
       const fromLeague = leagueRankingByName.get(nameKey(entry.name)) ?? null;
+      const profileRecord = entrantState.rankings?.[entrantMemberId ?? memberId];
       return {
         id: entry.player_id,
         name: entry.name,
         country: entry.country,
         nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
+        profile: profileRecord?.guid ? { guid: profileRecord.guid, stats: profileRecord.stats ?? {} } : null,
       };
     });
 
