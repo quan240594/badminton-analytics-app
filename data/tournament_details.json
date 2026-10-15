@@ -5672,12 +5672,8 @@
         "event_id": "14",
         "name": "Enkel cat. zilver (U11)",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "22"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "15",
@@ -5690,13 +5686,16 @@
         "event_id": "12",
         "name": "Enkel cat. goud (U13)",
         "draws": 0,
-        "entries": 7,
+        "entries": 12,
         "participants": [
           [
-            "24"
+            "22"
           ],
           [
-            "12"
+            "37"
+          ],
+          [
+            "24"
           ],
           [
             "20"
@@ -5708,10 +5707,22 @@
             "7"
           ],
           [
+            "39"
+          ],
+          [
+            "40"
+          ],
+          [
             "25"
           ],
           [
-            "6"
+            "34"
+          ],
+          [
+            "45"
+          ],
+          [
+            "36"
           ]
         ]
       },
@@ -5719,31 +5730,27 @@
         "event_id": "13",
         "name": "Dubbel cat. goud (U13)",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
+          [
+            "29",
+            "37"
+          ],
           [
             "24",
             "20"
           ],
           [
-            "12"
-          ],
-          [
-            "16"
-          ],
-          [
+            "16",
             "6"
-          ]
-        ]
-      },
-      {
-        "event_id": "3",
-        "name": "JE cat. B",
-        "draws": 0,
-        "entries": 1,
-        "participants": [
+          ],
           [
-            "23"
+            "39",
+            "36"
+          ],
+          [
+            "40",
+            "45"
           ]
         ]
       },
@@ -5757,7 +5764,7 @@
             "2"
           ],
           [
-            "11"
+            "43"
           ],
           [
             "19"
@@ -5777,7 +5784,7 @@
         "event_id": "9",
         "name": "JE cat. D",
         "draws": 0,
-        "entries": 5,
+        "entries": 9,
         "participants": [
           [
             "8"
@@ -5789,10 +5796,22 @@
             "15"
           ],
           [
+            "30"
+          ],
+          [
+            "28"
+          ],
+          [
             "13"
           ],
           [
             "18"
+          ],
+          [
+            "41"
+          ],
+          [
+            "44"
           ]
         ]
       },
@@ -5800,24 +5819,23 @@
         "event_id": "4",
         "name": "ME cat. B",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "9"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "7",
         "name": "ME cat. C",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "10"
           ],
           [
             "14"
+          ],
+          [
+            "32"
           ]
         ]
       },
@@ -5825,10 +5843,42 @@
         "event_id": "10",
         "name": "ME cat. D",
         "draws": 0,
-        "entries": 1,
+        "entries": 6,
         "participants": [
           [
-            "21"
+            "29"
+          ],
+          [
+            "38"
+          ],
+          [
+            "31"
+          ],
+          [
+            "33"
+          ],
+          [
+            "6"
+          ],
+          [
+            "42"
+          ]
+        ]
+      },
+      {
+        "event_id": "3",
+        "name": "Cat. B - gemengd",
+        "draws": 0,
+        "entries": 3,
+        "participants": [
+          [
+            "9"
+          ],
+          [
+            "23"
+          ],
+          [
+            "26"
           ]
         ]
       },
@@ -5858,17 +5908,19 @@
             "4"
           ],
           [
+            "30",
+            "35"
+          ],
+          [
             "3",
             "5"
           ],
           [
-            "11"
-          ],
-          [
-            "19"
-          ],
-          [
+            "19",
             "17"
+          ],
+          [
+            "32"
           ]
         ]
       },
@@ -5876,17 +5928,26 @@
         "event_id": "11",
         "name": "Dubbel cat. D",
         "draws": 0,
-        "entries": 3,
+        "entries": 5,
         "participants": [
           [
-            "1"
+            "1",
+            "28"
           ],
           [
             "15",
             "18"
           ],
           [
-            "21"
+            "31",
+            "42"
+          ],
+          [
+            "33"
+          ],
+          [
+            "41",
+            "44"
           ]
         ]
       }
@@ -5910,6 +5971,11 @@
       },
       {
         "country": "NED",
+        "player_id": "29",
+        "name": "Blankenvoort, Jade"
+      },
+      {
+        "country": "NED",
         "player_id": "1",
         "name": "Bloem, Roene"
       },
@@ -5925,8 +5991,23 @@
       },
       {
         "country": "NED",
+        "player_id": "37",
+        "name": "Brummelhuis, Susanne"
+      },
+      {
+        "country": "NED",
         "player_id": "15",
         "name": "Bruns, Niels"
+      },
+      {
+        "country": "NED",
+        "player_id": "38",
+        "name": "Christiaans, Sophie"
+      },
+      {
+        "country": "NED",
+        "player_id": "30",
+        "name": "De Haan, Finn"
       },
       {
         "country": "NED",
@@ -5935,18 +6016,23 @@
       },
       {
         "country": "NED",
+        "player_id": "28",
+        "name": "Deijk, Nolan van"
+      },
+      {
+        "country": "NED",
         "player_id": "23",
         "name": "Dekker, Robin"
       },
       {
         "country": "NED",
-        "player_id": "24",
-        "name": "Eikelenboom, Tim"
+        "player_id": "43",
+        "name": "Eijsink, Bram"
       },
       {
         "country": "NED",
-        "player_id": "11",
-        "name": "Fransen, Nick"
+        "player_id": "24",
+        "name": "Eikelenboom, Tim"
       },
       {
         "country": "NED",
@@ -5956,11 +6042,6 @@
       {
         "country": "NED",
         "player_id": "20",
-        "name": "Fransen, Sjoerd"
-      },
-      {
-        "country": "NED",
-        "player_id": "12",
         "name": "Fransen, Sjoerd"
       },
       {
@@ -5980,13 +6061,28 @@
       },
       {
         "country": "NED",
-        "player_id": "21",
-        "name": "Hoefnagels, Dagmar"
+        "player_id": "31",
+        "name": "Horsthuis, Iris"
       },
       {
         "country": "NED",
         "player_id": "7",
         "name": "Hove, Elise ten"
+      },
+      {
+        "country": "NED",
+        "player_id": "26",
+        "name": "Jacobs, Thije"
+      },
+      {
+        "country": "NED",
+        "player_id": "39",
+        "name": "Jansen, Tijs"
+      },
+      {
+        "country": "NED",
+        "player_id": "32",
+        "name": "Kemmerling, Elvira"
       },
       {
         "country": "NED",
@@ -5997,6 +6093,16 @@
         "country": "NED",
         "player_id": "4",
         "name": "Kruiswijk, Sepp"
+      },
+      {
+        "country": "NED",
+        "player_id": "33",
+        "name": "Kuznietsova, Zlata"
+      },
+      {
+        "country": "NED",
+        "player_id": "40",
+        "name": "Leferink, Luna"
       },
       {
         "country": "NED",
@@ -6015,8 +6121,43 @@
       },
       {
         "country": "NED",
+        "player_id": "34",
+        "name": "Pham, Julian"
+      },
+      {
+        "country": "NED",
+        "player_id": "45",
+        "name": "Rienks, Else"
+      },
+      {
+        "country": "NED",
         "player_id": "6",
         "name": "Schie, Lisa Van"
+      },
+      {
+        "country": "NED",
+        "player_id": "41",
+        "name": "Schopbarteld, Milan"
+      },
+      {
+        "country": "NED",
+        "player_id": "42",
+        "name": "Slots, Lynn"
+      },
+      {
+        "country": "NED",
+        "player_id": "44",
+        "name": "Spijker, Guus"
+      },
+      {
+        "country": "NED",
+        "player_id": "35",
+        "name": "Tessemaker, Abel"
+      },
+      {
+        "country": "NED",
+        "player_id": "36",
+        "name": "Weber, Dieks"
       }
     ]
   },
