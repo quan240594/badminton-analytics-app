@@ -53,7 +53,14 @@ jobs:
         env:
           TOERNOOI_USERNAME: ${{ secrets.TOERNOOI_USERNAME }}
           TOERNOOI_PASSWORD: ${{ secrets.TOERNOOI_PASSWORD }}
-        run: python3 playwright_login.py --save cookie.txt
+        # The site sometimes times out loading a page; a failed run never chains, so retry.
+        run: |
+          for attempt in 1 2 3; do
+            python3 playwright_login.py --save cookie.txt && exit 0
+            echo "login attempt $attempt failed" >&2
+            sleep 20
+          done
+          exit 1
         working-directory: data
 
       # Each iteration fetches one pending pool, then re-reads the players of
