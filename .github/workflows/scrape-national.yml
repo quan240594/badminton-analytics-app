@@ -95,10 +95,20 @@ jobs:
             git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
 
             # An unrelated commit landing on main mid-run shouldn't kill the whole
-            # run - rebase onto the latest main and retry the push once.
-            if ! git push; then
-              git pull --rebase origin main
-              git push
+            # run - rebase onto the latest main and retry. GitHub also sometimes answers
+            # a push with a 5xx, and a failed run never chains, so try a few times.
+            pushed=false
+            for attempt in 1 2 3 4; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              git pull --rebase origin main || true
+              sleep $(( attempt * 10 ))
+            done
+            if [ "$pushed" != true ]; then
+              echo "git push failed after 4 attempts" >&2
+              exit 1
             fi
 
             code=0
