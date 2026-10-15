@@ -11832,8 +11832,11 @@
         "event_id": "22",
         "name": "HE-P",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
+          [
+            "27"
+          ],
           [
             "4"
           ],
@@ -11866,8 +11869,11 @@
         "event_id": "34",
         "name": "HD-P",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "27"
+          ],
           [
             "4",
             "7"
@@ -11909,8 +11915,11 @@
         "event_id": "16",
         "name": "HE-D",
         "draws": 0,
-        "entries": 7,
+        "entries": 8,
         "participants": [
+          [
+            "30"
+          ],
           [
             "8"
           ],
@@ -11961,8 +11970,11 @@
         "event_id": "32",
         "name": "HD-D",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
+          [
+            "30"
+          ],
           [
             "8",
             "24"
@@ -12004,10 +12016,13 @@
         "event_id": "20",
         "name": "GD-D",
         "draws": 0,
-        "entries": 7,
+        "entries": 8,
         "participants": [
           [
             "21"
+          ],
+          [
+            "30"
           ],
           [
             "8",
@@ -12036,8 +12051,11 @@
         "event_id": "11",
         "name": "HE-C",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "28"
+          ],
           [
             "17"
           ]
@@ -12067,8 +12085,11 @@
         "event_id": "13",
         "name": "HD-C",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "28"
+          ],
           [
             "17"
           ]
@@ -12100,8 +12121,11 @@
         "event_id": "15",
         "name": "GD-C",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
+          [
+            "28"
+          ],
           [
             "17"
           ],
@@ -12175,8 +12199,12 @@
         "event_id": "2",
         "name": "DE-A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "29"
+          ]
+        ]
       },
       {
         "event_id": "3",
@@ -12189,15 +12217,23 @@
         "event_id": "4",
         "name": "DD-A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "29"
+          ]
+        ]
       },
       {
         "event_id": "5",
         "name": "GD-A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "29"
+          ]
+        ]
       }
     ],
     "draws": [],
@@ -12209,8 +12245,28 @@
       },
       {
         "country": null,
+        "player_id": "27",
+        "name": "Anup, Avyaan"
+      },
+      {
+        "country": null,
         "player_id": "1",
         "name": "Bouman, Jelte"
+      },
+      {
+        "country": null,
+        "player_id": "28",
+        "name": "Celario, Kyle Maurus Espiritu"
+      },
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Celario, Leizette Kim Espiritu"
+      },
+      {
+        "country": null,
+        "player_id": "30",
+        "name": "Dijk, Pepijn van"
       },
       {
         "country": null,
