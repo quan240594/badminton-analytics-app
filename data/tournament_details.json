@@ -9160,35 +9160,52 @@
     "events": [
       {
         "event_id": "2",
-        "name": "GD U11",
+        "name": "Dubbel Goud",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "3",
-        "name": "GD U13",
+        "name": "Dubbel Goud Recreant",
         "draws": 0,
         "entries": 0,
         "participants": []
       },
       {
         "event_id": "6",
-        "name": "GD U13 Recreant",
+        "name": "Dubbel D",
         "draws": 0,
         "entries": 0,
         "participants": []
       },
       {
         "event_id": "4",
-        "name": "GD U15",
+        "name": "Dubbel C",
+        "draws": 0,
+        "entries": 0,
+        "participants": []
+      },
+      {
+        "event_id": "7",
+        "name": "Dubbel A/B",
         "draws": 0,
         "entries": 0,
         "participants": []
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Schie, Lisa Van"
+      }
+    ]
   },
   "55B9AB89-A741-44C4-A9D3-C27FB78F4457": {
     "events": [],
