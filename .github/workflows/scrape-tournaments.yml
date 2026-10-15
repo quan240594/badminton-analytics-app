@@ -118,9 +118,20 @@ jobs:
             done
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"
 
-            if ! git push; then
-              git pull --rebase origin main
-              git push
+            # A commit landing on main mid-run needs a rebase, and GitHub sometimes answers a
+            # push with a 5xx; a failed run never chains, so retry a few times before giving up.
+            pushed=false
+            for attempt in 1 2 3 4; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              git pull --rebase origin main || true
+              sleep $(( attempt * 10 ))
+            done
+            if [ "$pushed" != true ]; then
+              echo "git push failed after 4 attempts" >&2
+              exit 1
             fi
 
             # One timed-out request makes a driver exit 1 and the same item is retried
