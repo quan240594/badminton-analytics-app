@@ -37613,6 +37613,142 @@
           "played_at": "za 17-10-2026 11:20"
         }
       ]
+    },
+    "13": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Rudi SEYS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "10",
+              "name": "Ronald STAPELBROEK"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "18",
+              "name": "Patty GROENVELD"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "180",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Ronald STAPELBROEK",
+                  "member_id": "836628"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Patty GROENVELD",
+                  "member_id": "852202"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "177",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rudi SEYS",
+                  "member_id": "836628"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Ronald STAPELBROEK"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "179",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rudi SEYS",
+                  "member_id": "852202"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Patty GROENVELD"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 11:20"
+        }
+      ]
     }
   }
 }
