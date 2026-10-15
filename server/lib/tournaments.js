@@ -70,10 +70,22 @@ function uniqueLeagueRankingsByName(leaguePlayers) {
 
 const hasAnyRanking = (ranking) => Boolean(ranking) && ['singles', 'doubles', 'mixed'].some((d) => ranking[d]);
 
-// Event participants are teams of local player ids.
-const eventsOf = (detail, localId) => (detail.events || [])
-  .filter((event) => (event.participants || []).some((team) => team.includes(localId)))
-  .map((event) => event.name);
+// Where a player's page lives: their profile once its GUID is known, else the site's
+// player search on their MemberID, else the tournament's own page for them - so every
+// player can be linked even before the profile has been looked up.
+const SITE_URL = 'https://badmintonnederland.toernooi.nl';
+function playerUrl(tournamentId, localId, memberId, guid) {
+  if (guid) return `${SITE_URL}/player-profile/${guid}`;
+  if (memberId) return `${SITE_URL}/find/player?q=${memberId}`;
+  return `${SITE_URL}/tournament/${tournamentId.toLowerCase()}/player/${localId}`;
+}
+
+// The events a local player id is entered in, with the team mates (event participants
+// are teams of local ids; a singles team has nobody else).
+const eventsOf = (detail, localId, partnerOf) => (detail.events || []).flatMap((event) => {
+  const team = (event.participants || []).find((members) => members.includes(localId));
+  return team ? [{ name: event.name, partners: team.filter((id) => id !== localId).map(partnerOf) }] : [];
+});
 
 // Every tournament each site-wide MemberID is entered in, so a player's other
 // (upcoming) tournaments can be listed from any one of them. Local ids are only
@@ -82,11 +94,17 @@ function tournamentsByMember(details, drawsData, entrantState) {
   const byMember = new Map();
   for (const [id, detail] of Object.entries(details)) {
     const idToMember = localIdToMemberId(drawsData[id]);
+    const memberOf = (localId) => entrantState.entries?.[`${id}:${localId}`] ?? idToMember.get(localId) ?? null;
+    const names = new Map((detail.entries || []).map((entry) => [entry.player_id, entry.name]));
+    const partnerOf = (localId) => {
+      const memberId = memberOf(localId);
+      return { id: localId, name: names.get(localId) ?? localId, url: playerUrl(id, localId, memberId, entrantState.rankings?.[memberId]?.guid) };
+    };
     for (const entry of detail.entries || []) {
-      const memberId = entrantState.entries?.[`${id}:${entry.player_id}`] ?? idToMember.get(entry.player_id);
+      const memberId = memberOf(entry.player_id);
       if (!memberId) continue;
       if (!byMember.has(memberId)) byMember.set(memberId, []);
-      byMember.get(memberId).push({ id, events: eventsOf(detail, entry.player_id) });
+      byMember.get(memberId).push({ id, events: eventsOf(detail, entry.player_id, partnerOf) });
     }
   }
   return byMember;
@@ -117,14 +135,16 @@ export function buildTournaments(leaguePlayers = []) {
         ? nationalRankingFor(entrantState.rankings?.[entrantMemberId]?.ranking ?? rankingsRaw.players?.[entrantMemberId], rankingsRaw.top)
         : null;
       const fromLeague = leagueRankingByName.get(nameKey(entry.name)) ?? null;
-      const profileRecord = entrantState.rankings?.[entrantMemberId ?? memberId];
+      const resolvedMemberId = entrantMemberId ?? memberId;
+      const profileRecord = entrantState.rankings?.[resolvedMemberId];
       return {
         id: entry.player_id,
         name: entry.name,
         country: entry.country,
         nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
         profile: profileRecord?.guid ? { guid: profileRecord.guid, stats: profileRecord.stats ?? {} } : null,
-        tournaments: entriesByMember.get(entrantMemberId ?? memberId) ?? [],
+        url: playerUrl(id, entry.player_id, resolvedMemberId, profileRecord?.guid),
+        tournaments: entriesByMember.get(resolvedMemberId) ?? [],
       };
     });
 

@@ -234,7 +234,7 @@ export async function simulateTournamentMatch(tournamentId, prefix, sideA, sideB
 
   const describe = (ids) => ids.map((id) => {
     const player = byId.get(id);
-    return { id, name: player.name, ranking: player.nationalRanking?.[prefix] ?? null, profile: player.profile ?? null, tournaments: player.tournaments ?? [] };
+    return { id, name: player.name, ranking: player.nationalRanking?.[prefix] ?? null, profile: player.profile ?? null, url: player.url ?? null, tournaments: player.tournaments ?? [] };
   });
   const detailA = describe(idsA);
   const detailB = describe(idsB);

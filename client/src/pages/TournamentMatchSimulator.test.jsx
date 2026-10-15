@@ -12,10 +12,10 @@ vi.mock('../api.js', () => ({
 }));
 
 // A simulated side as the API returns it: one member per player.
-const rankedSide = (id, name, ranking = { rank: 42, points: 300 }, profile = null) => ({
+const rankedSide = (id, name, ranking = { rank: 42, points: 300 }, profile = null, url = null) => ({
   name,
   ranking,
-  members: [{ id, name, ranking, profile }],
+  members: [{ id, name, ranking, profile, url }],
 });
 
 const TOURNAMENT = {
@@ -121,14 +121,14 @@ describe('TournamentMatchSimulator - player profiles', () => {
     vi.resetAllMocks();
     localStorage.clear();
     const players = TOURNAMENT.players.map((p) => {
-      if (p.id === 'p1') return { ...p, profile: aliceProfile };
-      if (p.id === 'p3') return { ...p, profile: caraProfile };
+      if (p.id === 'p1') return { ...p, profile: aliceProfile, url: profileUrl(ALICE) };
+      if (p.id === 'p3') return { ...p, profile: caraProfile, url: profileUrl(CARA) };
       return p;
     });
     fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, players }]);
     simulateTournamentMatch.mockResolvedValue({
       discipline: 'singles',
-      sideB: rankedSide('p3', 'Cara Gamma', { rank: 42, points: 300 }, caraProfile),
+      sideB: rankedSide('p3', 'Cara Gamma', { rank: 42, points: 300 }, caraProfile, profileUrl(CARA)),
       winProbabilityA: 0.7,
       winProbabilityB: 0.3,
     });
@@ -158,12 +158,12 @@ describe('TournamentMatchSimulator - player profiles', () => {
   it('links the doubles partner and each member of an opposing pair', async () => {
     const players = [
       { id: 'me', name: 'Do, Quan', nationalRanking: { doubles: { rank: 3, points: 9 } } },
-      { id: 'pa', name: 'Nguyen, Dung', nationalRanking: { doubles: { rank: 4, points: 8 } }, profile: { guid: 'G-PARTNER', stats: {} } },
+      { id: 'pa', name: 'Nguyen, Dung', nationalRanking: { doubles: { rank: 4, points: 8 } }, url: profileUrl('G-PARTNER') },
     ];
     const draw = { draw_id: 'dd', name: 'HD', type: 'Poule', standings: [{ players: [{ player_id: 'me' }, { player_id: 'pa' }] }, { players: [{ player_id: 'q1' }, { player_id: 'q2' }] }], matches: [] };
     const pair = [
-      { id: 'q1', name: 'Q, One', ranking: { rank: 5 }, profile: { guid: 'G-Q1', stats: { doubles: { career: { wins: 1, losses: 1 } } } } },
-      { id: 'q2', name: 'Q, Two', ranking: { rank: 6 }, profile: null },
+      { id: 'q1', name: 'Q, One', ranking: { rank: 5 }, url: profileUrl('G-Q1'), profile: { guid: 'G-Q1', stats: { doubles: { career: { wins: 1, losses: 1 } } } } },
+      { id: 'q2', name: 'Q, Two', ranking: { rank: 6 }, url: 'https://badmintonnederland.toernooi.nl/find/player?q=10002752', profile: null },
     ];
     fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, players: [...players, { id: 'q1', name: 'Q, One' }, { id: 'q2', name: 'Q, Two' }], draws: [draw] }]);
     simulateTournamentMatch.mockResolvedValue({
@@ -176,7 +176,7 @@ describe('TournamentMatchSimulator - player profiles', () => {
 
     expect(await screen.findByRole('link', { name: 'Nguyen, Dung' })).toHaveAttribute('href', profileUrl('G-PARTNER'));
     expect(screen.getByRole('link', { name: 'Q, One' })).toHaveAttribute('href', profileUrl('G-Q1'));
-    expect(screen.queryByRole('link', { name: 'Q, Two' })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Q, Two' })).toHaveAttribute('href', expect.stringContaining('/find/player?q=10002752'));
     expect(screen.getByText('Q, One: Career 1–1 (50%)')).toBeInTheDocument();
   });
 
@@ -192,7 +192,7 @@ describe('TournamentMatchSimulator - player profiles', () => {
     const bracket = [tie('Halve finale', 'p1', 'p3'), tie('Halve finale', 'p2', 'p4'), tie('Finale')];
     fetchTournaments.mockResolvedValue([{
       ...TOURNAMENT,
-      players: TOURNAMENT.players.map((p) => (p.id === 'p3' ? { ...p, profile: caraProfile } : p)),
+      players: TOURNAMENT.players.map((p) => (p.id === 'p3' ? { ...p, profile: caraProfile, url: profileUrl(CARA) } : p)),
       draws: [{ draw_id: 'k1', name: 'HE', type: 'Afvalschema', stage: 'Hoofdschema', matches: bracket }],
     }]);
     await selectTournamentAndPlayer('Alice Alpha');
@@ -206,8 +206,13 @@ describe('TournamentMatchSimulator - upcoming tournaments', () => {
   // Far-future dates keep these upcoming whenever the tests run.
   const OTHER = { id: 't2', name: 'Winter Masters 2099', club: 'BC X', location: 'Breda', dates: ['2099-12-05 00:00', '2099-12-06 23:59'], players: [], draws: [] };
   const OLD = { id: 't3', name: 'Old Open', dates: ['2020-01-01 00:00'], players: [], draws: [] };
-  const aliceEntries = [{ id: 't1', events: ['HE 1'] }, { id: 't2', events: ['HE 7', 'HD 7'] }, { id: 't3', events: ['HE 2'] }];
-  const caraEntries = [{ id: 't2', events: ['HE 9'] }];
+  const partner = { id: 'pa', name: 'Nguyen, Dung', url: 'https://badmintonnederland.toernooi.nl/player-profile/G-PARTNER' };
+  const aliceEntries = [
+    { id: 't1', events: [{ name: 'HE 1', partners: [] }] },
+    { id: 't2', events: [{ name: 'HE 7', partners: [] }, { name: 'HD 7', partners: [partner] }] },
+    { id: 't3', events: [{ name: 'HE 2', partners: [] }] },
+  ];
+  const caraEntries = [{ id: 't2', events: [{ name: 'HE 9', partners: [] }] }];
 
   beforeEach(() => {
     vi.resetAllMocks();
@@ -232,7 +237,8 @@ describe('TournamentMatchSimulator - upcoming tournaments', () => {
     const card = (await screen.findByText('Alice Alpha: upcoming tournaments')).closest('.upcoming');
     expect(within(card).getByRole('link', { name: 'Winter Masters 2099' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=t2'));
     const row = within(card).getByRole('link', { name: 'Winter Masters 2099' }).closest('tr');
-    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Winter Masters 2099', '5 Dec 2099 – 6 Dec 2099', 'Breda', 'HE 7, HD 7']);
+    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Winter Masters 2099', '5 Dec 2099 – 6 Dec 2099', 'Breda', 'HE 7HD 7 with Nguyen, Dung']);
+    expect(within(row).getByRole('link', { name: 'Nguyen, Dung' })).toHaveAttribute('href', partner.url);
     expect(within(card).queryByText('Old Open')).not.toBeInTheDocument();
   });
 

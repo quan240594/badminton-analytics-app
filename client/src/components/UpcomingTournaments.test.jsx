@@ -7,7 +7,11 @@ const TOURNAMENTS = [
   { id: 'B', name: 'Cup B', dates: ['2026-09-05 00:00'] },
 ];
 const NOW = new Date(2026, 9, 14);
-const ENTRIES = [{ id: 'A', events: ['HE 7', 'HD 7'] }, { id: 'B', events: ['HE 1'] }];
+const PARTNER = { id: 'p', name: 'Partner, One', url: 'https://badmintonnederland.toernooi.nl/player-profile/G-P' };
+const ENTRIES = [
+  { id: 'A', events: [{ name: 'HE 7', partners: [] }, { name: 'HD 7', partners: [PARTNER] }] },
+  { id: 'B', events: [{ name: 'HE 1', partners: [] }] },
+];
 
 describe('UpcomingTournaments', () => {
   it('lists upcoming tournaments with dates, place and events, linked to the tournament', () => {
@@ -17,7 +21,9 @@ describe('UpcomingTournaments', () => {
     expect(screen.getAllByRole('columnheader').map((h) => h.textContent)).toEqual(['Tournament', 'Date', 'Location', 'Events']);
     const row = screen.getByRole('link', { name: 'Open A' }).closest('tr');
     expect(screen.getByRole('link', { name: 'Open A' })).toHaveAttribute('href', expect.stringContaining('/sport/tournament?id=A'));
-    expect(within(row).getAllByRole('cell').map((c) => c.textContent)).toEqual(['Open A', '21 Nov 2026 – 22 Nov 2026', 'Breda', 'HE 7, HD 7']);
+    expect(within(row).getAllByRole('cell').slice(0, 3).map((c) => c.textContent)).toEqual(['Open A', '21 Nov 2026 – 22 Nov 2026', 'Breda']);
+    expect([...row.querySelectorAll('.event-line')].map((line) => line.textContent)).toEqual(['HE 7', 'HD 7 with Partner, One']);
+    expect(within(row).getByRole('link', { name: 'Partner, One' })).toHaveAttribute('href', PARTNER.url);
     expect(screen.queryByText('Cup B')).not.toBeInTheDocument();
   });
 

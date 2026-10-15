@@ -314,6 +314,8 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .upcoming-table td { padding: 0.35rem 0.5rem; border: 1px solid #334155; text-align: left; vertical-align: top; color: #cbd5e1; }
 .upcoming-table th { color: #64748b; font-weight: 600; background: #111c33; }
 .upcoming-table td.date-cell { white-space: nowrap; }
+.profile-row { margin: 0; font-size: 0.75rem; }
+.profile-row .profile-link { color: #93c5fd; }
 
 .division-table {
   width: 100%;

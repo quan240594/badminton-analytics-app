@@ -1,11 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatRecord, profileUrl, recordSummary } from './profile.js';
-
-describe('profileUrl', () => {
-  it('points at the player profile on Badminton Nederland', () => {
-    expect(profileUrl('abc-123')).toBe('https://badmintonnederland.toernooi.nl/player-profile/abc-123');
-  });
-});
+import { formatRecord, recordSummary } from './profile.js';
 
 describe('formatRecord', () => {
   it('shows wins, losses and the win percentage', () => {

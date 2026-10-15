@@ -1,4 +1,15 @@
+import { SideNames } from './PlayerLink.jsx';
 import { formatDateRange, tournamentUrl, upcomingTournaments } from '../lib/upcoming.js';
+
+// "HD 7 with A / B" - the partners are only there for doubles and mixed events.
+function EventLine({ event }) {
+  return (
+    <div className="event-line">
+      {event.name}
+      {event.partners.length > 0 && <> with <SideNames members={event.partners} /></>}
+    </div>
+  );
+}
 
 function TournamentTable({ upcoming }) {
   return (
@@ -17,7 +28,7 @@ function TournamentTable({ upcoming }) {
             <td><a className="profile-link" href={tournamentUrl(id)} target="_blank" rel="noopener noreferrer">{name}</a></td>
             <td className="date-cell">{formatDateRange(first, last)}</td>
             <td>{location || '-'}</td>
-            <td>{events.length > 0 ? events.join(', ') : '-'}</td>
+            <td>{events.length > 0 ? events.map((event) => <EventLine key={event.name} event={event} />) : '-'}</td>
           </tr>
         ))}
       </tbody>
