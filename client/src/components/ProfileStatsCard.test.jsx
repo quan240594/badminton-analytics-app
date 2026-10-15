@@ -22,11 +22,9 @@ describe('ProfileStatsCard', () => {
     expect(screen.getByText('0–0')).toBeInTheDocument();
   });
 
-  it('shows only the profile link when no statistics were read', () => {
-    render(<ProfileStatsCard profile={{ guid: 'G', stats: {} }} />);
-
-    expect(screen.queryByRole('table')).not.toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /View profile/ })).toHaveAttribute('href', expect.stringContaining('/player-profile/G'));
+  it('renders nothing when no statistics were read', () => {
+    const { container } = render(<ProfileStatsCard profile={{ guid: 'G', stats: {} }} />);
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('shows every recent match, including several on the same day, without key clashes', () => {

@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import { profileUrl } from '../lib/profile.js';
 
-// A player's name, linking to their Badminton Nederland profile when it is known.
-export default function PlayerLink({ name, profile }) {
-  if (!profile?.guid) return name;
+// A player's name, linking to their Badminton Nederland page. Every player has a url: their
+// profile once it is known, otherwise the site's search on their MemberID or their tournament page.
+export default function PlayerLink({ name, url }) {
+  if (!url) return name;
   return (
-    <a className="profile-link" href={profileUrl(profile.guid)} target="_blank" rel="noopener noreferrer" title="Open profile on Badminton Nederland">
+    <a className="profile-link" href={url} target="_blank" rel="noopener noreferrer" title="Open on Badminton Nederland">
       {name}
     </a>
   );
@@ -16,7 +16,7 @@ export function SideNames({ members }) {
   return members.map((member, index) => (
     <Fragment key={member.id}>
       {index > 0 && ' / '}
-      <PlayerLink name={member.name} profile={member.profile} />
+      <PlayerLink name={member.name} url={member.url} />
     </Fragment>
   ));
 }

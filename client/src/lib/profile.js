@@ -1,5 +1,3 @@
-export const profileUrl = (guid) => `https://badmintonnederland.toernooi.nl/player-profile/${guid}`;
-
 // "45–22 (67%)"; a record without any match has no percentage.
 export function formatRecord(record) {
   if (!record) return '-';

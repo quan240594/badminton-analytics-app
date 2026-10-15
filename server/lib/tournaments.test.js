@@ -245,7 +245,7 @@ describe('buildTournaments - ranking resolved from the entrant profile', () => {
 });
 
 describe('buildTournaments - the tournaments a player is entered in', () => {
-  function setup(entrantEntries, draws = undefined) {
+  function setup(entrantEntries, draws = undefined, rankings = {}) {
     files['tournaments.json'] = JSON.stringify({ T1: { name: 'Open' }, T2: { name: 'Masters' }, T3: { name: 'Cup' } });
     files['tournament_details.json'] = JSON.stringify({
       T1: {
@@ -256,28 +256,50 @@ describe('buildTournaments - the tournaments a player is entered in', () => {
       T2: { entries: [{ player_id: 'x', name: 'Chow, Helin' }], events: [{ name: 'HE 5', participants: [['x']] }], draws: [] },
       T3: { entries: [{ player_id: 'y', name: 'Chow, Helin' }], events: [], draws: [] },
     });
-    files['entrant_rankings.json'] = JSON.stringify({ entries: entrantEntries, rankings: {} });
+    files['entrant_rankings.json'] = JSON.stringify({ entries: entrantEntries, rankings });
     if (draws) files['tournament_draws_data.json'] = JSON.stringify(draws);
   }
   const playerOf = (tournaments, tid, pid) => tournaments.find((t) => t.id === tid).players.find((p) => p.id === pid);
+  const SITE = 'https://badmintonnederland.toernooi.nl';
 
-  it('lists the same member\'s entries in every tournament, with the events entered', async () => {
+  it('lists the same member\'s entries in every tournament, with the events and team mates', async () => {
     setup({ 'T1:a': 'm1', 'T2:x': 'm1', 'T3:y': 'm1', 'T1:b': 'm2' });
     const tournaments = (await importFresh()).buildTournaments();
+    const partnerB = { id: 'b', name: 'Other, Person', url: `${SITE}/find/player?q=m2` };
     expect(playerOf(tournaments, 'T1', 'a').tournaments).toEqual([
-      { id: 'T1', events: ['HE 7', 'HD 7'] },
-      { id: 'T2', events: ['HE 5'] },
+      { id: 'T1', events: [{ name: 'HE 7', partners: [] }, { name: 'HD 7', partners: [partnerB] }] },
+      { id: 'T2', events: [{ name: 'HE 5', partners: [] }] },
       { id: 'T3', events: [] },
     ]);
     expect(playerOf(tournaments, 'T2', 'x').tournaments).toHaveLength(3);
-    expect(playerOf(tournaments, 'T1', 'b').tournaments).toEqual([{ id: 'T1', events: ['HE 7', 'HD 7'] }]);
+    expect(playerOf(tournaments, 'T1', 'b').tournaments).toEqual([
+      { id: 'T1', events: [{ name: 'HE 7', partners: [] }, { name: 'HD 7', partners: [{ id: 'a', name: 'Chow, Helin', url: `${SITE}/find/player?q=m1` }] }] },
+    ]);
   });
 
   it('does not join entries by name, so an unresolved player lists nothing', async () => {
     setup({ 'T1:a': 'm1' });
     const tournaments = (await importFresh()).buildTournaments();
-    expect(playerOf(tournaments, 'T1', 'a').tournaments).toEqual([{ id: 'T1', events: ['HE 7', 'HD 7'] }]);
+    expect(playerOf(tournaments, 'T1', 'a').tournaments.map((t) => t.id)).toEqual(['T1']);
     expect(playerOf(tournaments, 'T2', 'x').tournaments).toEqual([]);
+  });
+
+  it('links a partner to their profile once it is known, else to their tournament page', async () => {
+    setup({ 'T1:a': 'm1', 'T1:b': 'm2' }, undefined, { m2: { guid: 'G-B', ranking: {} } });
+    let [partner] = playerOf((await importFresh()).buildTournaments(), 'T1', 'a').tournaments[0].events[1].partners;
+    expect(partner.url).toBe(`${SITE}/player-profile/G-B`);
+
+    setup({ 'T1:a': 'm1' });
+    [partner] = playerOf((await importFresh()).buildTournaments(), 'T1', 'a').tournaments[0].events[1].partners;
+    expect(partner.url).toBe(`${SITE}/tournament/t1/player/b`);
+  });
+
+  it('gives every player a url: profile, else player search on the MemberID, else the tournament page', async () => {
+    setup({ 'T1:a': 'm1', 'T1:b': 'm2' }, undefined, { m1: { guid: 'G-A', ranking: {} } });
+    const tournaments = (await importFresh()).buildTournaments();
+    expect(playerOf(tournaments, 'T1', 'a').url).toBe(`${SITE}/player-profile/G-A`);
+    expect(playerOf(tournaments, 'T1', 'b').url).toBe(`${SITE}/find/player?q=m2`);
+    expect(playerOf(tournaments, 'T2', 'x').url).toBe(`${SITE}/tournament/t2/player/x`);
   });
 
   it('also joins through the member id seen in a played match', async () => {

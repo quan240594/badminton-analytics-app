@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchTournaments, simulateTournamentMatch, tournamentWinModel } from '../api.js';
 import PlayerSelect from '../components/PlayerSelect.jsx';
-import { SideNames } from '../components/PlayerLink.jsx';
+import PlayerLink, { SideNames } from '../components/PlayerLink.jsx';
 import ProfileStatsCard from '../components/ProfileStatsCard.jsx';
 import UpcomingTournaments from '../components/UpcomingTournaments.jsx';
 import RankingCard from '../components/RankingCard.jsx';
@@ -223,7 +223,7 @@ export default function TournamentMatchSimulator() {
   const player = players.find((p) => p.id === playerId);
   const memberOf = (id) => {
     const found = players.find((p) => p.id === id);
-    return { id, name: found?.name ?? id, profile: found?.profile ?? null };
+    return { id, name: found?.name ?? id, profile: found?.profile ?? null, url: found?.url ?? null };
   };
 
   useEffect(() => {
@@ -357,6 +357,7 @@ export default function TournamentMatchSimulator() {
         <div className="player-card-grid">
           <RankingCard nationalRanking={player.nationalRanking} />
           <ProfileStatsCard profile={player.profile} />
+          <p className="profile-row"><PlayerLink name="View profile on Badminton Nederland" url={player.url} /></p>
           <UpcomingTournaments entries={player.tournaments} tournaments={tournaments} title={`${player.name}: upcoming tournaments`} />
         </div>
       )}

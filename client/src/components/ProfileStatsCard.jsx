@@ -1,4 +1,4 @@
-import { formatRecord, profileUrl } from '../lib/profile.js';
+import { formatRecord } from '../lib/profile.js';
 
 const DISCIPLINES = [
   { key: 'total', label: 'Total' },
@@ -23,6 +23,7 @@ export default function ProfileStatsCard({ profile }) {
   if (!profile?.guid) return null;
   const rows = DISCIPLINES.filter(({ key }) => profile.stats?.[key]);
   const form = profile.stats?.total?.form ?? [];
+  if (rows.length === 0 && form.length === 0) return null;
 
   return (
     <div className="profile-stats">
@@ -56,9 +57,6 @@ export default function ProfileStatsCard({ profile }) {
           ))}
         </p>
       )}
-      <a className="profile-link" href={profileUrl(profile.guid)} target="_blank" rel="noopener noreferrer">
-        View profile on Badminton Nederland
-      </a>
     </div>
   );
 }
