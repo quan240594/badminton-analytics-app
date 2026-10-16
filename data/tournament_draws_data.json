@@ -44558,6 +44558,146 @@
           "played_at": "za 17-10-2026 15:55"
         }
       ]
+    },
+    "8": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "Hugo Mulkens"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "149",
+              "name": "Luuk van der Laan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "Ryan Tsang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "70",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "149",
+                  "name": "Luuk van der Laan",
+                  "member_id": "50006855"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Ryan Tsang",
+                  "member_id": "5100761"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 09:40"
+        },
+        {
+          "match_id": "67",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "seed": 3,
+                  "member_id": "5010683"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "149",
+                  "name": "Luuk van der Laan",
+                  "member_id": "50006855"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "69",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "seed": 3,
+                  "member_id": "5010683"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Ryan Tsang",
+                  "member_id": "5100761"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 15:55"
+        }
+      ]
     }
   }
 }
