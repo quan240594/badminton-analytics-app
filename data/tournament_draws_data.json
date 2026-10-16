@@ -43668,5 +43668,147 @@
         }
       ]
     }
+  },
+  "CFDB15C7-EC0C-4C4F-9922-BB3BE0A02A54": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "3",
+              "name": "Pranav Parakulangara Kizhuveettil"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "152",
+              "name": "Samuel van Verseveld"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Saathvik Narayanaswamy"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "9",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "152",
+                  "name": "Samuel van Verseveld",
+                  "member_id": "5006829"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Saathvik Narayanaswamy",
+                  "member_id": "10001251"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:00"
+        },
+        {
+          "match_id": "6",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Pranav Parakulangara Kizhuveettil",
+                  "seed": 1,
+                  "member_id": "50009396"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "152",
+                  "name": "Samuel van Verseveld",
+                  "member_id": "5006829"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:50"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Pranav Parakulangara Kizhuveettil",
+                  "seed": 1,
+                  "member_id": "50009396"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Saathvik Narayanaswamy",
+                  "member_id": "10001251"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:00"
+        }
+      ]
+    }
   }
 }
