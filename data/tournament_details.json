@@ -25145,8 +25145,12 @@
         "event_id": "5",
         "name": "Categorie B - Heren enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "7",
@@ -25215,6 +25219,17 @@
         "event_id": "15",
         "name": "Categorie B - Dubbel",
         "draws": 0,
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
+      },
+      {
+        "event_id": "19",
+        "name": "Categorie B - Gemengd dubbel",
+        "draws": 0,
         "entries": 0,
         "participants": []
       },
@@ -25234,7 +25249,13 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Singcay, John Michael"
+      }
+    ]
   },
   "BD4EEC94-2441-49D9-935B-58B8F98C8AF0": {
     "events": [
