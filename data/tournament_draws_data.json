@@ -43949,6 +43949,144 @@
           "played_at": "zo 18-10-2026 12:20"
         }
       ]
+    },
+    "3": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "143",
+              "name": "Siddhesh Bharath Kumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "131",
+              "name": "Neelesh Bharath Nath"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "90",
+              "name": "Naman Gowtham Prakash"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "27",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Neelesh Bharath Nath",
+                  "member_id": "50008965"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Naman Gowtham Prakash",
+                  "member_id": "50010855"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:00"
+        },
+        {
+          "match_id": "26",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "143",
+                  "name": "Siddhesh Bharath Kumar",
+                  "member_id": "50024060"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Naman Gowtham Prakash",
+                  "member_id": "50010855"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:50"
+        },
+        {
+          "match_id": "24",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "143",
+                  "name": "Siddhesh Bharath Kumar",
+                  "member_id": "50024060"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Neelesh Bharath Nath",
+                  "member_id": "50008965"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:00"
+        }
+      ]
     }
   }
 }
