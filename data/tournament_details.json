@@ -14850,10 +14850,16 @@
         "event_id": "21",
         "name": "Rol ME A",
         "draws": 0,
-        "entries": 2,
+        "entries": 4,
         "participants": [
           [
+            "8"
+          ],
+          [
             "4"
+          ],
+          [
+            "9"
           ],
           [
             "5"
@@ -14878,8 +14884,12 @@
         "event_id": "36",
         "name": "Staand ME A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "10"
+          ]
+        ]
       },
       {
         "event_id": "41",
@@ -14950,8 +14960,15 @@
         "event_id": "23",
         "name": "Rol MD A",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
+          [
+            "6",
+            "7"
+          ],
+          [
+            "8"
+          ],
           [
             "4",
             "5"
@@ -14976,8 +14993,13 @@
         "event_id": "38",
         "name": "Staand MD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "10",
+            "11"
+          ]
+        ]
       },
       {
         "event_id": "43",
@@ -14998,8 +15020,28 @@
     "entries": [
       {
         "country": "NED",
+        "player_id": "6",
+        "name": "DAM, John Van"
+      },
+      {
+        "country": "NED",
+        "player_id": "7",
+        "name": "DAM, Robin van"
+      },
+      {
+        "country": "NED",
         "player_id": "2",
         "name": "HOLTHUIZEN, Vincent"
+      },
+      {
+        "country": "NED",
+        "player_id": "10",
+        "name": "JORINK, Bram"
+      },
+      {
+        "country": "NED",
+        "player_id": "8",
+        "name": "KOEKOEK, Erik Jan"
       },
       {
         "country": "NED",
@@ -15015,6 +15057,16 @@
         "country": "NED",
         "player_id": "3",
         "name": "MEIJER, Kiki"
+      },
+      {
+        "country": "NED",
+        "player_id": "11",
+        "name": "NIEUWENHUYSE, Axel"
+      },
+      {
+        "country": "BEL",
+        "player_id": "9",
+        "name": "SEYS, Rudi"
       },
       {
         "country": "NED",
