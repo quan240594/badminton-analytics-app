@@ -1,0 +1,110 @@
+name: National player scrape (incremental)
+
+on:
+  schedule:
+    # One daily tick, offset from the league (08:00) and tournament (10:00) scrapes so the
+    # three never hit the site at the same moment. From there the job chains itself.
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Ignore today''s budget and any block cooldown for this run (manual catch-up)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: national-player-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # One run reads ~12 minutes of pages (see --slice-minutes) plus setup; this is only a ceiling.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.DATA_FETCHING_TOKEN }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install playwright
+        working-directory: data
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      # The ranking lists are public: only the cookie banner has to be accepted. No login, so
+      # the account session used by the other scrapes is never exposed to this crawl.
+      - name: Accept cookie consent on badmintonnederland.toernooi.nl (no login)
+        run: |
+          for attempt in 1 2 3; do
+            python3 get_ranking_cookie.py --save ranking_cookie.txt && exit 0
+            echo "consent attempt $attempt failed" >&2
+            sleep 20
+          done
+          exit 1
+        working-directory: data
+
+      # The driver spaces requests 3-6 s apart, stops at a daily time budget, and backs off
+      # (exit 3, with a cooldown kept in the state file) the moment the site pushes back.
+      - name: Read ranking pages
+        id: scrape
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          set +e
+          (cd data && python3 scrape_national_players.py $FORCE_FLAG)
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push progress
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -f data/national_players.json ] && git add data/national_players.json
+          git diff --cached --quiet || git commit -m "chore(data): national player scrape progress"
+
+          # A commit landing on main mid-run needs a rebase, and GitHub sometimes answers a
+          # push with a 5xx; a failed run never chains, so retry a few times.
+          for attempt in 1 2 3 4; do
+            if git push; then
+              exit 0
+            fi
+            git pull --rebase origin main || true
+            sleep $(( attempt * 10 ))
+          done
+          echo "git push failed after 4 attempts" >&2
+          exit 1
+
+      - name: Remove session cookie
+        if: always()
+        run: rm -f data/ranking_cookie.txt
+
+      # 0 = pages remain and today's budget is not used up -> hand off to a fresh run.
+      # 3 = nothing left for now (done, budget used, or backing off) -> stop the chain here.
+      # Anything else is a real failure and must not look green.
+      - name: Fail on a real scraper error
+        if: steps.scrape.outputs.code != '0' && steps.scrape.outputs.code != '3'
+        run: |
+          echo "Scraper failed (exit ${{ steps.scrape.outputs.code }})" >&2
+          exit 1
+
+      - name: Trigger the next chained run
+        if: steps.scrape.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run scrape-national-players.yml --ref main

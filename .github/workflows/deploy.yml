@@ -12,6 +12,9 @@ on:
         type: string
   push:
     branches: [main]
+    # The national player crawl commits progress every run; nothing in the site reads it yet.
+    paths-ignore:
+      - data/national_players.json
 
 concurrency:
   group: pages
