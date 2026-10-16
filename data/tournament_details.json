@@ -5520,7 +5520,7 @@
       {
         "event_id": "12",
         "name": "Enkel cat. goud (U13)",
-        "draws": 0,
+        "draws": 7,
         "entries": 12,
         "participants": [
           [
@@ -5564,7 +5564,7 @@
       {
         "event_id": "13",
         "name": "Dubbel cat. goud (U13)",
-        "draws": 0,
+        "draws": 1,
         "entries": 5,
         "participants": [
           [
@@ -5592,7 +5592,7 @@
       {
         "event_id": "6",
         "name": "JE cat. C",
-        "draws": 0,
+        "draws": 4,
         "entries": 6,
         "participants": [
           [
@@ -5618,7 +5618,7 @@
       {
         "event_id": "9",
         "name": "JE cat. D",
-        "draws": 0,
+        "draws": 6,
         "entries": 9,
         "participants": [
           [
@@ -5660,7 +5660,7 @@
       {
         "event_id": "7",
         "name": "ME cat. C",
-        "draws": 0,
+        "draws": 1,
         "entries": 3,
         "participants": [
           [
@@ -5677,7 +5677,7 @@
       {
         "event_id": "10",
         "name": "ME cat. D",
-        "draws": 0,
+        "draws": 4,
         "entries": 6,
         "participants": [
           [
@@ -5703,7 +5703,7 @@
       {
         "event_id": "3",
         "name": "Cat. B - gemengd",
-        "draws": 0,
+        "draws": 1,
         "entries": 3,
         "participants": [
           [
@@ -5721,22 +5721,22 @@
         "event_id": "5",
         "name": "Dubbel cat. B",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "9"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "8",
         "name": "Dubbel cat. C",
-        "draws": 0,
+        "draws": 4,
         "entries": 6,
         "participants": [
           [
             "10",
             "14"
+          ],
+          [
+            "47",
+            "32"
           ],
           [
             "2",
@@ -5753,18 +5753,19 @@
           [
             "19",
             "17"
-          ],
-          [
-            "32"
           ]
         ]
       },
       {
         "event_id": "11",
         "name": "Dubbel cat. D",
-        "draws": 0,
+        "draws": 1,
         "entries": 5,
         "participants": [
+          [
+            "46",
+            "33"
+          ],
           [
             "1",
             "28"
@@ -5778,16 +5779,246 @@
             "42"
           ],
           [
-            "33"
-          ],
-          [
             "41",
             "44"
           ]
         ]
       }
     ],
-    "draws": [],
+    "draws": [
+      {
+        "draw_id": "4",
+        "name": "Enkel cat. goud (U13) - Positie 01-03",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Enkel cat. goud (U13) - Positie 04-06",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "Enkel cat. goud (U13) - Positie 07-09",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "Enkel cat. goud (U13) - Positie 10-12",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "1",
+        "name": "Enkel cat. goud (U13) - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "Enkel cat. goud (U13) - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "Enkel cat. goud (U13) - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "Dubbel cat. goud (U13)",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "16",
+        "name": "JE cat. C - Positie 1-3",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "17",
+        "name": "JE cat. C - Positie 4-6",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "JE cat. C - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "15",
+        "name": "JE cat. C - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "JE cat. D - Positie 1-3",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "JE cat. D - Positie 4-6",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "JE cat. D - Positie 7-9",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "19",
+        "name": "JE cat. D - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "20",
+        "name": "JE cat. D - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "JE cat. D - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "ME cat. C",
+        "size": 3,
+        "type": "Poule - Thuis en Uit",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "28",
+        "name": "ME cat. D - Positie 1-3",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "29",
+        "name": "ME cat. D - Positie 4-6",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "ME cat. D - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "27",
+        "name": "ME cat. D - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "31",
+        "name": "Cat. B - gemengd",
+        "size": 3,
+        "type": "Poule - Thuis en Uit",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "35",
+        "name": "Dubbel cat. C - Positie 1-3",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "36",
+        "name": "Dubbel cat. C - Positie 4-6",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "33",
+        "name": "Dubbel cat. C - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "34",
+        "name": "Dubbel cat. C - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "32",
+        "name": "Dubbel cat. D",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": "NED",
@@ -5803,6 +6034,16 @@
         "country": "NED",
         "player_id": "10",
         "name": "Bakker, Milah"
+      },
+      {
+        "country": null,
+        "player_id": "47",
+        "name": "Bepalen 1, Nader te"
+      },
+      {
+        "country": null,
+        "player_id": "46",
+        "name": "Bepalen 2, Nader te"
       },
       {
         "country": "NED",
