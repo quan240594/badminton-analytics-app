@@ -44418,6 +44418,146 @@
           "played_at": "za 17-10-2026 15:55"
         }
       ]
+    },
+    "7": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "60",
+              "name": "Reyansh Kwatra"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "112",
+              "name": "Ishaank Sagar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "151",
+              "name": "Damian Pham"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "61",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 09:40"
+        },
+        {
+          "match_id": "58",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Reyansh Kwatra",
+                  "seed": 2,
+                  "member_id": "10000199"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "60",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Reyansh Kwatra",
+                  "seed": 2,
+                  "member_id": "10000199"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 15:55"
+        }
+      ]
     }
   }
 }
