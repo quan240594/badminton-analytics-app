@@ -88,7 +88,7 @@ function OpponentSummary({ side, discipline, tournaments }) {
   return (
     <div className="opponent">
       <p className="rating">
-        vs <SideNames members={members} /> — {rankingSummary(side)}
+        <span>vs <SideNames members={members} /> — {rankingSummary(side)}</span>
       </p>
       {members.map((member) => {
         const summary = recordSummary(member.profile?.stats?.[discipline]);
