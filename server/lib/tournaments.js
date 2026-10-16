@@ -144,6 +144,7 @@ export function buildTournaments(leaguePlayers = []) {
         nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
         profile: profileRecord?.guid ? { guid: profileRecord.guid, stats: profileRecord.stats ?? {} } : null,
         url: playerUrl(id, entry.player_id, resolvedMemberId, profileRecord?.guid),
+        memberId: resolvedMemberId ?? null,
         tournaments: entriesByMember.get(resolvedMemberId) ?? [],
       };
     });

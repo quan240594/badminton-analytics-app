@@ -27,3 +27,10 @@ export function upcomingTournaments(entries, tournaments, now = new Date()) {
 const formatDay = (date) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
 export const formatDateRange = (first, last) => (first.getTime() === last.getTime() ? formatDay(first) : `${formatDay(first)} – ${formatDay(last)}`);
+
+// A tournament's own dates ("YYYY-MM-DD HH:MM", one per day it covers) as text, or '' when unknown.
+export function formatTournamentDates(dates) {
+  const first = parseDay(dates?.[0]);
+  const last = parseDay(dates?.at(-1));
+  return first && last ? formatDateRange(first, last) : '';
+}

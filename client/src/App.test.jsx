@@ -8,6 +8,7 @@ let mockAuth = { session: null, loading: true, signOut };
 vi.mock('./hooks/useAuth.jsx', () => ({ useAuth: () => mockAuth }));
 vi.mock('./pages/MatchSimulator.jsx', () => ({ default: () => <div>Match Simulator page</div> }));
 vi.mock('./pages/LeagueDaySimulator.jsx', () => ({ default: () => <div>League Day page</div> }));
+vi.mock('./pages/PlayerProfiles.jsx', () => ({ default: () => <div>Player profiles page</div> }));
 vi.mock('./pages/Login.jsx', () => ({ default: () => <div>Login page</div> }));
 vi.mock('./pages/Register.jsx', () => ({ default: () => <div>Register page</div> }));
 vi.mock('./pages/VerifyEmail.jsx', () => ({ default: () => <div>Verify page</div> }));
@@ -69,6 +70,7 @@ describe('App', () => {
 
   it.each([
     ['#/league-day', 'League Day page', 'League Day Simulator'],
+    ['#/profiles', 'Player profiles page', 'Player profiles'],
     ['#/nowhere', 'Match Simulator page', 'Match Simulator'],
   ])('renders %s with its nav tab marked active', (hash, text, tab) => {
     mockAuth = SIGNED_IN;
