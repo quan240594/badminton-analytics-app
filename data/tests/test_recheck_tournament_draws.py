@@ -92,7 +92,7 @@ def env(monkeypatch, tmp_path):
     cookie.write_text(" sess=1\n", encoding="utf-8")
     state = SimpleNamespace(paths=paths, cookie=cookie, fetches=[], responses={"T1": {"draws": [1, 2]}, "T2": {"draws": []}})
 
-    def fake_details(tournament_id, cookie_text):
+    def fake_details(tournament_id, cookie_text, previous=None):
         state.fetches.append((tournament_id, cookie_text))
         return state.responses[tournament_id]
 

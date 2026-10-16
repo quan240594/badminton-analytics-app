@@ -88,7 +88,16 @@ def load_daily_budget(now: datetime, day_start_hour: int) -> dict:
     return state
 
 
-def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime) -> bool:
+# An event whose entrants could not be read at fetch time has no teams; fetch it again
+# after this long (not on every run, in case the page keeps being unreadable).
+RETRY_MISSING_TEAMS_AFTER = timedelta(hours=2)
+
+
+def lacks_teams(details_entry: dict | None) -> bool:
+    return any(e.get("entries") and not e.get("participants") for e in (details_entry or {}).get("events", []))
+
+
+def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime, details_entry: dict | None = None) -> bool:
     dates = parse_tournament_dates(tournament.get("dates", []))
     if dates and dates[1] < now.date():
         return False  # already over - its entry list can't change any more
@@ -100,7 +109,9 @@ def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime) -> bool
         fetched_at = datetime.strptime(fetched_entry["fetchedAt"], TIMESTAMP_FORMAT).replace(tzinfo=timezone.utc)
     except (KeyError, TypeError, ValueError):
         return False
-    return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS)
+    return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS) or (
+        now - fetched_at >= RETRY_MISSING_TEAMS_AFTER and lacks_teams(details_entry)
+    )
 
 
 def refresh_inventory(tournament_cookie_file: Path, days_back: int, days_forward: int, delay: float) -> dict:
@@ -154,8 +165,9 @@ def main() -> None:
     # already failed repeatedly (see SKIP_AFTER_FAILURES) sorts dead last
     # instead of blocking everything behind it.
     my_tournament_ids = set(load_json(MY_TOURNAMENTS_PATH, []))
+    all_details = load_json(DETAILS_PATH, {})
     pending = sorted(
-        (tid for tid in tournaments if tid not in fetched or is_refresh_due(tournaments[tid], fetched[tid], now)),
+        (tid for tid in tournaments if tid not in fetched or is_refresh_due(tournaments[tid], fetched[tid], now, all_details.get(tid))),
         key=lambda tid: (
             fetch_errors.get(tid, {}).get("count", 0) >= SKIP_AFTER_FAILURES,
             tid not in my_tournament_ids,
@@ -181,7 +193,7 @@ def main() -> None:
 
     started = time.monotonic()
     try:
-        details = fetch_tournament_details(tournament_id, cookie)
+        details = fetch_tournament_details(tournament_id, cookie, previous=all_details.get(tournament_id))
     except (RuntimeError, OSError) as ex:
         budget["workSeconds"] += time.monotonic() - started
         save_json(DAILY_BUDGET_PATH, budget)

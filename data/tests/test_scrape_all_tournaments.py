@@ -41,7 +41,7 @@ def env(monkeypatch, tmp_path):
         state.discoveries.append((cookie_text, start_date, end_date, delay))
         return state.tournaments
 
-    def fake_details(tournament_id, cookie_text):
+    def fake_details(tournament_id, cookie_text, previous=None):
         state.fetches.append((tournament_id, cookie_text))
         if state.error:
             raise state.error
@@ -194,6 +194,29 @@ CURRENT = sat.FETCH_SCHEMA
 ])
 def test_is_refresh_due(tournament, fetched_entry, due):
     assert sat.is_refresh_due(tournament, fetched_entry, FIXED_NOW) is due
+
+
+LOST_TEAMS = {"events": [{"event_id": "1", "entries": 9, "participants": []}]}
+KEPT_TEAMS = {"events": [{"event_id": "1", "entries": 9, "participants": [["1", "2"]]}, {"event_id": "2", "entries": 0, "participants": []}]}
+TWO_HOURS_AGO = "2026-10-02T09:30:00Z"  # 2.5h before the frozen clock
+ONE_HOUR_AGO = "2026-10-02T10:30:00Z"  # 1.5h before the frozen clock
+
+
+@pytest.mark.parametrize("fetched_at,details_entry,due", [
+    (TWO_HOURS_AGO, LOST_TEAMS, True),  # entrants but no teams: try again soon
+    (ONE_HOUR_AGO, LOST_TEAMS, False),  # ...but not on every run
+    (TWO_HOURS_AGO, KEPT_TEAMS, False),  # teams are there (an event with nobody in it has none)
+    (TWO_HOURS_AGO, None, False),
+])
+def test_is_refresh_due_retries_events_whose_teams_were_lost(fetched_at, details_entry, due):
+    tournament = {"dates": ["2026-12-06 00:00"]}
+    fetched_entry = {"fetchedAt": fetched_at, "schema": CURRENT}
+    assert sat.is_refresh_due(tournament, fetched_entry, FIXED_NOW, details_entry) is due
+
+
+def test_is_refresh_due_leaves_a_finished_tournament_alone_even_without_teams():
+    tournament = {"dates": ["2026-09-20 00:00"]}
+    assert sat.is_refresh_due(tournament, {"fetchedAt": TWO_HOURS_AGO, "schema": CURRENT}, FIXED_NOW, LOST_TEAMS) is False
 
 
 def test_main_refetches_a_stale_tournament_and_updates_its_timestamp(env, monkeypatch):
