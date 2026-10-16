@@ -102,6 +102,17 @@ describe('TournamentMatchSimulator', () => {
     expect(await screen.findAllByText(/vs Cara Gamma/)).not.toHaveLength(0);
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
+
+  it('keeps the opponent line in one element so the flex layout does not trim its spaces', async () => {
+    simulateTournamentMatch.mockResolvedValue({ sideB: rankedSide('p3', 'Cara Gamma'), winProbabilityA: 0.7, winProbabilityB: 0.3 });
+    await selectTournamentAndPlayer('Alice Alpha');
+
+    const [line] = await screen.findAllByText(/vs Cara Gamma/);
+    expect(line.tagName).toBe('SPAN');
+    expect(line.parentElement).toHaveClass('rating');
+    expect(line.parentElement.children).toHaveLength(1);
+    expect(line).toHaveTextContent('vs Cara Gamma \u2014 #42 (300 pts)');
+  });
 });
 
 describe('TournamentMatchSimulator - player profiles', () => {
