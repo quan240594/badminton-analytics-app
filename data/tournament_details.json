@@ -23993,8 +23993,8 @@
       {
         "event_id": "1",
         "name": "Jongens Enkel A",
-        "draws": 0,
-        "entries": 8,
+        "draws": 3,
+        "entries": 9,
         "participants": [
           [
             "47"
@@ -24015,6 +24015,9 @@
             "59"
           ],
           [
+            "94"
+          ],
+          [
             "90"
           ],
           [
@@ -24025,8 +24028,8 @@
       {
         "event_id": "3",
         "name": "Jongens Enkel B",
-        "draws": 0,
-        "entries": 13,
+        "draws": 5,
+        "entries": 12,
         "participants": [
           [
             "66"
@@ -24042,9 +24045,6 @@
           ],
           [
             "68"
-          ],
-          [
-            "23"
           ],
           [
             "60"
@@ -24073,18 +24073,14 @@
         "event_id": "2",
         "name": "Meisjes Enkel A",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "54"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "4",
         "name": "Meisjes Enkel B",
-        "draws": 0,
-        "entries": 14,
+        "draws": 5,
+        "entries": 13,
         "participants": [
           [
             "48"
@@ -24097,9 +24093,6 @@
           ],
           [
             "22"
-          ],
-          [
-            "29"
           ],
           [
             "69"
@@ -24133,8 +24126,8 @@
       {
         "event_id": "5",
         "name": "Enkel C",
-        "draws": 0,
-        "entries": 16,
+        "draws": 6,
+        "entries": 17,
         "participants": [
           [
             "36"
@@ -24183,20 +24176,26 @@
           ],
           [
             "43"
+          ],
+          [
+            "83"
           ]
         ]
       },
       {
         "event_id": "6",
         "name": "Enkel D",
-        "draws": 0,
-        "entries": 12,
+        "draws": 5,
+        "entries": 13,
         "participants": [
           [
             "1"
           ],
           [
             "85"
+          ],
+          [
+            "95"
           ],
           [
             "73"
@@ -24233,8 +24232,8 @@
       {
         "event_id": "7",
         "name": "Enkel Goud U13",
-        "draws": 0,
-        "entries": 11,
+        "draws": 4,
+        "entries": 10,
         "participants": [
           [
             "46"
@@ -24265,16 +24264,13 @@
           ],
           [
             "81"
-          ],
-          [
-            "83"
           ]
         ]
       },
       {
         "event_id": "8",
         "name": "Enkel zilver U11",
-        "draws": 0,
+        "draws": 3,
         "entries": 6,
         "participants": [
           [
@@ -24300,22 +24296,19 @@
       {
         "event_id": "9",
         "name": "Jongens dubbel A",
-        "draws": 0,
-        "entries": 4,
+        "draws": 1,
+        "entries": 3,
         "participants": [
           [
             "47",
             "90"
           ],
           [
-            "2",
-            "7"
-          ],
-          [
             "71",
             "75"
           ],
           [
+            "7",
             "79"
           ]
         ]
@@ -24330,19 +24323,24 @@
       {
         "event_id": "11",
         "name": "Dubbel B",
-        "draws": 0,
-        "entries": 13,
+        "draws": 5,
+        "entries": 12,
         "participants": [
           [
             "48",
             "64"
           ],
           [
+            "37",
+            "20"
+          ],
+          [
             "21",
             "25"
           ],
           [
-            "39"
+            "39",
+            "17"
           ],
           [
             "22",
@@ -24353,7 +24351,8 @@
             "24"
           ],
           [
-            "68"
+            "68",
+            "91"
           ],
           [
             "69",
@@ -24362,10 +24361,6 @@
           [
             "49",
             "56"
-          ],
-          [
-            "23",
-            "20"
           ],
           [
             "60",
@@ -24378,17 +24373,14 @@
           [
             "51",
             "57"
-          ],
-          [
-            "17"
           ]
         ]
       },
       {
         "event_id": "12",
         "name": "Dubbel C",
-        "draws": 0,
-        "entries": 9,
+        "draws": 3,
+        "entries": 8,
         "participants": [
           [
             "36",
@@ -24411,7 +24403,8 @@
             "43"
           ],
           [
-            "87"
+            "87",
+            "83"
           ],
           [
             "50",
@@ -24420,46 +24413,43 @@
           [
             "76",
             "42"
-          ],
-          [
-            "83"
           ]
         ]
       },
       {
         "event_id": "13",
         "name": "Dubbel D",
-        "draws": 0,
-        "entries": 6,
+        "draws": 1,
+        "entries": 4,
         "participants": [
           [
             "63",
             "53"
           ],
           [
-            "73"
+            "73",
+            "8"
           ],
           [
-            "6"
+            "6",
+            "12"
           ],
           [
             "9",
             "11"
-          ],
-          [
-            "8"
-          ],
-          [
-            "12"
           ]
         ]
       },
       {
         "event_id": "14",
         "name": "Dubbel Goud U13",
-        "draws": 0,
+        "draws": 1,
         "entries": 5,
         "participants": [
+          [
+            "46",
+            "77"
+          ],
           [
             "16",
             "18"
@@ -24473,9 +24463,6 @@
             "58"
           ],
           [
-            "77"
-          ],
-          [
             "44",
             "81"
           ]
@@ -24484,7 +24471,7 @@
       {
         "event_id": "15",
         "name": "Dubbel Zilver U11",
-        "draws": 0,
+        "draws": 1,
         "entries": 2,
         "participants": [
           [
@@ -24498,7 +24485,352 @@
         ]
       }
     ],
-    "draws": [],
+    "draws": [
+      {
+        "draw_id": "43",
+        "name": "Jongens Enkel A",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "41",
+        "name": "Jongens Enkel A - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "42",
+        "name": "Jongens Enkel A - Poule B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Jongens Enkel B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "1",
+        "name": "Jongens Enkel B - Poule A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "Jongens Enkel B - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "Jongens Enkel B - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "4",
+        "name": "Jongens Enkel B - Poule D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "Meisjes Enkel B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "Meisjes Enkel B - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "Meisjes Enkel B - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "Meisjes Enkel B - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "Meisjes Enkel B - Poule D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "16",
+        "name": "Enkel C",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "Enkel C - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "Enkel C - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "13",
+        "name": "Enkel C - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "14",
+        "name": "Enkel C - Poule D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "15",
+        "name": "Enkel C - Poule E",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "Enkel D",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "17",
+        "name": "Enkel D - Poule A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "18",
+        "name": "Enkel D - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "19",
+        "name": "Enkel D - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "20",
+        "name": "Enkel D - Poule D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "Enkel Goud U13",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "Enkel Goud U13 - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "Enkel Goud U13 - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "Enkel Goud U13 - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "28",
+        "name": "Enkel zilver U11",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "Enkel zilver U11 - Poule A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "27",
+        "name": "Enkel zilver U11 - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "29",
+        "name": "Jongens dubbel A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "34",
+        "name": "Dubbel B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "30",
+        "name": "Dubbel B - Poule A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "31",
+        "name": "Dubbel B - Poule B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "32",
+        "name": "Dubbel B - Poule C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "33",
+        "name": "Dubbel B - Poule D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "37",
+        "name": "Dubbel C",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "35",
+        "name": "Dubbel C - Poule A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "36",
+        "name": "Dubbel C - Poule B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "38",
+        "name": "Dubbel D",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "39",
+        "name": "Dubbel Goud U13",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "40",
+        "name": "Dubbel Zilver U11",
+        "size": 2,
+        "type": "Afvalschema",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": null,
@@ -24612,11 +24944,6 @@
       },
       {
         "country": null,
-        "player_id": "29",
-        "name": "Gowda, Dhatri"
-      },
-      {
-        "country": null,
         "player_id": "68",
         "name": "Graaf, Sem de"
       },
@@ -24657,11 +24984,6 @@
       },
       {
         "country": null,
-        "player_id": "23",
-        "name": "Hendriks, Joey"
-      },
-      {
-        "country": null,
         "player_id": "86",
         "name": "Huang, Livia"
       },
@@ -24674,6 +24996,11 @@
         "country": null,
         "player_id": "60",
         "name": "Kadali, Prathik"
+      },
+      {
+        "country": null,
+        "player_id": "95",
+        "name": "Keizer, Naud"
       },
       {
         "country": null,
@@ -24772,6 +25099,11 @@
       },
       {
         "country": null,
+        "player_id": "91",
+        "name": "Regeer, Brent"
+      },
+      {
+        "country": null,
         "player_id": "76",
         "name": "Roy, Mihika"
       },
@@ -24847,8 +25179,8 @@
       },
       {
         "country": null,
-        "player_id": "54",
-        "name": "Van Gemerden, Renate van"
+        "player_id": "94",
+        "name": "Verschuren, Daan"
       },
       {
         "country": null,
