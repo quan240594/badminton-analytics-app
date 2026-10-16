@@ -43203,6 +43203,186 @@
           "played_at": "za 17-10-2026 16:15"
         }
       ]
+    },
+    "33": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "19",
+              "name": "Nick Fransen"
+            },
+            {
+              "player_id": "17",
+              "name": "Yent Germs"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "3",
+              "name": "Kaedan van Deijk"
+            },
+            {
+              "player_id": "5",
+              "name": "Florian Lock"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "2",
+              "name": "Quinten Brandenburg"
+            },
+            {
+              "player_id": "4",
+              "name": "Sepp Kruiswijk"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "334",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Yent Germs",
+                  "member_id": "50013846"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Quinten Brandenburg",
+                  "member_id": "5013096"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Sepp Kruiswijk",
+                  "member_id": "50010265"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 11:15"
+        },
+        {
+          "match_id": "335",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Kaedan van Deijk",
+                  "member_id": "50015630"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Florian Lock",
+                  "member_id": "50007282"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Quinten Brandenburg",
+                  "member_id": "5013096"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Sepp Kruiswijk",
+                  "member_id": "50010265"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "332",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Yent Germs",
+                  "member_id": "50013846"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Kaedan van Deijk",
+                  "member_id": "50015630"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Florian Lock",
+                  "member_id": "50007282"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 13:20"
+        }
+      ]
     }
   }
 }
