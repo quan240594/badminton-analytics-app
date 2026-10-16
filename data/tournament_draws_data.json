@@ -42255,6 +42255,144 @@
           "played_at": "za 17-10-2026 12:05"
         }
       ]
+    },
+    "27": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Lisa Van Schie"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "Zlata Kuznietsova"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "31",
+              "name": "Iris Horsthuis"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "270",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Iris Horsthuis",
+                  "member_id": "50025026"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 10:25"
+        },
+        {
+          "match_id": "267",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Lisa Van Schie",
+                  "member_id": "50011658"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 11:15"
+        },
+        {
+          "match_id": "269",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Lisa Van Schie",
+                  "member_id": "50011658"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Iris Horsthuis",
+                  "member_id": "50025026"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 12:05"
+        }
+      ]
     }
   }
 }
