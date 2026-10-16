@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import MatchSimulator from './pages/MatchSimulator.jsx';
 import LeagueDaySimulator from './pages/LeagueDaySimulator.jsx';
+import PlayerProfiles from './pages/PlayerProfiles.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import VerifyEmail from './pages/VerifyEmail.jsx';
@@ -14,6 +15,7 @@ import { useAuth } from './hooks/useAuth.jsx';
 const PAGES = [
   { hash: '#/', label: 'Match Simulator', Component: MatchSimulator },
   { hash: '#/league-day', label: 'League Day Simulator', Component: LeagueDaySimulator },
+  { hash: '#/profiles', label: 'Player profiles', Component: PlayerProfiles },
 ];
 
 // Unauthenticated-only routes; matched by hash prefix so query strings

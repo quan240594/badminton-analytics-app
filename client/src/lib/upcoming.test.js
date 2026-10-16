@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatDateRange, tournamentUrl, upcomingTournaments } from './upcoming.js';
+import { formatDateRange, formatTournamentDates, tournamentUrl, upcomingTournaments } from './upcoming.js';
 
 const TOURNAMENTS = [
   { id: 'PAST', name: 'Past Open', dates: ['2026-09-05 00:00'], location: 'Utrecht' },
@@ -45,5 +45,18 @@ describe('formatDateRange', () => {
 describe('tournamentUrl', () => {
   it('points at the tournament on Badminton Nederland', () => {
     expect(tournamentUrl('ABC')).toBe('https://badmintonnederland.toernooi.nl/sport/tournament?id=ABC');
+  });
+});
+
+describe('formatTournamentDates', () => {
+  it('shows a one-day tournament once and a longer one as a range', () => {
+    expect(formatTournamentDates(['2026-12-06 00:00'])).toBe('6 Dec 2026');
+    expect(formatTournamentDates(['2026-11-21 00:00', '2026-11-22 23:59'])).toBe('21 Nov 2026 \u2013 22 Nov 2026');
+  });
+
+  it('is empty without usable dates', () => {
+    expect(formatTournamentDates([])).toBe('');
+    expect(formatTournamentDates(undefined)).toBe('');
+    expect(formatTournamentDates(['later'])).toBe('');
   });
 });

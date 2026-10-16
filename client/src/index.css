@@ -317,6 +317,38 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .profile-row { margin: 0; font-size: 0.75rem; }
 .profile-row .profile-link { color: #93c5fd; }
 
+/* Player profiles: the toernooi.nl look (white cards on a warm grey page, brand blue, green/red
+   result tags) with values taken from its Badminton Nederland stylesheet. */
+.tn-head { display: flex; align-items: baseline; gap: 0.75rem; margin: 1.25rem 0 0.75rem; padding: 1.25rem 1.5rem; border-radius: 0.6rem; background: linear-gradient(120deg, #004899, #003c80); color: #fff; }
+.tn-head__name { margin: 0; font-size: 1.9rem; font-weight: 600; }
+.tn-head__aside { color: rgba(255, 255, 255, 0.75); font-size: 1rem; }
+.tn-head__country { margin-left: auto; padding: 0.1rem 0.6rem; border-radius: 3rem; background: #ee7326; font-size: 0.75rem; font-weight: 600; }
+.tn-module { margin-top: 1.25rem; border-radius: 0.6rem; background: #fff; color: #2a2c32; font-family: 'Open Sans', sans-serif; }
+.tn-module__banner { display: flex; align-items: center; padding: 1.1rem 1.5rem; border-bottom: 1px solid #d0d2d8; }
+.tn-module__title { margin: 0; color: #707585; font-size: 1.4rem; font-weight: 400; }
+.tn-module__content { padding: 1rem 1.5rem 1.5rem; }
+.tn-muted { color: #707585; }
+.tn-tournaments { margin: 0; padding: 0; list-style: none; }
+.tn-tournament + .tn-tournament { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid #dedfe3; }
+.tn-media__title { margin: 0 0 0.2rem; font-size: 1.05rem; font-weight: 600; line-height: 1.5; }
+.tn-media__title a { color: #004899; text-decoration: none; }
+.tn-media__title a:hover { text-decoration: underline; }
+.tn-media__sub { display: block; font-size: 0.85rem; line-height: 1.5; }
+.tn-divider { margin: 1rem 0 0.6rem; padding: 0.35rem 0.75rem; border-radius: 0.4rem; background: #f1f2f3; color: #2a2c32; font-size: 0.85rem; font-weight: 600; }
+.tn-matches { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); gap: 0.75rem; }
+.tn-match { border: 1px solid #dedfe3; border-radius: 0.6rem; background: #fff; font-size: 0.85rem; }
+.tn-match__header { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.3rem 0.6rem; border-radius: 0.6rem 0.6rem 0 0; background: #f1f2f3; font-weight: 600; }
+.tn-match__body { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.6rem; }
+.tn-match__rows { flex: 1; min-width: 0; }
+.tn-match__row { display: flex; justify-content: space-between; gap: 0.75rem; padding: 0.15rem 0; }
+.tn-match__row.has-won { font-weight: 700; }
+.tn-match__own { color: #707585; font-weight: 400; }
+.tn-match__games { white-space: nowrap; word-spacing: 0.9rem; font-variant-numeric: tabular-nums; }
+.tn-match__footer { padding: 0.25rem 0.6rem 0.4rem; border-top: 1px solid #f1f2f3; color: #707585; font-size: 0.75rem; }
+.tn-tag { display: inline-block; min-width: 1.8rem; height: 1.8rem; line-height: 1.8rem; border-radius: 3rem; color: #fff; font-size: 0.75rem; font-weight: 600; text-align: center; }
+.tn-tag--success { background: #4abf33; }
+.tn-tag--danger { background: #bd3b2a; }
+
 .division-table {
   width: 100%;
   table-layout: fixed;

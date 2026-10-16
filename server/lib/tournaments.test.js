@@ -302,6 +302,13 @@ describe('buildTournaments - the tournaments a player is entered in', () => {
     expect(playerOf(tournaments, 'T2', 'x').url).toBe(`${SITE}/tournament/t2/player/x`);
   });
 
+  it('carries the MemberID of a resolved player, and null for an unresolved one', async () => {
+    setup({ 'T1:a': 'm1' });
+    const tournaments = (await importFresh()).buildTournaments();
+    expect(playerOf(tournaments, 'T1', 'a').memberId).toBe('m1');
+    expect(playerOf(tournaments, 'T2', 'x').memberId).toBeNull();
+  });
+
   it('also joins through the member id seen in a played match', async () => {
     setup({}, { T1: { d1: { matches: [{ sides: [{ players: [{ player_id: 'a', member_id: 'm7' }] }] }] } }, T2: { d2: { matches: [{ sides: [{ players: [{ player_id: 'x', member_id: 'm7' }] }] }] } } });
     const tournaments = (await importFresh()).buildTournaments();
