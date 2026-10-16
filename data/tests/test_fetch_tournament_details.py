@@ -38,6 +38,19 @@ def test_parse_event_participants_without_an_entries_table():
     assert ftd.parse_event_participants("<html>nothing</html>") == []
 
 
+def test_parse_event_participants_does_not_depend_on_the_pages_language():
+    english = EVENT_PAGE_HTML.replace("Inschrijvingen", "Entries")
+    assert ftd.parse_event_participants(english) == [["78"], ["83", "85"]]
+    spaced = EVENT_PAGE_HTML.replace("<caption>Inschrijvingen (3)</caption>", "<caption>\r\n\t\tInschrijvingen (3)\r\n\t</caption>")
+    assert ftd.parse_event_participants(spaced) == [["78"], ["83", "85"]]
+
+
+def test_parse_event_participants_ignores_captions_without_a_count():
+    html = '<caption>Schedule</caption><a href="player.aspx?id=X&amp;player=1">x</a>' + EVENT_PAGE_HTML
+    assert ftd.parse_event_participants(html) == [["78"], ["83", "85"]]
+    assert ftd.parse_event_participants("<caption>Schedule</caption><table><tr><td>x</td></tr></table>") == []
+
+
 def test_parse_events():
     assert ftd.parse_events(EVENTS_HTML) == [
         {"event_id": "5", "name": "Heren Enkel", "draws": 3, "entries": 40},
@@ -90,6 +103,23 @@ def test_fetch_tournament_details_combines_three_requests_plus_one_per_event(mon
     assert fake.urls[1].endswith("draws.aspx?id=AB-CD")
     assert [e["participants"] for e in details["events"]] == [[["78"], ["83", "85"]]] * 2
     assert sorted(u.split("event.aspx?id=AB-CD&event=")[1] for u in fake.urls if "event.aspx" in u) == ["5", "6"]
+
+
+def test_fetch_tournament_details_keeps_stored_teams_when_an_event_page_cannot_be_read(monkeypatch, capsys):
+    unreadable = "<html>no entries table here</html>"
+    install_urlopen(monkeypatch, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML, "event.aspx": unreadable})
+    previous = {"events": [{"event_id": "5", "participants": [["1", "2"]]}]}
+    details = ftd.fetch_tournament_details("AB-CD", "c", previous=previous)
+    # event 5 keeps what was stored; event 6 had nothing stored to keep
+    assert [e["participants"] for e in details["events"]] == [[["1", "2"]], []]
+    assert capsys.readouterr().out.count("WARNING: event") == 2
+
+
+def test_fetch_tournament_details_prefers_freshly_read_teams_over_stored_ones(monkeypatch):
+    install_urlopen(monkeypatch, {"events.aspx": EVENTS_HTML, "draws.aspx": DRAWS_HTML, "GetPlayersContent": ENTRIES_HTML, "event.aspx": EVENT_PAGE_HTML})
+    previous = {"events": [{"event_id": "5", "participants": [["9"]]}]}
+    details = ftd.fetch_tournament_details("AB-CD", "c", previous=previous)
+    assert details["events"][0]["participants"] == [["78"], ["83", "85"]]
 
 
 def test_fetch_tournament_details_skips_the_event_page_when_nobody_entered(monkeypatch):

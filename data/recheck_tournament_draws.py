@@ -138,7 +138,7 @@ def main() -> None:
     for tournament_id in pending:
         name = tournaments.get(tournament_id, {}).get("name", tournament_id)
         print(f"Rechecking {tournament_id} ({name})...", flush=True)
-        new_details = fetch_tournament_details(tournament_id, cookie)
+        new_details = fetch_tournament_details(tournament_id, cookie, previous=details.get(tournament_id))
         details[tournament_id] = new_details
         if new_details["draws"]:
             found_any = True
