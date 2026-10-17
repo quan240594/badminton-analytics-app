@@ -46968,6 +46968,314 @@
           "played_at": "za 17-10-2026 17:40"
         }
       ]
+    },
+    "24": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "Ricky Kota"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-2",
+          "points_record": "159-132"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Kyan Chan"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "124-127"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Darshit Merugu"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "4-5",
+          "points_record": "151-160"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "49",
+              "name": "Dominic Tsui"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-5",
+          "points_record": "128-143"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "220",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Dominic Tsui",
+                  "member_id": "50008084"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:20"
+        },
+        {
+          "match_id": "990",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Ricky Kota",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:20"
+        },
+        {
+          "match_id": "217",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              7,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "992",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Dominic Tsui",
+                  "member_id": "50008084"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Ricky Kota",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "219",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Dominic Tsui",
+                  "member_id": "50008084"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:40"
+        },
+        {
+          "match_id": "991",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Ricky Kota",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:40"
+        }
+      ]
     }
   }
 }
