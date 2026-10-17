@@ -48641,6 +48641,173 @@
           "played_at": "za 17-10-2026 17:40"
         }
       ]
+    },
+    "32": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Ian Wu"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-33"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "140",
+              "name": "Arjan Jain"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-59"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "163",
+              "name": "Koen Delahaye"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "24-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "328",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "163",
+                  "name": "Koen Delahaye",
+                  "member_id": "4990127"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "140",
+                  "name": "Arjan Jain",
+                  "member_id": "50016422"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:20"
+        },
+        {
+          "match_id": "325",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "seed": 6,
+                  "member_id": "50012530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "163",
+                  "name": "Koen Delahaye",
+                  "member_id": "4990127"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "327",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "seed": 6,
+                  "member_id": "50012530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "140",
+                  "name": "Arjan Jain",
+                  "member_id": "50016422"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:40"
+        }
+      ]
     }
   }
 }
