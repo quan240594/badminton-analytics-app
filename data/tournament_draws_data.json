@@ -50807,6 +50807,171 @@
           "played_at": "za 17-10-2026 15:55"
         }
       ]
+    },
+    "44": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "17",
+              "name": "Wenxi Liu"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-31"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Mihikaa Mukund"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "58-61"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "124",
+              "name": "Alisa Misha"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "34-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "465",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "462",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "464",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
