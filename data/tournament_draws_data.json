@@ -52065,6 +52065,275 @@
           "played_at": "za 17-10-2026 18:15"
         }
       ]
+    },
+    "50": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "81",
+              "name": "Femke Krist"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "97-79"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Dahmawati Feryanto"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "94-89"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Lana Cremers"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "61-84"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "130",
+              "name": "Avantika Bharath Kumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "1018",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "130",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "532",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              9,
+              21
+            ],
+            [
+              22,
+              24
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:20"
+        },
+        {
+          "match_id": "529",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "1020",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "130",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "531",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        },
+        {
+          "match_id": "1019",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "130",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
