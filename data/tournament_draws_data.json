@@ -45711,6 +45711,168 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "16": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "111",
+              "name": "Nishchint Prakash"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-0",
+          "points_record": "42-12"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "41",
+              "name": "Isara Levmitha Karunapathiranage"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-1",
+          "points_record": "61-51"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "59",
+              "name": "Sushruta Kashyap"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "63-103"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "148",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Isara Levmitha Karunapathiranage",
+                  "member_id": "50008104"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "145",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Nishchint Prakash",
+                  "seed": 4,
+                  "member_id": "5101034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "147",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Nishchint Prakash",
+                  "seed": 4,
+                  "member_id": "5101034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Isara Levmitha Karunapathiranage",
+                  "member_id": "50008104"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
