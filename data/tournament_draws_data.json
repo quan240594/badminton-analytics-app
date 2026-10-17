@@ -51769,6 +51769,302 @@
           "played_at": "za 17-10-2026 18:15"
         }
       ]
+    },
+    "49": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "40",
+              "name": "Doudou Huang"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "126-28"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "142",
+              "name": "Nithyashree Kasula"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-2",
+          "points_record": "97-76"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "155",
+              "name": "Palak Sahu"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-5",
+          "points_record": "89-139"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "120",
+              "name": "Leanna Honingh"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "1-6",
+          "points_record": "76-145"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "523",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "155",
+                  "name": "Palak Sahu",
+                  "member_id": "5009657"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              3
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "1011",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "120",
+                  "name": "Leanna Honingh",
+                  "member_id": "50016145"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "520",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "120",
+                  "name": "Leanna Honingh",
+                  "member_id": "50016145"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              7,
+              21
+            ],
+            [
+              2,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "1013",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "155",
+                  "name": "Palak Sahu",
+                  "member_id": "5009657"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "522",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "120",
+                  "name": "Leanna Honingh",
+                  "member_id": "50016145"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "155",
+                  "name": "Palak Sahu",
+                  "member_id": "5009657"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        },
+        {
+          "match_id": "1012",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
