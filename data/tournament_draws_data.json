@@ -50294,6 +50294,173 @@
           "played_at": "za 17-10-2026 14:45"
         }
       ]
+    },
+    "41": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "89",
+              "name": "Julia Policht"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-46"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Julia Al Eido"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "78-74"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "109",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "42-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "438",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "435",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "seed": 2,
+                  "member_id": "50005873"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "437",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "seed": 2,
+                  "member_id": "50005873"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:45"
+        }
+      ]
     }
   }
 }
