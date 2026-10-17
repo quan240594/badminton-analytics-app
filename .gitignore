@@ -8,6 +8,7 @@ coverage/
 # Scraper session/output artifacts - never commit a live session cookie
 data/cookie.txt
 data/tournament_cookie.txt
+data/ranking_cookie.txt
 data/.venv/
 data/pages/
 **/__pycache__/
