@@ -50461,6 +50461,173 @@
           "played_at": "za 17-10-2026 14:45"
         }
       ]
+    },
+    "42": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "22",
+              "name": "Lisha Timmanagoudar"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-32"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Vihana Sheth"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "69-55"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "98",
+              "name": "Lotte Van Baak"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "18-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "447",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "Lotte Van Baak",
+                  "member_id": "50010350"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "444",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "seed": 3,
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "Lotte Van Baak",
+                  "member_id": "50010350"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              1
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "446",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "seed": 3,
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:55"
+        }
+      ]
     }
   }
 }
