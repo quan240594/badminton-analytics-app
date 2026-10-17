@@ -51602,6 +51602,173 @@
           "played_at": "za 17-10-2026 18:15"
         }
       ]
+    },
+    "48": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "42",
+              "name": "Eliz Kökkü"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-35"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "64",
+              "name": "Ridhima Nanda"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "62-71"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "19",
+              "name": "Sauratapa Roychowdhury"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "44-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "514",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Ridhima Nanda",
+                  "member_id": "5001756"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "511",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "seed": 2,
+                  "member_id": "5006262"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Ridhima Nanda",
+                  "member_id": "5001756"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "513",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "seed": 2,
+                  "member_id": "5006262"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
