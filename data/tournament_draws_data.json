@@ -52411,6 +52411,173 @@
           "played_at": "zo 18-10-2026 15:15"
         }
       ]
+    },
+    "52": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Aditi Prabhudesai"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-49"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "158",
+              "name": "Meenakshi Mohan Babu"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "74-63"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "156",
+              "name": "Madhura Gandecha"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "38-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "562",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "156",
+                  "name": "Madhura Gandecha",
+                  "member_id": "5011676"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:20"
+        },
+        {
+          "match_id": "561",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "seed": 1,
+                  "member_id": "5004689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "156",
+                  "name": "Madhura Gandecha",
+                  "member_id": "5011676"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "559",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "seed": 1,
+                  "member_id": "5004689"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
