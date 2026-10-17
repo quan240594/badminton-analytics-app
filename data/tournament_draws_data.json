@@ -49323,6 +49323,171 @@
           "played_at": "za 17-10-2026 18:15"
         }
       ]
+    },
+    "36": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "100",
+              "name": "Daan Buchly"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-43"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Daniel Mulkens"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "67-72"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "137",
+              "name": "Vajun Chintha"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "49-85"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "364",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "137",
+                  "name": "Vajun Chintha",
+                  "member_id": "5012927"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Daan Buchly",
+                  "member_id": "4994407"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:40"
+        },
+        {
+          "match_id": "361",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Daniel Mulkens",
+                  "member_id": "4994979"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "137",
+                  "name": "Vajun Chintha",
+                  "member_id": "5012927"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "363",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Daniel Mulkens",
+                  "member_id": "4994979"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Daan Buchly",
+                  "member_id": "4994407"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
