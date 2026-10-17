@@ -47820,6 +47820,173 @@
           "played_at": null
         }
       ]
+    },
+    "27": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "Jayden Zhang"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-45"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "80",
+              "name": "Talip Kaymak"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "74-67"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "Kushal Dhyan Dinakaran"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "38-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "283",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Kushal Dhyan Dinakaran",
+                  "member_id": "5010836"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Talip Kaymak",
+                  "member_id": "4987882"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              7,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:20"
+        },
+        {
+          "match_id": "280",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "seed": 1,
+                  "member_id": "5008940"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Kushal Dhyan Dinakaran",
+                  "member_id": "5010836"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "282",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "seed": 1,
+                  "member_id": "5008940"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Talip Kaymak",
+                  "member_id": "4987882"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:40"
+        }
+      ]
     }
   }
 }
