@@ -46351,6 +46351,146 @@
           "played_at": "za 17-10-2026 17:05"
         }
       ]
+    },
+    "20": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Owen Tang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "114",
+              "name": "Vishakh Sujeev Kumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "70",
+              "name": "Daniël de Senerpont Domis"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "184",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Daniël de Senerpont Domis",
+                  "member_id": "5005068"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "114",
+                  "name": "Vishakh Sujeev Kumar",
+                  "member_id": "10000194"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "181",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Owen Tang",
+                  "seed": 8,
+                  "member_id": "5001911"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Daniël de Senerpont Domis",
+                  "member_id": "5005068"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "183",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Owen Tang",
+                  "seed": 8,
+                  "member_id": "5001911"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "114",
+                  "name": "Vishakh Sujeev Kumar",
+                  "member_id": "10000194"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
