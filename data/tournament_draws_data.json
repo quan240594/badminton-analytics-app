@@ -49150,6 +49150,179 @@
           "played_at": "za 17-10-2026 18:15"
         }
       ]
+    },
+    "35": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "62",
+              "name": "Akhil Munugoti"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-2",
+          "points_record": "120-103"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "39",
+              "name": "Damian Eckringa"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "91-92"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "26",
+              "name": "Henri Waninge"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "88-104"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "355",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "26",
+                  "name": "Henri Waninge",
+                  "member_id": "5011515"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Akhil Munugoti",
+                  "member_id": "4995433"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:40"
+        },
+        {
+          "match_id": "352",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Damian Eckringa",
+                  "member_id": "5008686"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "26",
+                  "name": "Henri Waninge",
+                  "member_id": "5011515"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "354",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Damian Eckringa",
+                  "member_id": "5008686"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Akhil Munugoti",
+                  "member_id": "4995433"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
