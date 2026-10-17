@@ -50127,6 +50127,173 @@
           "played_at": "zo 18-10-2026 15:15"
         }
       ]
+    },
+    "40": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Nina Willems"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-21"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "Amy van Deudekom"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "50-66"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "148",
+              "name": "Sithuli Kariyawasam"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "37-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "429",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "148",
+                  "name": "Sithuli Kariyawasam",
+                  "member_id": "50006838"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:40"
+        },
+        {
+          "match_id": "426",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "seed": 1,
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "148",
+                  "name": "Sithuli Kariyawasam",
+                  "member_id": "50006838"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "428",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "seed": 1,
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:45"
+        }
+      ]
     }
   }
 }
