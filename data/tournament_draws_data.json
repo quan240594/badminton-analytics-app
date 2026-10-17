@@ -51268,6 +51268,173 @@
           "played_at": "za 17-10-2026 15:55"
         }
       ]
+    },
+    "46": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "479",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Mai-Lan Bui",
+                  "member_id": "10002873"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:50"
+        },
+        {
+          "match_id": "480",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:50"
+        },
+        {
+          "match_id": "476",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:00"
+        },
+        {
+          "match_id": "477",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:00"
+        },
+        {
+          "match_id": "475",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 15:15"
+        },
+        {
+          "match_id": "478",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "481",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
