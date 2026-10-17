@@ -46031,6 +46031,168 @@
           "played_at": "za 17-10-2026 17:05"
         }
       ]
+    },
+    "18": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "113",
+              "name": "Kyan Stam"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-0",
+          "points_record": "42-30"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "79",
+              "name": "Ian Hidajat"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-1",
+          "points_record": "60-45"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "125",
+              "name": "Rishabh Naik"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "75-102"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "166",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "125",
+                  "name": "Rishabh Naik",
+                  "member_id": "4997506"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Ian Hidajat",
+                  "member_id": "5003370"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "163",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Kyan Stam",
+                  "seed": 6,
+                  "member_id": "4996148"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "125",
+                  "name": "Rishabh Naik",
+                  "member_id": "4997506"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "165",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Kyan Stam",
+                  "seed": 6,
+                  "member_id": "4996148"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Ian Hidajat",
+                  "member_id": "5003370"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
