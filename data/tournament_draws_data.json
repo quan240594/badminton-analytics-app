@@ -46193,6 +46193,164 @@
           "played_at": "za 17-10-2026 17:05"
         }
       ]
+    },
+    "19": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "154",
+              "name": "Victor Yeh"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-41"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Björn Reichardt"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "0-2",
+          "points_record": "30-42"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "157",
+              "name": "Sora Kawamura"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "0-2",
+          "points_record": "11-42"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "175",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "154",
+                  "name": "Victor Yeh",
+                  "member_id": "10001796"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "157",
+                  "name": "Sora Kawamura",
+                  "member_id": "50008073"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "172",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Björn Reichardt",
+                  "seed": 7,
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "154",
+                  "name": "Victor Yeh",
+                  "member_id": "10001796"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "174",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Björn Reichardt",
+                  "seed": 7,
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "157",
+                  "name": "Sora Kawamura",
+                  "member_id": "50008073"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
