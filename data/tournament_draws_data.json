@@ -51435,6 +51435,173 @@
           "played_at": null
         }
       ]
+    },
+    "47": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "58",
+              "name": "Aaradhana Karthikeyan Priya"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-29"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "99",
+              "name": "Olivia Bonsée"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "55-74"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Ariya Swain"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "48-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "505",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Olivia Bonsée",
+                  "member_id": "10002779"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "502",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "seed": 1,
+                  "member_id": "5012029"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "504",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "seed": 1,
+                  "member_id": "5012029"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Olivia Bonsée",
+                  "member_id": "10002779"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:15"
+        }
+      ]
     }
   }
 }
