@@ -50972,6 +50972,302 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "45": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "104",
+              "name": "Lola Fee Hijdra"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "127-83"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Dhriti Sharma"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "136-135"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Rowena van Hoorn"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-4",
+          "points_record": "98-114"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "122",
+              "name": "Sasha Marko"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-5",
+          "points_record": "111-140"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "474",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Dhriti Sharma",
+                  "member_id": "50018529"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "1004",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Rowena van Hoorn",
+                  "member_id": "5009858"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "471",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Rowena van Hoorn",
+                  "member_id": "5009858"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "1006",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Dhriti Sharma",
+                  "member_id": "50018529"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              16,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "473",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Rowena van Hoorn",
+                  "member_id": "5009858"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Dhriti Sharma",
+                  "member_id": "50018529"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:55"
+        },
+        {
+          "match_id": "1005",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:55"
+        }
+      ]
     }
   }
 }
