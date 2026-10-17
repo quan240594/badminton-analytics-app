@@ -48307,6 +48307,173 @@
           "played_at": "za 17-10-2026 14:45"
         }
       ]
+    },
+    "30": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "16",
+              "name": "Robin Lammers"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-41"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "108",
+              "name": "Roeland Nagel"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "66-72"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "65",
+              "name": "Kyano Peters"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "47-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "310",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Roeland Nagel",
+                  "member_id": "989680"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Kyano Peters",
+                  "member_id": "5000988"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:20"
+        },
+        {
+          "match_id": "307",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "seed": 4,
+                  "member_id": "5000388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Roeland Nagel",
+                  "member_id": "989680"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "309",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "seed": 4,
+                  "member_id": "5000388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Kyano Peters",
+                  "member_id": "5000988"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:40"
+        }
+      ]
     }
   }
 }
