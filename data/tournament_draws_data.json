@@ -64834,6 +64834,179 @@
           "played_at": "za 17-10-2026 13:30"
         }
       ]
+    },
+    "18": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "Isa van Ruijven"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "102-66"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Ugnius Novikevicius"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "110-110"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Chiara Vliegenthart"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "65-101"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "224",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Chiara Vliegenthart",
+                  "member_id": "50012305"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Isa van Ruijven",
+                  "member_id": "10001224"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              7,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:30"
+        },
+        {
+          "match_id": "227",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Isa van Ruijven",
+                  "member_id": "10001224"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Ugnius Novikevicius",
+                  "member_id": "50009264"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "226",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Chiara Vliegenthart",
+                  "member_id": "50012305"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Ugnius Novikevicius",
+                  "member_id": "50009264"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:30"
+        }
+      ]
     }
   }
 }
