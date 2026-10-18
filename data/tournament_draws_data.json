@@ -52914,6 +52914,84 @@
           "played_at": "za 17-10-2026 18:50"
         }
       ]
+    },
+    "55": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "583",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "123",
+                  "name": "Dnyanada Misal",
+                  "member_id": "5008509"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 09:25"
+        },
+        {
+          "match_id": "581",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 15:15"
+        },
+        {
+          "match_id": "582",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
