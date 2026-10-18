@@ -62429,6 +62429,306 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "6": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "49",
+              "name": "Sarah Hasan"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "140-101"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "22",
+              "name": "Luna Duijndam"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-3",
+          "points_record": "117-114"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Lauren Braggaar"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "4-4",
+          "points_record": "139-135"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Rebecca Haaksema"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "80-126"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "55",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Luna Duijndam",
+                  "member_id": "5005207"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Rebecca Haaksema",
+                  "member_id": "5100971"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:30"
+        },
+        {
+          "match_id": "57",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Sarah Hasan",
+                  "member_id": "5002034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Lauren Braggaar",
+                  "member_id": "4987158"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:30"
+        },
+        {
+          "match_id": "51",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Sarah Hasan",
+                  "member_id": "5002034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Luna Duijndam",
+                  "member_id": "5005207"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:30"
+        },
+        {
+          "match_id": "59",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Rebecca Haaksema",
+                  "member_id": "5100971"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Lauren Braggaar",
+                  "member_id": "4987158"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:30"
+        },
+        {
+          "match_id": "54",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Sarah Hasan",
+                  "member_id": "5002034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Rebecca Haaksema",
+                  "member_id": "5100971"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        },
+        {
+          "match_id": "58",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Luna Duijndam",
+                  "member_id": "5005207"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Lauren Braggaar",
+                  "member_id": "4987158"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        }
+      ]
     }
   }
 }
