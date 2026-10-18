@@ -2,10 +2,16 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 const writeFileSyncMock = vi.fn();
 const mkdirSyncMock = vi.fn();
+const existsSyncMock = vi.fn(() => true);
+const readFileSyncMock = vi.fn(() => JSON.stringify({
+  players: { 876236: { name: 'Noah Haase', playerId: 'p1', ranks: { 75: { week: '40-2026', rankings: { 'Mannen Enkel': { rank: 1, points: 17492, matches: 28 } } } } } },
+}));
 
 vi.mock('node:fs', () => ({
   mkdirSync: mkdirSyncMock,
   writeFileSync: writeFileSyncMock,
+  existsSync: existsSyncMock,
+  readFileSync: readFileSyncMock,
 }));
 
 vi.mock('./lib/dataset.js', () => ({
@@ -69,7 +75,7 @@ describe('build-static bundle generation', () => {
     await import('./build-static.js');
 
     expect(mkdirSyncMock).toHaveBeenCalledTimes(1);
-    expect(writeFileSyncMock).toHaveBeenCalledTimes(1);
+    expect(writeFileSyncMock).toHaveBeenCalledTimes(2);
     const [outPath, json] = writeFileSyncMock.mock.calls[0];
     expect(outPath).toMatch(/data\.json$/);
     const bundle = JSON.parse(json);
@@ -102,5 +108,21 @@ describe('build-static bundle generation', () => {
     expect(bundle.meta.titleYears).toEqual([2024, 2025]);
     expect(bundle.singlesH2H).toEqual({ 'g1|g2': { wins: 1, losses: 0 } });
     expect(bundle.tournaments).toEqual([]);
+  });
+
+  it('writes everyone on the national ranking lists to a separate national.json', async () => {
+    await import('./build-static.js');
+
+    const [outPath, json] = writeFileSyncMock.mock.calls[1];
+    expect(outPath).toMatch(/national\.json$/);
+    expect(JSON.parse(json)).toEqual([expect.objectContaining({ id: '876236', name: 'Noah Haase', memberId: '876236' })]);
+  });
+
+  it('writes an empty national.json when no national player state exists yet', async () => {
+    existsSyncMock.mockReturnValueOnce(false);
+    await import('./build-static.js');
+
+    expect(readFileSyncMock).not.toHaveBeenCalled();
+    expect(JSON.parse(writeFileSyncMock.mock.calls[1][1])).toEqual([]);
   });
 });

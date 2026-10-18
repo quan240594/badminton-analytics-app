@@ -3,8 +3,9 @@
 // GitHub Pages build has no live backend to query at request time.
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { loadDataset } from './lib/dataset.js';
+import { buildNationalPlayers } from './lib/nationalPlayers.js';
 import { computeRatings } from './lib/elo.js';
 import { computeCareerStats } from './lib/stats.js';
 import { listPlayerSummaries, poolMeta } from './lib/summary.js';
@@ -12,6 +13,9 @@ import { buildTournaments } from './lib/tournaments.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'data.json');
+// Everyone on the national ranking lists; a separate file so only the Player profiles page downloads it.
+const NATIONAL_STATE_PATH = path.join(__dirname, '..', 'data', 'national_players.json');
+const NATIONAL_OUT_PATH = path.join(__dirname, '..', 'client', 'public', 'national.json');
 
 const { players, matches, rankings, rankingTop, highestDivisionPlayed, titlesForPlayer, titleCounts, titleYears, aliasIndex } = loadDataset();
 const { singles, doublesPlayer, mixedPlayer, singlesH2H, doublesPairH2H, mixedPairH2H } = computeRatings(matches);
@@ -39,3 +43,7 @@ const bundle = {
 mkdirSync(path.dirname(OUT_PATH), { recursive: true });
 writeFileSync(OUT_PATH, JSON.stringify(bundle));
 console.log(`wrote ${playerList.length} players to ${OUT_PATH}`);
+
+const nationalPlayers = buildNationalPlayers(existsSync(NATIONAL_STATE_PATH) ? JSON.parse(readFileSync(NATIONAL_STATE_PATH, 'utf-8')) : null);
+writeFileSync(NATIONAL_OUT_PATH, JSON.stringify(nationalPlayers));
+console.log(`wrote ${nationalPlayers.length} national players to ${NATIONAL_OUT_PATH}`);

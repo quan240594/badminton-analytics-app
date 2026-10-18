@@ -133,6 +133,30 @@ describe('PlayerSelect - hover, blur and empty Enter', () => {
 });
 
 
+describe('PlayerSelect - maxOptions', () => {
+  const many = Array.from({ length: 12 }, (_, i) => ({ id: `p${i}`, name: `Player ${i}` }));
+
+  it('shows only the first maxOptions matches and says how many more there are', () => {
+    render(<PlayerSelect label="Player" players={many} value="" onChange={() => {}} maxOptions={5} />);
+    fireEvent.focus(screen.getByPlaceholderText('Search player...'));
+
+    expect(screen.getAllByRole('option')).toHaveLength(5);
+    expect(screen.getByText('7 more - keep typing to narrow down')).toBeInTheDocument();
+  });
+
+  it('says nothing about more matches when they all fit, and shows everything by default', () => {
+    const { unmount } = render(<PlayerSelect label="Player" players={many} value="" onChange={() => {}} maxOptions={12} />);
+    fireEvent.focus(screen.getByPlaceholderText('Search player...'));
+    expect(screen.getAllByRole('option')).toHaveLength(12);
+    expect(screen.queryByText(/keep typing/)).not.toBeInTheDocument();
+    unmount();
+
+    render(<PlayerSelect label="Player" players={many} value="" onChange={() => {}} />);
+    fireEvent.focus(screen.getByPlaceholderText('Search player...'));
+    expect(screen.getAllByRole('option')).toHaveLength(12);
+  });
+});
+
 describe('PlayerSelect - className', () => {
   it('adds an extra class to the root without losing the base class', () => {
     const { container } = render(<PlayerSelect label="Tournament" players={players} value="" onChange={() => {}} className="tournament-select" />);

@@ -514,6 +514,24 @@ describe('simulateSingles / simulateDoubles / fetchTournaments / simulateMatch',
     await expect(fetchTournaments()).resolves.toEqual([]);
   });
 
+  it('fetchNationalPlayers reads national.json once and caches it', async () => {
+    const national = [{ id: '1', name: 'Noah Haase', memberId: '1' }];
+    global.fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => national });
+    const { fetchNationalPlayers } = await freshApi();
+
+    await expect(fetchNationalPlayers()).resolves.toEqual(national);
+    await fetchNationalPlayers();
+
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    expect(global.fetch.mock.calls[0][0]).toMatch(/national\.json$/);
+  });
+
+  it('fetchNationalPlayers is empty when there is no national.json yet', async () => {
+    global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 404 });
+    const { fetchNationalPlayers } = await freshApi();
+    await expect(fetchNationalPlayers()).resolves.toEqual([]);
+  });
+
   it('simulateMatch supports 1v1 rubbers with head-to-head lookup', async () => {
     mockPlayersBundle();
     const { simulateMatch } = await freshApi();

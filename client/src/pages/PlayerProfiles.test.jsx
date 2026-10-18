@@ -3,7 +3,11 @@ import { render, screen, fireEvent, within } from '@testing-library/react';
 import PlayerProfiles from './PlayerProfiles.jsx';
 
 const fetchTournaments = vi.fn();
-vi.mock('../api.js', () => ({ fetchTournaments: (...args) => fetchTournaments(...args) }));
+const fetchNationalPlayers = vi.fn();
+vi.mock('../api.js', () => ({
+  fetchTournaments: (...args) => fetchTournaments(...args),
+  fetchNationalPlayers: (...args) => fetchNationalPlayers(...args),
+}));
 
 const STORAGE_KEY = 'badminton-app-profile-state';
 const PROFILE_URL = 'https://badmintonnederland.toernooi.nl/player-profile/G-LINH';
@@ -45,6 +49,15 @@ const TOURNAMENTS = [
   },
 ];
 
+// A player as national.json has them: only a MemberID and a ranking.
+const national = (memberId, name, rank, points) => ({
+  id: memberId,
+  name,
+  memberId,
+  url: `https://badmintonnederland.toernooi.nl/find/player?q=${memberId}`,
+  nationalRanking: { singles: { rank, points, topPoints: points, topName: name, pctOfTop: 1 }, doubles: null, mixed: null },
+});
+
 async function choose(name) {
   const input = screen.getByPlaceholderText('Search player...');
   fireEvent.focus(input);
@@ -57,6 +70,7 @@ describe('PlayerProfiles', () => {
     vi.resetAllMocks();
     localStorage.clear();
     fetchTournaments.mockResolvedValue(TOURNAMENTS);
+    fetchNationalPlayers.mockResolvedValue([]);
   });
 
   it('shows the title and nothing about a player until one is chosen', async () => {
@@ -72,12 +86,12 @@ describe('PlayerProfiles', () => {
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: 'hoang' } });
 
-    expect(await screen.findAllByText('Hoang, Linh')).toHaveLength(1);
+    expect(await screen.findAllByText('Linh Hoang')).toHaveLength(1);
   });
 
   it('shows the header, the first details and the tournament results for the chosen player', async () => {
     render(<PlayerProfiles />);
-    await choose('Hoang, Linh');
+    await choose('Linh Hoang');
 
     expect(screen.getByRole('heading', { name: 'Linh Hoang' })).toBeInTheDocument();
     expect(screen.getByText('(50016928)')).toBeInTheDocument();
@@ -98,9 +112,53 @@ describe('PlayerProfiles', () => {
   it('says so when the player has no played matches', async () => {
     fetchTournaments.mockResolvedValue([{ ...TOURNAMENTS[1] }]);
     render(<PlayerProfiles />);
-    await choose('Hoang, Linh');
+    await choose('Linh Hoang');
 
     expect(await screen.findByText('No played matches known yet.')).toBeInTheDocument();
+  });
+
+  it('finds someone who is only on the national ranking lists and shows their ranking', async () => {
+    fetchNationalPlayers.mockResolvedValue([national('876236', 'Noah Haase', 1, 17492)]);
+    render(<PlayerProfiles />);
+    await choose('Noah Haase');
+
+    expect(screen.getByRole('heading', { name: 'Noah Haase' })).toBeInTheDocument();
+    expect(screen.getByText('(876236)')).toBeInTheDocument();
+    expect(screen.getByText('#1')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'View profile on Badminton Nederland' })).toHaveAttribute('href', expect.stringContaining('/find/player?q=876236'));
+    expect(screen.getByText('No played matches known yet.')).toBeInTheDocument();
+  });
+
+  it('lists an entrant once when they are also on the national lists, and borrows the ranking they lack', async () => {
+    fetchNationalPlayers.mockResolvedValue([national('999', 'One Opp', 7, 500)]);
+    render(<PlayerProfiles />);
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'opp' } });
+    expect(await screen.findAllByText('One Opp')).toHaveLength(1);
+    fireEvent.mouseDown(screen.getByText('One Opp'));
+
+    expect(screen.getByText('#7')).toBeInTheDocument();
+  });
+
+  it('still works when the national lists cannot be loaded', async () => {
+    fetchNationalPlayers.mockRejectedValue(new Error('offline'));
+    render(<PlayerProfiles />);
+    await choose('Linh Hoang');
+
+    expect(screen.getByRole('heading', { name: 'Linh Hoang' })).toBeInTheDocument();
+    expect(screen.queryByText('offline')).not.toBeInTheDocument();
+  });
+
+  it('shows a limited number of matches and says how many more there are', async () => {
+    fetchNationalPlayers.mockResolvedValue(Array.from({ length: 60 }, (_, i) => national(`${1000 + i}`, `Player ${String(i).padStart(2, '0')}`, i + 1, 100)));
+    render(<PlayerProfiles />);
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'player' } });
+
+    expect(await screen.findAllByRole('option')).toHaveLength(50);
+    expect(screen.getByText('10 more - keep typing to narrow down')).toBeInTheDocument();
   });
 
   it('restores the saved player and forgets them on Clear all', async () => {
