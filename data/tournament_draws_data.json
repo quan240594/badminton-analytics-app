@@ -56502,6 +56502,217 @@
           "played_at": "za 17-10-2026 20:00"
         }
       ]
+    },
+    "66": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "89",
+              "name": "Julia Policht"
+            },
+            {
+              "player_id": "74",
+              "name": "Nina Willems"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "103-78"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "99",
+              "name": "Olivia Bonsée"
+            },
+            {
+              "player_id": "55",
+              "name": "Lana Cremers"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "93-90"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "130",
+              "name": "Avantika Bharath Kumar"
+            },
+            {
+              "player_id": "71",
+              "name": "Ariya Swain"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "56-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "764",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Olivia Bonsée",
+                  "member_id": "10002779"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "761",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "130",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                },
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Olivia Bonsée",
+                  "member_id": "10002779"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "763",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "130",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                },
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        }
+      ]
     }
   }
 }
