@@ -66545,6 +66545,52 @@
           "played_at": "za 17-10-2026 15:00"
         }
       ]
+    },
+    "28": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "326",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Jens van der Zanden",
+                  "member_id": "50021993"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Harvee Hasan",
+                  "member_id": "50007913"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              13
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              16,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
