@@ -63236,6 +63236,122 @@
           "played_at": "za 17-10-2026 14:30"
         }
       ]
+    },
+    "10": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "109",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Sarah Hasan",
+                  "member_id": "5002034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Arni Sonumkar",
+                  "member_id": "50005672"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:30"
+        },
+        {
+          "match_id": "110",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Tessa Trompetter",
+                  "member_id": "4995831"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Emmely Van ‘t Westende",
+                  "member_id": "5007889"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:30"
+        },
+        {
+          "match_id": "108",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Sarah Hasan",
+                  "member_id": "5002034"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Emmely Van ‘t Westende",
+                  "member_id": "5007889"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
