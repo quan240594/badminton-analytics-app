@@ -66087,6 +66087,126 @@
           "played_at": "za 17-10-2026 12:30"
         }
       ]
+    },
+    "25": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "302",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Om Agarkar",
+                  "member_id": "10002192"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Elyse Wong",
+                  "member_id": "5012538"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              4
+            ],
+            [
+              15,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
+        },
+        {
+          "match_id": "303",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Lize Bouman",
+                  "member_id": "5100368"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Nathan Weijers",
+                  "member_id": "5012014"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              10
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              16,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
+        },
+        {
+          "match_id": "301",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Om Agarkar",
+                  "member_id": "10002192"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Lize Bouman",
+                  "member_id": "5100368"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
