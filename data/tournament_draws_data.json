@@ -56293,6 +56293,215 @@
           "played_at": "za 17-10-2026 20:00"
         }
       ]
+    },
+    "65": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "42",
+              "name": "Eliz Kökkü"
+            },
+            {
+              "player_id": "81",
+              "name": "Femke Krist"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-14"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "134",
+              "name": "Riya Manikandan"
+            },
+            {
+              "player_id": "19",
+              "name": "Sauratapa Roychowdhury"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "50-78"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "Amy van Deudekom"
+            },
+            {
+              "player_id": "120",
+              "name": "Leanna Honingh"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "42-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "755",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "134",
+                  "name": "Riya Manikandan",
+                  "member_id": "4370"
+                },
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                },
+                {
+                  "player_id": "120",
+                  "name": "Leanna Honingh",
+                  "member_id": "50016145"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "752",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "seed": 2,
+                  "member_id": "5006262"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "134",
+                  "name": "Riya Manikandan",
+                  "member_id": "4370"
+                },
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "754",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "seed": 2,
+                  "member_id": "5006262"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                },
+                {
+                  "player_id": "120",
+                  "name": "Leanna Honingh",
+                  "member_id": "50016145"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        }
+      ]
     }
   }
 }
