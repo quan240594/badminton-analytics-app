@@ -68544,6 +68544,62 @@
           "played_at": "za 17-10-2026 11:00"
         }
       ]
+    },
+    "37": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "413",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Jente Buwalda",
+                  "member_id": "50007037"
+                },
+                {
+                  "player_id": "41",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                },
+                {
+                  "player_id": "70",
+                  "name": "Abel Kerssies",
+                  "member_id": "50009602"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:00"
+        }
+      ]
     }
   }
 }
