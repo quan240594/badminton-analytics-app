@@ -58622,6 +58622,215 @@
           "played_at": "zo 18-10-2026 14:30"
         }
       ]
+    },
+    "75": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "Lars Van Belle"
+            },
+            {
+              "player_id": "74",
+              "name": "Nina Willems"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "85-54"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "96",
+              "name": "Srinivas Sriraman"
+            },
+            {
+              "player_id": "11",
+              "name": "Dahmawati Feryanto"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "81-65"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "125",
+              "name": "Rishabh Naik"
+            },
+            {
+              "player_id": "19",
+              "name": "Sauratapa Roychowdhury"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "37-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "869",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Srinivas Sriraman",
+                  "member_id": "10002444"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "125",
+                  "name": "Rishabh Naik",
+                  "member_id": "4997506"
+                },
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "866",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Lars Van Belle",
+                  "seed": 1,
+                  "member_id": "50583077"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Srinivas Sriraman",
+                  "member_id": "10002444"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "868",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Lars Van Belle",
+                  "seed": 1,
+                  "member_id": "50583077"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "125",
+                  "name": "Rishabh Naik",
+                  "member_id": "4997506"
+                },
+                {
+                  "player_id": "19",
+                  "name": "Sauratapa Roychowdhury",
+                  "member_id": "5003322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        }
+      ]
     }
   }
 }
