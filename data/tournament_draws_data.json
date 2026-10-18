@@ -52749,6 +52749,171 @@
           "played_at": "za 17-10-2026 18:50"
         }
       ]
+    },
+    "54": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "Femke Groenewegen"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-44"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "95",
+              "name": "Harshini Sriraman"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "62-68"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "67",
+              "name": "Aadya Prakash"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "50-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "580",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "Aadya Prakash",
+                  "member_id": "50017225"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:20"
+        },
+        {
+          "match_id": "577",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Harshini Sriraman",
+                  "member_id": "5002303"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "Aadya Prakash",
+                  "member_id": "50017225"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:40"
+        },
+        {
+          "match_id": "579",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Harshini Sriraman",
+                  "member_id": "5002303"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        }
+      ]
     }
   }
 }
