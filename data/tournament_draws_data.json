@@ -54677,6 +54677,624 @@
           "played_at": null
         }
       ]
+    },
+    "60": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "680",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Roeland Nagel",
+                  "member_id": "989680"
+                },
+                {
+                  "player_id": "93",
+                  "name": "Jonas Scheidat",
+                  "member_id": "4994017"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Iben Boer",
+                  "member_id": "4991508"
+                },
+                {
+                  "player_id": "43",
+                  "name": "Daniel Mulkens",
+                  "member_id": "4994979"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "682",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "139",
+                  "name": "Ahaan Jain",
+                  "member_id": "50016420"
+                },
+                {
+                  "player_id": "140",
+                  "name": "Arjan Jain",
+                  "member_id": "50016422"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Ian Hidajat",
+                  "member_id": "5003370"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Henri Waninge",
+                  "member_id": "5011515"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "683",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Kyano Peters",
+                  "member_id": "5000988"
+                },
+                {
+                  "player_id": "66",
+                  "name": "Duncan Pol",
+                  "member_id": "992235"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "117",
+                  "name": "Mico Xiao Yang",
+                  "member_id": "5009156"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "684",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "110",
+                  "name": "Jorrit van Os",
+                  "member_id": "4991348"
+                },
+                {
+                  "player_id": "159",
+                  "name": "Shlok Sail",
+                  "member_id": "50011750"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Damian Eckringa",
+                  "member_id": "5008686"
+                },
+                {
+                  "player_id": "80",
+                  "name": "Talip Kaymak",
+                  "member_id": "4987882"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "685",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                },
+                {
+                  "player_id": "107",
+                  "name": "Haricharan Mutyala",
+                  "member_id": "4991545"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "162",
+                  "name": "Jeev Pragalath Arunbal",
+                  "member_id": "5001132"
+                },
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "member_id": "50012530"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "675",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Roeland Nagel",
+                  "member_id": "989680"
+                },
+                {
+                  "player_id": "93",
+                  "name": "Jonas Scheidat",
+                  "member_id": "4994017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "676",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Daan Buchly",
+                  "member_id": "4994407"
+                },
+                {
+                  "player_id": "136",
+                  "name": "Jaagrav Raj",
+                  "member_id": "5003653"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "139",
+                  "name": "Ahaan Jain",
+                  "member_id": "50016420"
+                },
+                {
+                  "player_id": "140",
+                  "name": "Arjan Jain",
+                  "member_id": "50016422"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "677",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "117",
+                  "name": "Mico Xiao Yang",
+                  "member_id": "5009156"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Damian Eckringa",
+                  "member_id": "5008686"
+                },
+                {
+                  "player_id": "80",
+                  "name": "Talip Kaymak",
+                  "member_id": "4987882"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        },
+        {
+          "match_id": "678",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "162",
+                  "name": "Jeev Pragalath Arunbal",
+                  "member_id": "5001132"
+                },
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "member_id": "50012530"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Abhinav Das",
+                  "seed": 2,
+                  "member_id": "4994293"
+                },
+                {
+                  "player_id": "18",
+                  "name": "Shashank Narayanam",
+                  "member_id": "5000881"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        },
+        {
+          "match_id": "673",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Daan Buchly",
+                  "member_id": "4994407"
+                },
+                {
+                  "player_id": "136",
+                  "name": "Jaagrav Raj",
+                  "member_id": "5003653"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 12:20"
+        },
+        {
+          "match_id": "674",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "117",
+                  "name": "Mico Xiao Yang",
+                  "member_id": "5009156"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Abhinav Das",
+                  "seed": 2,
+                  "member_id": "4994293"
+                },
+                {
+                  "player_id": "18",
+                  "name": "Shashank Narayanam",
+                  "member_id": "5000881"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 12:20"
+        },
+        {
+          "match_id": "672",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 16:00"
+        },
+        {
+          "match_id": "679",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "681",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Daan Buchly",
+                  "member_id": "4994407"
+                },
+                {
+                  "player_id": "136",
+                  "name": "Jaagrav Raj",
+                  "member_id": "5003653"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "686",
+          "round": "Ronde van 16",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Abhinav Das",
+                  "seed": 2,
+                  "member_id": "4994293"
+                },
+                {
+                  "player_id": "18",
+                  "name": "Shashank Narayanam",
+                  "member_id": "5000881"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
