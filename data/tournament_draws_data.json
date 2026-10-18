@@ -65172,6 +65172,171 @@
           "played_at": "za 17-10-2026 13:30"
         }
       ]
+    },
+    "20": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "95",
+              "name": "Naud Keizer"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-53"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "78",
+              "name": "Tyrus Tai"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "70-73"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "73",
+              "name": "Leo Lemolt"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "56-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "242",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "73",
+                  "name": "Leo Lemolt",
+                  "member_id": "50026132"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Naud Keizer",
+                  "member_id": "50009206"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:30"
+        },
+        {
+          "match_id": "245",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Naud Keizer",
+                  "member_id": "50009206"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Tyrus Tai",
+                  "member_id": "50023725"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "244",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "73",
+                  "name": "Leo Lemolt",
+                  "member_id": "50026132"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Tyrus Tai",
+                  "member_id": "50023725"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:30"
+        }
+      ]
     }
   }
 }
