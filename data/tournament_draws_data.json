@@ -62729,6 +62729,171 @@
           "played_at": "za 17-10-2026 14:00"
         }
       ]
+    },
+    "7": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "Emmely Van ‘t Westende"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "85-57"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "Emma Oskam"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "71-63"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Lieke Noordhoek"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "49-85"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "71",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Lieke Noordhoek",
+                  "member_id": "5003638"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              7,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "67",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Emmely Van ‘t Westende",
+                  "member_id": "5007889"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Lieke Noordhoek",
+                  "member_id": "5003638"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              20
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "70",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Emmely Van ‘t Westende",
+                  "member_id": "5007889"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        }
+      ]
     }
   }
 }
