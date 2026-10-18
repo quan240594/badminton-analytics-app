@@ -66591,6 +66591,221 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "29": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Gowtham Bhairapaneni"
+            },
+            {
+              "player_id": "90",
+              "name": "Alvis Vivek"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-2",
+          "points_record": "118-105"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Jonathan van Kranenburg"
+            },
+            {
+              "player_id": "75",
+              "name": "Abishek Prabhu"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "99-90"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Gijs Peelen"
+            },
+            {
+              "player_id": "79",
+              "name": "Mylo Usher"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "78-100"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "337",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Gowtham Bhairapaneni",
+                  "member_id": "4992493"
+                },
+                {
+                  "player_id": "90",
+                  "name": "Alvis Vivek",
+                  "member_id": "5100607"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Jonathan van Kranenburg",
+                  "member_id": "4998739"
+                },
+                {
+                  "player_id": "75",
+                  "name": "Abishek Prabhu",
+                  "member_id": "5007195"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:30"
+        },
+        {
+          "match_id": "336",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                },
+                {
+                  "player_id": "79",
+                  "name": "Mylo Usher",
+                  "member_id": "5006568"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Jonathan van Kranenburg",
+                  "member_id": "4998739"
+                },
+                {
+                  "player_id": "75",
+                  "name": "Abishek Prabhu",
+                  "member_id": "5007195"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:30"
+        },
+        {
+          "match_id": "334",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                },
+                {
+                  "player_id": "79",
+                  "name": "Mylo Usher",
+                  "member_id": "5006568"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Gowtham Bhairapaneni",
+                  "member_id": "4992493"
+                },
+                {
+                  "player_id": "90",
+                  "name": "Alvis Vivek",
+                  "member_id": "5100607"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
+        }
+      ]
     }
   }
 }
