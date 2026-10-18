@@ -56713,6 +56713,104 @@
           "played_at": "za 17-10-2026 20:00"
         }
       ]
+    },
+    "67": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "767",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "member_id": "5006262"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:40"
+        },
+        {
+          "match_id": "765",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "member_id": "4998891"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 16:00"
+        },
+        {
+          "match_id": "766",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "member_id": "4998891"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
