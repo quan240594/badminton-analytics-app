@@ -56811,6 +56811,388 @@
           "played_at": null
         }
       ]
+    },
+    "68": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Aditi Prabhudesai"
+            },
+            {
+              "player_id": "34",
+              "name": "Nienke van der Werf"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "145-83"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "123",
+              "name": "Dnyanada Misal"
+            },
+            {
+              "player_id": "158",
+              "name": "Meenakshi Mohan Babu"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-3",
+          "points_record": "125-119"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "88",
+              "name": "Medha Pandey"
+            },
+            {
+              "player_id": "95",
+              "name": "Harshini Sriraman"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "121-136"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "Femke Groenewegen"
+            },
+            {
+              "player_id": "53",
+              "name": "Akshaya Srinivasan"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "1-6",
+          "points_record": "92-145"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "783",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "seed": 2,
+                  "member_id": "4988523"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Akshaya Srinivasan",
+                  "member_id": "4989249"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "123",
+                  "name": "Dnyanada Misal",
+                  "member_id": "5008509"
+                },
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "member_id": "5004689"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              4,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "785",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "seed": 1,
+                  "member_id": "5007193"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Nienke van der Werf",
+                  "member_id": "5005736"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Medha Pandey",
+                  "member_id": "5010164"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Harshini Sriraman",
+                  "member_id": "5002303"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "779",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "seed": 1,
+                  "member_id": "5007193"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Nienke van der Werf",
+                  "member_id": "5005736"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "seed": 2,
+                  "member_id": "4988523"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Akshaya Srinivasan",
+                  "member_id": "4989249"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        },
+        {
+          "match_id": "787",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "123",
+                  "name": "Dnyanada Misal",
+                  "member_id": "5008509"
+                },
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "member_id": "5004689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Medha Pandey",
+                  "member_id": "5010164"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Harshini Sriraman",
+                  "member_id": "5002303"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        },
+        {
+          "match_id": "782",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "seed": 1,
+                  "member_id": "5007193"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Nienke van der Werf",
+                  "member_id": "5005736"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "123",
+                  "name": "Dnyanada Misal",
+                  "member_id": "5008509"
+                },
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "member_id": "5004689"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:35"
+        },
+        {
+          "match_id": "786",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "seed": 2,
+                  "member_id": "4988523"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Akshaya Srinivasan",
+                  "member_id": "4989249"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Medha Pandey",
+                  "member_id": "5010164"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Harshini Sriraman",
+                  "member_id": "5002303"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:35"
+        }
+      ]
     }
   }
 }
