@@ -67224,6 +67224,217 @@
           "played_at": "za 17-10-2026 12:30"
         }
       ]
+    },
+    "32": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "60",
+              "name": "Prathik Kadali"
+            },
+            {
+              "player_id": "61",
+              "name": "Dev Siddharth"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "102-87"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Lauren Braggaar"
+            },
+            {
+              "player_id": "25",
+              "name": "Simon Knobben"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "103-91"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Tessa de Brabander"
+            },
+            {
+              "player_id": "20",
+              "name": "Lieke Noordhoek"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "57-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "364",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Tessa de Brabander",
+                  "member_id": "5005710"
+                },
+                {
+                  "player_id": "20",
+                  "name": "Lieke Noordhoek",
+                  "member_id": "5003638"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Lauren Braggaar",
+                  "member_id": "4987158"
+                },
+                {
+                  "player_id": "25",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:00"
+        },
+        {
+          "match_id": "361",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Dev Siddharth",
+                  "member_id": "50025084"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Tessa de Brabander",
+                  "member_id": "5005710"
+                },
+                {
+                  "player_id": "20",
+                  "name": "Lieke Noordhoek",
+                  "member_id": "5003638"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "363",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Dev Siddharth",
+                  "member_id": "50025084"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Lauren Braggaar",
+                  "member_id": "4987158"
+                },
+                {
+                  "player_id": "25",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              22,
+              20
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        }
+      ]
     }
   }
 }
