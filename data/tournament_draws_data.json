@@ -61632,5 +61632,180 @@
         }
       ]
     }
+  },
+  "F0D013C2-BB69-42ED-A653-0AB00000EF35": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "80",
+              "name": "Ben van Verseveld"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "102-102"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "60",
+              "name": "Prathik Kadali"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "114-121"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "32",
+              "name": "Ethan Gnanaraj"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "100-93"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "9",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Ethan Gnanaraj",
+                  "member_id": "5100579"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:30"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Ben van Verseveld",
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Ethan Gnanaraj",
+                  "member_id": "5100579"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:30"
+        },
+        {
+          "match_id": "6",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Ben van Verseveld",
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              23,
+              25
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:30"
+        }
+      ]
+    }
   }
 }
