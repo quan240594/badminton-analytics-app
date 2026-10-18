@@ -57777,6 +57777,378 @@
           "played_at": "za 17-10-2026 17:05"
         }
       ]
+    },
+    "72": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "Ahaan Sharma"
+            },
+            {
+              "player_id": "1",
+              "name": "Mai-Lan Bui"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "126-43"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "Mukunth Rajesh"
+            },
+            {
+              "player_id": "84",
+              "name": "Varsha Mithun"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-2",
+          "points_record": "108-85"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "112",
+              "name": "Ishaank Sagar"
+            },
+            {
+              "player_id": "109",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-5",
+          "points_record": "91-130"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Bram van Baak"
+            },
+            {
+              "player_id": "98",
+              "name": "Lotte Van Baak"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "1-6",
+          "points_record": "74-141"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "830",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Lotte Van Baak",
+                  "member_id": "50010350"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                },
+                {
+                  "player_id": "1",
+                  "name": "Mai-Lan Bui",
+                  "member_id": "10002873"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              5,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "1025",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "84",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "827",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "84",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Lotte Van Baak",
+                  "member_id": "50010350"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "1027",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                },
+                {
+                  "player_id": "1",
+                  "name": "Mai-Lan Bui",
+                  "member_id": "10002873"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              6
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "829",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "84",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                },
+                {
+                  "player_id": "1",
+                  "name": "Mai-Lan Bui",
+                  "member_id": "10002873"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        },
+        {
+          "match_id": "1026",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Lotte Van Baak",
+                  "member_id": "50010350"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
