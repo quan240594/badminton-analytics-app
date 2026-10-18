@@ -67642,6 +67642,156 @@
           "played_at": "za 17-10-2026 13:30"
         }
       ]
+    },
+    "34": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "375",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Sem de Graaf",
+                  "member_id": "4984690"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Brent Regeer",
+                  "member_id": "4986281"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
+        },
+        {
+          "match_id": "376",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Dev Siddharth",
+                  "member_id": "50025084"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Leon Pieete",
+                  "member_id": "5003921"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
+        },
+        {
+          "match_id": "374",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Leon Pieete",
+                  "member_id": "5003921"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:00"
+        }
+      ]
     }
   }
 }
