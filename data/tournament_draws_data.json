@@ -66806,6 +66806,213 @@
           "played_at": "za 17-10-2026 15:00"
         }
       ]
+    },
+    "30": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "Emma Oskam"
+            },
+            {
+              "player_id": "57",
+              "name": "Nathan Van Wilpen"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-49"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "48",
+              "name": "Tanaya Bhide"
+            },
+            {
+              "player_id": "64",
+              "name": "Zaina Waqas"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "70-89"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Rebecca Haaksema"
+            },
+            {
+              "player_id": "74",
+              "name": "Maartje Penning"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "77-93"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "346",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Tanaya Bhide",
+                  "member_id": "5006828"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Zaina Waqas",
+                  "member_id": "5006830"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:00"
+        },
+        {
+          "match_id": "343",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Rebecca Haaksema",
+                  "member_id": "5100971"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Maartje Penning",
+                  "member_id": "4998165"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Tanaya Bhide",
+                  "member_id": "5006828"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Zaina Waqas",
+                  "member_id": "5006830"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              24,
+              26
+            ],
+            [
+              23,
+              25
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "345",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Rebecca Haaksema",
+                  "member_id": "5100971"
+                },
+                {
+                  "player_id": "74",
+                  "name": "Maartje Penning",
+                  "member_id": "4998165"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Emma Oskam",
+                  "member_id": "4996977"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        }
+      ]
     }
   }
 }
