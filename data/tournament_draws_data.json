@@ -65337,6 +65337,126 @@
           "played_at": "za 17-10-2026 13:30"
         }
       ]
+    },
+    "21": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "247",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Nathan Wong",
+                  "member_id": "5012537"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Naud Keizer",
+                  "member_id": "50009206"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:30"
+        },
+        {
+          "match_id": "248",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Niek van Suijlekom",
+                  "member_id": "50025154"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Isa van Ruijven",
+                  "member_id": "10001224"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:30"
+        },
+        {
+          "match_id": "246",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Nathan Wong",
+                  "member_id": "5012537"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Niek van Suijlekom",
+                  "member_id": "50025154"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
