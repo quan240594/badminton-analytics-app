@@ -56084,6 +56084,215 @@
           "played_at": "zo 18-10-2026 16:00"
         }
       ]
+    },
+    "64": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "77",
+              "name": "Olivia Chan"
+            },
+            {
+              "player_id": "40",
+              "name": "Doudou Huang"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-40"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Dahmawati Feryanto"
+            },
+            {
+              "player_id": "64",
+              "name": "Ridhima Nanda"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-50"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "133",
+              "name": "Richa Manikandan"
+            },
+            {
+              "player_id": "109",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "22-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "746",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Ridhima Nanda",
+                  "member_id": "5001756"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "133",
+                  "name": "Richa Manikandan",
+                  "member_id": "4371"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "743",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "seed": 1,
+                  "member_id": "4998891"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Dahmawati Feryanto",
+                  "member_id": "10001909"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Ridhima Nanda",
+                  "member_id": "5001756"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "745",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "seed": 1,
+                  "member_id": "4998891"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "133",
+                  "name": "Richa Manikandan",
+                  "member_id": "4371"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "za 17-10-2026 20:00"
+        }
+      ]
     }
   }
 }
