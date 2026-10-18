@@ -57568,6 +57568,215 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "71": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "126",
+              "name": "Nirav Shetty"
+            },
+            {
+              "player_id": "104",
+              "name": "Lola Fee Hijdra"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-32"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Aadhith Vinodh"
+            },
+            {
+              "player_id": "14",
+              "name": "Rowena van Hoorn"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "67-63"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "151",
+              "name": "Damian Pham"
+            },
+            {
+              "player_id": "138",
+              "name": "Dieudonnée Den Dulk"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "28-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "821",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                },
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                },
+                {
+                  "player_id": "138",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "818",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Aadhith Vinodh",
+                  "seed": 2,
+                  "member_id": "50009414"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Rowena van Hoorn",
+                  "member_id": "5009858"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                },
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "820",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Aadhith Vinodh",
+                  "seed": 2,
+                  "member_id": "50009414"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Rowena van Hoorn",
+                  "member_id": "5009858"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                },
+                {
+                  "player_id": "138",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
