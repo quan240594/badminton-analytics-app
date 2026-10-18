@@ -60303,6 +60303,217 @@
           "played_at": "za 17-10-2026 18:50"
         }
       ]
+    },
+    "82": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "66",
+              "name": "Duncan Pol"
+            },
+            {
+              "player_id": "42",
+              "name": "Eliz Kökkü"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "98-74"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "18",
+              "name": "Shashank Narayanam"
+            },
+            {
+              "player_id": "88",
+              "name": "Medha Pandey"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "90-82"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "128",
+              "name": "Yian Woe"
+            },
+            {
+              "player_id": "77",
+              "name": "Olivia Chan"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "52-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "944",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Shashank Narayanam",
+                  "member_id": "5000881"
+                },
+                {
+                  "player_id": "88",
+                  "name": "Medha Pandey",
+                  "member_id": "5010164"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Duncan Pol",
+                  "member_id": "992235"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "member_id": "5006262"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "941",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Yian Woe",
+                  "member_id": "5008075"
+                },
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "member_id": "4998891"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Shashank Narayanam",
+                  "member_id": "5000881"
+                },
+                {
+                  "player_id": "88",
+                  "name": "Medha Pandey",
+                  "member_id": "5010164"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:45"
+        },
+        {
+          "match_id": "943",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Yian Woe",
+                  "member_id": "5008075"
+                },
+                {
+                  "player_id": "77",
+                  "name": "Olivia Chan",
+                  "member_id": "4998891"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Duncan Pol",
+                  "member_id": "992235"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "member_id": "5006262"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        }
+      ]
     }
   }
 }
