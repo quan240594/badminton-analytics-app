@@ -55295,6 +55295,381 @@
           "played_at": null
         }
       ]
+    },
+    "61": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Naisha Brar"
+            },
+            {
+              "player_id": "22",
+              "name": "Lisha Timmanagoudar"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "149-111"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Julia Al Eido"
+            },
+            {
+              "player_id": "122",
+              "name": "Sasha Marko"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-2",
+          "points_record": "144-127"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Mihikaa Mukund"
+            },
+            {
+              "player_id": "63",
+              "name": "Vinmayi Munugoti"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-4",
+          "points_record": "113-111"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "124",
+              "name": "Alisa Misha"
+            },
+            {
+              "player_id": "160",
+              "name": "Anaira Sonare"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "69-126"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "716",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Naisha Brar",
+                  "seed": 1,
+                  "member_id": "5100680"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                },
+                {
+                  "player_id": "160",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:20"
+        },
+        {
+          "match_id": "714",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                },
+                {
+                  "player_id": "63",
+                  "name": "Vinmayi Munugoti",
+                  "member_id": "5003300"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "710",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Naisha Brar",
+                  "seed": 1,
+                  "member_id": "5100680"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                },
+                {
+                  "player_id": "63",
+                  "name": "Vinmayi Munugoti",
+                  "member_id": "5003300"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:15"
+        },
+        {
+          "match_id": "718",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                },
+                {
+                  "player_id": "160",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:15"
+        },
+        {
+          "match_id": "713",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Naisha Brar",
+                  "seed": 1,
+                  "member_id": "5100680"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              24,
+              22
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        },
+        {
+          "match_id": "717",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                },
+                {
+                  "player_id": "63",
+                  "name": "Vinmayi Munugoti",
+                  "member_id": "5003300"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                },
+                {
+                  "player_id": "160",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
