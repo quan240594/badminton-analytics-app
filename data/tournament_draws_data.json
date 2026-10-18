@@ -58149,6 +58149,382 @@
           "played_at": "za 17-10-2026 17:05"
         }
       ]
+    },
+    "73": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "Ryan Tsang"
+            },
+            {
+              "player_id": "17",
+              "name": "Wenxi Liu"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-2",
+          "points_record": "163-121"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Kyano Chong"
+            },
+            {
+              "player_id": "6",
+              "name": "Vihana Sheth"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-2",
+          "points_record": "131-114"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "105",
+              "name": "Bolin Huang"
+            },
+            {
+              "player_id": "122",
+              "name": "Sasha Marko"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "131-147"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "78",
+              "name": "Siem Cremers"
+            },
+            {
+              "player_id": "54",
+              "name": "Julia Al Eido"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "90-133"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "839",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Ryan Tsang",
+                  "member_id": "5100761"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Bolin Huang",
+                  "member_id": "10002582"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "1032",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Kyano Chong",
+                  "member_id": "5004891"
+                },
+                {
+                  "player_id": "6",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Siem Cremers",
+                  "member_id": "50008151"
+                },
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "836",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Kyano Chong",
+                  "member_id": "5004891"
+                },
+                {
+                  "player_id": "6",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Ryan Tsang",
+                  "member_id": "5100761"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "1034",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Bolin Huang",
+                  "member_id": "10002582"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Siem Cremers",
+                  "member_id": "50008151"
+                },
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              28,
+              26
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "838",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Kyano Chong",
+                  "member_id": "5004891"
+                },
+                {
+                  "player_id": "6",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Bolin Huang",
+                  "member_id": "10002582"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Sasha Marko",
+                  "member_id": "50015182"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        },
+        {
+          "match_id": "1033",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Ryan Tsang",
+                  "member_id": "5100761"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Siem Cremers",
+                  "member_id": "50008151"
+                },
+                {
+                  "player_id": "54",
+                  "name": "Julia Al Eido",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "za 17-10-2026 17:05"
+        }
+      ]
     }
   }
 }
