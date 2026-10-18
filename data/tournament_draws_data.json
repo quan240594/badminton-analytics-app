@@ -69556,6 +69556,58 @@
           "played_at": "za 17-10-2026 16:00"
         }
       ]
+    },
+    "40": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "464",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Aris Harms",
+                  "member_id": "50009631"
+                },
+                {
+                  "player_id": "13",
+                  "name": "Jake Van der Zwaan",
+                  "member_id": "50018782"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Harvee Hasan",
+                  "member_id": "50007913"
+                },
+                {
+                  "player_id": "84",
+                  "name": "Muyan Yu",
+                  "member_id": "50019126"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              15
+            ],
+            [
+              16,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:00"
+        }
+      ]
     }
   }
 }
