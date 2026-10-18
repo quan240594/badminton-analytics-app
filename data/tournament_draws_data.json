@@ -53201,6 +53201,219 @@
           "played_at": "za 17-10-2026 16:30"
         }
       ]
+    },
+    "57": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "Mukunth Rajesh"
+            },
+            {
+              "player_id": "5",
+              "name": "Ahaan Sharma"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "100-60"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "121",
+              "name": "Shlok Lakshetty"
+            },
+            {
+              "player_id": "126",
+              "name": "Nirav Shetty"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "93-76"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "151",
+              "name": "Damian Pham"
+            },
+            {
+              "player_id": "92",
+              "name": "Gabriel de Roy Van Zuydewijn"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "27-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "605",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                },
+                {
+                  "player_id": "92",
+                  "name": "Gabriel de Roy Van Zuydewijn",
+                  "member_id": "50008683"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:20"
+        },
+        {
+          "match_id": "602",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "Shlok Lakshetty",
+                  "seed": 2,
+                  "member_id": "50014920"
+                },
+                {
+                  "player_id": "126",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "151",
+                  "name": "Damian Pham",
+                  "member_id": "50015209"
+                },
+                {
+                  "player_id": "92",
+                  "name": "Gabriel de Roy Van Zuydewijn",
+                  "member_id": "50008683"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:15"
+        },
+        {
+          "match_id": "604",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "Shlok Lakshetty",
+                  "seed": 2,
+                  "member_id": "50014920"
+                },
+                {
+                  "player_id": "126",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 16:30"
+        }
+      ]
     }
   }
 }
