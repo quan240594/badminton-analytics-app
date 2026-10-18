@@ -59881,6 +59881,219 @@
           "played_at": "zo 18-10-2026 14:30"
         }
       ]
+    },
+    "80": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "119",
+              "name": "Jason De Graaf"
+            },
+            {
+              "player_id": "103",
+              "name": "Femke Groenewegen"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "101-79"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "16",
+              "name": "Robin Lammers"
+            },
+            {
+              "player_id": "46",
+              "name": "Aditi Prabhudesai"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "86-80"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "93",
+              "name": "Jonas Scheidat"
+            },
+            {
+              "player_id": "53",
+              "name": "Akshaya Srinivasan"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "56-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "926",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Jonas Scheidat",
+                  "member_id": "4994017"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Akshaya Srinivasan",
+                  "member_id": "4989249"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                },
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "923",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Jonas Scheidat",
+                  "member_id": "4994017"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Akshaya Srinivasan",
+                  "member_id": "4989249"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:45"
+        },
+        {
+          "match_id": "925",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                },
+                {
+                  "player_id": "46",
+                  "name": "Aditi Prabhudesai",
+                  "member_id": "5007193"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        }
+      ]
     }
   }
 }
