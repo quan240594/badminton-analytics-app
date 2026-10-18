@@ -60721,6 +60721,143 @@
           "played_at": "za 17-10-2026 19:25"
         }
       ]
+    },
+    "84": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "955",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Abhinav Das",
+                  "member_id": "4994293"
+                },
+                {
+                  "player_id": "158",
+                  "name": "Meenakshi Mohan Babu",
+                  "member_id": "5004689"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "zo 18-10-2026 10:25"
+        },
+        {
+          "match_id": "956",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Duncan Pol",
+                  "member_id": "992235"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "member_id": "5006262"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Jelle Smeding",
+                  "member_id": "4992574"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Nienke van der Werf",
+                  "member_id": "5005736"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "zo 18-10-2026 10:25"
+        },
+        {
+          "match_id": "954",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "103",
+                  "name": "Femke Groenewegen",
+                  "member_id": "4988523"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Jelle Smeding",
+                  "member_id": "4992574"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Nienke van der Werf",
+                  "member_id": "5005736"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 14:30"
+        }
+      ]
     }
   }
 }
