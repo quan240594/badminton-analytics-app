@@ -33,7 +33,7 @@ function mergeEntry(found, player, appearance) {
 // A person is entered in many tournaments under a different local id each time. Their
 // link is the same everywhere (their profile page, or their MemberID search), so it
 // identifies them; a player the site could not resolve has one link per tournament.
-export function buildProfiles(tournaments) {
+function profilesFromTournaments(tournaments) {
   const byUrl = new Map();
   const entries = tournaments.flatMap((tournament) => (tournament.players ?? []).map((player) => ({ player, appearance: { tournamentId: tournament.id, playerId: player.id } })));
   for (const { player, appearance } of entries) {
@@ -42,7 +42,25 @@ export function buildProfiles(tournaments) {
     if (found) mergeEntry(found, player, appearance);
     else byUrl.set(player.url, newProfile(player, appearance));
   }
-  return [...byUrl.values()].sort((a, b) => a.name.localeCompare(b.name));
+  return [...byUrl.values()];
+}
+
+// Someone only on the national ranking lists: no tournament entries, just their ranking.
+function nationalProfile(player) {
+  return { id: player.url, name: player.name, country: null, memberId: player.memberId, url: player.url, profile: null, nationalRanking: player.nationalRanking, tournaments: [], appearances: [] };
+}
+
+// Tournament entrants plus everyone on the national ranking lists. The MemberID joins the two
+// (never a name); an entrant keeps their own profile and only borrows a ranking they lack.
+export function buildProfiles(tournaments, nationalPlayers = []) {
+  const profiles = profilesFromTournaments(tournaments);
+  const byMemberId = new Map(profiles.filter((p) => p.memberId).map((p) => [p.memberId, p]));
+  for (const national of nationalPlayers) {
+    const found = byMemberId.get(national.memberId);
+    if (!found) profiles.push(nationalProfile(national));
+    else if (!hasAnyRanking(found.nationalRanking)) found.nationalRanking = national.nationalRanking;
+  }
+  return profiles.sort((a, b) => displayName(a.name).localeCompare(displayName(b.name)));
 }
 
 const PLAYED_AT_RE = /(\d{1,2})-(\d{1,2})-(\d{4})/;

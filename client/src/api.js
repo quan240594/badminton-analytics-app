@@ -196,6 +196,15 @@ export async function simulateDoubles(teamA, teamB) {
 
 export const fetchTournaments = () => loadBundle().then((b) => b.tournaments ?? []);
 
+let nationalPromise = null;
+
+// Everyone on the national ranking lists (see server/build-static.js). A build or deploy from before
+// this file existed has none, which only leaves the profile search without those players.
+export function fetchNationalPlayers() {
+  nationalPromise ??= fetch(`${import.meta.env.BASE_URL}national.json`, { cache: 'no-cache' }).then((res) => (res.ok ? res.json() : []));
+  return nationalPromise;
+}
+
 // Synthetic rating on the same scale expectedScore() already uses (its /400
 // divisor assumes ~1000-2000-range inputs), built from pctOfTop (ranking
 // points as a % of that discipline's #1 player) since raw ranking points

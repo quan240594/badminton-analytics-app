@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false, placeholder = 'Search player...', emptyText = 'No players found', className = '' }) {
+export default function PlayerSelect({ label, players, value, onChange, excludeIds = [], showClub = true, detail, isSubstitute, mirrored = false, placeholder = 'Search player...', emptyText = 'No players found', className = '', maxOptions = Infinity }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -9,12 +9,13 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
   const selected = players.find((p) => p.id === value);
   const selectedName = selected ? selected.name : '';
 
-  const options = useMemo(() => {
+  const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
     return players
       .filter((p) => p.id === value || !excludeIds.includes(p.id))
       .filter((p) => !q || p.name.toLowerCase().includes(q));
   }, [players, query, excludeIds, value]);
+  const options = useMemo(() => matches.slice(0, maxOptions), [matches, maxOptions]);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -82,6 +83,7 @@ export default function PlayerSelect({ label, players, value, onChange, excludeI
             </li>
           ))}
           {options.length === 0 && <li className="empty">{emptyText}</li>}
+          {matches.length > options.length && <li className="empty">{matches.length - options.length} more - keep typing to narrow down</li>}
         </ul>
       )}
     </div>

@@ -54,6 +54,43 @@ describe('buildProfiles', () => {
     const second = { id: 'U', players: [{ id: 'b', name: 'A', url: 'U', nationalRanking: ranking(1) }] };
     expect(buildProfiles([first, second])[0].nationalRanking.singles.rank).toBe(5);
   });
+
+  describe('with the national ranking lists', () => {
+    const nationalPlayer = (memberId, name, rank) => ({ id: memberId, name, memberId, url: `N-${memberId}`, nationalRanking: ranking(rank) });
+
+    it('adds people who are only on the lists, with just their ranking', () => {
+      const profiles = buildProfiles([t1, t2], [nationalPlayer('876236', 'Noah Haase', 1)]);
+      const noah = profiles.find((p) => p.memberId === '876236');
+      expect(noah).toEqual({
+        id: 'N-876236', name: 'Noah Haase', country: null, memberId: '876236', url: 'N-876236',
+        profile: null, nationalRanking: ranking(1), tournaments: [], appearances: [],
+      });
+    });
+
+    it('joins an entrant to their list entry by MemberID, keeping the entrant profile and one row', () => {
+      const profiles = buildProfiles([t1, t2], [nationalPlayer('50016928', 'Linh Hoang', 3)]);
+      expect(profiles.filter((p) => p.memberId === '50016928')).toHaveLength(1);
+      const linh = profiles.find((p) => p.memberId === '50016928');
+      expect(linh.url).toBe('U-LINH');
+      expect(linh.nationalRanking.singles.rank).toBe(611); // already had one
+    });
+
+    it('gives an entrant the list ranking they lack', () => {
+      const entrant = { id: 'T', players: [{ id: 'a', name: 'Opp, One', url: 'U-OPP', memberId: '999', nationalRanking: null, tournaments: [] }] };
+      const [opp] = buildProfiles([entrant], [nationalPlayer('999', 'One Opp', 7)]);
+      expect(opp.nationalRanking.singles.rank).toBe(7);
+    });
+
+    it('never joins on a name', () => {
+      const entrant = { id: 'T', players: [{ id: 'a', name: 'Haase, Noah', url: 'U-NOAH', memberId: null, tournaments: [] }] };
+      expect(buildProfiles([entrant], [nationalPlayer('876236', 'Noah Haase', 1)])).toHaveLength(2);
+    });
+
+    it('sorts everyone by the name as shown, first name first', () => {
+      const names = buildProfiles([t1], [nationalPlayer('1', 'Zed Zero', 1), nationalPlayer('2', 'Anna Able', 2)]).map((p) => displayName(p.name));
+      expect(names).toEqual(['Anna Able', 'Linh Hoang', 'Person Other', 'Zed Zero']);
+    });
+  });
 });
 
 describe('parsePlayedAt', () => {

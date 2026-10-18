@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { fetchTournaments } from '../api.js';
+import { fetchNationalPlayers, fetchTournaments } from '../api.js';
 import PageHeader from '../components/PageHeader.jsx';
 import PlayerLink from '../components/PlayerLink.jsx';
 import PlayerSelect from '../components/PlayerSelect.jsx';
@@ -8,9 +8,11 @@ import ProfileStatsCard from '../components/ProfileStatsCard.jsx';
 import RankingCard from '../components/RankingCard.jsx';
 import TournamentResults from '../components/TournamentResults.jsx';
 import UpcomingTournaments from '../components/UpcomingTournaments.jsx';
-import { buildProfiles, tournamentResults } from '../lib/profiles.js';
+import { buildProfiles, displayName, tournamentResults } from '../lib/profiles.js';
 
 const STORAGE_KEY = 'badminton-app-profile-state';
+// The picker would otherwise render every one of ~10,000 names at once.
+const MAX_OPTIONS = 50;
 
 function loadStoredId() {
   try {
@@ -22,6 +24,7 @@ function loadStoredId() {
 
 export default function PlayerProfiles() {
   const [tournaments, setTournaments] = useState([]);
+  const [nationalPlayers, setNationalPlayers] = useState([]);
   const [selectedId, setSelectedId] = useState(loadStoredId);
   const [error, setError] = useState('');
 
@@ -29,22 +32,27 @@ export default function PlayerProfiles() {
     fetchTournaments()
       .then(setTournaments)
       .catch((e) => setError(e.message));
+    // Without the national lists the page still works, it just knows fewer players.
+    fetchNationalPlayers()
+      .then(setNationalPlayers)
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ selectedId }));
   }, [selectedId]);
 
-  const profiles = useMemo(() => buildProfiles(tournaments), [tournaments]);
+  const profiles = useMemo(() => buildProfiles(tournaments, nationalPlayers), [tournaments, nationalPlayers]);
+  const options = useMemo(() => profiles.map((p) => ({ id: p.id, name: displayName(p.name) })), [profiles]);
   const profile = profiles.find((p) => p.id === selectedId) ?? null;
   const results = useMemo(() => (profile ? tournamentResults(profile, tournaments) : []), [profile, tournaments]);
 
   return (
     <div className="player-profiles">
-      <PageHeader title="Player profiles" subtitle="Tournament entrants, as on Badminton Nederland" onClearAll={() => setSelectedId('')} />
+      <PageHeader title="Player profiles" subtitle="Everyone on the national ranking lists and in tournaments, as on Badminton Nederland" onClearAll={() => setSelectedId('')} />
 
       <div className="league-day-controls">
-        <PlayerSelect label="Player" players={profiles} value={selectedId} onChange={setSelectedId} showClub={false} />
+        <PlayerSelect label="Player" players={options} value={selectedId} onChange={setSelectedId} showClub={false} maxOptions={MAX_OPTIONS} />
       </div>
 
       {error && <p className="error">{error}</p>}
