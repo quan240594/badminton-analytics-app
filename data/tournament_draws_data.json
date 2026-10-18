@@ -63813,6 +63813,171 @@
           "played_at": "za 17-10-2026 13:00"
         }
       ]
+    },
+    "13": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "65",
+              "name": "Daniel Burggraaf"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-60"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Arkin Hasan"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "73-76"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "42",
+              "name": "Aadit Srivastava"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "63-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "158",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Aadit Srivastava",
+                  "member_id": "50009727"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Arkin Hasan",
+                  "member_id": "50007912"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:00"
+        },
+        {
+          "match_id": "154",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Aadit Srivastava",
+                  "member_id": "50009727"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "157",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Arkin Hasan",
+                  "member_id": "50007912"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        }
+      ]
     }
   }
 }
