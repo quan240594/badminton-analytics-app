@@ -57193,6 +57193,190 @@
           "played_at": "za 17-10-2026 20:35"
         }
       ]
+    },
+    "69": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "90",
+              "name": "Naman Gowtham Prakash"
+            },
+            {
+              "player_id": "57",
+              "name": "Shresta Dinakaran"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "143",
+              "name": "Siddhesh Bharath Kumar"
+            },
+            {
+              "player_id": "76",
+              "name": "Vedha Anandkumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "127",
+              "name": "Benjamin Widjaja"
+            },
+            {
+              "player_id": "87",
+              "name": "Isabella Panarello"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "798",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Naman Gowtham Prakash",
+                  "seed": 1,
+                  "member_id": "50010855"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Shresta Dinakaran",
+                  "member_id": "10003164"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "127",
+                  "name": "Benjamin Widjaja",
+                  "member_id": "50012717"
+                },
+                {
+                  "player_id": "87",
+                  "name": "Isabella Panarello",
+                  "member_id": "5004873"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 10:25"
+        },
+        {
+          "match_id": "799",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "143",
+                  "name": "Siddhesh Bharath Kumar",
+                  "seed": 2,
+                  "member_id": "50024060"
+                },
+                {
+                  "player_id": "76",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "127",
+                  "name": "Benjamin Widjaja",
+                  "member_id": "50012717"
+                },
+                {
+                  "player_id": "87",
+                  "name": "Isabella Panarello",
+                  "member_id": "5004873"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 11:40"
+        },
+        {
+          "match_id": "795",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Naman Gowtham Prakash",
+                  "seed": 1,
+                  "member_id": "50010855"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Shresta Dinakaran",
+                  "member_id": "10003164"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "143",
+                  "name": "Siddhesh Bharath Kumar",
+                  "seed": 2,
+                  "member_id": "50024060"
+                },
+                {
+                  "player_id": "76",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 18-10-2026 12:20"
+        }
+      ]
     }
   }
 }
