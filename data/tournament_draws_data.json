@@ -68164,6 +68164,386 @@
           "played_at": "za 17-10-2026 11:00"
         }
       ]
+    },
+    "36": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "65",
+              "name": "Daniel Burggraaf"
+            },
+            {
+              "player_id": "70",
+              "name": "Abel Kerssies"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "143-95"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "76",
+              "name": "Mihika Roy"
+            },
+            {
+              "player_id": "42",
+              "name": "Aadit Srivastava"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-3",
+          "points_record": "128-137"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "36",
+              "name": "Chris Blaasse"
+            },
+            {
+              "player_id": "40",
+              "name": "Erik De Jong"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-5",
+          "points_record": "145-148"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Botond Mark"
+            },
+            {
+              "player_id": "62",
+              "name": "Estelle Medina"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "2-6",
+          "points_record": "127-163"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "408",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                },
+                {
+                  "player_id": "70",
+                  "name": "Abel Kerssies",
+                  "member_id": "50009602"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Chris Blaasse",
+                  "member_id": "5001316"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Erik De Jong",
+                  "member_id": "4987635"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "410",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Mihika Roy",
+                  "member_id": "5009675"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Aadit Srivastava",
+                  "member_id": "50009727"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                },
+                {
+                  "player_id": "62",
+                  "name": "Estelle Medina",
+                  "member_id": "5012781"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              23,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:00"
+        },
+        {
+          "match_id": "404",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Mihika Roy",
+                  "member_id": "5009675"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Aadit Srivastava",
+                  "member_id": "50009727"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                },
+                {
+                  "player_id": "70",
+                  "name": "Abel Kerssies",
+                  "member_id": "50009602"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "412",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Chris Blaasse",
+                  "member_id": "5001316"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Erik De Jong",
+                  "member_id": "4987635"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                },
+                {
+                  "player_id": "62",
+                  "name": "Estelle Medina",
+                  "member_id": "5012781"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "407",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Mihika Roy",
+                  "member_id": "5009675"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Aadit Srivastava",
+                  "member_id": "50009727"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Chris Blaasse",
+                  "member_id": "5001316"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Erik De Jong",
+                  "member_id": "4987635"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "411",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Daniel Burggraaf",
+                  "member_id": "10003174"
+                },
+                {
+                  "player_id": "70",
+                  "name": "Abel Kerssies",
+                  "member_id": "50009602"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                },
+                {
+                  "player_id": "62",
+                  "name": "Estelle Medina",
+                  "member_id": "5012781"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        }
+      ]
     }
   }
 }
