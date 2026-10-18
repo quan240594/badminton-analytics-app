@@ -59040,6 +59040,382 @@
           "played_at": "za 17-10-2026 19:25"
         }
       ]
+    },
+    "77": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Darshit Merugu"
+            },
+            {
+              "player_id": "71",
+              "name": "Ariya Swain"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "148-96"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "Hugo Mulkens"
+            },
+            {
+              "player_id": "22",
+              "name": "Lisha Timmanagoudar"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-3",
+          "points_record": "157-130"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "165",
+              "name": "Advik Upadhyay"
+            },
+            {
+              "player_id": "142",
+              "name": "Nithyashree Kasula"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "119-132"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "150",
+              "name": "Vihaan Manohar"
+            },
+            {
+              "player_id": "102",
+              "name": "Amy van Deudekom"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "60-126"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "1039",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "165",
+                  "name": "Advik Upadhyay",
+                  "member_id": "5003313"
+                },
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              23
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "887",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "150",
+                  "name": "Vihaan Manohar",
+                  "member_id": "10001906"
+                },
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                },
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              4,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "884",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "165",
+                  "name": "Advik Upadhyay",
+                  "member_id": "5003313"
+                },
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "150",
+                  "name": "Vihaan Manohar",
+                  "member_id": "10001906"
+                },
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "1041",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                },
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              22,
+              24
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "1040",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "150",
+                  "name": "Vihaan Manohar",
+                  "member_id": "10001906"
+                },
+                {
+                  "player_id": "102",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              5,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 18:50"
+        },
+        {
+          "match_id": "886",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "165",
+                  "name": "Advik Upadhyay",
+                  "member_id": "5003313"
+                },
+                {
+                  "player_id": "142",
+                  "name": "Nithyashree Kasula",
+                  "member_id": "5011973"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Darshit Merugu",
+                  "member_id": "50015493"
+                },
+                {
+                  "player_id": "71",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        }
+      ]
     }
   }
 }
