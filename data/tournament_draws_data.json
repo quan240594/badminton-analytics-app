@@ -59416,6 +59416,374 @@
           "played_at": "za 17-10-2026 19:25"
         }
       ]
+    },
+    "78": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Yogan Ashwin"
+            },
+            {
+              "player_id": "58",
+              "name": "Aaradhana Karthikeyan Priya"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "128-53"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Aidan Scharloo"
+            },
+            {
+              "player_id": "55",
+              "name": "Lana Cremers"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-2",
+          "points_record": "109-78"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Liam Zwanenburg"
+            },
+            {
+              "player_id": "61",
+              "name": "Mihikaa Mukund"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-4",
+          "points_record": "74-115"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "114",
+              "name": "Vishakh Sujeev Kumar"
+            },
+            {
+              "player_id": "134",
+              "name": "Riya Manikandan"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "61-126"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "896",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Yogan Ashwin",
+                  "member_id": "10000742"
+                },
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "member_id": "5012029"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Liam Zwanenburg",
+                  "member_id": "10002400"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              6
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "1046",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "114",
+                  "name": "Vishakh Sujeev Kumar",
+                  "member_id": "10000194"
+                },
+                {
+                  "player_id": "134",
+                  "name": "Riya Manikandan",
+                  "member_id": "4370"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Aidan Scharloo",
+                  "member_id": "5006213"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:30"
+        },
+        {
+          "match_id": "893",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "114",
+                  "name": "Vishakh Sujeev Kumar",
+                  "member_id": "10000194"
+                },
+                {
+                  "player_id": "134",
+                  "name": "Riya Manikandan",
+                  "member_id": "4370"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Yogan Ashwin",
+                  "member_id": "10000742"
+                },
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "member_id": "5012029"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:20"
+        },
+        {
+          "match_id": "1048",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Liam Zwanenburg",
+                  "member_id": "10002400"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Aidan Scharloo",
+                  "member_id": "5006213"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:55"
+        },
+        {
+          "match_id": "895",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "114",
+                  "name": "Vishakh Sujeev Kumar",
+                  "member_id": "10000194"
+                },
+                {
+                  "player_id": "134",
+                  "name": "Riya Manikandan",
+                  "member_id": "4370"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Liam Zwanenburg",
+                  "member_id": "10002400"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Mihikaa Mukund",
+                  "member_id": "50012552"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        },
+        {
+          "match_id": "1047",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Yogan Ashwin",
+                  "member_id": "10000742"
+                },
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "member_id": "5012029"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Aidan Scharloo",
+                  "member_id": "5006213"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Lana Cremers",
+                  "member_id": "4993994"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "za 17-10-2026 19:25"
+        }
+      ]
     }
   }
 }
