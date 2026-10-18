@@ -61806,6 +61806,175 @@
           "played_at": "za 17-10-2026 10:30"
         }
       ]
+    },
+    "2": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Simon Knobben"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "103-74"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "34",
+              "name": "Chen-Chance Lee"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "77-79"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "39",
+              "name": "Shinto Cheung"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "77-104"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "18",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "34",
+                  "name": "Chen-Chance Lee",
+                  "member_id": "5009774"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 08:30"
+        },
+        {
+          "match_id": "17",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "34",
+                  "name": "Chen-Chance Lee",
+                  "member_id": "5009774"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 09:30"
+        },
+        {
+          "match_id": "15",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              5,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:30"
+        }
+      ]
     }
   }
 }
