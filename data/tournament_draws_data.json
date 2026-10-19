@@ -69908,6 +69908,310 @@
           "played_at": "za 17-10-2026 14:00"
         }
       ]
+    },
+    "42": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Jonathan van Kranenburg"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "105-88"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Gijs Peelen"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "71-73"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "94",
+              "name": "Daan Verschuren"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "90-105"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "75",
+              "name": "Abishek Prabhu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "490",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Jonathan van Kranenburg",
+                  "member_id": "4998739"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "498",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "Abishek Prabhu",
+                  "member_id": "5007195"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Daan Verschuren",
+                  "member_id": "5011080"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "497",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Jonathan van Kranenburg",
+                  "member_id": "4998739"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Daan Verschuren",
+                  "member_id": "5011080"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
+        {
+          "match_id": "493",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "Abishek Prabhu",
+                  "member_id": "5007195"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "494",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Jonathan van Kranenburg",
+                  "member_id": "4998739"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "Abishek Prabhu",
+                  "member_id": "5007195"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              0
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        },
+        {
+          "match_id": "496",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Daan Verschuren",
+                  "member_id": "5011080"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:30"
+        }
+      ]
     }
   }
 }
