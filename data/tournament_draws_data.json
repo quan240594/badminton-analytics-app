@@ -69608,6 +69608,306 @@
           "played_at": "za 17-10-2026 16:00"
         }
       ]
+    },
+    "41": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Gowtham Bhairapaneni"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "144-100"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "90",
+              "name": "Alvis Vivek"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "128-120"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "59",
+              "name": "Sai Pranav Sukka"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "130-144"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "57",
+              "name": "Nathan Van Wilpen"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-5",
+          "points_record": "104-142"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "474",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Alvis Vivek",
+                  "member_id": "5100607"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "482",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Gowtham Bhairapaneni",
+                  "member_id": "4992493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:00"
+        },
+        {
+          "match_id": "477",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              24
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:00"
+        },
+        {
+          "match_id": "481",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Alvis Vivek",
+                  "member_id": "5100607"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Gowtham Bhairapaneni",
+                  "member_id": "4992493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              14,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 13:00"
+        },
+        {
+          "match_id": "478",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Alvis Vivek",
+                  "member_id": "5100607"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        },
+        {
+          "match_id": "480",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Nathan Van Wilpen",
+                  "member_id": "5004707"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Gowtham Bhairapaneni",
+                  "member_id": "4992493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 14:00"
+        }
+      ]
     }
   }
 }
