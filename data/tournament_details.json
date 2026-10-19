@@ -8999,8 +8999,12 @@
         "event_id": "1",
         "name": "ME 1",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "25"
+          ]
+        ]
       },
       {
         "event_id": "6",
@@ -9033,13 +9037,19 @@
         "event_id": "11",
         "name": "ME 6 veer",
         "draws": 0,
-        "entries": 2,
+        "entries": 4,
         "participants": [
           [
             "2"
           ],
           [
+            "22"
+          ],
+          [
             "17"
+          ],
+          [
+            "24"
           ]
         ]
       },
@@ -9083,7 +9093,7 @@
         "event_id": "12",
         "name": "VE 6 veer",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "6"
@@ -9093,6 +9103,9 @@
           ],
           [
             "14"
+          ],
+          [
+            "23"
           ],
           [
             "19"
@@ -9143,10 +9156,14 @@
         "event_id": "13",
         "name": "MD 6 veer",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
+            "22",
             "17"
+          ],
+          [
+            "24"
           ]
         ]
       },
@@ -9186,7 +9203,7 @@
         "event_id": "14",
         "name": "VD 6 veer",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "13",
@@ -9203,7 +9220,11 @@
             "15"
           ],
           [
+            "21",
             "19"
+          ],
+          [
+            "23"
           ]
         ]
       },
@@ -9260,7 +9281,7 @@
         "event_id": "15",
         "name": "GD 6 veer",
         "draws": 0,
-        "entries": 4,
+        "entries": 7,
         "participants": [
           [
             "11"
@@ -9272,7 +9293,17 @@
             "15"
           ],
           [
+            "21"
+          ],
+          [
+            "22"
+          ],
+          [
             "17"
+          ],
+          [
+            "24",
+            "23"
           ]
         ]
       }
@@ -9356,6 +9387,16 @@
       },
       {
         "country": null,
+        "player_id": "21",
+        "name": "REIJNEN, SILKE"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "RIESSEN, BRYAN van"
+      },
+      {
+        "country": null,
         "player_id": "17",
         "name": "RIESSEN, DYLAN van"
       },
@@ -9366,8 +9407,23 @@
       },
       {
         "country": null,
+        "player_id": "23",
+        "name": "SCHEENEN, DAPHNE"
+      },
+      {
+        "country": null,
+        "player_id": "24",
+        "name": "SCHROOTEN, PAUL"
+      },
+      {
+        "country": null,
         "player_id": "18",
         "name": "SEINEN, ASHLEY"
+      },
+      {
+        "country": null,
+        "player_id": "25",
+        "name": "SHAH, VIHAAN"
       },
       {
         "country": null,
