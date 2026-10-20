@@ -29173,11 +29173,29 @@
         "event_id": "1",
         "name": "Deelname zaterdagavondtoenooi",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "1"
+          ],
+          [
+            "2"
+          ]
+        ]
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Gils, Stefan van"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Hengst, Maarten"
+      }
+    ]
   }
 }

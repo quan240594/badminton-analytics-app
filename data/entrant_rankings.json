@@ -456,6 +456,7 @@
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:58": "50024145",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:59": "50020290",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:60": "4996790",
+  "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:64": "985447",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:68": "50019651",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:7": "878586",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:76": "992817",
@@ -463,6 +464,7 @@
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:78": "5100680",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:79": "50006105",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:8": "810215",
+  "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:87": "5003692",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:9": "50019760",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:94": "50009485",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:95": "983429",
@@ -88105,6 +88107,75 @@
     "singles": {
      "points": 510,
      "rank": 1408
+    }
+   }
+  },
+  "985447": {
+   "fetched_at": "2026-10-20T18:30:17+00:00",
+   "guid": "A75C0680-3AB4-44AA-A69A-DF31F96AA454",
+   "ranking": {},
+   "stats": {
+    "doubles": {
+     "career": {
+      "losses": 9,
+      "wins": 5
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "mixed": {
+     "career": {
+      "losses": 6,
+      "wins": 2
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "singles": {
+     "career": {
+      "losses": 9,
+      "wins": 2
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "total": {
+     "career": {
+      "losses": 24,
+      "wins": 9
+     },
+     "form": [
+      {
+       "date": "2017-01-25",
+       "won": true
+      },
+      {
+       "date": "2017-01-25",
+       "won": true
+      },
+      {
+       "date": "2017-01-25",
+       "won": true
+      },
+      {
+       "date": "2025-11-23",
+       "won": false
+      },
+      {
+       "date": "2025-11-23",
+       "won": false
+      }
+     ],
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
     }
    }
   },
