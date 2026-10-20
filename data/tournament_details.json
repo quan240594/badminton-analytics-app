@@ -24004,8 +24004,8 @@
       {
         "event_id": "1",
         "name": "Categorie 3 -  Heren Enkel",
-        "draws": 4,
-        "entries": 10,
+        "draws": 0,
+        "entries": 11,
         "participants": [
           [
             "54"
@@ -24036,6 +24036,9 @@
           ],
           [
             "145"
+          ],
+          [
+            "149"
           ]
         ]
       },
@@ -24045,6 +24048,9 @@
         "draws": 0,
         "entries": 27,
         "participants": [
+          [
+            "134"
+          ],
           [
             "92"
           ],
@@ -24121,9 +24127,6 @@
             "142"
           ],
           [
-            "134"
-          ],
-          [
             "136"
           ]
         ]
@@ -24139,9 +24142,6 @@
           ],
           [
             "77"
-          ],
-          [
-            "83"
           ],
           [
             "78"
@@ -24202,13 +24202,16 @@
           ],
           [
             "137"
+          ],
+          [
+            "148"
           ]
         ]
       },
       {
         "event_id": "2",
         "name": "Categorie 3 -  Dames Enkel",
-        "draws": 1,
+        "draws": 0,
         "entries": 5,
         "participants": [
           [
@@ -24231,7 +24234,7 @@
       {
         "event_id": "7",
         "name": "Categorie 5 -  Dames Enkel",
-        "draws": 3,
+        "draws": 0,
         "entries": 6,
         "participants": [
           [
@@ -24257,8 +24260,8 @@
       {
         "event_id": "12",
         "name": "Categorie 7 -  Dames Enkel",
-        "draws": 1,
-        "entries": 5,
+        "draws": 0,
+        "entries": 8,
         "participants": [
           [
             "98"
@@ -24274,13 +24277,22 @@
           ],
           [
             "1"
+          ],
+          [
+            "147"
+          ],
+          [
+            "146"
+          ],
+          [
+            "151"
           ]
         ]
       },
       {
         "event_id": "3",
         "name": "Categorie 3 -  Heren Dubbel",
-        "draws": 1,
+        "draws": 0,
         "entries": 5,
         "participants": [
           [
@@ -24310,6 +24322,9 @@
         "draws": 0,
         "entries": 24,
         "participants": [
+          [
+            "134"
+          ],
           [
             "6",
             "3"
@@ -24397,9 +24412,6 @@
             "142"
           ],
           [
-            "134"
-          ],
-          [
             "136"
           ]
         ]
@@ -24407,8 +24419,8 @@
       {
         "event_id": "13",
         "name": "Categorie 7 -  Heren Dubbel",
-        "draws": 4,
-        "entries": 9,
+        "draws": 0,
+        "entries": 11,
         "participants": [
           [
             "132",
@@ -24445,13 +24457,19 @@
           [
             "129",
             "130"
+          ],
+          [
+            "148"
+          ],
+          [
+            "25"
           ]
         ]
       },
       {
         "event_id": "4",
         "name": "Categorie 3 -  Dames Dubbel",
-        "draws": 1,
+        "draws": 0,
         "entries": 4,
         "participants": [
           [
@@ -24475,7 +24493,7 @@
       {
         "event_id": "9",
         "name": "Categorie 5 -  Dames Dubbel",
-        "draws": 3,
+        "draws": 0,
         "entries": 6,
         "participants": [
           [
@@ -24507,8 +24525,8 @@
       {
         "event_id": "14",
         "name": "Categorie 7 -  Dames Dubbel",
-        "draws": 1,
-        "entries": 5,
+        "draws": 0,
+        "entries": 7,
         "participants": [
           [
             "75",
@@ -24529,13 +24547,20 @@
           [
             "125",
             "90"
+          ],
+          [
+            "146"
+          ],
+          [
+            "150",
+            "151"
           ]
         ]
       },
       {
         "event_id": "5",
         "name": "Categorie 3 -  Gemengd Dubbel",
-        "draws": 1,
+        "draws": 0,
         "entries": 5,
         "participants": [
           [
@@ -24640,7 +24665,7 @@
         "event_id": "15",
         "name": "Categorie 7 -  Gemengd Dubbel",
         "draws": 0,
-        "entries": 17,
+        "entries": 19,
         "participants": [
           [
             "139",
@@ -24708,172 +24733,17 @@
           ],
           [
             "77"
+          ],
+          [
+            "147"
+          ],
+          [
+            "150"
           ]
         ]
       }
     ],
-    "draws": [
-      {
-        "draw_id": "20",
-        "name": "Categorie 3 -  Heren Enkel",
-        "size": 4,
-        "type": "Afvalschema",
-        "stage": "Playoff",
-        "loser_round": null
-      },
-      {
-        "draw_id": "17",
-        "name": "Categorie 3 -  Heren Enkel - Groep A",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "18",
-        "name": "Categorie 3 -  Heren Enkel - Groep B",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "19",
-        "name": "Categorie 3 -  Heren Enkel - Groep C",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "21",
-        "name": "Categorie 3 -  Dames Enkel",
-        "size": 5,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "4",
-        "name": "Categorie 5 -  Dames Enkel",
-        "size": 2,
-        "type": "Afvalschema",
-        "stage": "Playoff",
-        "loser_round": null
-      },
-      {
-        "draw_id": "2",
-        "name": "Categorie 5 -  Dames Enkel - Groep A",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "3",
-        "name": "Categorie 5 -  Dames Enkel - Groep B",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "9",
-        "name": "Categorie 7 -  Dames Enkel",
-        "size": 5,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "13",
-        "name": "Categorie 3 -  Heren Dubbel",
-        "size": 4,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "25",
-        "name": "Categorie 7 -  Heren Dubbel",
-        "size": 4,
-        "type": "Afvalschema",
-        "stage": "Playoff",
-        "loser_round": null
-      },
-      {
-        "draw_id": "22",
-        "name": "Categorie 7 -  Heren Dubbel - Groep A",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "23",
-        "name": "Categorie 7 -  Heren Dubbel - Groep B",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "24",
-        "name": "Categorie 7 -  Heren Dubbel - Groep C",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "10",
-        "name": "Categorie 3 -  Dames Dubbel",
-        "size": 4,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "16",
-        "name": "Categorie 5 -  Dames Dubbel",
-        "size": 2,
-        "type": "Afvalschema",
-        "stage": "Playoff",
-        "loser_round": null
-      },
-      {
-        "draw_id": "14",
-        "name": "Categorie 5 -  Dames Dubbel - Groep A",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "15",
-        "name": "Categorie 5 -  Dames Dubbel - Groep B",
-        "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "11",
-        "name": "Categorie 7 -  Dames Dubbel",
-        "size": 5,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "12",
-        "name": "Categorie 3 -  Gemengd Dubbel",
-        "size": 5,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      }
-    ],
+    "draws": [],
     "entries": [
       {
         "country": null,
@@ -24884,6 +24754,11 @@
         "country": null,
         "player_id": "92",
         "name": "Adriani, Maarten"
+      },
+      {
+        "country": null,
+        "player_id": "146",
+        "name": "Al Eido, Julia"
       },
       {
         "country": null,
@@ -24934,6 +24809,11 @@
         "country": null,
         "player_id": "126",
         "name": "Bloeme, Vera de"
+      },
+      {
+        "country": null,
+        "player_id": "149",
+        "name": "Bokhorst, Lars"
       },
       {
         "country": null,
@@ -25177,6 +25057,11 @@
       },
       {
         "country": null,
+        "player_id": "147",
+        "name": "Kok, Mara"
+      },
+      {
+        "country": null,
         "player_id": "122",
         "name": "Kooijman, Kevin"
       },
@@ -25234,6 +25119,11 @@
         "country": null,
         "player_id": "41",
         "name": "Lee, Doris van der"
+      },
+      {
+        "country": null,
+        "player_id": "148",
+        "name": "Leng, Dylan de"
       },
       {
         "country": null,
@@ -25514,6 +25404,16 @@
         "country": null,
         "player_id": "71",
         "name": "Treffers, Laura"
+      },
+      {
+        "country": null,
+        "player_id": "150",
+        "name": "Tsang, Virginia"
+      },
+      {
+        "country": null,
+        "player_id": "151",
+        "name": "Tsang, Winnie"
       },
       {
         "country": null,
