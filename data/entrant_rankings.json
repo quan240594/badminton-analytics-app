@@ -465,9 +465,11 @@
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:79": "50006105",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:8": "810215",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:87": "5003692",
+  "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:88": "5004561",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:9": "50019760",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:94": "50009485",
   "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:95": "983429",
+  "2379FA1F-9DA3-4D3D-9F81-EC0FF1F0778B:97": "980860",
   "25756F43-7B93-4590-A6E4-4BBFA82BDFFA:1": "5100862",
   "25756F43-7B93-4590-A6E4-4BBFA82BDFFA:10": "4994517",
   "25756F43-7B93-4590-A6E4-4BBFA82BDFFA:11": "5005055",
@@ -85732,6 +85734,88 @@
      "thisYear": {
       "losses": 15,
       "wins": 69
+     }
+    }
+   }
+  },
+  "980860": {
+   "fetched_at": "2026-10-20T18:50:35+00:00",
+   "guid": "1AF224B7-A02C-4827-BAB9-AEE80428B036",
+   "ranking": {
+    "doubles": {
+     "points": 631,
+     "rank": 2141
+    },
+    "mixed": {
+     "points": 806,
+     "rank": 2031
+    },
+    "singles": {
+     "points": 545,
+     "rank": 1926
+    }
+   },
+   "stats": {
+    "doubles": {
+     "career": {
+      "losses": 90,
+      "wins": 101
+     },
+     "thisYear": {
+      "losses": 10,
+      "wins": 5
+     }
+    },
+    "mixed": {
+     "career": {
+      "losses": 49,
+      "wins": 23
+     },
+     "thisYear": {
+      "losses": 19,
+      "wins": 4
+     }
+    },
+    "singles": {
+     "career": {
+      "losses": 79,
+      "wins": 56
+     },
+     "thisYear": {
+      "losses": 16,
+      "wins": 2
+     }
+    },
+    "total": {
+     "career": {
+      "losses": 218,
+      "wins": 180
+     },
+     "form": [
+      {
+       "date": "2026-09-26",
+       "won": false
+      },
+      {
+       "date": "2026-09-26",
+       "won": false
+      },
+      {
+       "date": "2026-10-10",
+       "won": false
+      },
+      {
+       "date": "2026-10-10",
+       "won": false
+      },
+      {
+       "date": "2026-10-10",
+       "won": false
+      }
+     ],
+     "thisYear": {
+      "losses": 45,
+      "wins": 11
      }
     }
    }
