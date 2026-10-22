@@ -13789,11 +13789,8 @@
         "event_id": "17",
         "name": "DE-D",
         "draws": 0,
-        "entries": 5,
+        "entries": 4,
         "participants": [
-          [
-            "21"
-          ],
           [
             "9"
           ],
@@ -13841,11 +13838,8 @@
         "event_id": "19",
         "name": "DD-D",
         "draws": 0,
-        "entries": 3,
+        "entries": 2,
         "participants": [
-          [
-            "21"
-          ],
           [
             "11"
           ],
@@ -13858,11 +13852,8 @@
         "event_id": "20",
         "name": "GD-D",
         "draws": 0,
-        "entries": 8,
+        "entries": 7,
         "participants": [
-          [
-            "21"
-          ],
           [
             "30"
           ],
@@ -13983,10 +13974,13 @@
         "event_id": "6",
         "name": "HE-B",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "1"
+          ],
+          [
+            "31"
           ],
           [
             "14"
@@ -14027,15 +14021,23 @@
         "event_id": "10",
         "name": "GD-B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "31"
+          ]
+        ]
       },
       {
         "event_id": "1",
         "name": "HE-A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "32"
+          ]
+        ]
       },
       {
         "event_id": "2",
@@ -14052,8 +14054,15 @@
         "event_id": "3",
         "name": "HD-A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "31"
+          ],
+          [
+            "32"
+          ]
+        ]
       },
       {
         "event_id": "4",
@@ -14082,11 +14091,6 @@
     "entries": [
       {
         "country": null,
-        "player_id": "21",
-        "name": "Anandkumar, Vedha"
-      },
-      {
-        "country": null,
         "player_id": "27",
         "name": "Anup, Avyaan"
       },
@@ -14094,6 +14098,11 @@
         "country": null,
         "player_id": "1",
         "name": "Bouman, Jelte"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "Buel, Joep Van"
       },
       {
         "country": null,
@@ -14139,6 +14148,11 @@
         "country": null,
         "player_id": "6",
         "name": "Hermans, Rilana"
+      },
+      {
+        "country": null,
+        "player_id": "32",
+        "name": "Heunen, Cas"
       },
       {
         "country": null,
