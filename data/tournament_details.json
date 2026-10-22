@@ -14251,8 +14251,8 @@
       {
         "event_id": "18",
         "name": "HE-A",
-        "draws": 0,
-        "entries": 14,
+        "draws": 5,
+        "entries": 15,
         "participants": [
           [
             "71"
@@ -14265,6 +14265,9 @@
           ],
           [
             "66"
+          ],
+          [
+            "111"
           ],
           [
             "48"
@@ -14301,8 +14304,8 @@
       {
         "event_id": "19",
         "name": "HE-B",
-        "draws": 0,
-        "entries": 3,
+        "draws": 1,
+        "entries": 5,
         "participants": [
           [
             "17"
@@ -14311,21 +14314,30 @@
             "53"
           ],
           [
+            "112"
+          ],
+          [
             "101"
+          ],
+          [
+            "110"
           ]
         ]
       },
       {
         "event_id": "20",
         "name": "HE-C",
-        "draws": 0,
-        "entries": 4,
+        "draws": 1,
+        "entries": 5,
         "participants": [
           [
             "28"
           ],
           [
             "82"
+          ],
+          [
+            "113"
           ],
           [
             "14"
@@ -14336,9 +14348,67 @@
         ]
       },
       {
+        "event_id": "26",
+        "name": "HE-E",
+        "draws": 1,
+        "entries": 5,
+        "participants": [
+          [
+            "78"
+          ],
+          [
+            "25"
+          ],
+          [
+            "27"
+          ],
+          [
+            "84"
+          ],
+          [
+            "42"
+          ]
+        ]
+      },
+      {
+        "event_id": "29",
+        "name": "HE-F",
+        "draws": 3,
+        "entries": 9,
+        "participants": [
+          [
+            "19"
+          ],
+          [
+            "98"
+          ],
+          [
+            "77"
+          ],
+          [
+            "93"
+          ],
+          [
+            "40"
+          ],
+          [
+            "12"
+          ],
+          [
+            "94"
+          ],
+          [
+            "11"
+          ],
+          [
+            "47"
+          ]
+        ]
+      },
+      {
         "event_id": "5",
         "name": "DE-A",
-        "draws": 0,
+        "draws": 3,
         "entries": 8,
         "participants": [
           [
@@ -14370,7 +14440,7 @@
       {
         "event_id": "6",
         "name": "DE-B",
-        "draws": 0,
+        "draws": 1,
         "entries": 4,
         "participants": [
           [
@@ -14390,14 +14460,11 @@
       {
         "event_id": "7",
         "name": "DE-C",
-        "draws": 0,
-        "entries": 5,
+        "draws": 1,
+        "entries": 4,
         "participants": [
           [
             "105"
-          ],
-          [
-            "15"
           ],
           [
             "60"
@@ -14411,35 +14478,11 @@
         ]
       },
       {
-        "event_id": "24",
-        "name": "Jeugd-Enkel",
-        "draws": 0,
-        "entries": 25,
+        "event_id": "27",
+        "name": "DE-E",
+        "draws": 1,
+        "entries": 5,
         "participants": [
-          [
-            "76"
-          ],
-          [
-            "19"
-          ],
-          [
-            "80"
-          ],
-          [
-            "98"
-          ],
-          [
-            "78"
-          ],
-          [
-            "77"
-          ],
-          [
-            "25"
-          ],
-          [
-            "97"
-          ],
           [
             "23"
           ],
@@ -14447,46 +14490,30 @@
             "22"
           ],
           [
-            "93"
-          ],
-          [
             "26"
-          ],
-          [
-            "27"
-          ],
-          [
-            "85"
-          ],
-          [
-            "40"
-          ],
-          [
-            "41"
           ],
           [
             "75"
           ],
           [
-            "84"
-          ],
-          [
-            "12"
-          ],
-          [
-            "94"
-          ],
-          [
-            "11"
-          ],
-          [
-            "47"
-          ],
-          [
-            "42"
-          ],
-          [
             "21"
+          ]
+        ]
+      },
+      {
+        "event_id": "30",
+        "name": "DE-F",
+        "draws": 1,
+        "entries": 4,
+        "participants": [
+          [
+            "76"
+          ],
+          [
+            "97"
+          ],
+          [
+            "41"
           ],
           [
             "91"
@@ -14494,90 +14521,18 @@
         ]
       },
       {
+        "event_id": "24",
+        "name": "Jeugd-Enkel",
+        "draws": 0,
+        "entries": 0,
+        "participants": []
+      },
+      {
         "event_id": "23",
         "name": "Jeugd-Dubbel",
         "draws": 0,
-        "entries": 26,
-        "participants": [
-          [
-            "76"
-          ],
-          [
-            "19"
-          ],
-          [
-            "80"
-          ],
-          [
-            "98"
-          ],
-          [
-            "78"
-          ],
-          [
-            "77"
-          ],
-          [
-            "25"
-          ],
-          [
-            "97"
-          ],
-          [
-            "23"
-          ],
-          [
-            "22"
-          ],
-          [
-            "93"
-          ],
-          [
-            "26"
-          ],
-          [
-            "27"
-          ],
-          [
-            "85"
-          ],
-          [
-            "102"
-          ],
-          [
-            "40"
-          ],
-          [
-            "41"
-          ],
-          [
-            "75"
-          ],
-          [
-            "84"
-          ],
-          [
-            "12"
-          ],
-          [
-            "94"
-          ],
-          [
-            "11"
-          ],
-          [
-            "47"
-          ],
-          [
-            "42"
-          ],
-          [
-            "21"
-          ],
-          [
-            "91"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "25",
@@ -14609,12 +14564,16 @@
       {
         "event_id": "15",
         "name": "HD-A",
-        "draws": 0,
-        "entries": 8,
+        "draws": 4,
+        "entries": 9,
         "participants": [
           [
             "66",
             "67"
+          ],
+          [
+            "111",
+            "7"
           ],
           [
             "49",
@@ -14649,8 +14608,8 @@
       {
         "event_id": "16",
         "name": "HD-B",
-        "draws": 0,
-        "entries": 5,
+        "draws": 3,
+        "entries": 6,
         "participants": [
           [
             "5",
@@ -14669,6 +14628,10 @@
             "101"
           ],
           [
+            "112",
+            "110"
+          ],
+          [
             "65",
             "69"
           ]
@@ -14677,7 +14640,7 @@
       {
         "event_id": "17",
         "name": "HD-C",
-        "draws": 0,
+        "draws": 1,
         "entries": 4,
         "participants": [
           [
@@ -14689,19 +14652,19 @@
             "3"
           ],
           [
-            "82",
-            "83"
+            "52",
+            "109"
           ],
           [
-            "109",
-            "52"
+            "82",
+            "83"
           ]
         ]
       },
       {
         "event_id": "2",
         "name": "DD-A",
-        "draws": 0,
+        "draws": 1,
         "entries": 5,
         "participants": [
           [
@@ -14729,7 +14692,7 @@
       {
         "event_id": "3",
         "name": "DD-B",
-        "draws": 0,
+        "draws": 1,
         "entries": 4,
         "participants": [
           [
@@ -14753,7 +14716,7 @@
       {
         "event_id": "4",
         "name": "DD-C",
-        "draws": 0,
+        "draws": 1,
         "entries": 5,
         "participants": [
           [
@@ -14781,8 +14744,8 @@
       {
         "event_id": "12",
         "name": "GD-A",
-        "draws": 0,
-        "entries": 13,
+        "draws": 5,
+        "entries": 14,
         "participants": [
           [
             "62",
@@ -14807,6 +14770,10 @@
           [
             "50",
             "72"
+          ],
+          [
+            "99",
+            "111"
           ],
           [
             "29",
@@ -14840,7 +14807,7 @@
       {
         "event_id": "13",
         "name": "GD-B",
-        "draws": 0,
+        "draws": 3,
         "entries": 9,
         "participants": [
           [
@@ -14883,12 +14850,16 @@
       {
         "event_id": "14",
         "name": "GD-C",
-        "draws": 0,
-        "entries": 7,
+        "draws": 3,
+        "entries": 8,
         "participants": [
           [
             "15",
             "14"
+          ],
+          [
+            "105",
+            "113"
           ],
           [
             "51",
@@ -14915,9 +14886,426 @@
             "28"
           ]
         ]
+      },
+      {
+        "event_id": "28",
+        "name": "Dubbel-E",
+        "draws": 1,
+        "entries": 5,
+        "participants": [
+          [
+            "78",
+            "27"
+          ],
+          [
+            "25",
+            "26"
+          ],
+          [
+            "23",
+            "21"
+          ],
+          [
+            "22",
+            "42"
+          ],
+          [
+            "75",
+            "84"
+          ]
+        ]
+      },
+      {
+        "event_id": "31",
+        "name": "Dubbel-F",
+        "draws": 3,
+        "entries": 7,
+        "participants": [
+          [
+            "76",
+            "12"
+          ],
+          [
+            "19",
+            "40"
+          ],
+          [
+            "98",
+            "102"
+          ],
+          [
+            "77",
+            "47"
+          ],
+          [
+            "97",
+            "91"
+          ],
+          [
+            "93",
+            "94"
+          ],
+          [
+            "41",
+            "11"
+          ]
+        ]
       }
     ],
-    "draws": [],
+    "draws": [
+      {
+        "draw_id": "5",
+        "name": "HE-A",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "1",
+        "name": "HE-A - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "2",
+        "name": "HE-A - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "3",
+        "name": "HE-A - Groep C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "4",
+        "name": "HE-A - Groep D",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "HE-B",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "HE-C",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "51",
+        "name": "HE-E",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "54",
+        "name": "HE-F",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "52",
+        "name": "HE-F - Groep A",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "53",
+        "name": "HE-F - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "10",
+        "name": "DE-A",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "8",
+        "name": "DE-A - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "9",
+        "name": "DE-A - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "11",
+        "name": "DE-B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "12",
+        "name": "DE-C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "55",
+        "name": "DE-E",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "56",
+        "name": "DE-F",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "41",
+        "name": "HD-A",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "38",
+        "name": "HD-A - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "39",
+        "name": "HD-A - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "40",
+        "name": "HD-A - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "50",
+        "name": "HD-B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "48",
+        "name": "HD-B - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "49",
+        "name": "HD-B - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "17",
+        "name": "HD-C",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "18",
+        "name": "DD-A",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "19",
+        "name": "DD-B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "20",
+        "name": "DD-C",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "25",
+        "name": "GD-A",
+        "size": 8,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "GD-A - Groep A",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "22",
+        "name": "GD-A - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "23",
+        "name": "GD-A - Groep C",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "24",
+        "name": "GD-A - Groep D",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "28",
+        "name": "GD-B",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "26",
+        "name": "GD-B - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "27",
+        "name": "GD-B - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "31",
+        "name": "GD-C",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "29",
+        "name": "GD-C - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "30",
+        "name": "GD-C - Groep B",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "57",
+        "name": "Dubbel-E",
+        "size": 5,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "60",
+        "name": "Dubbel-F",
+        "size": 4,
+        "type": "Afvalschema",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "58",
+        "name": "Dubbel-F - Groep A",
+        "size": 4,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "59",
+        "name": "Dubbel-F - Groep B",
+        "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": null,
@@ -14973,11 +15361,6 @@
         "country": null,
         "player_id": "51",
         "name": "Chamuleau, Annick"
-      },
-      {
-        "country": null,
-        "player_id": "80",
-        "name": "Cornelissen, Femke"
       },
       {
         "country": null,
@@ -15101,6 +15484,11 @@
       },
       {
         "country": null,
+        "player_id": "113",
+        "name": "Hees, Staf van"
+      },
+      {
+        "country": null,
         "player_id": "22",
         "name": "Heijden, Flo van der"
       },
@@ -15201,11 +15589,6 @@
       },
       {
         "country": null,
-        "player_id": "85",
-        "name": "Laureijssen, Marit"
-      },
-      {
-        "country": null,
         "player_id": "17",
         "name": "Leeggangers, Gertjan"
       },
@@ -15261,6 +15644,11 @@
       },
       {
         "country": null,
+        "player_id": "111",
+        "name": "Naafs, Tygo"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "Oprins, Sofie"
       },
@@ -15288,6 +15676,11 @@
         "country": null,
         "player_id": "7",
         "name": "Roeland, Yannick"
+      },
+      {
+        "country": null,
+        "player_id": "112",
+        "name": "Rossum, Merijn van"
       },
       {
         "country": null,
@@ -15408,6 +15801,11 @@
         "country": null,
         "player_id": "73",
         "name": "Wirken, Tim"
+      },
+      {
+        "country": null,
+        "player_id": "110",
+        "name": "Zaalen, Giorgio van"
       },
       {
         "country": null,
