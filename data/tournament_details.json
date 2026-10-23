@@ -31014,8 +31014,12 @@
         "event_id": "5",
         "name": "JE U15",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "6",
@@ -31028,8 +31032,12 @@
         "event_id": "7",
         "name": "JD U15",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "8",
@@ -31096,6 +31104,12 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Koopman, Nick"
+      }
+    ]
   }
 }
