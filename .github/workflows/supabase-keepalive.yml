@@ -1,8 +1,8 @@
 name: Supabase keep-alive
 
 # A free-tier Supabase project is paused after about a week without activity, and every page of
-# the app sits behind its login, so a pause locks everyone out. This makes one harmless request
-# a day that the auth service answers from the project's database.
+# the app sits behind its login, so a pause locks everyone out. A sign-in ping did not prevent a
+# pause (the project paused anyway), so this runs a real query against the project's database.
 on:
   schedule:
     - cron: '23 5 * * *'
@@ -13,27 +13,26 @@ permissions: {}
 jobs:
   ping:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
-      # A sign-in for an address that does not exist: the auth service looks the user up in
-      # Postgres and answers 400 invalid_credentials. Nothing is created or changed.
-      - name: Ping Supabase auth
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      # Only a boolean is printed: the logs of this repo's runs are not the place for user data.
+      - name: Query the Supabase database
         env:
-          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: |
+          supabase link --project-ref odshocbgyyerocmnhess </dev/null
           for attempt in 1 2 3; do
-            response=$(curl -s -w '\n%{http_code}' --max-time 30 -X POST "$SUPABASE_URL/auth/v1/token?grant_type=password" \
-              -H "apikey: $SUPABASE_ANON_KEY" -H 'Content-Type: application/json' \
-              -d '{"email":"keepalive@invalid.example","password":"not-a-real-password"}') || response=""
-            status="${response##*$'\n'}"
-            body="${response%$'\n'*}"
-            if [ "$status" = "400" ] && echo "$body" | grep -q invalid_credentials; then
-              echo "Supabase answered from its database (HTTP 400 invalid_credentials)."
+            if result=$(supabase db query --linked "select count(*) > 0 as has_users from auth.users" 2>&1); then
+              echo "$result"
+              echo "Supabase answered from its database."
               exit 0
             fi
-            echo "attempt $attempt: unexpected answer (HTTP ${status:-none})" >&2
+            echo "attempt $attempt failed: $result" >&2
             sleep 30
           done
-          echo "::error::Supabase did not answer as expected - the project may be paused or the secrets are wrong." >&2
+          echo "::error::Supabase did not answer a database query - the project may be paused or the token is invalid." >&2
           exit 1
