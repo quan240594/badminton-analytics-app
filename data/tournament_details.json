@@ -323,7 +323,7 @@
         "event_id": "18",
         "name": "ME 8",
         "draws": 0,
-        "entries": 13,
+        "entries": 15,
         "participants": [
           [
             "63"
@@ -353,7 +353,13 @@
             "107"
           ],
           [
+            "240"
+          ],
+          [
             "128"
+          ],
+          [
+            "243"
           ],
           [
             "167"
@@ -550,7 +556,7 @@
         "event_id": "19",
         "name": "VE 8",
         "draws": 0,
-        "entries": 12,
+        "entries": 13,
         "participants": [
           [
             "127"
@@ -560,6 +566,9 @@
           ],
           [
             "153"
+          ],
+          [
+            "241"
           ],
           [
             "169"
@@ -823,6 +832,10 @@
             "168"
           ],
           [
+            "80",
+            "214"
+          ],
+          [
             "102",
             "151"
           ],
@@ -837,10 +850,6 @@
           [
             "128",
             "224"
-          ],
-          [
-            "80",
-            "214"
           ]
         ]
       },
@@ -873,7 +882,8 @@
             "97"
           ],
           [
-            "238"
+            "238",
+            "240"
           ],
           [
             "167"
@@ -911,7 +921,8 @@
             "159"
           ],
           [
-            "164"
+            "164",
+            "242"
           ],
           [
             "209",
@@ -1034,8 +1045,12 @@
         "event_id": "21",
         "name": "VD 8",
         "draws": 0,
-        "entries": 9,
+        "entries": 10,
         "participants": [
+          [
+            "241",
+            "244"
+          ],
           [
             "171",
             "227"
@@ -1320,10 +1335,6 @@
             "53"
           ],
           [
-            "10",
-            "204"
-          ],
-          [
             "80",
             "18"
           ],
@@ -1384,6 +1395,10 @@
           [
             "214",
             "187"
+          ],
+          [
+            "10",
+            "204"
           ]
         ]
       },
@@ -1755,6 +1770,11 @@
       },
       {
         "country": null,
+        "player_id": "240",
+        "name": "Griffioen, Thomas"
+      },
+      {
+        "country": null,
         "player_id": "219",
         "name": "Groen, Nynke"
       },
@@ -1792,6 +1812,11 @@
         "country": null,
         "player_id": "158",
         "name": "Hijdra, Dion"
+      },
+      {
+        "country": null,
+        "player_id": "241",
+        "name": "Hijdra, Lola Fee"
       },
       {
         "country": null,
@@ -2120,6 +2145,11 @@
       },
       {
         "country": null,
+        "player_id": "242",
+        "name": "Nielen-Janssen, Pascalle van"
+      },
+      {
+        "country": null,
         "player_id": "77",
         "name": "Oskam, Boyd"
       },
@@ -2205,6 +2235,11 @@
       },
       {
         "country": null,
+        "player_id": "243",
+        "name": "Prabhu, Abishek"
+      },
+      {
+        "country": null,
         "player_id": "28",
         "name": "Prabhudesai, Aditi"
       },
@@ -2247,6 +2282,11 @@
         "country": null,
         "player_id": "132",
         "name": "Romen, Els"
+      },
+      {
+        "country": null,
+        "player_id": "244",
+        "name": "Romswinckel, Nikita"
       },
       {
         "country": null,

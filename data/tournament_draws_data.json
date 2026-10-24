@@ -72946,6 +72946,317 @@
           "played_at": "zo 25-10-2026 16:50"
         }
       ]
+    },
+    "17": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Paul Gosens"
+            },
+            {
+              "player_id": "83",
+              "name": "Stefan Maurer"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Peter Douma"
+            },
+            {
+              "player_id": "109",
+              "name": "Bart Michielsen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "28",
+              "name": "William Aarts"
+            },
+            {
+              "player_id": "14",
+              "name": "Dylan In 'T Groen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Eric Brobbel"
+            },
+            {
+              "player_id": "3",
+              "name": "Bernie Snijders"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "269",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Paul Gosens",
+                  "member_id": "50010049"
+                },
+                {
+                  "player_id": "83",
+                  "name": "Stefan Maurer",
+                  "member_id": "807308"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "50022040"
+                },
+                {
+                  "player_id": "3",
+                  "name": "Bernie Snijders"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 10:10"
+        },
+        {
+          "match_id": "263",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Paul Gosens",
+                  "member_id": "50010049"
+                },
+                {
+                  "player_id": "83",
+                  "name": "Stefan Maurer",
+                  "member_id": "883788"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Peter Douma",
+                  "member_id": "892540"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Bart Michielsen"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 12:30"
+        },
+        {
+          "match_id": "271",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "William Aarts",
+                  "member_id": "981518"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Dylan In 'T Groen",
+                  "member_id": "50025148"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "807308"
+                },
+                {
+                  "player_id": "3",
+                  "name": "Bernie Snijders",
+                  "member_id": "50022040"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 12:30"
+        },
+        {
+          "match_id": "266",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Paul Gosens",
+                  "member_id": "50010049"
+                },
+                {
+                  "player_id": "83",
+                  "name": "Stefan Maurer",
+                  "member_id": "981518"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "William Aarts",
+                  "member_id": "50025148"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Dylan In 'T Groen"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 14:50"
+        },
+        {
+          "match_id": "267",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Peter Douma",
+                  "member_id": "883788"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Bart Michielsen",
+                  "member_id": "892540"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "William Aarts",
+                  "member_id": "981518"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Dylan In 'T Groen",
+                  "member_id": "50025148"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 15:30"
+        },
+        {
+          "match_id": "270",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Peter Douma",
+                  "member_id": "883788"
+                },
+                {
+                  "player_id": "109",
+                  "name": "Bart Michielsen",
+                  "member_id": "892540"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "807308"
+                },
+                {
+                  "player_id": "3",
+                  "name": "Bernie Snijders",
+                  "member_id": "50022040"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 16:10"
+        }
+      ]
     }
   }
 }
