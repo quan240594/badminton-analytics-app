@@ -1,0 +1,70 @@
+name: Supabase sync
+
+# Keeps the Supabase Postgres project in step with the repo: applies new migrations, checks that
+# only logged-in users can read the tables, then upserts everyone from the national ranking crawl
+# (data/national_players.json). The weekly run also counts as real database activity, which a
+# free-tier project needs to avoid being paused.
+on:
+  schedule:
+    - cron: '30 4 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - supabase/migrations/**
+      - supabase/tests/**
+      - data/sync_supabase.py
+      - .github/workflows/supabase-sync.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-sync
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Apply new migrations
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          supabase link --project-ref odshocbgyyerocmnhess </dev/null
+          supabase db push --linked --yes
+
+      # Raises on the first rule that does not hold and leaves no rows behind.
+      - name: Check that only logged-in users can read the tables
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: supabase db query --linked -f supabase/tests/players_access.sql
+
+  sync:
+    needs: migrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Upsert the national players
+        env:
+          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python3 sync_supabase.py
+        working-directory: data
