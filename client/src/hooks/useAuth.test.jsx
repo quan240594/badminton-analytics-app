@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook, waitFor, act } from '@testing-library/react';
 import { AuthProvider, useAuth } from './useAuth.jsx';
 
 const mockSubscription = { unsubscribe: vi.fn() };
@@ -72,6 +72,37 @@ describe('useAuth', () => {
 
     await result.current.verifySignupCode('a@b.com', '123456');
     expect(supabase.auth.verifyOtp).toHaveBeenCalledWith({ email: 'a@b.com', token: '123456', type: 'signup' });
+  });
+
+  it('stops loading when the session lookup fails', async () => {
+    supabase.auth.getSession.mockRejectedValue(new Error('offline'));
+
+    const { result } = renderUseAuth();
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.session).toBeNull();
+  });
+
+  it('follows auth state changes and unsubscribes on unmount', async () => {
+    const { result, unmount } = renderUseAuth();
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    const onAuthChange = supabase.auth.onAuthStateChange.mock.calls[0][0];
+    const session = { user: { id: 'u2', email: 'other@example.com' } };
+
+    act(() => onAuthChange('SIGNED_IN', session));
+    expect(result.current.user).toEqual(session.user);
+
+    unmount();
+    expect(mockSubscription.unsubscribe).toHaveBeenCalled();
+  });
+
+  it('delegates resendSignupCode with type "signup"', async () => {
+    supabase.auth.resend.mockResolvedValue({ data: {}, error: null });
+    const { result } = renderUseAuth();
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    await result.current.resendSignupCode('a@b.com');
+    expect(supabase.auth.resend).toHaveBeenCalledWith({ type: 'signup', email: 'a@b.com' });
   });
 
   it('delegates signIn and signOut', async () => {

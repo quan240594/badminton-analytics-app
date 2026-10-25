@@ -16,9 +16,10 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import urllib.request
+from html import unescape
 from pathlib import Path
 
+from http_fetch import BASIC_HEADERS, fetch_basic_retry, fetch_text
 from safe_path import safe_path
 
 # Individual-tournament pages on www.toernooi.nl redirect here - same domain
@@ -26,11 +27,6 @@ from safe_path import safe_path
 # cookie.txt (from playwright_login.py), not the www.toernooi.nl-only
 # tournament_cookie.txt used for discovery.
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
-
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 EVENT_ROW_RE = re.compile(
     r'<td class="eventname nowrap "><a href="event\.aspx\?id=[^&]+&(?:amp;)?event=(\d+)">([^<]+)</a></td>'
@@ -44,16 +40,18 @@ DRAW_ROW_RE = re.compile(
 # players without a recorded nationality, so it can't be a required anchor.
 ENTRY_SPLIT_RE = re.compile(r'<li class="list__item js-alphabet-list-item"')
 ENTRY_FLAG_RE = re.compile(r'flags/([A-Z]+)\.svg')
+# One row of an event page's entries table = one entry: a single link
+# for singles (or a doubles player still without a partner), two links for a pair.
+EVENT_ROW_PLAYER_RE = re.compile(r'player\.aspx\?id=[^&"]+&(?:amp;)?player=(\d+)')
+EVENT_CAPTION_RE = re.compile(r"<caption>([^<]{1,80})</caption>")
+CAPTION_COUNT_RE = re.compile(r"\(\d{1,5}\)$")
 ENTRY_PLAYER_RE = re.compile(
     r'<a href="/sport/player\.aspx\?id=[^&]+&(?:amp;)?player=(\d+)" class="nav-link media__link">'
     r'<span class="nav-link__value">([^<]+)</span>'
 )
 
 
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = fetch_basic_retry
 
 
 # The entries list is loaded client-side (unlike events.aspx/draws.aspx, which
@@ -62,26 +60,26 @@ def fetch(url: str, cookie: str) -> str:
 def fetch_entries_fragment(tournament_id: str, cookie: str) -> str:
     url = f"https://badmintonnederland.toernooi.nl/tournament/{tournament_id.lower()}/Players/GetPlayersContent"
     data = b"X-Requested-With=XMLHttpRequest"
-    req = urllib.request.Request(
+    return fetch_text(
         url,
+        cookie,
+        {"Content-Type": "application/x-www-form-urlencoded", "X-Requested-With": "XMLHttpRequest"},
+        headers=BASIC_HEADERS,
         data=data,
-        headers={**BROWSER_HEADERS, "Cookie": cookie, "Content-Type": "application/x-www-form-urlencoded", "X-Requested-With": "XMLHttpRequest"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
 
 
 def parse_events(html: str) -> list[dict]:
     return [
-        {"event_id": eid, "name": name, "draws": int(draws), "entries": int(entries)}
+        {"event_id": eid, "name": unescape(name), "draws": int(draws), "entries": int(entries)}
         for eid, name, draws, entries in EVENT_ROW_RE.findall(html)
     ]
 
 
 def parse_draws(html: str) -> list[dict]:
     return [
-        {"draw_id": did, "name": name, "size": int(size) if size else None, "type": dtype, "stage": stage, "loser_round": loser_round or None}
+        {"draw_id": did, "name": unescape(name), "size": int(size) if size else None, "type": unescape(dtype), "stage": unescape(stage), "loser_round": unescape(loser_round) or None}
         for did, name, size, dtype, stage, loser_round in DRAW_ROW_RE.findall(html)
     ]
 
@@ -94,16 +92,50 @@ def parse_entries(html: str) -> list[dict]:
             continue
         flag_match = ENTRY_FLAG_RE.search(block)
         pid, name = player_match.groups()
-        entries.append({"country": flag_match.group(1) if flag_match else None, "player_id": pid, "name": name})
+        entries.append({"country": flag_match.group(1) if flag_match else None, "player_id": pid, "name": unescape(name)})
     return entries
 
 
-def fetch_tournament_details(tournament_id: str, cookie: str) -> dict:
+def parse_event_participants(html: str) -> list[list[str]]:
+    # The overall entry list says who is in the tournament, not who is in which
+    # event - this per-event table does. Each entry is the list of its player
+    # ids (two for a doubles pair), which join straight onto the entries' ids.
+    # The table's caption is "<label> (<count>)" with the label in the session's
+    # language ("Inschrijvingen" / "Entries"), so it is recognised by that shape.
+    for caption in EVENT_CAPTION_RE.finditer(html):
+        if not CAPTION_COUNT_RE.search(caption.group(1).strip()):
+            continue
+        table = html[caption.end():].split("</table>", 1)[0]
+        participants = []
+        for row in re.findall(r"<tr>(.*?)</tr>", table, re.DOTALL):
+            ids = EVENT_ROW_PLAYER_RE.findall(row)
+            if ids:
+                participants.append(ids)
+        return participants
+    return []
+
+
+def fetch_event_participants(tournament_id: str, event_id: str, cookie: str) -> list[list[str]]:
+    return parse_event_participants(fetch(f"{BASE_URL}event.aspx?id={tournament_id}&event={event_id}", cookie))
+
+
+def fetch_tournament_details(tournament_id: str, cookie: str, previous: dict | None = None) -> dict:
     events_html = fetch(f"{BASE_URL}events.aspx?id={tournament_id}", cookie)
     draws_html = fetch(f"{BASE_URL}draws.aspx?id={tournament_id}", cookie)
     entries_html = fetch_entries_fragment(tournament_id, cookie)
+    events = parse_events(events_html)
+    kept = {event["event_id"]: event.get("participants") or [] for event in (previous or {}).get("events", [])}
+    for event in events:
+        # An event with no entries has no table to fetch.
+        participants = fetch_event_participants(tournament_id, event["event_id"], cookie) if event["entries"] else []
+        if event["entries"] and not participants:
+            # Entrants exist, so an empty table means the page could not be read; keep
+            # the teams stored earlier rather than overwrite them with nothing.
+            print(f"  WARNING: event {event['event_id']} lists {event['entries']} entries but none could be read", flush=True)
+            participants = kept.get(event["event_id"], [])
+        event["participants"] = participants
     return {
-        "events": parse_events(events_html),
+        "events": events,
         "draws": parse_draws(draws_html),
         "entries": parse_entries(entries_html),
     }
@@ -123,7 +155,8 @@ def main() -> None:
 
     all_details = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     all_details[args.tournament_id.upper()] = details
-    args.out.write_text(json.dumps(all_details, indent=2, ensure_ascii=False), encoding="utf-8")
+    # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+    args.out.write_text(json.dumps(all_details, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
     print(
         f"Done. {len(details['events'])} events, {len(details['draws'])} draws, "

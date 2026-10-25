@@ -1,0 +1,14 @@
+[run]
+source = .
+relative_files = True
+omit =
+    client/*
+    server/*
+    scripts/*
+    data/tests/*
+    data/.venv/*
+    */__pycache__/*
+
+[report]
+exclude_lines =
+    if __name__ == .__main__.:

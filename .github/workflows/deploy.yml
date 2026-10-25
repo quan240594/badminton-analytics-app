@@ -12,14 +12,18 @@ on:
         type: string
   push:
     branches: [main]
+    # The national player crawl commits progress every run; nothing in the site reads it yet.
+    paths-ignore:
+      - data/national_players.json
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  # Runs first, before any data refresh or deploy work. Non-blocking (continue-on-error) -
-  # a red quality gate is visible on the run but never stops the refresh/deploy stages below.
+  # Starts immediately and runs in parallel with the refresh/deploy stages (nothing waits
+  # for it). Non-blocking (continue-on-error) - a red quality gate is visible on the run
+  # but never affects the refresh or deploy.
   sonar:
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -45,15 +49,22 @@ jobs:
         run: npm install && npm run test:coverage
         working-directory: server
 
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Python tests & coverage
+        run: pip install -r data/requirements-dev.txt && python -m pytest --cov --cov-report=xml:coverage.xml
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v8
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   refresh-data:
-    needs: sonar
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     permissions:
       contents: write
     steps:
@@ -80,8 +91,10 @@ jobs:
         run: python3 playwright_login.py --save cookie.txt
         working-directory: data
 
+      # Re-fetching every player in one go outlasts GitHub's 6h job limit and commits
+      # nothing; scrape-national.yml now keeps results current incrementally.
       - name: Refresh current-season matches & rankings
-        if: github.event.inputs.draw_id == ''
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.draw_id == ''
         run: python3 refresh_data.py --skip-cookie-refresh
         working-directory: data
 
@@ -115,7 +128,7 @@ jobs:
           git push
 
   build-and-deploy:
-    needs: [sonar, refresh-data]
+    needs: refresh-data
     if: always() && !failure() && !cancelled()
     runs-on: ubuntu-latest
     permissions:

@@ -9,12 +9,7 @@ import {
   triggerGithubWorkflowPoolRefresh,
   pollGithubWorkflowRun,
 } from '../api.js';
-
-function percentForRunStatus(status) {
-  if (status === 'completed') return 100;
-  if (status === 'in_progress') return 60;
-  return 15;
-}
+import { percentForRunStatus, githubRunFailureMessage, LOST_CONNECTION_MESSAGE } from '../lib/poolUtils.js';
 
 // Extracted from MatchSimulator so any page can share the same "Fetch data"
 // mechanics: local-dev polling vs. GitHub Actions polling in production.
@@ -46,7 +41,7 @@ export default function useDataRefresh(onRefreshed, drawId) {
       try {
         progress = await fetchProgress();
       } catch {
-        setRefreshState({ running: false, percent: 0, detail: '', error: 'Lost connection to the refresh server.' });
+        setRefreshState({ running: false, percent: 0, detail: '', error: LOST_CONNECTION_MESSAGE });
         return;
       }
       setRefreshState({ running: progress.running, percent: progress.percent, detail: progress.detail, error: progress.error });
@@ -62,7 +57,7 @@ export default function useDataRefresh(onRefreshed, drawId) {
       }
       await applyRefreshedBundle();
     };
-    poll();
+    void poll();
   };
 
   // Production (GitHub Pages): no backend to hit, so trigger the deploy.yml
@@ -106,7 +101,7 @@ export default function useDataRefresh(onRefreshed, drawId) {
           running: false,
           percent: 100,
           detail: run.status,
-          error: `GitHub Actions run finished with "${run.conclusion}" — check the Actions tab for details.`,
+          error: githubRunFailureMessage(run.conclusion),
         });
         return;
       }
@@ -119,8 +114,8 @@ export default function useDataRefresh(onRefreshed, drawId) {
   const fetchData = () => {
     setShowUnchanged(false);
     setRefreshState({ running: true, percent: 0, detail: 'starting…', error: null });
-    if (import.meta.env.DEV) fetchDataLocal();
-    else fetchDataGithub();
+    if (import.meta.env.DEV) void fetchDataLocal();
+    else void fetchDataGithub();
   };
 
   return { refreshState, showUnchanged, fetchData };

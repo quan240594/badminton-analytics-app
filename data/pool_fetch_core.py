@@ -20,20 +20,16 @@ import subprocess
 import sys
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
 from typing import Callable, Optional
 
+from http_fetch import fetch_basic
 from season import resolve_current_tournament_id
 
 DATA_DIR = Path(__file__).resolve().parent
 CURRENT_TOURNAMENT_ID = resolve_current_tournament_id("9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E")
 BASE_URL = "https://badmintonnederland.toernooi.nl/sport/"
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 MATCH_LINK_RE = re.compile(r"teammatch\.aspx\?id=([0-9A-Fa-f-]+)&match=(\d+)")
 PLAYER_LINK_RE = re.compile(r"player\.aspx\?id=([0-9A-Fa-f-]+)&player=(\d+)")
@@ -51,11 +47,7 @@ def _noop_progress(step: str, percent: float, detail: str) -> None:
     return None
 
 
-def fetch(url: str, cookie: str, extra_headers: dict | None = None) -> str:
-    headers = {**BROWSER_HEADERS, "Cookie": cookie, **(extra_headers or {})}
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = fetch_basic
 
 
 def fetch_team_fixed_status(team_id: str, cookie: str) -> dict[str, dict]:

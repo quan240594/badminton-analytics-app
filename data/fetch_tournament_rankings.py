@@ -23,27 +23,31 @@ import argparse
 import json
 import time
 import urllib.error
-import urllib.request
+from collections.abc import Iterator
+from functools import partial
 from pathlib import Path
 
+from http_fetch import USER_AGENT, fetch_text
 from safe_path import safe_path
 
 BASE_URL = "https://badmintonnederland.toernooi.nl/ranking/"
 RANKING_RIDS = ("75", "164")  # adult, then junior
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-}
-
-
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = partial(fetch_text, headers={"User-Agent": USER_AGENT})
 
 
 def has_ranking_rows(html: str) -> bool:
     return '<td class="right rankingpoints">' in html
+
+
+# Split out of discover_member_ids() to keep each function's nesting (and
+# Cognitive Complexity) within Sonar's threshold.
+def _member_ids_in_draw(draw: dict) -> Iterator[str]:
+    for match in draw.get("matches", []):
+        for side in match.get("sides", []):
+            for player in side.get("players", []):
+                if player.get("member_id"):
+                    yield player["member_id"]
 
 
 def discover_member_ids(draws_path: Path) -> set[str]:
@@ -53,12 +57,23 @@ def discover_member_ids(draws_path: Path) -> set[str]:
     member_ids: set[str] = set()
     for draws_by_id in all_draws.values():
         for draw in draws_by_id.values():
-            for match in draw.get("matches", []):
-                for side in match.get("sides", []):
-                    for player in side.get("players", []):
-                        if player.get("member_id"):
-                            member_ids.add(player["member_id"])
+            member_ids.update(_member_ids_in_draw(draw))
     return member_ids
+
+
+# Tries both adult/junior ranking lists (see RANKING_RIDS); writes and returns
+# True on the first one with actual rows, False if the player has none yet.
+def fetch_member_ranking(member_id: str, out_path: Path, cookie: str, index: int, total: int) -> bool:
+    for rid in RANKING_RIDS:
+        try:
+            html = fetch(f"{BASE_URL}player.aspx?rid={rid}&player={member_id}", cookie)
+        except urllib.error.URLError as ex:
+            print(f"[{index}/{total}] FAILED player={member_id} rid={rid} -> {ex}", flush=True)
+            continue
+        if has_ranking_rows(html):
+            out_path.write_text(html, encoding="utf-8")
+            return True
+    return False
 
 
 def main() -> None:
@@ -81,18 +96,7 @@ def main() -> None:
     fetched = failed = 0
     for i, member_id in enumerate(pending, 1):
         out_path = args.out / f"player_{member_id}.html"
-        found = False
-        for rid in RANKING_RIDS:
-            try:
-                html = fetch(f"{BASE_URL}player.aspx?rid={rid}&player={member_id}", cookie)
-            except urllib.error.URLError as ex:
-                print(f"[{i}/{len(pending)}] FAILED player={member_id} rid={rid} -> {ex}", flush=True)
-                continue
-            if has_ranking_rows(html):
-                out_path.write_text(html, encoding="utf-8")
-                found = True
-                break
-        if found:
+        if fetch_member_ranking(member_id, out_path, cookie, i, len(pending)):
             fetched += 1
         else:
             failed += 1  # no ranking on either list yet (e.g. a brand-new player) - not a real error

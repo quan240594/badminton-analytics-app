@@ -17,9 +17,13 @@ from pathlib import Path
 
 PLAYER_LINK_RE = re.compile(r'<a href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>')
 STRONG_PLAYER_RE = re.compile(r'<strong>\s*<a[^>]{0,50}href="[^"]{0,300}player\.aspx\?id=[^"]{0,300}&player=(\d+)">([^<]+)</a>\s*</strong>')
-TEAM_NAME_RE = re.compile(r'<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>')
-STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]{0,50}class="teamname"[^>]{0,50}>([^<]+)</a>\s*</strong>')
+# A team link carries its href after the class (~80 characters on real pages).
+TEAM_NAME_RE = re.compile(r'<a[^>]{0,50}class="teamname"[^>]{0,200}>([^<]+)</a>')
+STRONG_TEAM_RE = re.compile(r'<strong>\s*<a[^>]{0,50}class="teamname"[^>]{0,200}>([^<]+)</a>\s*</strong>')
 
+# The heading is "Match overview" or, when the site serves Dutch (it does for some
+# sessions), "Wedstrijdoverzicht" - the table's own class is the same either way.
+OVERVIEW_RE = re.compile(r'(?:Match overview|Wedstrijdoverzicht|class="ruler matches player").{0,2000}?<tbody>(.*?)</tbody>', re.DOTALL)
 ROW_RE = re.compile(
     r'<td align="right">(?P<time>.*?)</td><td>(?P<event>[^<]*)</td><td>(?P<draw>.*?)</td>'
     r'<td class="nowrap" align="right">(?P<home>.*?)</td><td align="center">-</td>'
@@ -58,8 +62,8 @@ def parse_new_template_matches(html_text: str, tournament_id: str, player_id: st
         if len(parts) < 5:
             continue  # unexpected shape (e.g. a bye) - skip rather than guess
         home_won, away_won = parts[1] is not None, parts[3] is not None
-        home_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[2])]
-        away_players = [(pid, html.unescape(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[4])]
+        home_players = [(pid, decode_name(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[2])]
+        away_players = [(pid, decode_name(strip_tags(nm))) for pid, nm in NEW_MATCH_PLAYER_RE.findall(parts[4])]
         if not home_players or not away_players:
             continue
 
@@ -94,12 +98,23 @@ CLUB_RE = re.compile(r'<th>Club:</th><td><a[^>]*>([^<]+)</a></td>')
 # (e.g. "BBS" vs "BBS BODEGRAVEN" for the same club); canonicalize known aliases here.
 CLUB_ALIASES = {
     "BBS": "BBS BODEGRAVEN",
+    "NIEUWERKERK BC": "NIEUWERKERK A/D IJSSEL BC",
 }
 
-# clubs.json holds the canonical (uppercase) club names; used below to fix casing.
+# clubs.json holds the canonical (uppercase) club names; used below to fix casing
+# and punctuation ("DEO, BV" on standalone-tournament pages vs "DEO BV" on league
+# pages) - a player left with a variant spelling drops out of that club's picker.
 _CLUBS_JSON_PATH = Path(__file__).parent / "clubs.json"
+
+
+def _club_key(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", name.lower()).strip()
+
+
+_CLUB_ALIAS_KEYS = {_club_key(alias): name for alias, name in CLUB_ALIASES.items()}
+
 _CANONICAL_CLUB_NAMES = {
-    entry["name"].lower(): entry["name"]
+    _club_key(entry["name"]): entry["name"]
     for entry in json.loads(_CLUBS_JSON_PATH.read_text(encoding="utf-8")).values()
 }
 
@@ -108,9 +123,8 @@ def normalize_club(club: str | None) -> str | None:
     if club is None:
         return None
     club = club.strip()
-    club = CLUB_ALIASES.get(club, club)
-    # Source site renders the same club's name with inconsistent casing across page types.
-    return _CANONICAL_CLUB_NAMES.get(club.lower(), club)
+    club = _CLUB_ALIAS_KEYS.get(_club_key(club), club)
+    return _CANONICAL_CLUB_NAMES.get(_club_key(club), club)
 
 
 @dataclass
@@ -139,8 +153,35 @@ class PlayerPageInfo:
     matches: list = field(default_factory=list)
 
 
+# Match times are stored as "Sat 12/09/2026 13:30" and the server parses exactly that.
+# A page served in Dutch writes "za 12-9-2026 13:30" instead.
+STANDARD_TIME_RE = re.compile(r"^[A-Z][a-z]{2} \d{2}/\d{2}/\d{4} \d{2}:\d{2}$")
+DUTCH_TIME_RE = re.compile(r"^(ma|di|wo|do|vr|za|zo) (\d{1,2})-(\d{1,2})-(\d{4}) (\d{2}:\d{2})$")
+DUTCH_WEEKDAYS = {"ma": "Mon", "di": "Tue", "wo": "Wed", "do": "Thu", "vr": "Fri", "za": "Sat", "zo": "Sun"}
+
+
+def normalize_match_time(time: str) -> str:
+    dutch = DUTCH_TIME_RE.match(time.strip())
+    if not dutch:
+        return time
+    weekday, day, month, year, clock = dutch.groups()
+    return f"{DUTCH_WEEKDAYS[weekday]} {int(day):02d}/{int(month):02d}/{year} {clock}"
+
+
 def strip_tags(s: str) -> str:
     return re.sub(r"<[^>]+>", "", s).strip()
+
+
+def decode_name(s: str) -> str:
+    # toernooi.nl double-encodes an apostrophe in some names and prefixes a
+    # backslash (served as Noah \&amp;#039;t Jong), so one html.unescape pass still
+    # leaves \&#039; behind - decode until stable, then drop the backslash.
+    for _ in range(3):
+        decoded = html.unescape(s)
+        if decoded == s:
+            break
+        s = decoded
+    return s.replace("\\'", "'")
 
 
 def winner_side_of(home_won: bool, away_won: bool) -> str:
@@ -185,7 +226,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
         club=club,
     )
 
-    overview_match = re.search(r"Match overview.{0,2000}?<tbody>(.*?)</tbody>", html_text, re.DOTALL)
+    overview_match = OVERVIEW_RE.search(html_text)
     if not overview_match:
         info.matches = parse_new_template_matches(html_text, tournament_id, player_id)
         return info
@@ -199,7 +240,7 @@ def parse_player_file(path: Path, tournament_id: str, player_id: str) -> PlayerP
             MatchRecord(
                 tournament_id=tournament_id,
                 source_player_id=player_id,
-                time=strip_tags(m.group("time")),
+                time=normalize_match_time(strip_tags(m.group("time"))),
                 event=m.group("event").strip(),
                 draw=strip_tags(m.group("draw")),
                 home_team=home_team,

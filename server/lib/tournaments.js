@@ -5,6 +5,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { nationalRankingFor } from './nationalRanking.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
@@ -12,6 +13,7 @@ const TOURNAMENTS_PATH = path.join(DATA_DIR, 'tournaments.json');
 const DETAILS_PATH = path.join(DATA_DIR, 'tournament_details.json');
 const DRAWS_DATA_PATH = path.join(DATA_DIR, 'tournament_draws_data.json');
 const RANKINGS_PATH = path.join(DATA_DIR, 'rankings.json');
+const ENTRANT_RANKINGS_PATH = path.join(DATA_DIR, 'entrant_rankings.json');
 
 function loadJson(filePath, fallback) {
   if (!existsSync(filePath)) return fallback;
@@ -22,34 +24,10 @@ function loadJson(filePath, fallback) {
   }
 }
 
-// Same shape as build-static.js's nationalRanking(guid), but keyed directly by
-// MemberID - tournament entrants aren't in the league's alias index, and
-// rankings.json's "players" dict is already keyed by whatever id fetched each
-// page under, which for these is the MemberID (see fetch_tournament_rankings.py).
-function nationalRankingFor(rankingsRaw, memberId) {
-  const byDiscipline = rankingsRaw.players?.[memberId];
-  const result = {};
-  for (const discipline of ['singles', 'doubles', 'mixed']) {
-    const entry = byDiscipline?.[discipline];
-    const top = rankingsRaw.top?.[discipline];
-    result[discipline] = entry
-      ? {
-          rank: entry.rank,
-          points: entry.points,
-          topPoints: top?.points ?? null,
-          topName: top?.name ?? null,
-          pctOfTop: top?.points ? entry.points / top.points : null,
-        }
-      : null;
-  }
-  return result;
-}
-
-// An entrant's local (per-tournament) player id only resolves to their
-// site-wide MemberID once they've actually played a scraped match - the
-// head-to-head link on a match row is the only place that id is exposed (see
-// fetch_tournament_draw.py). Entrants who haven't played yet simply have no
-// known MemberID yet, and so no ranking data - a real data gap, not a bug.
+// An entrant's local (per-tournament) player id resolves to their site-wide
+// MemberID once they've played a scraped match - the head-to-head link on a
+// match row exposes it (see fetch_tournament_draw.py). Entrants who haven't
+// played yet are resolved separately by fetch_entrant_rankings.py instead.
 function localIdToMemberId(drawsForTournament) {
   const map = new Map();
   for (const draw of Object.values(drawsForTournament || {})) {
@@ -64,11 +42,86 @@ function localIdToMemberId(drawsForTournament) {
   return map;
 }
 
-export function buildTournaments() {
+// Tournament entries are "Last, First [infix]" while league players are "First
+// [infix] Last (Nickname)", and either side may carry accents - so compare the
+// sorted set of accent-stripped words (nicknames in brackets dropped), which
+// makes the word order irrelevant.
+export function nameKey(name) {
+  return (String(name ?? '').replace(/\([^)]{0,100}\)/g, ' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().match(/[a-z0-9]+/g) ?? []).sort().join(' ');
+}
+
+// League players grouped by name key. A name only counts as identifying when
+// exactly one league player has it - two people sharing a name must never
+// inherit each other's ranking, so ambiguous names are left out entirely.
+function uniqueLeagueRankingsByName(leaguePlayers) {
+  const byKey = new Map();
+  for (const player of leaguePlayers) {
+    const key = nameKey(player.name);
+    if (!key) continue;
+    if (!byKey.has(key)) byKey.set(key, []);
+    byKey.get(key).push(player);
+  }
+  const unique = new Map();
+  for (const [key, players] of byKey) {
+    if (players.length === 1) unique.set(key, players[0].nationalRanking ?? null);
+  }
+  return unique;
+}
+
+const hasAnyRanking = (ranking) => Boolean(ranking) && ['singles', 'doubles', 'mixed'].some((d) => ranking[d]);
+
+// Where a player's page lives: their profile once its GUID is known, else the site's
+// player search on their MemberID, else the tournament's own page for them - so every
+// player can be linked even before the profile has been looked up.
+const SITE_URL = 'https://badmintonnederland.toernooi.nl';
+function playerUrl(tournamentId, localId, memberId, guid) {
+  if (guid) return `${SITE_URL}/player-profile/${guid}`;
+  if (memberId) return `${SITE_URL}/find/player?q=${memberId}`;
+  return `${SITE_URL}/tournament/${tournamentId.toLowerCase()}/player/${localId}`;
+}
+
+// The events a local player id is entered in, with the team mates (event participants
+// are teams of local ids; a singles team has nobody else).
+const eventsOf = (detail, localId, partnerOf) => (detail.events || []).flatMap((event) => {
+  const team = (event.participants || []).find((members) => members.includes(localId));
+  return team ? [{ name: event.name, partners: team.filter((id) => id !== localId).map(partnerOf) }] : [];
+});
+
+// Every tournament each site-wide MemberID is entered in, so a player's other
+// (upcoming) tournaments can be listed from any one of them. Local ids are only
+// unique within a tournament, so only a resolved MemberID joins entries - never a name.
+function tournamentsByMember(details, drawsData, entrantState) {
+  const byMember = new Map();
+  for (const [id, detail] of Object.entries(details)) {
+    const idToMember = localIdToMemberId(drawsData[id]);
+    const memberOf = (localId) => entrantState.entries?.[`${id}:${localId}`] ?? idToMember.get(localId) ?? null;
+    const names = new Map((detail.entries || []).map((entry) => [entry.player_id, entry.name]));
+    const partnerOf = (localId) => {
+      const memberId = memberOf(localId);
+      return { id: localId, name: names.get(localId) ?? localId, url: playerUrl(id, localId, memberId, entrantState.rankings?.[memberId]?.guid) };
+    };
+    for (const entry of detail.entries || []) {
+      const memberId = memberOf(entry.player_id);
+      if (!memberId) continue;
+      if (!byMember.has(memberId)) byMember.set(memberId, []);
+      byMember.get(memberId).push({ id, events: eventsOf(detail, entry.player_id, partnerOf) });
+    }
+  }
+  return byMember;
+}
+
+// Ranking sources for an entrant, most to least exact: the MemberID seen in a
+// played match, the MemberID resolved from the player's site profile
+// (fetch_entrant_rankings.py), and finally - only when given leaguePlayers - the
+// league player of the same name.
+export function buildTournaments(leaguePlayers = []) {
+  const leagueRankingByName = uniqueLeagueRankingsByName(leaguePlayers);
   const tournamentsRaw = loadJson(TOURNAMENTS_PATH, {});
   const details = loadJson(DETAILS_PATH, {});
   const drawsData = loadJson(DRAWS_DATA_PATH, {});
   const rankingsRaw = loadJson(RANKINGS_PATH, { players: {}, top: {} });
+  const entrantState = loadJson(ENTRANT_RANKINGS_PATH, { entries: {}, rankings: {} });
+  const entriesByMember = tournamentsByMember(details, drawsData, entrantState);
 
   const tournaments = Object.entries(details).map(([id, detail]) => {
     const meta = tournamentsRaw[id] ?? {};
@@ -76,11 +129,23 @@ export function buildTournaments() {
 
     const players = (detail.entries || []).map((entry) => {
       const memberId = idToMember.get(entry.player_id) ?? null;
+      const fromMatches = memberId ? nationalRankingFor(rankingsRaw.players?.[memberId], rankingsRaw.top) : null;
+      const entrantMemberId = entrantState.entries?.[`${id}:${entry.player_id}`] ?? null;
+      const fromProfile = entrantMemberId
+        ? nationalRankingFor(entrantState.rankings?.[entrantMemberId]?.ranking ?? rankingsRaw.players?.[entrantMemberId], rankingsRaw.top)
+        : null;
+      const fromLeague = leagueRankingByName.get(nameKey(entry.name)) ?? null;
+      const resolvedMemberId = entrantMemberId ?? memberId;
+      const profileRecord = entrantState.rankings?.[resolvedMemberId];
       return {
         id: entry.player_id,
         name: entry.name,
         country: entry.country,
-        nationalRanking: memberId ? nationalRankingFor(rankingsRaw, memberId) : null,
+        nationalRanking: [fromMatches, fromProfile, fromLeague].find(hasAnyRanking) ?? fromMatches,
+        profile: profileRecord?.guid ? { guid: profileRecord.guid, stats: profileRecord.stats ?? {} } : null,
+        url: playerUrl(id, entry.player_id, resolvedMemberId, profileRecord?.guid),
+        memberId: resolvedMemberId ?? null,
+        tournaments: entriesByMember.get(resolvedMemberId) ?? [],
       };
     });
 

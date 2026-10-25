@@ -26,16 +26,44 @@ from safe_path import safe_path
 
 from discover_tournaments import discover
 from fetch_tournament_details import fetch_tournament_details
+from recheck_tournament_draws import parse_tournament_dates
 
 DATA_DIR = Path(__file__).resolve().parent
+TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 TOURNAMENTS_PATH = DATA_DIR / "tournaments.json"
 FETCHED_TOURNAMENTS_PATH = DATA_DIR / "fetched_tournaments.json"
 DAILY_BUDGET_PATH = DATA_DIR / "tournament_scrape_daily_budget.json"
 DETAILS_PATH = DATA_DIR / "tournament_details.json"
+MY_TOURNAMENTS_PATH = DATA_DIR / "my_tournaments.json"
+FETCH_ERRORS_PATH = DATA_DIR / "tournament_fetch_errors.json"
 
 # Distinct exit code so the calling workflow loop can tell "budget/tournaments
 # exhausted, stop looping" apart from a real failure (exit 1).
 NOTHING_TO_DO = 3
+
+# A single bad tournament (seen live: one whose detail pages consistently time
+# out even after in-process retries - something broken/unpublished on the
+# site's end, not a transient blip) would otherwise be reselected and fail
+# every single run forever, since it's never added to "fetched" and nothing
+# else moves it down the priority queue - blocking all 50+ others behind it
+# indefinitely. fetch() already retries 3x with backoff before raising, so a
+# failure that reaches here is already a strong signal, not a random blip -
+# deprioritize below every other pending tournament after just one (still
+# retried last if truly nothing else is left, never deleted).
+SKIP_AFTER_FAILURES = 1
+
+# Entries keep arriving until a tournament starts, but a tournament used to be
+# scraped exactly once and never again - so anyone registering afterwards (seen
+# live: a player missing from the 57ste Hoofdstadtoernooi days after signing
+# up) never appeared. A fetched tournament becomes due again once its data is
+# this old, until the tournament has ended. Under 24h so the daily cron always
+# catches it; a refresh resets the clock, so the self-chaining loop still ends.
+STALE_AFTER_HOURS = 20
+# Bump when fetch_tournament_details starts collecting more (or different) data,
+# so tournaments fetched in the old shape are re-fetched once (unless already
+# over) instead of waiting for entry-list staleness to catch up.
+# 2 = events carry per-event participants.
+FETCH_SCHEMA = 2
 
 
 def load_json(path: Path, default):
@@ -43,7 +71,8 @@ def load_json(path: Path, default):
 
 
 def save_json(path: Path, data) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    # hard-coded DATA_DIR-relative constant, not derived from any input
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
 
 def current_day_start(now: datetime, day_start_hour: int) -> datetime:
@@ -57,6 +86,32 @@ def load_daily_budget(now: datetime, day_start_hour: int) -> dict:
     if state.get("dayStart") != boundary.isoformat():
         state = {"dayStart": boundary.isoformat(), "workSeconds": 0.0}
     return state
+
+
+# An event whose entrants could not be read at fetch time has no teams; fetch it again
+# after this long (not on every run, in case the page keeps being unreadable).
+RETRY_MISSING_TEAMS_AFTER = timedelta(hours=2)
+
+
+def lacks_teams(details_entry: dict | None) -> bool:
+    return any(e.get("entries") and not e.get("participants") for e in (details_entry or {}).get("events", []))
+
+
+def is_refresh_due(tournament: dict, fetched_entry: dict, now: datetime, details_entry: dict | None = None) -> bool:
+    dates = parse_tournament_dates(tournament.get("dates", []))
+    if dates and dates[1] < now.date():
+        return False  # already over - its entry list can't change any more
+    if fetched_entry.get("schema", 1) < FETCH_SCHEMA:
+        return True  # fetched before the current data shape existed
+    # No usable timestamp = unknown age: treat as fresh rather than re-scraping
+    # everything at once.
+    try:
+        fetched_at = datetime.strptime(fetched_entry["fetchedAt"], TIMESTAMP_FORMAT).replace(tzinfo=timezone.utc)
+    except (KeyError, TypeError, ValueError):
+        return False
+    return now - fetched_at >= timedelta(hours=STALE_AFTER_HOURS) or (
+        now - fetched_at >= RETRY_MISSING_TEAMS_AFTER and lacks_teams(details_entry)
+    )
 
 
 def refresh_inventory(tournament_cookie_file: Path, days_back: int, days_forward: int, delay: float) -> dict:
@@ -102,7 +157,24 @@ def main() -> None:
 
     fetched = load_json(FETCHED_TOURNAMENTS_PATH, {})
     total = len(tournaments)
-    pending = sorted(tid for tid in tournaments if tid not in fetched)
+    fetch_errors = load_json(FETCH_ERRORS_PATH, {})
+    # Same priority rule as scrape_all_draws.py: registered/favorited
+    # tournaments first, since a national tournament list can be large enough
+    # (600+) that plain id order might not reach the ones the user actually
+    # cares about for a long time within the daily budget. A tournament that's
+    # already failed repeatedly (see SKIP_AFTER_FAILURES) sorts dead last
+    # instead of blocking everything behind it.
+    my_tournament_ids = set(load_json(MY_TOURNAMENTS_PATH, []))
+    all_details = load_json(DETAILS_PATH, {})
+    pending = sorted(
+        (tid for tid in tournaments if tid not in fetched or is_refresh_due(tournaments[tid], fetched[tid], now, all_details.get(tid))),
+        key=lambda tid: (
+            fetch_errors.get(tid, {}).get("count", 0) >= SKIP_AFTER_FAILURES,
+            tid not in my_tournament_ids,
+            tid in fetched,  # never-scraped before a refresh, within a priority tier
+            tid,
+        ),
+    )
 
     if not pending:
         print(f"All {total} known tournaments already fetched - nothing left to do.", flush=True)
@@ -110,9 +182,10 @@ def main() -> None:
 
     tournament_id = pending[0]
     name = tournaments[tournament_id].get("name", tournament_id)
+    priority = " (priority: your tournament)" if tournament_id in my_tournament_ids else ""
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
     print(
-        f"Tournament {tournament_id} ({name})... "
+        f"Tournament {tournament_id} ({name}){priority}... "
         f"[{len(fetched)}/{total} done before this run, "
         f"{budget['workSeconds'] / 60:.1f}/{args.budget_minutes:.0f} min of today's budget used]",
         flush=True,
@@ -120,12 +193,23 @@ def main() -> None:
 
     started = time.monotonic()
     try:
-        details = fetch_tournament_details(tournament_id, cookie)
+        details = fetch_tournament_details(tournament_id, cookie, previous=all_details.get(tournament_id))
     except (RuntimeError, OSError) as ex:
         budget["workSeconds"] += time.monotonic() - started
         save_json(DAILY_BUDGET_PATH, budget)
-        print(f"  FAILED: {ex}", flush=True)
+        error_entry = fetch_errors.get(tournament_id, {"count": 0})
+        error_entry["count"] += 1
+        error_entry["lastError"] = str(ex)
+        error_entry["lastAttempt"] = time.strftime(TIMESTAMP_FORMAT, time.gmtime())
+        fetch_errors[tournament_id] = error_entry
+        save_json(FETCH_ERRORS_PATH, fetch_errors)
+        print(f"  FAILED (attempt {error_entry['count']} for this tournament): {ex}", flush=True)
         sys.exit(1)
+
+    # A previously-failing tournament that just succeeded shouldn't keep being
+    # deprioritized below everything else next time.
+    fetch_errors.pop(tournament_id, None)
+    save_json(FETCH_ERRORS_PATH, fetch_errors)
 
     elapsed = time.monotonic() - started
     budget["workSeconds"] += elapsed
@@ -135,7 +219,7 @@ def main() -> None:
     all_details[tournament_id] = details
     save_json(DETAILS_PATH, all_details)
 
-    fetched[tournament_id] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    fetched[tournament_id] = {"fetchedAt": time.strftime(TIMESTAMP_FORMAT, time.gmtime()), "schema": FETCH_SCHEMA}
     save_json(FETCHED_TOURNAMENTS_PATH, fetched)
 
     print(

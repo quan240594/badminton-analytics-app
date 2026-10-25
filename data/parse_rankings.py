@@ -47,16 +47,31 @@ def parse_top_player(path: Path) -> dict | None:
     return {"name": name, "points": int(points)}
 
 
+def load_existing(out_path: Path) -> tuple[dict[str, dict], dict[str, dict]]:
+    if not out_path.exists():
+        return {}, {}
+    existing = json.loads(out_path.read_text(encoding="utf-8"))
+    return existing.get("players", {}), existing.get("top", {})
+
+
 def main() -> None:
     rankings_dir = Path("pages/rankings")
-    players: dict[str, dict] = {}
+    out_path = Path("rankings.json")
+    # Two separate workflows (league + tournament) both call this script, each
+    # only ever seeing whichever ranking pages IT just fetched this run (pages/
+    # isn't persisted between runs) - rebuilding players/top from scratch here
+    # would silently wipe out everything the other pipeline (or an earlier run
+    # of this same one) had already contributed. Merge into what's already
+    # committed instead, so coverage only ever grows.
+    players, top = load_existing(out_path)
+    newly_parsed = 0
     for path in sorted(rankings_dir.glob("player_*.html")):
         local_id = path.stem.split("_", 1)[1]
         parsed = parse_player_file(path)
         if parsed:
             players[local_id] = parsed
+            newly_parsed += 1
 
-    top: dict[str, dict] = {}
     for category, discipline in CATEGORY_TO_DISCIPLINE.items():
         path = rankings_dir / f"category_{category}.html"
         if path.exists():
@@ -65,8 +80,8 @@ def main() -> None:
                 top[discipline] = top_player
 
     output = {"players": players, "top": top}
-    Path("rankings.json").write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Parsed {len(players)} players with ranking data")
+    out_path.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"Parsed {newly_parsed} players with ranking data this run ({len(players)} total)")
     print(f"Top players: {top}")
 
 

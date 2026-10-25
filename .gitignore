@@ -1,6 +1,7 @@
 node_modules/
 client/dist/
 client/public/data.json
+client/public/national.json
 server/data
 *.log
 coverage/
@@ -8,9 +9,11 @@ coverage/
 # Scraper session/output artifacts - never commit a live session cookie
 data/cookie.txt
 data/tournament_cookie.txt
+data/ranking_cookie.txt
 data/.venv/
 data/pages/
-data/__pycache__/
+**/__pycache__/
+*.pyc
 data/*.log
 data/pool_fetch_progress.json
 data/fetch_events.log
@@ -23,3 +26,14 @@ data/titles_progress.json
 # Local secrets - never commit real Supabase keys
 client/.env
 client/.env.local
+
+# Local SonarCloud token for scripts/sonar-scan.sh - never commit
+.env.sonar.local
+
+# sonar-scanner's local working/cache directory
+.scannerwork/
+
+# Python test/coverage artifacts
+coverage.xml
+.coverage
+.pytest_cache/

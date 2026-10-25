@@ -86,7 +86,7 @@ function githubHeaders(token) {
   };
 }
 
-export async function triggerGithubWorkflowRefresh() {
+async function dispatchWorkflow(inputs) {
   const token = getGithubToken();
   if (!token) throw new Error('A GitHub token is required to refresh data from the deployed site.');
 
@@ -94,7 +94,7 @@ export async function triggerGithubWorkflowRefresh() {
   const res = await fetch(`${GH_API}/dispatches`, {
     method: 'POST',
     headers: { ...githubHeaders(token), 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ref: 'main' }),
+    body: JSON.stringify(inputs ? { ref: 'main', inputs } : { ref: 'main' }),
   });
   if (res.status === 401 || res.status === 403) {
     sessionStorage.removeItem(GH_TOKEN_KEY);
@@ -104,23 +104,9 @@ export async function triggerGithubWorkflowRefresh() {
   return dispatchedAt;
 }
 
-export async function triggerGithubWorkflowPoolRefresh(drawId) {
-  const token = getGithubToken();
-  if (!token) throw new Error('A GitHub token is required to refresh data from the deployed site.');
+export const triggerGithubWorkflowRefresh = () => dispatchWorkflow();
 
-  const dispatchedAt = new Date().toISOString();
-  const res = await fetch(`${GH_API}/dispatches`, {
-    method: 'POST',
-    headers: { ...githubHeaders(token), 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ref: 'main', inputs: { draw_id: String(drawId) } }),
-  });
-  if (res.status === 401 || res.status === 403) {
-    sessionStorage.removeItem(GH_TOKEN_KEY);
-    throw new Error('GitHub rejected that token. Check its scope and try again.');
-  }
-  if (!res.ok) throw new Error(`Could not start the workflow (${res.status}).`);
-  return dispatchedAt;
-}
+export const triggerGithubWorkflowPoolRefresh = (drawId) => dispatchWorkflow({ draw_id: String(drawId) });
 
 export async function pollGithubWorkflowRun(dispatchedAt) {
   const token = sessionStorage.getItem(GH_TOKEN_KEY);
@@ -210,48 +196,104 @@ export async function simulateDoubles(teamA, teamB) {
 
 export const fetchTournaments = () => loadBundle().then((b) => b.tournaments ?? []);
 
+let nationalPromise = null;
+
+// Everyone on the national ranking lists (see server/build-static.js). A build or deploy from before
+// this file existed has none, which only leaves the profile search without those players.
+export function fetchNationalPlayers() {
+  nationalPromise ??= fetch(`${import.meta.env.BASE_URL}national.json`, { cache: 'no-cache' }).then((res) => (res.ok ? res.json() : []));
+  return nationalPromise;
+}
+
 // Synthetic rating on the same scale expectedScore() already uses (its /400
 // divisor assumes ~1000-2000-range inputs), built from pctOfTop (ranking
 // points as a % of that discipline's #1 player) since raw ranking points
 // aren't comparable across categories the way ELO ratings are.
 function nationalRankingRating(entry) {
-  if (!entry || entry.pctOfTop == null) return null;
+  if (entry?.pctOfTop == null) return null;
   return 1000 + entry.pctOfTop * 1000;
 }
 
 // Tournament entrants mostly have no league match history (no ELO rating) -
 // national ranking is the only real signal for them, and not something to
-// silently default: if either player has no ranking data for this
+// silently default: if anyone on either side has no ranking data for this
 // discipline, the match can't be simulated, full stop.
-export async function simulateTournamentMatch(tournamentId, prefix, playerAId, playerBId) {
+//
+// Each side is a player id, or an array of ids for a doubles/mixed pair - a
+// pair is rated as the mean of its members' ratings, like the league simulator.
+const toIds = (side) => (Array.isArray(side) ? side : [side]);
+
+// Entrant names are "Last, First", so commas can't also separate a list of them.
+const joinNames = (names) => {
+  if (names.length < 3) return names.join(' and ');
+  const separator = names.some((name) => name.includes(',')) ? '; ' : ', ';
+  return `${names.slice(0, -1).join(separator)} and ${names.at(-1)}`;
+};
+
+export async function simulateTournamentMatch(tournamentId, prefix, sideA, sideB) {
   const bundle = await loadBundle();
   const tournament = (bundle.tournaments ?? []).find((t) => t.id === tournamentId);
   if (!tournament) throw new Error('unknown tournament id');
   const byId = new Map(tournament.players.map((p) => [p.id, p]));
-  const playerA = byId.get(playerAId);
-  const playerB = byId.get(playerBId);
-  if (!playerA || !playerB) throw new Error('unknown player id(s)');
-  if (playerAId === playerBId) throw new Error('players must be different');
+  const idsA = toIds(sideA);
+  const idsB = toIds(sideB);
+  const members = [...idsA, ...idsB].map((id) => byId.get(id));
+  if (members.some((p) => !p)) throw new Error('unknown player id(s)');
+  if (new Set([...idsA, ...idsB]).size !== idsA.length + idsB.length) throw new Error('players must be different');
 
-  const entryA = playerA.nationalRanking?.[prefix] ?? null;
-  const entryB = playerB.nationalRanking?.[prefix] ?? null;
-  const ratingA = nationalRankingRating(entryA);
-  const ratingB = nationalRankingRating(entryB);
+  const describe = (ids) => ids.map((id) => {
+    const player = byId.get(id);
+    return { id, name: player.name, ranking: player.nationalRanking?.[prefix] ?? null, profile: player.profile ?? null, url: player.url ?? null, tournaments: player.tournaments ?? [] };
+  });
+  const detailA = describe(idsA);
+  const detailB = describe(idsB);
 
-  if (ratingA == null || ratingB == null) {
-    const missing = [ratingA == null ? playerA.name : null, ratingB == null ? playerB.name : null].filter(Boolean);
+  const ratings = [...detailA, ...detailB].map((m) => nationalRankingRating(m.ranking));
+  if (ratings.some((r) => r == null)) {
+    const missing = [...detailA, ...detailB].filter((m) => nationalRankingRating(m.ranking) == null).map((m) => m.name);
     return {
       error: true,
-      message: `${missing.join(' and ')} ${missing.length > 1 ? 'have' : 'has'} no national ranking data to simulate this match with.`,
+      message: `${joinNames(missing)} ${missing.length > 1 ? 'have' : 'has'} no national ranking data to simulate this match with.`,
     };
   }
 
-  const probA = expectedScore(ratingA, ratingB);
+  const mean = (side) => side.reduce((sum, m) => sum + nationalRankingRating(m.ranking), 0) / side.length;
+  const probA = expectedScore(mean(detailA), mean(detailB));
+  const summarize = (detail) => ({
+    id: detail.map((m) => m.id).join('+'),
+    name: detail.map((m) => m.name).join(' / '),
+    ranking: detail.length === 1 ? detail[0].ranking : null,
+    members: detail,
+  });
   return {
-    sideA: { id: playerA.id, name: playerA.name, ranking: entryA },
-    sideB: { id: playerB.id, name: playerB.name, ranking: entryB },
+    discipline: prefix,
+    sideA: summarize(detailA),
+    sideB: summarize(detailB),
     winProbabilityA: probA,
     winProbabilityB: 1 - probA,
+  };
+}
+
+// Ratings for every entrant of one tournament in one discipline, for callers
+// that need many pairwise probabilities at once (a knockout bracket). A team
+// with any unranked member has no rating - and so no probability, never a guess.
+export async function tournamentWinModel(tournamentId, prefix) {
+  const bundle = await loadBundle();
+  const tournament = (bundle.tournaments ?? []).find((t) => t.id === tournamentId);
+  if (!tournament) throw new Error('unknown tournament id');
+  const byId = new Map(tournament.players.map((p) => [p.id, p]));
+  const memberRating = (id) => nationalRankingRating(byId.get(id)?.nationalRanking?.[prefix]);
+  const teamRating = (team) => {
+    const ratings = team.map(memberRating);
+    return ratings.some((r) => r == null) ? null : ratings.reduce((sum, r) => sum + r, 0) / ratings.length;
+  };
+  return {
+    isRated: (team) => teamRating(team) != null,
+    winProbability: (teamA, teamB) => {
+      const [ratingA, ratingB] = [teamRating(teamA), teamRating(teamB)];
+      return ratingA == null || ratingB == null ? null : expectedScore(ratingA, ratingB);
+    },
+    nameOf: (id) => byId.get(id)?.name ?? id,
   };
 }
 

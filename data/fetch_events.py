@@ -12,35 +12,15 @@ import json
 import sys
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
 
+from http_fetch import fetch_chrome
 from safe_path import safe_path
 
 PLAYER_URL = "https://badmintonnederland.toernooi.nl/sport/league/player?id={tournament_id}&player={player_id}"
 
-BROWSER_HEADERS = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Cache-Control": "max-age=0",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-User": "?1",
-    "Upgrade-Insecure-Requests": "1",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "sec-ch-ua": '"Google Chrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"macOS"',
-}
 
-
-def fetch(url: str, cookie: str) -> str:
-    headers = dict(BROWSER_HEADERS)
-    headers["Cookie"] = cookie
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = fetch_chrome
 
 
 def main() -> None:

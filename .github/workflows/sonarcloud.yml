@@ -1,7 +1,7 @@
 name: SonarCloud analysis
 
-# Push-to-main scans now happen as the "sonar" stage inside deploy.yml (runs
-# first, non-blocking) - this workflow only needs to cover PRs and manual runs.
+# Push-to-main scans happen as the "sonar" job inside deploy.yml (in parallel with the
+# deploy, non-blocking) - this workflow only needs to cover PRs and manual runs.
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -32,6 +32,13 @@ jobs:
       - name: Server tests & coverage
         run: npm install && npm run test:coverage
         working-directory: server
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Python tests & coverage
+        run: pip install -r data/requirements-dev.txt && python -m pytest --cov --cov-report=xml:coverage.xml
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v8

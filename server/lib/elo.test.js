@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { computeRatings } from './elo.js';
+import { computeRatings, winProbability } from './elo.js';
 
 function singlesMatch({ homeGuid, awayGuid, winnerSide }) {
   return {
@@ -38,6 +38,35 @@ describe('computeRatings', () => {
 
     const key = ['guid-a', 'guid-b'].sort((a, b) => a.localeCompare(b)).join('|');
     expect(singlesH2H.get(key)).toEqual({ 'guid-a': 1 });
+  });
+});
+
+describe('computeRatings - singles edge cases', () => {
+  it('credits an away win and accumulates repeated head-to-head results', () => {
+    const matches = [
+      singlesMatch({ homeGuid: 'guid-a', awayGuid: 'guid-b', winnerSide: 'away' }),
+      singlesMatch({ homeGuid: 'guid-b', awayGuid: 'guid-a', winnerSide: 'home' }),
+    ];
+
+    const { singles, singlesH2H } = computeRatings(matches);
+
+    expect(singles.get('guid-b').won).toBe(2);
+    expect(singles.get('guid-a').won).toBe(0);
+    expect(singlesH2H.get('guid-a|guid-b')).toEqual({ 'guid-b': 2 });
+  });
+
+  it('skips a singles match where both sides resolve to the same guid', () => {
+    const { singles } = computeRatings([singlesMatch({ homeGuid: 'guid-a', awayGuid: 'guid-a', winnerSide: 'home' })]);
+
+    expect(singles.size).toBe(0);
+  });
+});
+
+describe('winProbability', () => {
+  it('is 50% for equal ratings and favours the higher rating', () => {
+    expect(winProbability(1500, 1500)).toBe(0.5);
+    expect(winProbability(1700, 1500)).toBeGreaterThan(0.5);
+    expect(winProbability(1700, 1500) + winProbability(1500, 1700)).toBeCloseTo(1);
   });
 });
 
@@ -80,6 +109,17 @@ describe('computeRatings - doubles/mixed', () => {
     expect(mixedPlayer.get('m1').rating).toBeLessThan(1500);
     expect(mixedPlayer.get('m3').rating).toBeGreaterThan(1500);
     expect(doublesPlayer.size).toBe(0);
+  });
+
+  it('accumulates repeated pair results across matches', () => {
+    const matches = [
+      doublesMatch({ discipline: 'doubles', homeGuids: ['g1', 'g2'], awayGuids: ['g3', 'g4'], winnerSide: 'home' }),
+      doublesMatch({ discipline: 'doubles', homeGuids: ['g3', 'g4'], awayGuids: ['g1', 'g2'], winnerSide: 'away' }),
+    ];
+
+    const { doublesPairH2H } = computeRatings(matches);
+
+    expect([...doublesPairH2H.values()]).toEqual([{ 'g1+g2': 2 }]);
   });
 
   it('skips a doubles match with a duplicate guid across the four slots', () => {

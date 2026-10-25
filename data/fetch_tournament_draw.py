@@ -16,15 +16,14 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import urllib.request
+from functools import partial
+from html import unescape
 from pathlib import Path
 
+from http_fetch import RETRY_DELAYS, USER_AGENT, fetch_text
 from safe_path import safe_path
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
-    "X-Requested-With": "XMLHttpRequest",
-}
+XHR_HEADERS = {"User-Agent": USER_AGENT, "X-Requested-With": "XMLHttpRequest"}
 
 # Header order (see GetStandings): GS=played, W=won, O=drawn, V=lost,
 # then three compound "x-y" record strings (matches, games, rally points),
@@ -36,13 +35,20 @@ STANDING_ROW_RE = re.compile(
     re.DOTALL,
 )
 STANDING_PLAYER_RE = re.compile(r'/Player/(\d+)"[^>]*><span class="nav-link__value">([^<]+)</span>')
-STANDING_CELL_RE = re.compile(r'<td class="cell-points">\s*([^<]*?)\s*</td>')
+STANDING_CELL_RE = re.compile(r'<td class="cell-points">([^<]*)</td>')
 STANDING_CELL_NAMES = ["played", "won", "drawn", "lost", "match_record", "game_record", "points_record", "ranking_points"]
 
 MATCH_SPLIT_RE = re.compile(r'<li class="match-group__item" id="match_(\d+)">')
-ROUND_RE = re.compile(r'title="(Ronde[^"]*)"')
+# Pool rounds are "Ronde N"; a knockout names its first round "Ronde van N" but
+# the later ones are only "Kwartfinale"/"Halve finale"/"Finale".
+ROUND_RE = re.compile(r'title="((?:Ronde|Voorronde|Kwartfinale|Halve finale|Finale)[^"]*)"')
 SIDE_SPLIT_RE = re.compile(r'<div class="match__row( has-won)?\s*">')
-PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]*data-nationality-id="([A-Z]*)"[^>]*><span class="nav-link__value">([^<]+)</span>')
+# Attributes may follow data-nationality-id (e.g. class="nav-link"), so only the
+# opening tag's end is anchored - requiring none after it dropped every such player.
+PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]{0,300}data-nationality-id="([A-Z]*)"[^>]{0,300}>\s*<span class="nav-link__value">([^<]+)</span>')
+# A knockout shows the seed after the name ("Name [3]", doubles "[3/4]").
+SEED_RE = re.compile(r"^(.*)\[(\d+)(?:/\d+)?\]$")
+BYE_RE = re.compile(r">\s*Bye\s*<")
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 
@@ -54,23 +60,28 @@ DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4
 H2H_MEMBER_ID_RE = re.compile(r'T\dP\dMemberID=(\d+)')
 
 
-def fetch(url: str, cookie: str) -> str:
-    req = urllib.request.Request(url, headers={**BROWSER_HEADERS, "Cookie": cookie})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+fetch = partial(fetch_text, headers=XHR_HEADERS, retry_delays=RETRY_DELAYS)
 
 
 def parse_standings(html: str) -> list[dict]:
     standings = []
     for rank, players_block, rest in STANDING_ROW_RE.findall(html):
-        players = [{"player_id": pid, "name": name} for pid, name in STANDING_PLAYER_RE.findall(players_block)]
-        cells = STANDING_CELL_RE.findall(rest)
+        players = [{"player_id": pid, "name": unescape(name)} for pid, name in STANDING_PLAYER_RE.findall(players_block)]
+        cells = [c.strip() for c in STANDING_CELL_RE.findall(rest)]
         row = dict(zip(STANDING_CELL_NAMES, cells))
         for key in ("played", "won", "drawn", "lost", "ranking_points"):
             if key in row and row[key].strip().lstrip("-").isdigit():
                 row[key] = int(row[key])
         standings.append({"rank": int(rank), "players": players, **row})
     return standings
+
+
+def parse_match_player(player_id: str, raw_name: str) -> dict:
+    name = unescape(raw_name)
+    seeded = SEED_RE.match(name)
+    if not seeded:
+        return {"player_id": player_id, "name": name}
+    return {"player_id": player_id, "name": seeded.group(1).strip(), "seed": int(seeded.group(2))}
 
 
 def parse_matches(html: str) -> list[dict]:
@@ -83,8 +94,11 @@ def parse_matches(html: str) -> list[dict]:
         side_parts = SIDE_SPLIT_RE.split(block)[1:]  # [flag, body, flag, body, ...]
         sides = []
         for won_flag, body in zip(side_parts[0::2], side_parts[1::2]):
-            players = [{"player_id": pid, "name": name} for pid, _country, name in PLAYER_RE.findall(body)]
-            sides.append({"won": won_flag == " has-won", "players": players})
+            players = [parse_match_player(pid, name) for pid, _country, name in PLAYER_RE.findall(body)]
+            side = {"won": won_flag == " has-won", "players": players}
+            if not players and BYE_RE.search(body):
+                side["bye"] = True
+            sides.append(side)
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
 
@@ -99,7 +113,7 @@ def parse_matches(html: str) -> list[dict]:
         matches.append(
             {
                 "match_id": match_id,
-                "round": round_match.group(1) if round_match else None,
+                "round": unescape(round_match.group(1)) if round_match else None,
                 "sides": sides,
                 "games": [[int(a), int(b)] for a, b in games],
                 "played_at": date_match.group(1) if date_match else None,
@@ -130,7 +144,8 @@ def main() -> None:
 
     all_draws = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     all_draws.setdefault(args.tournament_id.upper(), {})[args.draw_id] = draw
-    args.out.write_text(json.dumps(all_draws, indent=2, ensure_ascii=False), encoding="utf-8")
+    # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
+    args.out.write_text(json.dumps(all_draws, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
     print(f"Done. {len(draw['standings'])} standings rows, {len(draw['matches'])} matches for draw {args.draw_id}")
 

@@ -1,0 +1,38 @@
+name: Supabase keep-alive
+
+# A free-tier Supabase project is paused after about a week without activity, and every page of
+# the app sits behind its login, so a pause locks everyone out. A sign-in ping did not prevent a
+# pause (the project paused anyway), so this runs a real query against the project's database.
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      # Only a boolean is printed: the logs of this repo's runs are not the place for user data.
+      - name: Query the Supabase database
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          supabase link --project-ref odshocbgyyerocmnhess </dev/null
+          for attempt in 1 2 3; do
+            if result=$(supabase db query --linked "select count(*) > 0 as has_users from auth.users" 2>&1); then
+              echo "$result"
+              echo "Supabase answered from its database."
+              exit 0
+            fi
+            echo "attempt $attempt failed: $result" >&2
+            sleep 30
+          done
+          echo "::error::Supabase did not answer a database query - the project may be paused or the token is invalid." >&2
+          exit 1

@@ -22,6 +22,16 @@ describe('Register', () => {
     expect(signUp).not.toHaveBeenCalled();
   });
 
+  it('rejects a password shorter than 8 characters without calling signUp', async () => {
+    render(<Register />);
+    fireEvent.change(screen.getByLabelText('Password'), { target: { value: 'short' } });
+
+    fireEvent.submit(screen.getByRole('button', { name: 'Create account' }).closest('form'));
+
+    expect(await screen.findByText('Password must be at least 8 characters.')).toBeInTheDocument();
+    expect(signUp).not.toHaveBeenCalled();
+  });
+
   it('signs up and redirects to the verify-email page on success', async () => {
     signUp.mockResolvedValue({ error: null });
     render(<Register />);

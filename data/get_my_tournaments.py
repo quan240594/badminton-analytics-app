@@ -45,12 +45,19 @@ def fetch_my_tournament_ids(username: str, password: str, headless: bool = True)
         basic = page.locator("button.js-accept-basic")
         if basic.count():
             basic.first.click()
-            page.wait_for_timeout(1000)
-        for frame in page.frames:
-            if "nojazz" in frame.url:
-                frame.locator("div.btn.green").click()
-                break
-        page.wait_for_timeout(1200)
+        # frame_locator auto-waits for the iframe itself to attach *and* for
+        # the button inside it to become actionable - a plain `for frame in
+        # page.frames` snapshot can run before the iframe (injected by a
+        # third-party CMP script) has attached yet, silently leaving the
+        # overlay in place to block every click after it (seen for real in a
+        # CI run: the login button click timed out 30s later, still blocked).
+        consent_button = page.frame_locator(
+            'iframe[title="Cookie preferences and consent management"]'
+        ).locator("div.btn.green")
+        try:
+            consent_button.click(timeout=10_000)
+        except Exception:
+            pass  # consent already accepted / no CMP iframe shown this time
 
         page.fill("#Login", username)
         page.fill("#Password", password)

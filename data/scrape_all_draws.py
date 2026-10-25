@@ -33,13 +33,19 @@ DRAWS_DATA_PATH = DATA_DIR / "tournament_draws_data.json"
 
 NOTHING_TO_DO = 3
 
+# Bump when the stored draw shape gains something the simulator needs, so the
+# draws already fetched are fetched again (2: players on every match, byes,
+# seeds and knockout round names - most earlier matches were stored empty).
+DRAW_SCHEMA = 2
+
 
 def load_json(path: Path, default):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
 
 def save_json(path: Path, data) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    # hard-coded DATA_DIR-relative constant, not derived from any input
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")  # NOSONAR
 
 
 def pending_work(details: dict, fetched: dict, my_tournament_ids: set[str]) -> list[tuple[str, str]]:
@@ -49,7 +55,7 @@ def pending_work(details: dict, fetched: dict, my_tournament_ids: set[str]) -> l
     for tid, detail in details.items():
         for draw in detail.get("draws", []):
             did = draw["draw_id"]
-            if f"{tid}:{did}" not in fetched:
+            if fetched.get(f"{tid}:{did}", {}).get("schema", 1) < DRAW_SCHEMA:
                 work.append((tid, did))
     work.sort(key=lambda pair: (pair[0] not in my_tournament_ids, pair[0], int(pair[1])))
     return work
@@ -91,7 +97,7 @@ def main() -> None:
     all_draws.setdefault(tournament_id, {})[draw_id] = draw
     save_json(DRAWS_DATA_PATH, all_draws)
 
-    fetched[f"{tournament_id}:{draw_id}"] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    fetched[f"{tournament_id}:{draw_id}"] = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "schema": DRAW_SCHEMA}
     save_json(FETCHED_DRAWS_PATH, fetched)
 
     print(f"  OK: {len(draw['standings'])} standings rows, {len(draw['matches'])} matches, took {elapsed / 60:.1f} min", flush=True)

@@ -18,17 +18,18 @@ import re
 import time
 import urllib.error
 import urllib.parse
-import urllib.request
 from datetime import date, timedelta
+from html import unescape
 from pathlib import Path
 
+from http_fetch import USER_AGENT, fetch_text
 from safe_path import safe_path
 
 SEARCH_URL = "https://www.toernooi.nl/find/tournament/DoSearch"
 BADMINTON_SPORT_ID = 2
 
 BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+    "User-Agent": USER_AGENT,
     "X-Requested-With": "XMLHttpRequest",
     "Content-Type": "application/x-www-form-urlencoded",
 }
@@ -39,9 +40,9 @@ BROWSER_HEADERS = {
 ITEM_SPLIT_RE = re.compile(r'<div class="media">')
 ID_RE = re.compile(r'tournament\?id=([0-9A-Fa-f-]+)')
 NAME_RE = re.compile(r'title="([^"]+)"\s+class="media__link"')
-CLUB_LOCATION_RE = re.compile(r'icon-marker.*?<span class="nav-link__value">\s*([^<]+?)\s*</span>', re.DOTALL)
+CLUB_LOCATION_RE = re.compile(r'icon-marker.*?<span class="nav-link__value">([^<]+)</span>', re.DOTALL)
 TIME_RE = re.compile(r'<time datetime="([^"]+)">')
-TAG_RE = re.compile(r'<span class="tag">\s*([^<]+?)\s*</span>')
+TAG_RE = re.compile(r'<span class="tag">([^<]+)</span>')
 TAG_DUO_RE = re.compile(
     r'<span class="tag-duo__title">\s*([^<]+?)\s*</span>\s*'
     r'<span class="tag-duo__value">\s*([^<]+?)\s*</span>'
@@ -64,9 +65,7 @@ def fetch_page(cookie: str, start_date: str, end_date: str, page: int) -> str:
             "TournamentExtendedFilter.StatusFilterID": "false",
         }
     ).encode()
-    req = urllib.request.Request(SEARCH_URL, data=data, headers={**BROWSER_HEADERS, "Cookie": cookie}, method="POST")
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    return fetch_text(SEARCH_URL, cookie, headers=BROWSER_HEADERS, data=data, method="POST")
 
 
 def parse_items(html: str) -> list[dict]:
@@ -81,11 +80,11 @@ def parse_items(html: str) -> list[dict]:
         items.append(
             {
                 "id": id_match.group(1).upper(),
-                "name": name_match.group(1),
-                "club": club.strip(),
-                "location": location.strip(),
+                "name": unescape(name_match.group(1)),
+                "club": unescape(club.strip()),
+                "location": unescape(location.strip()),
                 "dates": TIME_RE.findall(block),
-                "tags": TAG_RE.findall(block) + [f"{title}: {value}" for title, value in TAG_DUO_RE.findall(block)],
+                "tags": [t.strip() for t in TAG_RE.findall(block)] + [f"{title}: {value}" for title, value in TAG_DUO_RE.findall(block)],
             }
         )
     return items
