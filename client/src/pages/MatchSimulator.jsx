@@ -145,7 +145,7 @@ export default function MatchSimulator() {
   // the dropdowns below - recombine its season prefix with whichever
   // afdeling is actually selected right now instead of showing the fetched one.
   const displayPoolLabel = (() => {
-    const seasonPrefix = poolLabel.split(/\s\u2013\s/)[0];
+    const seasonPrefix = poolLabel?.split(/\s\u2013\s/)[0];
     const selectedAfdeling = poolAfdelingen.find((a) => a.drawId === drawId);
     return selectedAfdeling && seasonPrefix ? `${seasonPrefix} \u2013 ${selectedAfdeling.label}` : poolLabel;
   })();

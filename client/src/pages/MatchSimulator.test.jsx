@@ -99,6 +99,34 @@ describe('MatchSimulator', () => {
     expect(screen.getByText(/4 rated players/)).toBeInTheDocument();
   });
 
+  it('shows the selected pool in the subtitle instead of the pool that was fetched', async () => {
+    await renderPage();
+    expect(screen.getByText(/Bondscompetitie 2026-2027 \u2013 Mannen Veer 2 afd\. 12/)).toBeInTheDocument();
+
+    fireEvent.change(screen.getByRole('combobox', { name: /Pool/ }), { target: { value: '13' } });
+    expect(screen.getByText(/Bondscompetitie 2026-2027 \u2013 Mannen Veer 2 afd\. 13/)).toBeInTheDocument();
+
+    fireEvent.change(screen.getByRole('combobox', { name: /Division/ }), { target: { value: 'Mannen Veer 3' } });
+    expect(screen.getByText(/Bondscompetitie 2026-2027 \u2013 Mannen Veer 3 afd\. 20/)).toBeInTheDocument();
+  });
+
+  it('keeps the fetched pool label when there is no pool to show', async () => {
+    await renderPage();
+
+    fireEvent.change(screen.getByRole('combobox', { name: /Division/ }), { target: { value: 'Mannen Nylon 1' } });
+
+    expect(screen.getByText(/Bondscompetitie 2026-2027 \u2013 Mannen Veer 2 afd\. 12/)).toBeInTheDocument();
+  });
+
+  it('keeps the generic label when no pool label was fetched, whatever pool is selected', async () => {
+    api.fetchMeta.mockResolvedValue(metaFixture({ poolLabel: '' }));
+    await renderPage();
+
+    fireEvent.change(screen.getByRole('combobox', { name: /Pool/ }), { target: { value: '13' } });
+
+    expect(screen.getByText(/rated players from your league pool/)).toBeInTheDocument();
+  });
+
   it('simulates a singles match once both sides have one player each', async () => {
     await renderPage();
 
