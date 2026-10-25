@@ -473,6 +473,9 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 /* Permanent visual guide lines through the shared column boundaries (20/43/66%),
    spanning every stacked table in the card, so alignment doesn't need manual checking. */
+.player-profiles .player-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); align-items: start; gap: 0.75rem 1rem; }
+.player-profiles .player-card-grid > .profile-row,
+.player-profiles .player-card-grid > .upcoming { grid-column: 1 / -1; }
 .player-card-grid { position: relative; display: flex; flex-direction: column; gap: 0.4rem; }
 .grid-line {
   position: absolute;
@@ -520,8 +523,9 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .top-nav {
   display: flex;
   gap: 1rem;
+  align-items: center;
   padding: 0.75rem clamp(1rem, 2vw, 2rem) 0;
-  max-width: 1800px;
+  width: min(94vw, 1800px);
   margin: 0 auto;
 }
 .top-nav a {
@@ -817,6 +821,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 .nav-spacer { flex: 1; }
 .nav-user { color: #94a3b8; font-size: 0.85rem; }
+.top-nav .link-btn { align-self: center; }
 
 .auth-page { display: flex; justify-content: center; padding: clamp(2rem, 6vw, 5rem) 1rem; }
 .auth-form {
