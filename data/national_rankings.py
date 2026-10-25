@@ -37,7 +37,7 @@ class FetchError(Exception):
 
 LIST_WEEK_RE = re.compile(r'<option selected="selected" value="(\d+)">([^<]+)')
 CATEGORY_LINK_RE = re.compile(r'<a href="category\.aspx\?id=\d+&(?:amp;)?category=(\d+)">([^<]+)</a>')
-CAPTION_RE = re.compile(r"<caption>\s*([^<]*?)\s*</caption>")
+CAPTION_RE = re.compile(r"<caption>([^<]*)</caption>")
 ROW_RE = re.compile(
     r'<td class="rank"><div[^>]*>(\d*)</div></td>(?:(?!</tr>).)*?'  # never reach into the next row
     r'<a href="player\.aspx\?id=\d+&(?:amp;)?player=(\d+)">([^<]+)</a></td>\s*'
@@ -101,4 +101,4 @@ def parse_category_page(page: str) -> dict:
         if member_id
     ]
     pages = max((int(p) for p in PAGE_PARAM_RE.findall(page)), default=1)
-    return {"label": html_lib.unescape(caption.group(1)) if caption else None, "pages": pages, "rows": rows}
+    return {"label": html_lib.unescape(caption.group(1)).strip() if caption else None, "pages": pages, "rows": rows}

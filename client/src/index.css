@@ -79,6 +79,10 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   background: #60a5fa;
   transition: width 0.4s ease;
 }
+@media (prefers-reduced-motion: reduce) {
+  .unchanged-bubble { animation: none; }
+  .progress-bar-fill { transition: none; }
+}
 .progress-bar-label {
   position: absolute;
   inset: 0;

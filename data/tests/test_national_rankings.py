@@ -79,6 +79,11 @@ def test_parse_category_page_drops_rows_without_a_member_id_and_does_not_bleed_i
     assert [(r["rank"], r["name"]) for r in rows] == [(4, "Real Player")]
 
 
+def test_parse_category_page_trims_whitespace_and_newlines_around_the_caption():
+    page = '<table class="ruler"><caption>\n   Vrouwen Dubbel \t\n</caption></table>'
+    assert nr.parse_category_page(page)["label"] == "Vrouwen Dubbel"
+
+
 def test_parse_category_page_defaults_to_one_page_and_no_label():
     page = '<table class="ruler"></table>'
     assert nr.parse_category_page(page) == {"label": None, "pages": 1, "rows": []}

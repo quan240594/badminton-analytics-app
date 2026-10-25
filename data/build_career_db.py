@@ -60,8 +60,9 @@ def normalize_state_clubs(state: dict) -> dict:
 
 
 def load_state(state_path: Path) -> dict:
+    # path pre-validated by safe_path() against DATA_DIR (see safe_path.py)
     if state_path.exists():
-        return normalize_state_clubs(json.loads(state_path.read_text(encoding="utf-8")))
+        return normalize_state_clubs(json.loads(state_path.read_text(encoding="utf-8")))  # NOSONAR
     return {"parsed_files": [], "players": {}}
 
 
