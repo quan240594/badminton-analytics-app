@@ -48,7 +48,7 @@ export default function PlayerProfiles() {
   const results = useMemo(() => (profile ? tournamentResults(profile, tournaments) : []), [profile, tournaments]);
 
   return (
-    <div className="player-profiles">
+    <div className="app player-profiles">
       <PageHeader title="Player profiles" subtitle="Everyone on the national ranking lists and in tournaments, as on Badminton Nederland" onClearAll={() => setSelectedId('')} />
 
       <div className="league-day-controls">
