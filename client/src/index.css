@@ -7,6 +7,8 @@ body {
   background: #0f172a;
   color: #e2e8f0;
 }
+/* Form controls do not inherit the page font by default (they render in Arial). */
+button, input, select, textarea { font-family: inherit; }
 .app {
   width: min(94vw, 1800px);
   margin: 0 auto;
@@ -46,7 +48,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   color: #e2e8f0;
   padding: 0.4rem 0.7rem;
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   animation: fade-in-out 3s ease forwards;
@@ -135,7 +137,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   color: #60a5fa;
   border-radius: 6px;
   padding: 0.3rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -304,22 +306,22 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 .profile-link { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 .profile-link:hover { color: #93c5fd; }
-.profile-stats { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem; }
+.profile-stats { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8rem; }
 .profile-stats > .profile-link { color: #93c5fd; align-self: flex-start; }
 .profile-form { margin: 0; color: #94a3b8; }
 .form-chip { display: inline-block; min-width: 1.3rem; margin-left: 0.2rem; text-align: center; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
 .form-chip.won { background: #14532d; color: #86efac; }
 .form-chip.lost { background: #7f1d1d; color: #fca5a5; }
-.profile-record { margin: -0.3rem 0 0.5rem; font-size: 0.75rem; color: #94a3b8; }
-.upcoming { font-size: 0.75rem; color: #cbd5e1; }
-.upcoming h4 { margin: 0 0 0.25rem; font-size: 0.78rem; color: #93c5fd; }
+.profile-record { margin: -0.3rem 0 0.5rem; font-size: 0.8rem; color: #94a3b8; }
+.upcoming { font-size: 0.8rem; color: #cbd5e1; }
+.upcoming h4 { margin: 0 0 0.25rem; font-size: 0.8rem; color: #93c5fd; }
 .upcoming summary { cursor: pointer; color: #94a3b8; }
 .upcoming-table { width: 100%; margin: 0.3rem 0 0.5rem; border-collapse: collapse; background: #0f172a; font-size: 0.72rem; }
 .upcoming-table th,
 .upcoming-table td { padding: 0.35rem 0.5rem; border: 1px solid #334155; text-align: left; vertical-align: top; color: #cbd5e1; }
-.upcoming-table th { color: #94a3b8; font-weight: 600; background: #111c33; }
+.upcoming-table th { color: #94a3b8; font-weight: 600; background: #0f172a; }
 .upcoming-table td.date-cell { white-space: nowrap; }
-.profile-row { margin: 0; font-size: 0.75rem; }
+.profile-row { margin: 0; font-size: 0.8rem; }
 .profile-row .profile-link { color: #93c5fd; }
 
 /* Player profiles: the toernooi.nl look (white cards on a warm grey page, brand blue, green/red
@@ -327,7 +329,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .tn-head { display: flex; align-items: baseline; gap: 0.75rem; margin: 1.25rem 0 0.75rem; padding: 1.25rem 1.5rem; border-radius: 0.6rem; background: linear-gradient(120deg, #004899, #003c80); color: #fff; }
 .tn-head__name { margin: 0; font-size: 1.9rem; font-weight: 600; }
 .tn-head__aside { color: rgba(255, 255, 255, 0.75); font-size: 1rem; }
-.tn-head__country { margin-left: auto; padding: 0.1rem 0.6rem; border-radius: 3rem; background: #ee7326; font-size: 0.75rem; font-weight: 600; }
+.tn-head__country { margin-left: auto; padding: 0.1rem 0.6rem; border-radius: 3rem; background: #ee7326; font-size: 0.8rem; font-weight: 600; }
 .tn-module { margin-top: 1.25rem; border-radius: 0.6rem; background: #fff; color: #2a2c32; font-family: 'Open Sans', sans-serif; }
 .tn-module__banner { display: flex; align-items: center; padding: 1.1rem 1.5rem; border-bottom: 1px solid #d0d2d8; }
 .tn-module__title { margin: 0; color: #707585; font-size: 1.4rem; font-weight: 400; }
@@ -349,8 +351,8 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .tn-match__row.has-won { font-weight: 700; }
 .tn-match__own { color: #707585; font-weight: 400; }
 .tn-match__games { white-space: nowrap; word-spacing: 0.9rem; font-variant-numeric: tabular-nums; }
-.tn-match__footer { padding: 0.25rem 0.6rem 0.4rem; border-top: 1px solid #f1f2f3; color: #707585; font-size: 0.75rem; }
-.tn-tag { display: inline-block; min-width: 1.8rem; height: 1.8rem; line-height: 1.8rem; border-radius: 3rem; color: #fff; font-size: 0.75rem; font-weight: 600; text-align: center; }
+.tn-match__footer { padding: 0.25rem 0.6rem 0.4rem; border-top: 1px solid #f1f2f3; color: #707585; font-size: 0.8rem; }
+.tn-tag { display: inline-block; min-width: 1.8rem; height: 1.8rem; line-height: 1.8rem; border-radius: 3rem; color: #fff; font-size: 0.8rem; font-weight: 600; text-align: center; }
 .tn-tag--success { background: #4abf33; }
 .tn-tag--danger { background: #bd3b2a; }
 
@@ -500,7 +502,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 .player-select-club, .player-select-detail {
   color: #94a3b8;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   margin-top: 0.2rem;
 }
 .stat-line { display: inline-flex; align-items: center; gap: 0.65rem; }
@@ -643,7 +645,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .rubber-header {
   display: grid;
   grid-template-columns: 3rem 1fr 1.8rem 1fr;
-  align-items: center;
+  align-items: start;
   gap: 0.75rem;
   padding: 0 0.8rem 0.4rem;
 }
@@ -690,7 +692,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   color: #60a5fa;
   border-radius: 6px;
   padding: 0.3rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 .team-select { cursor: pointer; }
@@ -762,7 +764,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 .night-bar-legend {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #94a3b8;
   margin-top: 0.3rem;
 }
@@ -833,7 +835,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   padding: 2rem;
   border-radius: 12px;
 }
-.auth-form h1 { margin: 0 0 0.25rem; font-size: 1.4rem; }
+.auth-form h1 { margin: 0 0 0.25rem; }
 .auth-form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: #94a3b8; }
 .auth-form input {
   padding: 0.6rem 0.7rem;
