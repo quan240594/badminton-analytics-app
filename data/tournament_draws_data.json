@@ -36710,6 +36710,26 @@
           "rank": 1,
           "players": [
             {
+              "player_id": "18",
+              "name": "Patty GROENVELD"
+            },
+            {
+              "player_id": "24",
+              "name": "Jan STEMPHER"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "4-0",
+          "points_record": "84-44"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
               "player_id": "10",
               "name": "Ronald STAPELBROEK"
             },
@@ -36718,71 +36738,42 @@
               "name": "Hans MACDANIEL"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 2,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "2-2",
+          "points_record": "68-71"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "12",
-              "name": "Saskia VEENHUIS"
-            },
-            {
-              "player_id": "14",
-              "name": "Mike WIGINK"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "18",
-              "name": "Patty GROENVELD"
-            },
-            {
-              "player_id": "9",
-              "name": "Marcel SMOUTER"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "16",
               "name": "Jessica BRAAKMAN"
             },
             {
-              "player_id": "24",
-              "name": "Jan STEMPHER"
+              "player_id": "12",
+              "name": "Saskia VEENHUIS"
             }
           ],
-          "played": 0,
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "0-4",
+          "points_record": "47-84"
+        },
+        {
+          "rank": 4,
+          "players": [],
+          "played": 3,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
+          "lost": 3,
+          "match_record": "0-3",
           "game_record": "0-0",
           "points_record": "0-0"
         }
@@ -36794,21 +36785,10 @@
           "sides": [
             {
               "won": false,
-              "players": [
-                {
-                  "player_id": "12",
-                  "name": "Saskia VEENHUIS",
-                  "member_id": "5003754"
-                },
-                {
-                  "player_id": "14",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
-                }
-              ]
+              "players": []
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "18",
@@ -36816,9 +36796,9 @@
                   "member_id": "852202"
                 },
                 {
-                  "player_id": "9",
-                  "name": "Marcel SMOUTER",
-                  "member_id": "5003809"
+                  "player_id": "24",
+                  "name": "Jan STEMPHER",
+                  "member_id": "4999766"
                 }
               ]
             }
@@ -36831,7 +36811,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -36854,14 +36834,23 @@
                   "member_id": "5003761"
                 },
                 {
-                  "player_id": "24",
-                  "name": "Jan STEMPHER",
-                  "member_id": "4999766"
+                  "player_id": "12",
+                  "name": "Saskia VEENHUIS",
+                  "member_id": "5003754"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "za 17-10-2026 14:00"
         },
         {
@@ -36869,7 +36858,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -36885,18 +36874,7 @@
             },
             {
               "won": false,
-              "players": [
-                {
-                  "player_id": "12",
-                  "name": "Saskia VEENHUIS",
-                  "member_id": "5003754"
-                },
-                {
-                  "player_id": "14",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
-                }
-              ]
+              "players": []
             }
           ],
           "games": [],
@@ -36907,7 +36885,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "18",
@@ -36915,9 +36893,9 @@
                   "member_id": "852202"
                 },
                 {
-                  "player_id": "9",
-                  "name": "Marcel SMOUTER",
-                  "member_id": "5003809"
+                  "player_id": "24",
+                  "name": "Jan STEMPHER",
+                  "member_id": "4999766"
                 }
               ]
             },
@@ -36930,14 +36908,23 @@
                   "member_id": "5003761"
                 },
                 {
-                  "player_id": "24",
-                  "name": "Jan STEMPHER",
-                  "member_id": "4999766"
+                  "player_id": "12",
+                  "name": "Saskia VEENHUIS",
+                  "member_id": "5003754"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              6
+            ]
+          ],
           "played_at": "za 17-10-2026 14:40"
         },
         {
@@ -36960,7 +36947,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "18",
@@ -36968,14 +36955,23 @@
                   "member_id": "852202"
                 },
                 {
-                  "player_id": "9",
-                  "name": "Marcel SMOUTER",
-                  "member_id": "5003809"
+                  "player_id": "24",
+                  "name": "Jan STEMPHER",
+                  "member_id": "4999766"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:20"
         },
         {
@@ -36984,21 +36980,10 @@
           "sides": [
             {
               "won": false,
-              "players": [
-                {
-                  "player_id": "12",
-                  "name": "Saskia VEENHUIS",
-                  "member_id": "5003754"
-                },
-                {
-                  "player_id": "14",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
-                }
-              ]
+              "players": []
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "16",
@@ -37006,9 +36991,9 @@
                   "member_id": "5003761"
                 },
                 {
-                  "player_id": "24",
-                  "name": "Jan STEMPHER",
-                  "member_id": "4999766"
+                  "player_id": "12",
+                  "name": "Saskia VEENHUIS",
+                  "member_id": "5003754"
                 }
               ]
             }
