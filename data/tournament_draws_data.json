@@ -61518,16 +61518,16 @@
               "name": "Shresta Dinakaran"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "100-77"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "143",
@@ -61538,16 +61538,16 @@
               "name": "Vedha Anandkumar"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "90-91"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "127",
@@ -61558,13 +61558,13 @@
               "name": "Isabella Panarello"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "62-84"
         }
       ],
       "matches": [
@@ -61573,7 +61573,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "90",
@@ -61604,7 +61604,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "zo 18-10-2026 10:25"
         },
         {
@@ -61612,7 +61621,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "143",
@@ -61643,7 +61652,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:40"
         },
         {
@@ -61651,7 +61669,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "90",
@@ -61683,7 +61701,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         }
       ]
