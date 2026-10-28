@@ -42536,22 +42536,96 @@
       ]
     },
     "16": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "2",
+              "name": "Quinten Brandenburg"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "101-74"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "17",
+              "name": "Yent Germs"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "90-98"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Sepp Kruiswijk"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "67-86"
+        }
+      ],
       "matches": [
         {
           "match_id": "183",
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Quinten Brandenburg",
+                  "member_id": "5013096"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Yent Germs",
+                  "member_id": "50013846"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "za 17-10-2026 13:45"
         },
         {
@@ -42560,14 +42634,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Sepp Kruiswijk",
+                  "member_id": "50010265"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Yent Germs",
+                  "member_id": "50013846"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              23
+            ]
+          ],
           "played_at": "za 17-10-2026 15:00"
         },
         {
@@ -42575,15 +42670,36 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Quinten Brandenburg",
+                  "member_id": "5013096"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Sepp Kruiswijk",
+                  "member_id": "50010265"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "za 17-10-2026 15:50"
         }
       ]
