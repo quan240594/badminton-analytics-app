@@ -14687,29 +14687,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "128",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "54",
-                  "name": "Victor Yeh",
-                  "member_id": "10001796"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "129",
           "round": "Halve finale",
           "sides": [
@@ -14782,6 +14759,29 @@
             ]
           ],
           "played_at": "za 5-9-2026 18:45"
+        },
+        {
+          "match_id": "128",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Victor Yeh",
+                  "member_id": "10001796"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     },
