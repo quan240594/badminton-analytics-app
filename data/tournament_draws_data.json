@@ -90424,6 +90424,159 @@
           "played_at": "zo 25-10-2026 14:50"
         }
       ]
+    },
+    "20": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "241",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "DOUDOU HUANG",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "JULIA AL EIDO",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              6
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        },
+        {
+          "match_id": "242",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "WENXI LIU",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "142",
+                  "name": "VINMAYI MUNUGOTI",
+                  "member_id": "5003300"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        },
+        {
+          "match_id": "240",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "DOUDOU HUANG",
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "WENXI LIU",
+                  "member_id": "10001963"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "zo 25-10-2026 18:20"
+        },
+        {
+          "match_id": "576",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "JULIA AL EIDO",
+                  "member_id": "50023081"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "142",
+                  "name": "VINMAYI MUNUGOTI",
+                  "member_id": "5003300"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 18:20"
+        }
+      ]
     }
   }
 }
