@@ -41511,7 +41511,56 @@
       ]
     },
     "7": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 10,
+          "players": [
+            {
+              "player_id": "36",
+              "name": "Dieks Weber"
+            }
+          ],
+          "played": 1,
+          "won": 1,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "1-0",
+          "game_record": "2-1",
+          "points_record": "35-32"
+        },
+        {
+          "rank": 11,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Else Rienks"
+            }
+          ],
+          "played": 1,
+          "won": 0,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "0-1",
+          "game_record": "1-2",
+          "points_record": "32-35"
+        },
+        {
+          "rank": 12,
+          "players": [
+            {
+              "player_id": "39",
+              "name": "Tijs Jansen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
       "matches": [
         {
           "match_id": "84",
@@ -41519,14 +41568,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Else Rienks",
+                  "member_id": "50024406"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              15
+            ],
+            [
+              15,
+              5
+            ],
+            [
+              5,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 14:10"
         },
         {
@@ -41535,11 +41609,23 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Tijs Jansen",
+                  "member_id": "10001093"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Else Rienks",
+                  "member_id": "50024406"
+                }
+              ]
             }
           ],
           "games": [],
@@ -41551,11 +41637,23 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Tijs Jansen",
+                  "member_id": "10001093"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
+                }
+              ]
             }
           ],
           "games": [],
