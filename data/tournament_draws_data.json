@@ -74426,72 +74426,72 @@
           "rank": 1,
           "players": [
             {
-              "player_id": "112",
-              "name": "Merijn van Rossum"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
               "player_id": "101",
               "name": "Maarten Verstraeten"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 3,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "3-0",
+          "game_record": "6-1",
+          "points_record": "145-107"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
-              "player_id": "110",
-              "name": "Giorgio van Zaalen"
+              "player_id": "17",
+              "name": "Gertjan Leeggangers"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "119-133"
         },
         {
-          "rank": 1,
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "112",
+              "name": "Merijn van Rossum"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-5",
+          "points_record": "141-152"
+        },
+        {
+          "rank": 4,
           "players": [
             {
               "player_id": "53",
               "name": "Mathijs van Engelen"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-4",
+          "points_record": "100-113"
         },
         {
-          "rank": 1,
+          "rank": 5,
           "players": [
             {
-              "player_id": "17",
-              "name": "Gertjan Leeggangers"
+              "player_id": "110",
+              "name": "Giorgio van Zaalen"
             }
           ],
           "played": 0,
@@ -74509,7 +74509,7 @@
           "round": "Ronde 5",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "101",
@@ -74529,7 +74529,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 24-10-2026 10:45"
         },
         {
@@ -74537,7 +74546,7 @@
           "round": "Ronde 5",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "112",
@@ -74557,7 +74566,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "za 24-10-2026 10:45"
         },
         {
@@ -74575,7 +74597,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "101",
@@ -74585,7 +74607,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              14,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 12:30"
         },
         {
@@ -74603,7 +74638,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "53",
@@ -74613,7 +74648,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 16:00"
         },
         {
@@ -74631,7 +74675,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "17",
@@ -74641,7 +74685,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 17:45"
         },
         {
@@ -74659,7 +74712,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "53",
@@ -74669,7 +74722,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "zo 25-10-2026 11:20"
         },
         {
@@ -74677,7 +74739,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "101",
@@ -74697,7 +74759,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "zo 25-10-2026 11:55"
         },
         {
@@ -74705,7 +74776,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "112",
@@ -74733,7 +74804,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "101",
@@ -74771,7 +74842,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "17",
@@ -74781,7 +74852,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "zo 25-10-2026 16:50"
         }
       ]
