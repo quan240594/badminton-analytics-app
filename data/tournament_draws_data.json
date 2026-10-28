@@ -62875,7 +62875,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "60",
@@ -62905,7 +62905,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              22,
+              20
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:00"
         },
         {
@@ -62928,7 +62941,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "126",
@@ -62943,7 +62956,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 13:00"
         },
         {
@@ -62952,14 +62974,45 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Reyansh Kwatra",
+                  "member_id": "10000199"
+                },
+                {
+                  "player_id": "89",
+                  "name": "Julia Policht",
+                  "member_id": "50005873"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                },
+                {
+                  "player_id": "104",
+                  "name": "Lola Fee Hijdra",
+                  "member_id": "5008991"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 14:30"
         }
       ]
