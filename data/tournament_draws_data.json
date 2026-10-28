@@ -81468,6 +81468,160 @@
           "played_at": "zo 25-10-2026 13:40"
         }
       ]
+    },
+    "31": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "461",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Myrthe in 't Groen",
+                  "member_id": "883037"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Dylan In 'T Groen",
+                  "member_id": "50025148"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Danique Rutters",
+                  "member_id": "990007"
+                },
+                {
+                  "player_id": "28",
+                  "name": "William Aarts",
+                  "member_id": "981518"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "462",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Annick Chamuleau",
+                  "member_id": "877880"
+                },
+                {
+                  "player_id": "3",
+                  "name": "Bernie Snijders",
+                  "member_id": "50022040"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Mylène Pijpers - Rombouts",
+                  "member_id": "850990"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Peter Douma",
+                  "member_id": "883788"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "460",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Myrthe in 't Groen",
+                  "member_id": "883037"
+                },
+                {
+                  "player_id": "14",
+                  "name": "Dylan In 'T Groen",
+                  "member_id": "50025148"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Mylène Pijpers - Rombouts",
+                  "member_id": "850990"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Peter Douma",
+                  "member_id": "883788"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "zo 25-10-2026 16:50"
+        }
+      ]
     }
   }
 }
