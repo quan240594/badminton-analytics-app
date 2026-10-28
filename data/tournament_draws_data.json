@@ -4845,51 +4845,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "334",
-          "round": "Kwartfinale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "48",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "337",
-          "round": "Kwartfinale",
-          "sides": [
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            },
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "51",
-                  "name": "Ivo VERPRAET"
-                }
-              ]
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "335",
           "round": "Kwartfinale",
           "sides": [
@@ -5109,6 +5064,51 @@
             ]
           ],
           "played_at": "zo 20-9-2026 13:30"
+        },
+        {
+          "match_id": "334",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Mike WIGINK",
+                  "member_id": "50009881"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "337",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Ivo VERPRAET"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     }
