@@ -1,3 +1,6 @@
+import json
+from datetime import date
+
 import fetch_tournament_rankings as ftr
 from helpers_fetchers import header_map, install_urlopen, patch_io, run_main, url_error, write_cookie, write_json
 
@@ -61,7 +64,7 @@ def test_main_fetches_only_pending_members(monkeypatch, tmp_path, capsys):
     out.mkdir()
     (out / "player_1.html").write_text("cached", encoding="utf-8")
     fake, sleeps = patch_io(monkeypatch, ftr, {"player=101": "<html/>", "rid=": ROWS})
-    run_main(monkeypatch, ftr, "--cookie-file", str(write_cookie(tmp_path)), "--draws-file", str(draws), "--out", str(out), "--delay", "0.1")
+    run_main(monkeypatch, ftr, "--cookie-file", str(write_cookie(tmp_path)), "--draws-file", str(draws), "--out", str(out), "--lookups-file", str(tmp_path / "lookups.json"), "--delay", "0.1")
     printed = capsys.readouterr().out
     assert "27 known member ids, 26 not yet fetched" in printed
     assert "[25/26] progress: 24 fetched, 1 with no ranking yet" in printed
@@ -71,5 +74,29 @@ def test_main_fetches_only_pending_members(monkeypatch, tmp_path, capsys):
 
 def test_main_without_draws_file_has_nothing_to_do(monkeypatch, tmp_path, capsys):
     patch_io(monkeypatch, ftr)
-    run_main(monkeypatch, ftr, "--cookie-file", str(write_cookie(tmp_path)), "--draws-file", str(tmp_path / "none.json"), "--out", str(tmp_path / "o"))
+    run_main(monkeypatch, ftr, "--cookie-file", str(write_cookie(tmp_path)), "--draws-file", str(tmp_path / "none.json"), "--out", str(tmp_path / "o"), "--lookups-file", str(tmp_path / "lookups.json"))
     assert "0 known member ids, 0 not yet fetched" in capsys.readouterr().out
+
+
+def test_pending_skips_recent_lookups_and_rechecks_after_a_week(tmp_path):
+    lookups = {"1": "2026-10-27", "2": "2026-10-20", "3": "2026-10-19"}
+    assert ftr.pending_member_ids({"1", "2", "3", "4"}, tmp_path, lookups, date(2026, 10, 27)) == ["2", "3", "4"]
+    (tmp_path / "player_4.html").write_text("x", encoding="utf-8")
+    assert ftr.pending_member_ids({"4"}, tmp_path, {}, date(2026, 10, 27)) == []
+
+
+def test_load_lookups_missing_file(tmp_path):
+    assert ftr.load_lookups(tmp_path / "none.json") == {}
+
+
+def test_main_records_every_lookup_and_caps_the_batch(monkeypatch, tmp_path, capsys):
+    draws = write_json(tmp_path / "draws.json", {"T": {"1": draw_with_members("1", "2", "3")}})
+    lookups_file = tmp_path / "lookups.json"
+    patch_io(monkeypatch, ftr, {"player=2": "<html/>", "rid=": ROWS})
+    args = ("--cookie-file", str(write_cookie(tmp_path)), "--draws-file", str(draws), "--out", str(tmp_path / "o"), "--lookups-file", str(lookups_file), "--delay", "0.1", "--limit", "2")
+    run_main(monkeypatch, ftr, *args)
+    first = json.loads(lookups_file.read_text(encoding="utf-8"))
+    assert sorted(first) == ["1", "2"] and "Done. Fetched 1, no-ranking-yet 1, total considered 2" in capsys.readouterr().out
+    run_main(monkeypatch, ftr, *args)
+    assert "3 known member ids, 1 not yet fetched" in capsys.readouterr().out
+    assert sorted(json.loads(lookups_file.read_text(encoding="utf-8"))) == ["1", "2", "3"]

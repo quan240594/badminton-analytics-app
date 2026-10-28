@@ -29,6 +29,9 @@ jobs:
     # scrape-national.yml for why.
     timeout-minutes: 25
     steps:
+      - name: Record job start
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v7
         with:
           ref: main
@@ -102,7 +105,8 @@ jobs:
           deadline=$(( start + 15 * 60 ))
           # An iteration takes ~14 minutes; one that cannot finish before this would be
           # cancelled by the job timeout, and a cancelled run never chains to the next.
-          hard_deadline=$(( start + 21 * 60 ))
+          hard_deadline=$(( JOB_START + 21 * 60 ))
+          [ "$deadline" -gt "$hard_deadline" ] && deadline=$hard_deadline
           longest=0
           failures=0
           code=0
@@ -126,7 +130,7 @@ jobs:
             # (unlike a glob with zero matches) - several of these only get
             # created once there's actually a draw/ranking to write, so check
             # existence first instead of assuming they're always present.
-            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json data/entrant_rankings.json data/tournament_fetch_errors.json; do
+            for f in data/tournaments.json data/tournament_details.json data/fetched_tournaments.json data/tournament_scrape_daily_budget.json data/tournament_draws_data.json data/fetched_draws.json data/rankings.json data/entrant_rankings.json data/tournament_ranking_lookups.json data/tournament_fetch_errors.json; do
               [ -f "$f" ] && git add "$f"
             done
             git diff --cached --quiet || git commit -m "chore(data): tournament scrape progress"

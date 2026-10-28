@@ -33,6 +33,9 @@ jobs:
     # runs avoid that entirely.
     timeout-minutes: 25
     steps:
+      - name: Record job start
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v7
         with:
           ref: main
@@ -79,6 +82,10 @@ jobs:
           fi
 
           deadline=$(( $(date +%s) + 15 * 60 ))
+          # Slow setup (apt mirror) can use most of the job's 25 minutes; stop
+          # early enough that the push and the chain step still run.
+          job_limit=$(( JOB_START + 21 * 60 ))
+          [ "$deadline" -gt "$job_limit" ] && deadline=$job_limit
           code=0
           while [ "$(date +%s)" -lt "$deadline" ]; do
             set +e

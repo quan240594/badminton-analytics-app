@@ -13,8 +13,15 @@ Since a tournament-scoped context doesn't tell us whether a player is on the
 adult (rid=75) or junior (rid=164) list, this just tries both and keeps
 whichever comes back with actual rows.
 
+CI starts from a fresh checkout (data/pages/ is not committed), so a page on disk
+only proves a lookup within this run. Every lookup, hit or miss, is dated in
+tournament_ranking_lookups.json (committed) and not repeated for
+RECHECK_DAYS; without it the same members are re-requested on every run, and
+players with no ranking yet are re-requested forever. Each run looks at no more
+than --limit members, so one iteration of the CI loop stays short.
+
 Usage:
-    python3 fetch_tournament_rankings.py --cookie-file cookie.txt
+    python3 fetch_tournament_rankings.py --cookie-file cookie.txt [--limit 100]
 """
 
 from __future__ import annotations
@@ -24,6 +31,7 @@ import json
 import time
 import urllib.error
 from collections.abc import Iterator
+from datetime import date, timedelta
 from functools import partial
 from pathlib import Path
 
@@ -32,6 +40,7 @@ from safe_path import safe_path
 
 BASE_URL = "https://badmintonnederland.toernooi.nl/ranking/"
 RANKING_RIDS = ("75", "164")  # adult, then junior
+RECHECK_DAYS = 7
 
 fetch = partial(fetch_text, headers={"User-Agent": USER_AGENT})
 
@@ -61,6 +70,18 @@ def discover_member_ids(draws_path: Path) -> set[str]:
     return member_ids
 
 
+def load_lookups(path: Path) -> dict[str, str]:
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+def pending_member_ids(member_ids: set[str], out_dir: Path, lookups: dict[str, str], today: date) -> list[str]:
+    cutoff = (today - timedelta(days=RECHECK_DAYS)).isoformat()
+    return sorted(
+        mid for mid in member_ids
+        if not (out_dir / f"player_{mid}.html").exists() and lookups.get(mid, "") <= cutoff
+    )
+
+
 # Tries both adult/junior ranking lists (see RANKING_RIDS); writes and returns
 # True on the first one with actual rows, False if the player has none yet.
 def fetch_member_ranking(member_id: str, out_path: Path, cookie: str, index: int, total: int) -> bool:
@@ -81,18 +102,24 @@ def main() -> None:
     parser.add_argument("--cookie-file", type=Path, default=Path("cookie.txt"))
     parser.add_argument("--draws-file", type=Path, default=Path("tournament_draws_data.json"))
     parser.add_argument("--out", type=Path, default=Path("pages/rankings"))
+    parser.add_argument("--lookups-file", type=Path, default=Path("tournament_ranking_lookups.json"))
     parser.add_argument("--delay", type=float, default=1.2)
+    parser.add_argument("--limit", type=int, default=100, help="max members to look up per invocation")
     args = parser.parse_args()
     args.cookie_file = safe_path(args.cookie_file)
     args.draws_file = safe_path(args.draws_file)
     args.out = safe_path(args.out)
+    args.lookups_file = safe_path(args.lookups_file)
     args.out.mkdir(parents=True, exist_ok=True)
 
     cookie = args.cookie_file.read_text(encoding="utf-8").strip()
     member_ids = discover_member_ids(args.draws_file)
-    pending = sorted(mid for mid in member_ids if not (args.out / f"player_{mid}.html").exists())
+    lookups = load_lookups(args.lookups_file)
+    today = date.today()
+    pending = pending_member_ids(member_ids, args.out, lookups, today)
 
     print(f"{len(member_ids)} known member ids, {len(pending)} not yet fetched", flush=True)
+    pending = pending[: args.limit]
     fetched = failed = 0
     for i, member_id in enumerate(pending, 1):
         out_path = args.out / f"player_{member_id}.html"
@@ -100,10 +127,12 @@ def main() -> None:
             fetched += 1
         else:
             failed += 1  # no ranking on either list yet (e.g. a brand-new player) - not a real error
+        lookups[member_id] = today.isoformat()
         if i % 25 == 0:
             print(f"[{i}/{len(pending)}] progress: {fetched} fetched, {failed} with no ranking yet", flush=True)
         time.sleep(args.delay)
 
+    args.lookups_file.write_text(json.dumps(lookups, indent=1, sort_keys=True), encoding="utf-8")
     print(f"\nDone. Fetched {fetched}, no-ranking-yet {failed}, total considered {len(pending)}")
 
 
