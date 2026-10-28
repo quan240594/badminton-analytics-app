@@ -57055,7 +57055,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "123",
@@ -57065,7 +57065,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:25"
         },
         {
@@ -57073,7 +57082,7 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "46",
@@ -57084,10 +57093,29 @@
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "123",
+                  "name": "Dnyanada Misal",
+                  "member_id": "5008509"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         },
         {
