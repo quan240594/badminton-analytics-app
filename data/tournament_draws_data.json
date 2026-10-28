@@ -86897,6 +86897,274 @@
           "played_at": "zo 25-10-2026 17:05"
         }
       ]
+    },
+    "2": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "19",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "125",
+                  "name": "NASIM SAFAYI",
+                  "seed": 1,
+                  "member_id": "50019460"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "NOVI WIELAND",
+                  "member_id": "887043"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "20",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "VEDA DIEMEL",
+                  "member_id": "826027"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "ILSE STOFFELEN",
+                  "member_id": "876234"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "22",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "STEFANIE NIJSSE",
+                  "member_id": "878088"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "seed": 2,
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "21",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "JAMIE LOGT",
+                  "member_id": "827683"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "ALIDA CHEN",
+                  "member_id": "747443"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:00"
+        },
+        {
+          "match_id": "17",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "NOVI WIELAND",
+                  "member_id": "887043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "VEDA DIEMEL",
+                  "member_id": "826027"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:50"
+        },
+        {
+          "match_id": "18",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "ALIDA CHEN",
+                  "member_id": "747443"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "seed": 2,
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:50"
+        },
+        {
+          "match_id": "16",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "NOVI WIELAND",
+                  "member_id": "887043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "seed": 2,
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        }
+      ]
     }
   }
 }
