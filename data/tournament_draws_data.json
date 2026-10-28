@@ -59333,7 +59333,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "119",
@@ -59364,7 +59364,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         },
         {
@@ -59372,7 +59381,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "117",
@@ -59403,7 +59412,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         },
         {
@@ -59411,15 +59429,47 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "119",
+                  "name": "Jason De Graaf",
+                  "seed": 1,
+                  "member_id": "989583"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Robin Lammers",
+                  "member_id": "5000388"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "117",
+                  "name": "Mico Xiao Yang",
+                  "member_id": "5009156"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         },
         {
