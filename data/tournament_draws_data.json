@@ -45129,36 +45129,16 @@
               "name": "Nolan van Deijk"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "7-3",
+          "points_record": "201-144"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "31",
-              "name": "Iris Horsthuis"
-            },
-            {
-              "player_id": "42",
-              "name": "Lynn Slots"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "15",
@@ -45169,16 +45149,16 @@
               "name": "Levi Molenaar"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "7-3",
+          "points_record": "187-158"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "41",
@@ -45189,36 +45169,103 @@
               "name": "Guus Spijker"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "7-3",
+          "points_record": "191-181"
         },
         {
-          "rank": 1,
+          "rank": 4,
           "players": [
             {
-              "player_id": "46",
-              "name": "Nader te Bepalen 2"
+              "player_id": "31",
+              "name": "Iris Horsthuis"
             },
+            {
+              "player_id": "42",
+              "name": "Lynn Slots"
+            }
+          ],
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "1-3",
+          "game_record": "2-6",
+          "points_record": "125-155"
+        },
+        {
+          "rank": 5,
+          "players": [
             {
               "player_id": "33",
               "name": "Zlata Kuznietsova"
+            },
+            {
+              "player_id": "36",
+              "name": "Dieks Weber"
             }
           ],
-          "played": 0,
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "102-168"
         }
       ],
       "matches": [
+        {
+          "match_id": "323",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Roene Bloem",
+                  "member_id": "50009705"
+                },
+                {
+                  "player_id": "28",
+                  "name": "Nolan van Deijk",
+                  "member_id": "50015629"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                },
+                {
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:30"
+        },
         {
           "match_id": "321",
           "round": "Ronde 1",
@@ -45239,7 +45286,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "41",
@@ -45254,7 +45301,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:55"
         },
         {
@@ -45262,7 +45322,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "31",
@@ -45280,18 +45340,28 @@
               "won": false,
               "players": [
                 {
-                  "player_id": "46",
-                  "name": "Nader te Bepalen 2",
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
                   "member_id": "50026832"
                 },
                 {
-                  "player_id": "33",
-                  "name": "Zlata Kuznietsova"
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "za 17-10-2026 12:55"
         },
         {
@@ -45299,7 +45369,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -45329,44 +45399,16 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "za 17-10-2026 13:45"
-        },
-        {
-          "match_id": "325",
-          "round": "Ronde 2",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "15",
-                  "name": "Niels Bruns",
-                  "member_id": "50008616"
-                },
-                {
-                  "player_id": "18",
-                  "name": "Levi Molenaar",
-                  "member_id": "50012482"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "46",
-                  "name": "Nader te Bepalen 2",
-                  "member_id": "50026832"
-                },
-                {
-                  "player_id": "33",
-                  "name": "Zlata Kuznietsova"
-                }
-              ]
-            }
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              17
+            ]
           ],
-          "games": [],
           "played_at": "za 17-10-2026 13:45"
         },
         {
@@ -45389,7 +45431,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "15",
@@ -45404,7 +45446,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              6
+            ],
+            [
+              18,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
         },
         {
@@ -45412,7 +45467,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "41",
@@ -45430,19 +45485,76 @@
               "won": false,
               "players": [
                 {
-                  "player_id": "46",
-                  "name": "Nader te Bepalen 2",
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
                   "member_id": "50026832"
                 },
                 {
-                  "player_id": "33",
-                  "name": "Zlata Kuznietsova"
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
+        },
+        {
+          "match_id": "325",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Niels Bruns",
+                  "member_id": "50008616"
+                },
+                {
+                  "player_id": "18",
+                  "name": "Levi Molenaar",
+                  "member_id": "50012482"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                },
+                {
+                  "player_id": "36",
+                  "name": "Dieks Weber",
+                  "member_id": "50018658"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
         },
         {
           "match_id": "316",
@@ -45464,7 +45576,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "15",
@@ -45479,7 +45591,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              7,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:25"
         },
         {
@@ -45487,7 +45608,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -45517,7 +45638,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              23
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 15:25"
         },
         {
@@ -45540,7 +45674,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "41",
@@ -45555,44 +45689,16 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "za 17-10-2026 16:15"
-        },
-        {
-          "match_id": "323",
-          "round": "Ronde 5",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "1",
-                  "name": "Roene Bloem",
-                  "member_id": "50009705"
-                },
-                {
-                  "player_id": "28",
-                  "name": "Nolan van Deijk",
-                  "member_id": "50015629"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "46",
-                  "name": "Nader te Bepalen 2",
-                  "member_id": "50026832"
-                },
-                {
-                  "player_id": "33",
-                  "name": "Zlata Kuznietsova"
-                }
-              ]
-            }
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              10,
+              21
+            ]
           ],
-          "games": [],
           "played_at": "za 17-10-2026 16:15"
         }
       ]
