@@ -8809,75 +8809,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "284",
-          "round": "Kwartfinale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "75",
-                  "name": "Naisha Brar",
-                  "member_id": "5100680"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "285",
-          "round": "Kwartfinale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "54",
-                  "name": "Tanvi Chamarthi",
-                  "member_id": "5010371"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "287",
-          "round": "Kwartfinale",
-          "sides": [
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            },
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "80",
-                  "name": "Avantika Bharath Kumar",
-                  "member_id": "50009313"
-                }
-              ]
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "286",
           "round": "Kwartfinale",
           "sides": [
@@ -9024,6 +8955,75 @@
             ]
           ],
           "played_at": "za 5-9-2026 18:15"
+        },
+        {
+          "match_id": "284",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "75",
+                  "name": "Naisha Brar",
+                  "member_id": "5100680"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "285",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Tanvi Chamarthi",
+                  "member_id": "5010371"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "287",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     },
