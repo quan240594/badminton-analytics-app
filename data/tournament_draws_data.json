@@ -89917,6 +89917,173 @@
           "played_at": "zo 25-10-2026 18:20"
         }
       ]
+    },
+    "17": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "DOUDOU HUANG"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-24"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "60",
+              "name": "JULIA AL EIDO"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-88"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "84",
+              "name": "MIHIKAA MUKUND"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "52-92"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "221",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "84",
+                  "name": "MIHIKAA MUKUND",
+                  "member_id": "50012552"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "JULIA AL EIDO",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              26,
+              28
+            ],
+            [
+              20,
+              22
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:35"
+        },
+        {
+          "match_id": "218",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "DOUDOU HUANG",
+                  "seed": 1,
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "84",
+                  "name": "MIHIKAA MUKUND",
+                  "member_id": "50012552"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              2
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:15"
+        },
+        {
+          "match_id": "220",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "DOUDOU HUANG",
+                  "seed": 1,
+                  "member_id": "50007470"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "JULIA AL EIDO",
+                  "member_id": "50023081"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              2
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:50"
+        }
+      ]
     }
   }
 }
