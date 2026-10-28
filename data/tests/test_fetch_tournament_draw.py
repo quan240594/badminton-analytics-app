@@ -20,7 +20,9 @@ def match_block(match_id, sides, round_title="", games=(), date="", member_ids=(
         parts.append(f'<span title="{round_title}"></span>')
     parts.extend(sides)
     parts.extend(f'<ul class="points"><li class="points__cell a">{a}</li><li class="points__cell">{b}</li></ul>' for a, b in games)
-    parts.extend(f'<a href="x?T1P{i}MemberID={mid}">h2h</a>' for i, mid in enumerate(member_ids, 1))
+    # member_ids: ids in the order T1P1, T1P2, T2P1, ...; or a {(team, slot): id} dict
+    slots = member_ids if isinstance(member_ids, dict) else dict(zip([(1, 1), (1, 2), (2, 1), (2, 2)], member_ids))
+    parts.extend(f'<a href="x?T{t}P{p}MemberID={mid}">h2h</a>' for (t, p), mid in slots.items())
     if date:
         parts.append(f'<div class="match__footer"><span class="nav-link__value">{date}</span></div>')
     return "".join(parts)
@@ -35,7 +37,7 @@ MATCHES = (
         round_title="Ronde 1",
         games=[(21, 15), (21, 18)],
         date="Za 13-9-2025 14:30",
-        member_ids=("900", "901", "902"),
+        member_ids={(1, 1): "900", (1, 2): "901", (2, 1): "902"},
     )
     + match_block(2, [side(False, [])])
 )
@@ -70,6 +72,27 @@ def test_parse_matches():
         "played_at": "Za 13-9-2025 14:30",
     }
     assert bare == {"match_id": "2", "round": None, "sides": [{"won": False, "players": []}], "games": [], "played_at": None}
+
+
+def test_member_ids_follow_their_slot_not_their_position():
+    # Real shape (tournament 07575142, match 213): team 1's ids are letter-prefixed
+    # and team 2's are numeric, so pairing the numeric ones by order gave them to team 1.
+    ids = {(1, 1): "B50862243", (1, 2): "B50011271", (2, 1): "986876", (2, 2): "836628"}
+    block = match_block(213, [side(False, [("55", "Swinnen"), ("51", "Verpraet")]), side(True, [("46", "Macdaniel"), ("54", "Stapelbroek")])], member_ids=ids)
+    [match] = ftd.parse_matches("<ul>" + block)
+    assert [[p.get("member_id") for p in s["players"]] for s in match["sides"]] == [[None, None], ["986876", "836628"]]
+
+
+def test_a_missing_slot_leaves_that_player_without_a_member_id():
+    block = match_block(1, [side(True, [("1", "A"), ("2", "B")]), side(False, [("3", "C")])], member_ids={(1, 2): "222", (2, 1): "333"})
+    [match] = ftd.parse_matches("<ul>" + block)
+    assert [[p.get("member_id") for p in s["players"]] for s in match["sides"]] == [[None, "222"], ["333"]]
+
+
+def test_a_link_escaped_as_html_still_maps_by_slot():
+    block = '<li class="match-group__item" id="match_7">' + side(True, [("1", "A")]) + side(False, [("2", "B")]) + '<a href="x?O=1&amp;T1P1MemberID=111&amp;T2P1MemberID=222">h2h</a>'
+    [match] = ftd.parse_matches("<ul>" + block)
+    assert [[p.get("member_id") for p in s["players"]] for s in match["sides"]] == [["111"], ["222"]]
 
 
 def test_parse_matches_empty():

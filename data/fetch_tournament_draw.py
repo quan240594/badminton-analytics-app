@@ -57,7 +57,10 @@ DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4
 # button embeds every player's site-wide MemberID, which the existing
 # rankings.json pipeline's ranking/player.aspx?rid=..&player=<id> URLs use.
 # This is the only place that global id is exposed for a plain tournament.
-H2H_MEMBER_ID_RE = re.compile(r'T\dP\dMemberID=(\d+)')
+# The link names every slot (T<team>P<player>), and a slot's id is not always
+# numeric (e.g. "B50862243"); only the numeric ones are the MemberIDs the ranking
+# pages use, and the slot - never the order of the numeric ones - says whose it is.
+H2H_MEMBER_ID_RE = re.compile(r'T(\d)P(\d)MemberID=(\w+)')
 
 
 fetch = partial(fetch_text, headers=XHR_HEADERS, retry_delays=RETRY_DELAYS)
@@ -102,13 +105,13 @@ def parse_matches(html: str) -> list[dict]:
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
 
-        # Zip the h2h link's T1P1/T1P2/T2P1/T2P2 MemberIDs against the same
-        # players in document order - both lists follow the same side-by-side
-        # rendering order, there's no other shared key to join on here.
-        member_ids = H2H_MEMBER_ID_RE.findall(block)
-        all_players = [player for side in sides for player in side["players"]]
-        for player, member_id in zip(all_players, member_ids):
-            player["member_id"] = member_id
+        # Team N's Mth player on the page is the link's TNPM slot.
+        slots = {(int(team), int(slot)): member_id for team, slot, member_id in H2H_MEMBER_ID_RE.findall(block.replace("&amp;", "&"))}
+        for team, side in enumerate(sides, 1):
+            for slot, player in enumerate(side["players"], 1):
+                member_id = slots.get((team, slot))
+                if member_id and member_id.isdigit():
+                    player["member_id"] = member_id
 
         matches.append(
             {
