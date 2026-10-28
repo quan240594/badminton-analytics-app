@@ -48321,14 +48321,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Kyano Chong",
+                  "member_id": "5004891"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Bolin Huang",
+                  "member_id": "10002582"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:50"
         },
         {
@@ -48337,14 +48358,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Mukunth Rajesh",
+                  "member_id": "50008695"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:50"
         },
         {
@@ -48352,15 +48394,40 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Tibbe Kamerman",
+                  "member_id": "50015043"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Bolin Huang",
+                  "member_id": "10002582"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "zo 18-10-2026 10:25"
         },
         {
@@ -48368,15 +48435,36 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Reyansh Kwatra",
+                  "member_id": "10000199"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:00"
         },
         {
@@ -48385,14 +48473,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Tibbe Kamerman",
+                  "member_id": "50015043"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Hugo Mulkens",
+                  "member_id": "5010683"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              8,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         },
         {
@@ -48401,7 +48514,13 @@
           "sides": [
             {
               "won": true,
-              "players": []
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Tibbe Kamerman",
+                  "member_id": "50015043"
+                }
+              ]
             },
             {
               "won": false,
@@ -48423,7 +48542,13 @@
             },
             {
               "won": true,
-              "players": []
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Reyansh Kwatra",
+                  "member_id": "10000199"
+                }
+              ]
             }
           ],
           "games": [],
