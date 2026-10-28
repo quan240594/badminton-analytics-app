@@ -36177,45 +36177,45 @@
               "name": "Erikjan KOEKOEK"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 4,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "4-0",
+          "game_record": "8-0",
+          "points_record": "168-52"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "25",
-              "name": "Michel RUNHART"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "19",
               "name": "François LEVAUX"
             }
           ],
-          "played": 0,
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "2-2",
+          "game_record": "4-4",
+          "points_record": "122-124"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Michel RUNHART"
+            }
+          ],
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "54-168"
         }
       ],
       "matches": [
@@ -36234,7 +36234,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
@@ -36243,7 +36243,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 10:00"
         },
         {
@@ -36251,7 +36260,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -36271,7 +36280,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              3
+            ]
+          ],
           "played_at": "za 17-10-2026 10:40"
         },
         {
@@ -36283,22 +36301,31 @@
               "players": [
                 {
                   "player_id": "19",
-                  "name": "François LEVAUX",
-                  "member_id": "860482"
+                  "name": "François LEVAUX"
                 }
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
-                  "name": "Erikjan KOEKOEK"
+                  "name": "Erikjan KOEKOEK",
+                  "member_id": "860482"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              5,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 11:20"
         },
         {
@@ -36306,12 +36333,11 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
-                  "name": "François LEVAUX",
-                  "member_id": "50025521"
+                  "name": "François LEVAUX"
                 }
               ]
             },
@@ -36320,12 +36346,22 @@
               "players": [
                 {
                   "player_id": "25",
-                  "name": "Michel RUNHART"
+                  "name": "Michel RUNHART",
+                  "member_id": "50025521"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "za 17-10-2026 12:00"
         },
         {
@@ -36343,7 +36379,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -36353,7 +36389,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              2,
+              21
+            ],
+            [
+              5,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:40"
         },
         {
@@ -36361,7 +36406,7 @@
           "round": "Ronde 6",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -36380,7 +36425,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              8
+            ]
+          ],
           "played_at": "za 17-10-2026 13:20"
         }
       ]
