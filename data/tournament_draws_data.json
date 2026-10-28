@@ -44841,49 +44841,49 @@
           "rank": 1,
           "players": [
             {
-              "player_id": "9",
-              "name": "Poju Adeoye"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
               "player_id": "26",
               "name": "Thije Jacobs"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 4,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "4-0",
+          "game_record": "8-1",
+          "points_record": "186-116"
         },
         {
-          "rank": 1,
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "Poju Adeoye"
+            }
+          ],
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "2-2",
+          "game_record": "5-4",
+          "points_record": "159-158"
+        },
+        {
+          "rank": 3,
           "players": [
             {
               "player_id": "23",
               "name": "Robin Dekker"
             }
           ],
-          "played": 0,
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "97-168"
         }
       ],
       "matches": [
@@ -44892,7 +44892,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "26",
@@ -44912,7 +44912,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 17-10-2026 10:25"
         },
         {
@@ -44930,7 +44939,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "26",
@@ -44940,7 +44949,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 11:15"
         },
         {
@@ -44958,7 +44976,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "9",
@@ -44968,7 +44986,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:05"
         },
         {
@@ -44986,7 +45013,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "26",
@@ -44996,7 +45023,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:55"
         },
         {
@@ -45004,7 +45040,7 @@
           "round": "Ronde 5",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "26",
@@ -45024,7 +45060,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "za 17-10-2026 13:45"
         },
         {
@@ -45032,7 +45081,7 @@
           "round": "Ronde 6",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "9",
@@ -45052,7 +45101,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
         }
       ]
