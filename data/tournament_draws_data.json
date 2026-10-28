@@ -93076,6 +93076,173 @@
           "played_at": "zo 25-10-2026 16:35"
         }
       ]
+    },
+    "43": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "141",
+              "name": "MEENAKSHI MOHAN BABU"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-36"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "121",
+              "name": "AKSHAYA SRINIVASAN"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "60-71"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "16",
+              "name": "LOLA HEINEN"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "47-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "543",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "AKSHAYA SRINIVASAN",
+                  "member_id": "4989249"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "LOLA HEINEN",
+                  "member_id": "5011115"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:40"
+        },
+        {
+          "match_id": "540",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "141",
+                  "name": "MEENAKSHI MOHAN BABU",
+                  "seed": 2,
+                  "member_id": "5004689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "AKSHAYA SRINIVASAN",
+                  "member_id": "4989249"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:45"
+        },
+        {
+          "match_id": "542",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "141",
+                  "name": "MEENAKSHI MOHAN BABU",
+                  "seed": 2,
+                  "member_id": "5004689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "LOLA HEINEN",
+                  "member_id": "5011115"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "zo 25-10-2026 16:35"
+        }
+      ]
     }
   }
 }
