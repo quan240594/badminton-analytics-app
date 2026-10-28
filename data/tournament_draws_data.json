@@ -57573,7 +57573,7 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "105",
@@ -57603,7 +57603,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              20
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         }
       ]
