@@ -47220,15 +47220,36 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Pranav Parakulangara Kizhuveettil",
+                  "member_id": "50009396"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "141",
+                  "name": "Akshath Shiv Shankar",
+                  "member_id": "50008368"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              12
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         },
         {
@@ -47237,14 +47258,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Neelesh Bharath Nath",
+                  "member_id": "50008965"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "118",
+                  "name": "Tushanth Arcot",
+                  "member_id": "50012092"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
           "played_at": "zo 18-10-2026 13:45"
         },
         {
@@ -47253,14 +47295,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Pranav Parakulangara Kizhuveettil",
+                  "member_id": "50009396"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "118",
+                  "name": "Tushanth Arcot",
+                  "member_id": "50012092"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         }
       ]
