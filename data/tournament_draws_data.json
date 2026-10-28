@@ -82985,6 +82985,160 @@
           "played_at": "zo 25-10-2026 12:30"
         }
       ]
+    },
+    "50": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "680",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Merijn van Rossum",
+                  "member_id": "4995791"
+                },
+                {
+                  "player_id": "110",
+                  "name": "Giorgio van Zaalen",
+                  "member_id": "865144"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Bart van Gurp",
+                  "member_id": "709123"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Gertjan Leeggangers",
+                  "member_id": "853589"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              10
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:40"
+        },
+        {
+          "match_id": "681",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Richard Schrauwen",
+                  "member_id": "568411"
+                },
+                {
+                  "player_id": "69",
+                  "name": "Michel Van Dongen",
+                  "member_id": "559339"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Loewy Hermans",
+                  "member_id": "985615"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:40"
+        },
+        {
+          "match_id": "679",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Bart van Gurp",
+                  "member_id": "709123"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Gertjan Leeggangers",
+                  "member_id": "853589"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Loewy Hermans",
+                  "member_id": "985615"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 16:10"
+        }
+      ]
     }
   }
 }
