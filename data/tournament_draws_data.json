@@ -15595,29 +15595,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "183",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "44",
-                  "name": "Ridhima Nanda",
-                  "member_id": "5001756"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "184",
           "round": "Halve finale",
           "sides": [
@@ -15694,6 +15671,29 @@
             ]
           ],
           "played_at": "za 5-9-2026 18:45"
+        },
+        {
+          "match_id": "183",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Ridhima Nanda",
+                  "member_id": "5001756"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     },
