@@ -42376,49 +42376,49 @@
           "rank": 1,
           "players": [
             {
-              "player_id": "43",
-              "name": "Bram Eijsink"
+              "player_id": "4",
+              "name": "Sepp Kruiswijk"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-46"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "17",
               "name": "Yent Germs"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "68-66"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
-              "player_id": "4",
-              "name": "Sepp Kruiswijk"
+              "player_id": "43",
+              "name": "Bram Eijsink"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "44-84"
         }
       ],
       "matches": [
@@ -42437,7 +42437,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "4",
@@ -42447,7 +42447,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 10:00"
         },
         {
@@ -42465,7 +42474,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "17",
@@ -42475,7 +42484,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 10:50"
         },
         {
@@ -42493,7 +42511,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "4",
@@ -42503,7 +42521,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 11:40"
         }
       ]
