@@ -92575,6 +92575,175 @@
           "played_at": "zo 25-10-2026 15:55"
         }
       ]
+    },
+    "33": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "KAJ RIEDL"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "105-72"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "131",
+              "name": "ROELAND NAGEL"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "96-103"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "41",
+              "name": "AKHIL MUNUGOTI"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "60-86"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "359",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "AKHIL MUNUGOTI",
+                  "member_id": "4995433"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:40"
+        },
+        {
+          "match_id": "356",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "ROELAND NAGEL",
+                  "member_id": "989680"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "AKHIL MUNUGOTI",
+                  "member_id": "4995433"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:45"
+        },
+        {
+          "match_id": "358",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "ROELAND NAGEL",
+                  "member_id": "989680"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              23,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:55"
+        }
+      ]
     }
   }
 }
