@@ -45709,6 +45709,26 @@
           "rank": 1,
           "players": [
             {
+              "player_id": "2",
+              "name": "Quinten Brandenburg"
+            },
+            {
+              "player_id": "4",
+              "name": "Sepp Kruiswijk"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "98-81"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
               "player_id": "19",
               "name": "Nick Fransen"
             },
@@ -45717,16 +45737,16 @@
               "name": "Yent Germs"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "85-97"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "3",
@@ -45737,33 +45757,13 @@
               "name": "Florian Lock"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "2",
-              "name": "Quinten Brandenburg"
-            },
-            {
-              "player_id": "4",
-              "name": "Sepp Kruiswijk"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "2-4",
+          "points_record": "109-114"
         }
       ],
       "matches": [
@@ -45787,7 +45787,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "2",
@@ -45802,8 +45802,17 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "za 17-10-2026 11:15"
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:05"
         },
         {
           "match_id": "335",
@@ -45825,7 +45834,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "2",
@@ -45840,7 +45849,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              13
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:30"
         },
         {
@@ -45848,7 +45870,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
@@ -45878,7 +45900,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 13:20"
         }
       ]
