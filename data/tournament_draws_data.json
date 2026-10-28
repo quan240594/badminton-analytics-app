@@ -86622,5 +86622,281 @@
         }
       ]
     }
+  },
+  "7E9B4FED-9427-45FB-850F-A9276ECD54E4": {
+    "1": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "4",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "DENNIS KOPPEN",
+                  "seed": 1,
+                  "member_id": "824274"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "VIHAAN SHAH",
+                  "member_id": "986306"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "5",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "DION HOEGEN",
+                  "member_id": "986271"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "BEREND van BRENK",
+                  "member_id": "870082"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "6",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "PJOTR ODIJK",
+                  "member_id": "849804"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "JASPER KOPPEN",
+                  "member_id": "804598"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "7",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "JELLE VET",
+                  "member_id": "834290"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "LARS KROS",
+                  "seed": 2,
+                  "member_id": "850947"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:30"
+        },
+        {
+          "match_id": "2",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "DENNIS KOPPEN",
+                  "seed": 1,
+                  "member_id": "824274"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "DION HOEGEN",
+                  "member_id": "986271"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:50"
+        },
+        {
+          "match_id": "3",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "JASPER KOPPEN",
+                  "member_id": "804598"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "LARS KROS",
+                  "seed": 2,
+                  "member_id": "850947"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              20,
+              22
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:50"
+        },
+        {
+          "match_id": "1",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "DENNIS KOPPEN",
+                  "seed": 1,
+                  "member_id": "824274"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "LARS KROS",
+                  "seed": 2,
+                  "member_id": "850947"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        }
+      ]
+    }
   }
 }
