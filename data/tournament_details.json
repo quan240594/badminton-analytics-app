@@ -31818,15 +31818,39 @@
         "event_id": "3",
         "name": "Categorie Goud - Enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 4,
+        "participants": [
+          [
+            "2"
+          ],
+          [
+            "3"
+          ],
+          [
+            "4"
+          ],
+          [
+            "5"
+          ]
+        ]
       },
       {
         "event_id": "4",
         "name": "Categorie Goud - Dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 3,
+        "participants": [
+          [
+            "2",
+            "3"
+          ],
+          [
+            "4"
+          ],
+          [
+            "5"
+          ]
+        ]
       },
       {
         "event_id": "11",
@@ -31946,8 +31970,28 @@
     "entries": [
       {
         "country": null,
+        "player_id": "2",
+        "name": "Kuik, Finn van"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Sanders, Fabian"
+      },
+      {
+        "country": null,
+        "player_id": "4",
+        "name": "Schie, Lisa Van"
+      },
+      {
+        "country": null,
         "player_id": "1",
         "name": "Singcay, John Michael"
+      },
+      {
+        "country": null,
+        "player_id": "5",
+        "name": "Warmerdam, Brandon"
       }
     ]
   },
