@@ -35288,52 +35288,161 @@
           "rank": 1,
           "players": [
             {
-              "player_id": "11",
-              "name": "Chantal van GORTEL"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
               "player_id": "6",
               "name": "Alexandra MONDELAERS"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-63"
         },
         {
-          "rank": 1,
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Chantal van GORTEL"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "73-53"
+        },
+        {
+          "rank": 3,
           "players": [
             {
               "player_id": "17",
               "name": "Hanneke BROEKHUIZEN"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "43-84"
         }
       ],
       "matches": [
+        {
+          "match_id": "37",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Alexandra MONDELAERS"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Hanneke BROEKHUIZEN",
+                  "member_id": "4999730"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:00"
+        },
+        {
+          "match_id": "33",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Chantal van GORTEL",
+                  "member_id": "5012556"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Alexandra MONDELAERS"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 10:40"
+        },
+        {
+          "match_id": "36",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Chantal van GORTEL",
+                  "member_id": "5012556"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Hanneke BROEKHUIZEN",
+                  "member_id": "4999730"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              1
+            ]
+          ],
+          "played_at": "za 17-10-2026 11:20"
+        },
         {
           "match_id": "0",
           "round": "Ronde 1",
@@ -35399,88 +35508,6 @@
           ],
           "games": [],
           "played_at": null
-        },
-        {
-          "match_id": "37",
-          "round": "Ronde 1",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "6",
-                  "name": "Alexandra MONDELAERS",
-                  "member_id": "4999730"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "17",
-                  "name": "Hanneke BROEKHUIZEN"
-                }
-              ]
-            }
-          ],
-          "games": [],
-          "played_at": "za 17-10-2026 10:00"
-        },
-        {
-          "match_id": "33",
-          "round": "Ronde 2",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "11",
-                  "name": "Chantal van GORTEL",
-                  "member_id": "5012556"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "6",
-                  "name": "Alexandra MONDELAERS"
-                }
-              ]
-            }
-          ],
-          "games": [],
-          "played_at": "za 17-10-2026 10:40"
-        },
-        {
-          "match_id": "36",
-          "round": "Ronde 3",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "11",
-                  "name": "Chantal van GORTEL",
-                  "member_id": "5012556"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "17",
-                  "name": "Hanneke BROEKHUIZEN",
-                  "member_id": "4999730"
-                }
-              ]
-            }
-          ],
-          "games": [],
-          "played_at": "za 17-10-2026 11:20"
         }
       ]
     },
