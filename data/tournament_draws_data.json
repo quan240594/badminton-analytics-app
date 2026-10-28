@@ -90919,6 +90919,175 @@
           "played_at": "zo 25-10-2026 15:30"
         }
       ]
+    },
+    "23": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "59",
+              "name": "VICTOR YEH"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "89-71"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "BRYAN NGO"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "88-91"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "JOAQUIN PATEL"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "89-104"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "273",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "JOAQUIN PATEL",
+                  "member_id": "50019429"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:35"
+        },
+        {
+          "match_id": "270",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "VICTOR YEH",
+                  "member_id": "10001796"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:35"
+        },
+        {
+          "match_id": "272",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "VICTOR YEH",
+                  "member_id": "10001796"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "JOAQUIN PATEL",
+                  "member_id": "50019429"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              26,
+              24
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:30"
+        }
+      ]
     }
   }
 }
