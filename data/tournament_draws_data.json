@@ -44490,7 +44490,56 @@
       ]
     },
     "28": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Lisa Van Schie"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-47"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "31",
+              "name": "Iris Horsthuis"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "72-99"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Jade Blankenvoort"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "83-93"
+        }
+      ],
       "matches": [
         {
           "match_id": "286",
@@ -44498,14 +44547,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Jade Blankenvoort",
+                  "member_id": "5007100"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Iris Horsthuis",
+                  "member_id": "50025026"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              23
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
         },
         {
@@ -44513,15 +44587,36 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Lisa Van Schie",
+                  "member_id": "50011658"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Iris Horsthuis",
+                  "member_id": "50025026"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              12
+            ]
+          ],
           "played_at": "za 17-10-2026 15:26"
         },
         {
@@ -44530,14 +44625,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Jade Blankenvoort",
+                  "member_id": "5007100"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Lisa Van Schie",
+                  "member_id": "50011658"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 16:16"
         }
       ]
