@@ -78932,6 +78932,213 @@
           "played_at": "zo 25-10-2026 11:20"
         }
       ]
+    },
+    "23": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Simone Kreeft"
+            },
+            {
+              "player_id": "7",
+              "name": "Yannick Roeland"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-45"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Judith van den Broek"
+            },
+            {
+              "player_id": "72",
+              "name": "Sander Visser"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "70-67"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Maud Faes"
+            },
+            {
+              "player_id": "34",
+              "name": "Mario van Mierlo"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "42-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "363",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Simone Kreeft",
+                  "member_id": "867858"
+                },
+                {
+                  "player_id": "7",
+                  "name": "Yannick Roeland",
+                  "member_id": "877357"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Judith van den Broek",
+                  "member_id": "512526"
+                },
+                {
+                  "player_id": "72",
+                  "name": "Sander Visser",
+                  "member_id": "453322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "za 24-10-2026 13:05"
+        },
+        {
+          "match_id": "364",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Maud Faes",
+                  "member_id": "846249"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Mario van Mierlo",
+                  "member_id": "978989"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Judith van den Broek",
+                  "member_id": "512526"
+                },
+                {
+                  "player_id": "72",
+                  "name": "Sander Visser",
+                  "member_id": "453322"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:45"
+        },
+        {
+          "match_id": "361",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Simone Kreeft",
+                  "member_id": "867858"
+                },
+                {
+                  "player_id": "7",
+                  "name": "Yannick Roeland",
+                  "member_id": "877357"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Maud Faes",
+                  "member_id": "846249"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Mario van Mierlo",
+                  "member_id": "978989"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:00"
+        }
+      ]
     }
   }
 }
