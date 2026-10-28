@@ -73693,61 +73693,61 @@
               "name": "Tygo Naafs"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 3,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "3-0",
+          "game_record": "6-2",
+          "points_record": "164-115"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "7",
-              "name": "Yannick Roeland"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "67",
               "name": "Max Strijker"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 2,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-3",
+          "points_record": "140-141"
         },
         {
-          "rank": 1,
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Yannick Roeland"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "4-4",
+          "points_record": "138-147"
+        },
+        {
+          "rank": 4,
           "players": [
             {
               "player_id": "68",
               "name": "Koen Timmermans"
             }
           ],
-          "played": 0,
+          "played": 3,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "87-126"
         }
       ],
       "matches": [
@@ -73766,7 +73766,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "67",
@@ -73776,7 +73776,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 09:35"
         },
         {
@@ -73784,7 +73797,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "111",
@@ -73804,7 +73817,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              7
+            ]
+          ],
           "played_at": "za 24-10-2026 09:35"
         },
         {
@@ -73812,7 +73834,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "111",
@@ -73832,7 +73854,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              20,
+              22
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "za 24-10-2026 10:45"
         },
         {
@@ -73840,7 +73875,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "67",
@@ -73860,7 +73895,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 24-10-2026 12:30"
         },
         {
@@ -73868,7 +73912,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "111",
@@ -73888,7 +73932,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 24-10-2026 15:25"
         },
         {
@@ -73896,7 +73953,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "7",
@@ -73916,7 +73973,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 24-10-2026 15:25"
         }
       ]
