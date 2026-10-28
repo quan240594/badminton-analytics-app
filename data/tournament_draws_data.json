@@ -84347,6 +84347,125 @@
           "played_at": "za 24-10-2026 13:40"
         }
       ]
+    },
+    "54": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "762",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Siem van Dongen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Tane Rochat",
+                  "member_id": "50019535"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              15
+            ],
+            [
+              12,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 15:25"
+        },
+        {
+          "match_id": "763",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              4,
+              15
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 15:25"
+        },
+        {
+          "match_id": "761",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Tane Rochat",
+                  "member_id": "50019535"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              14
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 16:35"
+        }
+      ]
     }
   }
 }
