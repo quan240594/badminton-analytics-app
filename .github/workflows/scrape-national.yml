@@ -50,7 +50,7 @@ jobs:
         working-directory: data
 
       - name: Install Playwright browser
-        run: playwright install --with-deps chromium
+        uses: ./.github/actions/install-playwright
 
       - name: Log in and capture session cookie
         env:

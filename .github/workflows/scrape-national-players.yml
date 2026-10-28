@@ -41,7 +41,7 @@ jobs:
         working-directory: data
 
       - name: Install Playwright browser
-        run: playwright install --with-deps chromium
+        uses: ./.github/actions/install-playwright
 
       # The ranking lists are public: only the cookie banner has to be accepted. No login, so
       # the account session used by the other scrapes is never exposed to this crawl.

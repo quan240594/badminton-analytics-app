@@ -1,0 +1,20 @@
+name: Install Playwright Chromium
+description: Install Chromium and its system packages, retrying when the apt mirror is slow.
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      # One run spent 10 minutes on a 43 kB/s apt download and lost the whole job
+      # budget; a normal install takes ~30s, so cap each attempt and start over.
+      run: |
+        echo 'Acquire::Retries "3"; Acquire::http::Timeout "30";' | sudo tee /etc/apt/apt.conf.d/80-ci-retries >/dev/null
+        for attempt in 1 2 3; do
+          if timeout 180 playwright install --with-deps chromium; then
+            exit 0
+          fi
+          echo "playwright install attempt $attempt failed or timed out" >&2
+          sudo dpkg --configure -a || true
+          sleep 5
+        done
+        exit 1
