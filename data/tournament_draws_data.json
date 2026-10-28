@@ -18488,29 +18488,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "350",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "57",
-                  "name": "Verena Severens",
-                  "member_id": "4995718"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "351",
           "round": "Halve finale",
           "sides": [
@@ -18583,6 +18560,29 @@
             ]
           ],
           "played_at": "za 5-9-2026 18:45"
+        },
+        {
+          "match_id": "350",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Verena Severens",
+                  "member_id": "4995718"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     },
