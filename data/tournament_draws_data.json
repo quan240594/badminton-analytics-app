@@ -35812,15 +35812,34 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Alexandra MONDELAERS"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Alicia MONDELAERS"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 12:00"
         },
         {
@@ -35828,15 +35847,40 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Chantal van GORTEL",
+                  "member_id": "5012556"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Anne KONTER",
+                  "member_id": "50010115"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 12:00"
         },
         {
@@ -35844,15 +35888,75 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Alexandra MONDELAERS"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Chantal van GORTEL",
+                  "member_id": "5012556"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "za 17-10-2026 12:40"
+        },
+        {
+          "match_id": "194",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Alicia MONDELAERS"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Anne KONTER",
+                  "member_id": "50010115"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              7,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:40"
         }
       ]
