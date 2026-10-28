@@ -37383,36 +37383,16 @@
               "name": "Hanneke BROEKHUIZEN"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "6-2",
+          "points_record": "151-119"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "7",
-              "name": "Alicia MONDELAERS"
-            },
-            {
-              "player_id": "23",
-              "name": "Han STRUIK"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "4",
@@ -37423,36 +37403,16 @@
               "name": "Bart BEELEN"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "7-3",
+          "points_record": "199-168"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "21",
-              "name": "Kelly GOOSSENS"
-            },
-            {
-              "player_id": "20",
-              "name": "Jeroen VULINK"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "11",
@@ -37463,13 +37423,53 @@
               "name": "Alexandra MONDELAERS"
             }
           ],
-          "played": 0,
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "6-3",
+          "points_record": "179-160"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Kelly GOOSSENS"
+            },
+            {
+              "player_id": "20",
+              "name": "Jeroen VULINK"
+            }
+          ],
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "1-3",
+          "game_record": "3-6",
+          "points_record": "144-178"
+        },
+        {
+          "rank": 5,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Alicia MONDELAERS"
+            },
+            {
+              "player_id": "29",
+              "name": "Stefan MONDELAERS"
+            }
+          ],
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "122-170"
         }
       ],
       "matches": [
@@ -37478,7 +37478,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "4",
@@ -37508,7 +37508,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 13:20"
         },
         {
@@ -37520,22 +37533,21 @@
               "players": [
                 {
                   "player_id": "7",
-                  "name": "Alicia MONDELAERS",
-                  "member_id": "50009877"
+                  "name": "Alicia MONDELAERS"
                 },
                 {
-                  "player_id": "23",
-                  "name": "Han STRUIK",
-                  "member_id": "5012556"
+                  "player_id": "29",
+                  "name": "Stefan MONDELAERS"
                 }
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "11",
-                  "name": "Chantal van GORTEL"
+                  "name": "Chantal van GORTEL",
+                  "member_id": "5012556"
                 },
                 {
                   "player_id": "6",
@@ -37544,7 +37556,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 13:20"
         },
         {
@@ -37552,7 +37573,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "22",
@@ -37571,17 +37592,25 @@
               "players": [
                 {
                   "player_id": "7",
-                  "name": "Alicia MONDELAERS",
-                  "member_id": "50009877"
+                  "name": "Alicia MONDELAERS"
                 },
                 {
-                  "player_id": "23",
-                  "name": "Han STRUIK"
+                  "player_id": "29",
+                  "name": "Stefan MONDELAERS"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              7
+            ]
+          ],
           "played_at": "za 17-10-2026 13:55"
         },
         {
@@ -37604,7 +37633,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "11",
@@ -37618,7 +37647,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              25,
+              23
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 13:55"
         },
         {
@@ -37641,7 +37683,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "4",
@@ -37656,7 +37698,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:30"
         },
         {
@@ -37679,7 +37730,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "11",
@@ -37693,7 +37744,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              11,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:30"
         },
         {
@@ -37705,32 +37765,40 @@
               "players": [
                 {
                   "player_id": "7",
-                  "name": "Alicia MONDELAERS",
-                  "member_id": "50009877"
+                  "name": "Alicia MONDELAERS"
                 },
                 {
-                  "player_id": "23",
-                  "name": "Han STRUIK",
-                  "member_id": "5012555"
+                  "player_id": "29",
+                  "name": "Stefan MONDELAERS"
                 }
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "4",
                   "name": "Rianka KIEZEBRINK",
-                  "member_id": "5003527"
+                  "member_id": "5012555"
                 },
                 {
                   "player_id": "27",
-                  "name": "Bart BEELEN"
+                  "name": "Bart BEELEN",
+                  "member_id": "5003527"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:05"
         },
         {
@@ -37738,7 +37806,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "22",
@@ -37768,7 +37836,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 17-10-2026 15:05"
         },
         {
@@ -37780,32 +37857,40 @@
               "players": [
                 {
                   "player_id": "7",
-                  "name": "Alicia MONDELAERS",
-                  "member_id": "50009877"
+                  "name": "Alicia MONDELAERS"
                 },
                 {
-                  "player_id": "23",
-                  "name": "Han STRUIK",
-                  "member_id": "50009884"
+                  "player_id": "29",
+                  "name": "Stefan MONDELAERS"
                 }
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "21",
                   "name": "Kelly GOOSSENS",
-                  "member_id": "50009885"
+                  "member_id": "50009884"
                 },
                 {
                   "player_id": "20",
-                  "name": "Jeroen VULINK"
+                  "name": "Jeroen VULINK",
+                  "member_id": "50009885"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              23
+            ],
+            [
+              16,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:40"
         },
         {
@@ -37813,7 +37898,7 @@
           "round": "Ronde 5",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "22",
@@ -37842,7 +37927,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 15:40"
         }
       ]
