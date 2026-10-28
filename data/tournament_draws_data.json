@@ -47053,49 +47053,49 @@
           "rank": 1,
           "players": [
             {
+              "player_id": "141",
+              "name": "Akshath Shiv Shankar"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-31"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
               "player_id": "164",
               "name": "You-Jie (Hugo) Shau"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "69-71"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "127",
               "name": "Benjamin Widjaja"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "141",
-              "name": "Akshath Shiv Shankar"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "35-86"
         }
       ],
       "matches": [
@@ -47114,7 +47114,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "141",
@@ -47124,7 +47124,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              4,
+              21
+            ],
+            [
+              2,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:00"
         },
         {
@@ -47132,7 +47141,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "164",
@@ -47152,7 +47161,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              23,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:50"
         },
         {
@@ -47170,7 +47188,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "141",
@@ -47180,8 +47198,17 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "zo 18-10-2026 10:25"
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "zo 18-10-2026 11:00"
         }
       ]
     },
