@@ -82774,6 +82774,217 @@
           "played_at": "zo 25-10-2026 11:20"
         }
       ]
+    },
+    "49": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "Loewy Hermans"
+            },
+            {
+              "player_id": "101",
+              "name": "Maarten Verstraeten"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-60"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "Bart van Gurp"
+            },
+            {
+              "player_id": "17",
+              "name": "Gertjan Leeggangers"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "93-97"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "53",
+              "name": "Mathijs van Engelen"
+            },
+            {
+              "player_id": "68",
+              "name": "Koen Timmermans"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "85-105"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "678",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Mathijs van Engelen",
+                  "member_id": "991846"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Loewy Hermans",
+                  "member_id": "985615"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:45"
+        },
+        {
+          "match_id": "677",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Bart van Gurp",
+                  "member_id": "709123"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Gertjan Leeggangers",
+                  "member_id": "853589"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "Loewy Hermans",
+                  "member_id": "985615"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:20"
+        },
+        {
+          "match_id": "675",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Bart van Gurp",
+                  "member_id": "709123"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Gertjan Leeggangers",
+                  "member_id": "853589"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Mathijs van Engelen",
+                  "member_id": "991846"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:30"
+        }
+      ]
     }
   }
 }
