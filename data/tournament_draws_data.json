@@ -91257,6 +91257,167 @@
           "played_at": "zo 25-10-2026 15:30"
         }
       ]
+    },
+    "25": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "284",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "BJÖRN REICHARDT",
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "VISHAKAN BALASUBRAMANIAN",
+                  "member_id": "5010978"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        },
+        {
+          "match_id": "285",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "VICTOR YEH",
+                  "member_id": "10001796"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "83",
+                  "name": "DARSHIT MERUGU",
+                  "member_id": "50015493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:05"
+        },
+        {
+          "match_id": "283",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "VISHAKAN BALASUBRAMANIAN",
+                  "member_id": "5010978"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "VICTOR YEH",
+                  "member_id": "10001796"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              14,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 19:00"
+        },
+        {
+          "match_id": "507",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "BJÖRN REICHARDT",
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "83",
+                  "name": "DARSHIT MERUGU",
+                  "member_id": "50015493"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 19:00"
+        }
+      ]
     }
   }
 }
