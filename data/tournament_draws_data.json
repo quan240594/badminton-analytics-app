@@ -81833,6 +81833,225 @@
           "played_at": "za 24-10-2026 16:35"
         }
       ]
+    },
+    "39": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "49",
+              "name": "Stijn Beerkens"
+            },
+            {
+              "player_id": "4",
+              "name": "Dio van Gils"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-2",
+          "points_record": "109-111"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "48",
+              "name": "Rick van Baal"
+            },
+            {
+              "player_id": "56",
+              "name": "Thibo van Gils"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "117-114"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "Geert Kock"
+            },
+            {
+              "player_id": "9",
+              "name": "Benjamin Walet"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "2-4",
+          "points_record": "107-108"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "551",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Geert Kock",
+                  "member_id": "4990674"
+                },
+                {
+                  "player_id": "9",
+                  "name": "Benjamin Walet",
+                  "member_id": "855346"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Stijn Beerkens",
+                  "member_id": "837255"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Dio van Gils",
+                  "member_id": "862666"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              9
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 10:45"
+        },
+        {
+          "match_id": "548",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Rick van Baal",
+                  "member_id": "867819"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Thibo van Gils",
+                  "member_id": "867835"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Geert Kock",
+                  "member_id": "4990674"
+                },
+                {
+                  "player_id": "9",
+                  "name": "Benjamin Walet",
+                  "member_id": "855346"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 13:05"
+        },
+        {
+          "match_id": "550",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Rick van Baal",
+                  "member_id": "867819"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Thibo van Gils",
+                  "member_id": "867835"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Stijn Beerkens",
+                  "member_id": "837255"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Dio van Gils",
+                  "member_id": "862666"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              23
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:10"
+        }
+      ]
     }
   }
 }
