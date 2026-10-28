@@ -93412,6 +93412,141 @@
           "played_at": "zo 25-10-2026 16:35"
         }
       ]
+    },
+    "45": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "554",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "ESTELLE MERKX",
+                  "member_id": "5000953"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "AKSHAYA SRINIVASAN",
+                  "member_id": "4989249"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 17:45"
+        },
+        {
+          "match_id": "555",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "ELINE DIETEREN",
+                  "member_id": "10002289"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "141",
+                  "name": "MEENAKSHI MOHAN BABU",
+                  "member_id": "5004689"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              7,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:45"
+        },
+        {
+          "match_id": "553",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "ESTELLE MERKX",
+                  "member_id": "5000953"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "141",
+                  "name": "MEENAKSHI MOHAN BABU",
+                  "member_id": "5004689"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 19:00"
+        },
+        {
+          "match_id": "586",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "121",
+                  "name": "AKSHAYA SRINIVASAN",
+                  "member_id": "4989249"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "ELINE DIETEREN",
+                  "member_id": "10002289"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 25-10-2026 19:00"
+        }
+      ]
     }
   }
 }
