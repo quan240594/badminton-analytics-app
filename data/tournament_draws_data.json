@@ -85880,6 +85880,386 @@
           "played_at": "za 24-10-2026 17:10"
         }
       ]
+    },
+    "58": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Evi Franken"
+            },
+            {
+              "player_id": "91",
+              "name": "Lotte van Zuien"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-2",
+          "points_record": "112-93"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Thijmen de Kruyf"
+            },
+            {
+              "player_id": "94",
+              "name": "Joona Tabbers"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "5-2",
+          "points_record": "97-78"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "76",
+              "name": "Femm Arts"
+            },
+            {
+              "player_id": "12",
+              "name": "Tane Rochat"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-5",
+          "points_record": "101-103"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "41",
+              "name": "Noa van Mierlo"
+            },
+            {
+              "player_id": "11",
+              "name": "Jens van Trier"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "1-6",
+          "points_record": "66-102"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "835",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Femm Arts",
+                  "member_id": "50012832"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Tane Rochat",
+                  "member_id": "50019535"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              15
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 10:10"
+        },
+        {
+          "match_id": "832",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Femm Arts",
+                  "member_id": "50012832"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Tane Rochat",
+                  "member_id": "50019535"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Evi Franken",
+                  "member_id": "50012003"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Lotte van Zuien",
+                  "member_id": "50012002"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              13,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 12:30"
+        },
+        {
+          "match_id": "839",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Evi Franken",
+                  "member_id": "50012003"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Lotte van Zuien",
+                  "member_id": "50012002"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Noa van Mierlo",
+                  "member_id": "50026419"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              8
+            ]
+          ],
+          "played_at": "za 24-10-2026 13:05"
+        },
+        {
+          "match_id": "840",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Noa van Mierlo",
+                  "member_id": "50026419"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "played_at": "za 24-10-2026 14:15"
+        },
+        {
+          "match_id": "836",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Evi Franken",
+                  "member_id": "50012003"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Lotte van Zuien",
+                  "member_id": "50012002"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              9
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              15,
+              13
+            ]
+          ],
+          "played_at": "za 24-10-2026 14:50"
+        },
+        {
+          "match_id": "838",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "Femm Arts",
+                  "member_id": "50012832"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Tane Rochat",
+                  "member_id": "50019535"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Noa van Mierlo",
+                  "member_id": "50026419"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              9
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "played_at": "za 24-10-2026 14:50"
+        }
+      ]
     }
   }
 }
