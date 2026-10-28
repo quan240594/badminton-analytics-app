@@ -48157,45 +48157,45 @@
               "name": "Bolin Huang"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-57"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "126",
               "name": "Nirav Shetty"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "77-57"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "97",
               "name": "Bram van Baak"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "37-84"
         }
       ],
       "matches": [
@@ -48204,7 +48204,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "126",
@@ -48224,7 +48224,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "za 17-10-2026 09:40"
         },
         {
@@ -48232,7 +48241,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "105",
@@ -48252,7 +48261,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 12:30"
         },
         {
@@ -48260,7 +48278,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "105",
@@ -48280,7 +48298,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "za 17-10-2026 15:55"
         }
       ]
