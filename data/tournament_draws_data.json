@@ -47825,45 +47825,45 @@
               "name": "Kyano Chong"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "88-61"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "50",
-              "name": "Aadhith Vinodh"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "5",
               "name": "Ahaan Sharma"
             }
           ],
-          "played": 0,
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "80-67"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Aadhith Vinodh"
+            }
+          ],
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "46-86"
         }
       ],
       "matches": [
@@ -47882,7 +47882,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "5",
@@ -47892,7 +47892,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 09:40"
         },
         {
@@ -47900,7 +47909,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "38",
@@ -47921,7 +47930,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              21,
+              2
+            ]
+          ],
           "played_at": "za 17-10-2026 12:30"
         },
         {
@@ -47929,7 +47947,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "38",
@@ -47950,7 +47968,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              23,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:55"
         }
       ]
