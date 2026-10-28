@@ -134,4 +134,21 @@ describe('tournamentResults', () => {
   it('is empty for a player without played matches', () => {
     expect(tournamentResults({ appearances: [{ tournamentId: 'NONE', playerId: '9' }] }, tournaments)).toEqual([]);
   });
+
+  it('lists a tournament once when the player is entered in several of its events', () => {
+    const singles = { name: 'HE A', matches: [played('1', 'Ronde 1', side(true, '7'), side(false, '2'))] };
+    const doubles = { name: 'MD A', matches: [played('2', 'Finale', side(true, '8', '4'), side(false, '1', '3')), played('3', 'Ronde 1', side(true, '5', '8'), side(false, '6', '9'))] };
+    const entered = { appearances: [{ tournamentId: 'T', playerId: '7' }, { tournamentId: 'T', playerId: '8' }] };
+    const results = tournamentResults(entered, [tournament('T', ['2026-09-05 00:00'], [singles, doubles])]);
+    expect(results).toHaveLength(1);
+    expect(results[0].draws.map((d) => [d.draw.name, d.matches.map((m) => m.match_id)])).toEqual([['HE A', ['1']], ['MD A', ['2', '3']]]);
+  });
+
+  it('shows a match once when it is found under two of the player ids', () => {
+    const doubles = { name: 'MD A', matches: [played('2', 'Finale', side(true, '7', '8'), side(false, '1', '3'))] };
+    const entered = { appearances: [{ tournamentId: 'T', playerId: '7' }, { tournamentId: 'T', playerId: '8' }] };
+    const [result] = tournamentResults(entered, [tournament('T', ['2026-09-05 00:00'], [doubles])]);
+    expect(result.draws).toHaveLength(1);
+    expect(result.draws[0].matches.map((m) => m.match_id)).toEqual(['2']);
+  });
 });

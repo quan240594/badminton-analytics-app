@@ -87,13 +87,31 @@ const drawsPlayedIn = (tournament, playerId) => (tournament.draws ?? [])
 
 const startOf = ({ tournament }) => tournament.dates?.[0] ?? '';
 
+// Entered in several events of one tournament, a player has a local id per event and
+// finds the same draws (and matches) under more than one of them.
+function mergeDraws(drawsPerPlayerId) {
+  const byDraw = new Map();
+  for (const { draw, matches } of drawsPerPlayerId.flat()) {
+    const found = byDraw.get(draw) ?? { draw, matches: [] };
+    for (const match of matches) {
+      if (!found.matches.some((m) => m.match_id === match.match_id)) found.matches.push(match);
+    }
+    byDraw.set(draw, found);
+  }
+  return [...byDraw.values()];
+}
+
 // The matches the player has played, per tournament (most recent first) and per draw.
 export function tournamentResults(profile, tournaments) {
   const byId = new Map(tournaments.map((tournament) => [tournament.id, tournament]));
-  return profile.appearances
-    .map(({ tournamentId, playerId }) => {
+  const playerIdsByTournament = new Map();
+  for (const { tournamentId, playerId } of profile.appearances) {
+    playerIdsByTournament.set(tournamentId, [...(playerIdsByTournament.get(tournamentId) ?? []), playerId]);
+  }
+  return [...playerIdsByTournament]
+    .map(([tournamentId, playerIds]) => {
       const tournament = byId.get(tournamentId);
-      const draws = tournament ? drawsPlayedIn(tournament, playerId) : [];
+      const draws = tournament ? mergeDraws(playerIds.map((playerId) => drawsPlayedIn(tournament, playerId))) : [];
       return draws.length > 0 ? { tournament, draws } : null;
     })
     .filter(Boolean)
