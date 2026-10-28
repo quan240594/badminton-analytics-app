@@ -41008,7 +41008,56 @@
       ]
     },
     "4": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "Tim Eikelenboom"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-41"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Sjoerd Fransen"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "52-46"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Job Nijhof"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "35-60"
+        }
+      ],
       "matches": [
         {
           "match_id": "57",
@@ -41016,14 +41065,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Job Nijhof",
+                  "member_id": "50007313"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Tim Eikelenboom",
+                  "member_id": "50009183"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              7,
+              15
+            ],
+            [
+              12,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 14:10"
         },
         {
@@ -41031,15 +41101,36 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Sjoerd Fransen",
+                  "member_id": "050"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Job Nijhof",
+                  "member_id": "50007313"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              6
+            ],
+            [
+              15,
+              10
+            ]
+          ],
           "played_at": "za 17-10-2026 15:00"
         },
         {
@@ -41048,14 +41139,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Sjoerd Fransen",
+                  "member_id": "050"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Tim Eikelenboom",
+                  "member_id": "50009183"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 15:50"
         }
       ]
