@@ -90577,6 +90577,177 @@
           "played_at": "zo 25-10-2026 18:20"
         }
       ]
+    },
+    "21": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "77",
+              "name": "BJÖRN REICHARDT"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "99-83"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "RICKY KOTA"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "98-80"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "92",
+              "name": "BEN van VERSEVELD"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "50-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "255",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "92",
+                  "name": "BEN van VERSEVELD",
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "RICKY KOTA",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:35"
+        },
+        {
+          "match_id": "252",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "BJÖRN REICHARDT",
+                  "seed": 1,
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "92",
+                  "name": "BEN van VERSEVELD",
+                  "member_id": "5001488"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:35"
+        },
+        {
+          "match_id": "254",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "BJÖRN REICHARDT",
+                  "seed": 1,
+                  "member_id": "5003136"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "RICKY KOTA",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:30"
+        }
+      ]
     }
   }
 }
