@@ -53457,7 +53457,7 @@
           "round": "Kwartfinale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "51",
@@ -53477,7 +53477,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:00"
         },
         {
@@ -53495,7 +53504,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "94",
@@ -53505,7 +53514,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:25"
         },
         {
@@ -53513,7 +53531,7 @@
           "round": "Kwartfinale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "27",
@@ -53533,7 +53551,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:25"
         },
         {
@@ -53551,6 +53578,84 @@
               ]
             },
             {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Jonas Scheidat",
+                  "member_id": "4994017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              16,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "zo 18-10-2026 09:25"
+        },
+        {
+          "match_id": "375",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Jelle Smeding",
+                  "member_id": "4992574"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "zo 18-10-2026 11:00"
+        },
+        {
+          "match_id": "376",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "member_id": "50012530"
+                }
+              ]
+            },
+            {
               "won": false,
               "players": [
                 {
@@ -53561,39 +53666,16 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "zo 18-10-2026 09:25"
-        },
-        {
-          "match_id": "375",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": false,
-              "players": []
-            },
-            {
-              "won": false,
-              "players": []
-            }
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              9
+            ]
           ],
-          "games": [],
-          "played_at": "zo 18-10-2026 11:00"
-        },
-        {
-          "match_id": "376",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": false,
-              "players": []
-            },
-            {
-              "won": false,
-              "players": []
-            }
-          ],
-          "games": [],
           "played_at": "zo 18-10-2026 11:40"
         },
         {
@@ -53601,15 +53683,36 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Jayden Zhang",
+                  "member_id": "5008940"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Ian Wu",
+                  "member_id": "50012530"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              22,
+              20
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         },
         {
