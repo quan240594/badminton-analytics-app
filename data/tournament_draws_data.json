@@ -88144,6 +88144,173 @@
           "played_at": "zo 25-10-2026 19:40"
         }
       ]
+    },
+    "7": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "28",
+              "name": "PRANAV PARAKULANGARA KIZHUVEETTIL"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "85-55"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "128",
+              "name": "TUSHANTH ARCOT"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "80-61"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "126",
+              "name": "YOU-JIE(HUGO) SHAU"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "35-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "130",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "TUSHANTH ARCOT",
+                  "member_id": "50012092"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "YOU-JIE(HUGO) SHAU",
+                  "member_id": "50019686"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:10"
+        },
+        {
+          "match_id": "127",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "PRANAV PARAKULANGARA KIZHUVEETTIL",
+                  "seed": 1,
+                  "member_id": "50009396"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "TUSHANTH ARCOT",
+                  "member_id": "50012092"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              22,
+              20
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:10"
+        },
+        {
+          "match_id": "129",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "PRANAV PARAKULANGARA KIZHUVEETTIL",
+                  "seed": 1,
+                  "member_id": "50009396"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "YOU-JIE(HUGO) SHAU",
+                  "member_id": "50019686"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:25"
+        }
+      ]
     }
   }
 }
