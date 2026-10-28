@@ -91088,6 +91088,175 @@
           "played_at": "zo 25-10-2026 15:30"
         }
       ]
+    },
+    "24": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "VISHAKAN BALASUBRAMANIAN"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "97-64"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "JOEY LAM"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "87-76"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "136",
+              "name": "MADS LOOG"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "40-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "282",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "JOEY LAM",
+                  "member_id": "50008085"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "136",
+                  "name": "MADS LOOG",
+                  "member_id": "5001145"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:35"
+        },
+        {
+          "match_id": "279",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "VISHAKAN BALASUBRAMANIAN",
+                  "member_id": "5010978"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "JOEY LAM",
+                  "member_id": "50008085"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:35"
+        },
+        {
+          "match_id": "281",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "VISHAKAN BALASUBRAMANIAN",
+                  "member_id": "5010978"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "136",
+                  "name": "MADS LOOG",
+                  "member_id": "5001145"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              9
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:30"
+        }
+      ]
     }
   }
 }
