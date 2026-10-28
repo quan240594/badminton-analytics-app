@@ -55283,7 +55283,7 @@
           "round": "Kwartfinale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -55303,7 +55303,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              24,
+              22
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:50"
         },
         {
@@ -55311,7 +55324,7 @@
           "round": "Kwartfinale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "17",
@@ -55331,7 +55344,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              4
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:50"
         },
         {
@@ -55339,7 +55361,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "74",
@@ -55350,10 +55372,25 @@
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Mai-Lan Bui",
+                  "member_id": "10002873"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:00"
         },
         {
@@ -55361,8 +55398,14 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
             },
             {
               "won": false,
@@ -55375,7 +55418,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              18
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:00"
         },
         {
@@ -55383,15 +55435,40 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Nina Willems",
+                  "member_id": "51661071"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              29,
+              30
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         },
         {
