@@ -43885,45 +43885,45 @@
               "name": "Milah Bakker"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 4,
+          "won": 4,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "4-0",
+          "game_record": "8-2",
+          "points_record": "201-128"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "14",
-              "name": "Eva Gateshka"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "32",
               "name": "Elvira Kemmerling"
             }
           ],
-          "played": 0,
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "2-2",
+          "game_record": "6-4",
+          "points_record": "175-146"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Eva Gateshka"
+            }
+          ],
+          "played": 4,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "66-168"
         }
       ],
       "matches": [
@@ -43942,7 +43942,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "32",
@@ -43952,7 +43952,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              2,
+              21
+            ],
+            [
+              6,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 11:15"
         },
         {
@@ -43960,7 +43969,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -43980,7 +43989,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 12:05"
         },
         {
@@ -43998,7 +44016,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -44008,7 +44026,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 13:45"
         },
         {
@@ -44026,7 +44053,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -44036,7 +44063,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
         },
         {
@@ -44044,7 +44084,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "32",
@@ -44064,15 +44104,24 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "za 17-10-2026 15:25"
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:00"
         },
         {
           "match_id": "251",
           "round": "Ronde 6",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -44092,7 +44141,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 16:15"
         }
       ]
