@@ -38289,15 +38289,36 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Marcel SMOUTER",
+                  "member_id": "5003809"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Patty GROENVELD",
+                  "member_id": "852202"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              8
+            ]
+          ],
           "played_at": "za 17-10-2026 12:00"
         },
         {
@@ -38306,14 +38327,38 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Hans MACDANIEL",
+                  "member_id": "986876"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rudi SEYS"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              9,
+              21
+            ],
+            [
+              11,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 12:00"
         },
         {
@@ -38321,15 +38366,35 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Marcel SMOUTER",
+                  "member_id": "5003809"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rudi SEYS"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              12
+            ]
+          ],
           "played_at": "za 17-10-2026 12:40"
         },
         {
@@ -38337,15 +38402,36 @@
           "round": null,
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Patty GROENVELD",
+                  "member_id": "852202"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Hans MACDANIEL",
+                  "member_id": "986876"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 12:40"
         }
       ]
