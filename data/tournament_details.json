@@ -31127,8 +31127,12 @@
         "event_id": "21",
         "name": "Rol ME A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "26",
@@ -31216,7 +31220,13 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": "BEL",
+        "player_id": "1",
+        "name": "SEYS, Rudi"
+      }
+    ]
   },
   "225529C8-8D75-4634-900B-B8C415BBBD97": {
     "events": [
