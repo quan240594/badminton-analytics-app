@@ -56426,7 +56426,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "58",
@@ -56446,7 +56446,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              12
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:25"
         },
         {
@@ -56454,7 +56463,7 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "40",
@@ -56474,7 +56483,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 09:25"
         },
         {
@@ -56482,15 +56500,36 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "member_id": "5012029"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "zo 18-10-2026 15:15"
         }
       ]
