@@ -80229,6 +80229,374 @@
           "played_at": "zo 25-10-2026 10:45"
         }
       ]
+    },
+    "27": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "32",
+              "name": "Anoek Haarbosch"
+            },
+            {
+              "player_id": "101",
+              "name": "Maarten Verstraeten"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "127-85"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "35",
+              "name": "Danya Tuijtelaars"
+            },
+            {
+              "player_id": "68",
+              "name": "Koen Timmermans"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-2",
+          "points_record": "118-98"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "Lara Diepstraten"
+            },
+            {
+              "player_id": "53",
+              "name": "Mathijs van Engelen"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "2-4",
+          "points_record": "100-114"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "1",
+              "name": "Laura Hermsen"
+            },
+            {
+              "player_id": "30",
+              "name": "Eric Brobbel"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "78-126"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "418",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Danya Tuijtelaars",
+                  "member_id": "986455"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Laura Hermsen",
+                  "member_id": "985572"
+                },
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "807308"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "za 24-10-2026 10:45"
+        },
+        {
+          "match_id": "412",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Danya Tuijtelaars",
+                  "member_id": "986455"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anoek Haarbosch",
+                  "member_id": "720545"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 16:35"
+        },
+        {
+          "match_id": "419",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anoek Haarbosch",
+                  "member_id": "720545"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Laura Hermsen",
+                  "member_id": "985572"
+                },
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "807308"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:10"
+        },
+        {
+          "match_id": "416",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anoek Haarbosch",
+                  "member_id": "720545"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Lara Diepstraten",
+                  "member_id": "4987980"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Mathijs van Engelen",
+                  "member_id": "991846"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              12
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:10"
+        },
+        {
+          "match_id": "420",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Lara Diepstraten",
+                  "member_id": "4987980"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Mathijs van Engelen",
+                  "member_id": "991846"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Laura Hermsen",
+                  "member_id": "985572"
+                },
+                {
+                  "player_id": "30",
+                  "name": "Eric Brobbel",
+                  "member_id": "807308"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:45"
+        },
+        {
+          "match_id": "415",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Danya Tuijtelaars",
+                  "member_id": "986455"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Lara Diepstraten",
+                  "member_id": "4987980"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Mathijs van Engelen",
+                  "member_id": "991846"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              19
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:55"
+        }
+      ]
     }
   }
 }
