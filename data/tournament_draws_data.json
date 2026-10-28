@@ -64202,7 +64202,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -64217,7 +64217,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              11,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 10:25"
         },
         {
@@ -64240,6 +64253,57 @@
               ]
             },
             {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Arnav Behera",
+                  "member_id": "5005055"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Doudou Huang",
+                  "member_id": "50007470"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              10,
+              21
+            ]
+          ],
+          "played_at": "zo 18-10-2026 10:25"
+        },
+        {
+          "match_id": "897",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Yogan Ashwin",
+                  "member_id": "10000742"
+                },
+                {
+                  "player_id": "58",
+                  "name": "Aaradhana Karthikeyan Priya",
+                  "member_id": "5012029"
+                }
+              ]
+            },
+            {
               "won": false,
               "players": [
                 {
@@ -64255,23 +64319,16 @@
               ]
             }
           ],
-          "games": [],
-          "played_at": "zo 18-10-2026 10:25"
-        },
-        {
-          "match_id": "897",
-          "round": "Finale",
-          "sides": [
-            {
-              "won": false,
-              "players": []
-            },
-            {
-              "won": false,
-              "players": []
-            }
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              17
+            ]
           ],
-          "games": [],
           "played_at": "zo 18-10-2026 14:30"
         }
       ]
