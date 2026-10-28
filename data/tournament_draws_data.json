@@ -47992,45 +47992,45 @@
               "name": "Mukunth Rajesh"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-39"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "153",
               "name": "Ryan (Yunxiang) Xia"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "74-57"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "92",
               "name": "Gabriel de Roy Van Zuydewijn"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "22-84"
         }
       ],
       "matches": [
@@ -48039,7 +48039,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "153",
@@ -48059,7 +48059,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              12
+            ]
+          ],
           "played_at": "za 17-10-2026 09:40"
         },
         {
@@ -48067,7 +48076,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "68",
@@ -48087,7 +48096,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 17-10-2026 13:00"
         },
         {
@@ -48095,7 +48113,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "68",
@@ -48115,7 +48133,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              5
+            ]
+          ],
           "played_at": "za 17-10-2026 15:55"
         }
       ]
