@@ -73997,45 +73997,45 @@
               "name": "Stijn Beerkens"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "101-70"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "66",
               "name": "Bram Strijker"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "89-85"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "33",
               "name": "Geert Kock"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "49-84"
         }
       ],
       "matches": [
@@ -74044,7 +74044,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "66",
@@ -74064,7 +74064,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "za 24-10-2026 09:35"
         },
         {
@@ -74072,7 +74081,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "49",
@@ -74092,7 +74101,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "za 24-10-2026 14:15"
         },
         {
@@ -74100,7 +74122,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "49",
@@ -74120,7 +74142,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 24-10-2026 16:00"
         }
       ]
