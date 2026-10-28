@@ -41342,7 +41342,56 @@
       ]
     },
     "6": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 7,
+          "players": [
+            {
+              "player_id": "34",
+              "name": "Julian Pham"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "60-34"
+        },
+        {
+          "rank": 8,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Elise ten Hove"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "56-62"
+        },
+        {
+          "rank": 9,
+          "players": [
+            {
+              "player_id": "22",
+              "name": "Ace Broen"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "53-73"
+        }
+      ],
       "matches": [
         {
           "match_id": "75",
@@ -41350,14 +41399,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Ace Broen",
+                  "member_id": "50026498"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "34",
+                  "name": "Julian Pham",
+                  "member_id": "50006587"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              8,
+              15
+            ],
+            [
+              13,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 14:10"
         },
         {
@@ -41365,15 +41435,40 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Elise ten Hove",
+                  "member_id": "50020393"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Ace Broen",
+                  "member_id": "50026498"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              10
+            ],
+            [
+              13,
+              15
+            ],
+            [
+              15,
+              7
+            ]
+          ],
           "played_at": "za 17-10-2026 15:00"
         },
         {
@@ -41382,14 +41477,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Elise ten Hove",
+                  "member_id": "50020393"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "34",
+                  "name": "Julian Pham",
+                  "member_id": "50006587"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              2,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 15:50"
         }
       ]
