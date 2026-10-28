@@ -87508,6 +87508,300 @@
           "played_at": "zo 25-10-2026 18:20"
         }
       ]
+    },
+    "4": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "51",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "134",
+                  "name": "DAPHNE van den BERG",
+                  "member_id": "882582"
+                },
+                {
+                  "player_id": "140",
+                  "name": "BEAU RITZEN",
+                  "member_id": "863754"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "VEDA DIEMEL",
+                  "member_id": "826027"
+                },
+                {
+                  "player_id": "69",
+                  "name": "STEFANIE NIJSSE",
+                  "member_id": "878088"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:00"
+        },
+        {
+          "match_id": "47",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "INGER POTHUIZEN",
+                  "seed": 1,
+                  "member_id": "889126"
+                },
+                {
+                  "player_id": "91",
+                  "name": "ILSE STOFFELEN",
+                  "member_id": "876234"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "JAMIE LOGT",
+                  "member_id": "827683"
+                },
+                {
+                  "player_id": "119",
+                  "name": "CHERYL SEINEN",
+                  "member_id": "756210"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:55"
+        },
+        {
+          "match_id": "48",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "VEDA DIEMEL",
+                  "member_id": "826027"
+                },
+                {
+                  "player_id": "69",
+                  "name": "STEFANIE NIJSSE",
+                  "member_id": "878088"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "ALIDA CHEN",
+                  "seed": 2,
+                  "member_id": "747443"
+                },
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:55"
+        },
+        {
+          "match_id": "46",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "JAMIE LOGT",
+                  "member_id": "827683"
+                },
+                {
+                  "player_id": "119",
+                  "name": "CHERYL SEINEN",
+                  "member_id": "756210"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "ALIDA CHEN",
+                  "seed": 2,
+                  "member_id": "747443"
+                },
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              23,
+              25
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              16
+            ]
+          ],
+          "played_at": "zo 25-10-2026 18:20"
+        },
+        {
+          "match_id": "49",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "INGER POTHUIZEN",
+                  "seed": 1,
+                  "member_id": "889126"
+                },
+                {
+                  "player_id": "91",
+                  "name": "ILSE STOFFELEN",
+                  "member_id": "876234"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "50",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "JAMIE LOGT",
+                  "member_id": "827683"
+                },
+                {
+                  "player_id": "119",
+                  "name": "CHERYL SEINEN",
+                  "member_id": "756210"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "52",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "ALIDA CHEN",
+                  "seed": 2,
+                  "member_id": "747443"
+                },
+                {
+                  "player_id": "75",
+                  "name": "DIEDE ODIJK",
+                  "member_id": "868494"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
