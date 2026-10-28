@@ -43373,22 +43373,92 @@
       ]
     },
     "22": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Finn De Haan"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-50"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "28",
+              "name": "Nolan van Deijk"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "63-77"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "18",
+              "name": "Levi Molenaar"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "64-84"
+        }
+      ],
       "matches": [
         {
           "match_id": "225",
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Finn De Haan",
+                  "member_id": "50021087"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Nolan van Deijk",
+                  "member_id": "50015629"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 17-10-2026 13:20"
         },
         {
@@ -43397,14 +43467,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Levi Molenaar",
+                  "member_id": "50012482"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Finn De Haan",
+                  "member_id": "50021087"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:10"
         },
         {
@@ -43413,15 +43504,36 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Levi Molenaar",
+                  "member_id": "50012482"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Nolan van Deijk",
+                  "member_id": "50015629"
+                }
+              ]
             }
           ],
-          "games": [],
-          "played_at": "za 17-10-2026 15:00"
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "za 17-10-2026 15:26"
         }
       ]
     },
