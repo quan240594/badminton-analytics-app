@@ -86467,6 +86467,160 @@
           "played_at": "za 24-10-2026 14:50"
         }
       ]
+    },
+    "60": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "858",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Evi Franken",
+                  "member_id": "50012003"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Lotte van Zuien",
+                  "member_id": "50012002"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "Devin van Dongen",
+                  "member_id": "50025248"
+                },
+                {
+                  "player_id": "102",
+                  "name": "Hugo Lugtenberg",
+                  "member_id": "50026239"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              13
+            ],
+            [
+              15,
+              5
+            ]
+          ],
+          "played_at": "za 24-10-2026 16:00"
+        },
+        {
+          "match_id": "859",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Joona Tabbers",
+                  "member_id": "50016574"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Ruben Maurer",
+                  "member_id": "10003361"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              18
+            ],
+            [
+              15,
+              7
+            ],
+            [
+              13,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 16:00"
+        },
+        {
+          "match_id": "857",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Evi Franken",
+                  "member_id": "50012003"
+                },
+                {
+                  "player_id": "91",
+                  "name": "Lotte van Zuien",
+                  "member_id": "50012002"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Ruben Maurer",
+                  "member_id": "10003361"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              7,
+              15
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              11,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:10"
+        }
+      ]
     }
   }
 }
