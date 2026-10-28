@@ -82263,6 +82263,306 @@
           "played_at": "zo 25-10-2026 10:45"
         }
       ]
+    },
+    "41": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "565",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Tygo Naafs",
+                  "member_id": "885890"
+                },
+                {
+                  "player_id": "7",
+                  "name": "Yannick Roeland",
+                  "member_id": "877357"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Rick van Baal",
+                  "member_id": "867819"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Thibo van Gils",
+                  "member_id": "867835"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              11,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:30"
+        },
+        {
+          "match_id": "566",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Jos Vermeulen",
+                  "member_id": "653618"
+                },
+                {
+                  "player_id": "73",
+                  "name": "Tim Wirken",
+                  "member_id": "690814"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              7,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 12:30"
+        },
+        {
+          "match_id": "562",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Luuk Vingerhoed",
+                  "member_id": "989429"
+                },
+                {
+                  "player_id": "72",
+                  "name": "Sander Visser",
+                  "member_id": "453322"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Rick van Baal",
+                  "member_id": "867819"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Thibo van Gils",
+                  "member_id": "867835"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "563",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Stijn Beerkens",
+                  "member_id": "837255"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Dio van Gils",
+                  "member_id": "862666"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              6
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "561",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Luuk Vingerhoed",
+                  "member_id": "989429"
+                },
+                {
+                  "player_id": "72",
+                  "name": "Sander Visser",
+                  "member_id": "453322"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 25-10-2026 16:10"
+        },
+        {
+          "match_id": "564",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Luuk Vingerhoed",
+                  "member_id": "989429"
+                },
+                {
+                  "player_id": "72",
+                  "name": "Sander Visser",
+                  "member_id": "453322"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "567",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Stijn Beerkens",
+                  "member_id": "837255"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Dio van Gils",
+                  "member_id": "862666"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
