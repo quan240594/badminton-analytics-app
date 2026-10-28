@@ -37947,49 +37947,49 @@
           "rank": 1,
           "players": [
             {
-              "player_id": "12",
-              "name": "Saskia VEENHUIS"
+              "player_id": "9",
+              "name": "Marcel SMOUTER"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "96-68"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "5",
               "name": "Hans MACDANIEL"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "86-72"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
-              "player_id": "14",
-              "name": "Mike WIGINK"
+              "player_id": "12",
+              "name": "Saskia VEENHUIS"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "42-84"
         }
       ],
       "matches": [
@@ -37998,7 +37998,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "5",
@@ -38018,7 +38018,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "za 17-10-2026 10:00"
         },
         {
@@ -38026,12 +38035,12 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
-                  "player_id": "14",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
+                  "player_id": "9",
+                  "name": "Marcel SMOUTER",
+                  "member_id": "5003809"
                 }
               ]
             },
@@ -38046,7 +38055,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              12,
+              21
+            ],
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 17-10-2026 10:40"
         },
         {
@@ -38054,12 +38076,12 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
-                  "player_id": "14",
-                  "name": "Mike WIGINK",
-                  "member_id": "50009881"
+                  "player_id": "9",
+                  "name": "Marcel SMOUTER",
+                  "member_id": "5003809"
                 }
               ]
             },
@@ -38074,7 +38096,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              7
+            ]
+          ],
           "played_at": "za 17-10-2026 11:20"
         }
       ]
