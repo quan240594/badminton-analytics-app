@@ -37009,6 +37009,26 @@
           "rank": 1,
           "players": [
             {
+              "player_id": "19",
+              "name": "François LEVAUX"
+            },
+            {
+              "player_id": "8",
+              "name": "Rudi SEYS"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "6-0",
+          "points_record": "126-35"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
               "player_id": "15",
               "name": "Maaike BAARSLAG"
             },
@@ -37017,16 +37037,16 @@
               "name": "Sylvia VOORHORST"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 2,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "4-3",
+          "points_record": "114-103"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "2",
@@ -37037,16 +37057,16 @@
               "name": "Erikjan KOEKOEK"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "3-4",
+          "points_record": "104-107"
         },
         {
-          "rank": 1,
+          "rank": 4,
           "players": [
             {
               "player_id": "26",
@@ -37057,33 +37077,13 @@
               "name": "Michel RUNHART"
             }
           ],
-          "played": 0,
+          "played": 3,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "19",
-              "name": "François LEVAUX"
-            },
-            {
-              "player_id": "8",
-              "name": "Rudi SEYS"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-6",
+          "points_record": "27-126"
         }
       ],
       "matches": [
@@ -37092,7 +37092,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "2",
@@ -37122,7 +37122,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              5
+            ],
+            [
+              21,
+              5
+            ]
+          ],
           "played_at": "za 17-10-2026 14:00"
         },
         {
@@ -37145,7 +37154,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
@@ -37158,7 +37167,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              8,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:00"
         },
         {
@@ -37166,7 +37184,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "15",
@@ -37196,7 +37214,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 14:40"
         },
         {
@@ -37219,7 +37250,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
@@ -37232,7 +37263,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              3,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:40"
         },
         {
@@ -37240,7 +37280,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "15",
@@ -37270,7 +37310,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              1
+            ]
+          ],
           "played_at": "za 17-10-2026 15:20"
         },
         {
@@ -37293,7 +37342,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "19",
@@ -37306,7 +37355,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              0,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:20"
         }
       ]
