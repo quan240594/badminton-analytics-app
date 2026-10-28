@@ -78721,6 +78721,217 @@
           "played_at": "zo 25-10-2026 10:10"
         }
       ]
+    },
+    "22": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Fenne Kreeft"
+            },
+            {
+              "player_id": "66",
+              "name": "Bram Strijker"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "100-68"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Lizzy van Gils"
+            },
+            {
+              "player_id": "67",
+              "name": "Max Strijker"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "85-80"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Annejet Bos"
+            },
+            {
+              "player_id": "33",
+              "name": "Geert Kock"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "47-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "352",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Fenne Kreeft",
+                  "member_id": "867839"
+                },
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Annejet Bos",
+                  "member_id": "889646"
+                },
+                {
+                  "player_id": "33",
+                  "name": "Geert Kock",
+                  "member_id": "4990674"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "za 24-10-2026 12:30"
+        },
+        {
+          "match_id": "355",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Annejet Bos",
+                  "member_id": "889646"
+                },
+                {
+                  "player_id": "33",
+                  "name": "Geert Kock",
+                  "member_id": "4990674"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lizzy van Gils",
+                  "member_id": "883323"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:45"
+        },
+        {
+          "match_id": "354",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Fenne Kreeft",
+                  "member_id": "867839"
+                },
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lizzy van Gils",
+                  "member_id": "883323"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              14
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:20"
+        }
+      ]
     }
   }
 }
