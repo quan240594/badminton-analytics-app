@@ -79,6 +79,14 @@ def test_refresh_inventory_discovers_window_around_today_and_saves(env):
     assert read_json(env.paths["TOURNAMENTS_PATH"]) == env.tournaments
 
 
+def test_refresh_inventory_keeps_dropped_tournaments_that_have_details(env):
+    write_json(env.paths["TOURNAMENTS_PATH"], {"old": {"name": "Gone"}, "nodata": {"name": "Unknown"}, "a": {"name": "Stale"}})
+    write_json(env.paths["DETAILS_PATH"], {"old": DETAILS, "a": DETAILS})
+    result = sat.refresh_inventory(env.tournament_cookie, 30, 365, 0.7)
+    assert result == {"old": {"name": "Gone"}, **env.tournaments}
+    assert read_json(env.paths["TOURNAMENTS_PATH"]) == result
+
+
 def test_main_success_records_details_and_clears_previous_errors(env, monkeypatch, capsys):
     env.tournaments = {"a": {"name": "Alpha"}}
     write_json(env.paths["FETCH_ERRORS_PATH"], {"a": {"count": 2, "lastError": "old"}})
