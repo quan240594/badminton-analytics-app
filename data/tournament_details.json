@@ -11190,15 +11190,44 @@
         "event_id": "8",
         "name": "Dubbel Zilver",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 5,
+        "participants": [
+          [
+            "8",
+            "15"
+          ],
+          [
+            "17",
+            "6"
+          ],
+          [
+            "10"
+          ],
+          [
+            "11"
+          ],
+          [
+            "18",
+            "7"
+          ]
+        ]
       },
       {
         "event_id": "2",
         "name": "Dubbel Goud",
         "draws": 0,
-        "entries": 1,
+        "entries": 4,
         "participants": [
+          [
+            "5"
+          ],
+          [
+            "16"
+          ],
+          [
+            "9",
+            "12"
+          ],
           [
             "1"
           ]
@@ -11208,8 +11237,17 @@
         "event_id": "3",
         "name": "Dubbel Goud Recreant",
         "draws": 0,
-        "entries": 1,
+        "entries": 4,
         "participants": [
+          [
+            "19"
+          ],
+          [
+            "4"
+          ],
+          [
+            "3"
+          ],
           [
             "2"
           ]
@@ -11219,8 +11257,13 @@
         "event_id": "4",
         "name": "Dubbel C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "13",
+            "14"
+          ]
+        ]
       },
       {
         "event_id": "6",
@@ -11241,13 +11284,98 @@
     "entries": [
       {
         "country": null,
+        "player_id": "8",
+        "name": "Appelman, Eef"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "Boer, Gijs de"
+      },
+      {
+        "country": null,
+        "player_id": "7",
+        "name": "Buijsman, Julia"
+      },
+      {
+        "country": null,
+        "player_id": "5",
+        "name": "Buijsman, Rens"
+      },
+      {
+        "country": null,
+        "player_id": "19",
+        "name": "Huisman, Joep"
+      },
+      {
+        "country": null,
+        "player_id": "4",
+        "name": "Jong, Jamie de"
+      },
+      {
+        "country": null,
+        "player_id": "12",
+        "name": "Kok, Rosa"
+      },
+      {
+        "country": null,
+        "player_id": "16",
+        "name": "Koning, Armano"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "Monteiro, Beau"
+      },
+      {
+        "country": null,
+        "player_id": "6",
+        "name": "Mourik, Amber van"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Oud, Milan"
+      },
+      {
+        "country": null,
+        "player_id": "17",
+        "name": "Schagen, Zoë"
+      },
+      {
+        "country": null,
         "player_id": "1",
         "name": "Schie, Lisa Van"
       },
       {
         "country": null,
+        "player_id": "15",
+        "name": "Schooneman, Rimke"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "Schulze-Mazereeuw, Sky"
+      },
+      {
+        "country": null,
+        "player_id": "10",
+        "name": "Sollie, Feline"
+      },
+      {
+        "country": null,
+        "player_id": "11",
+        "name": "Sollie, Thomas"
+      },
+      {
+        "country": null,
+        "player_id": "18",
+        "name": "Wal, Robin van der"
+      },
+      {
+        "country": null,
+        "player_id": "14",
+        "name": "Wals, Anouk"
       }
     ]
   },

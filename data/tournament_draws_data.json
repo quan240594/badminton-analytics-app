@@ -5167,73 +5167,6 @@
       ],
       "matches": [
         {
-          "match_id": "0",
-          "round": "Ronde 1",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "73",
-                  "name": "Dmytro Prykhodko",
-                  "seed": 1
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "0",
-          "round": "Ronde 3",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "55",
-                  "name": "Wilfred Heap"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "0",
-          "round": "Ronde 2",
-          "sides": [
-            {
-              "won": false,
-              "players": [
-                {
-                  "player_id": "96",
-                  "name": "Vihaan Attassery"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "12",
           "round": "Ronde 1",
           "sides": [
@@ -5353,6 +5286,73 @@
             ]
           ],
           "played_at": "za 5-9-2026 13:45"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "73",
+                  "name": "Dmytro Prykhodko",
+                  "seed": 1
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Wilfred Heap"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Vihaan Attassery"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     },
