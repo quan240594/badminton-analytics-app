@@ -80597,6 +80597,152 @@
           "played_at": "zo 25-10-2026 11:55"
         }
       ]
+    },
+    "28": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "422",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Anouk Kroot",
+                  "member_id": "4994528"
+                },
+                {
+                  "player_id": "65",
+                  "name": "Richard Schrauwen",
+                  "member_id": "568411"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Danya Tuijtelaars",
+                  "member_id": "986455"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "423",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Noortje Driessen",
+                  "member_id": "839446"
+                },
+                {
+                  "player_id": "103",
+                  "name": "Loewy Hermans",
+                  "member_id": "985615"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anoek Haarbosch",
+                  "member_id": "720545"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              21
+            ],
+            [
+              12,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 14:15"
+        },
+        {
+          "match_id": "421",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Danya Tuijtelaars",
+                  "member_id": "986455"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Koen Timmermans",
+                  "member_id": "876189"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anoek Haarbosch",
+                  "member_id": "720545"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Maarten Verstraeten",
+                  "member_id": "514539"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:30"
+        }
+      ]
     }
   }
 }
