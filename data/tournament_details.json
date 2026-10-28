@@ -31405,22 +31405,37 @@
         "event_id": "17",
         "name": "Opstap Enkel Mini",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "5"
+          ],
+          [
+            "6"
+          ]
+        ]
       },
       {
         "event_id": "19",
         "name": "Opstap Dubbel Mini",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "6"
+          ]
+        ]
       },
       {
         "event_id": "1",
         "name": "JE U13",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "3"
+          ]
+        ]
       },
       {
         "event_id": "2",
@@ -31465,8 +31480,11 @@
         "event_id": "7",
         "name": "JD U15",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "3"
+          ],
           [
             "1"
           ]
@@ -31483,8 +31501,15 @@
         "event_id": "9",
         "name": "JE U17",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "7"
+          ],
+          [
+            "9"
+          ]
+        ]
       },
       {
         "event_id": "10",
@@ -31497,8 +31522,15 @@
         "event_id": "11",
         "name": "JD U17",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "7"
+          ],
+          [
+            "9"
+          ]
+        ]
       },
       {
         "event_id": "12",
@@ -31511,8 +31543,15 @@
         "event_id": "13",
         "name": "JE U19",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "8"
+          ],
+          [
+            "4"
+          ]
+        ]
       },
       {
         "event_id": "14",
@@ -31525,8 +31564,13 @@
         "event_id": "15",
         "name": "JD U19",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "8",
+            "4"
+          ]
+        ]
       },
       {
         "event_id": "16",
@@ -31540,8 +31584,43 @@
     "entries": [
       {
         "country": null,
+        "player_id": "5",
+        "name": "Brandenburg, Jason"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Brandenburg, Quinten"
+      },
+      {
+        "country": null,
+        "player_id": "6",
+        "name": "Germs, Kyan"
+      },
+      {
+        "country": null,
+        "player_id": "7",
+        "name": "Germs, Yent"
+      },
+      {
+        "country": null,
+        "player_id": "8",
+        "name": "Htun, Harrison"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "Konings, Sven"
+      },
+      {
+        "country": null,
         "player_id": "1",
         "name": "Koopman, Nick"
+      },
+      {
+        "country": null,
+        "player_id": "4",
+        "name": "Wassink, Milan"
       }
     ]
   },
