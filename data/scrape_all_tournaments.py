@@ -120,6 +120,11 @@ def refresh_inventory(tournament_cookie_file: Path, days_back: int, days_forward
     start_date = (today - timedelta(days=days_back)).isoformat()
     end_date = (today + timedelta(days=days_forward)).isoformat()
     tournaments = discover(cookie, start_date, end_date, delay)
+    # A tournament that falls out of the search window keeps its scraped details, and
+    # without its entry here the app would show its id instead of its name and dates.
+    details = load_json(DETAILS_PATH, {})
+    dropped = {tid: entry for tid, entry in load_json(TOURNAMENTS_PATH, {}).items() if tid not in tournaments and tid in details}
+    tournaments = {**dropped, **tournaments}
     save_json(TOURNAMENTS_PATH, tournaments)
     return tournaments
 
