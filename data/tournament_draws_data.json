@@ -43048,45 +43048,45 @@
               "name": "Finn De Haan"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-39"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "1",
-              "name": "Roene Bloem"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "15",
               "name": "Niels Bruns"
             }
           ],
-          "played": 0,
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "74-77"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "1",
+              "name": "Roene Bloem"
+            }
+          ],
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "45-87"
         }
       ],
       "matches": [
@@ -43105,7 +43105,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "15",
@@ -43115,7 +43115,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              22,
+              24
+            ],
+            [
+              13,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 10:25"
         },
         {
@@ -43123,7 +43132,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -43143,7 +43152,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              4
+            ]
+          ],
           "played_at": "za 17-10-2026 11:15"
         },
         {
@@ -43151,7 +43169,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -43171,7 +43189,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 12:05"
         }
       ]
