@@ -45932,16 +45932,36 @@
               "name": "Abel Tessemaker"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "104-81"
         },
         {
-          "rank": 1,
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Bram Eijsink"
+            },
+            {
+              "player_id": "32",
+              "name": "Elvira Kemmerling"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "113-120"
+        },
+        {
+          "rank": 3,
           "players": [
             {
               "player_id": "10",
@@ -45952,33 +45972,13 @@
               "name": "Eva Gateshka"
             }
           ],
-          "played": 0,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "47",
-              "name": "Nader te Bepalen 1"
-            },
-            {
-              "player_id": "32",
-              "name": "Elvira Kemmerling"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "87-103"
         }
       ],
       "matches": [
@@ -46002,21 +46002,35 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
-                  "player_id": "47",
-                  "name": "Nader te Bepalen 1",
-                  "member_id": "10002561"
+                  "player_id": "43",
+                  "name": "Bram Eijsink",
+                  "member_id": "50023866"
                 },
                 {
                   "player_id": "32",
-                  "name": "Elvira Kemmerling"
+                  "name": "Elvira Kemmerling",
+                  "member_id": "10002561"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              20,
+              22
+            ],
+            [
+              17,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 10:25"
         },
         {
@@ -46024,7 +46038,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -46054,7 +46068,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "za 17-10-2026 11:40"
         },
         {
@@ -46062,7 +46085,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -46080,18 +46103,32 @@
               "won": false,
               "players": [
                 {
-                  "player_id": "47",
-                  "name": "Nader te Bepalen 1",
-                  "member_id": "10002561"
+                  "player_id": "43",
+                  "name": "Bram Eijsink",
+                  "member_id": "50023866"
                 },
                 {
                   "player_id": "32",
-                  "name": "Elvira Kemmerling"
+                  "name": "Elvira Kemmerling",
+                  "member_id": "10002561"
                 }
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              11
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              22,
+              20
+            ]
+          ],
           "played_at": "za 17-10-2026 12:30"
         }
       ]
