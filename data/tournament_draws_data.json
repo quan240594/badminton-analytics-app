@@ -42705,22 +42705,92 @@
       ]
     },
     "17": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "Florian Lock"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-57"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Bram Eijsink"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "70-81"
+        },
+        {
+          "rank": 5,
+          "players": [
+            {
+              "player_id": "19",
+              "name": "Nick Fransen"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "69-85"
+        }
+      ],
       "matches": [
         {
           "match_id": "188",
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Florian Lock",
+                  "member_id": "50007282"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Bram Eijsink",
+                  "member_id": "50023866"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              19
+            ]
+          ],
           "played_at": "za 17-10-2026 13:45"
         },
         {
@@ -42729,14 +42799,35 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Bram Eijsink",
+                  "member_id": "50023866"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 15:00"
         },
         {
@@ -42744,15 +42835,36 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Florian Lock",
+                  "member_id": "50007282"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 17-10-2026 15:50"
         }
       ]
