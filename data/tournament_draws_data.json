@@ -61014,7 +61014,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "42",
@@ -61029,7 +61029,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              6,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:40"
         },
         {
@@ -61037,7 +61046,7 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "77",
@@ -61053,10 +61062,34 @@
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Eliz Kökkü",
+                  "member_id": "5006262"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Femke Krist",
+                  "member_id": "4995950"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         },
         {
