@@ -75931,14 +75931,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Robine Hooft",
+                  "member_id": "867838"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Bente Willemse",
+                  "member_id": "867852"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              22,
+              24
+            ]
+          ],
           "played_at": "zo 25-10-2026 14:50"
         },
         {
@@ -75946,15 +75971,36 @@
           "round": "Halve finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lizzy van Gils",
+                  "member_id": "883323"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Fenne Kreeft",
+                  "member_id": "867839"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              23,
+              21
+            ]
+          ],
           "played_at": "zo 25-10-2026 14:50"
         },
         {
@@ -75962,15 +76008,36 @@
           "round": "Finale",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Bente Willemse",
+                  "member_id": "867852"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Lizzy van Gils",
+                  "member_id": "883323"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              23,
+              21
+            ],
+            [
+              21,
+              17
+            ]
+          ],
           "played_at": "zo 25-10-2026 16:50"
         }
       ]
