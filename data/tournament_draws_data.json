@@ -92406,6 +92406,175 @@
           "played_at": "zo 25-10-2026 15:55"
         }
       ]
+    },
+    "32": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "NEEL NAIR"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-56"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "40",
+              "name": "ELIA MESTROM"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "83-100"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "104",
+              "name": "KYANO PETERS"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-4",
+          "points_record": "88-99"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "350",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "ELIA MESTROM",
+                  "member_id": "4995491"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "KYANO PETERS",
+                  "member_id": "5000988"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 25-10-2026 11:40"
+        },
+        {
+          "match_id": "347",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "NEEL NAIR",
+                  "member_id": "4992717"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "ELIA MESTROM",
+                  "member_id": "4995491"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:45"
+        },
+        {
+          "match_id": "349",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "NEEL NAIR",
+                  "member_id": "4992717"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "KYANO PETERS",
+                  "member_id": "5000988"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:55"
+        }
+      ]
     }
   }
 }
