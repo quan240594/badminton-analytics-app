@@ -91752,6 +91752,179 @@
           "played_at": "zo 25-10-2026 15:30"
         }
       ]
+    },
+    "28": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "DAHMAWATI FERYANTO"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "101-72"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "LANA CREMERS"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "87-94"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "127",
+              "name": "RIANNE THANS"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "2-4",
+          "points_record": "98-120"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "316",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "LANA CREMERS",
+                  "member_id": "4993994"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "127",
+                  "name": "RIANNE THANS",
+                  "member_id": "4994421"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:10"
+        },
+        {
+          "match_id": "313",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "DAHMAWATI FERYANTO",
+                  "member_id": "10001909"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "LANA CREMERS",
+                  "member_id": "4993994"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              10
+            ]
+          ],
+          "played_at": "zo 25-10-2026 13:15"
+        },
+        {
+          "match_id": "315",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "DAHMAWATI FERYANTO",
+                  "member_id": "10001909"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "127",
+                  "name": "RIANNE THANS",
+                  "member_id": "4994421"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              12
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "zo 25-10-2026 15:30"
+        }
+      ]
     }
   }
 }
