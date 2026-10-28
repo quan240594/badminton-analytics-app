@@ -65337,56 +65337,16 @@
               "name": "Neelesh Bharath Nath"
             }
           ],
-          "played": 3,
-          "won": 3,
+          "played": 5,
+          "won": 5,
           "drawn": 0,
           "lost": 0,
-          "match_record": "3-0",
-          "game_record": "6-0",
-          "points_record": "126-74"
+          "match_record": "5-0",
+          "game_record": "10-1",
+          "points_record": "233-133"
         },
         {
           "rank": 2,
-          "players": [
-            {
-              "player_id": "164",
-              "name": "You-Jie (Hugo) Shau"
-            },
-            {
-              "player_id": "152",
-              "name": "Samuel van Verseveld"
-            }
-          ],
-          "played": 1,
-          "won": 1,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "1-0",
-          "game_record": "2-1",
-          "points_record": "60-53"
-        },
-        {
-          "rank": 3,
-          "players": [
-            {
-              "player_id": "144",
-              "name": "Bram den Haan"
-            },
-            {
-              "player_id": "45",
-              "name": "Saathvik Narayanaswamy"
-            }
-          ],
-          "played": 2,
-          "won": 1,
-          "drawn": 0,
-          "lost": 1,
-          "match_record": "1-1",
-          "game_record": "3-2",
-          "points_record": "96-88"
-        },
-        {
-          "rank": 4,
           "players": [
             {
               "player_id": "78",
@@ -65397,16 +65357,56 @@
               "name": "Pranav Parakulangara Kizhuveettil"
             }
           ],
-          "played": 2,
-          "won": 1,
+          "played": 5,
+          "won": 4,
           "drawn": 0,
           "lost": 1,
-          "match_record": "1-1",
-          "game_record": "2-2",
-          "points_record": "64-57"
+          "match_record": "4-1",
+          "game_record": "8-2",
+          "points_record": "190-111"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "164",
+              "name": "You-Jie (Hugo) Shau"
+            },
+            {
+              "player_id": "152",
+              "name": "Samuel van Verseveld"
+            }
+          ],
+          "played": 5,
+          "won": 3,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "3-2",
+          "game_record": "7-5",
+          "points_record": "213-201"
         },
         {
           "rank": 4,
+          "players": [
+            {
+              "player_id": "144",
+              "name": "Bram den Haan"
+            },
+            {
+              "player_id": "45",
+              "name": "Saathvik Narayanaswamy"
+            }
+          ],
+          "played": 5,
+          "won": 2,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "2-3",
+          "game_record": "5-6",
+          "points_record": "171-205"
+        },
+        {
+          "rank": 5,
           "players": [
             {
               "player_id": "57",
@@ -65417,13 +65417,13 @@
               "name": "Isabella Panarello"
             }
           ],
-          "played": 3,
+          "played": 5,
           "won": 1,
           "drawn": 0,
-          "lost": 2,
-          "match_record": "1-2",
-          "game_record": "2-4",
-          "points_record": "95-120"
+          "lost": 4,
+          "match_record": "1-4",
+          "game_record": "2-8",
+          "points_record": "119-204"
         },
         {
           "rank": 6,
@@ -65437,13 +65437,13 @@
               "name": "Dieudonnée Den Dulk"
             }
           ],
-          "played": 3,
+          "played": 5,
           "won": 0,
           "drawn": 0,
-          "lost": 3,
-          "match_record": "0-3",
-          "game_record": "0-6",
-          "points_record": "77-126"
+          "lost": 5,
+          "match_record": "0-5",
+          "game_record": "0-10",
+          "points_record": "138-210"
         }
       ],
       "matches": [
@@ -65790,7 +65790,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "144",
@@ -65820,7 +65820,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 18-10-2026 10:25"
         },
         {
@@ -65828,7 +65837,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "118",
@@ -65859,7 +65868,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:40"
         },
         {
@@ -65867,7 +65885,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "78",
@@ -65898,7 +65916,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "zo 18-10-2026 11:40"
         },
         {
@@ -65906,7 +65933,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "78",
@@ -65937,7 +65964,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              9
+            ]
+          ],
           "played_at": "zo 18-10-2026 13:00"
         },
         {
@@ -65960,7 +65996,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "164",
@@ -65975,7 +66011,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              9,
+              21
+            ],
+            [
+              4,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 13:00"
         },
         {
@@ -65983,7 +66028,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "118",
@@ -66014,7 +66059,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              23,
+              25
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              5
+            ]
+          ],
           "played_at": "zo 18-10-2026 14:30"
         },
         {
@@ -66022,7 +66080,7 @@
           "round": "Ronde 4",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "78",
@@ -66053,7 +66111,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              2
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         },
         {
@@ -66076,7 +66143,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "164",
@@ -66091,7 +66158,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              13,
+              21
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         }
       ]
