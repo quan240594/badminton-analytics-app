@@ -50068,29 +50068,29 @@
               "name": "Arnav Behera"
             }
           ],
-          "played": 1,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
           "lost": 1,
-          "match_record": "0-1",
-          "game_record": "0-2",
-          "points_record": "23-42"
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "65-73"
         },
         {
-          "rank": 2,
+          "rank": 3,
           "players": [
             {
               "player_id": "129",
               "name": "Ritvik Chawla"
             }
           ],
-          "played": 1,
+          "played": 2,
           "won": 0,
           "drawn": 0,
-          "lost": 1,
-          "match_record": "0-1",
-          "game_record": "0-2",
-          "points_record": "21-42"
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "52-84"
         }
       ],
       "matches": [
@@ -50173,7 +50173,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "31",
@@ -50193,7 +50193,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "za 17-10-2026 17:40"
         }
       ]
