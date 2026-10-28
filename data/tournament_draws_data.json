@@ -82052,6 +82052,217 @@
           "played_at": "za 24-10-2026 17:10"
         }
       ]
+    },
+    "40": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "66",
+              "name": "Bram Strijker"
+            },
+            {
+              "player_id": "67",
+              "name": "Max Strijker"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "104-76"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "111",
+              "name": "Tygo Naafs"
+            },
+            {
+              "player_id": "7",
+              "name": "Yannick Roeland"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "97-92"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Rolf van Dal"
+            },
+            {
+              "player_id": "16",
+              "name": "Thijs de Jong"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "51-84"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "557",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Tygo Naafs",
+                  "member_id": "885890"
+                },
+                {
+                  "player_id": "7",
+                  "name": "Yannick Roeland",
+                  "member_id": "877357"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              19,
+              21
+            ],
+            [
+              14,
+              21
+            ]
+          ],
+          "played_at": "za 24-10-2026 17:10"
+        },
+        {
+          "match_id": "560",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Bram Strijker",
+                  "member_id": "891016"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Max Strijker",
+                  "member_id": "891017"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rolf van Dal",
+                  "member_id": "518789"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Thijs de Jong",
+                  "member_id": "761279"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              15
+            ]
+          ],
+          "played_at": "zo 25-10-2026 09:35"
+        },
+        {
+          "match_id": "559",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Tygo Naafs",
+                  "member_id": "885890"
+                },
+                {
+                  "player_id": "7",
+                  "name": "Yannick Roeland",
+                  "member_id": "877357"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Rolf van Dal",
+                  "member_id": "518789"
+                },
+                {
+                  "player_id": "16",
+                  "name": "Thijs de Jong",
+                  "member_id": "761279"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "played_at": "zo 25-10-2026 10:45"
+        }
+      ]
     }
   }
 }
