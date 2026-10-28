@@ -92744,6 +92744,167 @@
           "played_at": "zo 25-10-2026 15:55"
         }
       ]
+    },
+    "34": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "361",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "132",
+                  "name": "MICO XIAO YANG",
+                  "member_id": "5009156"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:45"
+        },
+        {
+          "match_id": "362",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "NEEL NAIR",
+                  "member_id": "4992717"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "IAN WU",
+                  "member_id": "50012530"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              16
+            ],
+            [
+              17,
+              21
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 17:45"
+        },
+        {
+          "match_id": "360",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "132",
+                  "name": "MICO XIAO YANG",
+                  "member_id": "5009156"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "IAN WU",
+                  "member_id": "50012530"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              20
+            ],
+            [
+              21,
+              17
+            ]
+          ],
+          "played_at": "zo 25-10-2026 19:00"
+        },
+        {
+          "match_id": "517",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "NEEL NAIR",
+                  "member_id": "4992717"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 25-10-2026 19:00"
+        }
+      ]
     }
   }
 }
