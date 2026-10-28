@@ -44659,7 +44659,56 @@
       ]
     },
     "29": {
-      "standings": [],
+      "standings": [
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Sophie Christiaans"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "4-2",
+          "points_record": "116-94"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "Zlata Kuznietsova"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "101-113"
+        },
+        {
+          "rank": 5,
+          "players": [
+            {
+              "player_id": "42",
+              "name": "Lynn Slots"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "2-4",
+          "points_record": "102-112"
+        }
+      ],
       "matches": [
         {
           "match_id": "278",
@@ -44667,14 +44716,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lynn Slots",
+                  "member_id": "50025352"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Sophie Christiaans",
+                  "member_id": "50023876"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              14,
+              21
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              12,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 14:35"
         },
         {
@@ -44682,15 +44756,40 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Sophie Christiaans",
+                  "member_id": "50023876"
+                }
+              ]
             },
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 15:26"
         },
         {
@@ -44699,14 +44798,39 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lynn Slots",
+                  "member_id": "50025352"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Zlata Kuznietsova",
+                  "member_id": "50026832"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              15,
+              21
+            ]
+          ],
           "played_at": "za 17-10-2026 16:16"
         }
       ]
