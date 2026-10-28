@@ -475,7 +475,9 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 /* Permanent visual guide lines through the shared column boundaries (20/43/66%),
    spanning every stacked table in the card, so alignment doesn't need manual checking. */
-.player-profiles .player-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); align-items: start; gap: 0.75rem 1rem; }
+/* Two columns at most: the full-width rows below keep every auto-fit track alive, so a plain
+   minmax(22rem, 1fr) left a third column empty beside the two cards. */
+.player-profiles .player-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(max(22rem, calc((100% - 1rem) / 2)), 1fr)); align-items: start; gap: 0.75rem 1rem; }
 .player-profiles .player-card-grid > .profile-row,
 .player-profiles .player-card-grid > .upcoming { grid-column: 1 / -1; }
 .player-card-grid { position: relative; display: flex; flex-direction: column; gap: 0.4rem; }
