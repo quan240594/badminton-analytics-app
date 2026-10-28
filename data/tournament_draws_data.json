@@ -58421,7 +58421,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "10",
@@ -58437,7 +58437,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              20,
+              22
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         },
         {
@@ -58460,7 +58469,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "30",
@@ -58476,7 +58485,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              20,
+              22
+            ]
+          ],
           "played_at": "zo 18-10-2026 12:20"
         },
         {
@@ -58485,14 +58503,51 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Anish Chitre",
+                  "seed": 4,
+                  "member_id": "4996790"
+                },
+                {
+                  "player_id": "113",
+                  "name": "Kyan Stam",
+                  "member_id": "4996148"
+                }
+              ]
             },
             {
-              "won": false,
-              "players": []
+              "won": true,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Yogan Ashwin",
+                  "seed": 2,
+                  "member_id": "10000742"
+                },
+                {
+                  "player_id": "111",
+                  "name": "Nishchint Prakash",
+                  "member_id": "5101034"
+                }
+              ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              19,
+              21
+            ]
+          ],
           "played_at": "zo 18-10-2026 16:00"
         },
         {
