@@ -49071,29 +49071,29 @@
               "name": "Nishchint Prakash"
             }
           ],
-          "played": 1,
-          "won": 1,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "1-0",
-          "game_record": "2-0",
-          "points_record": "42-12"
+          "match_record": "2-0",
+          "game_record": "4-0",
+          "points_record": "84-30"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "41",
               "name": "Isara Levmitha Karunapathiranage"
             }
           ],
-          "played": 1,
+          "played": 2,
           "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "1-0",
-          "game_record": "2-1",
-          "points_record": "61-51"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "79-93"
         },
         {
           "rank": 3,
@@ -49197,7 +49197,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "111",
@@ -49218,7 +49218,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              7
+            ],
+            [
+              21,
+              11
+            ]
+          ],
           "played_at": "za 17-10-2026 16:30"
         }
       ]
