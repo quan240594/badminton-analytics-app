@@ -12828,29 +12828,6 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "541",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": true,
-              "players": [
-                {
-                  "player_id": "78",
-                  "name": "Anaira Sonare",
-                  "member_id": "50010770"
-                }
-              ]
-            },
-            {
-              "won": false,
-              "players": [],
-              "bye": true
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
           "match_id": "542",
           "round": "Halve finale",
           "sides": [
@@ -12923,6 +12900,29 @@
             ]
           ],
           "played_at": "za 5-9-2026 16:30"
+        },
+        {
+          "match_id": "541",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "78",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
         }
       ]
     }
