@@ -819,6 +819,7 @@
   "6DDA18B9-8767-45B8-B93F-381F99251A37:59": "14393",
   "6DDA18B9-8767-45B8-B93F-381F99251A37:6": "50014758",
   "6DDA18B9-8767-45B8-B93F-381F99251A37:60": "4998645",
+  "6DDA18B9-8767-45B8-B93F-381F99251A37:61": "10001416",
   "6DDA18B9-8767-45B8-B93F-381F99251A37:8": "50011966",
   "6DDA18B9-8767-45B8-B93F-381F99251A37:9": "10002188",
   "6F110454-0B90-4FAC-A0D2-0FBB8761D2EC:1": "985572",
@@ -3636,7 +3637,7 @@
    }
   },
   "10001416": {
-   "fetched_at": "2026-10-16T07:51:15+00:00",
+   "fetched_at": "2026-10-28T18:55:08+00:00",
    "guid": "540AABDA-DC5B-4C73-B2DB-AD4D494F58E0",
    "ranking": {
     "doubles": {
@@ -3656,63 +3657,63 @@
     "doubles": {
      "career": {
       "losses": 59,
-      "wins": 61
+      "wins": 65
      },
      "thisYear": {
       "losses": 12,
-      "wins": 31
+      "wins": 35
      }
     },
     "mixed": {
      "career": {
-      "losses": 27,
-      "wins": 13
+      "losses": 28,
+      "wins": 15
      },
      "thisYear": {
-      "losses": 7,
-      "wins": 9
+      "losses": 8,
+      "wins": 11
      }
     },
     "singles": {
      "career": {
-      "losses": 48,
-      "wins": 66
+      "losses": 49,
+      "wins": 68
      },
      "thisYear": {
-      "losses": 13,
-      "wins": 30
+      "losses": 14,
+      "wins": 32
      }
     },
     "total": {
      "career": {
-      "losses": 134,
-      "wins": 140
+      "losses": 136,
+      "wins": 148
      },
      "form": [
       {
-       "date": "2026-09-20",
-       "won": false
-      },
-      {
-       "date": "2026-09-27",
+       "date": "2026-10-17",
        "won": true
       },
       {
-       "date": "2026-09-27",
+       "date": "2026-10-17",
+       "won": true
+      },
+      {
+       "date": "2026-10-17",
+       "won": true
+      },
+      {
+       "date": "2026-10-18",
        "won": false
       },
       {
-       "date": "2026-10-11",
-       "won": false
-      },
-      {
-       "date": "2026-10-11",
-       "won": false
+       "date": "2026-10-18",
+       "won": true
       }
      ],
      "thisYear": {
-      "losses": 32,
-      "wins": 70
+      "losses": 34,
+      "wins": 78
      }
     }
    }
