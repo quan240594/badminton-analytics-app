@@ -76052,48 +76052,48 @@
               "name": "Noortje Driessen"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "99-89"
         },
         {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "1",
               "name": "Laura Hermsen"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-2",
+          "points_record": "73-71"
         },
         {
-          "rank": 1,
+          "rank": 3,
           "players": [
             {
               "player_id": "54",
               "name": "Maud Faes"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "2-3",
+          "points_record": "87-99"
         },
         {
-          "rank": 1,
+          "rank": 4,
           "players": [
             {
               "player_id": "38",
@@ -76115,7 +76115,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "1",
@@ -76135,7 +76135,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              14
+            ]
+          ],
           "played_at": "za 24-10-2026 10:10"
         },
         {
@@ -76153,7 +76162,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "38",
@@ -76163,7 +76172,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 13:05"
         },
         {
@@ -76171,7 +76189,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "37",
@@ -76191,7 +76209,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              13
+            ]
+          ],
           "played_at": "za 24-10-2026 17:45"
         },
         {
@@ -76209,7 +76236,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "54",
@@ -76219,7 +76246,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              16,
+              21
+            ],
+            [
+              21,
+              15
+            ],
+            [
+              20,
+              22
+            ]
+          ],
           "played_at": "zo 25-10-2026 12:30"
         },
         {
@@ -76227,7 +76267,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "37",
@@ -76247,7 +76287,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              16
+            ]
+          ],
           "played_at": "zo 25-10-2026 16:50"
         },
         {
@@ -76255,7 +76304,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "54",
