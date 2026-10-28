@@ -73424,48 +73424,48 @@
               "name": "Rick van Baal"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 2,
           "drawn": 0,
           "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "match_record": "2-0",
+          "game_record": "4-1",
+          "points_record": "103-73"
         },
         {
-          "rank": 1,
-          "players": [
-            {
-              "player_id": "8",
-              "name": "Rolf van Dal"
-            }
-          ],
-          "played": 0,
-          "won": 0,
-          "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
-        },
-        {
-          "rank": 1,
+          "rank": 2,
           "players": [
             {
               "player_id": "9",
               "name": "Benjamin Walet"
             }
           ],
-          "played": 0,
-          "won": 0,
+          "played": 2,
+          "won": 1,
           "drawn": 0,
-          "lost": 0,
-          "match_record": "0-0",
-          "game_record": "0-0",
-          "points_record": "0-0"
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-2",
+          "points_record": "91-92"
         },
         {
-          "rank": 1,
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Rolf van Dal"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-4",
+          "points_record": "55-84"
+        },
+        {
+          "rank": 4,
           "players": [
             {
               "player_id": "56",
@@ -73487,7 +73487,7 @@
           "round": "Ronde 1",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "48",
@@ -73515,7 +73515,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "48",
@@ -73535,7 +73535,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              21,
+              14
+            ],
+            [
+              21,
+              10
+            ]
+          ],
           "played_at": "za 24-10-2026 11:55"
         },
         {
@@ -73543,7 +73552,7 @@
           "round": "Ronde 2",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "9",
@@ -73571,7 +73580,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "48",
@@ -73591,7 +73600,20 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              13
+            ],
+            [
+              21,
+              15
+            ]
+          ],
           "played_at": "za 24-10-2026 14:50"
         },
         {
@@ -73599,7 +73621,7 @@
           "round": "Ronde 3",
           "sides": [
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "8",
@@ -73637,7 +73659,7 @@
               ]
             },
             {
-              "won": false,
+              "won": true,
               "players": [
                 {
                   "player_id": "9",
@@ -73647,7 +73669,16 @@
               ]
             }
           ],
-          "games": [],
+          "games": [
+            [
+              15,
+              21
+            ],
+            [
+              16,
+              21
+            ]
+          ],
           "played_at": "za 24-10-2026 17:45"
         }
       ]
