@@ -35,8 +35,10 @@ NOTHING_TO_DO = 3
 
 # Bump when the stored draw shape gains something the simulator needs, so the
 # draws already fetched are fetched again (2: players on every match, byes,
-# seeds and knockout round names - most earlier matches were stored empty).
-DRAW_SCHEMA = 2
+# seeds and knockout round names - most earlier matches were stored empty;
+# 3: a player's MemberID is taken from the link slot that is theirs - it used to
+# be paired by position and landed on the wrong people).
+DRAW_SCHEMA = 3
 
 
 def load_json(path: Path, default):
