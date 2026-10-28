@@ -83599,6 +83599,454 @@
           "played_at": "za 24-10-2026 16:35"
         }
       ]
+    },
+    "52": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "77",
+              "name": "Siem van Dongen"
+            }
+          ],
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "6-2",
+          "points_record": "109-70"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "19",
+              "name": "Rik van den Boer"
+            }
+          ],
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "6-2",
+          "points_record": "103-66"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Jens van Trier"
+            }
+          ],
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "3-1",
+          "game_record": "6-2",
+          "points_record": "102-67"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Thijmen de Kruyf"
+            }
+          ],
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "1-3",
+          "game_record": "2-6",
+          "points_record": "70-108"
+        },
+        {
+          "rank": 5,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Maus Vermeulen"
+            }
+          ],
+          "played": 4,
+          "won": 0,
+          "drawn": 0,
+          "lost": 4,
+          "match_record": "0-4",
+          "game_record": "0-8",
+          "points_record": "47-120"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "730",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Siem van Dongen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              6
+            ],
+            [
+              15,
+              10
+            ]
+          ],
+          "played_at": "za 24-10-2026 09:00"
+        },
+        {
+          "match_id": "733",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              5
+            ],
+            [
+              15,
+              8
+            ]
+          ],
+          "played_at": "za 24-10-2026 09:00"
+        },
+        {
+          "match_id": "732",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Maus Vermeulen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 10:10"
+        },
+        {
+          "match_id": "729",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "played_at": "za 24-10-2026 10:45"
+        },
+        {
+          "match_id": "720",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Maus Vermeulen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              2,
+              15
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 11:20"
+        },
+        {
+          "match_id": "734",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Siem van Dongen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 11:20"
+        },
+        {
+          "match_id": "725",
+          "round": "Ronde 4",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Jens van Trier",
+                  "member_id": "50019541"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Siem van Dongen"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              15
+            ],
+            [
+              4,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 12:30"
+        },
+        {
+          "match_id": "728",
+          "round": "Ronde 4",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Maus Vermeulen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 12:30"
+        },
+        {
+          "match_id": "735",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Thijmen de Kruyf",
+                  "member_id": "10000089"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Rik van den Boer",
+                  "member_id": "50011975"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              4,
+              15
+            ],
+            [
+              6,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 13:40"
+        },
+        {
+          "match_id": "724",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Maus Vermeulen"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "77",
+                  "name": "Siem van Dongen"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              15
+            ],
+            [
+              4,
+              15
+            ]
+          ],
+          "played_at": "za 24-10-2026 14:15"
+        }
+      ]
     }
   }
 }
