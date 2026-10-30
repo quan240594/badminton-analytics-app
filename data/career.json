@@ -1307226,6 +1307226,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "6318",
         "time": "Sun 20/09/2026 12:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 11",
+        "home_team": "RUDRA UNITED 5",
+        "home_players": [],
+        "away_team": "VICTORIA BC 1",
+        "away_players": [
+          [
+            "4908",
+            "Fenna van Beers"
+          ]
+        ],
+        "score": "19-21 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "6318",
+        "time": "Sun 20/09/2026 12:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 11",
         "home_team": "RUDRA UNITED 5",
@@ -1307248,24 +1307266,6 @@
         ],
         "score": "24-26 26-24 21-18",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "6318",
-        "time": "Sun 20/09/2026 12:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 11",
-        "home_team": "RUDRA UNITED 5",
-        "home_players": [],
-        "away_team": "VICTORIA BC 1",
-        "away_players": [
-          [
-            "4908",
-            "Fenna van Beers"
-          ]
-        ],
-        "score": "19-21 13-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1359022,19 +1359022,28 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1873",
         "time": "Thu 24/09/2026 20:00",
-        "event": "VE1",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [],
+        "home_players": [
+          [
+            "1878",
+            "Mandy van Velzen"
+          ]
+        ],
         "away_team": "SHUTTLEK BC 1",
         "away_players": [
+          [
+            "3577",
+            "Gerdine Pols"
+          ],
           [
             "3575",
             "Elise van der Heijden-Barnhoorn"
           ]
         ],
-        "score": "21-19 18-21 21-14",
-        "winner_side": "home"
+        "score": "20-22 10-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1359067,28 +1359076,19 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1873",
         "time": "Thu 24/09/2026 20:00",
-        "event": "VD",
+        "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1878",
-            "Mandy van Velzen"
-          ]
-        ],
+        "home_players": [],
         "away_team": "SHUTTLEK BC 1",
         "away_players": [
-          [
-            "3577",
-            "Gerdine Pols"
-          ],
           [
             "3575",
             "Elise van der Heijden-Barnhoorn"
           ]
         ],
-        "score": "20-22 10-21",
-        "winner_side": "away"
+        "score": "21-19 18-21 21-14",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1359232,6 +1359232,78 @@
           ]
         ],
         "score": "19-21 21-18 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1873",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1869",
+            "Armand van Leen"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ],
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ]
+        ],
+        "score": "21-15 21-9",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1873",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ],
+          [
+            "455",
+            "Claudia van Helden-Sebregts"
+          ]
+        ],
+        "score": "15-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1873",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ]
+        ],
+        "score": "21-18 19-21 19-21",
         "winner_side": "away"
       }
     ]
@@ -1359938,33 +1360010,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1878",
         "time": "Thu 24/09/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1871",
-            "Dennis van der Houwen"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [
-          [
-            "3584",
-            "Daniel van der Eijk"
-          ],
-          [
-            "3577",
-            "Gerdine Pols"
-          ]
-        ],
-        "score": "21-14 21-13",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1878",
-        "time": "Thu 24/09/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
@@ -1360005,6 +1360050,33 @@
         ],
         "score": "21-23 17-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1878",
+        "time": "Thu 24/09/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [
+          [
+            "3584",
+            "Daniel van der Eijk"
+          ],
+          [
+            "3577",
+            "Gerdine Pols"
+          ]
+        ],
+        "score": "21-14 21-13",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1360199,33 +1360271,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1878",
         "time": "Fri 16/10/2026 19:30",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "MAASSLUIS BC 1",
-        "home_players": [
-          [
-            "442",
-            "Barry Janssen"
-          ],
-          [
-            "445",
-            "Marit Janssen"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 2",
-        "away_players": [
-          [
-            "1871",
-            "Dennis van der Houwen"
-          ]
-        ],
-        "score": "17-21 21-18 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1878",
-        "time": "Fri 16/10/2026 19:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "MAASSLUIS BC 1",
@@ -1360265,6 +1360310,33 @@
         "away_team": "ZEEMEEUWEN BC DE 2",
         "away_players": [],
         "score": "20-22 8-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1878",
+        "time": "Fri 16/10/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "MAASSLUIS BC 1",
+        "home_players": [
+          [
+            "442",
+            "Barry Janssen"
+          ],
+          [
+            "445",
+            "Marit Janssen"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 2",
+        "away_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ]
+        ],
+        "score": "17-21 21-18 18-21",
         "winner_side": "away"
       }
     ]
@@ -1394838,51 +1394910,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "454",
         "time": "Thu 17/09/2026 19:30",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
-        "home_players": [
-          [
-            "455",
-            "Claudia van Helden-Sebregts"
-          ]
-        ],
-        "away_team": "SMASHING FELLOWS THE BC 3",
-        "away_players": [
-          [
-            "1148",
-            "Irene van Dijke"
-          ],
-          [
-            "1149",
-            "Yela van der Linden"
-          ]
-        ],
-        "score": "21-12 21-11",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "454",
-        "time": "Thu 17/09/2026 19:30",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
-        "home_players": [],
-        "away_team": "SMASHING FELLOWS THE BC 3",
-        "away_players": [
-          [
-            "1148",
-            "Irene van Dijke"
-          ]
-        ],
-        "score": "21-8 21-3",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "454",
-        "time": "Thu 17/09/2026 19:30",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ABC-SWINDREGT 1",
@@ -1394909,29 +1394936,47 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "454",
-        "time": "Thu 24/09/2026 20:00",
-        "event": "GD1",
+        "time": "Thu 17/09/2026 19:30",
+        "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SMASHING MAASDAM 1",
-        "home_players": [
-          [
-            "299",
-            "Jasper Goedhart"
-          ],
-          [
-            "301",
-            "Renske Spaanderman"
-          ]
-        ],
-        "away_team": "ABC-SWINDREGT 1",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [],
+        "away_team": "SMASHING FELLOWS THE BC 3",
         "away_players": [
           [
-            "452",
-            "Mark Nekeman"
+            "1148",
+            "Irene van Dijke"
           ]
         ],
-        "score": "9-21 19-21",
-        "winner_side": "away"
+        "score": "21-8 21-3",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
+        "time": "Thu 17/09/2026 19:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [
+          [
+            "455",
+            "Claudia van Helden-Sebregts"
+          ]
+        ],
+        "away_team": "SMASHING FELLOWS THE BC 3",
+        "away_players": [
+          [
+            "1148",
+            "Irene van Dijke"
+          ],
+          [
+            "1149",
+            "Yela van der Linden"
+          ]
+        ],
+        "score": "21-12 21-11",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1394981,6 +1395026,60 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "454",
+        "time": "Thu 24/09/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SMASHING MAASDAM 1",
+        "home_players": [
+          [
+            "299",
+            "Jasper Goedhart"
+          ],
+          [
+            "301",
+            "Renske Spaanderman"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ]
+        ],
+        "score": "9-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
+        "time": "Thu 08/10/2026 19:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [
+          [
+            "2182",
+            "Ruben Boogaard"
+          ],
+          [
+            "2186",
+            "Marijke Koorevaar"
+          ]
+        ],
+        "score": "14-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
         "time": "Thu 08/10/2026 19:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
@@ -1395022,33 +1395121,6 @@
         ],
         "score": "21-17 21-9",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "454",
-        "time": "Thu 08/10/2026 19:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
-        "home_players": [
-          [
-            "452",
-            "Mark Nekeman"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [
-          [
-            "2182",
-            "Ruben Boogaard"
-          ],
-          [
-            "2186",
-            "Marijke Koorevaar"
-          ]
-        ],
-        "score": "14-21 17-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1395121,6 +1395193,78 @@
         ],
         "score": "18-21 21-17 21-11",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1869",
+            "Armand van Leen"
+          ],
+          [
+            "1873",
+            "Anouska Schellevis"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ]
+        ],
+        "score": "21-15 21-9",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1873",
+            "Anouska Schellevis"
+          ],
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "455",
+            "Claudia van Helden-Sebregts"
+          ]
+        ],
+        "score": "15-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "454",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1873",
+            "Anouska Schellevis"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [],
+        "score": "21-18 19-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1395404,6 +1395548,78 @@
         ],
         "score": "21-16 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "455",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [],
+        "score": "15-21 21-13 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "455",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1873",
+            "Anouska Schellevis"
+          ],
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ]
+        ],
+        "score": "15-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "455",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ],
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "451",
+            "Arnoud van Waas"
+          ]
+        ],
+        "score": "16-21 10-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1395669,28 +1395885,28 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1149",
         "time": "Fri 23/10/2026 19:45",
-        "event": "VD",
+        "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SMASHING FELLOWS THE BC 3",
         "home_players": [
           [
-            "2296",
-            "Annette ten Wolde"
+            "1150",
+            "Bart Kuperus"
           ]
         ],
         "away_team": "PIJNACKER BC 1",
         "away_players": [
           [
-            "1418",
-            "Cherr van Dormolen"
+            "1417",
+            "Frank van Schie"
           ],
           [
-            "1430",
-            "Qinny Wu"
+            "1418",
+            "Cherr van Dormolen"
           ]
         ],
-        "score": "21-10 21-16",
-        "winner_side": "home"
+        "score": "22-20 Opgave Team 1Kalender exporteren\n\t\t\n\t\t\tvr 23-10-2026 19:45",
+        "winner_side": ""
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1395857,33 +1396073,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1151",
         "time": "Thu 17/09/2026 19:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
-        "home_players": [
-          [
-            "453",
-            "Stijn van Ooijen"
-          ],
-          [
-            "455",
-            "Claudia van Helden-Sebregts"
-          ]
-        ],
-        "away_team": "SMASHING FELLOWS THE BC 3",
-        "away_players": [
-          [
-            "1149",
-            "Yela van der Linden"
-          ]
-        ],
-        "score": "22-20 20-22 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1151",
-        "time": "Thu 17/09/2026 19:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ABC-SWINDREGT 1",
@@ -1395905,6 +1396094,33 @@
           ]
         ],
         "score": "21-14 21-12",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1151",
+        "time": "Thu 17/09/2026 19:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [
+          [
+            "453",
+            "Stijn van Ooijen"
+          ],
+          [
+            "455",
+            "Claudia van Helden-Sebregts"
+          ]
+        ],
+        "away_team": "SMASHING FELLOWS THE BC 3",
+        "away_players": [
+          [
+            "1149",
+            "Yela van der Linden"
+          ]
+        ],
+        "score": "22-20 20-22 21-16",
         "winner_side": "home"
       },
       {
@@ -1396892,33 +1397108,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1419",
         "time": "Thu 10/09/2026 20:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1873",
-            "Anouska Schellevis"
-          ],
-          [
-            "6150",
-            "Julia de Winter"
-          ]
-        ],
-        "away_team": "PIJNACKER BC 1",
-        "away_players": [
-          [
-            "1420",
-            "Kim Kerklaan"
-          ]
-        ],
-        "score": "19-21 23-21 20-22",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1419",
-        "time": "Thu 10/09/2026 20:00",
         "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
@@ -1396963,29 +1397152,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1419",
-        "time": "Mon 14/09/2026 20:00",
-        "event": "GD1",
+        "time": "Thu 10/09/2026 20:00",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "PIJNACKER BC 1",
+        "home_team": "ZEEMEEUWEN BC DE 2",
         "home_players": [
           [
-            "1417",
-            "Frank van Schie"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [
-          [
-            "2186",
-            "Marijke Koorevaar"
+            "1873",
+            "Anouska Schellevis"
           ],
           [
-            "2184",
-            "Noah 't Jong"
+            "6150",
+            "Julia de Winter"
           ]
         ],
-        "score": "21-19 20-22 21-11",
-        "winner_side": "home"
+        "away_team": "PIJNACKER BC 1",
+        "away_players": [
+          [
+            "1420",
+            "Kim Kerklaan"
+          ]
+        ],
+        "score": "19-21 23-21 20-22",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1397031,6 +1397220,33 @@
         ],
         "score": "21-13 20-22 13-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1419",
+        "time": "Mon 14/09/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "PIJNACKER BC 1",
+        "home_players": [
+          [
+            "1417",
+            "Frank van Schie"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [
+          [
+            "2186",
+            "Marijke Koorevaar"
+          ],
+          [
+            "2184",
+            "Noah 't Jong"
+          ]
+        ],
+        "score": "21-19 20-22 21-11",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1397503,33 +1397719,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1869",
         "time": "Fri 16/10/2026 19:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "MAASSLUIS BC 1",
-        "home_players": [
-          [
-            "441",
-            "Peter de Groot"
-          ],
-          [
-            "444",
-            "Simone Hoogendijk"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 2",
-        "away_players": [
-          [
-            "1873",
-            "Anouska Schellevis"
-          ]
-        ],
-        "score": "19-21 21-18 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1869",
-        "time": "Fri 16/10/2026 19:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "MAASSLUIS BC 1",
@@ -1397570,6 +1397759,87 @@
         "away_players": [],
         "score": "11-21 15-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1869",
+        "time": "Fri 16/10/2026 19:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "MAASSLUIS BC 1",
+        "home_players": [
+          [
+            "441",
+            "Peter de Groot"
+          ],
+          [
+            "444",
+            "Simone Hoogendijk"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 2",
+        "away_players": [
+          [
+            "1873",
+            "Anouska Schellevis"
+          ]
+        ],
+        "score": "19-21 21-18 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1869",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1870",
+            "Menno van Baalen"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ],
+          [
+            "453",
+            "Stijn van Ooijen"
+          ]
+        ],
+        "score": "24-22 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1869",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1873",
+            "Anouska Schellevis"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ],
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ]
+        ],
+        "score": "21-15 21-9",
+        "winner_side": "home"
       }
     ]
   },
@@ -1397717,6 +1397987,51 @@
         "away_team": "ZEEMEEUWEN BC DE 2",
         "away_players": [],
         "score": "21-17 21-14",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1870",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1869",
+            "Armand van Leen"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ],
+          [
+            "453",
+            "Stijn van Ooijen"
+          ]
+        ],
+        "score": "24-22 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1870",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "453",
+            "Stijn van Ooijen"
+          ]
+        ],
+        "score": "13-21 27-25 21-15",
         "winner_side": "home"
       }
     ]
@@ -1397871,33 +1398186,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1871",
         "time": "Fri 16/10/2026 19:30",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "MAASSLUIS BC 1",
-        "home_players": [
-          [
-            "442",
-            "Barry Janssen"
-          ],
-          [
-            "445",
-            "Marit Janssen"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 2",
-        "away_players": [
-          [
-            "1878",
-            "Mandy van Velzen"
-          ]
-        ],
-        "score": "17-21 21-18 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1871",
-        "time": "Fri 16/10/2026 19:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "MAASSLUIS BC 1",
@@ -1397925,6 +1398213,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1871",
         "time": "Fri 16/10/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "MAASSLUIS BC 1",
+        "home_players": [
+          [
+            "442",
+            "Barry Janssen"
+          ],
+          [
+            "445",
+            "Marit Janssen"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 2",
+        "away_players": [
+          [
+            "1878",
+            "Mandy van Velzen"
+          ]
+        ],
+        "score": "17-21 21-18 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1871",
+        "time": "Fri 16/10/2026 19:30",
         "event": "ME1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "MAASSLUIS BC 1",
@@ -1397938,6 +1398253,51 @@
         "away_players": [],
         "score": "16-21 21-8 21-8",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1871",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "451",
+            "Arnoud van Waas"
+          ]
+        ],
+        "score": "12-21 11-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1871",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1889",
+            "Sabrina Olthof"
+          ]
+        ],
+        "away_team": "ABC-SWINDREGT 1",
+        "away_players": [
+          [
+            "451",
+            "Arnoud van Waas"
+          ],
+          [
+            "455",
+            "Claudia van Helden-Sebregts"
+          ]
+        ],
+        "score": "16-21 10-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1398013,6 +1398373,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2182",
         "time": "Thu 08/10/2026 19:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [
+          [
+            "451",
+            "Arnoud van Waas"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [],
+        "score": "23-21 15-21 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2182",
+        "time": "Thu 08/10/2026 19:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ABC-SWINDREGT 1",
@@ -1398035,24 +1398413,6 @@
         ],
         "score": "14-21 17-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2182",
-        "time": "Thu 08/10/2026 19:30",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
-        "home_players": [
-          [
-            "451",
-            "Arnoud van Waas"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [],
-        "score": "23-21 15-21 21-18",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1398740,6 +1399100,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2186",
         "time": "Mon 14/09/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "PIJNACKER BC 1",
+        "home_players": [
+          [
+            "1420",
+            "Kim Kerklaan"
+          ],
+          [
+            "1419",
+            "Aleta Kerklaan"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [
+          [
+            "2187",
+            "Wendy Bakker"
+          ]
+        ],
+        "score": "19-21 21-19 22-24",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2186",
+        "time": "Mon 14/09/2026 20:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "PIJNACKER BC 1",
@@ -1398779,60 +1399166,6 @@
           ]
         ],
         "score": "21-19 20-22 21-11",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2186",
-        "time": "Mon 14/09/2026 20:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "PIJNACKER BC 1",
-        "home_players": [
-          [
-            "1420",
-            "Kim Kerklaan"
-          ],
-          [
-            "1419",
-            "Aleta Kerklaan"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [
-          [
-            "2187",
-            "Wendy Bakker"
-          ]
-        ],
-        "score": "19-21 21-19 22-24",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2186",
-        "time": "Mon 21/09/2026 19:45",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SHUTTLE UP 1",
-        "home_players": [
-          [
-            "2182",
-            "Ruben Boogaard"
-          ]
-        ],
-        "away_team": "MAASSLUIS BC 1",
-        "away_players": [
-          [
-            "441",
-            "Peter de Groot"
-          ],
-          [
-            "444",
-            "Simone Hoogendijk"
-          ]
-        ],
-        "score": "21-19 21-16",
         "winner_side": "home"
       },
       {
@@ -1398883,29 +1399216,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2186",
-        "time": "Thu 08/10/2026 19:30",
+        "time": "Mon 21/09/2026 19:45",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ABC-SWINDREGT 1",
+        "home_team": "SHUTTLE UP 1",
         "home_players": [
-          [
-            "452",
-            "Mark Nekeman"
-          ],
-          [
-            "454",
-            "Irma Leendertse-Hubers"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [
           [
             "2182",
             "Ruben Boogaard"
           ]
         ],
-        "score": "14-21 17-21",
-        "winner_side": "away"
+        "away_team": "MAASSLUIS BC 1",
+        "away_players": [
+          [
+            "441",
+            "Peter de Groot"
+          ],
+          [
+            "444",
+            "Simone Hoogendijk"
+          ]
+        ],
+        "score": "21-19 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1398951,6 +1399284,33 @@
         "away_players": [],
         "score": "21-17 21-18",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2186",
+        "time": "Thu 08/10/2026 19:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ABC-SWINDREGT 1",
+        "home_players": [
+          [
+            "452",
+            "Mark Nekeman"
+          ],
+          [
+            "454",
+            "Irma Leendertse-Hubers"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [
+          [
+            "2182",
+            "Ruben Boogaard"
+          ]
+        ],
+        "score": "14-21 17-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1399028,33 +1399388,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2186",
         "time": "Mon 26/10/2026 19:45",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SHUTTLE UP 1",
-        "home_players": [
-          [
-            "2187",
-            "Wendy Bakker"
-          ]
-        ],
-        "away_team": "SMASHING MAASDAM 1",
-        "away_players": [
-          [
-            "303",
-            "Vera Adriaanse"
-          ],
-          [
-            "6975",
-            "Ingrid Herweijer"
-          ]
-        ],
-        "score": "22-20 22-20",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2186",
-        "time": "Mon 26/10/2026 19:45",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SHUTTLE UP 1",
@@ -1399095,6 +1399428,33 @@
         ],
         "score": "21-16 21-13",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2186",
+        "time": "Mon 26/10/2026 19:45",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SHUTTLE UP 1",
+        "home_players": [
+          [
+            "2187",
+            "Wendy Bakker"
+          ]
+        ],
+        "away_team": "SMASHING MAASDAM 1",
+        "away_players": [
+          [
+            "303",
+            "Vera Adriaanse"
+          ],
+          [
+            "6975",
+            "Ingrid Herweijer"
+          ]
+        ],
+        "score": "22-20 22-20",
+        "winner_side": "home"
       }
     ]
   },
@@ -1399109,6 +1399469,33 @@
       }
     },
     "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2187",
+        "time": "Mon 14/09/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "PIJNACKER BC 1",
+        "home_players": [
+          [
+            "1420",
+            "Kim Kerklaan"
+          ],
+          [
+            "1415",
+            "Tim Meulstee"
+          ]
+        ],
+        "away_team": "SHUTTLE UP 1",
+        "away_players": [
+          [
+            "2183",
+            "Martin Verhoef"
+          ]
+        ],
+        "score": "24-22 18-21 21-15",
+        "winner_side": "home"
+      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2187",
@@ -1399153,33 +1399540,6 @@
         "away_players": [],
         "score": "21-13 20-22 13-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2187",
-        "time": "Mon 14/09/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "PIJNACKER BC 1",
-        "home_players": [
-          [
-            "1420",
-            "Kim Kerklaan"
-          ],
-          [
-            "1415",
-            "Tim Meulstee"
-          ]
-        ],
-        "away_team": "SHUTTLE UP 1",
-        "away_players": [
-          [
-            "2183",
-            "Martin Verhoef"
-          ]
-        ],
-        "score": "24-22 18-21 21-15",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1399401,27 +1399761,27 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2187",
         "time": "Mon 26/10/2026 19:45",
-        "event": "VD",
+        "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SHUTTLE UP 1",
         "home_players": [
           [
-            "2186",
-            "Marijke Koorevaar"
+            "2183",
+            "Martin Verhoef"
           ]
         ],
         "away_team": "SMASHING MAASDAM 1",
         "away_players": [
           [
-            "303",
-            "Vera Adriaanse"
+            "297",
+            "Daniël Pichel"
           ],
           [
             "6975",
             "Ingrid Herweijer"
           ]
         ],
-        "score": "22-20 22-20",
+        "score": "21-16 21-17",
         "winner_side": "home"
       },
       {
@@ -1399446,27 +1399806,27 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2187",
         "time": "Mon 26/10/2026 19:45",
-        "event": "GD2",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SHUTTLE UP 1",
         "home_players": [
           [
-            "2183",
-            "Martin Verhoef"
+            "2186",
+            "Marijke Koorevaar"
           ]
         ],
         "away_team": "SMASHING MAASDAM 1",
         "away_players": [
           [
-            "297",
-            "Daniël Pichel"
+            "303",
+            "Vera Adriaanse"
           ],
           [
             "6975",
             "Ingrid Herweijer"
           ]
         ],
-        "score": "21-16 21-17",
+        "score": "22-20 22-20",
         "winner_side": "home"
       }
     ]
@@ -1399841,6 +1400201,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2296",
         "time": "Fri 23/10/2026 19:45",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SMASHING FELLOWS THE BC 3",
+        "home_players": [
+          [
+            "2295",
+            "Mathijs Stratermans"
+          ]
+        ],
+        "away_team": "PIJNACKER BC 1",
+        "away_players": [
+          [
+            "1415",
+            "Tim Meulstee"
+          ],
+          [
+            "1429",
+            "Pauline Harmsen"
+          ]
+        ],
+        "score": "20-22 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2296",
+        "time": "Fri 23/10/2026 19:45",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SMASHING FELLOWS THE BC 3",
@@ -1399881,33 +1400268,6 @@
         ],
         "score": "21-12 21-7",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2296",
-        "time": "Fri 23/10/2026 19:45",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SMASHING FELLOWS THE BC 3",
-        "home_players": [
-          [
-            "2295",
-            "Mathijs Stratermans"
-          ]
-        ],
-        "away_team": "PIJNACKER BC 1",
-        "away_players": [
-          [
-            "1415",
-            "Tim Meulstee"
-          ],
-          [
-            "1429",
-            "Pauline Harmsen"
-          ]
-        ],
-        "score": "20-22 16-21",
-        "winner_side": "away"
       }
     ]
   },
@@ -1400263,24 +1400623,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3572",
         "time": "Mon 26/10/2026 20:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "PIJNACKER BC 1",
-        "home_players": [
-          [
-            "1416",
-            "Jasper Tanis"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [],
-        "score": "12-21 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3572",
-        "time": "Mon 26/10/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "PIJNACKER BC 1",
@@ -1400303,6 +1400645,24 @@
         ],
         "score": "21-18 19-21 21-18",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3572",
+        "time": "Mon 26/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "PIJNACKER BC 1",
+        "home_players": [
+          [
+            "1416",
+            "Jasper Tanis"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [],
+        "score": "12-21 16-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1400366,6 +1400726,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3573",
         "time": "Fri 18/09/2026 19:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SHUTTLEK BC 1",
+        "home_players": [
+          [
+            "3572",
+            "Jorrit Veenis"
+          ]
+        ],
+        "away_team": "SMASHING MAASDAM 1",
+        "away_players": [
+          [
+            "299",
+            "Jasper Goedhart"
+          ],
+          [
+            "298",
+            "Jarco van de Griend"
+          ]
+        ],
+        "score": "7-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3573",
+        "time": "Fri 18/09/2026 19:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SHUTTLEK BC 1",
@@ -1400392,29 +1400779,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3573",
-        "time": "Fri 18/09/2026 19:30",
+        "time": "Thu 24/09/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SHUTTLEK BC 1",
+        "home_team": "ZEEMEEUWEN BC DE 2",
         "home_players": [
           [
-            "3572",
-            "Jorrit Veenis"
-          ]
-        ],
-        "away_team": "SMASHING MAASDAM 1",
-        "away_players": [
-          [
-            "299",
-            "Jasper Goedhart"
+            "1869",
+            "Armand van Leen"
           ],
           [
-            "298",
-            "Jarco van de Griend"
+            "1870",
+            "Menno van Baalen"
           ]
         ],
-        "score": "7-21 15-21",
-        "winner_side": "away"
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [
+          [
+            "3584",
+            "Daniel van der Eijk"
+          ]
+        ],
+        "score": "21-10 21-9",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1400459,33 +1400846,6 @@
           ]
         ],
         "score": "21-11 21-15",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3573",
-        "time": "Thu 24/09/2026 20:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1869",
-            "Armand van Leen"
-          ],
-          [
-            "1870",
-            "Menno van Baalen"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [
-          [
-            "3584",
-            "Daniel van der Eijk"
-          ]
-        ],
-        "score": "21-10 21-9",
         "winner_side": "home"
       },
       {
@@ -1400670,24 +1401030,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3575",
         "time": "Fri 18/09/2026 19:30",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SHUTTLEK BC 1",
-        "home_players": [],
-        "away_team": "SMASHING MAASDAM 1",
-        "away_players": [
-          [
-            "303",
-            "Vera Adriaanse"
-          ]
-        ],
-        "score": "21-10 21-8",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3575",
-        "time": "Fri 18/09/2026 19:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "SHUTTLEK BC 1",
@@ -1400709,6 +1401051,24 @@
           ]
         ],
         "score": "23-21 16-21 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3575",
+        "time": "Fri 18/09/2026 19:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SHUTTLEK BC 1",
+        "home_players": [],
+        "away_team": "SMASHING MAASDAM 1",
+        "away_players": [
+          [
+            "303",
+            "Vera Adriaanse"
+          ]
+        ],
+        "score": "21-10 21-8",
         "winner_side": "home"
       },
       {
@@ -1401227,6 +1401587,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3577",
         "time": "Thu 24/09/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1878",
+            "Mandy van Velzen"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [],
+        "score": "21-23 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3577",
+        "time": "Thu 24/09/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
@@ -1401248,24 +1401626,6 @@
           ]
         ],
         "score": "20-22 10-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3577",
-        "time": "Thu 24/09/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1878",
-            "Mandy van Velzen"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [],
-        "score": "21-23 17-21",
         "winner_side": "away"
       },
       {
@@ -1401411,6 +1401771,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3584",
         "time": "Thu 24/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [],
+        "score": "21-16 16-21 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3584",
+        "time": "Thu 24/09/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
@@ -1401460,24 +1401838,6 @@
         ],
         "score": "21-14 21-13",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3584",
-        "time": "Thu 24/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1871",
-            "Dennis van der Houwen"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [],
-        "score": "21-16 16-21 18-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1401555,6 +1401915,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3584",
         "time": "Fri 09/10/2026 19:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "SHUTTLEK BC M1",
+        "home_players": [],
+        "away_team": "OUDERKERK A/D IJSSEL BC M1",
+        "away_players": [
+          [
+            "6433",
+            "Robin van der Heijden"
+          ]
+        ],
+        "score": "11-21 21-13 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3584",
+        "time": "Fri 09/10/2026 19:30",
         "event": "MD3",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
         "home_team": "SHUTTLEK BC M1",
@@ -1401577,51 +1401955,6 @@
         ],
         "score": "21-18 21-23 18-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3584",
-        "time": "Fri 09/10/2026 19:30",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "SHUTTLEK BC M1",
-        "home_players": [],
-        "away_team": "OUDERKERK A/D IJSSEL BC M1",
-        "away_players": [
-          [
-            "6433",
-            "Robin van der Heijden"
-          ]
-        ],
-        "score": "11-21 21-13 21-17",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3584",
-        "time": "Mon 26/10/2026 20:00",
-        "event": "MD4",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "PIJNACKER BC M1",
-        "home_players": [
-          [
-            "1436",
-            "Tim Jansen"
-          ],
-          [
-            "1434",
-            "Bas Lijster"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC M1",
-        "away_players": [
-          [
-            "3586",
-            "Ruben Donker"
-          ]
-        ],
-        "score": "21-15 21-19",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1401649,6 +1401982,33 @@
         ],
         "score": "18-21 19-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3584",
+        "time": "Mon 26/10/2026 20:00",
+        "event": "MD4",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "PIJNACKER BC M1",
+        "home_players": [
+          [
+            "1436",
+            "Tim Jansen"
+          ],
+          [
+            "1434",
+            "Bas Lijster"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC M1",
+        "away_players": [
+          [
+            "3586",
+            "Ruben Donker"
+          ]
+        ],
+        "score": "21-15 21-19",
+        "winner_side": "home"
       }
     ]
   },
@@ -1477631,6 +1477991,78 @@
         ],
         "score": "21-12 21-16",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "574",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ],
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "21-15 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "574",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "21-12 21-3",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "574",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6139",
+            "Frank Jansen"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ],
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "score": "21-14 17-21 21-17",
+        "winner_side": "home"
       }
     ]
   },
@@ -1477721,33 +1478153,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "575",
         "time": "Sun 20/09/2026 13:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VEGHEL 67 BC 6",
-        "home_players": [
-          [
-            "6565",
-            "Annika in de Braekt"
-          ],
-          [
-            "603",
-            "Irene Manders"
-          ]
-        ],
-        "away_team": "OIRSCHOT BC 1",
-        "away_players": [
-          [
-            "574",
-            "Laura Robben-van den Aker"
-          ]
-        ],
-        "score": "21-18 21-17",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "575",
-        "time": "Sun 20/09/2026 13:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VEGHEL 67 BC 6",
@@ -1477792,6 +1478197,33 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "575",
+        "time": "Sun 20/09/2026 13:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VEGHEL 67 BC 6",
+        "home_players": [
+          [
+            "6565",
+            "Annika in de Braekt"
+          ],
+          [
+            "603",
+            "Irene Manders"
+          ]
+        ],
+        "away_team": "OIRSCHOT BC 1",
+        "away_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "score": "21-18 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "575",
         "time": "Wed 23/09/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
@@ -1477820,24 +1478252,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "575",
         "time": "Wed 23/09/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [],
-        "away_team": "GELDROP BC 8",
-        "away_players": [
-          [
-            "1967",
-            "Maura Kunst"
-          ]
-        ],
-        "score": "12-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "575",
-        "time": "Wed 23/09/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "OIRSCHOT BC 1",
@@ -1477860,6 +1478274,96 @@
         ],
         "score": "21-12 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "575",
+        "time": "Wed 23/09/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "GELDROP BC 8",
+        "away_players": [
+          [
+            "1967",
+            "Maura Kunst"
+          ]
+        ],
+        "score": "12-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "575",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ],
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "21-15 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "575",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "score": "13-21 21-13 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "575",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6990",
+            "Jasper Pees"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4464",
+            "Steven Grauwels"
+          ],
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "12-21 21-17 21-18",
+        "winner_side": "home"
       }
     ]
   },
@@ -1477874,6 +1478378,24 @@
       }
     },
     "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "576",
+        "time": "Wed 09/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3785",
+            "Bob Arts"
+          ]
+        ],
+        "score": "21-15 18-21 27-25",
+        "winner_side": "home"
+      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "576",
@@ -1477900,24 +1478422,6 @@
         ],
         "score": "21-10 17-21 19-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "576",
-        "time": "Wed 09/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3785",
-            "Bob Arts"
-          ]
-        ],
-        "score": "21-15 18-21 27-25",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1477977,24 +1478481,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "576",
         "time": "Sun 20/09/2026 13:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VEGHEL 67 BC 6",
-        "home_players": [
-          [
-            "600",
-            "Tycho van Dijk"
-          ]
-        ],
-        "away_team": "OIRSCHOT BC 1",
-        "away_players": [],
-        "score": "16-21 21-18 21-15",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "576",
-        "time": "Sun 20/09/2026 13:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VEGHEL 67 BC 6",
@@ -1478016,6 +1478502,42 @@
           ]
         ],
         "score": "15-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "576",
+        "time": "Sun 20/09/2026 13:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VEGHEL 67 BC 6",
+        "home_players": [
+          [
+            "600",
+            "Tycho van Dijk"
+          ]
+        ],
+        "away_team": "OIRSCHOT BC 1",
+        "away_players": [],
+        "score": "16-21 21-18 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "576",
+        "time": "Wed 23/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "GELDROP BC 8",
+        "away_players": [
+          [
+            "1966",
+            "Ian Duijf"
+          ]
+        ],
+        "score": "8-21 16-21",
         "winner_side": "away"
       },
       {
@@ -1478044,24 +1478566,6 @@
         ],
         "score": "18-21 21-11 21-16",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "576",
-        "time": "Wed 23/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [],
-        "away_team": "GELDROP BC 8",
-        "away_players": [
-          [
-            "1966",
-            "Ian Duijf"
-          ]
-        ],
-        "score": "8-21 16-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1478420,33 +1478924,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "601",
         "time": "Sun 27/09/2026 10:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1582",
-            "Lars Koolen"
-          ],
-          [
-            "1580",
-            "Niels van Nieuwenhoven"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 6",
-        "away_players": [
-          [
-            "611",
-            "Robert Hellings"
-          ]
-        ],
-        "score": "21-19 16-21 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "601",
-        "time": "Sun 27/09/2026 10:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1478469,6 +1478946,33 @@
         ],
         "score": "13-21 16-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "601",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1582",
+            "Lars Koolen"
+          ],
+          [
+            "1580",
+            "Niels van Nieuwenhoven"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 6",
+        "away_players": [
+          [
+            "611",
+            "Robert Hellings"
+          ]
+        ],
+        "score": "21-19 16-21 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1478685,33 +1479189,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "603",
         "time": "Sun 27/09/2026 10:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1583",
-            "Anouk Sentjens"
-          ],
-          [
-            "1585",
-            "Maike Steuten"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 6",
-        "away_players": [
-          [
-            "604",
-            "Djanna de Rooij"
-          ]
-        ],
-        "score": "22-20 17-21 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "603",
-        "time": "Sun 27/09/2026 10:00",
         "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1478756,6 +1479233,33 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "603",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1583",
+            "Anouk Sentjens"
+          ],
+          [
+            "1585",
+            "Maike Steuten"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 6",
+        "away_players": [
+          [
+            "604",
+            "Djanna de Rooij"
+          ]
+        ],
+        "score": "22-20 17-21 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "603",
         "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
@@ -1478784,24 +1479288,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "603",
         "time": "Sun 11/10/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VEGHEL 67 BC 6",
-        "home_players": [],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3784",
-            "Julie Geboers"
-          ]
-        ],
-        "score": "21-16 14-21 19-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "603",
-        "time": "Sun 11/10/2026 10:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VEGHEL 67 BC 6",
@@ -1478824,6 +1479310,24 @@
         ],
         "score": "21-13 19-21 21-14",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "603",
+        "time": "Sun 11/10/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VEGHEL 67 BC 6",
+        "home_players": [],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3784",
+            "Julie Geboers"
+          ]
+        ],
+        "score": "21-16 14-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1479318,6 +1479822,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1313",
         "time": "Sun 11/10/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1590",
+            "Wouter Jansen"
+          ]
+        ],
+        "away_team": "VBSC 3",
+        "away_players": [],
+        "score": "18-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1313",
+        "time": "Sun 11/10/2026 10:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1479340,24 +1479862,6 @@
         ],
         "score": "21-19 20-22 21-8",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1313",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1590",
-            "Wouter Jansen"
-          ]
-        ],
-        "away_team": "VBSC 3",
-        "away_players": [],
-        "score": "18-21 16-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1479650,24 +1480154,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1315",
         "time": "Sun 20/09/2026 12:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [
-          [
-            "4466",
-            "Himank Vudayagiri"
-          ]
-        ],
-        "away_team": "VBSC 3",
-        "away_players": [],
-        "score": "12-21 21-18 11-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1315",
-        "time": "Sun 20/09/2026 12:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "RUDRA UNITED 6",
@@ -1479694,29 +1480180,20 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1315",
-        "time": "Sun 27/09/2026 11:30",
-        "event": "MD",
+        "time": "Sun 20/09/2026 12:00",
+        "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VBSC 3",
+        "home_team": "RUDRA UNITED 6",
         "home_players": [
           [
-            "1313",
-            "Bradley Hsu"
+            "4466",
+            "Himank Vudayagiri"
           ]
         ],
-        "away_team": "PANACHE ESBV 1",
-        "away_players": [
-          [
-            "1371",
-            "Tycho Brouwer"
-          ],
-          [
-            "1372",
-            "Max Pelle"
-          ]
-        ],
-        "score": "21-14 21-15",
-        "winner_side": "home"
+        "away_team": "VBSC 3",
+        "away_players": [],
+        "score": "12-21 21-18 11-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1479744,6 +1480221,33 @@
         ],
         "score": "16-21 15-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1315",
+        "time": "Sun 27/09/2026 11:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VBSC 3",
+        "home_players": [
+          [
+            "1313",
+            "Bradley Hsu"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 1",
+        "away_players": [
+          [
+            "1371",
+            "Tycho Brouwer"
+          ],
+          [
+            "1372",
+            "Max Pelle"
+          ]
+        ],
+        "score": "21-14 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -1479807,33 +1480311,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1316",
         "time": "Sun 20/09/2026 12:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [
-          [
-            "4467",
-            "Satyanarayana Vaidani"
-          ],
-          [
-            "4465",
-            "Daniel Mulkens"
-          ]
-        ],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "1313",
-            "Bradley Hsu"
-          ]
-        ],
-        "score": "21-15 21-15",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1316",
-        "time": "Sun 20/09/2026 12:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "RUDRA UNITED 6",
@@ -1479856,6 +1480333,33 @@
         ],
         "score": "17-21 21-18 18-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1316",
+        "time": "Sun 20/09/2026 12:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ],
+          [
+            "4465",
+            "Daniel Mulkens"
+          ]
+        ],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "1313",
+            "Bradley Hsu"
+          ]
+        ],
+        "score": "21-15 21-15",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1480135,6 +1480639,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1317",
         "time": "Sun 11/10/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1583",
+            "Anouk Sentjens"
+          ]
+        ],
+        "away_team": "VBSC 3",
+        "away_players": [],
+        "score": "20-22 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1317",
+        "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1480157,24 +1480679,6 @@
         ],
         "score": "21-5 21-14",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1317",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1583",
-            "Anouk Sentjens"
-          ]
-        ],
-        "away_team": "VBSC 3",
-        "away_players": [],
-        "score": "20-22 13-21",
-        "winner_side": "away"
       }
     ]
   },
@@ -1480337,6 +1480841,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1368",
         "time": "Sun 27/09/2026 11:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VBSC 3",
+        "home_players": [
+          [
+            "6362",
+            "Lisha Timmanagoudar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 1",
+        "away_players": [],
+        "score": "21-18 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1368",
+        "time": "Sun 27/09/2026 11:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VBSC 3",
@@ -1480359,24 +1480881,6 @@
         ],
         "score": "11-21 20-22",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1368",
-        "time": "Sun 27/09/2026 11:30",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VBSC 3",
-        "home_players": [
-          [
-            "6362",
-            "Lisha Timmanagoudar"
-          ]
-        ],
-        "away_team": "PANACHE ESBV 1",
-        "away_players": [],
-        "score": "21-18 21-15",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1480521,24 +1481025,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1369",
         "time": "Sun 20/09/2026 09:30",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
-        "home_players": [],
-        "away_team": "WEERT 67 BC 3",
-        "away_players": [
-          [
-            "1586",
-            "Rebecca Wolters"
-          ]
-        ],
-        "score": "17-21 21-19 11-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1369",
-        "time": "Sun 20/09/2026 09:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "PANACHE ESBV 1",
@@ -1480561,6 +1481047,24 @@
         ],
         "score": "21-18 9-21 24-22",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1369",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [],
+        "away_team": "WEERT 67 BC 3",
+        "away_players": [
+          [
+            "1586",
+            "Rebecca Wolters"
+          ]
+        ],
+        "score": "17-21 21-19 11-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1480790,33 +1481294,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1371",
         "time": "Sun 27/09/2026 11:30",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VBSC 3",
-        "home_players": [
-          [
-            "1315",
-            "Victor Yeh"
-          ],
-          [
-            "1313",
-            "Bradley Hsu"
-          ]
-        ],
-        "away_team": "PANACHE ESBV 1",
-        "away_players": [
-          [
-            "1372",
-            "Max Pelle"
-          ]
-        ],
-        "score": "21-14 21-15",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1371",
-        "time": "Sun 27/09/2026 11:30",
         "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VBSC 3",
@@ -1480857,6 +1481334,33 @@
         ],
         "score": "16-21 15-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1371",
+        "time": "Sun 27/09/2026 11:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VBSC 3",
+        "home_players": [
+          [
+            "1315",
+            "Victor Yeh"
+          ],
+          [
+            "1313",
+            "Bradley Hsu"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 1",
+        "away_players": [
+          [
+            "1372",
+            "Max Pelle"
+          ]
+        ],
+        "score": "21-14 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -1480902,24 +1481406,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1372",
         "time": "Sun 13/09/2026 09:30",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
-        "home_players": [],
-        "away_team": "VEGHEL 67 BC 6",
-        "away_players": [
-          [
-            "611",
-            "Robert Hellings"
-          ]
-        ],
-        "score": "17-21 20-22",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1372",
-        "time": "Sun 13/09/2026 09:30",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "PANACHE ESBV 1",
@@ -1480941,6 +1481427,42 @@
           ]
         ],
         "score": "21-19 23-21",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1372",
+        "time": "Sun 13/09/2026 09:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [],
+        "away_team": "VEGHEL 67 BC 6",
+        "away_players": [
+          [
+            "611",
+            "Robert Hellings"
+          ]
+        ],
+        "score": "17-21 20-22",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1372",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [],
+        "away_team": "WEERT 67 BC 3",
+        "away_players": [
+          [
+            "1590",
+            "Wouter Jansen"
+          ]
+        ],
+        "score": "21-18 21-14",
         "winner_side": "home"
       },
       {
@@ -1480973,20 +1481495,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1372",
-        "time": "Sun 20/09/2026 09:30",
-        "event": "ME2",
+        "time": "Sun 27/09/2026 11:30",
+        "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
-        "home_players": [],
-        "away_team": "WEERT 67 BC 3",
-        "away_players": [
+        "home_team": "VBSC 3",
+        "home_players": [
           [
-            "1590",
-            "Wouter Jansen"
+            "1316",
+            "Welly Chen"
+          ],
+          [
+            "1314",
+            "Rennie Hsu"
           ]
         ],
-        "score": "21-18 21-14",
-        "winner_side": "home"
+        "away_team": "PANACHE ESBV 1",
+        "away_players": [
+          [
+            "1368",
+            "Milou Henzen"
+          ]
+        ],
+        "score": "12-21 10-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1481032,33 +1481563,6 @@
         "away_players": [],
         "score": "22-20 21-12",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1372",
-        "time": "Sun 27/09/2026 11:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VBSC 3",
-        "home_players": [
-          [
-            "1316",
-            "Welly Chen"
-          ],
-          [
-            "1314",
-            "Rennie Hsu"
-          ]
-        ],
-        "away_team": "PANACHE ESBV 1",
-        "away_players": [
-          [
-            "1368",
-            "Milou Henzen"
-          ]
-        ],
-        "score": "12-21 10-21",
-        "winner_side": "away"
       }
     ]
   },
@@ -1481073,33 +1481577,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1580",
-        "time": "Sun 13/09/2026 10:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1582",
-            "Lars Koolen"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [
-          [
-            "4465",
-            "Daniel Mulkens"
-          ],
-          [
-            "4466",
-            "Himank Vudayagiri"
-          ]
-        ],
-        "score": "8-21 12-21",
-        "winner_side": "away"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1580",
@@ -1481148,28 +1481625,28 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1580",
-        "time": "Sun 20/09/2026 09:30",
+        "time": "Sun 13/09/2026 10:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
+        "home_team": "WEERT 67 BC 3",
         "home_players": [
           [
-            "1370",
-            "Jesper Priester"
-          ],
-          [
-            "1372",
-            "Max Pelle"
+            "1582",
+            "Lars Koolen"
           ]
         ],
-        "away_team": "WEERT 67 BC 3",
+        "away_team": "RUDRA UNITED 6",
         "away_players": [
           [
-            "1590",
-            "Wouter Jansen"
+            "4465",
+            "Daniel Mulkens"
+          ],
+          [
+            "4466",
+            "Himank Vudayagiri"
           ]
         ],
-        "score": "14-21 19-21",
+        "score": "8-21 12-21",
         "winner_side": "away"
       },
       {
@@ -1481216,6 +1481693,33 @@
         ],
         "score": "21-18 9-21 24-22",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1580",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [
+          [
+            "1370",
+            "Jesper Priester"
+          ],
+          [
+            "1372",
+            "Max Pelle"
+          ]
+        ],
+        "away_team": "WEERT 67 BC 3",
+        "away_players": [
+          [
+            "1590",
+            "Wouter Jansen"
+          ]
+        ],
+        "score": "14-21 19-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1481602,24 +1482106,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1583",
         "time": "Sun 13/09/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [
-          [
-            "6319",
-            "Richa Ahuja"
-          ]
-        ],
-        "score": "14-21 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1583",
-        "time": "Sun 13/09/2026 10:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1481646,29 +1482132,20 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1583",
-        "time": "Sun 27/09/2026 10:00",
-        "event": "VD",
+        "time": "Sun 13/09/2026 10:00",
+        "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1585",
-            "Maike Steuten"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 6",
+        "home_players": [],
+        "away_team": "RUDRA UNITED 6",
         "away_players": [
           [
-            "603",
-            "Irene Manders"
-          ],
-          [
-            "604",
-            "Djanna de Rooij"
+            "6319",
+            "Richa Ahuja"
           ]
         ],
-        "score": "22-20 17-21 21-16",
-        "winner_side": "home"
+        "score": "14-21 16-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1481718,6 +1482195,51 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1583",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1585",
+            "Maike Steuten"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 6",
+        "away_players": [
+          [
+            "603",
+            "Irene Manders"
+          ],
+          [
+            "604",
+            "Djanna de Rooij"
+          ]
+        ],
+        "score": "22-20 17-21 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1583",
+        "time": "Sun 11/10/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "1317",
+            "Nithyashree Kasula"
+          ]
+        ],
+        "score": "20-22 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1583",
         "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
@@ -1481741,24 +1482263,6 @@
         ],
         "score": "21-5 21-14",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1583",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "1317",
-            "Nithyashree Kasula"
-          ]
-        ],
-        "score": "20-22 13-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1482073,24 +1482577,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1586",
         "time": "Sun 20/09/2026 09:30",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
-        "home_players": [
-          [
-            "1369",
-            "Michelle van den Hoorn"
-          ]
-        ],
-        "away_team": "WEERT 67 BC 3",
-        "away_players": [],
-        "score": "17-21 21-19 11-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1586",
-        "time": "Sun 20/09/2026 09:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "PANACHE ESBV 1",
@@ -1482113,6 +1482599,24 @@
         ],
         "score": "21-18 9-21 24-22",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1586",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [
+          [
+            "1369",
+            "Michelle van den Hoorn"
+          ]
+        ],
+        "away_team": "WEERT 67 BC 3",
+        "away_players": [],
+        "score": "17-21 21-19 11-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1482221,33 +1482725,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1590",
         "time": "Sun 20/09/2026 09:30",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "PANACHE ESBV 1",
-        "home_players": [
-          [
-            "1370",
-            "Jesper Priester"
-          ],
-          [
-            "1372",
-            "Max Pelle"
-          ]
-        ],
-        "away_team": "WEERT 67 BC 3",
-        "away_players": [
-          [
-            "1580",
-            "Niels van Nieuwenhoven"
-          ]
-        ],
-        "score": "14-21 19-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1590",
-        "time": "Sun 20/09/2026 09:30",
         "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "PANACHE ESBV 1",
@@ -1482288,6 +1482765,33 @@
         ],
         "score": "21-15 21-17",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1590",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "PANACHE ESBV 1",
+        "home_players": [
+          [
+            "1370",
+            "Jesper Priester"
+          ],
+          [
+            "1372",
+            "Max Pelle"
+          ]
+        ],
+        "away_team": "WEERT 67 BC 3",
+        "away_players": [
+          [
+            "1580",
+            "Niels van Nieuwenhoven"
+          ]
+        ],
+        "score": "14-21 19-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1482715,24 +1483219,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1966",
         "time": "Sun 13/09/2026 11:30",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VBSC 3",
-        "home_players": [
-          [
-            "1316",
-            "Welly Chen"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [],
-        "score": "9-21 14-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1966",
-        "time": "Sun 13/09/2026 11:30",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VBSC 3",
@@ -1482755,6 +1483241,24 @@
         ],
         "score": "21-16 21-18",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1966",
+        "time": "Sun 13/09/2026 11:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VBSC 3",
+        "home_players": [
+          [
+            "1316",
+            "Welly Chen"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [],
+        "score": "9-21 14-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1482787,24 +1483291,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1966",
         "time": "Sun 20/09/2026 13:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "GELDROP BC 8",
-        "home_players": [],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3785",
-            "Bob Arts"
-          ]
-        ],
-        "score": "21-14 21-18",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1966",
-        "time": "Sun 20/09/2026 13:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "GELDROP BC 8",
@@ -1482827,6 +1483313,24 @@
         ],
         "score": "9-21 19-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1966",
+        "time": "Sun 20/09/2026 13:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "GELDROP BC 8",
+        "home_players": [],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3785",
+            "Bob Arts"
+          ]
+        ],
+        "score": "21-14 21-18",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1482859,24 +1483363,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1966",
         "time": "Wed 23/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [
-          [
-            "576",
-            "Gijs van de Loo"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [],
-        "score": "8-21 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1966",
-        "time": "Wed 23/09/2026 20:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "OIRSCHOT BC 1",
@@ -1482899,6 +1483385,24 @@
         ],
         "score": "21-12 21-16",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1966",
+        "time": "Wed 23/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "576",
+            "Gijs van de Loo"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [],
+        "score": "8-21 16-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1483061,6 +1483565,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1967",
         "time": "Sun 20/09/2026 13:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "GELDROP BC 8",
+        "home_players": [],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3784",
+            "Julie Geboers"
+          ]
+        ],
+        "score": "21-19 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1967",
+        "time": "Sun 20/09/2026 13:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "GELDROP BC 8",
@@ -1483088,24 +1483610,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1967",
         "time": "Sun 20/09/2026 13:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "GELDROP BC 8",
-        "home_players": [],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3784",
-            "Julie Geboers"
-          ]
-        ],
-        "score": "21-19 21-13",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1967",
-        "time": "Sun 20/09/2026 13:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "GELDROP BC 8",
@@ -1483127,6 +1483631,24 @@
           ]
         ],
         "score": "14-21 7-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1967",
+        "time": "Wed 23/09/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [],
+        "score": "12-21 17-21",
         "winner_side": "away"
       },
       {
@@ -1483160,24 +1483682,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1967",
         "time": "Wed 23/09/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [
-          [
-            "575",
-            "Marsja van Bijsterveldt"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [],
-        "score": "12-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1967",
-        "time": "Wed 23/09/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "OIRSCHOT BC 1",
@@ -1483199,33 +1483703,6 @@
           ]
         ],
         "score": "21-12 21-12",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1967",
-        "time": "Sun 11/10/2026 12:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [
-          [
-            "4469",
-            "Meenal Godbole"
-          ],
-          [
-            "4468",
-            "Olivia Askew-Vajra"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [
-          [
-            "2940",
-            "Veerle Nijhoff"
-          ]
-        ],
-        "score": "21-7 21-15",
         "winner_side": "home"
       },
       {
@@ -1483272,6 +1483749,33 @@
         ],
         "score": "19-21 14-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1967",
+        "time": "Sun 11/10/2026 12:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [
+          [
+            "4469",
+            "Meenal Godbole"
+          ],
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [
+          [
+            "2940",
+            "Veerle Nijhoff"
+          ]
+        ],
+        "score": "21-7 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -1483506,6 +1484010,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2940",
         "time": "Sun 11/10/2026 12:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ],
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [
+          [
+            "1966",
+            "Ian Duijf"
+          ]
+        ],
+        "score": "18-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2940",
+        "time": "Sun 11/10/2026 12:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "RUDRA UNITED 6",
@@ -1483546,33 +1484077,6 @@
         "away_players": [],
         "score": "21-15 21-10",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2940",
-        "time": "Sun 11/10/2026 12:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [
-          [
-            "4467",
-            "Satyanarayana Vaidani"
-          ],
-          [
-            "4469",
-            "Meenal Godbole"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [
-          [
-            "1966",
-            "Ian Duijf"
-          ]
-        ],
-        "score": "18-21 17-21",
-        "winner_side": "away"
       }
     ]
   },
@@ -1484004,6 +1484508,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3784",
         "time": "Sun 20/09/2026 13:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "GELDROP BC 8",
+        "home_players": [
+          [
+            "1967",
+            "Maura Kunst"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [],
+        "score": "21-19 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3784",
+        "time": "Sun 20/09/2026 13:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "GELDROP BC 8",
@@ -1484026,24 +1484548,6 @@
         ],
         "score": "13-21 10-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3784",
-        "time": "Sun 20/09/2026 13:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "GELDROP BC 8",
-        "home_players": [
-          [
-            "1967",
-            "Maura Kunst"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [],
-        "score": "21-19 21-13",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1484121,6 +1484625,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3784",
         "time": "Sun 11/10/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VEGHEL 67 BC 6",
+        "home_players": [
+          [
+            "603",
+            "Irene Manders"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [],
+        "score": "21-16 14-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3784",
+        "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "VEGHEL 67 BC 6",
@@ -1484143,24 +1484665,6 @@
         ],
         "score": "21-17 21-10",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3784",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VEGHEL 67 BC 6",
-        "home_players": [
-          [
-            "603",
-            "Irene Manders"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [],
-        "score": "21-16 14-21 19-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1484202,33 +1484706,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3785",
-        "time": "Wed 09/09/2026 20:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [
-          [
-            "6139",
-            "Frank Jansen"
-          ],
-          [
-            "576",
-            "Gijs van de Loo"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3786",
-            "Panyaphon Kitkhayan"
-          ]
-        ],
-        "score": "21-10 17-21 19-21",
-        "winner_side": "away"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3785",
@@ -1484277,6 +1484754,51 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3785",
+        "time": "Wed 09/09/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6139",
+            "Frank Jansen"
+          ],
+          [
+            "576",
+            "Gijs van de Loo"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3786",
+            "Panyaphon Kitkhayan"
+          ]
+        ],
+        "score": "21-10 17-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3785",
+        "time": "Sun 20/09/2026 13:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "GELDROP BC 8",
+        "home_players": [
+          [
+            "1966",
+            "Ian Duijf"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [],
+        "score": "21-14 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3785",
         "time": "Sun 20/09/2026 13:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
@@ -1484300,24 +1484822,6 @@
         ],
         "score": "21-14 19-21 23-25",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3785",
-        "time": "Sun 20/09/2026 13:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "GELDROP BC 8",
-        "home_players": [
-          [
-            "1966",
-            "Ian Duijf"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [],
-        "score": "21-14 21-18",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1484377,24 +1484881,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3785",
         "time": "Sun 27/09/2026 10:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "BVC 74 2",
-        "home_players": [],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [
-          [
-            "4467",
-            "Satyanarayana Vaidani"
-          ]
-        ],
-        "score": "21-15 15-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3785",
-        "time": "Sun 27/09/2026 10:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "BVC 74 2",
@@ -1484416,6 +1484902,51 @@
           ]
         ],
         "score": "21-14 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3785",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "BVC 74 2",
+        "home_players": [],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ]
+        ],
+        "score": "21-15 15-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3785",
+        "time": "Sun 11/10/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "VEGHEL 67 BC 6",
+        "home_players": [
+          [
+            "600",
+            "Tycho van Dijk"
+          ],
+          [
+            "603",
+            "Irene Manders"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3784",
+            "Julie Geboers"
+          ]
+        ],
+        "score": "21-13 19-21 21-14",
         "winner_side": "home"
       },
       {
@@ -1484462,33 +1484993,6 @@
         "away_players": [],
         "score": "8-21 8-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3785",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "VEGHEL 67 BC 6",
-        "home_players": [
-          [
-            "600",
-            "Tycho van Dijk"
-          ],
-          [
-            "603",
-            "Irene Manders"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3784",
-            "Julie Geboers"
-          ]
-        ],
-        "score": "21-13 19-21 21-14",
-        "winner_side": "home"
       }
     ]
   },
@@ -1484803,7 +1485307,80 @@
         "club": "RUDRA UNITED"
       }
     },
-    "matches": []
+    "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4464",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6139",
+            "Frank Jansen"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "21-14 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4464",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ],
+          [
+            "6990",
+            "Jasper Pees"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "12-21 21-17 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4464",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6990",
+            "Jasper Pees"
+          ],
+          [
+            "6991",
+            "Sjoerd van Poppel"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ]
+        ],
+        "score": "12-21 17-21",
+        "winner_side": "away"
+      }
+    ]
   },
   "7167EBE3-BECD-4394-B7E6-8DD76CB4F9C8": {
     "name": "Daniel Mulkens",
@@ -1484874,6 +1485451,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4465",
         "time": "Sun 20/09/2026 12:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "1313",
+            "Bradley Hsu"
+          ]
+        ],
+        "score": "14-21 20-22",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4465",
+        "time": "Sun 20/09/2026 12:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "RUDRA UNITED 6",
@@ -1484896,24 +1485491,6 @@
         ],
         "score": "21-15 21-15",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4465",
-        "time": "Sun 20/09/2026 12:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "1313",
-            "Bradley Hsu"
-          ]
-        ],
-        "score": "14-21 20-22",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1485305,24 +1485882,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4467",
         "time": "Sun 27/09/2026 10:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "BVC 74 2",
-        "home_players": [
-          [
-            "3785",
-            "Bob Arts"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [],
-        "score": "21-15 15-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4467",
-        "time": "Sun 27/09/2026 10:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "BVC 74 2",
@@ -1485345,6 +1485904,24 @@
         ],
         "score": "21-14 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4467",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "BVC 74 2",
+        "home_players": [
+          [
+            "3785",
+            "Bob Arts"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "21-15 15-21 17-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1485417,6 +1485994,78 @@
         ],
         "score": "18-21 17-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4467",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6990",
+            "Jasper Pees"
+          ],
+          [
+            "6991",
+            "Sjoerd van Poppel"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4464",
+            "Steven Grauwels"
+          ]
+        ],
+        "score": "12-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4467",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "6990",
+            "Jasper Pees"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "27-29 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4467",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ],
+          [
+            "6139",
+            "Frank Jansen"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "score": "21-14 17-21 21-17",
+        "winner_side": "home"
       }
     ]
   },
@@ -1485431,6 +1486080,24 @@
       }
     },
     "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4468",
+        "time": "Sun 20/09/2026 12:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "1314",
+            "Rennie Hsu"
+          ]
+        ],
+        "score": "21-14 21-11",
+        "winner_side": "home"
+      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4468",
@@ -1485456,24 +1486123,6 @@
           ]
         ],
         "score": "21-15 19-21 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4468",
-        "time": "Sun 20/09/2026 12:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "1314",
-            "Rennie Hsu"
-          ]
-        ],
-        "score": "21-14 21-11",
         "winner_side": "home"
       },
       {
@@ -1485592,6 +1486241,78 @@
         ],
         "score": "21-18 13-21 19-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4468",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ],
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4469",
+            "Meenal Godbole"
+          ]
+        ],
+        "score": "21-15 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4468",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "13-21 21-13 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4468",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ],
+          [
+            "6139",
+            "Frank Jansen"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ]
+        ],
+        "score": "21-14 17-21 21-17",
+        "winner_side": "home"
       }
     ]
   },
@@ -1485606,24 +1486327,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4469",
-        "time": "Sun 20/09/2026 12:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "6362",
-            "Lisha Timmanagoudar"
-          ]
-        ],
-        "score": "11-21 13-21",
-        "winner_side": "away"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4469",
@@ -1485650,6 +1486353,51 @@
         ],
         "score": "21-9 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4469",
+        "time": "Sun 20/09/2026 12:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "6362",
+            "Lisha Timmanagoudar"
+          ]
+        ],
+        "score": "11-21 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4469",
+        "time": "Sun 11/10/2026 12:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ]
+        ],
+        "away_team": "GELDROP BC 8",
+        "away_players": [
+          [
+            "1966",
+            "Ian Duijf"
+          ],
+          [
+            "2940",
+            "Veerle Nijhoff"
+          ]
+        ],
+        "score": "18-21 17-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1485681,29 +1486429,74 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4469",
-        "time": "Sun 11/10/2026 12:00",
-        "event": "GD1",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
+        "home_team": "OIRSCHOT BC 1",
         "home_players": [
           [
-            "4467",
-            "Satyanarayana Vaidani"
-          ]
-        ],
-        "away_team": "GELDROP BC 8",
-        "away_players": [
-          [
-            "1966",
-            "Ian Duijf"
+            "575",
+            "Marsja van Bijsterveldt"
           ],
           [
-            "2940",
-            "Veerle Nijhoff"
+            "574",
+            "Laura Robben-van den Aker"
           ]
         ],
-        "score": "18-21 17-21",
-        "winner_side": "away"
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "score": "21-15 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4469",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "21-12 21-3",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4469",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "575",
+            "Marsja van Bijsterveldt"
+          ],
+          [
+            "6990",
+            "Jasper Pees"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4464",
+            "Steven Grauwels"
+          ]
+        ],
+        "score": "12-21 21-17 21-18",
+        "winner_side": "home"
       }
     ]
   },
@@ -1485776,33 +1486569,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4470",
         "time": "Sun 20/09/2026 12:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "RUDRA UNITED 6",
-        "home_players": [
-          [
-            "4468",
-            "Olivia Askew-Vajra"
-          ]
-        ],
-        "away_team": "VBSC 3",
-        "away_players": [
-          [
-            "1314",
-            "Rennie Hsu"
-          ],
-          [
-            "1317",
-            "Nithyashree Kasula"
-          ]
-        ],
-        "score": "21-15 19-21 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4470",
-        "time": "Sun 20/09/2026 12:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "RUDRA UNITED 6",
@@ -1485825,6 +1486591,33 @@
         ],
         "score": "17-21 21-18 18-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4470",
+        "time": "Sun 20/09/2026 12:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "RUDRA UNITED 6",
+        "home_players": [
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "away_team": "VBSC 3",
+        "away_players": [
+          [
+            "1314",
+            "Rennie Hsu"
+          ],
+          [
+            "1317",
+            "Nithyashree Kasula"
+          ]
+        ],
+        "score": "21-15 19-21 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1485857,24 +1486650,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4470",
         "time": "Sun 27/09/2026 10:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "BVC 74 2",
-        "home_players": [
-          [
-            "3783",
-            "Diandra Arts"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [],
-        "score": "15-21 21-18 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4470",
-        "time": "Sun 27/09/2026 10:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "BVC 74 2",
@@ -1485897,6 +1486672,24 @@
         ],
         "score": "21-17 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4470",
+        "time": "Sun 27/09/2026 10:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "BVC 74 2",
+        "home_players": [
+          [
+            "3783",
+            "Diandra Arts"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "15-21 21-18 16-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1485960,6 +1486753,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "6139",
         "time": "Wed 09/09/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "away_team": "BVC 74 2",
+        "away_players": [
+          [
+            "3785",
+            "Bob Arts"
+          ],
+          [
+            "3784",
+            "Julie Geboers"
+          ]
+        ],
+        "score": "22-20 21-14",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "6139",
+        "time": "Wed 09/09/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "OIRSCHOT BC 1",
@@ -1486000,33 +1486820,6 @@
         ],
         "score": "21-18 16-21 19-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "6139",
-        "time": "Wed 09/09/2026 20:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "OIRSCHOT BC 1",
-        "home_players": [
-          [
-            "574",
-            "Laura Robben-van den Aker"
-          ]
-        ],
-        "away_team": "BVC 74 2",
-        "away_players": [
-          [
-            "3785",
-            "Bob Arts"
-          ],
-          [
-            "3784",
-            "Julie Geboers"
-          ]
-        ],
-        "score": "22-20 21-14",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1486170,6 +1486963,51 @@
           ]
         ],
         "score": "21-12 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "6139",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4464",
+            "Steven Grauwels"
+          ]
+        ],
+        "score": "21-14 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "6139",
+        "time": "Wed 28/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "OIRSCHOT BC 1",
+        "home_players": [
+          [
+            "574",
+            "Laura Robben-van den Aker"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [
+          [
+            "4467",
+            "Satyanarayana Vaidani"
+          ],
+          [
+            "4468",
+            "Olivia Askew-Vajra"
+          ]
+        ],
+        "score": "21-14 17-21 21-17",
         "winner_side": "home"
       }
     ]
@@ -1486319,24 +1487157,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "6319",
         "time": "Sun 13/09/2026 10:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
-        "home_team": "WEERT 67 BC 3",
-        "home_players": [
-          [
-            "1583",
-            "Anouk Sentjens"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 6",
-        "away_players": [],
-        "score": "14-21 16-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "6319",
-        "time": "Sun 13/09/2026 10:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
         "home_team": "WEERT 67 BC 3",
@@ -1486359,6 +1487179,24 @@
         ],
         "score": "21-15 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "6319",
+        "time": "Sun 13/09/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 10",
+        "home_team": "WEERT 67 BC 3",
+        "home_players": [
+          [
+            "1583",
+            "Anouk Sentjens"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 6",
+        "away_players": [],
+        "score": "14-21 16-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1536460,24 +1537298,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "210",
         "time": "Fri 09/10/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "LANSINGERLAND BC 3",
-        "home_players": [],
-        "away_team": "ZEEMEEUWEN BC DE 4",
-        "away_players": [
-          [
-            "1880",
-            "Sebastiaan van Hoff"
-          ]
-        ],
-        "score": "21-18 19-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "210",
-        "time": "Fri 09/10/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "LANSINGERLAND BC 3",
@@ -1536499,6 +1537319,24 @@
           ]
         ],
         "score": "17-21 11-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "210",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "LANSINGERLAND BC 3",
+        "home_players": [],
+        "away_team": "ZEEMEEUWEN BC DE 4",
+        "away_players": [
+          [
+            "1880",
+            "Sebastiaan van Hoff"
+          ]
+        ],
+        "score": "21-18 19-21 17-21",
         "winner_side": "away"
       },
       {
@@ -1536833,24 +1537671,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "211",
         "time": "Fri 09/10/2026 20:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "LANSINGERLAND BC 3",
-        "home_players": [],
-        "away_team": "ZEEMEEUWEN BC DE 4",
-        "away_players": [
-          [
-            "1879",
-            "Dave Koldenhof"
-          ]
-        ],
-        "score": "22-20 9-21 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "211",
-        "time": "Fri 09/10/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "LANSINGERLAND BC 3",
@@ -1536900,6 +1537720,24 @@
         ],
         "score": "18-21 10-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "211",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "LANSINGERLAND BC 3",
+        "home_players": [],
+        "away_team": "ZEEMEEUWEN BC DE 4",
+        "away_players": [
+          [
+            "1879",
+            "Dave Koldenhof"
+          ]
+        ],
+        "score": "22-20 9-21 21-16",
+        "winner_side": "home"
       }
     ]
   },
@@ -1537003,6 +1537841,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "216",
         "time": "Fri 11/09/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "LANSINGERLAND BC 3",
+        "home_players": [
+          [
+            "210",
+            "Maximilien Sedoc"
+          ]
+        ],
+        "away_team": "SILVER SHUTTLE BC 1",
+        "away_players": [
+          [
+            "933",
+            "Alex Keur"
+          ],
+          [
+            "930",
+            "Suzanne Hendriks"
+          ]
+        ],
+        "score": "19-21 21-17 22-20",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "216",
+        "time": "Fri 11/09/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "LANSINGERLAND BC 3",
@@ -1537047,29 +1537912,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "216",
-        "time": "Fri 11/09/2026 20:00",
+        "time": "Sun 13/09/2026 10:00",
         "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "LANSINGERLAND BC 3",
+        "draw": "Bondscompetitie 2026-2027 – 7e divisie – 7e divisie afd. 19",
+        "home_team": "LANSINGERLAND BC 4",
         "home_players": [
           [
-            "210",
-            "Maximilien Sedoc"
+            "214",
+            "Kyan Oskam"
           ]
         ],
-        "away_team": "SILVER SHUTTLE BC 1",
+        "away_team": "VOORBURG BC 5",
         "away_players": [
           [
-            "933",
-            "Alex Keur"
+            "733",
+            "Eelco Rinzema"
           ],
           [
-            "930",
-            "Suzanne Hendriks"
+            "726",
+            "Nicole Holstein"
           ]
         ],
-        "score": "19-21 21-17 22-20",
-        "winner_side": "home"
+        "score": "15-21 16-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1537097,33 +1537962,6 @@
         ],
         "score": "21-18 21-14",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "216",
-        "time": "Sun 13/09/2026 10:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 7e divisie – 7e divisie afd. 19",
-        "home_team": "LANSINGERLAND BC 4",
-        "home_players": [
-          [
-            "214",
-            "Kyan Oskam"
-          ]
-        ],
-        "away_team": "VOORBURG BC 5",
-        "away_players": [
-          [
-            "733",
-            "Eelco Rinzema"
-          ],
-          [
-            "726",
-            "Nicole Holstein"
-          ]
-        ],
-        "score": "15-21 16-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1537937,19 +1538775,28 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "932",
         "time": "Mon 21/09/2026 20:00",
-        "event": "VE2",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "PIJNACKER BC 2",
         "home_players": [
+          [
+            "1425",
+            "Julia Kwakkelstein"
+          ],
           [
             "1421",
             "Emma Molenaar"
           ]
         ],
         "away_team": "SILVER SHUTTLE BC 1",
-        "away_players": [],
-        "score": "14-21 18-21",
-        "winner_side": "away"
+        "away_players": [
+          [
+            "930",
+            "Suzanne Hendriks"
+          ]
+        ],
+        "score": "21-19 14-21 21-15",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1537982,28 +1538829,19 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "932",
         "time": "Mon 21/09/2026 20:00",
-        "event": "VD",
+        "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "PIJNACKER BC 2",
         "home_players": [
-          [
-            "1425",
-            "Julia Kwakkelstein"
-          ],
           [
             "1421",
             "Emma Molenaar"
           ]
         ],
         "away_team": "SILVER SHUTTLE BC 1",
-        "away_players": [
-          [
-            "930",
-            "Suzanne Hendriks"
-          ]
-        ],
-        "score": "21-19 14-21 21-15",
-        "winner_side": "home"
+        "away_players": [],
+        "score": "14-21 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1538431,24 +1539269,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "934",
         "time": "Wed 16/09/2026 20:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "SILVER SHUTTLE BC 1",
-        "home_players": [],
-        "away_team": "ZEEMEEUWEN BC DE 4",
-        "away_players": [
-          [
-            "1879",
-            "Dave Koldenhof"
-          ]
-        ],
-        "score": "14-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "934",
-        "time": "Wed 16/09/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "SILVER SHUTTLE BC 1",
@@ -1538471,6 +1539291,33 @@
         ],
         "score": "17-21 12-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "934",
+        "time": "Wed 16/09/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "SILVER SHUTTLE BC 1",
+        "home_players": [
+          [
+            "933",
+            "Alex Keur"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 4",
+        "away_players": [
+          [
+            "1880",
+            "Sebastiaan van Hoff"
+          ],
+          [
+            "1881",
+            "Richard Schellevis"
+          ]
+        ],
+        "score": "21-14 21-18",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1538960,6 +1539807,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1085",
         "time": "Thu 17/09/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "CROSS SMASH BC 1",
+        "home_players": [
+          [
+            "5992",
+            "Ewout 't Hooft"
+          ],
+          [
+            "5994",
+            "Cynthia Spijker-van den Heuvel"
+          ]
+        ],
+        "away_team": "SCHOONHOVEN BC 1",
+        "away_players": [
+          [
+            "1088",
+            "Nienke van Herk"
+          ]
+        ],
+        "score": "19-21 21-18 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1085",
+        "time": "Thu 17/09/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "CROSS SMASH BC 1",
@@ -1539000,33 +1539874,6 @@
         "away_players": [],
         "score": "21-8 21-18",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1085",
-        "time": "Thu 17/09/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "CROSS SMASH BC 1",
-        "home_players": [
-          [
-            "5992",
-            "Ewout 't Hooft"
-          ],
-          [
-            "5994",
-            "Cynthia Spijker-van den Heuvel"
-          ]
-        ],
-        "away_team": "SCHOONHOVEN BC 1",
-        "away_players": [
-          [
-            "1088",
-            "Nienke van Herk"
-          ]
-        ],
-        "score": "19-21 21-18 17-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1539288,6 +1540135,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1086",
         "time": "Thu 15/10/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "SCHOONHOVEN BC 1",
+        "home_players": [],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ]
+        ],
+        "score": "15-21 21-18 23-21",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1086",
+        "time": "Thu 15/10/2026 20:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "SCHOONHOVEN BC 1",
@@ -1539309,24 +1540174,6 @@
           ]
         ],
         "score": "23-21 9-21 21-18",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1086",
-        "time": "Thu 15/10/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "SCHOONHOVEN BC 1",
-        "home_players": [],
-        "away_team": "BLUE SKY BC 1",
-        "away_players": [
-          [
-            "6005",
-            "Gideon van Meijeren"
-          ]
-        ],
-        "score": "15-21 21-18 23-21",
         "winner_side": "home"
       }
     ]
@@ -1539719,6 +1540566,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1088",
         "time": "Thu 17/09/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "CROSS SMASH BC 1",
+        "home_players": [
+          [
+            "6411",
+            "Marianne van der Hoff"
+          ],
+          [
+            "5994",
+            "Cynthia Spijker-van den Heuvel"
+          ]
+        ],
+        "away_team": "SCHOONHOVEN BC 1",
+        "away_players": [
+          [
+            "1087",
+            "Rianda Verheijden"
+          ]
+        ],
+        "score": "21-16 21-12",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1088",
+        "time": "Thu 17/09/2026 20:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "CROSS SMASH BC 1",
@@ -1539763,18 +1540637,18 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1088",
-        "time": "Thu 17/09/2026 20:00",
+        "time": "Wed 07/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "CROSS SMASH BC 1",
+        "home_team": "SILVER SHUTTLE BC 1",
         "home_players": [
           [
-            "6411",
-            "Marianne van der Hoff"
+            "932",
+            "Gillian Van Dijk"
           ],
           [
-            "5994",
-            "Cynthia Spijker-van den Heuvel"
+            "930",
+            "Suzanne Hendriks"
           ]
         ],
         "away_team": "SCHOONHOVEN BC 1",
@@ -1539784,8 +1540658,8 @@
             "Rianda Verheijden"
           ]
         ],
-        "score": "21-16 21-12",
-        "winner_side": "home"
+        "score": "21-19 9-21 14-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1539835,29 +1540709,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1088",
-        "time": "Wed 07/10/2026 20:00",
+        "time": "Thu 15/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "SILVER SHUTTLE BC 1",
+        "home_team": "SCHOONHOVEN BC 1",
         "home_players": [
-          [
-            "932",
-            "Gillian Van Dijk"
-          ],
-          [
-            "930",
-            "Suzanne Hendriks"
-          ]
-        ],
-        "away_team": "SCHOONHOVEN BC 1",
-        "away_players": [
           [
             "1087",
             "Rianda Verheijden"
           ]
         ],
-        "score": "21-19 9-21 14-21",
-        "winner_side": "away"
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ],
+          [
+            "6008",
+            "Senna de Boer"
+          ]
+        ],
+        "score": "14-21 21-11 21-15",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1539903,33 +1540777,6 @@
         ],
         "score": "16-21 19-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1088",
-        "time": "Thu 15/10/2026 20:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "SCHOONHOVEN BC 1",
-        "home_players": [
-          [
-            "1087",
-            "Rianda Verheijden"
-          ]
-        ],
-        "away_team": "BLUE SKY BC 1",
-        "away_players": [
-          [
-            "6007",
-            "Cynthia Stehouwer"
-          ],
-          [
-            "6008",
-            "Senna de Boer"
-          ]
-        ],
-        "score": "14-21 21-11 21-15",
-        "winner_side": "home"
       }
     ]
   },
@@ -1540123,6 +1540970,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1422",
         "time": "Mon 14/09/2026 20:00",
+        "event": "MD3",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "PIJNACKER BC M1",
+        "home_players": [
+          [
+            "1424",
+            "William Koole"
+          ]
+        ],
+        "away_team": "LANSINGERLAND BC M2",
+        "away_players": [
+          [
+            "223",
+            "Odmar van den Berg"
+          ],
+          [
+            "224",
+            "Jeroen van der Last"
+          ]
+        ],
+        "score": "21-11 21-12",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1422",
+        "time": "Mon 14/09/2026 20:00",
         "event": "MD1",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
         "home_team": "PIJNACKER BC M1",
@@ -1540149,28 +1541023,19 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1422",
-        "time": "Mon 14/09/2026 20:00",
-        "event": "MD3",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "PIJNACKER BC M1",
+        "time": "Fri 18/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "LANSINGERLAND BC 3",
         "home_players": [
           [
-            "1424",
-            "William Koole"
+            "210",
+            "Maximilien Sedoc"
           ]
         ],
-        "away_team": "LANSINGERLAND BC M2",
-        "away_players": [
-          [
-            "223",
-            "Odmar van den Berg"
-          ],
-          [
-            "224",
-            "Jeroen van der Last"
-          ]
-        ],
-        "score": "21-11 21-12",
+        "away_team": "PIJNACKER BC 2",
+        "away_players": [],
+        "score": "23-21 21-18",
         "winner_side": "home"
       },
       {
@@ -1540226,24 +1541091,6 @@
         ],
         "score": "21-23 18-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1422",
-        "time": "Fri 18/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "LANSINGERLAND BC 3",
-        "home_players": [
-          [
-            "210",
-            "Maximilien Sedoc"
-          ]
-        ],
-        "away_team": "PIJNACKER BC 2",
-        "away_players": [],
-        "score": "23-21 21-18",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1540648,6 +1541495,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1425",
         "time": "Mon 07/09/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "PIJNACKER BC 2",
+        "home_players": [
+          [
+            "1424",
+            "William Koole"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6006",
+            "Bastiaan Prins"
+          ],
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "15-21 21-14 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1425",
+        "time": "Mon 07/09/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "PIJNACKER BC 2",
@@ -1540688,33 +1541562,6 @@
         ],
         "score": "13-21 12-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1425",
-        "time": "Mon 07/09/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "PIJNACKER BC 2",
-        "home_players": [
-          [
-            "1424",
-            "William Koole"
-          ]
-        ],
-        "away_team": "BLUE SKY BC 1",
-        "away_players": [
-          [
-            "6006",
-            "Bastiaan Prins"
-          ],
-          [
-            "6007",
-            "Cynthia Stehouwer"
-          ]
-        ],
-        "score": "15-21 21-14 21-18",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1541070,33 +1541917,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1430",
         "time": "Mon 14/09/2026 20:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 10",
-        "home_team": "SHUTTLE 74 TER AAR 1",
-        "home_players": [
-          [
-            "5688",
-            "Marleen Zeehandelaar"
-          ],
-          [
-            "5687",
-            "Esther Hermelink"
-          ]
-        ],
-        "away_team": "PIJNACKER BC 3",
-        "away_players": [
-          [
-            "1431",
-            "Esperanza van der Burg"
-          ]
-        ],
-        "score": "21-13 21-17",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1430",
-        "time": "Mon 14/09/2026 20:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 10",
         "home_team": "SHUTTLE 74 TER AAR 1",
@@ -1541136,6 +1541956,33 @@
           ]
         ],
         "score": "21-19 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1430",
+        "time": "Mon 14/09/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 10",
+        "home_team": "SHUTTLE 74 TER AAR 1",
+        "home_players": [
+          [
+            "5688",
+            "Marleen Zeehandelaar"
+          ],
+          [
+            "5687",
+            "Esther Hermelink"
+          ]
+        ],
+        "away_team": "PIJNACKER BC 3",
+        "away_players": [
+          [
+            "1431",
+            "Esperanza van der Burg"
+          ]
+        ],
+        "score": "21-13 21-17",
         "winner_side": "home"
       },
       {
@@ -1541497,6 +1542344,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1434",
         "time": "Mon 14/09/2026 20:00",
+        "event": "ME3",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "PIJNACKER BC M1",
+        "home_players": [],
+        "away_team": "LANSINGERLAND BC M2",
+        "away_players": [
+          [
+            "224",
+            "Jeroen van der Last"
+          ]
+        ],
+        "score": "15-21 21-14 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1434",
+        "time": "Mon 14/09/2026 20:00",
         "event": "MD4",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
         "home_team": "PIJNACKER BC M1",
@@ -1541518,24 +1542383,6 @@
           ]
         ],
         "score": "21-16 21-18",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1434",
-        "time": "Mon 14/09/2026 20:00",
-        "event": "ME3",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "PIJNACKER BC M1",
-        "home_players": [],
-        "away_team": "LANSINGERLAND BC M2",
-        "away_players": [
-          [
-            "224",
-            "Jeroen van der Last"
-          ]
-        ],
-        "score": "15-21 21-14 21-19",
         "winner_side": "home"
       },
       {
@@ -1541964,6 +1542811,60 @@
         ],
         "score": "21-16 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1879",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1880",
+            "Sebastiaan van Hoff"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ],
+          [
+            "6006",
+            "Bastiaan Prins"
+          ]
+        ],
+        "score": "19-21 21-16 21-11",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1879",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1882",
+            "Marietta Witte-Storm"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ],
+          [
+            "6008",
+            "Senna de Boer"
+          ]
+        ],
+        "score": "21-15 21-16",
+        "winner_side": "home"
       }
     ]
   },
@@ -1541978,24 +1542879,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1880",
-        "time": "Thu 10/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "ZEEMEEUWEN BC DE 4",
-        "home_players": [],
-        "away_team": "SCHOONHOVEN BC 1",
-        "away_players": [
-          [
-            "1086",
-            "Menno Beck"
-          ]
-        ],
-        "score": "16-21 15-21",
-        "winner_side": "away"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1880",
@@ -1542026,6 +1542909,42 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1880",
+        "time": "Thu 10/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "SCHOONHOVEN BC 1",
+        "away_players": [
+          [
+            "1086",
+            "Menno Beck"
+          ]
+        ],
+        "score": "16-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1880",
+        "time": "Wed 16/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "SILVER SHUTTLE BC 1",
+        "home_players": [
+          [
+            "933",
+            "Alex Keur"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 4",
+        "away_players": [],
+        "score": "13-21 21-19 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1880",
         "time": "Wed 16/09/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
@@ -1542049,24 +1542968,6 @@
         ],
         "score": "21-14 21-18",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1880",
-        "time": "Wed 16/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "SILVER SHUTTLE BC 1",
-        "home_players": [
-          [
-            "933",
-            "Alex Keur"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 4",
-        "away_players": [],
-        "score": "13-21 21-19 14-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1542157,6 +1543058,51 @@
         "away_players": [],
         "score": "21-18 19-21 17-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1880",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1879",
+            "Dave Koldenhof"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ],
+          [
+            "6006",
+            "Bastiaan Prins"
+          ]
+        ],
+        "score": "19-21 21-16 21-11",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1880",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ]
+        ],
+        "score": "20-22 21-17 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -1542171,6 +1543117,24 @@
       }
     },
     "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1881",
+        "time": "Thu 10/09/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "SCHOONHOVEN BC 1",
+        "away_players": [
+          [
+            "1085",
+            "Jack Verheijden"
+          ]
+        ],
+        "score": "22-20 19-21 21-12",
+        "winner_side": "home"
+      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1881",
@@ -1542196,24 +1543160,6 @@
           ]
         ],
         "score": "16-21 21-12 21-8",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1881",
-        "time": "Thu 10/09/2026 20:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "ZEEMEEUWEN BC DE 4",
-        "home_players": [],
-        "away_team": "SCHOONHOVEN BC 1",
-        "away_players": [
-          [
-            "1085",
-            "Jack Verheijden"
-          ]
-        ],
-        "score": "22-20 19-21 21-12",
         "winner_side": "home"
       },
       {
@@ -1542368,6 +1543314,51 @@
         ],
         "score": "18-21 10-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1881",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6006",
+            "Bastiaan Prins"
+          ]
+        ],
+        "score": "21-18 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1881",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1884",
+            "Merel Lijzenga"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6006",
+            "Bastiaan Prins"
+          ],
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "21-12 21-11",
+        "winner_side": "home"
       }
     ]
   },
@@ -1542512,6 +1543503,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1882",
         "time": "Thu 01/10/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "CROSS SMASH BC 1",
+        "away_players": [
+          [
+            "5993",
+            "Kristel Verduijn"
+          ]
+        ],
+        "score": "21-13 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1882",
+        "time": "Thu 01/10/2026 20:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "ZEEMEEUWEN BC DE 4",
@@ -1542534,24 +1543543,6 @@
         ],
         "score": "16-21 15-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1882",
-        "time": "Thu 01/10/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "ZEEMEEUWEN BC DE 4",
-        "home_players": [],
-        "away_team": "CROSS SMASH BC 1",
-        "away_players": [
-          [
-            "5993",
-            "Kristel Verduijn"
-          ]
-        ],
-        "score": "21-13 21-13",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1542624,6 +1543615,60 @@
         "away_players": [],
         "score": "9-21 16-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1882",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1883",
+            "Patricia van Adrichem"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6008",
+            "Senna de Boer"
+          ],
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "21-17 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1882",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1879",
+            "Dave Koldenhof"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6005",
+            "Gideon van Meijeren"
+          ],
+          [
+            "6008",
+            "Senna de Boer"
+          ]
+        ],
+        "score": "21-15 21-16",
+        "winner_side": "home"
       }
     ]
   },
@@ -1542754,6 +1543799,51 @@
         ],
         "score": "6-21 14-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1883",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1882",
+            "Marietta Witte-Storm"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6008",
+            "Senna de Boer"
+          ],
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "21-17 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1883",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "21-13 21-18",
+        "winner_side": "home"
       }
     ]
   },
@@ -1542862,6 +1543952,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1884",
         "time": "Thu 01/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1880",
+            "Sebastiaan van Hoff"
+          ]
+        ],
+        "away_team": "CROSS SMASH BC 1",
+        "away_players": [
+          [
+            "5992",
+            "Ewout 't Hooft"
+          ],
+          [
+            "6411",
+            "Marianne van der Hoff"
+          ]
+        ],
+        "score": "21-16 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1884",
+        "time": "Thu 01/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
         "home_team": "ZEEMEEUWEN BC DE 4",
@@ -1542888,29 +1544005,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1884",
-        "time": "Thu 01/10/2026 20:00",
+        "time": "Thu 08/10/2026 20:00",
         "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
-        "home_team": "ZEEMEEUWEN BC DE 4",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "SMASHING MAASDAM 1",
         "home_players": [
           [
-            "1880",
-            "Sebastiaan van Hoff"
-          ]
-        ],
-        "away_team": "CROSS SMASH BC 1",
-        "away_players": [
-          [
-            "5992",
-            "Ewout 't Hooft"
+            "299",
+            "Jasper Goedhart"
           ],
           [
-            "6411",
-            "Marianne van der Hoff"
+            "303",
+            "Vera Adriaanse"
           ]
         ],
-        "score": "21-16 21-19",
-        "winner_side": "home"
+        "away_team": "ZEEMEEUWEN BC DE 2",
+        "away_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ]
+        ],
+        "score": "8-21 17-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1542956,33 +1544073,6 @@
         "away_players": [],
         "score": "21-9 22-20",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1884",
-        "time": "Thu 08/10/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "SMASHING MAASDAM 1",
-        "home_players": [
-          [
-            "299",
-            "Jasper Goedhart"
-          ],
-          [
-            "303",
-            "Vera Adriaanse"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 2",
-        "away_players": [
-          [
-            "1871",
-            "Dennis van der Houwen"
-          ]
-        ],
-        "score": "8-21 17-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1543055,6 +1544145,51 @@
         ],
         "score": "18-21 10-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1884",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6008",
+            "Senna de Boer"
+          ]
+        ],
+        "score": "21-14 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1884",
+        "time": "Thu 29/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 17",
+        "home_team": "ZEEMEEUWEN BC DE 4",
+        "home_players": [
+          [
+            "1881",
+            "Richard Schellevis"
+          ]
+        ],
+        "away_team": "BLUE SKY BC 1",
+        "away_players": [
+          [
+            "6006",
+            "Bastiaan Prins"
+          ],
+          [
+            "6007",
+            "Cynthia Stehouwer"
+          ]
+        ],
+        "score": "21-12 21-11",
+        "winner_side": "home"
       }
     ]
   },
