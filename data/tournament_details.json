@@ -14946,7 +14946,7 @@
         "event_id": "22",
         "name": "HE-P",
         "draws": 0,
-        "entries": 9,
+        "entries": 11,
         "participants": [
           [
             "42"
@@ -14964,6 +14964,9 @@
             "33"
           ],
           [
+            "5"
+          ],
+          [
             "7"
           ],
           [
@@ -14974,6 +14977,9 @@
           ],
           [
             "12"
+          ],
+          [
+            "19"
           ]
         ]
       },
@@ -14981,15 +14987,8 @@
         "event_id": "29",
         "name": "DE-P",
         "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "5"
-          ],
-          [
-            "19"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "34",
@@ -15229,10 +15228,10 @@
             "6"
           ],
           [
-            "39"
+            "43"
           ],
           [
-            "43"
+            "39"
           ],
           [
             "41"
@@ -15371,21 +15370,8 @@
         "event_id": "8",
         "name": "HD-B",
         "draws": 0,
-        "entries": 3,
-        "participants": [
-          [
-            "1",
-            "14"
-          ],
-          [
-            "57",
-            "60"
-          ],
-          [
-            "48",
-            "53"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "36",
@@ -15398,17 +15384,8 @@
         "event_id": "10",
         "name": "GD-B",
         "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "31",
-            "34"
-          ],
-          [
-            "53",
-            "39"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "1",
@@ -15451,43 +15428,22 @@
         ]
       },
       {
-        "event_id": "3",
-        "name": "HD-A",
-        "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "31",
-            "59"
-          ],
-          [
-            "54",
-            "50"
-          ]
-        ]
-      },
-      {
         "event_id": "4",
         "name": "DD-A",
         "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "29",
-            "34"
-          ],
-          [
-            "49",
-            "39"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "5",
         "name": "GD-A",
         "draws": 0,
-        "entries": 3,
+        "entries": 5,
         "participants": [
+          [
+            "31",
+            "34"
+          ],
           [
             "35",
             "29"
@@ -15498,6 +15454,46 @@
           ],
           [
             "59"
+          ],
+          [
+            "53",
+            "39"
+          ]
+        ]
+      },
+      {
+        "event_id": "3",
+        "name": "HD-A-B-DD-A",
+        "draws": 0,
+        "entries": 7,
+        "participants": [
+          [
+            "31",
+            "59"
+          ],
+          [
+            "54",
+            "50"
+          ],
+          [
+            "34",
+            "29"
+          ],
+          [
+            "39",
+            "49"
+          ],
+          [
+            "60",
+            "57"
+          ],
+          [
+            "53",
+            "48"
+          ],
+          [
+            "14",
+            "1"
           ]
         ]
       }
@@ -15527,12 +15523,12 @@
       {
         "country": null,
         "player_id": "1",
-        "name": "Bouman, Jelte"
+        "name": "Bouman B, Jelte"
       },
       {
         "country": null,
         "player_id": "31",
-        "name": "Buel, Joep Van"
+        "name": "Buel B, Joep Van"
       },
       {
         "country": null,
@@ -15612,7 +15608,7 @@
       {
         "country": null,
         "player_id": "34",
-        "name": "Hoof, Bibi van"
+        "name": "Hoof B, Bibi van"
       },
       {
         "country": null,
@@ -15622,7 +15618,7 @@
       {
         "country": null,
         "player_id": "57",
-        "name": "Kamp, Sonam"
+        "name": "Kamp B, Sonam"
       },
       {
         "country": null,
@@ -15692,7 +15688,7 @@
       {
         "country": null,
         "player_id": "48",
-        "name": "Passage, Dharma"
+        "name": "Passage B, Dharma"
       },
       {
         "country": null,
@@ -15706,13 +15702,13 @@
       },
       {
         "country": null,
-        "player_id": "39",
-        "name": "Prins, Liberty"
+        "player_id": "43",
+        "name": "Prins, Skylar"
       },
       {
         "country": null,
-        "player_id": "43",
-        "name": "Prins, Skylar"
+        "player_id": "39",
+        "name": "Prins B, Liberty"
       },
       {
         "country": null,
@@ -15742,7 +15738,7 @@
       {
         "country": null,
         "player_id": "60",
-        "name": "Smits, Tom"
+        "name": "Smits B, Tom"
       },
       {
         "country": null,
@@ -15772,7 +15768,7 @@
       {
         "country": null,
         "player_id": "53",
-        "name": "Trieling, Vince"
+        "name": "Trieling B, Vince"
       },
       {
         "country": null,
@@ -15782,7 +15778,7 @@
       {
         "country": null,
         "player_id": "14",
-        "name": "Ven, Jochem van de"
+        "name": "Ven B, Jochem van de"
       },
       {
         "country": null,
