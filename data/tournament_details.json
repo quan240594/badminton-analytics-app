@@ -32306,7 +32306,7 @@
         "event_id": "6",
         "name": "meisjes enkel B",
         "draws": 0,
-        "entries": 6,
+        "entries": 8,
         "participants": [
           [
             "33"
@@ -32318,6 +32318,9 @@
             "59"
           ],
           [
+            "67"
+          ],
+          [
             "61"
           ],
           [
@@ -32325,6 +32328,9 @@
           ],
           [
             "32"
+          ],
+          [
+            "70"
           ]
         ]
       },
@@ -32332,7 +32338,7 @@
         "event_id": "8",
         "name": "enkel C",
         "draws": 0,
-        "entries": 15,
+        "entries": 18,
         "participants": [
           [
             "23"
@@ -32359,6 +32365,12 @@
             "4"
           ],
           [
+            "64"
+          ],
+          [
+            "66"
+          ],
+          [
             "63"
           ],
           [
@@ -32374,6 +32386,9 @@
             "48"
           ],
           [
+            "69"
+          ],
+          [
             "57"
           ],
           [
@@ -32385,7 +32400,7 @@
         "event_id": "10",
         "name": "enkel D",
         "draws": 0,
-        "entries": 13,
+        "entries": 15,
         "participants": [
           [
             "62"
@@ -32398,6 +32413,9 @@
           ],
           [
             "43"
+          ],
+          [
+            "65"
           ],
           [
             "46"
@@ -32425,6 +32443,9 @@
           ],
           [
             "13"
+          ],
+          [
+            "72"
           ]
         ]
       },
@@ -32432,7 +32453,7 @@
         "event_id": "12",
         "name": "enkel goud U13",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "60"
@@ -32445,6 +32466,9 @@
           ],
           [
             "14"
+          ],
+          [
+            "71"
           ]
         ]
       },
@@ -32502,7 +32526,7 @@
         "event_id": "7",
         "name": "dubbel B",
         "draws": 0,
-        "entries": 8,
+        "entries": 9,
         "participants": [
           [
             "33",
@@ -32531,6 +32555,10 @@
             "61"
           ],
           [
+            "67",
+            "70"
+          ],
+          [
             "38"
           ]
         ]
@@ -32539,7 +32567,7 @@
         "event_id": "9",
         "name": "dubbel C",
         "draws": 0,
-        "entries": 8,
+        "entries": 9,
         "participants": [
           [
             "23"
@@ -32549,17 +32577,23 @@
             "28"
           ],
           [
-            "18"
+            "18",
+            "69"
           ],
           [
             "2",
             "4"
           ],
           [
+            "64",
+            "66"
+          ],
+          [
             "63"
           ],
           [
-            "27"
+            "27",
+            "68"
           ],
           [
             "48",
@@ -32577,7 +32611,8 @@
         "entries": 7,
         "participants": [
           [
-            "62"
+            "62",
+            "65"
           ],
           [
             "15"
@@ -32779,8 +32814,23 @@
       },
       {
         "country": null,
+        "player_id": "64",
+        "name": "Kariyawasam, Sithuli"
+      },
+      {
+        "country": null,
+        "player_id": "65",
+        "name": "Keizer, Naud"
+      },
+      {
+        "country": null,
         "player_id": "46",
         "name": "Kreeke, Floris van de"
+      },
+      {
+        "country": null,
+        "player_id": "66",
+        "name": "Laan, Luuk van der"
       },
       {
         "country": null,
@@ -32844,6 +32894,11 @@
       },
       {
         "country": null,
+        "player_id": "67",
+        "name": "Penning, Maartje"
+      },
+      {
+        "country": null,
         "player_id": "38",
         "name": "Pieete, Leon"
       },
@@ -32889,6 +32944,11 @@
       },
       {
         "country": null,
+        "player_id": "68",
+        "name": "Sangwa, Nickita Benicia"
+      },
+      {
+        "country": null,
         "player_id": "61",
         "name": "Selden Wangmo, Dechen"
       },
@@ -32919,6 +32979,11 @@
       },
       {
         "country": null,
+        "player_id": "69",
+        "name": "Upadhyay, Aruna"
+      },
+      {
+        "country": null,
         "player_id": "57",
         "name": "Verseveld, Samuel van"
       },
@@ -32946,6 +33011,21 @@
         "country": null,
         "player_id": "14",
         "name": "Weijers, Nathan"
+      },
+      {
+        "country": null,
+        "player_id": "70",
+        "name": "Westende, Emmely Van ‘t"
+      },
+      {
+        "country": null,
+        "player_id": "71",
+        "name": "Wong, Elyse"
+      },
+      {
+        "country": null,
+        "player_id": "72",
+        "name": "Wong, Nathan"
       }
     ]
   },
