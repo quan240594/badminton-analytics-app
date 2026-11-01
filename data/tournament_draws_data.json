@@ -95491,6 +95491,268 @@
           "played_at": "zo 1-11-2026 11:20"
         }
       ]
+    },
+    "2": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "Sem Pennings"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "3-0",
+          "points_record": "90-54"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Owen Ou"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "2-1",
+          "points_record": "80-55"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "Tieme van der Ham"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "1-2",
+          "points_record": "56-73"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Nick Habraken"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-3",
+          "points_record": "46-90"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "28",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Nick Habraken",
+                  "member_id": "15313"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tieme van der Ham",
+                  "member_id": "50026716"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "30",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Owen Ou"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "24",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Owen Ou"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Nick Habraken",
+                  "member_id": "15313"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              13
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "32",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tieme van der Ham",
+                  "member_id": "50026716"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "27",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Owen Ou"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tieme van der Ham",
+                  "member_id": "50026716"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              12
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:20"
+        },
+        {
+          "match_id": "31",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Nick Habraken",
+                  "member_id": "15313"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              20,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:20"
+        }
+      ]
     }
   }
 }
