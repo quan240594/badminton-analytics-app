@@ -98447,6 +98447,113 @@
           "played_at": "zo 1-11-2026 12:00"
         }
       ]
+    },
+    "21": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "252",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Tom Smits B",
+                  "member_id": "4998645"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              14,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:40"
+        },
+        {
+          "match_id": "253",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Vince Trieling B"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Metin Emre Kural",
+                  "member_id": "10002914"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              10,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:40"
+        },
+        {
+          "match_id": "251",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Tom Smits B",
+                  "member_id": "4998645"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "35",
+                  "name": "Metin Emre Kural",
+                  "member_id": "10002914"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              13,
+              21
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:40"
+        }
+      ]
     }
   }
 }
