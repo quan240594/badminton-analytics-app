@@ -95231,5 +95231,266 @@
         }
       ]
     }
+  },
+  "6DDA18B9-8767-45B8-B93F-381F99251A37": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Avyaan Anup"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "3-0",
+          "points_record": "90-7"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "42",
+              "name": "Lucas Aninat"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "2-1",
+          "points_record": "63-66"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Sem Kanters"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "1-2",
+          "points_record": "60-69"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "Lise van der Heijden"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-3",
+          "points_record": "19-90"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "12",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lucas Aninat"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Sem Kanters"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              28
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "14",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Lise van der Heijden"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              2
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lucas Aninat"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              3
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "16",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Sem Kanters"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Lise van der Heijden"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              9
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "11",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Sem Kanters"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              2
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:20"
+        },
+        {
+          "match_id": "15",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lucas Aninat"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Lise van der Heijden"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              8
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:20"
+        }
+      ]
+    }
   }
 }
