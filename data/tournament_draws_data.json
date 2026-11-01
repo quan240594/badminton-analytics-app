@@ -97965,6 +97965,223 @@
           "played_at": "zo 1-11-2026 14:40"
         }
       ]
+    },
+    "19": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Nick Fransen"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "59-54"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "53",
+              "name": "Vince Trieling B"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "54-54"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "1",
+              "name": "Jelte Bouman B"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "54-59"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "230",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Vince Trieling B"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              24,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:40"
+        },
+        {
+          "match_id": "226",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Jelte Bouman B",
+                  "member_id": "14578"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Vince Trieling B"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              24,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:40"
+        },
+        {
+          "match_id": "229",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Jelte Bouman B",
+                  "member_id": "14578"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Nick Fransen",
+                  "member_id": "050"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              29
+            ]
+          ],
+          "played_at": "zo 1-11-2026 12:00"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Jelte Bouman B"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "Vince Trieling B"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Nick Fransen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
