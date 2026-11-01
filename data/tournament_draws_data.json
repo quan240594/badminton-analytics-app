@@ -97711,6 +97711,155 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "13": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "28",
+              "name": "Kyle Maurus Espiritu Celario"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "2-0",
+          "points_record": "60-46"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Luuk van Beers"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "55-43"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Roan Langewouters"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-2",
+          "points_record": "34-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "169",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Kyle Maurus Espiritu Celario",
+                  "member_id": "50012211"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              25
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:40"
+        },
+        {
+          "match_id": "166",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Roan Langewouters"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Kyle Maurus Espiritu Celario",
+                  "member_id": "50012211"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:00"
+        },
+        {
+          "match_id": "168",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Roan Langewouters"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              13,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        }
+      ]
     }
   }
 }
