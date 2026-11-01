@@ -96445,6 +96445,271 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "6": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "8",
+              "name": "Luuk Klaassen"
+            }
+          ],
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "3-0",
+          "game_record": "3-0",
+          "points_record": "90-50"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Luuk Sneijers"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "2-1",
+          "game_record": "2-1",
+          "points_record": "84-56"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "48",
+              "name": "Dharma Passage B"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "1-2",
+          "game_record": "1-2",
+          "points_record": "44-89"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "Robert Lazar"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "match_record": "0-3",
+          "game_record": "0-3",
+          "points_record": "67-90"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "91",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Dharma Passage B"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              7
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "93",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Robert Lazar",
+                  "member_id": "50012079"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              19
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "87",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              24,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "95",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Dharma Passage B"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Robert Lazar",
+                  "member_id": "50012079"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              29
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:20"
+        },
+        {
+          "match_id": "90",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Dharma Passage B"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              7
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        },
+        {
+          "match_id": "94",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "Robert Lazar",
+                  "member_id": "50012079"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              19
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        }
+      ]
     }
   }
 }
