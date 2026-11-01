@@ -101041,6 +101041,273 @@
           "played_at": "zo 1-11-2026 14:20"
         }
       ]
+    },
+    "28": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Luuk van Beers"
+            },
+            {
+              "player_id": "46",
+              "name": "Roan Langewouters"
+            }
+          ],
+          "played": 3,
+          "won": 2,
+          "drawn": 1,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "5-1",
+          "points_record": "123-87"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "28",
+              "name": "Kyle Maurus Espiritu Celario"
+            },
+            {
+              "player_id": "55",
+              "name": "Sjoerd Fransen"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 3,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "3-3",
+          "points_record": "118-100"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "17",
+              "name": "Tim Driessens"
+            },
+            {
+              "player_id": "20",
+              "name": "Luuk Sneijers"
+            }
+          ],
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "3-3",
+          "points_record": "107-108"
+        },
+        {
+          "rank": 4,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Jars Engbers"
+            },
+            {
+              "player_id": "44",
+              "name": "Julian Saris"
+            }
+          ],
+          "played": 3,
+          "won": 0,
+          "drawn": 1,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "1-5",
+          "points_record": "70-123"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "389",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                },
+                {
+                  "player_id": "46",
+                  "name": "Roan Langewouters"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Tim Driessens",
+                  "member_id": "14931"
+                },
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              15
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:00"
+        },
+        {
+          "match_id": "387",
+          "round": "Ronde 1",
+          "sides": [],
+          "games": [
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              8
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "391",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Jars Engbers"
+                },
+                {
+                  "player_id": "44",
+                  "name": "Julian Saris"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Tim Driessens",
+                  "member_id": "14931"
+                },
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              21
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:00"
+        },
+        {
+          "match_id": "383",
+          "round": "Ronde 2",
+          "sides": [],
+          "games": [
+            [
+              21,
+              18
+            ],
+            [
+              18,
+              21
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:20"
+        },
+        {
+          "match_id": "386",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                },
+                {
+                  "player_id": "46",
+                  "name": "Roan Langewouters"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Jars Engbers"
+                },
+                {
+                  "player_id": "44",
+                  "name": "Julian Saris"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              8
+            ],
+            [
+              21,
+              7
+            ]
+          ],
+          "played_at": "zo 1-11-2026 15:20"
+        },
+        {
+          "match_id": "390",
+          "round": "Ronde 3",
+          "sides": [],
+          "games": [
+            [
+              19,
+              21
+            ],
+            [
+              21,
+              11
+            ]
+          ],
+          "played_at": "zo 1-11-2026 15:40"
+        }
+      ]
     }
   }
 }
