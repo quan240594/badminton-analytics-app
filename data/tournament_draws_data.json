@@ -104319,6 +104319,111 @@
           "played_at": "zo 1-11-2026 12:00"
         }
       ]
+    },
+    "35": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "571",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Rilana Hermans",
+                  "member_id": "50014758"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              4
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "572",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Norah Rodarius"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Liberty Prins B"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              17,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "570",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "Liberty Prins B"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              4
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:40"
+        }
+      ]
     }
   }
 }
