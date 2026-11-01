@@ -104424,6 +104424,42 @@
           "played_at": "zo 1-11-2026 14:40"
         }
       ]
+    },
+    "36": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "577",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "Lise van der Heijden"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Hanne Sneijers"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              29
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:20"
+        }
+      ]
     }
   }
 }
