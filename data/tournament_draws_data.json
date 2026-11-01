@@ -96929,6 +96929,230 @@
           "played_at": null
         }
       ]
+    },
+    "8": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "116",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Niek Werner",
+                  "member_id": "15083"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              15,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:20"
+        },
+        {
+          "match_id": "117",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Max Werner",
+                  "member_id": "15276"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Sjoerd Fransen",
+                  "member_id": "050"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              18
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:20"
+        },
+        {
+          "match_id": "113",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Luuk Sneijers",
+                  "member_id": "14858"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              24
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "114",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Max Werner",
+                  "member_id": "15276"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              25,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "112",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              13
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              21,
+              18
+            ]
+          ],
+          "played_at": "zo 1-11-2026 15:00"
+        },
+        {
+          "match_id": "115",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "118",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "8",
+                  "name": "Luuk Klaassen",
+                  "member_id": "50011966"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
