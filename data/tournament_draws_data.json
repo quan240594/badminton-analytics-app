@@ -96710,6 +96710,225 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "7": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Sjoerd Fransen"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "2-0",
+          "points_record": "60-55"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "16",
+              "name": "Niek Werner"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "59-46"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Pepijn van Dijk"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-2",
+          "points_record": "42-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "107",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Pepijn van Dijk",
+                  "member_id": "15085"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Niek Werner",
+                  "member_id": "15083"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              16,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:20"
+        },
+        {
+          "match_id": "103",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Sjoerd Fransen",
+                  "member_id": "050"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Pepijn van Dijk",
+                  "member_id": "15085"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              26
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:00"
+        },
+        {
+          "match_id": "106",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Sjoerd Fransen",
+                  "member_id": "050"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Niek Werner",
+                  "member_id": "15083"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              29
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Sjoerd Fransen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Pepijn van Dijk"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Niek Werner"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
