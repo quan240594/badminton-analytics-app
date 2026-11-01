@@ -95968,6 +95968,218 @@
           "played_at": null
         }
       ]
+    },
+    "4": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "53",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "David Lazar",
+                  "member_id": "50016250"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Owen Ou"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:20"
+        },
+        {
+          "match_id": "54",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "42",
+                  "name": "Lucas Aninat"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Pepijn van Bakel"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              22,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 13:20"
+        },
+        {
+          "match_id": "50",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Owen Ou"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              4
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "51",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Pepijn van Bakel"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              24,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:20"
+        },
+        {
+          "match_id": "49",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              5
+            ]
+          ],
+          "played_at": "zo 1-11-2026 15:00"
+        },
+        {
+          "match_id": "52",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Avyaan Anup",
+                  "member_id": "50007236"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "55",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sem Pennings"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }

@@ -19427,8 +19427,14 @@
         "event_id": "22",
         "name": "Rol VE A",
         "draws": 0,
-        "entries": 3,
+        "entries": 5,
         "participants": [
+          [
+            "30"
+          ],
+          [
+            "35"
+          ],
           [
             "18"
           ],
@@ -19444,10 +19450,16 @@
         "event_id": "27",
         "name": "Rol VE B",
         "draws": 0,
-        "entries": 5,
+        "entries": 7,
         "participants": [
           [
+            "28"
+          ],
+          [
             "17"
+          ],
+          [
+            "29"
           ],
           [
             "14"
@@ -19499,10 +19511,13 @@
         "event_id": "47",
         "name": "Staand VE C",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "16"
+          ],
+          [
+            "34"
           ]
         ]
       },
@@ -19510,8 +19525,11 @@
         "event_id": "21",
         "name": "Rol ME A",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
+          [
+            "36"
+          ],
           [
             "8"
           ],
@@ -19541,8 +19559,15 @@
         "event_id": "31",
         "name": "Rol ME C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "37"
+          ],
+          [
+            "38"
+          ]
+        ]
       },
       {
         "event_id": "36",
@@ -19551,13 +19576,13 @@
         "entries": 3,
         "participants": [
           [
-            "13"
+            "23"
           ],
           [
             "10"
           ],
           [
-            "23"
+            "13"
           ]
         ]
       },
@@ -19565,10 +19590,16 @@
         "event_id": "41",
         "name": "Staand ME B",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
           [
             "20"
+          ],
+          [
+            "31"
+          ],
+          [
+            "32"
           ]
         ]
       },
@@ -19576,10 +19607,13 @@
         "event_id": "46",
         "name": "Staand ME C",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "2"
+          ],
+          [
+            "39"
           ],
           [
             "24"
@@ -19590,8 +19624,14 @@
         "event_id": "24",
         "name": "Rol VD A",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
+          [
+            "30"
+          ],
+          [
+            "35"
+          ],
           [
             "18",
             "19"
@@ -19602,8 +19642,12 @@
         "event_id": "29",
         "name": "Rol VD B",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
+          [
+            "28",
+            "29"
+          ],
           [
             "17"
           ],
@@ -19651,15 +19695,23 @@
         "event_id": "54",
         "name": "Staand VD C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "34"
+          ]
+        ]
       },
       {
         "event_id": "23",
         "name": "Rol MD A",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
+          [
+            "33",
+            "36"
+          ],
           [
             "6",
             "7"
@@ -19689,8 +19741,13 @@
         "event_id": "51",
         "name": "Rol MD C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "38",
+            "37"
+          ]
+        ]
       },
       {
         "event_id": "38",
@@ -19703,11 +19760,11 @@
             "23"
           ],
           [
-            "13"
-          ],
-          [
             "10",
             "11"
+          ],
+          [
+            "13"
           ]
         ]
       },
@@ -19740,6 +19797,11 @@
       },
       {
         "country": "NED",
+        "player_id": "28",
+        "name": "BIEMANS, Auks"
+      },
+      {
+        "country": "NED",
         "player_id": "16",
         "name": "BROEKHUIZEN, Hanneke"
       },
@@ -19751,7 +19813,7 @@
       {
         "country": "NED",
         "player_id": "6",
-        "name": "DAM, John Van"
+        "name": "DAM, John van"
       },
       {
         "country": "NED",
@@ -19762,6 +19824,11 @@
         "country": "BEL",
         "player_id": "25",
         "name": "DEPUTTER, David"
+      },
+      {
+        "country": "NED",
+        "player_id": "29",
+        "name": "DOMMISSE, Hanny"
       },
       {
         "country": "NED",
@@ -19780,8 +19847,23 @@
       },
       {
         "country": "NED",
+        "player_id": "34",
+        "name": "GORTEL, Chantal van"
+      },
+      {
+        "country": "NED",
+        "player_id": "30",
+        "name": "GROENVELD, Patty"
+      },
+      {
+        "country": "NED",
         "player_id": "13",
         "name": "HARMELINK, Jimmy"
+      },
+      {
+        "country": "NED",
+        "player_id": "37",
+        "name": "HELFTEREN, Luuk van"
       },
       {
         "country": "NED",
@@ -19801,7 +19883,7 @@
       {
         "country": "NED",
         "player_id": "8",
-        "name": "KOEKOEK, Erik Jan"
+        "name": "KOEKOEK, Erikjan"
       },
       {
         "country": "NED",
@@ -19811,7 +19893,7 @@
       {
         "country": "NED",
         "player_id": "20",
-        "name": "LIEMBURG, Marthijs"
+        "name": "LIEMBURG, Mathijs"
       },
       {
         "country": "NED",
@@ -19839,6 +19921,21 @@
         "name": "NIEUWENHUYSE, Axel"
       },
       {
+        "country": "NED",
+        "player_id": "39",
+        "name": "NIEUWPOORT, Mike"
+      },
+      {
+        "country": "NED",
+        "player_id": "31",
+        "name": "PUFFELEN, Thijs van"
+      },
+      {
+        "country": "BEL",
+        "player_id": "32",
+        "name": "SCHEPERS, Kwinten"
+      },
+      {
         "country": "BEL",
         "player_id": "9",
         "name": "SEYS, Rudi"
@@ -19849,9 +19946,24 @@
         "name": "STAPELBROEK, Ronald"
       },
       {
+        "country": "NED",
+        "player_id": "33",
+        "name": "STEMPHER, Jan"
+      },
+      {
         "country": "BEL",
         "player_id": "27",
         "name": "VANGODTSNOVEN, Marijke"
+      },
+      {
+        "country": "NED",
+        "player_id": "35",
+        "name": "VEENHUIS, Saskia"
+      },
+      {
+        "country": "NED",
+        "player_id": "38",
+        "name": "VELLINGA, Patrick"
       },
       {
         "country": "BEL",
@@ -19862,6 +19974,11 @@
         "country": "NED",
         "player_id": "23",
         "name": "WEIJDEN, Jareth van der"
+      },
+      {
+        "country": "NED",
+        "player_id": "36",
+        "name": "WIGINK, Mike"
       },
       {
         "country": "NED",
