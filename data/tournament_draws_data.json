@@ -103842,6 +103842,221 @@
           "played_at": null
         }
       ]
+    },
+    "33": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Lisha Timmanagoudar"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "2-0",
+          "points_record": "60-7"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Norah Rodarius"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "36-48"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Skylar Prins"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-2",
+          "points_record": "19-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "549",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Skylar Prins"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              1
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:40"
+        },
+        {
+          "match_id": "545",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Norah Rodarius"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Lisha Timmanagoudar",
+                  "member_id": "10001416"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              6,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:40"
+        },
+        {
+          "match_id": "548",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Norah Rodarius"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Skylar Prins"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              18
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Norah Rodarius"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Lisha Timmanagoudar"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Skylar Prins"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
