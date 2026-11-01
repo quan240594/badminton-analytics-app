@@ -97304,6 +97304,157 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "10": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Maud Timmermans D"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "2-0",
+          "points_record": "60-29"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Jasmin Rodarius"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "50-34"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "Stella Harschnitz"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-2",
+          "points_record": "13-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "144",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Stella Harschnitz",
+                  "member_id": "50026813"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Jasmin Rodarius"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              4,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:00"
+        },
+        {
+          "match_id": "141",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Maud Timmermans D",
+                  "member_id": "50011606"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Stella Harschnitz",
+                  "member_id": "50026813"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              9
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:40"
+        },
+        {
+          "match_id": "143",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Maud Timmermans D",
+                  "member_id": "50011606"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Jasmin Rodarius"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              20
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        }
+      ]
     }
   }
 }
