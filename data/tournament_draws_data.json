@@ -97455,6 +97455,113 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "11": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "146",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Jasmin Rodarius"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              4
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "147",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Yza Netten",
+                  "member_id": "10002188"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Maud Timmermans D",
+                  "member_id": "50011606"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              18
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "145",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Yza Netten",
+                  "member_id": "10002188"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              3
+            ]
+          ],
+          "played_at": "zo 1-11-2026 15:00"
+        }
+      ]
     }
   }
 }
