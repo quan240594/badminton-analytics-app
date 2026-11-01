@@ -97860,6 +97860,111 @@
           "played_at": "zo 1-11-2026 11:40"
         }
       ]
+    },
+    "14": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "171",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Tim Driessens",
+                  "member_id": "14931"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              27,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "172",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Jars Engbers"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Kyle Maurus Espiritu Celario",
+                  "member_id": "50012211"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              5,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:00"
+        },
+        {
+          "match_id": "170",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Luuk van Beers"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "28",
+                  "name": "Kyle Maurus Espiritu Celario",
+                  "member_id": "50012211"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              8,
+              21
+            ],
+            [
+              5,
+              21
+            ]
+          ],
+          "played_at": "zo 1-11-2026 14:40"
+        }
+      ]
     }
   }
 }
