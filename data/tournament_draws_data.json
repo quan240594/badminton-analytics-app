@@ -97153,6 +97153,157 @@
           "played_at": null
         }
       ]
+    },
+    "9": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "10",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 2,
+          "won": 2,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "2-0",
+          "game_record": "2-0",
+          "points_record": "60-12"
+        },
+        {
+          "rank": 2,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "Yza Netten"
+            }
+          ],
+          "played": 2,
+          "won": 1,
+          "drawn": 0,
+          "lost": 1,
+          "match_record": "1-1",
+          "game_record": "1-1",
+          "points_record": "37-58"
+        },
+        {
+          "rank": 3,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Sara Pennings D"
+            }
+          ],
+          "played": 2,
+          "won": 0,
+          "drawn": 0,
+          "lost": 2,
+          "match_record": "0-2",
+          "game_record": "0-2",
+          "points_record": "33-60"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "135",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Sara Pennings D"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              5,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 09:40"
+        },
+        {
+          "match_id": "132",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Yza Netten",
+                  "member_id": "10002188"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Sara Pennings D"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              30,
+              28
+            ]
+          ],
+          "played_at": "zo 1-11-2026 10:40"
+        },
+        {
+          "match_id": "134",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Yza Netten",
+                  "member_id": "10002188"
+                }
+              ]
+            },
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            }
+          ],
+          "games": [
+            [
+              7,
+              30
+            ]
+          ],
+          "played_at": "zo 1-11-2026 11:40"
+        }
+      ]
     }
   }
 }
