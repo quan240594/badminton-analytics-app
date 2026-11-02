@@ -19668,7 +19668,7 @@
         "event_id": "27",
         "name": "Rol VE B",
         "draws": 0,
-        "entries": 7,
+        "entries": 8,
         "participants": [
           [
             "28"
@@ -19687,6 +19687,9 @@
           ],
           [
             "3"
+          ],
+          [
+            "45"
           ],
           [
             "26"
@@ -19715,8 +19718,14 @@
         "event_id": "42",
         "name": "Staand VE B",
         "draws": 0,
-        "entries": 2,
+        "entries": 4,
         "participants": [
+          [
+            "46"
+          ],
+          [
+            "47"
+          ],
           [
             "21"
           ],
@@ -19729,13 +19738,19 @@
         "event_id": "47",
         "name": "Staand VE C",
         "draws": 0,
-        "entries": 2,
+        "entries": 4,
         "participants": [
           [
-            "16"
+            "42"
           ],
           [
             "34"
+          ],
+          [
+            "40"
+          ],
+          [
+            "41"
           ]
         ]
       },
@@ -19777,15 +19792,8 @@
         "event_id": "31",
         "name": "Rol ME C",
         "draws": 0,
-        "entries": 2,
-        "participants": [
-          [
-            "37"
-          ],
-          [
-            "38"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "36",
@@ -19825,13 +19833,25 @@
         "event_id": "46",
         "name": "Staand ME C",
         "draws": 0,
-        "entries": 3,
+        "entries": 7,
         "participants": [
+          [
+            "44"
+          ],
+          [
+            "37"
+          ],
           [
             "2"
           ],
           [
             "39"
+          ],
+          [
+            "38"
+          ],
+          [
+            "43"
           ],
           [
             "24"
@@ -19867,7 +19887,8 @@
             "29"
           ],
           [
-            "17"
+            "17",
+            "45"
           ],
           [
             "14",
@@ -19901,8 +19922,12 @@
         "event_id": "44",
         "name": "Staand VD B",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "47",
+            "46"
+          ],
           [
             "21",
             "22"
@@ -19913,8 +19938,16 @@
         "event_id": "54",
         "name": "Staand VD C",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
+          [
+            "16",
+            "40"
+          ],
+          [
+            "42",
+            "41"
+          ],
           [
             "34"
           ]
@@ -19959,13 +19992,8 @@
         "event_id": "51",
         "name": "Rol MD C",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "38",
-            "37"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "38",
@@ -19997,8 +20025,16 @@
         "event_id": "52",
         "name": "Staand MD C",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
+          [
+            "44",
+            "43"
+          ],
+          [
+            "37",
+            "38"
+          ],
           [
             "20",
             "24"
@@ -20050,6 +20086,11 @@
       },
       {
         "country": "NED",
+        "player_id": "44",
+        "name": "EEKTIMMERMAN, Jos"
+      },
+      {
+        "country": "NED",
         "player_id": "18",
         "name": "GENNIP, Joanita Van"
       },
@@ -20062,6 +20103,11 @@
         "country": "BEL",
         "player_id": "12",
         "name": "GEVAERT, Kristel"
+      },
+      {
+        "country": "NED",
+        "player_id": "42",
+        "name": "GOOSSENS, Kelly"
       },
       {
         "country": "NED",
@@ -20095,6 +20141,16 @@
       },
       {
         "country": "NED",
+        "player_id": "46",
+        "name": "KLJAJIC, Sandra"
+      },
+      {
+        "country": "NED",
+        "player_id": "47",
+        "name": "KLJAJIC, Tanja"
+      },
+      {
+        "country": "NED",
         "player_id": "19",
         "name": "KNAAPEN, Angèle"
       },
@@ -20102,6 +20158,11 @@
         "country": "NED",
         "player_id": "8",
         "name": "KOEKOEK, Erikjan"
+      },
+      {
+        "country": "NED",
+        "player_id": "40",
+        "name": "KONTER, Anne"
       },
       {
         "country": "NED",
@@ -20145,6 +20206,11 @@
       },
       {
         "country": "NED",
+        "player_id": "45",
+        "name": "PEL, Thiya van"
+      },
+      {
+        "country": "NED",
         "player_id": "31",
         "name": "PUFFELEN, Thijs van"
       },
@@ -20169,6 +20235,11 @@
         "name": "STEMPHER, Jan"
       },
       {
+        "country": "NED",
+        "player_id": "41",
+        "name": "TEMMINK, Mariska"
+      },
+      {
         "country": "BEL",
         "player_id": "27",
         "name": "VANGODTSNOVEN, Marijke"
@@ -20182,6 +20253,11 @@
         "country": "NED",
         "player_id": "38",
         "name": "VELLINGA, Patrick"
+      },
+      {
+        "country": "NED",
+        "player_id": "43",
+        "name": "VULINK, Jeroen"
       },
       {
         "country": "BEL",
