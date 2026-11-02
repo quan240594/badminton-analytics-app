@@ -34670,8 +34670,11 @@
         "event_id": "21",
         "name": "Rol ME A",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "2"
+          ],
           [
             "1"
           ]
@@ -34695,8 +34698,12 @@
         "event_id": "36",
         "name": "Staand ME A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "3"
+          ]
+        ]
       },
       {
         "event_id": "41",
@@ -34723,8 +34730,12 @@
         "event_id": "25",
         "name": "Rol GD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "30",
@@ -34764,6 +34775,16 @@
     ],
     "draws": [],
     "entries": [
+      {
+        "country": "NED",
+        "player_id": "2",
+        "name": "KOEKOEK, Erik Jan"
+      },
+      {
+        "country": "NED",
+        "player_id": "3",
+        "name": "MACDANIEL, Hans"
+      },
       {
         "country": "BEL",
         "player_id": "1",
