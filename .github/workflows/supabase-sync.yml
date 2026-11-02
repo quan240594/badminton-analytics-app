@@ -43,11 +43,12 @@ jobs:
           supabase link --project-ref odshocbgyyerocmnhess </dev/null
           supabase db push --linked --yes
 
-      # Raises on the first rule that does not hold and leaves no rows behind.
+      # Raises on the first rule that does not hold and leaves no rows behind. It writes and removes
+      # test rows, so it is not a read-only statement: --yes answers the CLI's production prompt.
       - name: Check that only logged-in users can read the tables
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: supabase db query --linked -f supabase/tests/players_access.sql
+        run: supabase db query --linked --yes -f supabase/tests/players_access.sql
 
   sync:
     needs: migrate
