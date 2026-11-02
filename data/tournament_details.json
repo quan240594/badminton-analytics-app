@@ -35610,8 +35610,11 @@
         "event_id": "1",
         "name": "ME -senioren-",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
+          [
+            "8"
+          ],
           [
             "2"
           ],
@@ -35675,10 +35678,13 @@
         "event_id": "3",
         "name": "Enkel U14 -jeugd-",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
-            "6"
+            "9"
+          ],
+          [
+            "10"
           ]
         ]
       },
@@ -35693,8 +35699,12 @@
         "event_id": "4",
         "name": "Enkel U18 -jeugd-",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "6"
+          ]
+        ]
       },
       {
         "event_id": "8",
@@ -35708,8 +35718,18 @@
     "entries": [
       {
         "country": null,
+        "player_id": "8",
+        "name": "BALS, Hylke ter"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "DROST, Freerk"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "HEEZEN, Noëlle"
       },
       {
         "country": null,
@@ -35725,6 +35745,11 @@
         "country": null,
         "player_id": "1",
         "name": "ROUKENS, Stefan"
+      },
+      {
+        "country": null,
+        "player_id": "10",
+        "name": "STEGGINK, Yana"
       },
       {
         "country": null,
