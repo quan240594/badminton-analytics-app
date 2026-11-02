@@ -11587,7 +11587,7 @@
         "event_id": "3",
         "name": "Dubbel Goud Recreant",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "19"
@@ -11597,6 +11597,9 @@
           ],
           [
             "3"
+          ],
+          [
+            "20"
           ],
           [
             "2"
@@ -11626,8 +11629,13 @@
         "event_id": "7",
         "name": "Dubbel A/B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "22",
+            "21"
+          ]
+        ]
       }
     ],
     "draws": [],
@@ -11674,6 +11682,11 @@
       },
       {
         "country": null,
+        "player_id": "21",
+        "name": "Kunt, Ilayda"
+      },
+      {
+        "country": null,
         "player_id": "9",
         "name": "Monteiro, Beau"
       },
@@ -11686,6 +11699,11 @@
         "country": null,
         "player_id": "3",
         "name": "Oud, Milan"
+      },
+      {
+        "country": null,
+        "player_id": "20",
+        "name": "Pennekamp, Zoe"
       },
       {
         "country": null,
@@ -11716,6 +11734,11 @@
         "country": null,
         "player_id": "11",
         "name": "Sollie, Thomas"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "Veen, Tobi van"
       },
       {
         "country": null,
