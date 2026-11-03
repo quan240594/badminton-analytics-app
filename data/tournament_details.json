@@ -33408,8 +33408,11 @@
         "event_id": "5",
         "name": "jongens enkel B",
         "draws": 0,
-        "entries": 15,
+        "entries": 18,
         "participants": [
+          [
+            "86"
+          ],
           [
             "41"
           ],
@@ -33450,10 +33453,16 @@
             "38"
           ],
           [
+            "88"
+          ],
+          [
             "20"
           ],
           [
             "83"
+          ],
+          [
+            "93"
           ]
         ]
       },
@@ -33504,7 +33513,7 @@
         "event_id": "8",
         "name": "enkel C",
         "draws": 0,
-        "entries": 19,
+        "entries": 22,
         "participants": [
           [
             "23"
@@ -33523,6 +33532,9 @@
           ],
           [
             "18"
+          ],
+          [
+            "87"
           ],
           [
             "2"
@@ -33552,6 +33564,9 @@
             "48"
           ],
           [
+            "89"
+          ],
+          [
             "69"
           ],
           [
@@ -33562,6 +33577,9 @@
           ],
           [
             "58"
+          ],
+          [
+            "94"
           ]
         ]
       },
@@ -33569,7 +33587,7 @@
         "event_id": "10",
         "name": "enkel D",
         "draws": 0,
-        "entries": 18,
+        "entries": 20,
         "participants": [
           [
             "62"
@@ -33612,6 +33630,12 @@
           ],
           [
             "52"
+          ],
+          [
+            "90"
+          ],
+          [
+            "91"
           ],
           [
             "54"
@@ -33657,7 +33681,7 @@
         "event_id": "13",
         "name": "enkel zilver U11",
         "draws": 0,
-        "entries": 6,
+        "entries": 7,
         "participants": [
           [
             "73"
@@ -33676,6 +33700,9 @@
           ],
           [
             "40"
+          ],
+          [
+            "95"
           ]
         ]
       },
@@ -33683,7 +33710,7 @@
         "event_id": "3",
         "name": "jongens dubbel A",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "6",
@@ -33699,6 +33726,10 @@
           ],
           [
             "82"
+          ],
+          [
+            "88",
+            "55"
           ]
         ]
       },
@@ -33713,8 +33744,12 @@
         "event_id": "7",
         "name": "dubbel B",
         "draws": 0,
-        "entries": 12,
+        "entries": 13,
         "participants": [
+          [
+            "86",
+            "93"
+          ],
           [
             "33",
             "32"
@@ -33767,7 +33802,7 @@
         "event_id": "9",
         "name": "dubbel C",
         "draws": 0,
-        "entries": 9,
+        "entries": 10,
         "participants": [
           [
             "23"
@@ -33781,6 +33816,10 @@
             "69"
           ],
           [
+            "87",
+            "89"
+          ],
+          [
             "2",
             "4"
           ],
@@ -33789,7 +33828,8 @@
             "66"
           ],
           [
-            "63"
+            "63",
+            "94"
           ],
           [
             "27",
@@ -33830,7 +33870,8 @@
             "78"
           ],
           [
-            "79"
+            "79",
+            "90"
           ],
           [
             "29"
@@ -33860,7 +33901,8 @@
             "14"
           ],
           [
-            "50"
+            "50",
+            "92"
           ]
         ]
       },
@@ -33868,7 +33910,7 @@
         "event_id": "15",
         "name": "dubbel zilver U11",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "21",
@@ -33877,6 +33919,9 @@
           [
             "1",
             "5"
+          ],
+          [
+            "95"
           ]
         ]
       }
@@ -33892,6 +33937,11 @@
         "country": null,
         "player_id": "15",
         "name": "Anandkumar, Vedha"
+      },
+      {
+        "country": null,
+        "player_id": "86",
+        "name": "Baradel, Ethan"
       },
       {
         "country": null,
@@ -34007,6 +34057,11 @@
         "country": null,
         "player_id": "26",
         "name": "Heijden, Robin van der"
+      },
+      {
+        "country": null,
+        "player_id": "87",
+        "name": "Hellberg, Arno"
       },
       {
         "country": null,
@@ -34170,6 +34225,11 @@
       },
       {
         "country": null,
+        "player_id": "88",
+        "name": "Punyakoti, Pramod"
+      },
+      {
+        "country": null,
         "player_id": "20",
         "name": "Rajesh, Mukunth"
       },
@@ -34192,6 +34252,11 @@
         "country": null,
         "player_id": "31",
         "name": "Rooij, Daimy de"
+      },
+      {
+        "country": null,
+        "player_id": "89",
+        "name": "Roy, Mihika"
       },
       {
         "country": null,
@@ -34225,6 +34290,16 @@
       },
       {
         "country": null,
+        "player_id": "90",
+        "name": "Sonare, Anaira"
+      },
+      {
+        "country": null,
+        "player_id": "91",
+        "name": "Spreeuwers, Marijne"
+      },
+      {
+        "country": null,
         "player_id": "54",
         "name": "Suijlekom, Niek van"
       },
@@ -34250,8 +34325,18 @@
       },
       {
         "country": null,
+        "player_id": "92",
+        "name": "Upadhyay, Mayank"
+      },
+      {
+        "country": null,
         "player_id": "84",
         "name": "Van Gemerden, Renate van"
+      },
+      {
+        "country": null,
+        "player_id": "93",
+        "name": "Verseveld, Ben van"
       },
       {
         "country": null,
@@ -34302,6 +34387,16 @@
         "country": null,
         "player_id": "72",
         "name": "Wong, Nathan"
+      },
+      {
+        "country": null,
+        "player_id": "94",
+        "name": "Yu, Eva"
+      },
+      {
+        "country": null,
+        "player_id": "95",
+        "name": "Yu, Muyan"
       }
     ]
   },
