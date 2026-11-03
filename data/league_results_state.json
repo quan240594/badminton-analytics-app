@@ -1,11 +1,11 @@
 {
   "attempts": {},
   "budget": {
-    "dayStart": "2026-11-02T08:00:00+00:00",
-    "workSeconds": 4518.634858662001
+    "dayStart": "2026-11-03T08:00:00+00:00",
+    "workSeconds": 303.361162814
   },
   "gaveUp": [],
-  "lastPoolCheck": "2026-11-02T17:59:48+00:00",
+  "lastPoolCheck": "2026-11-03T15:58:53+00:00",
   "pending": [
     "2972",
     "2973",
@@ -3758,736 +3758,1074 @@
     "6595",
     "6596",
     "4426",
-    "4427"
+    "4427",
+    "848",
+    "849",
+    "850",
+    "851",
+    "852",
+    "1096",
+    "1097",
+    "1098",
+    "1099",
+    "1100",
+    "2368",
+    "2369",
+    "2370",
+    "3979",
+    "3980",
+    "3981",
+    "3982",
+    "3983",
+    "3985",
+    "4985",
+    "4986",
+    "4987",
+    "4988",
+    "4989",
+    "4999",
+    "5118",
+    "5119",
+    "5120",
+    "5121",
+    "5130",
+    "5190",
+    "5191",
+    "5192",
+    "5193",
+    "5194",
+    "5195",
+    "5899",
+    "5900",
+    "5901",
+    "5902",
+    "5903",
+    "5904",
+    "6046",
+    "6047",
+    "6048",
+    "6087",
+    "6263",
+    "6337",
+    "6358",
+    "6513",
+    "6514",
+    "6515",
+    "6631",
+    "297",
+    "298",
+    "299",
+    "300",
+    "301",
+    "302",
+    "303",
+    "443",
+    "444",
+    "445",
+    "451",
+    "452",
+    "453",
+    "454",
+    "455",
+    "1148",
+    "1149",
+    "1150",
+    "1151",
+    "1415",
+    "1416",
+    "1417",
+    "1418",
+    "1419",
+    "1420",
+    "1869",
+    "1870",
+    "1871",
+    "1872",
+    "1873",
+    "1878",
+    "2182",
+    "2183",
+    "2184",
+    "2185",
+    "2186",
+    "2187",
+    "2295",
+    "2296",
+    "3571",
+    "3572",
+    "3573",
+    "3574",
+    "3575",
+    "3576",
+    "3577",
+    "6150",
+    "6412",
+    "67",
+    "68",
+    "69",
+    "70",
+    "72",
+    "292",
+    "293",
+    "294",
+    "295",
+    "296",
+    "753",
+    "754",
+    "755",
+    "756",
+    "757",
+    "2200",
+    "2201",
+    "2202",
+    "2203",
+    "2204",
+    "2231",
+    "2232",
+    "2233",
+    "2234",
+    "2235",
+    "2405",
+    "2406",
+    "2407",
+    "2408",
+    "4745",
+    "5268",
+    "5269",
+    "5270",
+    "5271",
+    "5272",
+    "5273",
+    "5278",
+    "5990",
+    "6147",
+    "6148",
+    "6149",
+    "6188",
+    "6189",
+    "6487",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "403",
+    "404",
+    "405",
+    "406",
+    "1463",
+    "1464",
+    "1465",
+    "1466",
+    "1790",
+    "1792",
+    "1793",
+    "1794",
+    "1795",
+    "2726",
+    "2727",
+    "2728",
+    "2729",
+    "2730",
+    "4719",
+    "4720",
+    "4721",
+    "4722",
+    "4723",
+    "4724",
+    "4824",
+    "4825",
+    "4826",
+    "4827",
+    "4828",
+    "6225",
+    "6226",
+    "6227",
+    "260",
+    "261",
+    "262",
+    "263",
+    "264",
+    "265",
+    "266",
+    "267",
+    "268",
+    "304",
+    "305",
+    "306",
+    "307",
+    "308",
+    "397",
+    "398",
+    "399",
+    "817",
+    "818",
+    "819",
+    "820",
+    "821",
+    "1164",
+    "1165",
+    "1166",
+    "1167",
+    "1168",
+    "3578",
+    "3579",
+    "3580",
+    "3581",
+    "3582",
+    "3583",
+    "6015",
+    "6016",
+    "6017",
+    "6018",
+    "6019",
+    "6145",
+    "6146",
+    "6240",
+    "6241",
+    "6429",
+    "6430",
+    "6431",
+    "6432",
+    "6483",
+    "6611",
+    "6636",
+    "660",
+    "661",
+    "662",
+    "663",
+    "664",
+    "665",
+    "1152",
+    "1153",
+    "1154",
+    "1155",
+    "1156",
+    "1555",
+    "1556",
+    "1557",
+    "1558",
+    "1559",
+    "1560",
+    "3148",
+    "3149",
+    "3150",
+    "3151",
+    "3152",
+    "4315",
+    "4316",
+    "4317",
+    "4318",
+    "4319",
+    "4570",
+    "4571",
+    "4572",
+    "4573",
+    "4574",
+    "4575",
+    "5279",
+    "5280",
+    "5281",
+    "5282",
+    "5283",
+    "6179",
+    "6507",
+    "6508",
+    "6657",
+    "336",
+    "337",
+    "338",
+    "758",
+    "759",
+    "760",
+    "761",
+    "762",
+    "2089",
+    "2090",
+    "2091",
+    "2189",
+    "2190",
+    "2191",
+    "2192",
+    "2193",
+    "2205",
+    "2206",
+    "2207",
+    "2510",
+    "2512",
+    "2513",
+    "3143",
+    "3144",
+    "3145",
+    "3146",
+    "3147",
+    "3750",
+    "3751",
+    "3752",
+    "3753",
+    "3754",
+    "4309",
+    "4310",
+    "4311",
+    "4312",
+    "4313",
+    "4314",
+    "6144",
+    "6160",
+    "2349",
+    "2350",
+    "2351",
+    "2352",
+    "2353",
+    "2354",
+    "2355",
+    "2356",
+    "2359",
+    "955",
+    "4584",
+    "4588",
+    "4590",
+    "1267",
+    "1422",
+    "1424",
+    "1434",
+    "1897",
+    "5454",
+    "5455",
+    "5460",
+    "6206",
+    "4425",
+    "4428"
   ],
   "pools": {
     "1": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ec8ed27ccc562bc0670c101a390cf8af6fa4876b3ef083e67194eb39f1500a28",
       "played": 22
     },
     "10": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "35c03d1d0e75e0afd84d47ed4d3fbe8c338ce890b0e7c2f4cfc0120e23e0084d",
       "played": 20
     },
     "100": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4411903e095b78a6a5f18c2b833a2d1d7d131b898beacaa43acb382bb428f8a4",
       "played": 16
     },
     "101": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "336c06f3ded6766c132147172152ed594f6e14fd36312624ef3bded1b8b9b79f",
       "played": 20
     },
     "102": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "db124b5fca5df0eb6eed4e5f669de7b9441deee8aab25ae35df65ce1a2762a7d",
       "played": 10
     },
     "103": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "fa6f15d34418fcd84f87a53f46717b6dbbdec58ea62f48eb7b81c4a29519716b",
       "played": 13
     },
     "104": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4bde8f8d836cd1af15f973a1aed4a431699c985ba2807fcc5f4ee4c92f056e7b",
       "played": 20
     },
     "105": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "b7c0937c3021d28462149ab91179bc6e1cd8987edd5f3ab5b51f717d8013ad07",
       "played": 19
     },
     "106": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0cf0444449628d24519d00e7fd2e8fa2d4b44e3b62ad5b752049150baf427a0e",
       "played": 20
     },
     "107": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0fb899848ad2f298f0f159e50892717768b409009f4f6d1a38a77b3cbc52d0b8",
       "played": 14
     },
     "108": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "b5625a71a218bcfefca568c853a820fbcf6ca433c64d54e5564794c0f403bd7b",
       "played": 15
     },
     "109": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "68541894a4b3c55b3225899184bb97b45c83da09444be78d9732ba0d3da41d61",
       "played": 14
     },
     "11": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "469c8488f7b9b38aaef267296c329d63aa93efd3cd92a08e6f554a3ed9c84349",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "ec6b94b006abad6941e8bc840cc92ddf07ba081eba106d7a1fbe1ec0d63effce",
       "played": 19
     },
     "110": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "6ed170e2b6efa8bd1ce66b96fe1b87ea3f80e8cc67b998d9eb865aab980ccab4",
-      "played": 11
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "feb4256e38a069da329b005f8cde6290f853e3afa5777f0a75568ed2744567b5",
+      "played": 12
     },
     "111": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "df04c992870755d90aa110044338af3d959bc52b9f367175068f9b7ecdd86d32",
       "played": 16
     },
     "112": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "94cdfd16fe551fa9662bed1b55400c3864e5583d512d59a5d711013f3df235b0",
       "played": 11
     },
     "113": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e509860c7d71094c3fb2033a9928009d006dd03935fc8653a24364135bd13369",
       "played": 9
     },
     "114": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0f0deff1ef57c3cfb040e946bba98e1d4e284be726577f016336f79563cfe8fa",
       "played": 10
     },
     "115": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "e4b027cb2f5548c6180d992f99322760def04c75ee31fceb07dcc7722633e752",
-      "played": 14
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "a64f19a2a56313e6e18a5446a842c87e1ae70043f02b59a9d23c6db8f57a37dd",
+      "played": 15
     },
     "116": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "2ef7b91ab1292c6f97cf4e419bfad69c1c21fdabf98f398efb729ff036e8f50b",
       "played": 16
     },
     "117": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "564c21eb19cb8ddc2fd59b9cddafaf9af1767d8a33c7e13842830c607fc5d0ad",
       "played": 15
     },
     "118": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "42d3df2eeb51743a4de00b1f8cf71600efd896e716ba28b800a77160b6a2424b",
       "played": 14
     },
     "119": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "3e5e743df50d9a0ea2a62d018b4d6633709d7486f1588969cff2ccdc85ee6154",
       "played": 16
     },
     "12": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "345c984b79c5403367fd2e4384d2aded0cb1e8646361cc676db0b8e7bee0ac86",
       "played": 21
     },
     "120": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "01d9198b32333c22c96fb6b0486c751506ed38642aa0ce790fc03472bfa4db2e",
       "played": 20
     },
     "121": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "5b3debee2705d4650b068cec83c1681190ff5f8ffe8dc3a63156b74d43cba4ae",
       "played": 22
     },
     "122": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "305cde91d255185d54ba3450db19b392df2bbc46647513b4a4f3a1725232e3d0",
       "played": 15
     },
     "123": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9cd28dd3af32317e0ed69d12bad488929180fd60b1af6dfb719fe54df1052b0d",
       "played": 19
     },
     "124": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "5fbf913e7fcd503e7905e4767c210b59058d57b14f3faa79113b48a3fa6d8ef3",
       "played": 15
     },
     "125": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "8ac265f78e92631109dccc557dd56903e754ea5a551acaa3654d90deb8345076",
       "played": 18
     },
     "126": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ea3a4076128635b2a77f5b8703cc56f334b30ee87b29e27196fe9f543dd0ae5c",
       "played": 21
     },
     "127": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "41a7da460054fbb8ff0749e832fc0eb9f5a37e05d3277a2e3dc13b878627f3c5",
       "played": 16
     },
     "128": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "823ee19b436c25b3d671d799bf4195b46c7d375d76aa5435f249af5cb10bf0a4",
       "played": 15
     },
     "129": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "a34e3e60686ce87b9aa34ceef68fad5afa4dd0b37cbbe6f5140cae354f4b924d",
       "played": 12
     },
     "13": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "24af341e9b27ece60c1803821d90c84a96a47de9905b762df2481e9bc7d55c3f",
       "played": 19
     },
     "130": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9b49e79132583d40a3bc9de704bd62dc45180735d08fae99a220e79bda3bd191",
       "played": 16
     },
     "131": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "fb8a088926b4585ffc41c2e3c9f66e217408f43342ca65f1a52de5917ecf31d5",
       "played": 16
     },
     "132": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "92d41cc567e43738efba34e8669fbf810ad6d9bcc12c8d430fd8de2f93f242cc",
       "played": 21
     },
     "133": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "15670f855aa177ee2f16dd54a6bc5a4bee66bb1813ad992b311398b34315e835",
       "played": 21
     },
     "134": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "1131c3f5772a7c5a0ffabe212f44e519dd3ddd6b7a251c9594b60f0b762c837c",
       "played": 15
     },
     "135": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e454d132c260ee96793ab3083d2f8ff9d2d66f61f32505b8fbf9685173d63d98",
       "played": 20
     },
     "136": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "5af06ac1638b0a28bad5af25e77adf2cdec2f7cfbec21e26a2086d24d8d55924",
       "played": 15
     },
     "137": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "69e803b0c4770805397c11a69e512330fd426811340ec61ab6149c3bf259922a",
-      "played": 20
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "1f333432e1696a5d67940425a29de87c62476731a6fbb48b3a815327b9488607",
+      "played": 21
     },
     "138": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "1a47b7c6c2c0fdf06809053bec9ab8792f4b24f10b407fc86ec09c0acfa41df7",
       "played": 13
     },
     "139": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "d99fa630dc9871f7836e32630ad673c682cd7aa325078eaed651ed61c4b65cb9",
       "played": 12
     },
     "14": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "57cdf98d2268f724b2af904e655fc067ffbbe07ecdededc5627754b993482dee",
       "played": 23
     },
     "140": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "66c3828448c002212ac0ea69f7de687b3cae2441e950100b066c33dd602807f9",
       "played": 15
     },
     "141": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0206a88ee3c3b1639d1667f720b91acb305ee11e5493a978f3eb8d7483350370",
       "played": 16
     },
     "142": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "f0a8c14b20c65e8d300b66e3e6112ecdb300012b94f8152ce24eee763cf8dde0",
       "played": 15
     },
     "143": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "2740220b8bdcd19774bfe4511d1e1b40d850ca90b664dca6d9be048c8d13cf60",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "1123e4a31529ff35692bf0558ee38572956708ff03eb8a162540b32352f08672",
       "played": 20
     },
     "144": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9844d101638af0a298e884e53cbefe80e0d3d3505f5ff7c2d783179d7cfeace4",
       "played": 21
     },
     "145": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "8fcfc9a9e2a815ad794f4bd1548bcff4f4f11bb4e58e394fbea1cef7d91fe9f7",
       "played": 10
     },
     "146": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "bb12761fe30b44113eda801eafac08b28721c9b9336321e930af349f09ad316a",
       "played": 15
     },
     "15": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "3e0c886bd1112fe6f8ed8b4740ac9ab071d6b280fca2382ce1de726258d401b0",
       "played": 23
     },
     "16": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "2ed400edcfad285a999e91cf76a066753e524ab9b694ebc964fc3a3490c1056b",
       "played": 21
     },
     "17": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ed382a464e8d4257399c5e94dfb5e9a0af4ffb1a2857ab8764dfaeb27b9decdf",
       "played": 20
     },
     "18": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "55a9e5521a256abcfb017384659a5ddb2ee3cdaf916d7ed4cf1c645497392ab9",
       "played": 20
     },
     "19": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "88757348f332d4d8cff7beaf673ab81eef432ffa3c65c9a5f4dd19c2e6db0b63",
       "played": 21
     },
     "2": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "575c02b77387f36a5545a5e6b37e1ab45293913f4f6e2f3d402f2d5fcba57620",
       "played": 20
     },
     "20": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "d8e3d810eb343a6c910d23f81f0c6b07438ffbd520937be8bb34487ebf55a546",
       "played": 19
     },
     "21": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e78d8e6baf34eb33159fe3c3960352e5b59a4a012e7aaa4d7563ddb388fa5a1c",
       "played": 19
     },
     "22": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "28b14e4b97ed0f30bdda6b1864342639b9469578006818e5a161c7806e497e15",
-      "played": 20
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "e2d980eff6d89e34603bdcfebc53fd14bc3fc092eb4e1c54f176dc67a53a6159",
+      "played": 21
     },
     "23": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ecbf26bb497c6221eec4666a94d664d094b1663475bbfe9ac483bd5cf4c1bca2",
       "played": 20
     },
     "24": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "6b2e7bc9d93c22a2dcf93ea52fde654f407089b5033bfaf5bb0ee1493c8f8b6c",
       "played": 20
     },
     "25": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "74b2692e3bd4709a8990d0f06f38570a3c7138954ff70d4c1338bf273205f2b9",
       "played": 20
     },
     "26": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e9df6315f9f9b59d2cd7aa5d927f2ba8397caaf7a9ed9d0db785e31a894cd327",
       "played": 20
     },
     "27": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0c7b4006cd1ccd38203b28a9b1568dd73bd9a6428fc69f7524cbe31b9867d3b4",
       "played": 20
     },
     "28": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "8813f16860c065154aedab233df5dfb64bf0bcc4edb1af219c76615f29bc0622",
       "played": 20
     },
     "29": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "82568f41b2ddff58fcc8356e6a6d06149fd72e76ab91a4995e66e729a98f3b7b",
       "played": 23
     },
     "3": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9f4d4f32a019f1f0c9f2f70e706eba3d0584f22b2273e1e758589d57c721dd93",
       "played": 20
     },
     "30": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "541d8c6f75b03a47b7166dd0c0b312a8ba715b7d5494140553b4c132de4a4038",
       "played": 20
     },
     "31": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "65daec7869dcc531676200a1478b122dc6dfcf051149359dfeacd16b42b09d36",
       "played": 20
     },
     "32": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e9c24297e619ed4a9432a138f95909f8a7536182d0602aefb93b339c11b5e0f6",
       "played": 15
     },
     "33": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "938dc66cf2781ccd7c1d4cb5b3b754f89d5adcaaa05fd3e89fa2aa1300b83301",
       "played": 14
     },
     "34": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "436111b7f5e6e07eb55381cfcd9036d79a625a0b1420f7b283383832eedffc2b",
       "played": 15
     },
     "35": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "f74bad8fb79983890a1c1a7dfc791e405c181953c6062bf0166c9a6a1a3b7e6e",
       "played": 21
     },
     "36": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "a99aec2fffb60bc2c5f27a101141e672157c148f1775c43017be1513b1148a34",
       "played": 15
     },
     "37": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9c345329ca904f5b1aa9b602a23959b40c6b9b52b9a7f8fdcd3f57ee9960f8b3",
       "played": 20
     },
     "38": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "581f8a97f1693cd56eedc399d4f18319cc93d04bdc2c72e25a02bf1943ef0bf1",
       "played": 21
     },
     "39": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "940c13a84046e9559c8d9593168f4e7341598d6943f5f6fb7c782684f22d976f",
       "played": 24
     },
     "4": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "3e79426b1dda10f24724185f84dcbdfdf94eacb0f0e5529636e1f92953737d8c",
       "played": 20
     },
     "40": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "cfb8e86ccb9f8df7bd3235a1631a9e440e9f069376883e989bdef54ba8ecc46d",
       "played": 20
     },
     "41": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "f2279af4a118e5af9f87182cf1cd29c716136775db77ccd61e46fcb6292c3441",
       "played": 15
     },
     "42": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "a366caae0697c2324adec85ab7bf70301097b61ed7a8cde900e603764168a3a0",
       "played": 15
     },
     "43": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "bb3c4ae6b6d3909a50b71ee5fb3ebb760cb8d5195566906153b3ed92dbb63dcd",
       "played": 23
     },
     "44": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "75f267458bf59f1670c78573df59f961ed4105df8da7d3441f4e7f3e11c8f774",
       "played": 15
     },
     "45": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ca5feb2e95bf7fdf7e75959008b57dd573c37570efc7d8dca5663f12856acaa2",
       "played": 20
     },
     "46": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "8667494ea951f9b4dafe58b09bc9ceb111c6585c60bf0c6b1c12ad88f810f21a",
       "played": 20
     },
     "47": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "d1267d865cc8ccc0d32fb44b4ece0dff28c0a4a06d02fabb880b9e974767e5d5",
       "played": 16
     },
     "48": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "5c9c4bcab45410b4254770d37374061753f293590fee91107f33c0bb2c05f55e",
       "played": 20
     },
     "49": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ba5f06ca975b34ff82cec2bf35450e377e0e66936ebe9c3454712b474118e05e",
       "played": 20
     },
     "5": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "2626638fed7074fe8781a701bf6e4d08417fb351f65192c4e6f5d116e1998518",
       "played": 20
     },
     "50": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "b8fc47501c28ffbb4b4553a118ec892519408c88d0abf3495516badd0106c509",
-      "played": 19
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "e3e74d2e9811579f7039cb292daa0080002d14dfb5903a50bbb30d9a24312371",
+      "played": 20
     },
     "51": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "a9efada2fa37ce001bc1e2bba59e18e4827d462693312a44db2b21bb2148a77b",
       "played": 15
     },
     "52": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "8aff39c85009fb60cf396dbe67015db7bd21b71c93ef8bffd47b59bc76ea0715",
-      "played": 20
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "ecd1957e2d1687b8bbe007ed62137ce51133e2e118f520728d7085b771a047dd",
+      "played": 22
     },
     "53": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "abc2bdf96b35baea7736dd504158afafde8b51bfe141a9d928272e4d985d8b82",
       "played": 20
     },
     "54": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ebf6016a6369b7229a33354ccc3597dba0c5d45dc9a5591232ddbd1ede503552",
       "played": 20
     },
     "55": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "101d991a414dd4efe6bb80f8c57159426f54559aa34c4a06ae7e211913794984",
-      "played": 14
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "10a188abf912aa86ecb7d764c85d166d3cb407add1f809025a36b786c6536ff1",
+      "played": 15
     },
     "56": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "753ec32d7c037e28715ff5209a78d0b59917c183749026aca59f14461e2786d7",
       "played": 21
     },
     "57": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9f88b84c8f5f8486cdb06374fd8527a31de361b72fa0873a13c4b71cb329172d",
       "played": 15
     },
     "58": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e8195b96847a1316e52fe36f6b8424b212d523ed0654056b41e6ac6eda8d22d8",
       "played": 15
     },
     "59": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "9f73445b10b78a350b9328c4781b5acda3d866cfde22018322003da0afb6feca",
-      "played": 15
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "54a67bb668100cafa99a64b18c8041135f5d526e10279b463d1e19d1927016cf",
+      "played": 16
     },
     "6": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "311e004a249230e39951ccf63ec5726aecdc46a36134f2e9d06fed745a8b992d",
       "played": 21
     },
     "60": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "bcffb6eaeb56a3d869f3eb3da319c90c4ccfd787dea8be1b8082b1d937e48b1e",
       "played": 19
     },
     "61": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "b3713701f9f03498aefee1774e49bf5f79721ffa65ca3c8fb2869a88793699a3",
       "played": 14
     },
     "62": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4836aef1027954df8d2aff822a4886f98f3c6c33f68b571b5dde9b7e329b3ee4",
       "played": 15
     },
     "63": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "fffac48a1264cccfd25ee471d0de78613b01a7ebfa5c81cd0abfecb4fe2747c2",
       "played": 19
     },
     "64": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9426e2940a38c6feb0e090ba21f7faf6a5758b40fa1da500a94b5ae799c94408",
       "played": 15
     },
     "65": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4b3e633e20ce068be2b698ae4d89693de3cff15270e174195e1cd9f46ef933ec",
       "played": 15
     },
     "66": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "aa67a6782de7c1bdac018eb1e0765e8eca8e5ec3bc969eca3a44f86db37ee13a",
       "played": 15
     },
     "67": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "059d3a05ae50867ec178ba080ab736eb3e83ddef997c0ced739b81bcf14f0587",
       "played": 15
     },
     "68": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4633b25a363407e849e76e7baace594574bc739ad51575af289a83fe251a6f5d",
       "played": 20
     },
     "69": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "cf3d62d0e59d93858a5581029e56aa6f97fc171b8525bf669dee665a12ce120d",
       "played": 21
     },
     "7": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "c41604aad6847608a6242d254f27ea8c7e73e919bd8f67ca6b9e0f30b60d3a0c",
       "played": 20
     },
     "70": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ec0b801a2300d114bff3cafb32f2c016532330c1eee44785b77657b2ee55db1a",
       "played": 14
     },
     "71": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ce40580649d53fb6b7c706e7c016f604e9bf4564334a649ab34c6e5d467288fe",
       "played": 20
     },
     "72": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "3c5671f8b471c8f8f5e5af010b5fd477e9cb2d6086afce511afc80d5cfbb686b",
       "played": 15
     },
     "73": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4364539d3d651358650fc3b8622b51d3763f79cd4fe8efa1f739df6cd585a84f",
       "played": 15
     },
     "74": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "7dad9d9b356dd8754f92790579471ce5dbee448edbe138f94031d948770ae4f9",
       "played": 19
     },
     "75": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "3908b6f49725a81ad6f747554892be394f659c2d83c32d31cea7ad5de47b5a07",
       "played": 14
     },
     "76": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "609cd9fcb9f30de99daf975fbbb24ddac2d4b7d836fcbc34742698e009be7aff",
       "played": 15
     },
     "77": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "ef9fd21b912cf08b8ecf630567c47b57ff60e8cbc48b655d4a98c348be9f7906",
       "played": 13
     },
     "78": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "8c5249ad5428ce443ecd8b4543890f7fc8df9c788a771cd042c7487571afc7e2",
       "played": 20
     },
     "79": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "94ed0102a21cf9f9100ebac3f141aa37d38cca008828354495cab8783986c2a3",
       "played": 14
     },
     "8": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "f631ae99aa48a0b772b37ec3b4e6596a3ac174213ce8e340bdf3624d40896c54",
       "played": 20
     },
     "80": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "05bfdc4f561c40eaa7e7f1696490703cf21c0ac65c0b891c7cdf6328d818818c",
       "played": 15
     },
     "81": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "4c4fea21830339813730bef879cc48f599fa0716d8bd1f2cc3c455e95cf9f7db",
       "played": 16
     },
     "82": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "0c9c080af681104562be32b8ecb27ff1070fce1b9fb390d6a161c170963ec3f3",
       "played": 21
     },
     "83": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "d6e0add021d021cff0c8f26a92d96a40cbfc37a8ee9ebb341535ed0c355b49ef",
       "played": 15
     },
     "84": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "482cab403269df100cd786e4e5553b6e883af409d651fcb33a0f62c084023f15",
       "played": 19
     },
     "85": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "c777e6bb7519cbb340a678da7a6c04af032190c3ab470e95eb84d89349292f2a",
       "played": 23
     },
     "86": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "b5ccb435fa6f55b910987fe0f8dfed908269c4debca82322d000ea2095d918ca",
       "played": 22
     },
     "87": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "138f2edf9f3880a87b192605276a14dc0cf1b82a6ca923b443ad2032f89a7496",
       "played": 21
     },
     "88": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "2113c78193d5df340ba6aeb349aaec9f660b583e698ffdd3f648f3feb6836a86",
       "played": 22
     },
     "89": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "2c5a1c5d96d1c5c995dec551bf4fe0f94e444e146f9bca06006c63e5a0f6832f",
       "played": 20
     },
     "9": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "6a34ac2c24dc77a519bc98b63ce4a6102552aeaaa9dc8b714878aa284c4e49bf",
       "played": 21
     },
     "90": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "5d95b43e76c9e2bfbf347aba611ce88c40c83ad72b6cee9db94726fb2449ca22",
       "played": 19
     },
     "91": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "d1b5b5aa6f33a406ac84ee91ed26d09dd40991560df5a3b20aa25f3b62148448",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "ed557c8ef968660d3c10713755bc1ee6b96028945644fd6ed4be121ccbd80937",
       "played": 15
     },
     "92": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "842acbeb2afb36da84a3ee33a4b84ddb6d13156a32b1e6e56b5883d44827bd57",
       "played": 20
     },
     "93": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "49dc19c3f7516792178b217ece293225f22dbfcc547f44add3580dd5c700e8d4",
       "played": 20
     },
     "94": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "982b19bd9851b98195d487e322fc480627b3daba3707d7b2eba6a7275c685fcf",
       "played": 20
     },
     "95": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "9d4dc0f7a2d7c3de79523c295409dc184f7c0ff170c14704f1a30d8a8a4f55ae",
       "played": 15
     },
     "96": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "c8a1e94e3a9bca5a80d2f6bbdeb0e9b1d39544fc9676ba5e2afe43d4c6cc1326",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "df60cef9c299f40cd504f6ed4e29949990d98eb602c5d4e9a47fb695f4690300",
       "played": 15
     },
     "97": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
-      "fingerprint": "b9f9846ce7f2410f085519c674b2897d28d452e28098f7c61579c007b874739d",
-      "played": 14
+      "checkedAt": "2026-11-03T15:58:53+00:00",
+      "fingerprint": "1b42534812c9c4fdd0c3000d252285bfe2be8fe4b6290ae43e40057a359ba566",
+      "played": 15
     },
     "98": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "a9a1c5a2b69a70c13a3277104b284d08fdf512b84c73fbb387b2a570c2695262",
       "played": 13
     },
     "99": {
-      "checkedAt": "2026-11-02T17:59:48+00:00",
+      "checkedAt": "2026-11-03T15:58:53+00:00",
       "fingerprint": "e48aaee1dde92cdaca8b72542b583f4210a19d0b9d1fffb8a2a5eea4f9ecf993",
       "played": 15
     }
