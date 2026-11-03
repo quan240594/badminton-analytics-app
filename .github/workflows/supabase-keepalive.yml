@@ -20,13 +20,14 @@ jobs:
           version: latest
 
       # Only a boolean is printed: the logs of this repo's runs are not the place for user data.
+      # --yes answers the CLI's production prompt, which a non-interactive run cannot.
       - name: Query the Supabase database
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: |
           supabase link --project-ref odshocbgyyerocmnhess </dev/null
           for attempt in 1 2 3; do
-            if result=$(supabase db query --linked "select count(*) > 0 as has_users from auth.users" 2>&1); then
+            if result=$(supabase db query --linked --yes "select count(*) > 0 as has_users from auth.users" 2>&1); then
               echo "$result"
               echo "Supabase answered from its database."
               exit 0
