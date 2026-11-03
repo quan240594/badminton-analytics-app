@@ -77,7 +77,7 @@ def main() -> None:
         url = f"{BASE_URL}player.aspx?rid={rid}&player={ranking_player_id}"
         try:
             html = fetch(url, cookie)
-        except urllib.error.URLError as ex:
+        except (urllib.error.URLError, TimeoutError) as ex:
             print(f"FAILED {local_id} -> {ex}")
             continue
         out_path.write_text(html, encoding="utf-8")
@@ -92,7 +92,7 @@ def main() -> None:
         url = f"{BASE_URL}category.aspx?id={RANKING_LIST_ID}&category={cat_id}"
         try:
             html = fetch(url, cookie)
-        except urllib.error.URLError as ex:
+        except (urllib.error.URLError, TimeoutError) as ex:
             print(f"FAILED category {label} -> {ex}")
             continue
         out_path.write_text(html, encoding="utf-8")

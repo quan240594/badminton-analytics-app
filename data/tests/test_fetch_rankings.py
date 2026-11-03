@@ -33,6 +33,20 @@ def test_discover_ranking_links_without_events_dir(tmp_path):
     assert fetch_rankings.discover_ranking_links(tmp_path) == {}
 
 
+def test_main_treats_a_read_timeout_like_any_other_failed_fetch(monkeypatch, tmp_path, pages, capsys):
+    out = tmp_path / "rank"
+    out.mkdir()
+    patch_io(
+        monkeypatch,
+        fetch_rankings,
+        {"player=801": TimeoutError("timed out"), "player=900": "p1", "player=902": "p4", "category=491": TimeoutError("timed out"), "category=493": "c493", "category=495": "c495"},
+    )
+    run_main(monkeypatch, fetch_rankings, "--pages-dir", str(pages), "--cookie-file", str(write_cookie(tmp_path)), "--out", str(out), "--delay", "0.3")
+    captured = capsys.readouterr().out
+    assert "FAILED 2 ->" in captured and "FAILED category singles ->" in captured
+    assert (out / "player_4.html").read_text(encoding="utf-8") == "p4" and not (out / "player_2.html").exists()
+
+
 def test_main_fetches_players_and_categories_with_failures(monkeypatch, tmp_path, pages, capsys):
     out = tmp_path / "rank"
     out.mkdir()

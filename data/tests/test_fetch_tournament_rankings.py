@@ -44,6 +44,13 @@ def test_fetch_member_ranking_falls_back_to_junior_list(monkeypatch, tmp_path, c
     assert "[1/4] FAILED player=9 rid=75" in capsys.readouterr().out
 
 
+def test_fetch_member_ranking_treats_a_read_timeout_like_any_other_failed_list(monkeypatch, tmp_path, capsys):
+    install_urlopen(monkeypatch, {"rid=75": TimeoutError("timed out"), "rid=164": ROWS})
+    out = tmp_path / "player_9.html"
+    assert ftr.fetch_member_ranking("9", out, "c", 1, 4) is True
+    assert "[1/4] FAILED player=9 rid=75" in capsys.readouterr().out
+
+
 def test_fetch_member_ranking_stops_at_first_list_with_rows(monkeypatch, tmp_path):
     fake = install_urlopen(monkeypatch, {"rid=75": ROWS})
     assert ftr.fetch_member_ranking("9", tmp_path / "p.html", "c", 1, 1) is True

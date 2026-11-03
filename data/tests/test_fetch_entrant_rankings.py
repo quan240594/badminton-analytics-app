@@ -226,6 +226,16 @@ def test_run_respects_the_limit_saves_progress_and_survives_failures(monkeypatch
     assert state_path.exists()
 
 
+def test_run_survives_a_read_timeout_like_any_other_network_failure(monkeypatch, tmp_path, capsys):
+    # A socket read timeout is a TimeoutError, not a URLError, and used to end the whole run.
+    no_sleep(monkeypatch)
+    install_urlopen(monkeypatch, {"/player/1": TimeoutError("The read operation timed out"), "/player/2": "<html/>"})
+    state = {"entries": {}, "rankings": {}}
+    entrants = iter([("T", "1", True), ("T", "2", True)])
+    assert fer.run(state, entrants, "c", 2, 0, tmp_path / "state.json") == 2
+    assert "FAILED T:1" in capsys.readouterr().out
+
+
 def test_main_runs_and_reports_summary(monkeypatch, tmp_path, capsys):
     patch_io(
         monkeypatch,

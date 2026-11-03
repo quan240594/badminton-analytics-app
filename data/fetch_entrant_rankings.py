@@ -232,7 +232,7 @@ def run(state: dict, entrants: Iterator[tuple[str, str, bool]], cookie: str, lim
             break
         try:
             worked = process_entrant(state, tid, local_id, active, cookie, delay, now)
-        except urllib.error.URLError as ex:
+        except (urllib.error.URLError, TimeoutError) as ex:
             # Transient (already retried by fetch_basic_retry) - leave the
             # entrant unresolved so the next run picks it up again.
             print(f"FAILED {tid}:{local_id} -> {ex}", flush=True)
