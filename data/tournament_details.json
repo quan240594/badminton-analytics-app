@@ -11999,7 +11999,7 @@
         "event_id": "2",
         "name": "ME 1",
         "draws": 0,
-        "entries": 16,
+        "entries": 17,
         "participants": [
           [
             "118"
@@ -12024,6 +12024,9 @@
           ],
           [
             "69"
+          ],
+          [
+            "19"
           ],
           [
             "32"
@@ -12126,7 +12129,7 @@
         "event_id": "12",
         "name": "ME 6",
         "draws": 0,
-        "entries": 38,
+        "entries": 39,
         "participants": [
           [
             "40"
@@ -12159,6 +12162,9 @@
             "55"
           ],
           [
+            "154"
+          ],
+          [
             "121"
           ],
           [
@@ -12178,9 +12184,6 @@
           ],
           [
             "103"
-          ],
-          [
-            "73"
           ],
           [
             "33"
@@ -12234,6 +12237,9 @@
             "90"
           ],
           [
+            "157"
+          ],
+          [
             "114"
           ],
           [
@@ -12248,8 +12254,11 @@
         "event_id": "17",
         "name": "ME 8",
         "draws": 0,
-        "entries": 9,
+        "entries": 10,
         "participants": [
+          [
+            "152"
+          ],
           [
             "123"
           ],
@@ -12309,13 +12318,19 @@
         "event_id": "8",
         "name": "VE 4",
         "draws": 0,
-        "entries": 15,
+        "entries": 17,
         "participants": [
+          [
+            "153"
+          ],
           [
             "65"
           ],
           [
             "70"
+          ],
+          [
+            "155"
           ],
           [
             "34"
@@ -12362,7 +12377,7 @@
         "event_id": "13",
         "name": "VE 6",
         "draws": 0,
-        "entries": 21,
+        "entries": 22,
         "participants": [
           [
             "98"
@@ -12387,6 +12402,9 @@
           ],
           [
             "45"
+          ],
+          [
+            "96"
           ],
           [
             "74"
@@ -12436,7 +12454,7 @@
         "entries": 1,
         "participants": [
           [
-            "96"
+            "151"
           ]
         ]
       },
@@ -12467,7 +12485,8 @@
             "15"
           ],
           [
-            "36"
+            "36",
+            "156"
           ]
         ]
       },
@@ -12517,7 +12536,7 @@
         "event_id": "14",
         "name": "MD 6",
         "draws": 0,
-        "entries": 26,
+        "entries": 27,
         "participants": [
           [
             "40",
@@ -12572,15 +12591,16 @@
             "38"
           ],
           [
+            "154",
+            "123"
+          ],
+          [
             "121",
             "150"
           ],
           [
             "23",
             "115"
-          ],
-          [
-            "123"
           ],
           [
             "124",
@@ -12621,6 +12641,9 @@
           [
             "87",
             "89"
+          ],
+          [
+            "157"
           ]
         ]
       },
@@ -12628,11 +12651,14 @@
         "event_id": "19",
         "name": "MD 8",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "116",
             "58"
+          ],
+          [
+            "152"
           ],
           [
             "39"
@@ -12670,11 +12696,17 @@
         "event_id": "10",
         "name": "VD 4",
         "draws": 0,
-        "entries": 9,
+        "entries": 11,
         "participants": [
+          [
+            "153"
+          ],
           [
             "65",
             "70"
+          ],
+          [
+            "155"
           ],
           [
             "34",
@@ -12717,6 +12749,10 @@
             "117"
           ],
           [
+            "151",
+            "96"
+          ],
+          [
             "98",
             "101"
           ],
@@ -12738,9 +12774,6 @@
           [
             "8",
             "45"
-          ],
-          [
-            "96"
           ],
           [
             "74",
@@ -12855,7 +12888,8 @@
             "86"
           ],
           [
-            "57"
+            "57",
+            "155"
           ],
           [
             "107"
@@ -12900,7 +12934,7 @@
         "event_id": "16",
         "name": "GD 6",
         "draws": 0,
-        "entries": 29,
+        "entries": 30,
         "participants": [
           [
             "40",
@@ -12999,6 +13033,9 @@
             "92"
           ],
           [
+            "157"
+          ],
+          [
             "150",
             "143"
           ],
@@ -13015,8 +13052,11 @@
         "event_id": "21",
         "name": "GD 8",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
+          [
+            "151"
+          ],
           [
             "39"
           ],
@@ -13041,6 +13081,11 @@
       },
       {
         "country": null,
+        "player_id": "151",
+        "name": "Al Eido, Julia"
+      },
+      {
+        "country": null,
         "player_id": "62",
         "name": "Albrecht, Andreas"
       },
@@ -13048,6 +13093,11 @@
         "country": null,
         "player_id": "40",
         "name": "Bachoe, Rohan"
+      },
+      {
+        "country": null,
+        "player_id": "152",
+        "name": "Beck, Menno"
       },
       {
         "country": null,
@@ -13068,6 +13118,11 @@
         "country": null,
         "player_id": "63",
         "name": "Biggelaar, Thijs van den"
+      },
+      {
+        "country": null,
+        "player_id": "153",
+        "name": "Boelens, Femke"
       },
       {
         "country": null,
@@ -13261,8 +13316,18 @@
       },
       {
         "country": null,
+        "player_id": "154",
+        "name": "Heunen, Cas"
+      },
+      {
+        "country": null,
         "player_id": "121",
         "name": "Heuvel, Mark van den"
+      },
+      {
+        "country": null,
+        "player_id": "155",
+        "name": "Hoff, Amber van der"
       },
       {
         "country": null,
@@ -13701,8 +13766,18 @@
       },
       {
         "country": null,
+        "player_id": "156",
+        "name": "Veghel, Pim van"
+      },
+      {
+        "country": null,
         "player_id": "16",
         "name": "Vernon, Nicholas"
+      },
+      {
+        "country": null,
+        "player_id": "157",
+        "name": "Verschuren, Daan"
       },
       {
         "country": null,
