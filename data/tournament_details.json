@@ -24006,8 +24006,14 @@
         "event_id": "2",
         "name": "Recreanten",
         "draws": 0,
-        "entries": 7,
+        "entries": 9,
         "participants": [
+          [
+            "29"
+          ],
+          [
+            "30"
+          ],
           [
             "11"
           ],
@@ -24035,7 +24041,7 @@
         "event_id": "5",
         "name": "Training maandag groep 2",
         "draws": 0,
-        "entries": 7,
+        "entries": 8,
         "participants": [
           [
             "7"
@@ -24057,6 +24063,9 @@
           ],
           [
             "16"
+          ],
+          [
+            "35"
           ]
         ]
       },
@@ -24064,7 +24073,7 @@
         "event_id": "4",
         "name": "Training maandag groep1",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "6"
@@ -24079,6 +24088,9 @@
             "9"
           ],
           [
+            "33"
+          ],
+          [
             "28"
           ]
         ]
@@ -24087,10 +24099,16 @@
         "event_id": "6",
         "name": "Training zaterdag groep 1",
         "draws": 0,
-        "entries": 4,
+        "entries": 6,
         "participants": [
           [
+            "31"
+          ],
+          [
             "20"
+          ],
+          [
+            "32"
           ],
           [
             "22"
@@ -24107,13 +24125,16 @@
         "event_id": "7",
         "name": "Training zaterdag groep 2",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "8"
           ],
           [
             "4"
+          ],
+          [
+            "34"
           ],
           [
             "5"
@@ -24136,6 +24157,16 @@
     ],
     "draws": [],
     "entries": [
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Aagtjes, Martijn"
+      },
+      {
+        "country": null,
+        "player_id": "30",
+        "name": "Bruurs, Kimm"
+      },
       {
         "country": null,
         "player_id": "6",
@@ -24175,6 +24206,11 @@
         "country": null,
         "player_id": "14",
         "name": "Hengst, Maarten"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "Hoof, Lize van den"
       },
       {
         "country": null,
@@ -24218,8 +24254,23 @@
       },
       {
         "country": null,
+        "player_id": "32",
+        "name": "Paulisse, Ivy"
+      },
+      {
+        "country": null,
+        "player_id": "33",
+        "name": "Poeth, Nienke"
+      },
+      {
+        "country": null,
         "player_id": "4",
         "name": "Pol, Lisa van der"
+      },
+      {
+        "country": null,
+        "player_id": "34",
+        "name": "Poppel, Liv Van"
       },
       {
         "country": null,
@@ -24270,6 +24321,11 @@
         "country": null,
         "player_id": "13",
         "name": "Veer, Lucas"
+      },
+      {
+        "country": null,
+        "player_id": "35",
+        "name": "Verbakel, Jens"
       },
       {
         "country": null,
