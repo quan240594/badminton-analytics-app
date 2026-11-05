@@ -36512,8 +36512,12 @@
         "event_id": "2",
         "name": "HD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "305"
+          ]
+        ]
       },
       {
         "event_id": "1",
@@ -36540,8 +36544,12 @@
         "event_id": "6",
         "name": "GD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "305"
+          ]
+        ]
       },
       {
         "event_id": "5",
@@ -36552,7 +36560,13 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": "IND",
+        "player_id": "305",
+        "name": "Joseph, Jineeth"
+      }
+    ]
   },
   "E6C52275-E9D8-44E1-B15D-590E95D2C678": {
     "events": [
