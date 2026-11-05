@@ -9637,13 +9637,16 @@
         "event_id": "1",
         "name": "ME 1",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "29"
           ],
           [
             "25"
+          ],
+          [
+            "73"
           ]
         ]
       },
@@ -9651,16 +9654,19 @@
         "event_id": "6",
         "name": "ME 4",
         "draws": 0,
-        "entries": 10,
+        "entries": 13,
         "participants": [
           [
-            "8"
+            "64"
           ],
           [
             "1"
           ],
           [
             "55"
+          ],
+          [
+            "66"
           ],
           [
             "57"
@@ -9672,10 +9678,16 @@
             "16"
           ],
           [
+            "67"
+          ],
+          [
             "48"
           ],
           [
             "34"
+          ],
+          [
+            "71"
           ],
           [
             "37"
@@ -9709,7 +9721,7 @@
         "event_id": "11",
         "name": "ME 6 veer",
         "draws": 0,
-        "entries": 9,
+        "entries": 11,
         "participants": [
           [
             "54"
@@ -9737,6 +9749,12 @@
           ],
           [
             "49"
+          ],
+          [
+            "72"
+          ],
+          [
+            "75"
           ]
         ]
       },
@@ -9744,7 +9762,7 @@
         "event_id": "2",
         "name": "VE 1",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "28"
@@ -9757,6 +9775,9 @@
           ],
           [
             "41"
+          ],
+          [
+            "74"
           ]
         ]
       },
@@ -9801,8 +9822,11 @@
         "event_id": "12",
         "name": "VE 6 veer",
         "draws": 0,
-        "entries": 8,
+        "entries": 11,
         "participants": [
+          [
+            "63"
+          ],
           [
             "51"
           ],
@@ -9822,6 +9846,12 @@
             "27"
           ],
           [
+            "68"
+          ],
+          [
+            "70"
+          ],
+          [
             "23"
           ],
           [
@@ -9839,7 +9869,8 @@
             "29"
           ],
           [
-            "9"
+            "9",
+            "73"
           ]
         ]
       },
@@ -9847,18 +9878,15 @@
         "event_id": "8",
         "name": "MD 4",
         "draws": 0,
-        "entries": 7,
+        "entries": 8,
         "participants": [
           [
             "38",
             "48"
           ],
           [
-            "5"
-          ],
-          [
-            "8",
-            "20"
+            "5",
+            "64"
           ],
           [
             "1",
@@ -9869,11 +9897,19 @@
             "34"
           ],
           [
-            "57"
+            "66",
+            "67"
+          ],
+          [
+            "57",
+            "71"
           ],
           [
             "44",
             "3"
+          ],
+          [
+            "20"
           ]
         ]
       },
@@ -9907,7 +9943,8 @@
             "40"
           ],
           [
-            "58"
+            "58",
+            "75"
           ],
           [
             "45",
@@ -9930,7 +9967,7 @@
         "event_id": "4",
         "name": "VD 1",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
           [
             "28",
@@ -9939,6 +9976,10 @@
           [
             "10",
             "60"
+          ],
+          [
+            "69",
+            "74"
           ],
           [
             "41",
@@ -9950,7 +9991,7 @@
         "event_id": "9",
         "name": "VD 4",
         "draws": 0,
-        "entries": 5,
+        "entries": 4,
         "participants": [
           [
             "7"
@@ -9966,9 +10007,6 @@
           [
             "56",
             "61"
-          ],
-          [
-            "18"
           ]
         ]
       },
@@ -9995,7 +10033,8 @@
             "14"
           ],
           [
-            "11"
+            "11",
+            "70"
           ],
           [
             "30",
@@ -10024,7 +10063,7 @@
         "event_id": "5",
         "name": "GD 1",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
           [
             "28"
@@ -10035,6 +10074,9 @@
           ],
           [
             "9"
+          ],
+          [
+            "68"
           ]
         ]
       },
@@ -10049,28 +10091,31 @@
             "26"
           ],
           [
-            "52"
-          ],
-          [
-            "8",
-            "18"
-          ],
-          [
-            "1"
-          ],
-          [
+            "65",
             "56"
+          ],
+          [
+            "1",
+            "74"
+          ],
+          [
+            "66"
           ],
           [
             "57",
             "53"
           ],
           [
-            "44"
+            "44",
+            "69"
           ],
           [
             "34",
             "19"
+          ],
+          [
+            "71",
+            "52"
           ],
           [
             "3",
@@ -10112,10 +10157,11 @@
         "event_id": "15",
         "name": "GD 6 veer",
         "draws": 0,
-        "entries": 13,
+        "entries": 14,
         "participants": [
           [
-            "38"
+            "38",
+            "70"
           ],
           [
             "39",
@@ -10160,12 +10206,21 @@
           [
             "36",
             "30"
+          ],
+          [
+            "72",
+            "63"
           ]
         ]
       }
     ],
     "draws": [],
     "entries": [
+      {
+        "country": null,
+        "player_id": "63",
+        "name": "BAAR, MAREN"
+      },
       {
         "country": null,
         "player_id": "7",
@@ -10258,18 +10313,23 @@
       },
       {
         "country": null,
+        "player_id": "64",
+        "name": "DIETEREN, MATTHIJS"
+      },
+      {
+        "country": null,
         "player_id": "14",
         "name": "DIJCK, SYLVIA van"
       },
       {
         "country": null,
-        "player_id": "8",
-        "name": "DIRCKS, LUC"
+        "player_id": "54",
+        "name": "ESSERS, IAN"
       },
       {
         "country": null,
-        "player_id": "54",
-        "name": "ESSERS, IAN"
+        "player_id": "65",
+        "name": "FRANSEN, SAM"
       },
       {
         "country": null,
@@ -10300,6 +10360,11 @@
         "country": null,
         "player_id": "55",
         "name": "HOORN, ROB van"
+      },
+      {
+        "country": null,
+        "player_id": "66",
+        "name": "HU, JUSTIN"
       },
       {
         "country": null,
@@ -10348,6 +10413,16 @@
       },
       {
         "country": null,
+        "player_id": "67",
+        "name": "LE VAILLANT, KENZO"
+      },
+      {
+        "country": null,
+        "player_id": "68",
+        "name": "LI, YUANLU"
+      },
+      {
+        "country": null,
         "player_id": "59",
         "name": "MELEZHYK, ALINA"
       },
@@ -10358,8 +10433,18 @@
       },
       {
         "country": null,
+        "player_id": "69",
+        "name": "MEUFFELS, KELLY"
+      },
+      {
+        "country": null,
         "player_id": "46",
         "name": "MOLENBRUGGE, PIM"
+      },
+      {
+        "country": null,
+        "player_id": "70",
+        "name": "NAGEL, JESSICA"
       },
       {
         "country": null,
@@ -10385,6 +10470,11 @@
         "country": null,
         "player_id": "34",
         "name": "REINERS, GUY"
+      },
+      {
+        "country": null,
+        "player_id": "71",
+        "name": "RIEDL, KAJ"
       },
       {
         "country": null,
@@ -10415,11 +10505,6 @@
         "country": null,
         "player_id": "24",
         "name": "SCHROOTEN, PAUL"
-      },
-      {
-        "country": null,
-        "player_id": "18",
-        "name": "SEINEN, ASHLEY"
       },
       {
         "country": null,
@@ -10470,6 +10555,26 @@
         "country": null,
         "player_id": "42",
         "name": "THOMASSEN, MAUD"
+      },
+      {
+        "country": null,
+        "player_id": "72",
+        "name": "VERBRUGGE, GYANO"
+      },
+      {
+        "country": null,
+        "player_id": "73",
+        "name": "VERMEESCH, FRANK"
+      },
+      {
+        "country": null,
+        "player_id": "74",
+        "name": "VILTERS, JILL"
+      },
+      {
+        "country": null,
+        "player_id": "75",
+        "name": "VINCLAIR, WOUTER"
       },
       {
         "country": null,
