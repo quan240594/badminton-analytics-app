@@ -11871,10 +11871,13 @@
         "event_id": "2",
         "name": "Dubbel Goud",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "5"
+          ],
+          [
+            "24"
           ],
           [
             "16"
@@ -11892,7 +11895,7 @@
         "event_id": "3",
         "name": "Dubbel Goud Recreant",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "19"
@@ -11908,6 +11911,9 @@
           ],
           [
             "2"
+          ],
+          [
+            "23"
           ]
         ]
       },
@@ -11964,6 +11970,11 @@
         "country": null,
         "player_id": "5",
         "name": "Buijsman, Rens"
+      },
+      {
+        "country": null,
+        "player_id": "24",
+        "name": "Gracht, Cas vd"
       },
       {
         "country": null,
@@ -12054,6 +12065,11 @@
         "country": null,
         "player_id": "14",
         "name": "Wals, Anouk"
+      },
+      {
+        "country": null,
+        "player_id": "23",
+        "name": "Zuurbier, Jason"
       }
     ]
   },
