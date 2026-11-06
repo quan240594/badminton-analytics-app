@@ -88,7 +88,7 @@ def fetch_member_ranking(member_id: str, out_path: Path, cookie: str, index: int
     for rid in RANKING_RIDS:
         try:
             html = fetch(f"{BASE_URL}player.aspx?rid={rid}&player={member_id}", cookie)
-        except urllib.error.URLError as ex:
+        except (urllib.error.URLError, TimeoutError) as ex:
             print(f"[{index}/{total}] FAILED player={member_id} rid={rid} -> {ex}", flush=True)
             continue
         if has_ranking_rows(html):
