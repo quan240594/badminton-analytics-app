@@ -108,16 +108,15 @@ jobs:
             [ -f data/rankings.json ] && git add data/rankings.json
             git diff --cached --quiet || git commit -m "chore(data): national scrape progress"
 
-            # An unrelated commit landing on main mid-run shouldn't kill the whole
-            # run - rebase onto the latest main and retry. GitHub also sometimes answers
-            # a push with a 5xx, and a failed run never chains, so try a few times.
+            # The sibling scrape chains push to main too, so rebase right before each push, not
+            # before a sleep; a failed run never chains, so try a few times.
             pushed=false
             for attempt in 1 2 3 4; do
-              if git push; then
+              if git pull --rebase origin main && git push; then
                 pushed=true
                 break
               fi
-              git pull --rebase origin main || true
+              git rebase --abort 2>/dev/null || true
               sleep $(( attempt * 10 ))
             done
             if [ "$pushed" != true ]; then

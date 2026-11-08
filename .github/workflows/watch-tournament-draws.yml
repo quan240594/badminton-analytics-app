@@ -68,10 +68,15 @@ jobs:
           [ -f data/tournament_details.json ] && git add data/tournament_details.json
           git diff --cached --quiet || git commit -m "chore(data): tournament draw recheck"
 
-          if ! git push; then
-            git pull --rebase origin main
-            git push
-          fi
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $(( attempt * 10 ))
+          done
+          echo "git push failed after 4 attempts" >&2
+          exit 1
 
       - name: Remove session cookie
         if: always()
