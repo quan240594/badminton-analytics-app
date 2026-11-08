@@ -78,13 +78,13 @@ jobs:
           [ -f data/national_players.json ] && git add data/national_players.json
           git diff --cached --quiet || git commit -m "chore(data): national player scrape progress"
 
-          # A commit landing on main mid-run needs a rebase, and GitHub sometimes answers a
-          # push with a 5xx; a failed run never chains, so retry a few times.
+          # The sibling scrape chains push to main too, so rebase right before each push, not
+          # before a sleep; a failed run never chains, so retry a few times.
           for attempt in 1 2 3 4; do
-            if git push; then
+            if git pull --rebase origin main && git push; then
               exit 0
             fi
-            git pull --rebase origin main || true
+            git rebase --abort 2>/dev/null || true
             sleep $(( attempt * 10 ))
           done
           echo "git push failed after 4 attempts" >&2
