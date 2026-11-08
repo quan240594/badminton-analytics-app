@@ -34167,8 +34167,11 @@
         "event_id": "2",
         "name": "meisjes enkel A",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "103"
+          ],
           [
             "84"
           ]
@@ -34446,8 +34449,13 @@
         "event_id": "4",
         "name": "meisjes dubbel A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "103",
+            "84"
+          ]
+        ]
       },
       {
         "event_id": "7",
@@ -34588,7 +34596,8 @@
             "90"
           ],
           [
-            "29"
+            "29",
+            "54"
           ],
           [
             "49",
@@ -34881,6 +34890,11 @@
         "country": null,
         "player_id": "27",
         "name": "Lee, Zhe-Xi"
+      },
+      {
+        "country": null,
+        "player_id": "103",
+        "name": "Leendertse, Noa"
       },
       {
         "country": null,
