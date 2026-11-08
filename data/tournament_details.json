@@ -35717,8 +35717,11 @@
         "event_id": "23",
         "name": "ME U11",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "15"
+          ],
           [
             "10"
           ]
@@ -35728,8 +35731,11 @@
         "event_id": "2",
         "name": "Dubbel U11",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
+          [
+            "15"
+          ],
           [
             "4",
             "10"
@@ -35754,10 +35760,13 @@
         "event_id": "13",
         "name": "JE U13 VEREN",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "3"
+          ],
+          [
+            "16"
           ],
           [
             "9"
@@ -35775,12 +35784,8 @@
         "event_id": "25",
         "name": "ME U13 VEREN",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "11"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "5",
@@ -35797,10 +35802,13 @@
         "event_id": "6",
         "name": "JD U13 VEREN",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "3"
+          ],
+          [
+            "16"
           ],
           [
             "9"
@@ -35818,21 +35826,20 @@
         "event_id": "19",
         "name": "MD U13 VEREN",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "11"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "14",
         "name": "JE U15 NYLON",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "6"
+          ],
+          [
+            "18"
           ]
         ]
       },
@@ -35840,8 +35847,12 @@
         "event_id": "15",
         "name": "JE U15 VEREN",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "20"
+          ]
+        ]
       },
       {
         "event_id": "26",
@@ -35864,7 +35875,8 @@
         "entries": 1,
         "participants": [
           [
-            "6"
+            "6",
+            "18"
           ]
         ]
       },
@@ -35896,7 +35908,7 @@
         "entries": 1,
         "participants": [
           [
-            "8"
+            "22"
           ]
         ]
       },
@@ -35904,8 +35916,11 @@
         "event_id": "17",
         "name": "JE U18 VEREN",
         "draws": 0,
-        "entries": 3,
+        "entries": 6,
         "participants": [
+          [
+            "14"
+          ],
           [
             "2"
           ],
@@ -35914,6 +35929,12 @@
           ],
           [
             "7"
+          ],
+          [
+            "17"
+          ],
+          [
+            "8"
           ]
         ]
       },
@@ -35928,8 +35949,12 @@
         "event_id": "29",
         "name": "ME U18 VEREN",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "19"
+          ]
+        ]
       },
       {
         "event_id": "9",
@@ -35938,7 +35963,7 @@
         "entries": 1,
         "participants": [
           [
-            "8"
+            "22"
           ]
         ]
       },
@@ -35946,11 +35971,18 @@
         "event_id": "10",
         "name": "JD U18 VEREN",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
+          [
+            "14",
+            "17"
+          ],
           [
             "2",
             "7"
+          ],
+          [
+            "8"
           ]
         ]
       },
@@ -35978,8 +36010,18 @@
       },
       {
         "country": null,
+        "player_id": "14",
+        "name": "Eck, Flynn van"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "Groot, Winston de"
+      },
+      {
+        "country": null,
+        "player_id": "15",
+        "name": "Héman, Ava"
       },
       {
         "country": null,
@@ -36003,8 +36045,18 @@
       },
       {
         "country": null,
+        "player_id": "16",
+        "name": "Parakulangara Kizhuveettil, Pranav"
+      },
+      {
+        "country": null,
         "player_id": "7",
         "name": "Peelen, Gijs"
+      },
+      {
+        "country": null,
+        "player_id": "17",
+        "name": "Rij, Stefan Van"
       },
       {
         "country": null,
@@ -36023,13 +36075,28 @@
       },
       {
         "country": null,
-        "player_id": "11",
-        "name": "Timmanagoudar, Lisha"
+        "player_id": "18",
+        "name": "Stolk, Bram"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "Tromp, Pieter"
+      },
+      {
+        "country": null,
+        "player_id": "19",
+        "name": "Van Gemerden, Renate van"
       },
       {
         "country": null,
         "player_id": "12",
         "name": "Wang, Jiaren"
+      },
+      {
+        "country": null,
+        "player_id": "20",
+        "name": "Zyrianov, Aleksei"
       }
     ]
   },
