@@ -19,6 +19,7 @@ import argparse
 import json
 import sys
 import time
+import urllib.error
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -119,7 +120,17 @@ def refresh_inventory(tournament_cookie_file: Path, days_back: int, days_forward
     today = datetime.now(timezone.utc).date()
     start_date = (today - timedelta(days=days_back)).isoformat()
     end_date = (today + timedelta(days=days_forward)).isoformat()
-    tournaments = discover(cookie, start_date, end_date, delay)
+    try:
+        tournaments = discover(cookie, start_date, end_date, delay)
+    except (urllib.error.URLError, TimeoutError) as error:
+        # The search runs every iteration, so a slow toernooi must not end the chain: the
+        # saved inventory is what the previous iteration worked from. With none saved
+        # there is nothing to work on, so that still fails.
+        saved = load_json(TOURNAMENTS_PATH, {})
+        if not saved:
+            raise
+        print(f"Tournament search failed ({error}) - using the saved inventory of {len(saved)} tournaments.", flush=True)
+        return saved
     # A tournament that falls out of the search window keeps its scraped details, and
     # without its entry here the app would show its id instead of its name and dates.
     details = load_json(DETAILS_PATH, {})

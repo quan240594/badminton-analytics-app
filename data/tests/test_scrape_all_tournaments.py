@@ -1,3 +1,4 @@
+import urllib.error
 from types import SimpleNamespace
 
 import pytest
@@ -85,6 +86,30 @@ def test_refresh_inventory_keeps_dropped_tournaments_that_have_details(env):
     result = sat.refresh_inventory(env.tournament_cookie, 30, 365, 0.7)
     assert result == {"old": {"name": "Gone"}, **env.tournaments}
     assert read_json(env.paths["TOURNAMENTS_PATH"]) == result
+
+
+@pytest.mark.parametrize("error", [TimeoutError("timed out"), urllib.error.URLError("timed out")])
+def test_refresh_inventory_falls_back_to_saved_inventory_when_search_times_out(env, monkeypatch, capsys, error):
+    saved = {"a": {"name": "Saved"}}
+    write_json(env.paths["TOURNAMENTS_PATH"], saved)
+
+    def failing_discover(*_args):
+        raise error
+
+    monkeypatch.setattr(sat, "discover", failing_discover)
+    result = sat.refresh_inventory(env.tournament_cookie, 30, 365, 0.7)
+    assert result == saved
+    assert read_json(env.paths["TOURNAMENTS_PATH"]) == saved
+    assert "using the saved inventory" in capsys.readouterr().out
+
+
+def test_refresh_inventory_still_fails_when_search_times_out_and_nothing_is_saved(env, monkeypatch):
+    def failing_discover(*_args):
+        raise TimeoutError("timed out")
+
+    monkeypatch.setattr(sat, "discover", failing_discover)
+    with pytest.raises(TimeoutError):
+        sat.refresh_inventory(env.tournament_cookie, 30, 365, 0.7)
 
 
 def test_main_success_records_details_and_clears_previous_errors(env, monkeypatch, capsys):
