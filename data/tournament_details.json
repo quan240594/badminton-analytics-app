@@ -24814,7 +24814,7 @@
         "event_id": "2",
         "name": "Recreanten",
         "draws": 0,
-        "entries": 9,
+        "entries": 10,
         "participants": [
           [
             "29"
@@ -24842,6 +24842,9 @@
           ],
           [
             "25"
+          ],
+          [
+            "39"
           ]
         ]
       },
@@ -24849,10 +24852,13 @@
         "event_id": "5",
         "name": "Training maandag groep 2",
         "draws": 0,
-        "entries": 8,
+        "entries": 9,
         "participants": [
           [
             "7"
+          ],
+          [
+            "36"
           ],
           [
             "17"
@@ -24881,7 +24887,7 @@
         "event_id": "4",
         "name": "Training maandag groep1",
         "draws": 0,
-        "entries": 6,
+        "entries": 7,
         "participants": [
           [
             "6"
@@ -24900,6 +24906,9 @@
           ],
           [
             "28"
+          ],
+          [
+            "40"
           ]
         ]
       },
@@ -24907,8 +24916,11 @@
         "event_id": "6",
         "name": "Training zaterdag groep 1",
         "draws": 0,
-        "entries": 6,
+        "entries": 7,
         "participants": [
+          [
+            "37"
+          ],
           [
             "31"
           ],
@@ -24959,8 +24971,12 @@
         "event_id": "3",
         "name": "Tranining dinsdag",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "38"
+          ]
+        ]
       }
     ],
     "draws": [],
@@ -24984,6 +25000,16 @@
         "country": null,
         "player_id": "7",
         "name": "Chong, Isabella"
+      },
+      {
+        "country": null,
+        "player_id": "36",
+        "name": "Cranenburg, Ruben"
+      },
+      {
+        "country": null,
+        "player_id": "37",
+        "name": "Dorst, Lynne van"
       },
       {
         "country": null,
@@ -25087,6 +25113,11 @@
       },
       {
         "country": null,
+        "player_id": "38",
+        "name": "Sande, Anne van de"
+      },
+      {
+        "country": null,
         "player_id": "22",
         "name": "Schifferling, Filon"
       },
@@ -25139,6 +25170,16 @@
         "country": null,
         "player_id": "28",
         "name": "Westen, Yfke"
+      },
+      {
+        "country": null,
+        "player_id": "39",
+        "name": "Wiel, Christian van de"
+      },
+      {
+        "country": null,
+        "player_id": "40",
+        "name": "Wilms, Kay"
       }
     ]
   },
