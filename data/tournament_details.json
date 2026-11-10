@@ -9843,7 +9843,7 @@
         "event_id": "6",
         "name": "ME 4",
         "draws": 0,
-        "entries": 18,
+        "entries": 19,
         "participants": [
           [
             "98"
@@ -9898,6 +9898,9 @@
           ],
           [
             "20"
+          ],
+          [
+            "110"
           ]
         ]
       },
@@ -9905,7 +9908,7 @@
         "event_id": "16",
         "name": "ME 6 nylon",
         "draws": 0,
-        "entries": 8,
+        "entries": 10,
         "participants": [
           [
             "43"
@@ -9917,7 +9920,13 @@
             "99"
           ],
           [
+            "85"
+          ],
+          [
             "87"
+          ],
+          [
+            "109"
           ],
           [
             "2"
@@ -9937,10 +9946,13 @@
         "event_id": "11",
         "name": "ME 6 veer",
         "draws": 0,
-        "entries": 14,
+        "entries": 15,
         "participants": [
           [
             "82"
+          ],
+          [
+            "39"
           ],
           [
             "54"
@@ -10007,7 +10019,7 @@
         "event_id": "7",
         "name": "VE 4",
         "draws": 0,
-        "entries": 6,
+        "entries": 7,
         "participants": [
           [
             "7"
@@ -10023,6 +10035,9 @@
           ],
           [
             "56"
+          ],
+          [
+            "68"
           ],
           [
             "103"
@@ -10053,7 +10068,7 @@
         "event_id": "12",
         "name": "VE 6 veer",
         "draws": 0,
-        "entries": 17,
+        "entries": 16,
         "participants": [
           [
             "63"
@@ -10084,9 +10099,6 @@
           ],
           [
             "77"
-          ],
-          [
-            "68"
           ],
           [
             "102"
@@ -10136,7 +10148,7 @@
         "event_id": "8",
         "name": "MD 4",
         "draws": 0,
-        "entries": 11,
+        "entries": 12,
         "participants": [
           [
             "82",
@@ -10181,6 +10193,9 @@
           [
             "37",
             "20"
+          ],
+          [
+            "110"
           ]
         ]
       },
@@ -10204,7 +10219,7 @@
         "event_id": "13",
         "name": "MD 6 veer",
         "draws": 0,
-        "entries": 9,
+        "entries": 10,
         "participants": [
           [
             "39",
@@ -10213,6 +10228,9 @@
           [
             "54",
             "62"
+          ],
+          [
+            "109"
           ],
           [
             "58",
@@ -10238,7 +10256,8 @@
             "36"
           ],
           [
-            "72"
+            "72",
+            "108"
           ]
         ]
       },
@@ -10737,6 +10756,11 @@
       },
       {
         "country": null,
+        "player_id": "109",
+        "name": "HENRY, ANTONY"
+      },
+      {
+        "country": null,
         "player_id": "9",
         "name": "HERMANS, NICO"
       },
@@ -11062,6 +11086,11 @@
       },
       {
         "country": null,
+        "player_id": "108",
+        "name": "WATERREUS, MIQUEL"
+      },
+      {
+        "country": null,
         "player_id": "96",
         "name": "WIJLICK, JULES van"
       },
@@ -11069,6 +11098,11 @@
         "country": null,
         "player_id": "20",
         "name": "WIJSHOFF, LARS"
+      },
+      {
+        "country": null,
+        "player_id": "110",
+        "name": "ZHOU, RUIHAO"
       }
     ]
   },
