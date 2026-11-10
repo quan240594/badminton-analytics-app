@@ -24055,19 +24055,28 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1542",
         "time": "Fri 18/09/2026 20:00",
-        "event": "ME2",
+        "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 7",
         "home_team": "BBS BODEGRAVEN 1",
-        "home_players": [],
+        "home_players": [
+          [
+            "1544",
+            "Frederique Jansen"
+          ]
+        ],
         "away_team": "VIANEN BC 1",
         "away_players": [
           [
-            "6384",
-            "Gert Olivier"
+            "6383",
+            "Ron de Coo"
+          ],
+          [
+            "3882",
+            "Marleen Plomp"
           ]
         ],
-        "score": "17-21 21-11 21-8",
-        "winner_side": "home"
+        "score": "7-21 10-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -24100,28 +24109,19 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1542",
         "time": "Fri 18/09/2026 20:00",
-        "event": "GD1",
+        "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 7",
         "home_team": "BBS BODEGRAVEN 1",
-        "home_players": [
-          [
-            "1544",
-            "Frederique Jansen"
-          ]
-        ],
+        "home_players": [],
         "away_team": "VIANEN BC 1",
         "away_players": [
           [
-            "6383",
-            "Ron de Coo"
-          ],
-          [
-            "3882",
-            "Marleen Plomp"
+            "6384",
+            "Gert Olivier"
           ]
         ],
-        "score": "7-21 10-21",
-        "winner_side": "away"
+        "score": "17-21 21-11 21-8",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -648680,6 +648680,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2104",
         "time": "Sun 13/09/2026 09:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4149",
+            "Marit Molenaar"
+          ]
+        ],
+        "away_team": "NETWERK 4",
+        "away_players": [],
+        "score": "15-21 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2104",
+        "time": "Sun 13/09/2026 09:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "MARIKEN BC 6",
@@ -648702,24 +648720,6 @@
         ],
         "score": "22-20 21-19",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2104",
-        "time": "Sun 13/09/2026 09:30",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "MARIKEN BC 6",
-        "home_players": [
-          [
-            "4149",
-            "Marit Molenaar"
-          ]
-        ],
-        "away_team": "NETWERK 4",
-        "away_players": [],
-        "score": "15-21 14-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -648851,6 +648851,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2104",
         "time": "Sun 01/11/2026 14:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "NETWERK 4",
+        "home_players": [
+          [
+            "2101",
+            "Pjet Buitelaar"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3706",
+            "Emiel de Koning"
+          ],
+          [
+            "3710",
+            "Corina Resing-Tiemersma"
+          ]
+        ],
+        "score": "16-21 21-15 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2104",
+        "time": "Sun 01/11/2026 14:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "NETWERK 4",
@@ -648895,29 +648922,47 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2104",
-        "time": "Sun 01/11/2026 14:00",
-        "event": "GD1",
+        "time": "Sun 08/11/2026 13:30",
+        "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "NETWERK 4",
         "home_players": [
           [
-            "2101",
-            "Pjet Buitelaar"
+            "2102",
+            "Marit Jacobs"
           ]
         ],
-        "away_team": "KANTJILS DE 3",
+        "away_team": "THUVE BC 1",
         "away_players": [
           [
-            "3706",
-            "Emiel de Koning"
+            "11",
+            "Marieke Scholtmeijer"
           ],
           [
-            "3710",
-            "Corina Resing-Tiemersma"
+            "12",
+            "Saskia Braak"
           ]
         ],
-        "score": "16-21 21-15 19-21",
+        "score": "22-20 8-21 17-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2104",
+        "time": "Sun 08/11/2026 13:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "NETWERK 4",
+        "home_players": [],
+        "away_team": "THUVE BC 1",
+        "away_players": [
+          [
+            "11",
+            "Marieke Scholtmeijer"
+          ]
+        ],
+        "score": "21-5 21-13",
+        "winner_side": "home"
       }
     ]
   },
@@ -649228,6 +649273,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3389",
         "time": "Sun 18/10/2026 09:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "GENDT BC 2",
+        "home_players": [],
+        "away_team": "NETWERK 4",
+        "away_players": [
+          [
+            "2101",
+            "Pjet Buitelaar"
+          ]
+        ],
+        "score": "21-17 19-21 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3389",
+        "time": "Sun 18/10/2026 09:30",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "GENDT BC 2",
@@ -649250,24 +649313,6 @@
         ],
         "score": "21-10 21-18",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3389",
-        "time": "Sun 18/10/2026 09:30",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "GENDT BC 2",
-        "home_players": [],
-        "away_team": "NETWERK 4",
-        "away_players": [
-          [
-            "2101",
-            "Pjet Buitelaar"
-          ]
-        ],
-        "score": "21-17 19-21 14-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -649574,6 +649619,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3390",
         "time": "Sun 25/10/2026 09:30",
+        "event": "MD2",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
+        "home_team": "GENDT BC M1",
+        "home_players": [
+          [
+            "3385",
+            "Job Romijn"
+          ]
+        ],
+        "away_team": "STUBAN NSBC M1",
+        "away_players": [
+          [
+            "1839",
+            "Igor Hermans"
+          ],
+          [
+            "1838",
+            "Steffen de Jong"
+          ]
+        ],
+        "score": "22-20 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3390",
+        "time": "Sun 25/10/2026 09:30",
         "event": "ME4",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
         "home_team": "GENDT BC M1",
@@ -649614,33 +649686,6 @@
         ],
         "score": "15-21 14-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3390",
-        "time": "Sun 25/10/2026 09:30",
-        "event": "MD2",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
-        "home_team": "GENDT BC M1",
-        "home_players": [
-          [
-            "3385",
-            "Job Romijn"
-          ]
-        ],
-        "away_team": "STUBAN NSBC M1",
-        "away_players": [
-          [
-            "1839",
-            "Igor Hermans"
-          ],
-          [
-            "1838",
-            "Steffen de Jong"
-          ]
-        ],
-        "score": "22-20 21-19",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -649803,33 +649848,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3391",
         "time": "Sun 27/09/2026 09:30",
-        "event": "MD4",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
-        "home_team": "GENDT BC M1",
-        "home_players": [
-          [
-            "3387",
-            "Jordy van Sommeren"
-          ]
-        ],
-        "away_team": "ELST BC M1",
-        "away_players": [
-          [
-            "682",
-            "Mats Brinke"
-          ],
-          [
-            "6719",
-            "Daan Schoutissen"
-          ]
-        ],
-        "score": "21-15 21-14",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3391",
-        "time": "Sun 27/09/2026 09:30",
         "event": "MD2",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
         "home_team": "GENDT BC M1",
@@ -649870,6 +649888,33 @@
         ],
         "score": "12-21 9-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3391",
+        "time": "Sun 27/09/2026 09:30",
+        "event": "MD4",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 2",
+        "home_team": "GENDT BC M1",
+        "home_players": [
+          [
+            "3387",
+            "Jordy van Sommeren"
+          ]
+        ],
+        "away_team": "ELST BC M1",
+        "away_players": [
+          [
+            "682",
+            "Mats Brinke"
+          ],
+          [
+            "6719",
+            "Daan Schoutissen"
+          ]
+        ],
+        "score": "21-15 21-14",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -650248,33 +650293,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3392",
         "time": "Sun 18/10/2026 09:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "GENDT BC 2",
-        "home_players": [
-          [
-            "3394",
-            "Linda de Leeuw"
-          ]
-        ],
-        "away_team": "NETWERK 4",
-        "away_players": [
-          [
-            "2101",
-            "Pjet Buitelaar"
-          ],
-          [
-            "2104",
-            "Silke van Moesdijk"
-          ]
-        ],
-        "score": "20-22 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3392",
-        "time": "Sun 18/10/2026 09:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "GENDT BC 2",
@@ -650315,6 +650333,33 @@
         ],
         "score": "21-12 21-8",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3392",
+        "time": "Sun 18/10/2026 09:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "GENDT BC 2",
+        "home_players": [
+          [
+            "3394",
+            "Linda de Leeuw"
+          ]
+        ],
+        "away_team": "NETWERK 4",
+        "away_players": [
+          [
+            "2101",
+            "Pjet Buitelaar"
+          ],
+          [
+            "2104",
+            "Silke van Moesdijk"
+          ]
+        ],
+        "score": "20-22 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -650549,33 +650594,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3393",
         "time": "Sun 18/10/2026 09:30",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "GENDT BC 2",
-        "home_players": [
-          [
-            "3389",
-            "Frank Wortel"
-          ]
-        ],
-        "away_team": "NETWERK 4",
-        "away_players": [
-          [
-            "2100",
-            "Jeffrey Elerie"
-          ],
-          [
-            "2102",
-            "Marit Jacobs"
-          ]
-        ],
-        "score": "21-10 21-18",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3393",
-        "time": "Sun 18/10/2026 09:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "GENDT BC 2",
@@ -650616,6 +650634,33 @@
         ],
         "score": "9-21 9-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3393",
+        "time": "Sun 18/10/2026 09:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "GENDT BC 2",
+        "home_players": [
+          [
+            "3389",
+            "Frank Wortel"
+          ]
+        ],
+        "away_team": "NETWERK 4",
+        "away_players": [
+          [
+            "2100",
+            "Jeffrey Elerie"
+          ],
+          [
+            "2102",
+            "Marit Jacobs"
+          ]
+        ],
+        "score": "21-10 21-18",
+        "winner_side": "home"
       }
     ]
   },
@@ -650630,24 +650675,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3394",
-        "time": "Sun 27/09/2026 12:30",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "MARIKEN BC 6",
-        "home_players": [
-          [
-            "4149",
-            "Marit Molenaar"
-          ]
-        ],
-        "away_team": "GENDT BC 2",
-        "away_players": [],
-        "score": "21-9 21-8",
-        "winner_side": "home"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3394",
@@ -650674,6 +650701,24 @@
         ],
         "score": "15-21 21-10 19-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3394",
+        "time": "Sun 27/09/2026 12:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4149",
+            "Marit Molenaar"
+          ]
+        ],
+        "away_team": "GENDT BC 2",
+        "away_players": [],
+        "score": "21-9 21-8",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -651034,6 +651079,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3395",
         "time": "Mon 26/10/2026 19:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "THUVE BC 1",
+        "home_players": [
+          [
+            "12",
+            "Saskia Braak"
+          ]
+        ],
+        "away_team": "GENDT BC 2",
+        "away_players": [],
+        "score": "10-21 6-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3395",
+        "time": "Mon 26/10/2026 19:30",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "THUVE BC 1",
@@ -651056,24 +651119,6 @@
         ],
         "score": "21-12 21-16",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3395",
-        "time": "Mon 26/10/2026 19:30",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "THUVE BC 1",
-        "home_players": [
-          [
-            "12",
-            "Saskia Braak"
-          ]
-        ],
-        "away_team": "GENDT BC 2",
-        "away_players": [],
-        "score": "10-21 6-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -651267,6 +651312,78 @@
         ],
         "score": "16-21 21-15 19-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3706",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ],
+          [
+            "4181",
+            "Mark Graat"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3707",
+            "Jan Groenveld"
+          ]
+        ],
+        "score": "21-18 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3706",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ],
+          [
+            "4150",
+            "Guusje Neelissen"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3711",
+            "Hella Manders"
+          ]
+        ],
+        "score": "21-16 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3706",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [],
+        "score": "21-17 21-23 18-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -651442,6 +651559,78 @@
         "away_players": [],
         "score": "14-21 9-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3707",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4181",
+            "Mark Graat"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [],
+        "score": "21-14 21-9",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3707",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4149",
+            "Marit Molenaar"
+          ],
+          [
+            "4181",
+            "Mark Graat"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "7182",
+            "Huong van der Schans"
+          ]
+        ],
+        "score": "21-11 21-6",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3707",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ],
+          [
+            "4181",
+            "Mark Graat"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3706",
+            "Emiel de Koning"
+          ]
+        ],
+        "score": "21-18 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -651936,33 +652125,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3711",
         "time": "Sun 11/10/2026 10:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "KANTJILS DE 3",
-        "home_players": [
-          [
-            "3710",
-            "Corina Resing-Tiemersma"
-          ]
-        ],
-        "away_team": "THUVE BC 1",
-        "away_players": [
-          [
-            "11",
-            "Marieke Scholtmeijer"
-          ],
-          [
-            "13",
-            "Dorien Kooper-Aaldering"
-          ]
-        ],
-        "score": "24-26 9-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3711",
-        "time": "Sun 11/10/2026 10:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "KANTJILS DE 3",
@@ -652007,29 +652169,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3711",
-        "time": "Sun 01/11/2026 14:00",
+        "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "NETWERK 4",
+        "home_team": "KANTJILS DE 3",
         "home_players": [
-          [
-            "2104",
-            "Silke van Moesdijk"
-          ],
-          [
-            "2102",
-            "Marit Jacobs"
-          ]
-        ],
-        "away_team": "KANTJILS DE 3",
-        "away_players": [
           [
             "3710",
             "Corina Resing-Tiemersma"
           ]
         ],
-        "score": "21-17 21-18",
-        "winner_side": "home"
+        "away_team": "THUVE BC 1",
+        "away_players": [
+          [
+            "11",
+            "Marieke Scholtmeijer"
+          ],
+          [
+            "13",
+            "Dorien Kooper-Aaldering"
+          ]
+        ],
+        "score": "24-26 9-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -652075,6 +652237,105 @@
         ],
         "score": "15-21 7-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3711",
+        "time": "Sun 01/11/2026 14:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "NETWERK 4",
+        "home_players": [
+          [
+            "2104",
+            "Silke van Moesdijk"
+          ],
+          [
+            "2102",
+            "Marit Jacobs"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3710",
+            "Corina Resing-Tiemersma"
+          ]
+        ],
+        "score": "21-17 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3711",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4149",
+            "Marit Molenaar"
+          ],
+          [
+            "4150",
+            "Guusje Neelissen"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "7182",
+            "Huong van der Schans"
+          ]
+        ],
+        "score": "21-12 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3711",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4150",
+            "Guusje Neelissen"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3711",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ],
+          [
+            "4150",
+            "Guusje Neelissen"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3706",
+            "Emiel de Koning"
+          ]
+        ],
+        "score": "21-16 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -653221,33 +653482,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4022",
         "time": "Sun 01/11/2026 09:30",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "GENDT BC 2",
-        "home_players": [
-          [
-            "3390",
-            "Adriaan Vos"
-          ],
-          [
-            "3395",
-            "Kirsten van den Eijk"
-          ]
-        ],
-        "away_team": "WSV DRAGONDER NOORD 2",
-        "away_players": [
-          [
-            "565",
-            "Charlotte van der Neut"
-          ]
-        ],
-        "score": "21-13 15-21 12-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4022",
-        "time": "Sun 01/11/2026 09:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "GENDT BC 2",
@@ -653270,6 +653504,33 @@
         ],
         "score": "21-18 21-18",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4022",
+        "time": "Sun 01/11/2026 09:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "GENDT BC 2",
+        "home_players": [
+          [
+            "3390",
+            "Adriaan Vos"
+          ],
+          [
+            "3395",
+            "Kirsten van den Eijk"
+          ]
+        ],
+        "away_team": "WSV DRAGONDER NOORD 2",
+        "away_players": [
+          [
+            "565",
+            "Charlotte van der Neut"
+          ]
+        ],
+        "score": "21-13 15-21 12-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -653643,6 +653904,78 @@
         ],
         "score": "22-20 18-21 14-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4149",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "7182",
+            "Huong van der Schans"
+          ]
+        ],
+        "score": "16-21 21-7 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4149",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4181",
+            "Mark Graat"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "7182",
+            "Huong van der Schans"
+          ],
+          [
+            "3707",
+            "Jan Groenveld"
+          ]
+        ],
+        "score": "21-11 21-6",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4149",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4150",
+            "Guusje Neelissen"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3711",
+            "Hella Manders"
+          ],
+          [
+            "7182",
+            "Huong van der Schans"
+          ]
+        ],
+        "score": "21-12 21-13",
+        "winner_side": "home"
       }
     ]
   },
@@ -653805,6 +654138,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4150",
         "time": "Sun 04/10/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ]
+        ],
+        "away_team": "WSV DRAGONDER NOORD 2",
+        "away_players": [
+          [
+            "567",
+            "Wim Ydo"
+          ],
+          [
+            "566",
+            "Eline van t Verlaat"
+          ]
+        ],
+        "score": "21-14 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4150",
+        "time": "Sun 04/10/2026 12:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "MARIKEN BC 6",
@@ -653845,33 +654205,6 @@
         ],
         "score": "11-21 10-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4150",
-        "time": "Sun 04/10/2026 12:30",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
-        "home_team": "MARIKEN BC 6",
-        "home_players": [
-          [
-            "5738",
-            "Rutger Kemperman"
-          ]
-        ],
-        "away_team": "WSV DRAGONDER NOORD 2",
-        "away_players": [
-          [
-            "567",
-            "Wim Ydo"
-          ],
-          [
-            "566",
-            "Eline van t Verlaat"
-          ]
-        ],
-        "score": "21-14 21-17",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -654016,6 +654349,78 @@
         ],
         "score": "10-21 21-16 16-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4150",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3711",
+            "Hella Manders"
+          ]
+        ],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4150",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "4149",
+            "Marit Molenaar"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3711",
+            "Hella Manders"
+          ],
+          [
+            "7182",
+            "Huong van der Schans"
+          ]
+        ],
+        "score": "21-12 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4150",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
+        "home_team": "MARIKEN BC 6",
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ]
+        ],
+        "away_team": "KANTJILS DE 3",
+        "away_players": [
+          [
+            "3706",
+            "Emiel de Koning"
+          ],
+          [
+            "3711",
+            "Hella Manders"
+          ]
+        ],
+        "score": "21-16 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -656823,28 +657228,19 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "6083",
         "time": "Sun 13/09/2026 09:30",
-        "event": "MD",
+        "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "MARIKEN BC 6",
-        "home_players": [
-          [
-            "5738",
-            "Rutger Kemperman"
-          ]
-        ],
+        "home_players": [],
         "away_team": "NETWERK 4",
         "away_players": [
-          [
-            "2101",
-            "Pjet Buitelaar"
-          ],
           [
             "2100",
             "Jeffrey Elerie"
           ]
         ],
-        "score": "21-13 21-16",
-        "winner_side": "home"
+        "score": "19-21 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -656877,19 +657273,28 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "6083",
         "time": "Sun 13/09/2026 09:30",
-        "event": "ME2",
+        "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 6",
         "home_team": "MARIKEN BC 6",
-        "home_players": [],
+        "home_players": [
+          [
+            "5738",
+            "Rutger Kemperman"
+          ]
+        ],
         "away_team": "NETWERK 4",
         "away_players": [
+          [
+            "2101",
+            "Pjet Buitelaar"
+          ],
           [
             "2100",
             "Jeffrey Elerie"
           ]
         ],
-        "score": "19-21 18-21",
-        "winner_side": "away"
+        "score": "21-13 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -671423,6 +671828,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1378",
         "time": "Sun 20/09/2026 09:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "PANACHE ESBV 3",
+        "home_players": [],
+        "away_team": "REESHOF BC 4",
+        "away_players": [
+          [
+            "1407",
+            "Luuk van Dun"
+          ]
+        ],
+        "score": "21-11 21-5",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1378",
+        "time": "Sun 20/09/2026 09:30",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "PANACHE ESBV 3",
@@ -671445,24 +671868,6 @@
         ],
         "score": "18-21 9-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1378",
-        "time": "Sun 20/09/2026 09:30",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "PANACHE ESBV 3",
-        "home_players": [],
-        "away_team": "REESHOF BC 4",
-        "away_players": [
-          [
-            "1407",
-            "Luuk van Dun"
-          ]
-        ],
-        "score": "21-11 21-5",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -671517,6 +671922,78 @@
         ],
         "score": "25-23 10-21 25-23",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1378",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ],
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "21-19 16-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1378",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [],
+        "score": "4-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1378",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ],
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1379",
+            "Roxana Pasca"
+          ]
+        ],
+        "score": "19-21 21-23",
+        "winner_side": "away"
       }
     ]
   },
@@ -671531,33 +672008,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1379",
-        "time": "Sun 13/09/2026 09:30",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "PANACHE ESBV 3",
-        "home_players": [
-          [
-            "1414",
-            "Kavya Pramod"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 8",
-        "away_players": [
-          [
-            "616",
-            "Julia Al Eido"
-          ],
-          [
-            "622",
-            "Sanne Petit"
-          ]
-        ],
-        "score": "21-18 21-18",
-        "winner_side": "home"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1379",
@@ -671606,7 +672056,7 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1379",
-        "time": "Sun 20/09/2026 09:30",
+        "time": "Sun 13/09/2026 09:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "PANACHE ESBV 3",
@@ -671616,19 +672066,19 @@
             "Kavya Pramod"
           ]
         ],
-        "away_team": "REESHOF BC 4",
+        "away_team": "VEGHEL 67 BC 8",
         "away_players": [
           [
-            "1410",
-            "Kimm Bruurs"
+            "616",
+            "Julia Al Eido"
           ],
           [
-            "1409",
-            "Anne van de Sande"
+            "622",
+            "Sanne Petit"
           ]
         ],
-        "score": "17-21 21-23",
-        "winner_side": "away"
+        "score": "21-18 21-18",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -671656,6 +672106,87 @@
         ],
         "score": "21-17 21-18",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1379",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "PANACHE ESBV 3",
+        "home_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [
+          [
+            "1410",
+            "Kimm Bruurs"
+          ],
+          [
+            "1409",
+            "Anne van de Sande"
+          ]
+        ],
+        "score": "17-21 21-23",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1379",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ],
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ]
+        ],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1379",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ],
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ]
+        ],
+        "score": "19-21 21-23",
+        "winner_side": "away"
       }
     ]
   },
@@ -671907,6 +672438,78 @@
         "away_players": [],
         "score": "15-21 21-19 21-8",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1381",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ],
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ]
+        ],
+        "score": "21-19 16-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1381",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [],
+        "score": "21-18 21-23 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1381",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ],
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "2066",
+            "Sophie Toering"
+          ]
+        ],
+        "score": "19-21 13-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -671970,24 +672573,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1406",
         "time": "Sun 20/09/2026 09:30",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "PANACHE ESBV 3",
-        "home_players": [
-          [
-            "1380",
-            "Pradyumna Rao Krishna"
-          ]
-        ],
-        "away_team": "REESHOF BC 4",
-        "away_players": [],
-        "score": "13-21 8-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1406",
-        "time": "Sun 20/09/2026 09:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "PANACHE ESBV 3",
@@ -672010,6 +672595,24 @@
         ],
         "score": "21-14 21-14",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1406",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "PANACHE ESBV 3",
+        "home_players": [
+          [
+            "1380",
+            "Pradyumna Rao Krishna"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [],
+        "score": "13-21 8-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -672217,33 +672820,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1407",
         "time": "Sun 27/09/2026 09:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "REESHOF BC 4",
-        "home_players": [
-          [
-            "1409",
-            "Anne van de Sande"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 8",
-        "away_players": [
-          [
-            "613",
-            "Stan Wadners"
-          ],
-          [
-            "616",
-            "Julia Al Eido"
-          ]
-        ],
-        "score": "21-13 15-21 21-13",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1407",
-        "time": "Sun 27/09/2026 09:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "REESHOF BC 4",
@@ -672270,29 +672846,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1407",
-        "time": "Sun 01/11/2026 11:15",
-        "event": "MD",
+        "time": "Sun 27/09/2026 09:00",
+        "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
+        "home_team": "REESHOF BC 4",
         "home_players": [
           [
-            "4109",
-            "Ruben Schrauwen"
-          ],
-          [
-            "4110",
-            "Tijn van Adrichem"
+            "1409",
+            "Anne van de Sande"
           ]
         ],
-        "away_team": "REESHOF BC 4",
+        "away_team": "VEGHEL 67 BC 8",
         "away_players": [
           [
-            "1406",
-            "Erik van de Sande"
+            "613",
+            "Stan Wadners"
+          ],
+          [
+            "616",
+            "Julia Al Eido"
           ]
         ],
-        "score": "20-22 16-21",
-        "winner_side": "away"
+        "score": "21-13 15-21 21-13",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -672320,6 +672896,33 @@
         ],
         "score": "21-13 19-21 21-11",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1407",
+        "time": "Sun 01/11/2026 11:15",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4109",
+            "Ruben Schrauwen"
+          ],
+          [
+            "4110",
+            "Tijn van Adrichem"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [
+          [
+            "1406",
+            "Erik van de Sande"
+          ]
+        ],
+        "score": "20-22 16-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -672886,24 +673489,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1410",
         "time": "Sun 20/09/2026 09:30",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "PANACHE ESBV 3",
-        "home_players": [
-          [
-            "1414",
-            "Kavya Pramod"
-          ]
-        ],
-        "away_team": "REESHOF BC 4",
-        "away_players": [],
-        "score": "21-14 21-14",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1410",
-        "time": "Sun 20/09/2026 09:30",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "PANACHE ESBV 3",
@@ -672926,6 +673511,24 @@
         ],
         "score": "17-21 21-23",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1410",
+        "time": "Sun 20/09/2026 09:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "PANACHE ESBV 3",
+        "home_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [],
+        "score": "21-14 21-14",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -673016,33 +673619,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1411",
         "time": "Sun 27/09/2026 09:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "REESHOF BC 4",
-        "home_players": [
-          [
-            "1408",
-            "Ferry Janssen"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 8",
-        "away_players": [
-          [
-            "617",
-            "Rene van Doorn"
-          ],
-          [
-            "622",
-            "Sanne Petit"
-          ]
-        ],
-        "score": "21-15 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1411",
-        "time": "Sun 27/09/2026 09:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "REESHOF BC 4",
@@ -673087,20 +673663,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1411",
-        "time": "Sun 01/11/2026 11:15",
-        "event": "VE1",
+        "time": "Sun 27/09/2026 09:00",
+        "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
+        "home_team": "REESHOF BC 4",
         "home_players": [
           [
-            "4107",
-            "Lenne van Riel"
+            "1408",
+            "Ferry Janssen"
           ]
         ],
-        "away_team": "REESHOF BC 4",
-        "away_players": [],
-        "score": "5-21 16-21",
-        "winner_side": "away"
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "617",
+            "Rene van Doorn"
+          ],
+          [
+            "622",
+            "Sanne Petit"
+          ]
+        ],
+        "score": "21-15 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -673128,6 +673713,24 @@
         ],
         "score": "24-26 21-9 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1411",
+        "time": "Sun 01/11/2026 11:15",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4107",
+            "Lenne van Riel"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [],
+        "score": "5-21 16-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -673397,6 +674000,51 @@
         ],
         "score": "7-21 7-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1414",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ],
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1379",
+            "Roxana Pasca"
+          ]
+        ],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1414",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [],
+        "score": "11-21 7-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -673481,6 +674129,51 @@
         "away_team": "PANACHE ESBV 3",
         "away_players": [],
         "score": "13-21 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2066",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [],
+        "score": "14-21 8-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2066",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ],
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "19-21 13-21",
         "winner_side": "away"
       }
     ]
@@ -673657,6 +674350,51 @@
         ],
         "score": "7-21 7-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2668",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2669",
+            "Hans Schrauwen"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "613",
+            "Stan Wadners"
+          ],
+          [
+            "617",
+            "Rene van Doorn"
+          ]
+        ],
+        "score": "7-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2668",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "613",
+            "Stan Wadners"
+          ]
+        ],
+        "score": "11-21 9-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -673778,6 +674516,60 @@
         ],
         "score": "25-23 10-21 25-23",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2669",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2668",
+            "Daan van Oers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "613",
+            "Stan Wadners"
+          ],
+          [
+            "617",
+            "Rene van Doorn"
+          ]
+        ],
+        "score": "7-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2669",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2673",
+            "Mandy Govers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "616",
+            "Julia Al Eido"
+          ],
+          [
+            "617",
+            "Rene van Doorn"
+          ]
+        ],
+        "score": "21-17 4-21 15-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -673953,6 +674745,51 @@
         ],
         "score": "15-21 21-19 21-8",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2670",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "612",
+            "Himanshu Batra"
+          ]
+        ],
+        "score": "14-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2670",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2672",
+            "Maya Kroonen"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "622",
+            "Sanne Petit"
+          ],
+          [
+            "612",
+            "Himanshu Batra"
+          ]
+        ],
+        "score": "10-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -674155,6 +674992,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2673",
         "time": "Sun 01/11/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2669",
+            "Hans Schrauwen"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ],
+          [
+            "2066",
+            "Sophie Toering"
+          ]
+        ],
+        "score": "25-23 10-21 25-23",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2673",
+        "time": "Sun 01/11/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "BADMINTONBOZ 7",
@@ -674199,8 +675063,26 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2673",
-        "time": "Sun 01/11/2026 10:00",
-        "event": "GD1",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "615",
+            "Elke Geerlings"
+          ]
+        ],
+        "score": "13-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2673",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "BADMINTONBOZ 7",
         "home_players": [
@@ -674209,18 +675091,45 @@
             "Hans Schrauwen"
           ]
         ],
-        "away_team": "PANACHE ESBV 3",
+        "away_team": "VEGHEL 67 BC 8",
         "away_players": [
           [
-            "1378",
-            "Bradley Wong"
+            "616",
+            "Julia Al Eido"
           ],
           [
-            "2066",
-            "Sophie Toering"
+            "617",
+            "Rene van Doorn"
           ]
         ],
-        "score": "25-23 10-21 25-23",
+        "score": "21-17 4-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2673",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2672",
+            "Maya Kroonen"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "615",
+            "Elke Geerlings"
+          ],
+          [
+            "622",
+            "Sanne Petit"
+          ]
+        ],
+        "score": "21-16 21-17",
         "winner_side": "home"
       }
     ]
@@ -674613,6 +675522,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4108",
         "time": "Sun 27/09/2026 11:15",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4110",
+            "Tijn van Adrichem"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 8",
+        "away_players": [
+          [
+            "4481",
+            "Anushka Pandharipande"
+          ],
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "score": "21-9 15-21 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4108",
+        "time": "Sun 27/09/2026 11:15",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "BAVEL BC 3",
@@ -674653,51 +675589,6 @@
         ],
         "score": "21-15 21-15",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4108",
-        "time": "Sun 27/09/2026 11:15",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
-        "home_players": [
-          [
-            "4110",
-            "Tijn van Adrichem"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 8",
-        "away_players": [
-          [
-            "4481",
-            "Anushka Pandharipande"
-          ],
-          [
-            "4478",
-            "Siddhant Honnalli"
-          ]
-        ],
-        "score": "21-9 15-21 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4108",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "VEGHEL 67 BC 8",
-        "home_players": [
-          [
-            "622",
-            "Sanne Petit"
-          ]
-        ],
-        "away_team": "BAVEL BC 3",
-        "away_players": [],
-        "score": "12-21 11-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -674756,29 +675647,20 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4108",
-        "time": "Sun 01/11/2026 11:15",
-        "event": "VD",
+        "time": "Sun 11/10/2026 10:00",
+        "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
+        "home_team": "VEGHEL 67 BC 8",
         "home_players": [
           [
-            "4107",
-            "Lenne van Riel"
+            "622",
+            "Sanne Petit"
           ]
         ],
-        "away_team": "REESHOF BC 4",
-        "away_players": [
-          [
-            "1412",
-            "Mandy van Dun"
-          ],
-          [
-            "1411",
-            "Esther Van Peer"
-          ]
-        ],
-        "score": "24-26 21-9 21-15",
-        "winner_side": "home"
+        "away_team": "BAVEL BC 3",
+        "away_players": [],
+        "score": "12-21 11-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -674823,6 +675705,33 @@
           ]
         ],
         "score": "21-13 19-21 21-11",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4108",
+        "time": "Sun 01/11/2026 11:15",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4107",
+            "Lenne van Riel"
+          ]
+        ],
+        "away_team": "REESHOF BC 4",
+        "away_players": [
+          [
+            "1412",
+            "Mandy van Dun"
+          ],
+          [
+            "1411",
+            "Esther Van Peer"
+          ]
+        ],
+        "score": "24-26 21-9 21-15",
         "winner_side": "home"
       }
     ]
@@ -674914,6 +675823,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4109",
         "time": "Sun 27/09/2026 11:15",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4107",
+            "Lenne van Riel"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 8",
+        "away_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ],
+          [
+            "4479",
+            "Yetian Ding"
+          ]
+        ],
+        "score": "21-9 21-11",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4109",
+        "time": "Sun 27/09/2026 11:15",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "BAVEL BC 3",
@@ -674953,33 +675889,6 @@
           ]
         ],
         "score": "21-19 22-20",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4109",
-        "time": "Sun 27/09/2026 11:15",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
-        "home_players": [
-          [
-            "4107",
-            "Lenne van Riel"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 8",
-        "away_players": [
-          [
-            "4480",
-            "Purnima Sawarkar"
-          ],
-          [
-            "4479",
-            "Yetian Ding"
-          ]
-        ],
-        "score": "21-9 21-11",
         "winner_side": "home"
       },
       {
@@ -675574,6 +676483,78 @@
         ],
         "score": "21-6 21-9",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4477",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ],
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "21-19 16-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4477",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "21-18 21-23 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4477",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "2066",
+            "Sophie Toering"
+          ],
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "19-21 13-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -675646,33 +676627,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "4478",
         "time": "Sun 27/09/2026 11:15",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
-        "home_team": "BAVEL BC 3",
-        "home_players": [
-          [
-            "4110",
-            "Tijn van Adrichem"
-          ],
-          [
-            "4108",
-            "Mylani Repi"
-          ]
-        ],
-        "away_team": "RUDRA UNITED 8",
-        "away_players": [
-          [
-            "4481",
-            "Anushka Pandharipande"
-          ]
-        ],
-        "score": "21-9 15-21 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "4478",
-        "time": "Sun 27/09/2026 11:15",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
         "home_team": "BAVEL BC 3",
@@ -675695,6 +676649,33 @@
         ],
         "score": "21-11 21-11",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4478",
+        "time": "Sun 27/09/2026 11:15",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BAVEL BC 3",
+        "home_players": [
+          [
+            "4110",
+            "Tijn van Adrichem"
+          ],
+          [
+            "4108",
+            "Mylani Repi"
+          ]
+        ],
+        "away_team": "RUDRA UNITED 8",
+        "away_players": [
+          [
+            "4481",
+            "Anushka Pandharipande"
+          ]
+        ],
+        "score": "21-9 15-21 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -675748,6 +676729,78 @@
           ]
         ],
         "score": "14-21 11-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4478",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ],
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "21-19 16-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4478",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1378",
+            "Bradley Wong"
+          ]
+        ],
+        "score": "4-21 12-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4478",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1379",
+            "Roxana Pasca"
+          ],
+          [
+            "1378",
+            "Bradley Wong"
+          ]
+        ],
+        "score": "19-21 21-23",
         "winner_side": "away"
       }
     ]
@@ -676017,6 +677070,78 @@
           ]
         ],
         "score": "21-17 10-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4480",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4482",
+            "Abhilasha Chaturvedi"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ],
+          [
+            "1379",
+            "Roxana Pasca"
+          ]
+        ],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4480",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ]
+        ],
+        "score": "11-21 7-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4480",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4478",
+            "Siddhant Honnalli"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1379",
+            "Roxana Pasca"
+          ],
+          [
+            "1378",
+            "Bradley Wong"
+          ]
+        ],
+        "score": "19-21 21-23",
         "winner_side": "away"
       }
     ]
@@ -676368,6 +677493,78 @@
         ],
         "score": "10-21 23-25",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4482",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4480",
+            "Purnima Sawarkar"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "1414",
+            "Kavya Pramod"
+          ],
+          [
+            "1379",
+            "Roxana Pasca"
+          ]
+        ],
+        "score": "13-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4482",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "2066",
+            "Sophie Toering"
+          ]
+        ],
+        "score": "14-21 8-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "4482",
+        "time": "Sun 08/11/2026 09:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "RUDRA UNITED 8",
+        "home_players": [
+          [
+            "4477",
+            "Levi Klein Marifosque"
+          ]
+        ],
+        "away_team": "PANACHE ESBV 3",
+        "away_players": [
+          [
+            "2066",
+            "Sophie Toering"
+          ],
+          [
+            "1381",
+            "Nicholas Vernon"
+          ]
+        ],
+        "score": "19-21 13-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -676543,6 +677740,51 @@
         ],
         "score": "20-22 21-9 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "612",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2670",
+            "Roel Cox"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [],
+        "score": "14-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "612",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2670",
+            "Roel Cox"
+          ],
+          [
+            "2672",
+            "Maya Kroonen"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "622",
+            "Sanne Petit"
+          ]
+        ],
+        "score": "10-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -676646,6 +677888,51 @@
         ],
         "score": "21-19 22-20",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "613",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2669",
+            "Hans Schrauwen"
+          ],
+          [
+            "2668",
+            "Daan van Oers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "617",
+            "Rene van Doorn"
+          ]
+        ],
+        "score": "7-21 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "613",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2668",
+            "Daan van Oers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [],
+        "score": "11-21 9-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -676803,6 +678090,51 @@
         ],
         "score": "20-22 21-9 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "615",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2672",
+            "Maya Kroonen"
+          ],
+          [
+            "2673",
+            "Mandy Govers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "622",
+            "Sanne Petit"
+          ]
+        ],
+        "score": "21-16 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "615",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2673",
+            "Mandy Govers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [],
+        "score": "13-21 12-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -676951,6 +678283,51 @@
         ],
         "score": "21-4 21-17",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "616",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2672",
+            "Maya Kroonen"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [],
+        "score": "21-15 21-12",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "616",
+        "time": "Sun 08/11/2026 13:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 8",
+        "home_team": "BADMINTONBOZ 7",
+        "home_players": [
+          [
+            "2669",
+            "Hans Schrauwen"
+          ],
+          [
+            "2673",
+            "Mandy Govers"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 8",
+        "away_players": [
+          [
+            "617",
+            "Rene van Doorn"
+          ]
+        ],
+        "score": "21-17 4-21 15-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -776505,33 +777882,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1729",
         "time": "Fri 09/10/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [
-          [
-            "1732",
-            "Thom van der Vlist"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2631",
-            "Jineeth Joseph"
-          ],
-          [
-            "2635",
-            "Cynthia van de Kasteele"
-          ]
-        ],
-        "score": "16-21 15-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1729",
-        "time": "Fri 09/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -776572,6 +777922,105 @@
         ],
         "score": "21-13 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1729",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1732",
+            "Thom van der Vlist"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ],
+          [
+            "2635",
+            "Cynthia van de Kasteele"
+          ]
+        ],
+        "score": "16-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1729",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ],
+          [
+            "2146",
+            "Sacha Luijkenaar"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1728",
+            "Jessica Meerkerk"
+          ]
+        ],
+        "score": "19-21 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1729",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ],
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ]
+        ],
+        "score": "12-21 22-20 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1729",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2147",
+            "Nienke Janssen"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [],
+        "score": "21-9 21-9",
+        "winner_side": "home"
       }
     ]
   },
@@ -776586,24 +778035,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1730",
-        "time": "Fri 18/09/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [],
-        "away_team": "STEENBERGEN BV 2",
-        "away_players": [
-          [
-            "1743",
-            "Debbie van der van der Heijden"
-          ]
-        ],
-        "score": "21-10 21-12",
-        "winner_side": "home"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1730",
@@ -776630,6 +778061,24 @@
         ],
         "score": "17-21 21-13 14-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1730",
+        "time": "Fri 18/09/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [],
+        "away_team": "STEENBERGEN BV 2",
+        "away_players": [
+          [
+            "1743",
+            "Debbie van der van der Heijden"
+          ]
+        ],
+        "score": "21-10 21-12",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -776662,33 +778111,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1730",
         "time": "Fri 09/10/2026 20:00",
-        "event": "VD",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [
-          [
-            "1729",
-            "Truus Boes-Wesbeek"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2635",
-            "Cynthia van de Kasteele"
-          ],
-          [
-            "2633",
-            "Megan Rog"
-          ]
-        ],
-        "score": "21-10 21-6",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1730",
-        "time": "Fri 09/10/2026 20:00",
         "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -776702,6 +778124,33 @@
         ],
         "score": "21-6 21-4",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1730",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2633",
+            "Megan Rog"
+          ]
+        ],
+        "score": "14-21 9-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -776864,6 +778313,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1732",
         "time": "Fri 09/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ],
+          [
+            "2635",
+            "Cynthia van de Kasteele"
+          ]
+        ],
+        "score": "16-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1732",
+        "time": "Fri 09/10/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -776903,33 +778379,6 @@
           ]
         ],
         "score": "15-21 14-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1732",
-        "time": "Fri 09/10/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [
-          [
-            "1729",
-            "Truus Boes-Wesbeek"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2631",
-            "Jineeth Joseph"
-          ],
-          [
-            "2635",
-            "Cynthia van de Kasteele"
-          ]
-        ],
-        "score": "16-21 15-21",
         "winner_side": "away"
       }
     ]
@@ -777066,6 +778515,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1733",
         "time": "Fri 09/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1730",
+            "Mirte van de Wetering"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2633",
+            "Megan Rog"
+          ]
+        ],
+        "score": "14-21 9-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1733",
+        "time": "Fri 09/10/2026 20:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -777110,29 +778586,74 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1733",
-        "time": "Fri 09/10/2026 20:00",
-        "event": "GD1",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
+        "home_team": "MAASSLUIS BC 5",
         "home_players": [
           [
-            "1730",
-            "Mirte van de Wetering"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2632",
-            "Rowdy Falhaber"
+            "2144",
+            "Thijs Berger"
           ],
           [
-            "2633",
-            "Megan Rog"
+            "2145",
+            "Dean Pietersz"
           ]
         ],
-        "score": "14-21 9-21",
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1731",
+            "Rafe van Drongelen"
+          ]
+        ],
+        "score": "19-21 16-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1733",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ],
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "score": "12-21 22-20 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1733",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2144",
+            "Thijs Berger"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [],
+        "score": "21-14 21-7",
+        "winner_side": "home"
       }
     ]
   },
@@ -777590,6 +779111,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1742",
         "time": "Tue 03/11/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "STEENBERGEN BV 2",
+        "home_players": [],
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [
+          [
+            "2147",
+            "Nienke Janssen"
+          ]
+        ],
+        "score": "21-9 21-11",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1742",
+        "time": "Tue 03/11/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "STEENBERGEN BV 2",
@@ -777612,24 +779151,6 @@
         ],
         "score": "18-21 22-20 9-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1742",
-        "time": "Tue 03/11/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "STEENBERGEN BV 2",
-        "home_players": [],
-        "away_team": "MAASSLUIS BC 5",
-        "away_players": [
-          [
-            "2147",
-            "Nienke Janssen"
-          ]
-        ],
-        "score": "21-9 21-11",
-        "winner_side": "home"
       }
     ]
   },
@@ -777765,6 +779286,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1743",
         "time": "Sat 10/10/2026 19:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BCRS 5",
+        "home_players": [
+          [
+            "5505",
+            "Rienke Vermeulen"
+          ]
+        ],
+        "away_team": "STEENBERGEN BV 2",
+        "away_players": [],
+        "score": "13-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1743",
+        "time": "Sat 10/10/2026 19:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BCRS 5",
@@ -777787,24 +779326,6 @@
         ],
         "score": "21-17 21-13",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1743",
-        "time": "Sat 10/10/2026 19:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "BCRS 5",
-        "home_players": [
-          [
-            "5505",
-            "Rienke Vermeulen"
-          ]
-        ],
-        "away_team": "STEENBERGEN BV 2",
-        "away_players": [],
-        "score": "13-21 15-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -778618,6 +780139,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2144",
         "time": "Sun 01/11/2026 13:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ],
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ]
+        ],
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ]
+        ],
+        "score": "18-21 21-19 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2144",
+        "time": "Sun 01/11/2026 13:00",
         "event": "ME1",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
@@ -778658,33 +780206,6 @@
         ],
         "score": "14-21 14-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2144",
-        "time": "Sun 01/11/2026 13:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "BADMINTONBOZ 8",
-        "home_players": [
-          [
-            "2631",
-            "Jineeth Joseph"
-          ],
-          [
-            "2632",
-            "Rowdy Falhaber"
-          ]
-        ],
-        "away_team": "MAASSLUIS BC 5",
-        "away_players": [
-          [
-            "2145",
-            "Dean Pietersz"
-          ]
-        ],
-        "score": "18-21 21-19 21-19",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -778757,6 +780278,51 @@
         ],
         "score": "18-21 22-20 9-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2144",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1731",
+            "Rafe van Drongelen"
+          ],
+          [
+            "1733",
+            "Barry Verhoeven"
+          ]
+        ],
+        "score": "19-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2144",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ]
+        ],
+        "score": "21-14 21-7",
+        "winner_side": "home"
       }
     ]
   },
@@ -778820,6 +780386,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2145",
         "time": "Fri 02/10/2026 19:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5471",
+            "Frank Rompis"
+          ]
+        ],
+        "score": "11-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2145",
+        "time": "Fri 02/10/2026 19:30",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "MAASSLUIS BC 5",
@@ -778846,20 +780430,29 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2145",
-        "time": "Fri 02/10/2026 19:30",
-        "event": "ME2",
+        "time": "Sun 01/11/2026 13:00",
+        "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "MAASSLUIS BC 5",
-        "home_players": [],
-        "away_team": "OMMOORD BC 4",
-        "away_players": [
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
           [
-            "5471",
-            "Frank Rompis"
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2634",
+            "Nicolle Rog"
           ]
         ],
-        "score": "11-21 19-21",
-        "winner_side": "away"
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ]
+        ],
+        "score": "21-9 21-5",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -778909,29 +780502,56 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2145",
-        "time": "Sun 01/11/2026 13:00",
-        "event": "GD2",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "BADMINTONBOZ 8",
+        "home_team": "MAASSLUIS BC 5",
         "home_players": [
           [
-            "2632",
-            "Rowdy Falhaber"
-          ],
-          [
-            "2634",
-            "Nicolle Rog"
+            "2144",
+            "Thijs Berger"
           ]
         ],
-        "away_team": "MAASSLUIS BC 5",
+        "away_team": "NETWORK 4",
         "away_players": [
+          [
+            "1731",
+            "Rafe van Drongelen"
+          ],
+          [
+            "1733",
+            "Barry Verhoeven"
+          ]
+        ],
+        "score": "19-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2145",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
           [
             "2148",
             "Sanne Graaf, de"
           ]
         ],
-        "score": "21-9 21-5",
-        "winner_side": "home"
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ],
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "score": "12-21 22-20 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -779188,6 +780808,51 @@
         "away_players": [],
         "score": "21-12 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2146",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1728",
+            "Jessica Meerkerk"
+          ]
+        ],
+        "score": "21-16 21-8",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2146",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ],
+          [
+            "1728",
+            "Jessica Meerkerk"
+          ]
+        ],
+        "score": "19-21 18-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -779435,6 +781100,51 @@
         ],
         "score": "23-21 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2147",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "score": "21-9 21-9",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2147",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2143",
+            "Wout van der Kraan"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1731",
+            "Rafe van Drongelen"
+          ],
+          [
+            "1728",
+            "Jessica Meerkerk"
+          ]
+        ],
+        "score": "20-22 8-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -779507,24 +781217,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2148",
         "time": "Sun 01/11/2026 13:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "BADMINTONBOZ 8",
-        "home_players": [
-          [
-            "2633",
-            "Megan Rog"
-          ]
-        ],
-        "away_team": "MAASSLUIS BC 5",
-        "away_players": [],
-        "score": "12-21 14-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2148",
-        "time": "Sun 01/11/2026 13:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
@@ -779547,6 +781239,78 @@
         ],
         "score": "21-9 21-5",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2148",
+        "time": "Sun 01/11/2026 13:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2633",
+            "Megan Rog"
+          ]
+        ],
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [],
+        "score": "12-21 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2148",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2146",
+            "Sacha Luijkenaar"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ],
+          [
+            "1728",
+            "Jessica Meerkerk"
+          ]
+        ],
+        "score": "19-21 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2148",
+        "time": "Fri 06/11/2026 19:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ]
+        ],
+        "away_team": "NETWORK 4",
+        "away_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ],
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "score": "12-21 22-20 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -779897,6 +781661,78 @@
         ],
         "score": "18-21 21-19 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2631",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2635",
+            "Cynthia van de Kasteele"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5468",
+            "Martin Cordewener"
+          ],
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ]
+        ],
+        "score": "18-21 19-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2631",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5469",
+            "Richard Hofstra"
+          ],
+          [
+            "5471",
+            "Frank Rompis"
+          ]
+        ],
+        "score": "21-9 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2631",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5468",
+            "Martin Cordewener"
+          ]
+        ],
+        "score": "21-15 21-16",
+        "winner_side": "home"
       }
     ]
   },
@@ -780014,6 +781850,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2632",
         "time": "Sun 01/11/2026 13:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [],
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [
+          [
+            "2145",
+            "Dean Pietersz"
+          ]
+        ],
+        "score": "21-16 21-13",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2632",
+        "time": "Sun 01/11/2026 13:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
@@ -780067,19 +781921,73 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2632",
-        "time": "Sun 01/11/2026 13:00",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5469",
+            "Richard Hofstra"
+          ],
+          [
+            "5471",
+            "Frank Rompis"
+          ]
+        ],
+        "score": "21-9 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2632",
+        "time": "Sun 08/11/2026 10:00",
         "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
         "home_players": [],
-        "away_team": "MAASSLUIS BC 5",
+        "away_team": "OMMOORD BC 4",
         "away_players": [
           [
-            "2145",
-            "Dean Pietersz"
+            "5469",
+            "Richard Hofstra"
           ]
         ],
-        "score": "21-16 21-13",
+        "score": "21-10 21-14",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2632",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2634",
+            "Nicolle Rog"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5470",
+            "Frank Hamerslag"
+          ],
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "21-6 22-20",
         "winner_side": "home"
       }
     ]
@@ -780144,33 +782052,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2633",
         "time": "Fri 09/10/2026 20:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [
-          [
-            "1733",
-            "Barry Verhoeven"
-          ],
-          [
-            "1730",
-            "Mirte van de Wetering"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2632",
-            "Rowdy Falhaber"
-          ]
-        ],
-        "score": "14-21 9-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2633",
-        "time": "Fri 09/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -780215,6 +782096,33 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2633",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1733",
+            "Barry Verhoeven"
+          ],
+          [
+            "1730",
+            "Mirte van de Wetering"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ]
+        ],
+        "score": "14-21 9-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2633",
         "time": "Sun 01/11/2026 13:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
@@ -780255,6 +782163,51 @@
           ]
         ],
         "score": "12-21 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2633",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2635",
+            "Cynthia van de Kasteele"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ],
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "17-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2633",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ]
+        ],
+        "score": "9-21 2-21",
         "winner_side": "away"
       }
     ]
@@ -780319,6 +782272,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2634",
         "time": "Sun 01/11/2026 13:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [],
+        "away_team": "MAASSLUIS BC 5",
+        "away_players": [
+          [
+            "2147",
+            "Nienke Janssen"
+          ]
+        ],
+        "score": "14-21 17-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2634",
+        "time": "Sun 01/11/2026 13:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
@@ -780345,20 +782316,47 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2634",
-        "time": "Sun 01/11/2026 13:00",
+        "time": "Sun 08/11/2026 10:00",
         "event": "VE2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BADMINTONBOZ 8",
         "home_players": [],
-        "away_team": "MAASSLUIS BC 5",
+        "away_team": "OMMOORD BC 4",
         "away_players": [
           [
-            "2147",
-            "Nienke Janssen"
+            "5474",
+            "Annet Kleinendorst"
           ]
         ],
-        "score": "14-21 17-21",
+        "score": "14-21 21-16 20-22",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2634",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5470",
+            "Frank Hamerslag"
+          ],
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "21-6 22-20",
+        "winner_side": "home"
       }
     ]
   },
@@ -780431,33 +782429,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2635",
         "time": "Fri 09/10/2026 20:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "NETWORK 4",
-        "home_players": [
-          [
-            "1732",
-            "Thom van der Vlist"
-          ],
-          [
-            "1729",
-            "Truus Boes-Wesbeek"
-          ]
-        ],
-        "away_team": "BADMINTONBOZ 8",
-        "away_players": [
-          [
-            "2631",
-            "Jineeth Joseph"
-          ]
-        ],
-        "score": "16-21 15-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2635",
-        "time": "Fri 09/10/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "NETWORK 4",
@@ -780498,6 +782469,33 @@
         "away_players": [],
         "score": "21-13 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2635",
+        "time": "Fri 09/10/2026 20:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "NETWORK 4",
+        "home_players": [
+          [
+            "1732",
+            "Thom van der Vlist"
+          ],
+          [
+            "1729",
+            "Truus Boes-Wesbeek"
+          ]
+        ],
+        "away_team": "BADMINTONBOZ 8",
+        "away_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ]
+        ],
+        "score": "16-21 15-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -780551,6 +782549,60 @@
           ]
         ],
         "score": "14-21 14-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2635",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2633",
+            "Megan Rog"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ],
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "17-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2635",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2631",
+            "Jineeth Joseph"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5468",
+            "Martin Cordewener"
+          ],
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ]
+        ],
+        "score": "18-21 19-21",
         "winner_side": "away"
       }
     ]
@@ -780650,7 +782702,53 @@
         "club": "OMMOORD BC"
       }
     },
-    "matches": []
+    "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5469",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2631",
+            "Jineeth Joseph"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5471",
+            "Frank Rompis"
+          ]
+        ],
+        "score": "21-9 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5469",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [],
+        "score": "21-10 21-14",
+        "winner_side": "home"
+      }
+    ]
   },
   "687EB6AA-EA70-43C5-86CB-C89153B4FD9B": {
     "name": "Frank Hamerslag",
@@ -780662,7 +782760,35 @@
         "club": "OMMOORD BC"
       }
     },
-    "matches": []
+    "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5470",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2634",
+            "Nicolle Rog"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "21-6 22-20",
+        "winner_side": "home"
+      }
+    ]
   },
   "4E65C91D-5127-422C-8B04-1F590D0D0A2B": {
     "name": "Frank Rompis",
@@ -780818,6 +782944,33 @@
         ],
         "score": "22-24 18-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5471",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2631",
+            "Jineeth Joseph"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5469",
+            "Richard Hofstra"
+          ]
+        ],
+        "score": "21-9 21-10",
+        "winner_side": "home"
       }
     ]
   },
@@ -780863,33 +783016,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "5473",
         "time": "Sat 26/09/2026 19:00",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "OMMOORD BC 4",
-        "home_players": [
-          [
-            "5471",
-            "Frank Rompis"
-          ]
-        ],
-        "away_team": "BCRS 5",
-        "away_players": [
-          [
-            "5500",
-            "Marcel Bakker"
-          ],
-          [
-            "5502",
-            "Rianne Klein"
-          ]
-        ],
-        "score": "15-21 14-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "5473",
-        "time": "Sat 26/09/2026 19:00",
         "event": "VE1",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "OMMOORD BC 4",
@@ -780901,8 +783027,35 @@
             "Romy Bakker"
           ]
         ],
-        "score": "21-0 21-0 Niet gespeeld, geen speler van Team 2Kalender exporteren\n\t\t\n\t\t\tvr 2-10-2026 19:30",
+        "score": "21-0 21-0 Niet gespeeld, geen speler van Team 2Kalender exporteren\n\t\t\n\t\t\tza 26-9-2026 19:00",
         "winner_side": ""
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5473",
+        "time": "Fri 02/10/2026 19:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "MAASSLUIS BC 5",
+        "home_players": [
+          [
+            "2147",
+            "Nienke Janssen"
+          ],
+          [
+            "2148",
+            "Sanne Graaf, de"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5474",
+            "Annet Kleinendorst"
+          ]
+        ],
+        "score": "21-17 15-21 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -780987,6 +783140,78 @@
           ]
         ],
         "score": "21-17 15-21 18-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5474",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2632",
+            "Rowdy Falhaber"
+          ],
+          [
+            "2634",
+            "Nicolle Rog"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5470",
+            "Frank Hamerslag"
+          ]
+        ],
+        "score": "21-6 22-20",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5474",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2633",
+            "Megan Rog"
+          ],
+          [
+            "2635",
+            "Cynthia van de Kasteele"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [
+          [
+            "5472",
+            "Stephanie van Gogh"
+          ]
+        ],
+        "score": "17-21 15-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5474",
+        "time": "Sun 08/11/2026 10:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BADMINTONBOZ 8",
+        "home_players": [
+          [
+            "2634",
+            "Nicolle Rog"
+          ]
+        ],
+        "away_team": "OMMOORD BC 4",
+        "away_players": [],
+        "score": "14-21 21-16 20-22",
         "winner_side": "away"
       }
     ]
@@ -781199,7 +783424,7 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "5499",
         "time": "Sat 26/09/2026 19:00",
-        "event": "GD1",
+        "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "OMMOORD BC 4",
         "home_players": [
@@ -781208,19 +783433,19 @@
             "Martin Cordewener"
           ],
           [
-            "6658",
-            "Laura Hoozemans"
+            "5471",
+            "Frank Rompis"
           ]
         ],
         "away_team": "BCRS 5",
         "away_players": [
           [
-            "6357",
-            "Romy Bakker"
+            "5501",
+            "René Smulders"
           ]
         ],
-        "score": "21-0 21-0 Niet gespeeld, geen speler van Team 2Kalender exporteren\n\t\t\n\t\t\tza 26-9-2026 19:00",
-        "winner_side": ""
+        "score": "7-21 21-5 21-15",
+        "winner_side": "home"
       }
     ]
   },
@@ -781719,24 +783944,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "5503",
         "time": "Sat 10/10/2026 19:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
-        "home_team": "BCRS 5",
-        "home_players": [],
-        "away_team": "STEENBERGEN BV 2",
-        "away_players": [
-          [
-            "1742",
-            "Alice Willamme"
-          ]
-        ],
-        "score": "18-21 17-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "5503",
-        "time": "Sat 10/10/2026 19:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
         "home_team": "BCRS 5",
@@ -781759,6 +783966,24 @@
         ],
         "score": "21-17 21-13",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "5503",
+        "time": "Sat 10/10/2026 19:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 7",
+        "home_team": "BCRS 5",
+        "home_players": [],
+        "away_team": "STEENBERGEN BV 2",
+        "away_players": [
+          [
+            "1742",
+            "Alice Willamme"
+          ]
+        ],
+        "score": "18-21 17-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -782604,6 +784829,78 @@
         ],
         "score": "15-21 15-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1221",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ],
+          [
+            "2835",
+            "Chris Onsoe"
+          ]
+        ],
+        "score": "22-24 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1221",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ]
+        ],
+        "score": "16-21 7-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1221",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1224",
+            "Christine Kooistra"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ],
+          [
+            "2971",
+            "Ines Haulussy"
+          ]
+        ],
+        "score": "18-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -782833,6 +785130,78 @@
         ],
         "score": "21-17 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1222",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ],
+          [
+            "2835",
+            "Chris Onsoe"
+          ]
+        ],
+        "score": "22-24 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1222",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2835",
+            "Chris Onsoe"
+          ]
+        ],
+        "score": "9-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1222",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1223",
+            "Arina Molenaar"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2835",
+            "Chris Onsoe"
+          ],
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-19 24-26 21-19",
+        "winner_side": "home"
       }
     ]
   },
@@ -782847,6 +785216,24 @@
       }
     },
     "matches": [
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1223",
+        "time": "Sun 13/09/2026 12:15",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "INVICTUS BC 4",
+        "home_players": [
+          [
+            "3565",
+            "Arletta Kranendonk"
+          ]
+        ],
+        "away_team": "GOUWESLAG 5",
+        "away_players": [],
+        "score": "21-7 21-8",
+        "winner_side": "home"
+      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1223",
@@ -782873,24 +785260,6 @@
         ],
         "score": "21-16 15-21 13-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1223",
-        "time": "Sun 13/09/2026 12:15",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "INVICTUS BC 4",
-        "home_players": [
-          [
-            "3565",
-            "Arletta Kranendonk"
-          ]
-        ],
-        "away_team": "GOUWESLAG 5",
-        "away_players": [],
-        "score": "21-7 21-8",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -782980,6 +785349,78 @@
         "away_team": "GOUWESLAG 5",
         "away_players": [],
         "score": "21-19 22-20",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1223",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1224",
+            "Christine Kooistra"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2837",
+            "Tatum Pikaar"
+          ],
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-11 21-6",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1223",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2971",
+            "Ines Haulussy"
+          ]
+        ],
+        "score": "21-12 19-21 21-7",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1223",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2835",
+            "Chris Onsoe"
+          ],
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-19 24-26 21-19",
         "winner_side": "home"
       }
     ]
@@ -783165,6 +785606,78 @@
         ],
         "score": "21-17 21-16",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1224",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1223",
+            "Arina Molenaar"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2837",
+            "Tatum Pikaar"
+          ],
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-11 21-6",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1224",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2837",
+            "Tatum Pikaar"
+          ]
+        ],
+        "score": "11-21 11-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1224",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ],
+          [
+            "2971",
+            "Ines Haulussy"
+          ]
+        ],
+        "score": "18-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -783394,24 +785907,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1289",
         "time": "Fri 18/09/2026 19:45",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "QUINTUS BADMINTON 5",
-        "home_players": [
-          [
-            "2630",
-            "Sven Eijgermans"
-          ]
-        ],
-        "away_team": "ORBITON BC 5",
-        "away_players": [],
-        "score": "20-22 23-21 21-23",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1289",
-        "time": "Fri 18/09/2026 19:45",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "QUINTUS BADMINTON 5",
@@ -783434,6 +785929,24 @@
         ],
         "score": "21-14 13-21 22-20",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1289",
+        "time": "Fri 18/09/2026 19:45",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "QUINTUS BADMINTON 5",
+        "home_players": [
+          [
+            "2630",
+            "Sven Eijgermans"
+          ]
+        ],
+        "away_team": "ORBITON BC 5",
+        "away_players": [],
+        "score": "20-22 23-21 21-23",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -783717,6 +786230,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1291",
         "time": "Fri 18/09/2026 19:45",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "QUINTUS BADMINTON 5",
+        "home_players": [
+          [
+            "2628",
+            "Moise Mayopi"
+          ],
+          [
+            "2626",
+            "Yelina Barendse"
+          ]
+        ],
+        "away_team": "ORBITON BC 5",
+        "away_players": [
+          [
+            "1292",
+            "Angeline Lentz"
+          ]
+        ],
+        "score": "21-7 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1291",
+        "time": "Fri 18/09/2026 19:45",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "QUINTUS BADMINTON 5",
@@ -783756,33 +786296,6 @@
         "away_team": "ORBITON BC 5",
         "away_players": [],
         "score": "21-9 21-9",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1291",
-        "time": "Fri 18/09/2026 19:45",
-        "event": "GD2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "QUINTUS BADMINTON 5",
-        "home_players": [
-          [
-            "2628",
-            "Moise Mayopi"
-          ],
-          [
-            "2626",
-            "Yelina Barendse"
-          ]
-        ],
-        "away_team": "ORBITON BC 5",
-        "away_players": [
-          [
-            "1292",
-            "Angeline Lentz"
-          ]
-        ],
-        "score": "21-7 21-10",
         "winner_side": "home"
       },
       {
@@ -783843,33 +786356,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1291",
         "time": "Fri 30/10/2026 20:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "ORBITON BC 5",
-        "home_players": [
-          [
-            "1289",
-            "Fedor Maltha"
-          ]
-        ],
-        "away_team": "GOUWESLAG 5",
-        "away_players": [
-          [
-            "7011",
-            "Charl Gordijn"
-          ],
-          [
-            "1222",
-            "Yang Fang"
-          ]
-        ],
-        "score": "10-21 11-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1291",
-        "time": "Fri 30/10/2026 20:00",
         "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "ORBITON BC 5",
@@ -783909,6 +786395,33 @@
           ]
         ],
         "score": "18-21 16-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1291",
+        "time": "Fri 30/10/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "ORBITON BC 5",
+        "home_players": [
+          [
+            "1289",
+            "Fedor Maltha"
+          ]
+        ],
+        "away_team": "GOUWESLAG 5",
+        "away_players": [
+          [
+            "7011",
+            "Charl Gordijn"
+          ],
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "score": "10-21 11-21",
         "winner_side": "away"
       },
       {
@@ -784108,6 +786621,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1292",
         "time": "Thu 05/11/2026 20:00",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "ORBITON BC 5",
+        "home_players": [],
+        "away_team": "INVICTUS BC 4",
+        "away_players": [
+          [
+            "3563",
+            "Ellen Kranendonk"
+          ]
+        ],
+        "score": "21-9 21-12",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1292",
+        "time": "Thu 05/11/2026 20:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "ORBITON BC 5",
@@ -784130,24 +786661,6 @@
         ],
         "score": "14-21 19-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1292",
-        "time": "Thu 05/11/2026 20:00",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "ORBITON BC 5",
-        "home_players": [],
-        "away_team": "INVICTUS BC 4",
-        "away_players": [
-          [
-            "3563",
-            "Ellen Kranendonk"
-          ]
-        ],
-        "score": "21-9 21-12",
-        "winner_side": "home"
       }
     ]
   },
@@ -784238,6 +786751,33 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1293",
         "time": "Sun 11/10/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "RIBAD BV 8",
+        "home_players": [
+          [
+            "2835",
+            "Chris Onsoe"
+          ],
+          [
+            "2837",
+            "Tatum Pikaar"
+          ]
+        ],
+        "away_team": "ORBITON BC 5",
+        "away_players": [
+          [
+            "1289",
+            "Fedor Maltha"
+          ]
+        ],
+        "score": "21-15 18-21 21-15",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1293",
+        "time": "Sun 11/10/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "RIBAD BV 8",
@@ -784278,33 +786818,6 @@
         "away_players": [],
         "score": "21-18 17-21 19-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1293",
-        "time": "Sun 11/10/2026 10:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "RIBAD BV 8",
-        "home_players": [
-          [
-            "2835",
-            "Chris Onsoe"
-          ],
-          [
-            "2837",
-            "Tatum Pikaar"
-          ]
-        ],
-        "away_team": "ORBITON BC 5",
-        "away_players": [
-          [
-            "1289",
-            "Fedor Maltha"
-          ]
-        ],
-        "score": "21-15 18-21 21-15",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -784485,24 +786998,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1294",
         "time": "Fri 30/10/2026 20:00",
-        "event": "VE1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "ORBITON BC 5",
-        "home_players": [],
-        "away_team": "GOUWESLAG 5",
-        "away_players": [
-          [
-            "1223",
-            "Arina Molenaar"
-          ]
-        ],
-        "score": "21-19 22-20",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1294",
-        "time": "Fri 30/10/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "ORBITON BC 5",
@@ -784525,6 +787020,24 @@
         ],
         "score": "18-21 16-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1294",
+        "time": "Fri 30/10/2026 20:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "ORBITON BC 5",
+        "home_players": [],
+        "away_team": "GOUWESLAG 5",
+        "away_players": [
+          [
+            "1223",
+            "Arina Molenaar"
+          ]
+        ],
+        "score": "21-19 22-20",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -784669,24 +787182,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2623",
         "time": "Sun 27/09/2026 12:15",
-        "event": "VE2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "INVICTUS BC 4",
-        "home_players": [
-          [
-            "3563",
-            "Ellen Kranendonk"
-          ]
-        ],
-        "away_team": "QUINTUS BADMINTON 5",
-        "away_players": [],
-        "score": "9-21 9-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2623",
-        "time": "Sun 27/09/2026 12:15",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "INVICTUS BC 4",
@@ -784709,6 +787204,24 @@
         ],
         "score": "23-21 21-14",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2623",
+        "time": "Sun 27/09/2026 12:15",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "INVICTUS BC 4",
+        "home_players": [
+          [
+            "3563",
+            "Ellen Kranendonk"
+          ]
+        ],
+        "away_team": "QUINTUS BADMINTON 5",
+        "away_players": [],
+        "score": "9-21 9-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -785418,6 +787931,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2628",
         "time": "Sun 27/09/2026 12:15",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "INVICTUS BC 4",
+        "home_players": [
+          [
+            "3561",
+            "Leo Kool"
+          ]
+        ],
+        "away_team": "QUINTUS BADMINTON 5",
+        "away_players": [],
+        "score": "21-6 9-21 13-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2628",
+        "time": "Sun 27/09/2026 12:15",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "INVICTUS BC 4",
@@ -785440,24 +787971,6 @@
         ],
         "score": "21-12 21-13",
         "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2628",
-        "time": "Sun 27/09/2026 12:15",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "INVICTUS BC 4",
-        "home_players": [
-          [
-            "3561",
-            "Leo Kool"
-          ]
-        ],
-        "away_team": "QUINTUS BADMINTON 5",
-        "away_players": [],
-        "score": "21-6 9-21 13-21",
-        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -785548,6 +788061,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2629",
         "time": "Fri 18/09/2026 19:45",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "QUINTUS BADMINTON 5",
+        "home_players": [],
+        "away_team": "ORBITON BC 5",
+        "away_players": [
+          [
+            "1291",
+            "Rob van Hooijdonk"
+          ]
+        ],
+        "score": "21-9 21-9",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2629",
+        "time": "Fri 18/09/2026 19:45",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "QUINTUS BADMINTON 5",
@@ -785569,24 +788100,6 @@
           ]
         ],
         "score": "21-14 21-11",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2629",
-        "time": "Fri 18/09/2026 19:45",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "QUINTUS BADMINTON 5",
-        "home_players": [],
-        "away_team": "ORBITON BC 5",
-        "away_players": [
-          [
-            "1291",
-            "Rob van Hooijdonk"
-          ]
-        ],
-        "score": "21-9 21-9",
         "winner_side": "home"
       },
       {
@@ -785723,24 +788236,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2630",
         "time": "Fri 18/09/2026 19:45",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "QUINTUS BADMINTON 5",
-        "home_players": [],
-        "away_team": "ORBITON BC 5",
-        "away_players": [
-          [
-            "1289",
-            "Fedor Maltha"
-          ]
-        ],
-        "score": "20-22 23-21 21-23",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2630",
-        "time": "Fri 18/09/2026 19:45",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
         "home_team": "QUINTUS BADMINTON 5",
@@ -785763,6 +788258,24 @@
         ],
         "score": "21-14 13-21 22-20",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2630",
+        "time": "Fri 18/09/2026 19:45",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "QUINTUS BADMINTON 5",
+        "home_players": [],
+        "away_team": "ORBITON BC 5",
+        "away_players": [
+          [
+            "1289",
+            "Fedor Maltha"
+          ]
+        ],
+        "score": "20-22 23-21 21-23",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -786028,6 +788541,78 @@
         ],
         "score": "21-11 21-13",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2834",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ],
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2835",
+            "Chris Onsoe"
+          ]
+        ],
+        "score": "22-24 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2834",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [],
+        "score": "16-21 7-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2834",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ],
+          [
+            "1224",
+            "Christine Kooistra"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2971",
+            "Ines Haulussy"
+          ]
+        ],
+        "score": "18-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -786042,24 +788627,6 @@
       }
     },
     "matches": [
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "2835",
-        "time": "Sun 13/09/2026 10:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
-        "home_team": "RIBAD BV 8",
-        "home_players": [],
-        "away_team": "QUINTUS BADMINTON 5",
-        "away_players": [
-          [
-            "2629",
-            "Johan van Leeuwen"
-          ]
-        ],
-        "score": "15-21 21-17 17-21",
-        "winner_side": "away"
-      },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "2835",
@@ -786086,6 +788653,24 @@
         ],
         "score": "21-16 19-21 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2835",
+        "time": "Sun 13/09/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "RIBAD BV 8",
+        "home_players": [],
+        "away_team": "QUINTUS BADMINTON 5",
+        "away_players": [
+          [
+            "2629",
+            "Johan van Leeuwen"
+          ]
+        ],
+        "score": "15-21 21-17 17-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -786221,6 +788806,78 @@
         ],
         "score": "21-15 18-21 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2835",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1222",
+            "Yang Fang"
+          ],
+          [
+            "1223",
+            "Arina Molenaar"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-19 24-26 21-19",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2835",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1221",
+            "Pascal Giezen"
+          ],
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2834",
+            "Julian de Jonge"
+          ]
+        ],
+        "score": "22-24 10-21",
+        "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2835",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1222",
+            "Yang Fang"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [],
+        "score": "9-21 16-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -786643,6 +789300,51 @@
         ],
         "score": "21-15 18-21 21-15",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2837",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VD",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1224",
+            "Christine Kooistra"
+          ],
+          [
+            "1223",
+            "Arina Molenaar"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [
+          [
+            "2838",
+            "Inge Teunissen"
+          ]
+        ],
+        "score": "21-11 21-6",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "2837",
+        "time": "Sun 08/11/2026 12:30",
+        "event": "VE2",
+        "draw": "Bondscompetitie 2026-2027 – 9e divisie Nylon – 9e divisie Nylon afd. 8",
+        "home_team": "GOUWESLAG 5",
+        "home_players": [
+          [
+            "1224",
+            "Christine Kooistra"
+          ]
+        ],
+        "away_team": "RIBAD BV 8",
+        "away_players": [],
+        "score": "11-21 11-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -1110561,6 +1113263,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1359",
         "time": "Sat 26/09/2026 13:30",
+        "event": "ME3",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 12",
+        "home_team": "DEO BV M2",
+        "home_players": [
+          [
+            "4564",
+            "Teun Ardts"
+          ]
+        ],
+        "away_team": "RANDSTAD BC M1",
+        "away_players": [],
+        "score": "18-21 21-15 21-17",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1359",
+        "time": "Sat 26/09/2026 13:30",
         "event": "MD2",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 12",
         "home_team": "DEO BV M2",
@@ -1110610,24 +1113330,6 @@
         ],
         "score": "15-21 13-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1359",
-        "time": "Sat 26/09/2026 13:30",
-        "event": "ME3",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 12",
-        "home_team": "DEO BV M2",
-        "home_players": [
-          [
-            "4564",
-            "Teun Ardts"
-          ]
-        ],
-        "away_team": "RANDSTAD BC M1",
-        "away_players": [],
-        "score": "18-21 21-15 21-17",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1110853,6 +1113555,78 @@
         ],
         "score": "11-21 10-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1359",
+        "time": "Sun 08/11/2026 12:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 12",
+        "home_team": "RANDSTAD BC 6",
+        "home_players": [
+          [
+            "1360",
+            "Karsten Smeelen"
+          ]
+        ],
+        "away_team": "VEGLO BC 5",
+        "away_players": [
+          [
+            "5228",
+            "Ilyas van Eekhout"
+          ],
+          [
+            "5227",
+            "Boris Gosen"
+          ]
+        ],
+        "score": "21-14 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1359",
+        "time": "Sun 08/11/2026 12:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 12",
+        "home_team": "RANDSTAD BC 6",
+        "home_players": [],
+        "away_team": "VEGLO BC 5",
+        "away_players": [
+          [
+            "5227",
+            "Boris Gosen"
+          ]
+        ],
+        "score": "21-17 21-16",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1359",
+        "time": "Sun 08/11/2026 12:00",
+        "event": "GD2",
+        "draw": "Bondscompetitie 2026-2027 – 8e divisie Nylon – 8e divisie Nylon afd. 12",
+        "home_team": "RANDSTAD BC 6",
+        "home_players": [
+          [
+            "7187",
+            "Valerie Phoebe"
+          ]
+        ],
+        "away_team": "VEGLO BC 5",
+        "away_players": [
+          [
+            "5228",
+            "Ilyas van Eekhout"
+          ],
+          [
+            "5229",
+            "Shanna de Bruin"
+          ]
+        ],
+        "score": "21-13 21-9",
+        "winner_side": "home"
       }
     ]
   },
@@ -1821799,33 +1824573,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "614",
         "time": "Sun 13/09/2026 10:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
-        "home_team": "THIELA BC 3",
-        "home_players": [
-          [
-            "5516",
-            "Matthijs Heeremans"
-          ],
-          [
-            "5522",
-            "Annick van Laar"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 7",
-        "away_players": [
-          [
-            "606",
-            "Jasper Verheule"
-          ]
-        ],
-        "score": "21-15 21-8",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "614",
-        "time": "Sun 13/09/2026 10:00",
         "event": "VD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
         "home_team": "THIELA BC 3",
@@ -1821866,6 +1824613,33 @@
         "away_players": [],
         "score": "21-19 15-21 4-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "614",
+        "time": "Sun 13/09/2026 10:00",
+        "event": "GD1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
+        "home_team": "THIELA BC 3",
+        "home_players": [
+          [
+            "5516",
+            "Matthijs Heeremans"
+          ],
+          [
+            "5522",
+            "Annick van Laar"
+          ]
+        ],
+        "away_team": "VEGHEL 67 BC 7",
+        "away_players": [
+          [
+            "606",
+            "Jasper Verheule"
+          ]
+        ],
+        "score": "21-15 21-8",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -1821988,6 +1824762,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "614",
         "time": "Sun 11/10/2026 13:00",
+        "event": "VE1",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
+        "home_team": "VEGHEL 67 BC 7",
+        "home_players": [],
+        "away_team": "BVC 74 1",
+        "away_players": [
+          [
+            "3778",
+            "Judith Broekmans"
+          ]
+        ],
+        "score": "21-16 21-10",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "614",
+        "time": "Sun 11/10/2026 13:00",
         "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
         "home_team": "VEGHEL 67 BC 7",
@@ -1822014,19 +1824806,28 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "614",
-        "time": "Sun 11/10/2026 13:00",
-        "event": "VE1",
+        "time": "Sun 18/10/2026 13:00",
+        "event": "GD1",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
-        "home_team": "VEGHEL 67 BC 7",
-        "home_players": [],
-        "away_team": "BVC 74 1",
-        "away_players": [
+        "home_team": "MARIKEN BC 5",
+        "home_players": [
           [
-            "3778",
-            "Judith Broekmans"
+            "4144",
+            "Maarten Solleveld"
+          ],
+          [
+            "4148",
+            "Swati Kumari"
           ]
         ],
-        "score": "21-16 21-10",
+        "away_team": "VEGHEL 67 BC 7",
+        "away_players": [
+          [
+            "608",
+            "Joost Gevers"
+          ]
+        ],
+        "score": "18-21 21-15 21-19",
         "winner_side": "home"
       },
       {
@@ -1822072,33 +1824873,6 @@
         "away_team": "VEGHEL 67 BC 7",
         "away_players": [],
         "score": "22-20 21-14",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "614",
-        "time": "Sun 18/10/2026 13:00",
-        "event": "GD1",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 4",
-        "home_team": "MARIKEN BC 5",
-        "home_players": [
-          [
-            "4144",
-            "Maarten Solleveld"
-          ],
-          [
-            "4148",
-            "Swati Kumari"
-          ]
-        ],
-        "away_team": "VEGHEL 67 BC 7",
-        "away_players": [
-          [
-            "608",
-            "Joost Gevers"
-          ]
-        ],
-        "score": "18-21 21-15 21-19",
         "winner_side": "home"
       },
       {
