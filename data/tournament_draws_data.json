@@ -117434,6 +117434,176 @@
           "played_at": null
         }
       ]
+    },
+    "88": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "63",
+              "name": "Atharva Mungale"
+            },
+            {
+              "player_id": "45",
+              "name": "Luke Willigenburg"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Long Xiang (Jimmy) Qian"
+            },
+            {
+              "player_id": "42",
+              "name": "Shuai Wang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Devin Chen"
+            },
+            {
+              "player_id": "139",
+              "name": "Ronald Statius"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Atharva Mungale",
+                  "seed": 1
+                },
+                {
+                  "player_id": "45",
+                  "name": "Luke Willigenburg"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Long Xiang (Jimmy) Qian"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Shuai Wang"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Atharva Mungale",
+                  "seed": 1
+                },
+                {
+                  "player_id": "45",
+                  "name": "Luke Willigenburg"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Devin Chen"
+                },
+                {
+                  "player_id": "139",
+                  "name": "Ronald Statius"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Long Xiang (Jimmy) Qian"
+                },
+                {
+                  "player_id": "42",
+                  "name": "Shuai Wang"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Devin Chen"
+                },
+                {
+                  "player_id": "139",
+                  "name": "Ronald Statius"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
