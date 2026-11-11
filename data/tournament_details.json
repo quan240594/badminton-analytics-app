@@ -38019,8 +38019,12 @@
         "event_id": "27",
         "name": "Rol VE B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "4"
+          ]
+        ]
       },
       {
         "event_id": "32",
@@ -38125,8 +38129,15 @@
         "event_id": "30",
         "name": "Rol GD B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "4"
+          ],
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "55",
@@ -38159,6 +38170,11 @@
     ],
     "draws": [],
     "entries": [
+      {
+        "country": "NED",
+        "player_id": "4",
+        "name": "BURGERING, Mariette"
+      },
       {
         "country": "NED",
         "player_id": "2",
