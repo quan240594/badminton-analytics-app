@@ -116641,6 +116641,176 @@
           "played_at": null
         }
       ]
+    },
+    "83": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Rick Euser"
+            },
+            {
+              "player_id": "23",
+              "name": "Devin van Loopik"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "80",
+              "name": "Yian Woe"
+            },
+            {
+              "player_id": "214",
+              "name": "Nick Yang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "128",
+              "name": "Anwar Permana"
+            },
+            {
+              "player_id": "224",
+              "name": "Iqbal Sobari"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Rick Euser",
+                  "seed": 5
+                },
+                {
+                  "player_id": "23",
+                  "name": "Devin van Loopik"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Yian Woe"
+                },
+                {
+                  "player_id": "214",
+                  "name": "Nick Yang"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Rick Euser",
+                  "seed": 5
+                },
+                {
+                  "player_id": "23",
+                  "name": "Devin van Loopik"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Anwar Permana"
+                },
+                {
+                  "player_id": "224",
+                  "name": "Iqbal Sobari"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Yian Woe"
+                },
+                {
+                  "player_id": "214",
+                  "name": "Nick Yang"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Anwar Permana"
+                },
+                {
+                  "player_id": "224",
+                  "name": "Iqbal Sobari"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
