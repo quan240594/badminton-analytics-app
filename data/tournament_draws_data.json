@@ -116811,6 +116811,176 @@
           "played_at": null
         }
       ]
+    },
+    "84": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "108",
+              "name": "Joery Gravekamp"
+            },
+            {
+              "player_id": "124",
+              "name": "Luke Muller"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "113",
+              "name": "Anwar Ibrahim"
+            },
+            {
+              "player_id": "155",
+              "name": "Arya Zolghadriha"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Gergely Laczko"
+            },
+            {
+              "player_id": "26",
+              "name": "Brent Oskam"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Joery Gravekamp",
+                  "seed": 6
+                },
+                {
+                  "player_id": "124",
+                  "name": "Luke Muller"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Anwar Ibrahim"
+                },
+                {
+                  "player_id": "155",
+                  "name": "Arya Zolghadriha"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "108",
+                  "name": "Joery Gravekamp",
+                  "seed": 6
+                },
+                {
+                  "player_id": "124",
+                  "name": "Luke Muller"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Gergely Laczko"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Brent Oskam"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Anwar Ibrahim"
+                },
+                {
+                  "player_id": "155",
+                  "name": "Arya Zolghadriha"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Gergely Laczko"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Brent Oskam"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
