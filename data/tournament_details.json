@@ -37264,10 +37264,13 @@
         "event_id": "4",
         "name": "Enkel U9",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "4"
+          ],
+          [
+            "28"
           ],
           [
             "12"
@@ -37285,20 +37288,27 @@
         "event_id": "11",
         "name": "JE U11",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "30"
+          ]
+        ]
       },
       {
         "event_id": "23",
         "name": "ME U11",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "15"
           ],
           [
             "10"
+          ],
+          [
+            "29"
           ]
         ]
       },
@@ -37306,7 +37316,7 @@
         "event_id": "2",
         "name": "Dubbel U11",
         "draws": 0,
-        "entries": 3,
+        "entries": 5,
         "participants": [
           [
             "15"
@@ -37316,7 +37326,13 @@
             "10"
           ],
           [
+            "29"
+          ],
+          [
             "12"
+          ],
+          [
+            "30"
           ]
         ]
       },
@@ -37324,10 +37340,13 @@
         "event_id": "12",
         "name": "JE U13 NYLON",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "1"
+          ],
+          [
+            "27"
           ]
         ]
       },
@@ -37352,8 +37371,12 @@
         "event_id": "24",
         "name": "ME U13 NYLON",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "24"
+          ]
+        ]
       },
       {
         "event_id": "25",
@@ -37366,10 +37389,13 @@
         "event_id": "5",
         "name": "JD U13 NYLON",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "1"
+          ],
+          [
+            "27"
           ]
         ]
       },
@@ -37394,8 +37420,12 @@
         "event_id": "18",
         "name": "MD U13 NYLON",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "24"
+          ]
+        ]
       },
       {
         "event_id": "19",
@@ -37408,8 +37438,11 @@
         "event_id": "14",
         "name": "JE U15 NYLON",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
+          [
+            "23"
+          ],
           [
             "6"
           ],
@@ -37447,8 +37480,11 @@
         "event_id": "7",
         "name": "JD U15 NYLON",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "23"
+          ],
           [
             "6",
             "18"
@@ -37491,16 +37527,22 @@
         "event_id": "17",
         "name": "JE U18 VEREN",
         "draws": 0,
-        "entries": 6,
+        "entries": 8,
         "participants": [
           [
             "14"
+          ],
+          [
+            "25"
           ],
           [
             "2"
           ],
           [
             "5"
+          ],
+          [
+            "26"
           ],
           [
             "7"
@@ -37546,11 +37588,14 @@
         "event_id": "10",
         "name": "JD U18 VEREN",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
           [
             "14",
             "17"
+          ],
+          [
+            "25"
           ],
           [
             "2",
@@ -37580,6 +37625,16 @@
     "entries": [
       {
         "country": null,
+        "player_id": "23",
+        "name": "Beeker, Stan"
+      },
+      {
+        "country": null,
+        "player_id": "24",
+        "name": "Beeker, Vera"
+      },
+      {
+        "country": null,
         "player_id": "1",
         "name": "Celario, Kyle Maurus Espiritu"
       },
@@ -37587,6 +37642,11 @@
         "country": null,
         "player_id": "14",
         "name": "Eck, Flynn van"
+      },
+      {
+        "country": null,
+        "player_id": "25",
+        "name": "Geels, Maarten"
       },
       {
         "country": null,
@@ -37615,6 +37675,11 @@
       },
       {
         "country": null,
+        "player_id": "26",
+        "name": "Narayanam, Shashank"
+      },
+      {
+        "country": null,
         "player_id": "6",
         "name": "Nguyen, Ruby"
       },
@@ -37627,6 +37692,11 @@
         "country": null,
         "player_id": "7",
         "name": "Peelen, Gijs"
+      },
+      {
+        "country": null,
+        "player_id": "27",
+        "name": "Ree, Tren van"
       },
       {
         "country": null,
@@ -37655,6 +37725,16 @@
       },
       {
         "country": null,
+        "player_id": "28",
+        "name": "Trigt, Maurits van"
+      },
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Tromp, Dide"
+      },
+      {
+        "country": null,
         "player_id": "22",
         "name": "Tromp, Pieter"
       },
@@ -37667,6 +37747,11 @@
         "country": null,
         "player_id": "12",
         "name": "Wang, Jiaren"
+      },
+      {
+        "country": null,
+        "player_id": "30",
+        "name": "Yu, Oliver"
       },
       {
         "country": null,
