@@ -39243,7 +39243,7 @@
         "event_id": "1",
         "name": "ME -senioren-",
         "draws": 0,
-        "entries": 6,
+        "entries": 8,
         "participants": [
           [
             "8"
@@ -39258,10 +39258,16 @@
             "1"
           ],
           [
+            "12"
+          ],
+          [
             "5"
           ],
           [
             "7"
+          ],
+          [
+            "13"
           ]
         ]
       },
@@ -39280,7 +39286,7 @@
         "event_id": "5",
         "name": "MD -senioren-",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "2"
@@ -39289,10 +39295,14 @@
             "1"
           ],
           [
+            "12",
+            "7"
+          ],
+          [
             "5"
           ],
           [
-            "7"
+            "13"
           ]
         ]
       },
@@ -39311,8 +39321,11 @@
         "event_id": "3",
         "name": "Enkel U14 -jeugd-",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
+          [
+            "11"
+          ],
           [
             "9"
           ],
@@ -39356,6 +39369,11 @@
       },
       {
         "country": null,
+        "player_id": "11",
+        "name": "BALS, Steven ter"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "DROST, Freerk"
       },
@@ -39381,6 +39399,11 @@
       },
       {
         "country": null,
+        "player_id": "12",
+        "name": "SNITJER, Johan"
+      },
+      {
+        "country": null,
         "player_id": "10",
         "name": "STEGGINK, Yana"
       },
@@ -39398,6 +39421,11 @@
         "country": null,
         "player_id": "7",
         "name": "VREESWIJK, Theo"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "VULPEN, Wim van"
       }
     ]
   },
