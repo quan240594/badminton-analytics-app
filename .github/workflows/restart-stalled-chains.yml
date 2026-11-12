@@ -1,0 +1,44 @@
+name: Restart stalled scrape chains
+
+on:
+  schedule:
+    # A failed run never chains and the daily crons can start hours late.
+    - cron: '45 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  actions: write
+
+concurrency:
+  group: restart-stalled-chains
+  cancel-in-progress: false
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Re-dispatch scrape workflows whose latest run failed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          for wf in scrape-national.yml scrape-national-players.yml scrape-tournaments.yml; do
+            states=$(gh run list --workflow "$wf" --branch main --limit 3 --json status,conclusion \
+              --jq '.[] | if .status != "completed" then "active"
+                elif (.conclusion == "failure" or .conclusion == "startup_failure" or .conclusion == "timed_out") then "failed"
+                else "other" end')
+            latest=$(printf '%s\n' "$states" | head -n 1)
+            if [ "$latest" != "failed" ]; then
+              echo "$wf: latest run is '${latest:-none}', nothing to do"
+              continue
+            fi
+            streak=$(printf '%s\n' "$states" | awk '$0 == "failed" { n++; next } { exit } END { print n + 0 }')
+            # Past this a restart loop only hides a real bug; the daily cron still runs.
+            if [ "$streak" -ge 3 ]; then
+              echo "::warning::$wf failed $streak runs in a row - not restarting"
+              continue
+            fi
+            echo "$wf: latest run failed (streak $streak) - restarting"
+            gh workflow run "$wf" --ref main
+          done
