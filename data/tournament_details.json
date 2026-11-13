@@ -10658,8 +10658,12 @@
         "event_id": "16",
         "name": "JE Goud",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "25",
@@ -10700,8 +10704,12 @@
         "event_id": "1",
         "name": "ME Goud",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "24",
@@ -10791,8 +10799,15 @@
         "event_id": "4",
         "name": "Dubbel Goud",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "1"
+          ],
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "5",
@@ -10803,7 +10818,18 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Schie, Lisa Van"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Warmerdam, Brandon"
+      }
+    ]
   },
   "29081B55-290A-4B29-99A9-1D6F4A880CCF": {
     "events": [
