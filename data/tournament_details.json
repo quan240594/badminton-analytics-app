@@ -37269,24 +37269,44 @@
         "event_id": "1",
         "name": "Categorie Zilver - Enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "9"
+          ],
+          [
+            "11"
+          ]
+        ]
       },
       {
         "event_id": "2",
         "name": "Categorie Zilver - Dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "9"
+          ],
+          [
+            "11"
+          ]
+        ]
       },
       {
         "event_id": "3",
         "name": "Categorie Goud - Enkel",
         "draws": 0,
-        "entries": 4,
+        "entries": 9,
         "participants": [
           [
+            "10"
+          ],
+          [
             "2"
+          ],
+          [
+            "13"
           ],
           [
             "3"
@@ -37295,7 +37315,16 @@
             "4"
           ],
           [
+            "14"
+          ],
+          [
             "5"
+          ],
+          [
+            "15"
+          ],
+          [
+            "16"
           ]
         ]
       },
@@ -37303,17 +37332,33 @@
         "event_id": "4",
         "name": "Categorie Goud - Dubbel",
         "draws": 0,
-        "entries": 3,
+        "entries": 8,
         "participants": [
+          [
+            "6"
+          ],
+          [
+            "7"
+          ],
+          [
+            "10",
+            "5"
+          ],
           [
             "2",
             "3"
           ],
           [
+            "13"
+          ],
+          [
             "4"
           ],
           [
-            "5"
+            "15"
+          ],
+          [
+            "16"
           ]
         ]
       },
@@ -37339,15 +37384,23 @@
         "event_id": "7",
         "name": "Categorie C - Heren enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "12"
+          ]
+        ]
       },
       {
         "event_id": "9",
         "name": "Categorie D - Heren enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "6"
+          ]
+        ]
       },
       {
         "event_id": "12",
@@ -37367,22 +37420,34 @@
         "event_id": "8",
         "name": "Categorie C - Dames enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "8"
+          ]
+        ]
       },
       {
         "event_id": "10",
         "name": "Categorie D - Dames enkel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "7"
+          ]
+        ]
       },
       {
         "event_id": "13",
         "name": "Categorie A+ - Heren dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "14",
@@ -37402,12 +37467,8 @@
         "event_id": "15",
         "name": "Categorie B - Dubbel",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "1"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "19",
@@ -37420,8 +37481,12 @@
         "event_id": "16",
         "name": "Categorie C - Dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "8"
+          ]
+        ]
       },
       {
         "event_id": "17",
@@ -37435,8 +37500,48 @@
     "entries": [
       {
         "country": null,
+        "player_id": "6",
+        "name": "Baak, Bram van"
+      },
+      {
+        "country": null,
+        "player_id": "7",
+        "name": "Baak, Lotte Van"
+      },
+      {
+        "country": null,
+        "player_id": "8",
+        "name": "Dinakaran, Shresta"
+      },
+      {
+        "country": null,
+        "player_id": "9",
+        "name": "Dungarwal, Suchir"
+      },
+      {
+        "country": null,
+        "player_id": "10",
+        "name": "Haan, Benjamin De"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "Kuik, Finn van"
+      },
+      {
+        "country": null,
+        "player_id": "11",
+        "name": "Mehra, Avyaan"
+      },
+      {
+        "country": null,
+        "player_id": "12",
+        "name": "Palayam Bhavani, Sanjeevan"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "Panarello, Isabella"
       },
       {
         "country": null,
@@ -37455,8 +37560,23 @@
       },
       {
         "country": null,
+        "player_id": "14",
+        "name": "Trigt, Maurits van"
+      },
+      {
+        "country": null,
         "player_id": "5",
         "name": "Warmerdam, Brandon"
+      },
+      {
+        "country": null,
+        "player_id": "15",
+        "name": "Widjaja, Benjamin"
+      },
+      {
+        "country": null,
+        "player_id": "16",
+        "name": "Yu, Oliver"
       }
     ]
   },
