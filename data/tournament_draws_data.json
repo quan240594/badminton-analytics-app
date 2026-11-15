@@ -24492,11 +24492,19 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
             },
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
             }
           ],
           "games": [],
