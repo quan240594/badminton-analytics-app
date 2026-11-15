@@ -150817,6 +150817,323 @@
           "played_at": "za 21-11-2026 20:40"
         }
       ]
+    },
+    "36": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "1",
+              "name": "DIH AN HOO"
+            },
+            {
+              "player_id": "16",
+              "name": "DTAU LANDMAN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "98",
+              "name": "TON CONRAADS"
+            },
+            {
+              "player_id": "93",
+              "name": "JOHAN STRAETEMANS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "ROB van HOORN"
+            },
+            {
+              "player_id": "34",
+              "name": "GUY REINERS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "100",
+              "name": "TATHAGAT GUPTA"
+            },
+            {
+              "player_id": "107",
+              "name": "MICHAEL WANG"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "477",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "TON CONRAADS",
+                  "member_id": "830669"
+                },
+                {
+                  "player_id": "93",
+                  "name": "JOHAN STRAETEMANS",
+                  "member_id": "5000597"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "ROB van HOORN",
+                  "member_id": "986829"
+                },
+                {
+                  "player_id": "34",
+                  "name": "GUY REINERS",
+                  "member_id": "4989100"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "479",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "DIH AN HOO",
+                  "seed": 2,
+                  "member_id": "831293"
+                },
+                {
+                  "player_id": "16",
+                  "name": "DTAU LANDMAN",
+                  "member_id": "716977"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "TATHAGAT GUPTA",
+                  "member_id": "5001212"
+                },
+                {
+                  "player_id": "107",
+                  "name": "MICHAEL WANG",
+                  "member_id": "50027670"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "473",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "DIH AN HOO",
+                  "seed": 2,
+                  "member_id": "831293"
+                },
+                {
+                  "player_id": "16",
+                  "name": "DTAU LANDMAN",
+                  "member_id": "716977"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "TON CONRAADS",
+                  "member_id": "830669"
+                },
+                {
+                  "player_id": "93",
+                  "name": "JOHAN STRAETEMANS",
+                  "member_id": "5000597"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "481",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "ROB van HOORN",
+                  "member_id": "986829"
+                },
+                {
+                  "player_id": "34",
+                  "name": "GUY REINERS",
+                  "member_id": "4989100"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "TATHAGAT GUPTA",
+                  "member_id": "5001212"
+                },
+                {
+                  "player_id": "107",
+                  "name": "MICHAEL WANG",
+                  "member_id": "50027670"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "476",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "DIH AN HOO",
+                  "seed": 2,
+                  "member_id": "831293"
+                },
+                {
+                  "player_id": "16",
+                  "name": "DTAU LANDMAN",
+                  "member_id": "716977"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "ROB van HOORN",
+                  "member_id": "986829"
+                },
+                {
+                  "player_id": "34",
+                  "name": "GUY REINERS",
+                  "member_id": "4989100"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        },
+        {
+          "match_id": "480",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "TON CONRAADS",
+                  "member_id": "830669"
+                },
+                {
+                  "player_id": "93",
+                  "name": "JOHAN STRAETEMANS",
+                  "member_id": "5000597"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "TATHAGAT GUPTA",
+                  "member_id": "5001212"
+                },
+                {
+                  "player_id": "107",
+                  "name": "MICHAEL WANG",
+                  "member_id": "50027670"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        }
+      ]
     }
   }
 }
