@@ -129755,6 +129755,247 @@
           "played_at": null
         }
       ]
+    },
+    "53": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "93",
+              "name": "Ben van Verseveld"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "81",
+              "name": "Fabian Palsrok"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "86",
+              "name": "Ethan Baradel"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "Shaurya Katta"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "791",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok",
+                  "member_id": "4987625"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "86",
+                  "name": "Ethan Baradel",
+                  "member_id": "4991590"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:00"
+        },
+        {
+          "match_id": "793",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Ben van Verseveld",
+                  "seed": 1,
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Shaurya Katta",
+                  "member_id": "50011243"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:00"
+        },
+        {
+          "match_id": "787",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Ben van Verseveld",
+                  "seed": 1,
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok",
+                  "member_id": "4987625"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:05"
+        },
+        {
+          "match_id": "795",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "86",
+                  "name": "Ethan Baradel",
+                  "member_id": "4991590"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Shaurya Katta",
+                  "member_id": "50011243"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:05"
+        },
+        {
+          "match_id": "790",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Ben van Verseveld",
+                  "seed": 1,
+                  "member_id": "5001488"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "86",
+                  "name": "Ethan Baradel",
+                  "member_id": "4991590"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "794",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok",
+                  "member_id": "4987625"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Shaurya Katta",
+                  "member_id": "50011243"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        }
+      ]
     }
   }
 }
