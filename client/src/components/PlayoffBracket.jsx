@@ -32,19 +32,39 @@ function BracketSide({ side, selectedMatch, ownKey, memberOf }) {
   </div>;
 }
 
-function MatchOutlook({ round }) {
+function FinalSimulation({ match, ownKey, memberOf }) {
+  const opponents = match.sides.find((side) => !side.candidates.some(({ team }) => teamKey(team) === ownKey));
+  if (!opponents || opponents.bye) return null;
+  return <div className="playoff-final-simulation">
+    <h6>Potential final matchups</h6>
+    <table className="playoff-final-table">
+      <thead><tr><th scope="col">Opponent</th><th scope="col">Reaches final</th><th scope="col">You win | lose</th></tr></thead>
+      <tbody>{opponents.candidates.map(({ team, p, winP }) => <tr key={teamKey(team)}>
+        <th scope="row"><SideNames members={team.map(memberOf)} /></th>
+        <td>{p == null ? 'Unknown' : percent(p)}</td>
+        <td>{winP == null ? 'Unknown' : `${percent(winP)} | ${percent(1 - winP)}`}</td>
+      </tr>)}</tbody>
+    </table>
+  </div>;
+}
+
+function MatchOutlook({ round, final = false }) {
   if (!round || round.status === 'out') return null;
   if (round.status === 'bye') return <p className="muted">Bye - through to the next round</p>;
   if (round.status === 'won' || round.status === 'lost') return <p className="muted">{round.status === 'won' ? 'Won' : 'Lost - out of the draw'}</p>;
   if (round.status === 'unknown') {
     const verb = round.missing.length > 1 ? 'have' : 'has';
     const message = round.missing.length ? `Can't be simulated: ${round.missing.join(', ')} ${verb} no national ranking data.` : 'Forecast unavailable until the group outcome is known.';
-    return <p className="error">{message}</p>;
+    return <div className="playoff-match-outlook">
+      {round.reach != null && <p className="muted">{percent(round.reach)} chance of getting here</p>}
+      <p className="error">{message}</p>
+      {final && <p className="muted">Overall final win odds and title chance: Unknown</p>}
+    </div>;
   }
   return <div className="playoff-match-outlook">
     <p>Win {percent(round.winP)} | Lose {percent(1 - round.winP)}</p>
     <p className="muted">{percent(round.reach)} chance of getting here</p>
-    <p className="muted">Win and advance, from the start: {percent(round.reach * round.winP)}</p>
+    <p className="muted">{final ? 'Chance to win the title' : 'Win and advance, from the start'}: {percent(round.reach * round.winP)}</p>
   </div>;
 }
 
@@ -60,7 +80,8 @@ export default function PlayoffBracket({ tree, outlook, ownKey, memberOf, eventN
             {matches.map((match, index) => <div className={`playoff-slot${column === columns.length - 1 ? ' final-slot' : ''}`} key={match.id}>
               <article className={`playoff-match${match.selected ? ' selected-route' : ''}`} aria-label={`${match.round} match ${index + 1}`}>
                 {match.sides.map((side) => <BracketSide key={side.id} side={side} selectedMatch={match.selected} ownKey={ownKey} memberOf={memberOf} />)}
-                {match.selected && <MatchOutlook round={outlook?.rounds.find((round) => round.round === match.round)} />}
+                {match.selected && column === columns.length - 1 && <FinalSimulation match={match} ownKey={ownKey} memberOf={memberOf} />}
+                {match.selected && <MatchOutlook round={outlook?.rounds.find((round) => round.round === match.round)} final={column === columns.length - 1} />}
               </article>
             </div>)}
           </div>

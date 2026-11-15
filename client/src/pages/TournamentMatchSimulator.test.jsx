@@ -139,7 +139,7 @@ describe('TournamentMatchSimulator - event progression', () => {
     expect(await screen.findByText('Chance to win the event: 25%')).toBeInTheDocument();
     expect(screen.getByText('Advance from the group: 50%')).toBeInTheDocument();
     expect(screen.getByText('50% Dana Delta - you win 50%')).toBeInTheDocument();
-    expect(screen.getByText('Win and advance, from the start: 25%')).toBeInTheDocument();
+    expect(screen.getByText('Chance to win the title: 25%')).toBeInTheDocument();
     const bracket = screen.getByRole('region', { name: 'HE playoff bracket' });
     expect(within(bracket).getAllByRole('article')).toHaveLength(3);
     expect(within(bracket).getByText('Groep A #1')).toBeInTheDocument();
