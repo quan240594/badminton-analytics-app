@@ -266,7 +266,7 @@ export function analyzeBracket(root, ownTeam, model, initialReach = 1) {
       const missing = [...teamsInBracket(other), ownTeam].filter((team) => !model.isRated(team));
       const candidates = [...new Map(teamsInBracket(other).map((team) => [teamKey(team), team])).values()]
         .map((team) => ({ team, winP: model.winProbability(ownTeam, team) }));
-      return { ...base, status: 'unknown', missing, candidates };
+      return { ...base, status: 'unknown', reach, missing, candidates };
     }
     const entries = [...opponents.values()].map(({ team, p }) => ({ team, p, winP: model.winProbability(ownTeam, team) }));
     entries.sort((x, y) => y.p - x.p);
