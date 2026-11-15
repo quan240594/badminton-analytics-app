@@ -151561,6 +151561,188 @@
           "played_at": "zo 22-11-2026 16:15"
         }
       ]
+    },
+    "40": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "58",
+              "name": "ARIK LAGERWEIJ"
+            },
+            {
+              "player_id": "75",
+              "name": "WOUTER VINCLAIR"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "PAUL SCHROOTEN"
+            },
+            {
+              "player_id": "36",
+              "name": "HARRY STRIJP"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "ELIA MESTROM"
+            },
+            {
+              "player_id": "47",
+              "name": "BRYAN NGO"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "516",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "PAUL SCHROOTEN",
+                  "member_id": "988393"
+                },
+                {
+                  "player_id": "36",
+                  "name": "HARRY STRIJP",
+                  "member_id": "985156"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "ELIA MESTROM",
+                  "member_id": "4995491"
+                },
+                {
+                  "player_id": "47",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:40"
+        },
+        {
+          "match_id": "513",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "ARIK LAGERWEIJ",
+                  "seed": 1,
+                  "member_id": "4985870"
+                },
+                {
+                  "player_id": "75",
+                  "name": "WOUTER VINCLAIR",
+                  "member_id": "4994441"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "PAUL SCHROOTEN",
+                  "member_id": "988393"
+                },
+                {
+                  "player_id": "36",
+                  "name": "HARRY STRIJP",
+                  "member_id": "985156"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:40"
+        },
+        {
+          "match_id": "515",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "ARIK LAGERWEIJ",
+                  "seed": 1,
+                  "member_id": "4985870"
+                },
+                {
+                  "player_id": "75",
+                  "name": "WOUTER VINCLAIR",
+                  "member_id": "4994441"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "ELIA MESTROM",
+                  "member_id": "4995491"
+                },
+                {
+                  "player_id": "47",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        }
+      ]
     }
   }
 }
