@@ -123386,5 +123386,321 @@
         }
       ]
     }
+  },
+  "06DB7352-EB3C-4EEF-9E96-1424F2D019B3": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "1",
+              "name": "Waylon Chung"
+            },
+            {
+              "player_id": "5",
+              "name": "Ximing Li"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Swayam Bhide"
+            },
+            {
+              "player_id": "40",
+              "name": "Arham Waqas"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "104",
+              "name": "Victor Huang"
+            },
+            {
+              "player_id": "95",
+              "name": "Muyan Yu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "Sem Luijk"
+            },
+            {
+              "player_id": "111",
+              "name": "Sepp Westplate"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "12",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Swayam Bhide",
+                  "member_id": "10001459"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Arham Waqas",
+                  "member_id": "50023792"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Victor Huang",
+                  "member_id": "50017959"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Muyan Yu",
+                  "member_id": "50019126"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:50"
+        },
+        {
+          "match_id": "14",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Waylon Chung",
+                  "member_id": "50009863"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Sem Luijk",
+                  "member_id": "50019329"
+                },
+                {
+                  "player_id": "111",
+                  "name": "Sepp Westplate",
+                  "member_id": "50019028"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:50"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Waylon Chung",
+                  "member_id": "50009863"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Swayam Bhide",
+                  "member_id": "10001459"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Arham Waqas",
+                  "member_id": "50023792"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:00"
+        },
+        {
+          "match_id": "16",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Victor Huang",
+                  "member_id": "50017959"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Muyan Yu",
+                  "member_id": "50019126"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Sem Luijk",
+                  "member_id": "50019329"
+                },
+                {
+                  "player_id": "111",
+                  "name": "Sepp Westplate",
+                  "member_id": "50019028"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:00"
+        },
+        {
+          "match_id": "11",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "1",
+                  "name": "Waylon Chung",
+                  "member_id": "50009863"
+                },
+                {
+                  "player_id": "5",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Victor Huang",
+                  "member_id": "50017959"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Muyan Yu",
+                  "member_id": "50019126"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:15"
+        },
+        {
+          "match_id": "15",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Swayam Bhide",
+                  "member_id": "10001459"
+                },
+                {
+                  "player_id": "40",
+                  "name": "Arham Waqas",
+                  "member_id": "50023792"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Sem Luijk",
+                  "member_id": "50019329"
+                },
+                {
+                  "player_id": "111",
+                  "name": "Sepp Westplate",
+                  "member_id": "50019028"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:15"
+        }
+      ]
+    }
   }
 }
