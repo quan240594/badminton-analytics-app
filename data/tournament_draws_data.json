@@ -151134,6 +151134,320 @@
           "played_at": "za 21-11-2026 20:40"
         }
       ]
+    },
+    "37": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "5",
+              "name": "ANDY CREMERS"
+            },
+            {
+              "player_id": "64",
+              "name": "MATTHIJS DIETEREN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "LIEGENE LA FONTAINE"
+            },
+            {
+              "player_id": "48",
+              "name": "ARNO PEETERS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "66",
+              "name": "JUSTIN HU"
+            },
+            {
+              "player_id": "67",
+              "name": "KENZO LE VAILLANT"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "REMCO BOS"
+            },
+            {
+              "player_id": "86",
+              "name": "JOE FORWARD"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "493",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "LIEGENE LA FONTAINE",
+                  "member_id": "537936"
+                },
+                {
+                  "player_id": "48",
+                  "name": "ARNO PEETERS",
+                  "member_id": "5100927"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "JUSTIN HU",
+                  "member_id": "5001128"
+                },
+                {
+                  "player_id": "67",
+                  "name": "KENZO LE VAILLANT",
+                  "member_id": "50020760"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "495",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "ANDY CREMERS",
+                  "member_id": "637456"
+                },
+                {
+                  "player_id": "64",
+                  "name": "MATTHIJS DIETEREN",
+                  "member_id": "5002605"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "REMCO BOS",
+                  "member_id": "752206"
+                },
+                {
+                  "player_id": "86",
+                  "name": "JOE FORWARD",
+                  "member_id": "50016678"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "489",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "ANDY CREMERS",
+                  "member_id": "637456"
+                },
+                {
+                  "player_id": "64",
+                  "name": "MATTHIJS DIETEREN",
+                  "member_id": "5002605"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "LIEGENE LA FONTAINE",
+                  "member_id": "537936"
+                },
+                {
+                  "player_id": "48",
+                  "name": "ARNO PEETERS",
+                  "member_id": "5100927"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "497",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "JUSTIN HU",
+                  "member_id": "5001128"
+                },
+                {
+                  "player_id": "67",
+                  "name": "KENZO LE VAILLANT",
+                  "member_id": "50020760"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "REMCO BOS",
+                  "member_id": "752206"
+                },
+                {
+                  "player_id": "86",
+                  "name": "JOE FORWARD",
+                  "member_id": "50016678"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "492",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "5",
+                  "name": "ANDY CREMERS",
+                  "member_id": "637456"
+                },
+                {
+                  "player_id": "64",
+                  "name": "MATTHIJS DIETEREN",
+                  "member_id": "5002605"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "JUSTIN HU",
+                  "member_id": "5001128"
+                },
+                {
+                  "player_id": "67",
+                  "name": "KENZO LE VAILLANT",
+                  "member_id": "50020760"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        },
+        {
+          "match_id": "496",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "LIEGENE LA FONTAINE",
+                  "member_id": "537936"
+                },
+                {
+                  "player_id": "48",
+                  "name": "ARNO PEETERS",
+                  "member_id": "5100927"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "REMCO BOS",
+                  "member_id": "752206"
+                },
+                {
+                  "player_id": "86",
+                  "name": "JOE FORWARD",
+                  "member_id": "50016678"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        }
+      ]
     }
   }
 }
