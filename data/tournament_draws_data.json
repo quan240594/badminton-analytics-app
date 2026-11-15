@@ -130116,11 +130116,19 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "D",
+                "rank": 1
+              }
             },
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "F",
+                "rank": 1
+              }
             }
           ],
           "games": [],
@@ -130132,11 +130140,19 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "E",
+                "rank": 1
+              }
             },
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "C",
+                "rank": 1
+              }
             }
           ],
           "games": [],
@@ -130148,7 +130164,11 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
             },
             {
               "won": false,
@@ -130168,7 +130188,11 @@
             },
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
             }
           ],
           "games": [],
@@ -130196,7 +130220,11 @@
           "sides": [
             {
               "won": true,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
             },
             {
               "won": false,
@@ -130218,7 +130246,11 @@
             },
             {
               "won": true,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
             }
           ],
           "games": [],
