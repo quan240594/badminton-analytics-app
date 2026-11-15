@@ -132657,6 +132657,186 @@
           "played_at": "za 21-11-2026 16:35"
         }
       ]
+    },
+    "66": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "79",
+              "name": "Varsha Mithun"
+            },
+            {
+              "player_id": "90",
+              "name": "Anaira Sonare"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "Isa van Ruijven"
+            },
+            {
+              "player_id": "52",
+              "name": "Tom van Ruijven"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Yaïr Nabie"
+            },
+            {
+              "player_id": "54",
+              "name": "Niek van Suijlekom"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "979",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Isa van Ruijven",
+                  "member_id": "10001224"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Tom van Ruijven",
+                  "member_id": "50018791"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Yaïr Nabie",
+                  "member_id": "50025153"
+                },
+                {
+                  "player_id": "54",
+                  "name": "Niek van Suijlekom",
+                  "member_id": "50025154"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "976",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                },
+                {
+                  "player_id": "90",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "Isa van Ruijven",
+                  "member_id": "10001224"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Tom van Ruijven",
+                  "member_id": "50018791"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:50"
+        },
+        {
+          "match_id": "978",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                },
+                {
+                  "player_id": "90",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Yaïr Nabie",
+                  "member_id": "50025153"
+                },
+                {
+                  "player_id": "54",
+                  "name": "Niek van Suijlekom",
+                  "member_id": "50025154"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:35"
+        }
+      ]
     }
   }
 }
