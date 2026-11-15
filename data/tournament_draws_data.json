@@ -146447,6 +146447,146 @@
           "played_at": "za 21-11-2026 12:30"
         }
       ]
+    },
+    "10": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "LUC KOENDERS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "JORREN STRIJP"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "57",
+              "name": "JORDAN JONGBOOM"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "171",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "JORREN STRIJP",
+                  "member_id": "869777"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "JORDAN JONGBOOM",
+                  "member_id": "879943"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:20"
+        },
+        {
+          "match_id": "168",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "LUC KOENDERS",
+                  "seed": 2,
+                  "member_id": "869589"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "JORREN STRIJP",
+                  "member_id": "869777"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "170",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "LUC KOENDERS",
+                  "seed": 2,
+                  "member_id": "869589"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "JORDAN JONGBOOM",
+                  "member_id": "879943"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:40"
+        }
+      ]
     }
   }
 }
