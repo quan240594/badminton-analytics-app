@@ -153014,6 +153014,188 @@
           "played_at": "za 21-11-2026 17:20"
         }
       ]
+    },
+    "51": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "NINA van den BERG"
+            },
+            {
+              "player_id": "32",
+              "name": "JANOU GOLSTEIJN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "DANIQUE JACOBS"
+            },
+            {
+              "player_id": "61",
+              "name": "IRYNA SIMAKOVA"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "81",
+              "name": "FENNA van BEERS"
+            },
+            {
+              "player_id": "68",
+              "name": "YUANLU LI"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "646",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "DANIQUE JACOBS",
+                  "member_id": "4989602"
+                },
+                {
+                  "player_id": "61",
+                  "name": "IRYNA SIMAKOVA",
+                  "member_id": "5009099"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "FENNA van BEERS",
+                  "member_id": "993029"
+                },
+                {
+                  "player_id": "68",
+                  "name": "YUANLU LI",
+                  "member_id": "50027768"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:20"
+        },
+        {
+          "match_id": "643",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "NINA van den BERG",
+                  "seed": 2,
+                  "member_id": "882620"
+                },
+                {
+                  "player_id": "32",
+                  "name": "JANOU GOLSTEIJN",
+                  "member_id": "805436"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "DANIQUE JACOBS",
+                  "member_id": "4989602"
+                },
+                {
+                  "player_id": "61",
+                  "name": "IRYNA SIMAKOVA",
+                  "member_id": "5009099"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:40"
+        },
+        {
+          "match_id": "645",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "NINA van den BERG",
+                  "seed": 2,
+                  "member_id": "882620"
+                },
+                {
+                  "player_id": "32",
+                  "name": "JANOU GOLSTEIJN",
+                  "member_id": "805436"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "FENNA van BEERS",
+                  "member_id": "993029"
+                },
+                {
+                  "player_id": "68",
+                  "name": "YUANLU LI",
+                  "member_id": "50027768"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:00"
+        }
+      ]
     }
   }
 }
