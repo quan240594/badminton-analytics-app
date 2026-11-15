@@ -148432,6 +148432,144 @@
           "played_at": "za 21-11-2026 15:20"
         }
       ]
+    },
+    "23": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "BRYAN NGO"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "PAUL SCHROOTEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "REMCO BOS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "306",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "PAUL SCHROOTEN",
+                  "member_id": "988393"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "REMCO BOS",
+                  "member_id": "752206"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "303",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "PAUL SCHROOTEN",
+                  "member_id": "988393"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:05"
+        },
+        {
+          "match_id": "305",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "BRYAN NGO",
+                  "member_id": "5001056"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "REMCO BOS",
+                  "member_id": "752206"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:20"
+        }
+      ]
     }
   }
 }
