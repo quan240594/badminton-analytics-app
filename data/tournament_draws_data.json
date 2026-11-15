@@ -131161,6 +131161,125 @@
           "played_at": "za 21-11-2026 12:50"
         }
       ]
+    },
+    "59": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "880",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:15"
+        },
+        {
+          "match_id": "881",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:15"
+        },
+        {
+          "match_id": "877",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:00"
+        },
+        {
+          "match_id": "878",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:00"
+        },
+        {
+          "match_id": "876",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:30"
+        },
+        {
+          "match_id": "879",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "882",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
