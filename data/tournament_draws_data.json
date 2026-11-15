@@ -133328,6 +133328,264 @@
           "played_at": null
         }
       ]
+    },
+    "70": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "63",
+              "name": "Loek van Laanen"
+            },
+            {
+              "player_id": "94",
+              "name": "Eva Yu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "107",
+              "name": "Dyllian Muller"
+            },
+            {
+              "player_id": "108",
+              "name": "Tony Nguyen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "Maud Groenendaal"
+            },
+            {
+              "player_id": "28",
+              "name": "Li Li Morssinkhof"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "1023",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller",
+                  "member_id": "5003724"
+                },
+                {
+                  "player_id": "108",
+                  "name": "Tony Nguyen",
+                  "member_id": "50019314"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Maud Groenendaal",
+                  "member_id": "5003890"
+                },
+                {
+                  "player_id": "28",
+                  "name": "Li Li Morssinkhof",
+                  "member_id": "5003012"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:05"
+        },
+        {
+          "match_id": "1019",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Loek van Laanen",
+                  "member_id": "50007920"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu",
+                  "member_id": "50014524"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller",
+                  "member_id": "5003724"
+                },
+                {
+                  "player_id": "108",
+                  "name": "Tony Nguyen",
+                  "member_id": "50019314"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:25"
+        },
+        {
+          "match_id": "1022",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Loek van Laanen",
+                  "member_id": "50007920"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu",
+                  "member_id": "50014524"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Maud Groenendaal",
+                  "member_id": "5003890"
+                },
+                {
+                  "player_id": "28",
+                  "name": "Li Li Morssinkhof",
+                  "member_id": "5003012"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:35"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Loek van Laanen"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller"
+                },
+                {
+                  "player_id": "108",
+                  "name": "Tony Nguyen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Maud Groenendaal"
+                },
+                {
+                  "player_id": "28",
+                  "name": "Li Li Morssinkhof"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
