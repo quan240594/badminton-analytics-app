@@ -22585,7 +22585,7 @@
       },
       {
         "event_id": "38",
-        "name": "Staand MD A",
+        "name": "Staand Dubbel A",
         "draws": 1,
         "entries": 3,
         "participants": [
@@ -22600,6 +22600,30 @@
           [
             "46",
             "47"
+          ]
+        ]
+      },
+      {
+        "event_id": "44",
+        "name": "Staand Dubbel B",
+        "draws": 1,
+        "entries": 4,
+        "participants": [
+          [
+            "16",
+            "40"
+          ],
+          [
+            "42",
+            "41"
+          ],
+          [
+            "34",
+            "13"
+          ],
+          [
+            "21",
+            "22"
           ]
         ]
       },
@@ -22627,30 +22651,6 @@
           [
             "20",
             "24"
-          ]
-        ]
-      },
-      {
-        "event_id": "44",
-        "name": "Staand VD B",
-        "draws": 1,
-        "entries": 4,
-        "participants": [
-          [
-            "16",
-            "40"
-          ],
-          [
-            "42",
-            "41"
-          ],
-          [
-            "34",
-            "13"
-          ],
-          [
-            "21",
-            "22"
           ]
         ]
       }
@@ -22756,7 +22756,7 @@
         "draw_id": "12",
         "name": "Staand ME A",
         "size": 3,
-        "type": "Poule",
+        "type": "Poule - Thuis en Uit",
         "stage": "Hoofdschema",
         "loser_round": null
       },
@@ -22834,8 +22834,16 @@
       },
       {
         "draw_id": "20",
-        "name": "Staand MD A",
+        "name": "Staand Dubbel A - Staand MD A",
         "size": 3,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "Staand Dubbel B - Staand VD B",
+        "size": 4,
         "type": "Poule",
         "stage": "Hoofdschema",
         "loser_round": null
@@ -22844,14 +22852,6 @@
         "draw_id": "25",
         "name": "Staand MD C",
         "size": 3,
-        "type": "Poule",
-        "stage": "Hoofdschema",
-        "loser_round": null
-      },
-      {
-        "draw_id": "21",
-        "name": "Staand VD B",
-        "size": 4,
         "type": "Poule",
         "stage": "Hoofdschema",
         "loser_round": null
