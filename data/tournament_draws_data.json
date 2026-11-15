@@ -129996,6 +129996,247 @@
           "played_at": "za 21-11-2026 12:30"
         }
       ]
+    },
+    "54": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "17",
+              "name": "Zhian Dimyati"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "41",
+              "name": "Kyan Chan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Prathik Kadali"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Stan Palsrok"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "807",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:00"
+        },
+        {
+          "match_id": "809",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Zhian Dimyati",
+                  "seed": 2,
+                  "member_id": "50009741"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Stan Palsrok",
+                  "member_id": "5005366"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:00"
+        },
+        {
+          "match_id": "803",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Zhian Dimyati",
+                  "seed": 2,
+                  "member_id": "50009741"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:05"
+        },
+        {
+          "match_id": "811",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Stan Palsrok",
+                  "member_id": "5005366"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:05"
+        },
+        {
+          "match_id": "806",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Zhian Dimyati",
+                  "seed": 2,
+                  "member_id": "50009741"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Prathik Kadali",
+                  "member_id": "50025083"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "810",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Stan Palsrok",
+                  "member_id": "5005366"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:50"
+        }
+      ]
     }
   }
 }
