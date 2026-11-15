@@ -152218,6 +152218,188 @@
           "played_at": "zo 22-11-2026 16:15"
         }
       ]
+    },
+    "46": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "DAPHNE SCHEENEN"
+            },
+            {
+              "player_id": "80",
+              "name": "RIANNE THANS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "LOLA HEINEN"
+            },
+            {
+              "player_id": "90",
+              "name": "JONI MEENS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "SILKE REIJNEN"
+            },
+            {
+              "player_id": "19",
+              "name": "MILOU THIJSSEN - CREMERS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "577",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "DAPHNE SCHEENEN",
+                  "seed": 1,
+                  "member_id": "983704"
+                },
+                {
+                  "player_id": "80",
+                  "name": "RIANNE THANS",
+                  "member_id": "4994421"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "SILKE REIJNEN",
+                  "member_id": "883573"
+                },
+                {
+                  "player_id": "19",
+                  "name": "MILOU THIJSSEN - CREMERS",
+                  "member_id": "889172"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "578",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "LOLA HEINEN",
+                  "member_id": "5011115"
+                },
+                {
+                  "player_id": "90",
+                  "name": "JONI MEENS",
+                  "member_id": "4989818"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "SILKE REIJNEN",
+                  "member_id": "883573"
+                },
+                {
+                  "player_id": "19",
+                  "name": "MILOU THIJSSEN - CREMERS",
+                  "member_id": "889172"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:20"
+        },
+        {
+          "match_id": "575",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "DAPHNE SCHEENEN",
+                  "seed": 1,
+                  "member_id": "983704"
+                },
+                {
+                  "player_id": "80",
+                  "name": "RIANNE THANS",
+                  "member_id": "4994421"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "LOLA HEINEN",
+                  "member_id": "5011115"
+                },
+                {
+                  "player_id": "90",
+                  "name": "JONI MEENS",
+                  "member_id": "4989818"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        }
+      ]
     }
   }
 }
