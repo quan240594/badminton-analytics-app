@@ -128264,6 +128264,247 @@
           "played_at": "za 21-11-2026 18:30"
         }
       ]
+    },
+    "46": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "72",
+              "name": "Nathan Wong"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "15",
+              "name": "Vedha Anandkumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "62",
+              "name": "Om Agarkar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "Mia Ta"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "680",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Om Agarkar",
+                  "member_id": "10002192"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:40"
+        },
+        {
+          "match_id": "682",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "Nathan Wong",
+                  "seed": 1,
+                  "member_id": "5012537"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Mia Ta",
+                  "member_id": "50020923"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:40"
+        },
+        {
+          "match_id": "676",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "Nathan Wong",
+                  "seed": 1,
+                  "member_id": "5012537"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "684",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Om Agarkar",
+                  "member_id": "10002192"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Mia Ta",
+                  "member_id": "50020923"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "679",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "Nathan Wong",
+                  "seed": 1,
+                  "member_id": "5012537"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Om Agarkar",
+                  "member_id": "10002192"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "683",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Mia Ta",
+                  "member_id": "50020923"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        }
+      ]
     }
   }
 }
