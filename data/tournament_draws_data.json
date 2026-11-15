@@ -147928,6 +147928,92 @@
           "played_at": "za 21-11-2026 15:20"
         }
       ]
+    },
+    "19": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "259",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "3",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "2",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "257",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "1",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:15"
+        },
+        {
+          "match_id": "258",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [],
+              "qualifier": {
+                "group": "1",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": null,
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
