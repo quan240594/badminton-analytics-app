@@ -49,7 +49,7 @@ PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]{0,300}data-nationality-id="(
 # A knockout shows the seed after the name ("Name [3]", doubles "[3/4]").
 SEED_RE = re.compile(r"^(.*)\[(\d+)(?:/\d+)?\]$")
 BYE_RE = re.compile(r">\s*Bye\s*<")
-GROUP_SLOT_RE = re.compile(r"(?:Groep|Group)\s+([A-Za-z0-9]+)\s*#\s*(\d+)", re.IGNORECASE)
+GROUP_SLOT_RE = re.compile(r"(?:Groep|Group)\s+([A-Z0-9]+)\s*#\s*(\d+)", re.IGNORECASE)
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 

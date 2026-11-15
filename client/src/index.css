@@ -288,9 +288,8 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 }
 .pool-matchup-table th,
 .pool-matchup-table td { padding: 0.35rem 0.5rem; text-align: center; color: #cbd5e1; }
-.pool-matchup-table thead th { color: #94a3b8; border-bottom: 1px solid #334155; }
+.pool-matchup-table thead th { color: #94a3b8; border-bottom: 1px solid #334155; white-space: normal; overflow-wrap: anywhere; }
 .pool-matchup-table tr + tr td { border-top: 1px solid #1e293b; }
-.pool-matchup-table thead th { white-space: normal; overflow-wrap: anywhere; }
 .pool-matchup-table tbody th {
   text-align: left;
   white-space: normal;
@@ -336,7 +335,6 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
   min-width: 0;
 }
 .tournament-simulator .sides > * { min-width: 0; }
-.tournament-simulator .sides { flex-direction: column; }
 .player-stats-table .total-row td { font-weight: 700; border-top: 2px solid #334155; color: #e2e8f0; }
 
 .ranking-table {
@@ -639,7 +637,7 @@ h1 { font-size: clamp(1.6rem, 1.8vw, 2.6rem); margin-bottom: 0.25rem; }
 
 /* .sides is a row of two cards elsewhere; here it holds one probability bar and
    its label, and the bar would otherwise shrink to the width of its text. */
-.tournament-simulator .sides { align-items: flex-start; }
+.tournament-simulator .sides { flex-direction: column; align-items: flex-start; }
 .tournament-simulator .sides .bar { flex: 0 0 40px; height: 40px; width: min(100%, 28rem); min-width: 0; }
 .tournament-simulator .sides .bar > div { white-space: nowrap; }
 .tournament-simulator .sides .rating { margin: 0; }
