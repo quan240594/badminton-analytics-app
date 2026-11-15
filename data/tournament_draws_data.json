@@ -126778,6 +126778,213 @@
           "played_at": null
         }
       ]
+    },
+    "32": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "94",
+              "name": "Eva Yu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "85",
+              "name": "Thies Waterreus"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Zhe-Xi Lee"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "458",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "Thies Waterreus",
+                  "member_id": "50009207"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Zhe-Xi Lee",
+                  "member_id": "5009773"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:20"
+        },
+        {
+          "match_id": "454",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu",
+                  "seed": 2,
+                  "member_id": "50014524"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "Thies Waterreus",
+                  "member_id": "50009207"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:30"
+        },
+        {
+          "match_id": "457",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu",
+                  "seed": 2,
+                  "member_id": "50014524"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Zhe-Xi Lee",
+                  "member_id": "5009773"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:40"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Eva Yu",
+                  "seed": 2
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "Thies Waterreus"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Zhe-Xi Lee"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
