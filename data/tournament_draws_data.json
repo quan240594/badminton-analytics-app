@@ -143827,5 +143827,191 @@
         }
       ]
     }
+  },
+  "29081B55-290A-4B29-99A9-1D6F4A880CCF": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "THIJS van den BERG"
+            },
+            {
+              "player_id": "60",
+              "name": "NIKKI POBEZIN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "NICO HERMANS"
+            },
+            {
+              "player_id": "92",
+              "name": "BEAU RITZEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "79",
+              "name": "NICK PEULEN"
+            },
+            {
+              "player_id": "88",
+              "name": "RACHELLE HAAN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "9",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "NICO HERMANS",
+                  "seed": 2,
+                  "member_id": "735182"
+                },
+                {
+                  "player_id": "92",
+                  "name": "BEAU RITZEN",
+                  "member_id": "863754"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "NICK PEULEN",
+                  "member_id": "989460"
+                },
+                {
+                  "player_id": "88",
+                  "name": "RACHELLE HAAN",
+                  "member_id": "652273"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "THIJS van den BERG",
+                  "seed": 1,
+                  "member_id": "851092"
+                },
+                {
+                  "player_id": "60",
+                  "name": "NIKKI POBEZIN",
+                  "member_id": "851088"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "NICK PEULEN",
+                  "member_id": "989460"
+                },
+                {
+                  "player_id": "88",
+                  "name": "RACHELLE HAAN",
+                  "member_id": "652273"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:20"
+        },
+        {
+          "match_id": "6",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "THIJS van den BERG",
+                  "seed": 1,
+                  "member_id": "851092"
+                },
+                {
+                  "player_id": "60",
+                  "name": "NIKKI POBEZIN",
+                  "member_id": "851088"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "NICO HERMANS",
+                  "seed": 2,
+                  "member_id": "735182"
+                },
+                {
+                  "player_id": "92",
+                  "name": "BEAU RITZEN",
+                  "member_id": "863754"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:45"
+        }
+      ]
+    }
   }
 }
