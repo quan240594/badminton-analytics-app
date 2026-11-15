@@ -127433,6 +127433,244 @@
           "played_at": "za 21-11-2026 13:40"
         }
       ]
+    },
+    "35": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Botond Mark"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "Olivia Gnanaraj"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Aruna Upadhyay"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "4",
+              "name": "Samantha Huis"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "506",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Olivia Gnanaraj",
+                  "member_id": "5100580"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay",
+                  "member_id": "50007909"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:20"
+        },
+        {
+          "match_id": "508",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis",
+                  "member_id": "5006757"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:20"
+        },
+        {
+          "match_id": "502",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Olivia Gnanaraj",
+                  "member_id": "5100580"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "510",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay",
+                  "member_id": "50007909"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis",
+                  "member_id": "5006757"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "505",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Botond Mark",
+                  "member_id": "50010971"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay",
+                  "member_id": "50007909"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:40"
+        },
+        {
+          "match_id": "509",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Olivia Gnanaraj",
+                  "member_id": "5100580"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis",
+                  "member_id": "5006757"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:40"
+        }
+      ]
     }
   }
 }
