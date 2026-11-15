@@ -128505,6 +128505,247 @@
           "played_at": "za 21-11-2026 14:00"
         }
       ]
+    },
+    "47": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Niek van Suijlekom"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "91",
+              "name": "Marijne Spreeuwers"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "49",
+              "name": "Elize Riem"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "100",
+              "name": "Sam Borneman"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "696",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "Marijne Spreeuwers",
+                  "member_id": "10001972"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Elize Riem",
+                  "member_id": "50020918"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:40"
+        },
+        {
+          "match_id": "698",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Niek van Suijlekom",
+                  "seed": 2,
+                  "member_id": "50025154"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Sam Borneman",
+                  "member_id": "50009725"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:40"
+        },
+        {
+          "match_id": "692",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Niek van Suijlekom",
+                  "seed": 2,
+                  "member_id": "50025154"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "Marijne Spreeuwers",
+                  "member_id": "10001972"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:15"
+        },
+        {
+          "match_id": "700",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Elize Riem",
+                  "member_id": "50020918"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Sam Borneman",
+                  "member_id": "50009725"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:15"
+        },
+        {
+          "match_id": "695",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Niek van Suijlekom",
+                  "seed": 2,
+                  "member_id": "50025154"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Elize Riem",
+                  "member_id": "50020918"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "699",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "Marijne Spreeuwers",
+                  "member_id": "10001972"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Sam Borneman",
+                  "member_id": "50009725"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        }
+      ]
     }
   }
 }
