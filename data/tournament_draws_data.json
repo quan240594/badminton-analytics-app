@@ -148876,6 +148876,146 @@
           "played_at": null
         }
       ]
+    },
+    "26": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "NINA van den BERG"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "76",
+              "name": "PAULA CONRAADS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "ANNA DELAHOCHE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "339",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "PAULA CONRAADS",
+                  "member_id": "838055"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "ANNA DELAHOCHE",
+                  "member_id": "5000670"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:20"
+        },
+        {
+          "match_id": "336",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "NINA van den BERG",
+                  "seed": 1,
+                  "member_id": "882620"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "76",
+                  "name": "PAULA CONRAADS",
+                  "member_id": "838055"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:05"
+        },
+        {
+          "match_id": "338",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "NINA van den BERG",
+                  "seed": 1,
+                  "member_id": "882620"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "ANNA DELAHOCHE",
+                  "member_id": "5000670"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:20"
+        }
+      ]
     }
   }
 }
