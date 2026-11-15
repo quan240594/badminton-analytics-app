@@ -152175,6 +152175,49 @@
           "played_at": null
         }
       ]
+    },
+    "45": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "567",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "VERONIQUE LAGERWEIJ-LA FONTAINE",
+                  "member_id": "4990097"
+                },
+                {
+                  "player_id": "106",
+                  "name": "AUKJE VANVINKENROYE",
+                  "member_id": "50027888"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "ELIN GOLSTEIJN",
+                  "member_id": "5009623"
+                },
+                {
+                  "player_id": "33",
+                  "name": "ELLA KESSELS",
+                  "member_id": "5009620"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        }
+      ]
     }
   }
 }
