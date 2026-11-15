@@ -131280,6 +131280,264 @@
           "played_at": null
         }
       ]
+    },
+    "60": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Eason Dong"
+            },
+            {
+              "player_id": "98",
+              "name": "Michael Faulitta"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "80",
+              "name": "Michael Oosterman"
+            },
+            {
+              "player_id": "81",
+              "name": "Fabian Palsrok"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "Tanaya Bhide"
+            },
+            {
+              "player_id": "32",
+              "name": "Zaina Waqas"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "902",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Michael Oosterman",
+                  "member_id": "4987627"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok",
+                  "member_id": "4987625"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tanaya Bhide",
+                  "member_id": "5006828"
+                },
+                {
+                  "player_id": "32",
+                  "name": "Zaina Waqas",
+                  "member_id": "5006830"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:05"
+        },
+        {
+          "match_id": "898",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Eason Dong",
+                  "member_id": "50007914"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Michael Faulitta",
+                  "member_id": "5003040"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Michael Oosterman",
+                  "member_id": "4987627"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok",
+                  "member_id": "4987625"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:25"
+        },
+        {
+          "match_id": "901",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Eason Dong",
+                  "member_id": "50007914"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Michael Faulitta",
+                  "member_id": "5003040"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tanaya Bhide",
+                  "member_id": "5006828"
+                },
+                {
+                  "player_id": "32",
+                  "name": "Zaina Waqas",
+                  "member_id": "5006830"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:10"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Eason Dong"
+                },
+                {
+                  "player_id": "98",
+                  "name": "Michael Faulitta"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "80",
+                  "name": "Michael Oosterman"
+                },
+                {
+                  "player_id": "81",
+                  "name": "Fabian Palsrok"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "Tanaya Bhide"
+                },
+                {
+                  "player_id": "32",
+                  "name": "Zaina Waqas"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
