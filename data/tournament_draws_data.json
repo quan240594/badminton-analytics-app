@@ -127671,6 +127671,244 @@
           "played_at": "za 21-11-2026 13:40"
         }
       ]
+    },
+    "36": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "64",
+              "name": "Sithuli Kariyawasam"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "96",
+              "name": "Tushanth Arcot"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "58",
+              "name": "Max Weijers"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "107",
+              "name": "Dyllian Muller"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "522",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Tushanth Arcot",
+                  "member_id": "50012092"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Max Weijers",
+                  "member_id": "5006835"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:20"
+        },
+        {
+          "match_id": "524",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Sithuli Kariyawasam",
+                  "member_id": "50006838"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller",
+                  "member_id": "5003724"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 09:20"
+        },
+        {
+          "match_id": "518",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Sithuli Kariyawasam",
+                  "member_id": "50006838"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Tushanth Arcot",
+                  "member_id": "50012092"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "526",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Max Weijers",
+                  "member_id": "5006835"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller",
+                  "member_id": "5003724"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:55"
+        },
+        {
+          "match_id": "521",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "64",
+                  "name": "Sithuli Kariyawasam",
+                  "member_id": "50006838"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "58",
+                  "name": "Max Weijers",
+                  "member_id": "5006835"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:40"
+        },
+        {
+          "match_id": "525",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Tushanth Arcot",
+                  "member_id": "50012092"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Dyllian Muller",
+                  "member_id": "5003724"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:40"
+        }
+      ]
     }
   }
 }
