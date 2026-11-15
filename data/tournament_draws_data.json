@@ -133070,6 +133070,264 @@
           "played_at": "za 21-11-2026 19:15"
         }
       ]
+    },
+    "69": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "2",
+              "name": "Isabel Hogendoorn"
+            },
+            {
+              "player_id": "4",
+              "name": "Samantha Huis"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "48",
+              "name": "Jingqi (Amy) Nan"
+            },
+            {
+              "player_id": "57",
+              "name": "Samuel van Verseveld"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "18",
+              "name": "Arkin Hasan"
+            },
+            {
+              "player_id": "69",
+              "name": "Aruna Upadhyay"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "1007",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Jingqi (Amy) Nan",
+                  "member_id": "5009350"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Samuel van Verseveld",
+                  "member_id": "5006829"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Arkin Hasan",
+                  "member_id": "50007912"
+                },
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay",
+                  "member_id": "50007909"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:05"
+        },
+        {
+          "match_id": "1003",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Isabel Hogendoorn",
+                  "member_id": "5004486"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis",
+                  "member_id": "5006757"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Jingqi (Amy) Nan",
+                  "member_id": "5009350"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Samuel van Verseveld",
+                  "member_id": "5006829"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:25"
+        },
+        {
+          "match_id": "1006",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Isabel Hogendoorn",
+                  "member_id": "5004486"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis",
+                  "member_id": "5006757"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Arkin Hasan",
+                  "member_id": "50007912"
+                },
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay",
+                  "member_id": "50007909"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:35"
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "2",
+                  "name": "Isabel Hogendoorn"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Samantha Huis"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "48",
+                  "name": "Jingqi (Amy) Nan"
+                },
+                {
+                  "player_id": "57",
+                  "name": "Samuel van Verseveld"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "18",
+                  "name": "Arkin Hasan"
+                },
+                {
+                  "player_id": "69",
+                  "name": "Aruna Upadhyay"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
