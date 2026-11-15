@@ -124442,6 +124442,244 @@
           "played_at": "za 21-11-2026 15:15"
         }
       ]
+    },
+    "6": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Flynn van Eck"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "Gijs Peelen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "Levi Heuvelman"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Shlok Lakshetty"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "79",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Levi Heuvelman",
+                  "member_id": "5100710"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:40"
+        },
+        {
+          "match_id": "81",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:40"
+        },
+        {
+          "match_id": "75",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "83",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Levi Heuvelman",
+                  "member_id": "5100710"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "78",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Levi Heuvelman",
+                  "member_id": "5100710"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:15"
+        },
+        {
+          "match_id": "82",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:15"
+        }
+      ]
     }
   }
 }
