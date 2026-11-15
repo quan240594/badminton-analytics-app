@@ -132477,6 +132477,186 @@
           "played_at": "za 21-11-2026 19:15"
         }
       ]
+    },
+    "65": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "22",
+              "name": "Roos Boehlé"
+            },
+            {
+              "player_id": "31",
+              "name": "Daimy de Rooij"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "100",
+              "name": "Sam Borneman"
+            },
+            {
+              "player_id": "101",
+              "name": "Iris Hoppers"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "49",
+              "name": "Elize Riem"
+            },
+            {
+              "player_id": "56",
+              "name": "Mia Ta"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "970",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Sam Borneman",
+                  "member_id": "50009725"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Iris Hoppers",
+                  "member_id": "10003407"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Elize Riem",
+                  "member_id": "50020918"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Mia Ta",
+                  "member_id": "50020923"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "967",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Roos Boehlé",
+                  "member_id": "5006832"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Daimy de Rooij",
+                  "member_id": "5009129"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "100",
+                  "name": "Sam Borneman",
+                  "member_id": "50009725"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Iris Hoppers",
+                  "member_id": "10003407"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:50"
+        },
+        {
+          "match_id": "969",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Roos Boehlé",
+                  "member_id": "5006832"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Daimy de Rooij",
+                  "member_id": "5009129"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "49",
+                  "name": "Elize Riem",
+                  "member_id": "50020918"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Mia Ta",
+                  "member_id": "50020923"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:35"
+        }
+      ]
     }
   }
 }
