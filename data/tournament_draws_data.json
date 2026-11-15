@@ -150068,6 +150068,247 @@
           "played_at": "za 21-11-2026 16:00"
         }
       ]
+    },
+    "32": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "MYRTHE CASTRO"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "23",
+              "name": "DAPHNE SCHEENEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "CAITLYN van MARLE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "53",
+              "name": "NINA DELAHOCHE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "422",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "DAPHNE SCHEENEN",
+                  "member_id": "983704"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "CAITLYN van MARLE",
+                  "member_id": "988287"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "424",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "MYRTHE CASTRO",
+                  "seed": 3,
+                  "member_id": "888698"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "NINA DELAHOCHE",
+                  "member_id": "5000671"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:30"
+        },
+        {
+          "match_id": "418",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "MYRTHE CASTRO",
+                  "seed": 3,
+                  "member_id": "888698"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "DAPHNE SCHEENEN",
+                  "member_id": "983704"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "426",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "CAITLYN van MARLE",
+                  "member_id": "988287"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "NINA DELAHOCHE",
+                  "member_id": "5000671"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:40"
+        },
+        {
+          "match_id": "421",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "MYRTHE CASTRO",
+                  "seed": 3,
+                  "member_id": "888698"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "CAITLYN van MARLE",
+                  "member_id": "988287"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:00"
+        },
+        {
+          "match_id": "425",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "23",
+                  "name": "DAPHNE SCHEENEN",
+                  "member_id": "983704"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "NINA DELAHOCHE",
+                  "member_id": "5000671"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:00"
+        }
+      ]
     }
   }
 }
