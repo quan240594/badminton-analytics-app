@@ -144332,6 +144332,326 @@
           "played_at": "zo 22-11-2026 16:15"
         }
       ]
+    },
+    "3": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "THIJS van den BERG"
+            },
+            {
+              "player_id": "25",
+              "name": "VIHAAN SHAH"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "NICO HERMANS"
+            },
+            {
+              "player_id": "73",
+              "name": "FRANK VERMEESCH"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "MAURICE BREUER"
+            },
+            {
+              "player_id": "79",
+              "name": "NICK PEULEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "89",
+              "name": "JEROEN KRIJN"
+            },
+            {
+              "player_id": "96",
+              "name": "JULES van WIJLICK"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "36",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "THIJS van den BERG",
+                  "seed": 1,
+                  "member_id": "851092"
+                },
+                {
+                  "player_id": "25",
+                  "name": "VIHAAN SHAH",
+                  "member_id": "986306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "MAURICE BREUER",
+                  "member_id": "61899"
+                },
+                {
+                  "player_id": "79",
+                  "name": "NICK PEULEN",
+                  "member_id": "989460"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "40",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "NICO HERMANS",
+                  "seed": 2,
+                  "member_id": "735182"
+                },
+                {
+                  "player_id": "73",
+                  "name": "FRANK VERMEESCH",
+                  "member_id": "816689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "JEROEN KRIJN",
+                  "member_id": "743062"
+                },
+                {
+                  "player_id": "96",
+                  "name": "JULES van WIJLICK",
+                  "member_id": "849196"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "37",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "NICO HERMANS",
+                  "seed": 2,
+                  "member_id": "735182"
+                },
+                {
+                  "player_id": "73",
+                  "name": "FRANK VERMEESCH",
+                  "member_id": "816689"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "MAURICE BREUER",
+                  "member_id": "61899"
+                },
+                {
+                  "player_id": "79",
+                  "name": "NICK PEULEN",
+                  "member_id": "989460"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        },
+        {
+          "match_id": "39",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "THIJS van den BERG",
+                  "seed": 1,
+                  "member_id": "851092"
+                },
+                {
+                  "player_id": "25",
+                  "name": "VIHAAN SHAH",
+                  "member_id": "986306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "JEROEN KRIJN",
+                  "member_id": "743062"
+                },
+                {
+                  "player_id": "96",
+                  "name": "JULES van WIJLICK",
+                  "member_id": "849196"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        },
+        {
+          "match_id": "41",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "MAURICE BREUER",
+                  "member_id": "61899"
+                },
+                {
+                  "player_id": "79",
+                  "name": "NICK PEULEN",
+                  "member_id": "989460"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "89",
+                  "name": "JEROEN KRIJN",
+                  "member_id": "743062"
+                },
+                {
+                  "player_id": "96",
+                  "name": "JULES van WIJLICK",
+                  "member_id": "849196"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "33",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "THIJS van den BERG",
+                  "seed": 1,
+                  "member_id": "851092"
+                },
+                {
+                  "player_id": "25",
+                  "name": "VIHAAN SHAH",
+                  "member_id": "986306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "NICO HERMANS",
+                  "seed": 2,
+                  "member_id": "735182"
+                },
+                {
+                  "player_id": "73",
+                  "name": "FRANK VERMEESCH",
+                  "member_id": "816689"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        }
+      ]
     }
   }
 }
