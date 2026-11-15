@@ -725,6 +725,7 @@
   "0DD10195-8A14-45D2-A862-8DD4BA4808E1:345": "881886",
   "0DD10195-8A14-45D2-A862-8DD4BA4808E1:346": "50022016",
   "0DD10195-8A14-45D2-A862-8DD4BA4808E1:347": "860707",
+  "0DD10195-8A14-45D2-A862-8DD4BA4808E1:349": "837919",
   "1DC0E7F3-ACF9-4BB2-90DB-2D98DE085748:1": "860482",
   "1DC0E7F3-ACF9-4BB2-90DB-2D98DE085748:10": "836628",
   "1DC0E7F3-ACF9-4BB2-90DB-2D98DE085748:11": "5012556",
@@ -116630,6 +116631,88 @@
      "thisYear": {
       "losses": 31,
       "wins": 30
+     }
+    }
+   }
+  },
+  "837919": {
+   "fetched_at": "2026-11-15T22:03:10+00:00",
+   "guid": "81113C06-CD0A-4EC4-9C4B-CBAB60182263",
+   "ranking": {
+    "doubles": {
+     "points": 371,
+     "rank": 3233
+    },
+    "mixed": {
+     "points": 661,
+     "rank": 2514
+    },
+    "singles": {
+     "points": 597,
+     "rank": 1816
+    }
+   },
+   "stats": {
+    "doubles": {
+     "career": {
+      "losses": 156,
+      "wins": 210
+     },
+     "thisYear": {
+      "losses": 9,
+      "wins": 7
+     }
+    },
+    "mixed": {
+     "career": {
+      "losses": 83,
+      "wins": 101
+     },
+     "thisYear": {
+      "losses": 5,
+      "wins": 14
+     }
+    },
+    "singles": {
+     "career": {
+      "losses": 109,
+      "wins": 118
+     },
+     "thisYear": {
+      "losses": 10,
+      "wins": 5
+     }
+    },
+    "total": {
+     "career": {
+      "losses": 348,
+      "wins": 429
+     },
+     "form": [
+      {
+       "date": "2026-10-27",
+       "won": false
+      },
+      {
+       "date": "2026-10-27",
+       "won": true
+      },
+      {
+       "date": "2026-11-06",
+       "won": true
+      },
+      {
+       "date": "2026-11-06",
+       "won": false
+      },
+      {
+       "date": "2026-11-06",
+       "won": false
+      }
+     ],
+     "thisYear": {
+      "losses": 24,
+      "wins": 26
      }
     }
    }
