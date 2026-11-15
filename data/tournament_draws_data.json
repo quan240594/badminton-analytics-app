@@ -137023,6 +137023,174 @@
           "played_at": null
         }
       ]
+    },
+    "18": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Rini BREKOO"
+            },
+            {
+              "player_id": "17",
+              "name": "Mariette BURGERING"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Thiya van PEL"
+            },
+            {
+              "player_id": "48",
+              "name": "Sylvia VOORHORST"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Sofie GEUDENS"
+            },
+            {
+              "player_id": "12",
+              "name": "Kristel GEVAERT"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Rini BREKOO"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Mariette BURGERING"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Thiya van PEL"
+                },
+                {
+                  "player_id": "48",
+                  "name": "Sylvia VOORHORST"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Rini BREKOO"
+                },
+                {
+                  "player_id": "17",
+                  "name": "Mariette BURGERING"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Sofie GEUDENS"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Kristel GEVAERT"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Thiya van PEL"
+                },
+                {
+                  "player_id": "48",
+                  "name": "Sylvia VOORHORST"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Sofie GEUDENS"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Kristel GEVAERT"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
