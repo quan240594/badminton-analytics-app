@@ -125943,6 +125943,320 @@
           "played_at": "za 21-11-2026 19:00"
         }
       ]
+    },
+    "15": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "88",
+              "name": "Pramod Punyakoti"
+            },
+            {
+              "player_id": "55",
+              "name": "Sai Pranav Sukka"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Niels Hartsuiker"
+            },
+            {
+              "player_id": "26",
+              "name": "Robin van der Heijden"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "Shlok Lakshetty"
+            },
+            {
+              "player_id": "53",
+              "name": "Nirav Shetty"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "6",
+              "name": "Flynn van Eck"
+            },
+            {
+              "player_id": "12",
+              "name": "Gijs Peelen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "188",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Niels Hartsuiker",
+                  "member_id": "5100709"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Robin van der Heijden",
+                  "member_id": "4992249"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:25"
+        },
+        {
+          "match_id": "190",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:25"
+        },
+        {
+          "match_id": "184",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Niels Hartsuiker",
+                  "member_id": "5100709"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Robin van der Heijden",
+                  "member_id": "4992249"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:10"
+        },
+        {
+          "match_id": "192",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:10"
+        },
+        {
+          "match_id": "187",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                },
+                {
+                  "player_id": "55",
+                  "name": "Sai Pranav Sukka",
+                  "member_id": "4987948"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "Shlok Lakshetty",
+                  "member_id": "50014920"
+                },
+                {
+                  "player_id": "53",
+                  "name": "Nirav Shetty",
+                  "member_id": "5101030"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:30"
+        },
+        {
+          "match_id": "191",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Niels Hartsuiker",
+                  "member_id": "5100709"
+                },
+                {
+                  "player_id": "26",
+                  "name": "Robin van der Heijden",
+                  "member_id": "4992249"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "6",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:30"
+        }
+      ]
     }
   }
 }
