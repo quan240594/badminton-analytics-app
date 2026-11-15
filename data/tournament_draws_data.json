@@ -141741,6 +141741,706 @@
           "played_at": "zo 22-11-2026 15:40"
         }
       ]
+    },
+    "20": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Martijn Aagtjes"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "Maarten Meeuwis"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Gijs Smits"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "21",
+              "name": "Ilse van Os"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Stephan De Jong"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Maarten Hengst"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "Sandra Schuurkes"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "771",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "776",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "781",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "750",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "777",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "782",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "756",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        },
+        {
+          "match_id": "778",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        },
+        {
+          "match_id": "783",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        },
+        {
+          "match_id": "757",
+          "round": "Ronde 4",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "762",
+          "round": "Ronde 4",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "784",
+          "round": "Ronde 4",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "763",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "768",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "785",
+          "round": "Ronde 5",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "764",
+          "round": "Ronde 6",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "21",
+                  "name": "Ilse van Os",
+                  "member_id": "50006306"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "769",
+          "round": "Ronde 6",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "774",
+          "round": "Ronde 6",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "770",
+          "round": "Ronde 7",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Gijs Smits",
+                  "member_id": "50024529"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Stephan De Jong",
+                  "member_id": "50024548"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "775",
+          "round": "Ronde 7",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Maarten Meeuwis",
+                  "member_id": "4985952"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Maarten Hengst",
+                  "member_id": "50007362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "780",
+          "round": "Ronde 7",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Martijn Aagtjes",
+                  "member_id": "50024530"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Sandra Schuurkes"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        }
+      ]
     }
   }
 }
