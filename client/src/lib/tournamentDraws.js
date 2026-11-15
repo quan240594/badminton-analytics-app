@@ -8,8 +8,8 @@
 export function disciplineForDraw(name) {
   if (!name) return null;
   if (/(?:^(?:GD|XD)\b)|(?:Gemengd)/i.test(name)) return 'mixed';
-  if (/(?:^(?:JE|ME|HE|DE|MS|WS)\b)|(?:Enkel)/i.test(name)) return 'singles';
-  if (/(?:^(?:JD|MD|HD|DD|WD|D)\b)|(?:Dubbel)/i.test(name)) return 'doubles';
+  if (/(?:^(?:JE|ME|HE|DE|VE|MS|WS)\b)|(?:Enkel)/i.test(name)) return 'singles';
+  if (/(?:^(?:JD|MD|HD|DD|VD|WD|D)\b)|(?:Dubbel)/i.test(name)) return 'doubles';
   return null;
 }
 

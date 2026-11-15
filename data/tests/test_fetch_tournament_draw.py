@@ -99,6 +99,13 @@ def test_parse_matches_empty():
     assert ftd.parse_matches("no matches") == []
 
 
+def test_parse_group_qualifier_and_bye():
+    block = match_block(1, ['<div class="match__row "><span>Groep A #1</span></div>', '<div class="match__row "><span>Bye</span></div>'])
+    [match] = ftd.parse_matches(block)
+    assert match["sides"][0]["qualifier"] == {"group": "A", "rank": 1}
+    assert match["sides"][1]["bye"] is True
+
+
 def test_fetch_sends_xhr_headers_and_cookie(monkeypatch):
     fake = install_urlopen(monkeypatch, {"/x": "body"})
     assert ftd.fetch("http://h/x", "c=1") == "body"

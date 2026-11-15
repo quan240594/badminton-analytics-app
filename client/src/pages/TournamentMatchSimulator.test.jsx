@@ -115,6 +115,75 @@ describe('TournamentMatchSimulator', () => {
   });
 });
 
+describe('TournamentMatchSimulator - event progression', () => {
+  const pool = (group, ids) => ({ draw_id: group, name: `HE - Groep ${group}`, type: 'Poule', standings: ids.map((player_id) => ({ players: [{ player_id }] })), matches: [] });
+  const qualifier = (group) => ({ players: [], qualifier: { group, rank: 1 } });
+  const bye = { players: [], bye: true };
+  const event = { event_id: 'event', name: 'HE', participants: [['p1'], ['p2'], ['p3'], ['p4']] };
+  const playoffs = { draw_id: 'playoff', name: 'HE', type: 'Afvalschema', matches: [
+    { round: 'Finale', sides: [{ players: [] }, { players: [] }] },
+    { round: 'Halve finale', sides: [qualifier('A'), bye] },
+    { round: 'Halve finale', sides: [qualifier('B'), bye] },
+  ] };
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    localStorage.clear();
+    fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, events: [event], draws: [pool('A', ['p1', 'p2']), pool('B', ['p3', 'p4']), playoffs] }]);
+    simulateTournamentMatch.mockResolvedValue({ sideB: rankedSide('p2', 'Bob Beta'), winProbabilityA: 0.5, winProbabilityB: 0.5 });
+    tournamentWinModel.mockResolvedValue({ isRated: () => true, winProbability: () => 0.5, nameOf: (id) => TOURNAMENT.players.find((player) => player.id === id).name });
+  });
+
+  it('shows all groups and cumulative playoff odds, then updates for another selected player', async () => {
+    await selectTournamentAndPlayer('Alice Alpha');
+    expect(await screen.findByText('Chance to win the event: 25%')).toBeInTheDocument();
+    expect(screen.getByText('Advance from the group: 50%')).toBeInTheDocument();
+    expect(screen.getByText('50% Dana Delta - you win 50%')).toBeInTheDocument();
+    expect(screen.getByText('Win and advance, from the start: 25%')).toBeInTheDocument();
+    const bracket = screen.getByRole('region', { name: 'HE playoff bracket' });
+    expect(within(bracket).getAllByRole('article')).toHaveLength(3);
+    expect(within(bracket).getByText('Groep A #1')).toBeInTheDocument();
+    expect(within(bracket).getByText('Groep B #1')).toBeInTheDocument();
+    const group = screen.getByRole('table', { name: 'HE - Groep A match probabilities' });
+    expect(group.closest('section')).toHaveClass('selected-player-pool');
+    expect(screen.getByRole('table', { name: 'HE - Groep B match probabilities' }).closest('section')).not.toHaveClass('selected-player-pool');
+    expect(within(group).getAllByRole('columnheader')).toHaveLength(4);
+    const alice = within(group).getByRole('rowheader', { name: 'Alice Alpha' }).closest('tr');
+    expect(alice).toHaveClass('selected-team');
+    expect(within(alice).getAllByRole('cell').map((cell) => cell.textContent)).toEqual(['-', '50% | 50%', '50%']);
+    expect(screen.queryByText('vs Bob Beta')).not.toBeInTheDocument();
+    const input = screen.getByPlaceholderText('Search player...');
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: 'Cara Gamma' } });
+    fireEvent.mouseDown(await screen.findByRole('option', { name: /Cara Gamma/ }));
+    await waitFor(() => expect(screen.getByText('50% Alice Alpha - you win 50%')).toBeInTheDocument());
+    expect(screen.queryByText('50% Dana Delta - you win 50%')).not.toBeInTheDocument();
+    expect(screen.getByRole('table', { name: 'HE - Groep B match probabilities' }).closest('section')).toHaveClass('selected-player-pool');
+    expect(screen.getByRole('table', { name: 'HE - Groep A match probabilities' }).closest('section')).not.toHaveClass('selected-player-pool');
+  });
+
+  it('keeps affected progression unknown when a group opponent is unrated', async () => {
+    tournamentWinModel.mockResolvedValue({ isRated: (team) => !team.includes('p2'), winProbability: (first, second) => [...first, ...second].includes('p2') ? null : 0.5, nameOf: (id) => TOURNAMENT.players.find((player) => player.id === id).name });
+    await selectTournamentAndPlayer('Alice Alpha');
+    expect(await screen.findByText('HE: tournament outlook')).toBeInTheDocument();
+    expect(screen.queryByText(/Advance from the group:/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Chance to win the event:/)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/Bob Beta has no national ranking data/).length).toBeGreaterThan(0);
+  });
+
+  it('uses registered pairs for doubles event progression', async () => {
+    fetchTournaments.mockResolvedValue([{ ...TOURNAMENT, events: [{ event_id: 'pairs', name: 'HD', participants: [['p1', 'p2'], ['p3', 'p4']] }], draws: [
+      { draw_id: 'pairsA', name: 'HD - Groep A', type: 'Poule', standings: [['p1', 'p2'], ['p3', 'p4']].map((ids) => ({ players: ids.map((player_id) => ({ player_id })) })), matches: [] },
+      { draw_id: 'pairsFinal', name: 'HD', type: 'Afvalschema', matches: [{ round: 'Finale', sides: [qualifier('A'), bye] }] },
+    ] }]);
+    await selectTournamentAndPlayer('Alice Alpha');
+    expect(await screen.findByText('HD: tournament outlook')).toBeInTheDocument();
+    expect(screen.getByText('Chance to win the event: 50%')).toBeInTheDocument();
+    expect(tournamentWinModel).toHaveBeenCalledWith('t1', 'doubles');
+    expect(simulateTournamentMatch).toHaveBeenCalledWith('t1', 'doubles', ['p1', 'p2'], ['p3', 'p4']);
+  });
+});
+
 describe('TournamentMatchSimulator - player profiles', () => {
   const CARA = '615c2c92-eee8-494c-8ac8-9cf6b2deb0a8';
   const ALICE = '8d5d4da6-555d-461d-9713-eb531f630bcc';
@@ -208,7 +277,7 @@ describe('TournamentMatchSimulator - player profiles', () => {
     }]);
     await selectTournamentAndPlayer('Alice Alpha');
 
-    expect(await screen.findByRole('link', { name: 'Cara Gamma' })).toHaveAttribute('href', profileUrl(CARA));
+    for (const link of await screen.findAllByRole('link', { name: 'Cara Gamma' })) expect(link).toHaveAttribute('href', profileUrl(CARA));
     expect(screen.getByText('60% Bob Beta - you win 60%')).toBeInTheDocument();
   });
 });
