@@ -124701,6 +124701,247 @@
           "played_at": "za 21-11-2026 18:15"
         }
       ]
+    },
+    "8": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Nathan Weijers"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "60",
+              "name": "Dmytro Prykhodko"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "Justin Reusen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "113",
+              "name": "Nithin Arunachalam"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "98",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Dmytro Prykhodko",
+                  "member_id": "50010023"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Justin Reusen",
+                  "member_id": "5012501"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:15"
+        },
+        {
+          "match_id": "100",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Nathan Weijers",
+                  "seed": 1,
+                  "member_id": "5012014"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Nithin Arunachalam",
+                  "member_id": "50014327"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:15"
+        },
+        {
+          "match_id": "94",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Nathan Weijers",
+                  "seed": 1,
+                  "member_id": "5012014"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Dmytro Prykhodko",
+                  "member_id": "50010023"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:15"
+        },
+        {
+          "match_id": "102",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Justin Reusen",
+                  "member_id": "5012501"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Nithin Arunachalam",
+                  "member_id": "50014327"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:15"
+        },
+        {
+          "match_id": "97",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Nathan Weijers",
+                  "seed": 1,
+                  "member_id": "5012014"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "Justin Reusen",
+                  "member_id": "5012501"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:40"
+        },
+        {
+          "match_id": "101",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "60",
+                  "name": "Dmytro Prykhodko",
+                  "member_id": "50010023"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Nithin Arunachalam",
+                  "member_id": "50014327"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:40"
+        }
+      ]
     }
   }
 }
