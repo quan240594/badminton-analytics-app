@@ -152400,6 +152400,188 @@
           "played_at": "za 21-11-2026 19:20"
         }
       ]
+    },
+    "47": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "53",
+              "name": "NINA DELAHOCHE"
+            },
+            {
+              "player_id": "102",
+              "name": "CAITLYN van MARLE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "51",
+              "name": "MYRTHE CASTRO"
+            },
+            {
+              "player_id": "77",
+              "name": "JANINE KELDERMANN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "30",
+              "name": "ISABELLA de BRUIJN"
+            },
+            {
+              "player_id": "15",
+              "name": "KAYLINN KERSBERGEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "586",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "NINA DELAHOCHE",
+                  "seed": 2,
+                  "member_id": "5000671"
+                },
+                {
+                  "player_id": "102",
+                  "name": "CAITLYN van MARLE",
+                  "member_id": "988287"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "ISABELLA de BRUIJN",
+                  "member_id": "5001103"
+                },
+                {
+                  "player_id": "15",
+                  "name": "KAYLINN KERSBERGEN",
+                  "member_id": "4995478"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:40"
+        },
+        {
+          "match_id": "587",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "MYRTHE CASTRO",
+                  "member_id": "888698"
+                },
+                {
+                  "player_id": "77",
+                  "name": "JANINE KELDERMANN",
+                  "member_id": "5009619"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "30",
+                  "name": "ISABELLA de BRUIJN",
+                  "member_id": "5001103"
+                },
+                {
+                  "player_id": "15",
+                  "name": "KAYLINN KERSBERGEN",
+                  "member_id": "4995478"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 17:20"
+        },
+        {
+          "match_id": "584",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "53",
+                  "name": "NINA DELAHOCHE",
+                  "seed": 2,
+                  "member_id": "5000671"
+                },
+                {
+                  "player_id": "102",
+                  "name": "CAITLYN van MARLE",
+                  "member_id": "988287"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "51",
+                  "name": "MYRTHE CASTRO",
+                  "member_id": "888698"
+                },
+                {
+                  "player_id": "77",
+                  "name": "JANINE KELDERMANN",
+                  "member_id": "5009619"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        }
+      ]
     }
   }
 }
