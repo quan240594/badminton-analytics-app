@@ -26215,14 +26215,17 @@
       {
         "event_id": "2",
         "name": "Recreanten",
-        "draws": 0,
-        "entries": 12,
+        "draws": 3,
+        "entries": 14,
         "participants": [
           [
             "29"
           ],
           [
             "30"
+          ],
+          [
+            "36"
           ],
           [
             "43"
@@ -26246,6 +26249,9 @@
             "3"
           ],
           [
+            "38"
+          ],
+          [
             "12"
           ],
           [
@@ -26259,14 +26265,11 @@
       {
         "event_id": "5",
         "name": "Training maandag groep 2",
-        "draws": 0,
-        "entries": 9,
+        "draws": 1,
+        "entries": 8,
         "participants": [
           [
             "7"
-          ],
-          [
-            "36"
           ],
           [
             "17"
@@ -26294,7 +26297,7 @@
       {
         "event_id": "4",
         "name": "Training maandag groep1",
-        "draws": 0,
+        "draws": 1,
         "entries": 7,
         "participants": [
           [
@@ -26323,7 +26326,7 @@
       {
         "event_id": "6",
         "name": "Training zaterdag groep 1",
-        "draws": 0,
+        "draws": 1,
         "entries": 7,
         "participants": [
           [
@@ -26352,7 +26355,7 @@
       {
         "event_id": "7",
         "name": "Training zaterdag groep 2",
-        "draws": 0,
+        "draws": 1,
         "entries": 8,
         "participants": [
           [
@@ -26385,15 +26388,68 @@
         "event_id": "3",
         "name": "Tranining dinsdag",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "38"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       }
     ],
-    "draws": [],
+    "draws": [
+      {
+        "draw_id": "22",
+        "name": "Recreanten",
+        "size": 2,
+        "type": "Poule",
+        "stage": "Playoff",
+        "loser_round": null
+      },
+      {
+        "draw_id": "20",
+        "name": "Recreanten - Groep A",
+        "size": 7,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "21",
+        "name": "Recreanten - Groep B",
+        "size": 7,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "4",
+        "name": "Training maandag groep 2",
+        "size": 8,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "5",
+        "name": "Training maandag groep1",
+        "size": 7,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "6",
+        "name": "Training zaterdag groep 1",
+        "size": 7,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      },
+      {
+        "draw_id": "7",
+        "name": "Training zaterdag groep 2",
+        "size": 8,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": null,
