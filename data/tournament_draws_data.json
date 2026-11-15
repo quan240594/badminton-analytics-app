@@ -149342,6 +149342,250 @@
           "played_at": "zo 22-11-2026 14:30"
         }
       ]
+    },
+    "29": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "31",
+              "name": "ELIN GOLSTEIJN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "13",
+              "name": "KRISTEL BILLEKENS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "33",
+              "name": "ELLA KESSELS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "AUKJE VANVINKENROYE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "374",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "13",
+                  "name": "KRISTEL BILLEKENS",
+                  "seed": 2,
+                  "member_id": "5000761"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "ELLA KESSELS",
+                  "member_id": "5009620"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "376",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "ELIN GOLSTEIJN",
+                  "seed": 1,
+                  "member_id": "5009623"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "AUKJE VANVINKENROYE",
+                  "member_id": "50027888"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "373",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "ELIN GOLSTEIJN",
+                  "seed": 1,
+                  "member_id": "5009623"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "ELLA KESSELS",
+                  "member_id": "5009620"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "377",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "13",
+                  "name": "KRISTEL BILLEKENS",
+                  "seed": 2,
+                  "member_id": "5000761"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "AUKJE VANVINKENROYE",
+                  "member_id": "50027888"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "378",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "33",
+                  "name": "ELLA KESSELS",
+                  "member_id": "5009620"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "AUKJE VANVINKENROYE",
+                  "member_id": "50027888"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:45"
+        },
+        {
+          "match_id": "370",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "ELIN GOLSTEIJN",
+                  "seed": 1,
+                  "member_id": "5009623"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "13",
+                  "name": "KRISTEL BILLEKENS",
+                  "seed": 2,
+                  "member_id": "5000761"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:30"
+        }
+      ]
     }
   }
 }
