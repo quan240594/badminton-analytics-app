@@ -148570,6 +148570,144 @@
           "played_at": "za 21-11-2026 15:20"
         }
       ]
+    },
+    "24": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "72",
+              "name": "GYANO VERBRUGGE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "IAN ESSERS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "PIM MOLENBRUGGE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "315",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "IAN ESSERS",
+                  "member_id": "890935"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "PIM MOLENBRUGGE",
+                  "member_id": "884140"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "312",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "GYANO VERBRUGGE",
+                  "member_id": "4989819"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "IAN ESSERS",
+                  "member_id": "890935"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 13:05"
+        },
+        {
+          "match_id": "314",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "GYANO VERBRUGGE",
+                  "member_id": "4989819"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "PIM MOLENBRUGGE",
+                  "member_id": "884140"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 15:20"
+        }
+      ]
     }
   }
 }
