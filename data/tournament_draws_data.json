@@ -151743,6 +151743,188 @@
           "played_at": "za 21-11-2026 20:40"
         }
       ]
+    },
+    "41": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "39",
+              "name": "JUSTIN CHEUNG"
+            },
+            {
+              "player_id": "49",
+              "name": "SVEN SMEETS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "IAN ESSERS"
+            },
+            {
+              "player_id": "62",
+              "name": "DANIEL STOFFELEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "105",
+              "name": "PIM RUTTEN"
+            },
+            {
+              "player_id": "50",
+              "name": "REMCO STOFBERG"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "525",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "IAN ESSERS",
+                  "member_id": "890935"
+                },
+                {
+                  "player_id": "62",
+                  "name": "DANIEL STOFFELEN",
+                  "member_id": "578562"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "PIM RUTTEN",
+                  "member_id": "818073"
+                },
+                {
+                  "player_id": "50",
+                  "name": "REMCO STOFBERG",
+                  "member_id": "565591"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "522",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "JUSTIN CHEUNG",
+                  "seed": 2,
+                  "member_id": "4984963"
+                },
+                {
+                  "player_id": "49",
+                  "name": "SVEN SMEETS",
+                  "member_id": "4999874"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "IAN ESSERS",
+                  "member_id": "890935"
+                },
+                {
+                  "player_id": "62",
+                  "name": "DANIEL STOFFELEN",
+                  "member_id": "578562"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "524",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "39",
+                  "name": "JUSTIN CHEUNG",
+                  "seed": 2,
+                  "member_id": "4984963"
+                },
+                {
+                  "player_id": "49",
+                  "name": "SVEN SMEETS",
+                  "member_id": "4999874"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "PIM RUTTEN",
+                  "member_id": "818073"
+                },
+                {
+                  "player_id": "50",
+                  "name": "REMCO STOFBERG",
+                  "member_id": "565591"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        }
+      ]
     }
   }
 }
