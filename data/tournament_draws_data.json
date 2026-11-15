@@ -150635,6 +150635,188 @@
           "played_at": "zo 22-11-2026 14:30"
         }
       ]
+    },
+    "35": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "LUC KOENDERS"
+            },
+            {
+              "player_id": "3",
+              "name": "DAVY ROOSEN"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "57",
+              "name": "JORDAN JONGBOOM"
+            },
+            {
+              "player_id": "71",
+              "name": "KAJ RIEDL"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "37",
+              "name": "JORREN STRIJP"
+            },
+            {
+              "player_id": "20",
+              "name": "LARS WIJSHOFF"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "461",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "JORDAN JONGBOOM",
+                  "member_id": "879943"
+                },
+                {
+                  "player_id": "71",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "JORREN STRIJP",
+                  "member_id": "869777"
+                },
+                {
+                  "player_id": "20",
+                  "name": "LARS WIJSHOFF",
+                  "member_id": "877111"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 18:00"
+        },
+        {
+          "match_id": "457",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "LUC KOENDERS",
+                  "seed": 1,
+                  "member_id": "869589"
+                },
+                {
+                  "player_id": "3",
+                  "name": "DAVY ROOSEN",
+                  "member_id": "10001527"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "JORDAN JONGBOOM",
+                  "member_id": "879943"
+                },
+                {
+                  "player_id": "71",
+                  "name": "KAJ RIEDL",
+                  "member_id": "991062"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 19:20"
+        },
+        {
+          "match_id": "460",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "LUC KOENDERS",
+                  "seed": 1,
+                  "member_id": "869589"
+                },
+                {
+                  "player_id": "3",
+                  "name": "DAVY ROOSEN",
+                  "member_id": "10001527"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "37",
+                  "name": "JORREN STRIJP",
+                  "member_id": "869777"
+                },
+                {
+                  "player_id": "20",
+                  "name": "LARS WIJSHOFF",
+                  "member_id": "877111"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 20:40"
+        }
+      ]
     }
   }
 }
