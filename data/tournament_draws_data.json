@@ -149016,6 +149016,247 @@
           "played_at": "za 21-11-2026 15:20"
         }
       ]
+    },
+    "27": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "DANIQUE JACOBS"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "DEWI BAGE"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "YUANLU LI"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "BIANCA MEIJER"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "362",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "YUANLU LI",
+                  "member_id": "50027768"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "BIANCA MEIJER",
+                  "member_id": "729799"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 10:10"
+        },
+        {
+          "match_id": "348",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "DEWI BAGE",
+                  "member_id": "989080"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "YUANLU LI",
+                  "member_id": "50027768"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:20"
+        },
+        {
+          "match_id": "360",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "DANIQUE JACOBS",
+                  "seed": 2,
+                  "member_id": "4989602"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "BIANCA MEIJER",
+                  "member_id": "729799"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 11:55"
+        },
+        {
+          "match_id": "345",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "DANIQUE JACOBS",
+                  "seed": 2,
+                  "member_id": "4989602"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "DEWI BAGE",
+                  "member_id": "989080"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 14:00"
+        },
+        {
+          "match_id": "361",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "DEWI BAGE",
+                  "member_id": "989080"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "BIANCA MEIJER",
+                  "member_id": "729799"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:00"
+        },
+        {
+          "match_id": "347",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "DANIQUE JACOBS",
+                  "seed": 2,
+                  "member_id": "4989602"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "YUANLU LI",
+                  "member_id": "50027768"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 16:40"
+        }
+      ]
     }
   }
 }
