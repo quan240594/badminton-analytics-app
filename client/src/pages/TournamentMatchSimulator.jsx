@@ -10,7 +10,9 @@ import {
   disciplineForDraw, opponentsInDraw, playerEvents, drawIsForEvent, drawFormat, defaultMockFormat, completeTeams,
   mockPoolFor, teamKey,
 } from '../lib/tournamentDraws.js';
-import { buildBracket, buildMockBracket, analyzeBracket } from '../lib/knockout.js';
+import { buildBracket, buildMockBracket, analyzeBracket, describeBracket } from '../lib/knockout.js';
+import { analyzePool, poolGroup } from '../lib/poolOutlook.js';
+import PlayoffBracket from '../components/PlayoffBracket.jsx';
 
 const STORAGE_KEY = 'badminton-app-tournament-state';
 
@@ -43,6 +45,8 @@ async function knockoutOutlook(tournamentId, discipline, bracket, own) {
   const name = (team) => team.map(model.nameOf).join(' / ');
   return {
     titleP: outlook.titleP,
+    tree: describeBracket(bracket, own, model),
+    ownKey: teamKey(own),
     rounds: outlook.rounds.map((round) => ({
       ...round,
       opponents: round.opponents?.map(({ team, p, winP }) => ({ name: name(team), team, p, winP })),
@@ -72,6 +76,103 @@ async function simulatePublishedDraw(tournamentId, { draw, format, discipline, o
 }
 
 const percent = (p) => `${Math.round(p * 100)}%`;
+
+function qualifiedPool(forecasts, { group, rank }) {
+  const pool = forecasts.find((candidate) => poolGroup(candidate.draw) === group);
+  if (!pool || rank < 1 || rank > pool.teams.length) return null;
+  const entries = pool.byRank?.[rank - 1];
+  return { label: `Groep ${group} #${rank}`, poolTeams: pool.teams, entries: entries ? new Map([...entries].filter(([, value]) => value.p > 0)) : null };
+}
+
+function eventPlayoff(playoff, forecasts, ownPool, entry, model) {
+  const ownKey = teamKey(entry);
+  const published = buildBracket(playoff, (qualifier) => qualifiedPool(forecasts, qualifier));
+  const tree = published ? describeBracket(published, entry, model) : null;
+  const ownSlots = playoff.matches.flatMap((match) => match.sides)
+    .filter((side) => side.qualifier?.group === poolGroup(ownPool.draw));
+  if (ownSlots.length !== 1) return { qualification: null, outlook: null, tree,
+    note: ownSlots.length > 1 ? 'Multiple qualifying positions: playoff progression is not yet modelled.' : 'Waiting for group qualifiers in the playoff draw.' };
+  const rank = ownSlots[0].qualifier.rank;
+  const qualification = ownPool.byRank?.[rank - 1]?.get(ownKey)?.p ?? null;
+  const bracket = buildBracket(playoff, ({ group, rank: position }) => {
+    if (group === poolGroup(ownPool.draw)) return { team: entry };
+    return qualifiedPool(forecasts, { group, rank: position });
+  });
+  const result = bracket && analyzeBracket(bracket, entry, model, qualification);
+  const outlook = result ? {
+    ...result,
+    rounds: result.rounds.map((round) => ({
+      ...round,
+      opponents: round.opponents?.map((opponent) => ({ ...opponent, name: opponent.team.map(model.nameOf).join(' / ') })),
+      missing: round.missing ? [...new Set([
+        ...round.missing,
+        ...(qualification == null ? ownPool.teams.filter((team) => !model.isRated(team)) : []),
+      ].map((team) => team.map(model.nameOf).join(' / ')))] : undefined,
+    })),
+  } : null;
+  return { qualification, outlook, tree, note: outlook ? null : 'Playoff feeder data is incomplete.' };
+}
+
+async function simulateEvent(tournamentId, { event, discipline, entry }, draws) {
+  const related = draws.filter((draw) => drawIsForEvent(event, draw));
+  const pools = related.filter((draw) => ['roundRobin', 'doubleRoundRobin'].includes(drawFormat(draw)));
+  if (!pools.length) return null;
+  const model = await tournamentWinModel(tournamentId, discipline);
+  const forecasts = pools.map((draw) => {
+    const forecast = analyzePool(draw, model);
+    const matchups = forecast.teams.map((team) => forecast.teams.map((opponent) => (
+      teamKey(team) === teamKey(opponent) ? null : model.winProbability(team, opponent)
+    )));
+    return { draw, ...forecast, matchups };
+  });
+  const ownKey = teamKey(entry);
+  const ownPool = forecasts.find((pool) => pool.teams.some((team) => teamKey(team) === ownKey));
+  if (!ownPool) return null;
+  const ownIndex = ownPool.teams.findIndex((team) => teamKey(team) === ownKey);
+  const playoff = related.find((draw) => drawFormat(draw) === 'knockout');
+  const progression = playoff ? eventPlayoff(playoff, forecasts, ownPool, entry, model)
+    : { qualification: null, outlook: null, note: 'Playoff draw not available yet.' };
+  return { event, forecasts, ownKey, sweepP: ownPool.sweep?.[ownIndex] ?? null, ...progression };
+}
+
+function EventResult({ result, memberOf }) {
+  const { event, forecasts, ownKey, sweepP, qualification, outlook, tree, note } = result;
+  return <div className="result tournament-outlook">
+    <h3>{event.name}: tournament outlook</h3>
+    <p className="muted">Tied match-win totals share finishing positions equally in this forecast; game and point tiebreaks are not predicted.</p>
+    {sweepP != null && <p>Win every group match: {percent(sweepP)}</p>}
+    {qualification != null && <p>Advance from the group: {percent(qualification)}</p>}
+    {forecasts.map((pool) => <section key={pool.draw.draw_id} className={pool.teams.some((team) => teamKey(team) === ownKey) ? 'selected-player-pool' : undefined}>
+      <h4>{pool.draw.name}</h4>
+      <div className="table-scroll">
+        <table className="pool-matchup-table" style={{ minWidth: `${12 + (pool.teams.length + 1) * 7}rem` }} aria-label={`${pool.draw.name} match probabilities`}>
+          <colgroup><col style={{ width: '12rem' }} />{pool.teams.map((team) => <col key={teamKey(team)} style={{ width: '7rem' }} />)}<col style={{ width: '7rem' }} /></colgroup>
+          <thead><tr><th scope="col">Player / Pair</th>
+            {pool.teams.map((team) => <th scope="col" key={teamKey(team)}><SideNames members={team.map(memberOf)} /></th>)}
+            <th scope="col">Finish First</th>
+          </tr></thead>
+          <tbody>{pool.teams.map((team, row) => <tr key={teamKey(team)} className={teamKey(team) === ownKey ? 'selected-team' : undefined}>
+            <th scope="row"><SideNames members={team.map(memberOf)} /></th>
+            {pool.teams.map((opponent, column) => {
+              const probability = pool.matchups[row][column];
+              const title = `Win | loss against ${opponent.map((id) => memberOf(id).name).join(' / ')}`;
+              const odds = probability == null ? 'Unknown' : <><span className="matchup-win">{percent(probability)}</span> | <span className="matchup-loss">{percent(1 - probability)}</span></>;
+              return <td key={teamKey(opponent)} title={row === column ? undefined : title}>
+                {row === column ? '-' : odds}
+              </td>;
+            })}
+            <td>{pool.byRank ? percent(pool.byRank[0].get(teamKey(team)).p) : 'Unknown'}</td>
+          </tr>)}</tbody>
+        </table>
+      </div>
+      {pool.tieP != null && pool.tieP > 0 && <p className="muted">Tie for first: {percent(pool.tieP)}</p>}
+      {!pool.byRank && <p className="muted">Group odds unavailable: missing rankings or too many unresolved matches.</p>}
+    </section>)}
+    {note && <p className="muted">{note}</p>}
+    {tree && <PlayoffBracket tree={tree} outlook={outlook} ownKey={ownKey} memberOf={memberOf} eventName={event.name} />}
+    {outlook?.titleP != null && <p className="knockout-title">Chance to win the event: {percent(outlook.titleP)}</p>}
+  </div>;
+}
 const MAX_OPPONENTS_SHOWN = 3;
 
 // A certain opponent is just named; otherwise show how likely the meeting is.
@@ -144,7 +245,7 @@ function DrawResult({ title, badge, partners, note, opponentResults, tournaments
   );
 }
 
-function KnockoutRound({ round, memberOf }) {
+function KnockoutRound({ round, memberOf, allOpponents = false }) {
   if (round.status === 'out') return null;
   const { opponents = [] } = round;
   return (
@@ -154,9 +255,14 @@ function KnockoutRound({ round, memberOf }) {
       {round.status === 'won' && <p className="muted">Won</p>}
       {round.status === 'lost' && <p className="muted">Lost - out of the draw</p>}
       {round.status === 'unknown' && (
-        <p className="error">
-          Can't be simulated: {round.missing.join(', ')} {round.missing.length > 1 ? 'have' : 'has'} no national ranking data.
+        <><p className="error">
+          {round.missing.length ? <>Can't be simulated: {round.missing.join(', ')} {round.missing.length > 1 ? 'have' : 'has'} no national ranking data.</> : 'Forecast unavailable until the group outcome is known.'}
         </p>
+        {allOpponents && <ul className="knockout-opponents">
+          {(round.candidates ?? []).map(({ team, winP }) => <li key={teamKey(team)}>
+            <SideNames members={team.map(memberOf)} /> - {winP == null ? 'match odds unknown' : `you win ${percent(winP)}`}
+          </li>)}
+        </ul>}</>
       )}
       {round.status === 'upcoming' && (
         <>
@@ -165,13 +271,14 @@ function KnockoutRound({ round, memberOf }) {
             <div className="bar-b" style={{ width: percent(1 - round.winP) }}>{percent(1 - round.winP)}</div>
           </div>
           {round.reach < 1 && <p className="muted">{percent(round.reach)} chance of getting here</p>}
+          {allOpponents && <p className="muted">Win and advance, from the start: {percent(round.reach * round.winP)}</p>}
           <ul className="knockout-opponents">
-            {opponents.slice(0, MAX_OPPONENTS_SHOWN).map((opponent) => (
+            {(allOpponents ? opponents : opponents.slice(0, MAX_OPPONENTS_SHOWN)).map((opponent) => (
               <li key={opponent.name}>
                 {opponentPrefix(opponent, opponents.length === 1)}<SideNames members={opponent.team.map(memberOf)} /> - you win {percent(opponent.winP)}
               </li>
             ))}
-            {opponents.length > MAX_OPPONENTS_SHOWN && <li className="muted">and {opponents.length - MAX_OPPONENTS_SHOWN} more possible opponents</li>}
+            {!allOpponents && opponents.length > MAX_OPPONENTS_SHOWN && <li className="muted">and {opponents.length - MAX_OPPONENTS_SHOWN} more possible opponents</li>}
           </ul>
         </>
       )}
@@ -188,7 +295,9 @@ function KnockoutResult({ title, badge, partners, note, outlook, memberOf }) {
       </h3>
       {partners && <p className="muted">Playing with <SideNames members={partners} /></p>}
       {note && <p className="muted">{note}</p>}
-      {outlook.rounds.map((round) => <KnockoutRound key={round.round} round={round} memberOf={memberOf} />)}
+      {outlook.tree
+        ? <PlayoffBracket tree={outlook.tree} outlook={outlook} ownKey={outlook.ownKey} memberOf={memberOf} eventName={title} />
+        : outlook.rounds.map((round) => <KnockoutRound key={round.round} round={round} memberOf={memberOf} />)}
       {outlook.titleP != null && <p className="knockout-title">Chance to win the draw: {percent(outlook.titleP)}</p>}
     </div>
   );
@@ -205,6 +314,7 @@ export default function TournamentMatchSimulator() {
   const [tournamentId, setTournamentId] = useState(stored?.tournamentId ?? '');
   const [playerId, setPlayerId] = useState(stored?.playerId ?? '');
   const [drawResults, setDrawResults] = useState([]);
+  const [eventResults, setEventResults] = useState([]);
   const [mockResults, setMockResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mockLoading, setMockLoading] = useState(false);
@@ -271,15 +381,23 @@ export default function TournamentMatchSimulator() {
   useEffect(() => {
     if (relevantDraws.length === 0) {
       setDrawResults([]);
+      setEventResults([]);
       setError('');
       return;
     }
     let cancelled = false;
     setLoading(true);
     setError('');
-    Promise.all(relevantDraws.map((entry) => simulatePublishedDraw(tournamentId, entry)))
-      .then((results) => {
-        if (!cancelled) setDrawResults(results);
+    setEventResults([]);
+    Promise.all([
+      Promise.all(relevantDraws.map((entry) => simulatePublishedDraw(tournamentId, entry))),
+      Promise.all(playerEvents(tournament, playerId).map((entry) => simulateEvent(tournamentId, entry, tournament.draws ?? []))),
+    ])
+      .then(([results, events]) => {
+        if (!cancelled) {
+          setDrawResults(results);
+          setEventResults(events.filter(Boolean));
+        }
       })
       .catch((e) => {
         if (!cancelled) setError(e.message);
@@ -365,7 +483,9 @@ export default function TournamentMatchSimulator() {
       {loading && <p className="muted">Simulating…</p>}
       {error && <p className="error">{error}</p>}
 
-      {drawResults.map(({ draw, own, note, outlook, opponentResults }) => (
+      {eventResults.map((result) => <EventResult key={result.event.event_id} result={result} memberOf={memberOf} />)}
+
+      {drawResults.filter(({ draw }) => !eventResults.some(({ event }) => drawIsForEvent(event, draw))).map(({ draw, own, note, outlook, opponentResults }) => (
         outlook
           ? <KnockoutResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} outlook={outlook} memberOf={memberOf} />
           : <DrawResult key={draw.draw_id} title={draw.name} partners={partnersOf(own)} note={note} opponentResults={opponentResults ?? []} tournaments={tournaments} />

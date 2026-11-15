@@ -49,6 +49,7 @@ PLAYER_RE = re.compile(r'data-player-id="(\d+)"[^>]{0,300}data-nationality-id="(
 # A knockout shows the seed after the name ("Name [3]", doubles "[3/4]").
 SEED_RE = re.compile(r"^(.*)\[(\d+)(?:/\d+)?\]$")
 BYE_RE = re.compile(r">\s*Bye\s*<")
+GROUP_SLOT_RE = re.compile(r"(?:Groep|Group)\s+([A-Z0-9]+)\s*#\s*(\d+)", re.IGNORECASE)
 GAME_RE = re.compile(r'<ul class="points">\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>\s*<li class="points__cell[^"]*">\s*(\d+)\s*</li>')
 DATE_RE = re.compile(r'<span class="nav-link__value">(\w{2} \d{1,2}-\d{1,2}-\d{4} \d{2}:\d{2})</span>')
 
@@ -101,6 +102,10 @@ def parse_matches(html: str) -> list[dict]:
             side = {"won": won_flag == " has-won", "players": players}
             if not players and BYE_RE.search(body):
                 side["bye"] = True
+            if not players and "bye" not in side:
+                qualifier = GROUP_SLOT_RE.search(unescape(re.sub(r"<[^>]+>", "", body)))
+                if qualifier:
+                    side["qualifier"] = {"group": qualifier.group(1).upper(), "rank": int(qualifier.group(2))}
             sides.append(side)
         games = GAME_RE.findall(block)
         date_match = DATE_RE.search(block.split("match__footer", 1)[-1]) if "match__footer" in block else None
