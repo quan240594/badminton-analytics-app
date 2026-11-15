@@ -22782,11 +22782,19 @@
           "sides": [
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 2
+              }
             },
             {
               "won": false,
-              "players": []
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 2
+              }
             }
           ],
           "games": [],
