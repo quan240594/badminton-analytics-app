@@ -151518,6 +151518,49 @@
           "played_at": null
         }
       ]
+    },
+    "39": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "505",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "THIJMEN BEENEN",
+                  "member_id": "5009622"
+                },
+                {
+                  "player_id": "35",
+                  "name": "MENNO SCHEENEN",
+                  "member_id": "4999837"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "PLUK DOUVEN",
+                  "member_id": "50018308"
+                },
+                {
+                  "player_id": "87",
+                  "name": "RIDHAAN GOHEL",
+                  "member_id": "50008011"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        }
+      ]
     }
   }
 }
