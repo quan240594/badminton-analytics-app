@@ -174,5 +174,29 @@ jobs:
         with:
           path: client/dist
 
+      - name: Install artifact readiness client
+        run: npm install --prefix "$RUNNER_TEMP/pages-artifact-probe" --no-save --ignore-scripts @actions/artifact@2.3.0
+
+      - name: Wait for Pages artifact metadata
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { DefaultArtifactClient } = require(`${process.env.RUNNER_TEMP}/pages-artifact-probe/node_modules/@actions/artifact`);
+            const client = new DefaultArtifactClient();
+            for (let attempt = 1; attempt <= 8; attempt++) {
+              try {
+                const { artifacts } = await client.listArtifacts();
+                const matches = artifacts.filter((artifact) => artifact.name === 'github-pages');
+                if (matches.length === 1) return;
+                if (matches.length > 1) throw new Error('Multiple Pages artifacts found');
+                core.info(`Pages artifact not yet visible (attempt ${attempt}/8)`);
+              } catch (error) {
+                if (attempt === 8 || error.message === 'Multiple Pages artifacts found') throw error;
+                core.warning(`Artifact lookup failed (attempt ${attempt}/8): ${error.message}`);
+              }
+              if (attempt < 8) await new Promise((resolve) => setTimeout(resolve, 5000));
+            }
+            throw new Error('Pages artifact metadata did not become visible');
+
       - id: deployment
         uses: actions/deploy-pages@v5
