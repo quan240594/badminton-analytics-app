@@ -136705,7 +136705,55 @@
       "standings": [],
       "matches": [
         {
-          "match_id": "0",
+          "match_id": "160",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 2
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:00"
+        },
+        {
+          "match_id": "161",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 2
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "za 21-11-2026 12:00"
+        },
+        {
+          "match_id": "156",
           "round": "Finale",
           "sides": [
             {
@@ -136718,10 +136766,10 @@
             }
           ],
           "games": [],
-          "played_at": null
+          "played_at": "za 21-11-2026 12:40"
         },
         {
-          "match_id": "0",
+          "match_id": "158",
           "round": null,
           "sides": [
             {
@@ -136734,39 +136782,7 @@
             }
           ],
           "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "0",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": false,
-              "players": []
-            },
-            {
-              "won": false,
-              "players": []
-            }
-          ],
-          "games": [],
-          "played_at": null
-        },
-        {
-          "match_id": "0",
-          "round": "Halve finale",
-          "sides": [
-            {
-              "won": false,
-              "players": []
-            },
-            {
-              "won": false,
-              "players": []
-            }
-          ],
-          "games": [],
-          "played_at": null
+          "played_at": "za 21-11-2026 12:40"
         }
       ]
     },
