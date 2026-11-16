@@ -42271,8 +42271,15 @@
         "event_id": "21",
         "name": "HE-C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "492"
+          ],
+          [
+            "493"
+          ]
+        ]
       },
       {
         "event_id": "23",
@@ -42327,8 +42334,13 @@
         "event_id": "15",
         "name": "HD C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "492",
+            "493"
+          ]
+        ]
       },
       {
         "event_id": "10",
@@ -42383,8 +42395,12 @@
         "event_id": "16",
         "name": "GD C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "493"
+          ]
+        ]
       },
       {
         "event_id": "12",
@@ -42395,7 +42411,18 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "492",
+        "name": "Lubbers, Remco"
+      },
+      {
+        "country": null,
+        "player_id": "493",
+        "name": "Rutjens, Jasper"
+      }
+    ]
   },
   "C1DE11EA-942B-4D72-99B2-98FC7F3E8E7D": {
     "events": [],
