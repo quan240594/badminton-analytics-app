@@ -160946,6 +160946,201 @@
           "played_at": null
         }
       ]
+    },
+    "20": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "713",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Steven Otto",
+                  "seed": 1,
+                  "member_id": "884750"
+                },
+                {
+                  "player_id": "189",
+                  "name": "Rebecca van den Berg",
+                  "member_id": "816771"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Steven Otto",
+                  "seed": 1
+                },
+                {
+                  "player_id": "189",
+                  "name": "Rebecca van den Berg"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Thijs van den Biggelaar"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Lieke van den Biggelaar"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Jonah Eikenhorst"
+                },
+                {
+                  "player_id": "34",
+                  "name": "Anne Kanselaar"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "147",
+                  "name": "Rohit Ramesh"
+                },
+                {
+                  "player_id": "82",
+                  "name": "Arta Priedniece"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "163",
+                  "name": "Prabhat Kumbha"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Tessa Janssen"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Ivory Johan"
+                },
+                {
+                  "player_id": "29",
+                  "name": "Kim Fleuren"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "19",
+                  "name": "Ben Huang",
+                  "seed": 2
+                },
+                {
+                  "player_id": "94",
+                  "name": "Angela Yeh"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
