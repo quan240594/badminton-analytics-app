@@ -160064,6 +160064,302 @@
           "played_at": null
         }
       ]
+    },
+    "17": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "126",
+              "name": "Petra Landmeter"
+            },
+            {
+              "player_id": "127",
+              "name": "Jacqueline Lappen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "189",
+              "name": "Rebecca van den Berg"
+            },
+            {
+              "player_id": "196",
+              "name": "Julie Marzoch"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Kim Fleuren"
+            },
+            {
+              "player_id": "31",
+              "name": "Tessa Janssen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Lieke van den Biggelaar"
+            },
+            {
+              "player_id": "51",
+              "name": "Kim Wassenaar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Petra Landmeter",
+                  "seed": 1
+                },
+                {
+                  "player_id": "127",
+                  "name": "Jacqueline Lappen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "189",
+                  "name": "Rebecca van den Berg",
+                  "seed": 2
+                },
+                {
+                  "player_id": "196",
+                  "name": "Julie Marzoch"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Petra Landmeter",
+                  "seed": 1
+                },
+                {
+                  "player_id": "127",
+                  "name": "Jacqueline Lappen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Kim Fleuren"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Tessa Janssen"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "189",
+                  "name": "Rebecca van den Berg",
+                  "seed": 2
+                },
+                {
+                  "player_id": "196",
+                  "name": "Julie Marzoch"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Kim Fleuren"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Tessa Janssen"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "126",
+                  "name": "Petra Landmeter",
+                  "seed": 1
+                },
+                {
+                  "player_id": "127",
+                  "name": "Jacqueline Lappen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Lieke van den Biggelaar"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Kim Wassenaar"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "189",
+                  "name": "Rebecca van den Berg",
+                  "seed": 2
+                },
+                {
+                  "player_id": "196",
+                  "name": "Julie Marzoch"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Lieke van den Biggelaar"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Kim Wassenaar"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "0",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Kim Fleuren"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Tessa Janssen"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Lieke van den Biggelaar"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Kim Wassenaar"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
