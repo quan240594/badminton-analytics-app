@@ -40779,10 +40779,13 @@
         "event_id": "2",
         "name": "ME U13",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "19"
+          ],
+          [
+            "25"
           ]
         ]
       },
@@ -40825,8 +40828,12 @@
         "event_id": "6",
         "name": "ME U15",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "28"
+          ]
+        ]
       },
       {
         "event_id": "7",
@@ -40835,16 +40842,20 @@
         "entries": 4,
         "participants": [
           [
+            "12",
             "3"
           ],
           [
-            "1"
-          ],
-          [
+            "19",
             "14"
           ],
           [
-            "22"
+            "1",
+            "25"
+          ],
+          [
+            "22",
+            "17"
           ]
         ]
       },
@@ -40852,18 +40863,8 @@
         "event_id": "8",
         "name": "MD U15",
         "draws": 0,
-        "entries": 3,
-        "participants": [
-          [
-            "12"
-          ],
-          [
-            "19"
-          ],
-          [
-            "17"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "9",
@@ -40889,13 +40890,16 @@
         "event_id": "10",
         "name": "ME U17",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "24"
           ],
           [
             "15"
+          ],
+          [
+            "27"
           ]
         ]
       },
@@ -40924,10 +40928,12 @@
         "entries": 2,
         "participants": [
           [
-            "24"
+            "24",
+            "28"
           ],
           [
-            "20"
+            "20",
+            "27"
           ]
         ]
       },
@@ -40935,8 +40941,11 @@
         "event_id": "13",
         "name": "JE U19",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
+          [
+            "26"
+          ],
           [
             "8"
           ],
@@ -40963,8 +40972,11 @@
         "event_id": "15",
         "name": "JD U19",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "26"
+          ],
           [
             "8",
             "4"
@@ -41005,6 +41017,11 @@
         "country": null,
         "player_id": "3",
         "name": "Brandenburg, Quinten"
+      },
+      {
+        "country": null,
+        "player_id": "26",
+        "name": "Brunnenkreef, Wesley"
       },
       {
         "country": null,
@@ -41078,6 +41095,11 @@
       },
       {
         "country": null,
+        "player_id": "25",
+        "name": "Vliet, Femke van"
+      },
+      {
+        "country": null,
         "player_id": "4",
         "name": "Wassink, Milan"
       },
@@ -41090,6 +41112,16 @@
         "country": null,
         "player_id": "18",
         "name": "With, Timo de"
+      },
+      {
+        "country": null,
+        "player_id": "27",
+        "name": "Woudstra, Gitte"
+      },
+      {
+        "country": null,
+        "player_id": "28",
+        "name": "Zanderink, Ly-Sanne"
       }
     ]
   },
