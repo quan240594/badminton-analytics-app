@@ -156846,6 +156846,35 @@
           "played_at": null
         }
       ]
+    },
+    "7": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "0",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
