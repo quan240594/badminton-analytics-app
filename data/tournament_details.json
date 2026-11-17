@@ -13643,11 +13643,14 @@
         "event_id": "8",
         "name": "Dubbel Zilver",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "8",
             "15"
+          ],
+          [
+            "31"
           ],
           [
             "17",
@@ -13704,6 +13707,10 @@
         "entries": 7,
         "participants": [
           [
+            "32",
+            "2"
+          ],
+          [
             "19"
           ],
           [
@@ -13714,9 +13721,6 @@
           ],
           [
             "20"
-          ],
-          [
-            "2"
           ],
           [
             "10",
@@ -13743,8 +13747,12 @@
         "event_id": "6",
         "name": "Dubbel D",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "33"
+          ]
+        ]
       },
       {
         "event_id": "7",
@@ -13773,6 +13781,11 @@
       },
       {
         "country": null,
+        "player_id": "32",
+        "name": "Bonnet, Jesse"
+      },
+      {
+        "country": null,
         "player_id": "7",
         "name": "Buijsman, Julia"
       },
@@ -13785,6 +13798,11 @@
         "country": null,
         "player_id": "24",
         "name": "Gracht, Cas vd"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "Groot, Mees"
       },
       {
         "country": null,
@@ -13840,6 +13858,11 @@
         "country": null,
         "player_id": "20",
         "name": "Pennekamp, Zoe"
+      },
+      {
+        "country": null,
+        "player_id": "33",
+        "name": "Qijun, Huang"
       },
       {
         "country": null,
