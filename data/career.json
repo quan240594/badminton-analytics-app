@@ -574127,8 +574127,8 @@
         "away_team": "OUDERKERK A/D IJSSEL BC 1",
         "away_players": [
           [
-            "234",
-            "Marco Hooven van den"
+            "233",
+            "Marco de Bode"
           ],
           [
             "232",
@@ -2009188,24 +2009188,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3584",
         "time": "Thu 24/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
-        "home_team": "ZEEMEEUWEN BC DE 2",
-        "home_players": [
-          [
-            "1871",
-            "Dennis van der Houwen"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC 1",
-        "away_players": [],
-        "score": "21-16 16-21 18-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3584",
-        "time": "Thu 24/09/2026 20:00",
         "event": "GD2",
         "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
         "home_team": "ZEEMEEUWEN BC DE 2",
@@ -2009228,6 +2009210,24 @@
         ],
         "score": "21-14 21-13",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3584",
+        "time": "Thu 24/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – 5e divisie – 5e divisie afd. 21",
+        "home_team": "ZEEMEEUWEN BC DE 2",
+        "home_players": [
+          [
+            "1871",
+            "Dennis van der Houwen"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC 1",
+        "away_players": [],
+        "score": "21-16 16-21 18-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -2009305,24 +2009305,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3584",
         "time": "Fri 09/10/2026 19:30",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "SHUTTLEK BC M1",
-        "home_players": [],
-        "away_team": "OUDERKERK A/D IJSSEL BC M1",
-        "away_players": [
-          [
-            "6433",
-            "Robin van der Heijden"
-          ]
-        ],
-        "score": "11-21 21-13 21-17",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "3584",
-        "time": "Fri 09/10/2026 19:30",
         "event": "MD3",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
         "home_team": "SHUTTLEK BC M1",
@@ -2009349,29 +2009331,20 @@
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "3584",
-        "time": "Mon 26/10/2026 20:00",
-        "event": "MD2",
+        "time": "Fri 09/10/2026 19:30",
+        "event": "ME1",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "PIJNACKER BC M1",
-        "home_players": [
-          [
-            "1433",
-            "Cas van den Biggelaar"
-          ],
-          [
-            "1434",
-            "Bas Lijster"
-          ]
-        ],
-        "away_team": "SHUTTLEK BC M1",
+        "home_team": "SHUTTLEK BC M1",
+        "home_players": [],
+        "away_team": "OUDERKERK A/D IJSSEL BC M1",
         "away_players": [
           [
-            "3728",
-            "Tom Faber"
+            "6433",
+            "Robin van der Heijden"
           ]
         ],
-        "score": "18-21 19-21",
-        "winner_side": "away"
+        "score": "11-21 21-13 21-17",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -2009399,6 +2009372,33 @@
         ],
         "score": "21-15 21-19",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "3584",
+        "time": "Mon 26/10/2026 20:00",
+        "event": "MD2",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "PIJNACKER BC M1",
+        "home_players": [
+          [
+            "1433",
+            "Cas van den Biggelaar"
+          ],
+          [
+            "1434",
+            "Bas Lijster"
+          ]
+        ],
+        "away_team": "SHUTTLEK BC M1",
+        "away_players": [
+          [
+            "3728",
+            "Tom Faber"
+          ]
+        ],
+        "score": "18-21 19-21",
+        "winner_side": "away"
       }
     ]
   },
@@ -2287098,24 +2287098,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1267",
         "time": "Fri 11/09/2026 20:00",
-        "event": "ME1",
-        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
-        "home_team": "ORBITON BC M1",
-        "home_players": [],
-        "away_team": "ZEEMEEUWEN BC DE M1",
-        "away_players": [
-          [
-            "6178",
-            "Kevin de Kok"
-          ]
-        ],
-        "score": "13-21 21-10 13-21",
-        "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1267",
-        "time": "Fri 11/09/2026 20:00",
         "event": "MD3",
         "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
         "home_team": "ORBITON BC M1",
@@ -2287138,6 +2287120,24 @@
         ],
         "score": "21-16 21-12",
         "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1267",
+        "time": "Fri 11/09/2026 20:00",
+        "event": "ME1",
+        "draw": "Bondscompetitie 2026-2027 – Mannen Veer 2 – Mannen Veer 2 afd. 14",
+        "home_team": "ORBITON BC M1",
+        "home_players": [],
+        "away_team": "ZEEMEEUWEN BC DE M1",
+        "away_players": [
+          [
+            "6178",
+            "Kevin de Kok"
+          ]
+        ],
+        "score": "13-21 21-10 13-21",
+        "winner_side": "away"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -2287215,6 +2287215,24 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1267",
         "time": "Sun 27/09/2026 10:00",
+        "event": "ME2",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
+        "home_team": "BOOMGAARDSHOEK PBC 4",
+        "home_players": [
+          [
+            "3358",
+            "Edward Veldman"
+          ]
+        ],
+        "away_team": "ORBITON BC 1",
+        "away_players": [],
+        "score": "21-14 18-21 21-18",
+        "winner_side": "home"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1267",
+        "time": "Sun 27/09/2026 10:00",
         "event": "MD",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
         "home_team": "BOOMGAARDSHOEK PBC 4",
@@ -2287237,24 +2287255,6 @@
         ],
         "score": "21-14 6-21 18-21",
         "winner_side": "away"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1267",
-        "time": "Sun 27/09/2026 10:00",
-        "event": "ME2",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
-        "home_team": "BOOMGAARDSHOEK PBC 4",
-        "home_players": [
-          [
-            "3358",
-            "Edward Veldman"
-          ]
-        ],
-        "away_team": "ORBITON BC 1",
-        "away_players": [],
-        "score": "21-14 18-21 21-18",
-        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
@@ -2287512,33 +2287512,6 @@
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
         "source_player_id": "1267",
         "time": "Fri 06/11/2026 20:00",
-        "event": "MD",
-        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
-        "home_team": "ORBITON BC 1",
-        "home_players": [
-          [
-            "1268",
-            "Martijn Wolthoff"
-          ]
-        ],
-        "away_team": "ZEEMEEUWEN BC DE 5",
-        "away_players": [
-          [
-            "1886",
-            "Barry van Dijk"
-          ],
-          [
-            "1887",
-            "Michel Storm"
-          ]
-        ],
-        "score": "18-21 21-13 21-16",
-        "winner_side": "home"
-      },
-      {
-        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
-        "source_player_id": "1267",
-        "time": "Fri 06/11/2026 20:00",
         "event": "ME2",
         "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
         "home_team": "ORBITON BC 1",
@@ -2287579,6 +2287552,33 @@
         ],
         "score": "11-21 18-21",
         "winner_side": "away"
+      },
+      {
+        "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
+        "source_player_id": "1267",
+        "time": "Fri 06/11/2026 20:00",
+        "event": "MD",
+        "draw": "Bondscompetitie 2026-2027 – 6e divisie – 6e divisie afd. 21",
+        "home_team": "ORBITON BC 1",
+        "home_players": [
+          [
+            "1268",
+            "Martijn Wolthoff"
+          ]
+        ],
+        "away_team": "ZEEMEEUWEN BC DE 5",
+        "away_players": [
+          [
+            "1886",
+            "Barry van Dijk"
+          ],
+          [
+            "1887",
+            "Michel Storm"
+          ]
+        ],
+        "score": "18-21 21-13 21-16",
+        "winner_side": "home"
       },
       {
         "tournament_id": "9A42A3C8-BE3A-4EB6-AEEB-8D7D562D964E",
