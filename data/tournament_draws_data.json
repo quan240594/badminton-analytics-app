@@ -165837,6 +165837,146 @@
           "played_at": "zo 22-11-2026 10:30"
         }
       ]
+    },
+    "19": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "16",
+              "name": "Pancho van de Pol"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "59",
+              "name": "Ishwaku Agarwal"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "124",
+              "name": "Ricky Kota"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "190",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Ishwaku Agarwal",
+                  "member_id": "50020290"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Ricky Kota",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 08:30"
+        },
+        {
+          "match_id": "187",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Pancho van de Pol",
+                  "seed": 6,
+                  "member_id": "50006186"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Ishwaku Agarwal",
+                  "member_id": "50020290"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:30"
+        },
+        {
+          "match_id": "189",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "16",
+                  "name": "Pancho van de Pol",
+                  "seed": 6,
+                  "member_id": "50006186"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "124",
+                  "name": "Ricky Kota",
+                  "member_id": "50010570"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:30"
+        }
+      ]
     }
   }
 }
