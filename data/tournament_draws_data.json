@@ -172126,6 +172126,188 @@
           "played_at": "zo 22-11-2026 16:45"
         }
       ]
+    },
+    "67": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "17",
+              "name": "Mukunth Rajesh"
+            },
+            {
+              "player_id": "2",
+              "name": "Ahaan Sharma"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "70",
+              "name": "Yara Appers"
+            },
+            {
+              "player_id": "67",
+              "name": "Dex Legerstee"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "118",
+              "name": "Axel Ongenda"
+            },
+            {
+              "player_id": "4",
+              "name": "Jessie Zijlstra"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "656",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Yara Appers",
+                  "member_id": "50010980"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Dex Legerstee",
+                  "member_id": "5005067"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "118",
+                  "name": "Axel Ongenda",
+                  "member_id": "5010556"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Jessie Zijlstra",
+                  "member_id": "5009663"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "653",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Mukunth Rajesh",
+                  "seed": 2,
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "2",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Yara Appers",
+                  "member_id": "50010980"
+                },
+                {
+                  "player_id": "67",
+                  "name": "Dex Legerstee",
+                  "member_id": "5005067"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        },
+        {
+          "match_id": "655",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "17",
+                  "name": "Mukunth Rajesh",
+                  "seed": 2,
+                  "member_id": "50008695"
+                },
+                {
+                  "player_id": "2",
+                  "name": "Ahaan Sharma",
+                  "member_id": "50006049"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "118",
+                  "name": "Axel Ongenda",
+                  "member_id": "5010556"
+                },
+                {
+                  "player_id": "4",
+                  "name": "Jessie Zijlstra",
+                  "member_id": "5009663"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:45"
+        }
+      ]
     }
   }
 }
