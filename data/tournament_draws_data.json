@@ -171515,6 +171515,186 @@
           "played_at": "zo 22-11-2026 14:45"
         }
       ]
+    },
+    "63": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "96",
+              "name": "Vishakan Balasubramanian"
+            },
+            {
+              "player_id": "95",
+              "name": "Owen Tang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "59",
+              "name": "Ishwaku Agarwal"
+            },
+            {
+              "player_id": "22",
+              "name": "Sushruta Kashyap"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "105",
+              "name": "Dylan de Leng"
+            },
+            {
+              "player_id": "94",
+              "name": "Daan Spigt"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "622",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Ishwaku Agarwal",
+                  "member_id": "50020290"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Vishakan Balasubramanian",
+                  "member_id": "5010978"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Owen Tang",
+                  "member_id": "5001911"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "619",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Dylan de Leng",
+                  "member_id": "5004561"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Daan Spigt",
+                  "member_id": "50010304"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "59",
+                  "name": "Ishwaku Agarwal",
+                  "member_id": "50020290"
+                },
+                {
+                  "player_id": "22",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "621",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "105",
+                  "name": "Dylan de Leng",
+                  "member_id": "5004561"
+                },
+                {
+                  "player_id": "94",
+                  "name": "Daan Spigt",
+                  "member_id": "50010304"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "96",
+                  "name": "Vishakan Balasubramanian",
+                  "member_id": "5010978"
+                },
+                {
+                  "player_id": "95",
+                  "name": "Owen Tang",
+                  "member_id": "5001911"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:45"
+        }
+      ]
     }
   }
 }
