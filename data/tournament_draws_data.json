@@ -173000,6 +173000,188 @@
           "played_at": null
         }
       ]
+    },
+    "72": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Elisa Been"
+            },
+            {
+              "player_id": "114",
+              "name": "Romy van Wankum"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "91",
+              "name": "Danya van Dongen"
+            },
+            {
+              "player_id": "92",
+              "name": "Ryan (Yunxiang) Xia"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "15",
+              "name": "Lotte Van Baak"
+            },
+            {
+              "player_id": "113",
+              "name": "Anouk Wals"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "707",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "Danya van Dongen",
+                  "member_id": "50020927"
+                },
+                {
+                  "player_id": "92",
+                  "name": "Ryan (Yunxiang) Xia",
+                  "member_id": "50013807"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Elisa Been",
+                  "member_id": "5001971"
+                },
+                {
+                  "player_id": "114",
+                  "name": "Romy van Wankum",
+                  "member_id": "10000704"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "704",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Lotte Van Baak",
+                  "seed": 1,
+                  "member_id": "50010350"
+                },
+                {
+                  "player_id": "113",
+                  "name": "Anouk Wals",
+                  "member_id": "10003126"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "91",
+                  "name": "Danya van Dongen",
+                  "member_id": "50020927"
+                },
+                {
+                  "player_id": "92",
+                  "name": "Ryan (Yunxiang) Xia",
+                  "member_id": "50013807"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:45"
+        },
+        {
+          "match_id": "706",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Lotte Van Baak",
+                  "seed": 1,
+                  "member_id": "50010350"
+                },
+                {
+                  "player_id": "113",
+                  "name": "Anouk Wals",
+                  "member_id": "10003126"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Elisa Been",
+                  "member_id": "5001971"
+                },
+                {
+                  "player_id": "114",
+                  "name": "Romy van Wankum",
+                  "member_id": "10000704"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:30"
+        }
+      ]
     }
   }
 }
