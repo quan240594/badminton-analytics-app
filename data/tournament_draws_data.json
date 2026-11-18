@@ -173182,6 +173182,188 @@
           "played_at": "zo 22-11-2026 16:30"
         }
       ]
+    },
+    "73": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "99",
+              "name": "Chris Blaasse"
+            },
+            {
+              "player_id": "101",
+              "name": "Noa Buijs"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "133",
+              "name": "Mila van den Berg"
+            },
+            {
+              "player_id": "135",
+              "name": "Jesslyn Gelderblom"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Amy van Deudekom"
+            },
+            {
+              "player_id": "25",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "716",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "133",
+                  "name": "Mila van den Berg",
+                  "member_id": "50024976"
+                },
+                {
+                  "player_id": "135",
+                  "name": "Jesslyn Gelderblom",
+                  "member_id": "50025006"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Chris Blaasse",
+                  "member_id": "5001316"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Noa Buijs",
+                  "member_id": "5001644"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "713",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Amy van Deudekom",
+                  "seed": 2,
+                  "member_id": "10001885"
+                },
+                {
+                  "player_id": "25",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "133",
+                  "name": "Mila van den Berg",
+                  "member_id": "50024976"
+                },
+                {
+                  "player_id": "135",
+                  "name": "Jesslyn Gelderblom",
+                  "member_id": "50025006"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:45"
+        },
+        {
+          "match_id": "715",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Amy van Deudekom",
+                  "seed": 2,
+                  "member_id": "10001885"
+                },
+                {
+                  "player_id": "25",
+                  "name": "Thirza Nieuwhoff",
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "99",
+                  "name": "Chris Blaasse",
+                  "member_id": "5001316"
+                },
+                {
+                  "player_id": "101",
+                  "name": "Noa Buijs",
+                  "member_id": "5001644"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:30"
+        }
+      ]
     }
   }
 }
