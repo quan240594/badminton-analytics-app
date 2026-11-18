@@ -162967,5 +162967,245 @@
         }
       ]
     }
+  },
+  "C0223494-E3FE-4F45-A042-29D8E5C64EB0": {
+    "1": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "79",
+              "name": "Theodoor Valadares Fonseca"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "129",
+              "name": "Ximing Li"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "149",
+              "name": "Oliver Yu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "10",
+              "name": "Lukas de Hoog"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "12",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "129",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "149",
+                  "name": "Oliver Yu",
+                  "member_id": "50019481"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:00"
+        },
+        {
+          "match_id": "14",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Theodoor Valadares Fonseca",
+                  "member_id": "50022269"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Lukas de Hoog",
+                  "member_id": "50025592"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:00"
+        },
+        {
+          "match_id": "8",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Theodoor Valadares Fonseca",
+                  "member_id": "50022269"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "129",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        },
+        {
+          "match_id": "16",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "149",
+                  "name": "Oliver Yu",
+                  "member_id": "50019481"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Lukas de Hoog",
+                  "member_id": "50025592"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        },
+        {
+          "match_id": "11",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "79",
+                  "name": "Theodoor Valadares Fonseca",
+                  "member_id": "50022269"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "149",
+                  "name": "Oliver Yu",
+                  "member_id": "50019481"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 18:00"
+        },
+        {
+          "match_id": "15",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "129",
+                  "name": "Ximing Li",
+                  "member_id": "50024344"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "10",
+                  "name": "Lukas de Hoog",
+                  "member_id": "50025592"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 18:00"
+        }
+      ]
+    }
   }
 }
