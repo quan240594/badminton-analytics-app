@@ -165697,6 +165697,146 @@
           "played_at": "zo 22-11-2026 10:30"
         }
       ]
+    },
+    "18": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "95",
+              "name": "Owen Tang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "22",
+              "name": "Sushruta Kashyap"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "112",
+              "name": "Christian Tringali"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "181",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Christian Tringali",
+                  "member_id": "5010829"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 08:30"
+        },
+        {
+          "match_id": "178",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Owen Tang",
+                  "seed": 5,
+                  "member_id": "5001911"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "22",
+                  "name": "Sushruta Kashyap",
+                  "member_id": "10001790"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:30"
+        },
+        {
+          "match_id": "180",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "95",
+                  "name": "Owen Tang",
+                  "seed": 5,
+                  "member_id": "5001911"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "112",
+                  "name": "Christian Tringali",
+                  "member_id": "5010829"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:30"
+        }
+      ]
     }
   }
 }
