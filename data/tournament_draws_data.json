@@ -167680,6 +167680,244 @@
           "played_at": "zo 22-11-2026 11:00"
         }
       ]
+    },
+    "35": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "31",
+              "name": "Espen Paap"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Miruthve Elangovan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "68",
+              "name": "Rishik Pabba"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "12",
+              "name": "Aarush Walunj"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "352",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Miruthve Elangovan",
+                  "member_id": "5001362"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Rishik Pabba",
+                  "member_id": "50019190"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "372",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Espen Paap",
+                  "member_id": "50017657"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Aarush Walunj",
+                  "member_id": "5010979"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "349",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Espen Paap",
+                  "member_id": "50017657"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Miruthve Elangovan",
+                  "member_id": "5001362"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "374",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Rishik Pabba",
+                  "member_id": "50019190"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Aarush Walunj",
+                  "member_id": "5010979"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "351",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "31",
+                  "name": "Espen Paap",
+                  "member_id": "50017657"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "68",
+                  "name": "Rishik Pabba",
+                  "member_id": "50019190"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        },
+        {
+          "match_id": "373",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Miruthve Elangovan",
+                  "member_id": "5001362"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "12",
+                  "name": "Aarush Walunj",
+                  "member_id": "5010979"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        }
+      ]
     }
   }
 }
