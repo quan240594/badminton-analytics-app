@@ -172308,6 +172308,186 @@
           "played_at": "zo 22-11-2026 14:45"
         }
       ]
+    },
+    "68": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "131",
+              "name": "Devina Jaggan"
+            },
+            {
+              "player_id": "132",
+              "name": "Jaymie Vieira"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "98",
+              "name": "Yannick Besems"
+            },
+            {
+              "player_id": "100",
+              "name": "Gijs de Borst"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "36",
+              "name": "Hekang Chow"
+            },
+            {
+              "player_id": "31",
+              "name": "Espen Paap"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "665",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "Yannick Besems",
+                  "member_id": "50025004"
+                },
+                {
+                  "player_id": "100",
+                  "name": "Gijs de Borst",
+                  "member_id": "50019605"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Hekang Chow",
+                  "member_id": "10001966"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Espen Paap",
+                  "member_id": "50017657"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        },
+        {
+          "match_id": "662",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Devina Jaggan",
+                  "member_id": "10002466"
+                },
+                {
+                  "player_id": "132",
+                  "name": "Jaymie Vieira",
+                  "member_id": "5009661"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "98",
+                  "name": "Yannick Besems",
+                  "member_id": "50025004"
+                },
+                {
+                  "player_id": "100",
+                  "name": "Gijs de Borst",
+                  "member_id": "50019605"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:30"
+        },
+        {
+          "match_id": "664",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Devina Jaggan",
+                  "member_id": "10002466"
+                },
+                {
+                  "player_id": "132",
+                  "name": "Jaymie Vieira",
+                  "member_id": "5009661"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "36",
+                  "name": "Hekang Chow",
+                  "member_id": "10001966"
+                },
+                {
+                  "player_id": "31",
+                  "name": "Espen Paap",
+                  "member_id": "50017657"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:15"
+        }
+      ]
     }
   }
 }
