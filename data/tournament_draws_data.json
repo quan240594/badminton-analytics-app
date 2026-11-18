@@ -168485,6 +168485,144 @@
           "played_at": "zo 22-11-2026 11:00"
         }
       ]
+    },
+    "40": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "85",
+              "name": "An Ru Wu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "107",
+              "name": "Thomas van der Meer"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "103",
+              "name": "César Devesa Perdigão"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "417",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Thomas van der Meer",
+                  "member_id": "5001766"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "César Devesa Perdigão",
+                  "member_id": "50018626"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "414",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "An Ru Wu",
+                  "member_id": "50007043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Thomas van der Meer",
+                  "member_id": "5001766"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:30"
+        },
+        {
+          "match_id": "416",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "85",
+                  "name": "An Ru Wu",
+                  "member_id": "50007043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "103",
+                  "name": "César Devesa Perdigão",
+                  "member_id": "50018626"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        }
+      ]
     }
   }
 }
