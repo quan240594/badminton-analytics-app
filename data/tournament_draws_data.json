@@ -166882,6 +166882,146 @@
           "played_at": "zo 22-11-2026 10:30"
         }
       ]
+    },
+    "30": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Winston de Groot"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "94",
+              "name": "Daan Spigt"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "69",
+              "name": "Arav Anil Nambiar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "307",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Daan Spigt",
+                  "member_id": "50010304"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Arav Anil Nambiar",
+                  "member_id": "5001850"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "304",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Winston de Groot",
+                  "seed": 3,
+                  "member_id": "4996388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "94",
+                  "name": "Daan Spigt",
+                  "member_id": "50010304"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "306",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Winston de Groot",
+                  "seed": 3,
+                  "member_id": "4996388"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "69",
+                  "name": "Arav Anil Nambiar",
+                  "member_id": "5001850"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        }
+      ]
     }
   }
 }
