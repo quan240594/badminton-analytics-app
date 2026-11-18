@@ -168913,6 +168913,146 @@
           "played_at": null
         }
       ]
+    },
+    "43": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Bram van Baak"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "63",
+              "name": "Jim Groeneveld"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "3",
+              "name": "Thomas De Boer"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "450",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Jim Groeneveld",
+                  "member_id": "50009745"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Thomas De Boer",
+                  "member_id": "50024440"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "447",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Bram van Baak",
+                  "seed": 1,
+                  "member_id": "10001932"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Jim Groeneveld",
+                  "member_id": "50009745"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "449",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Bram van Baak",
+                  "seed": 1,
+                  "member_id": "10001932"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "3",
+                  "name": "Thomas De Boer",
+                  "member_id": "50024440"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        }
+      ]
     }
   }
 }
