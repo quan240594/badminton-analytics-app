@@ -166602,6 +166602,146 @@
           "played_at": "zo 22-11-2026 20:15"
         }
       ]
+    },
+    "28": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Ritvik Chawla"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "67",
+              "name": "Dex Legerstee"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "11",
+              "name": "Thijs de Hoog"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "289",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "Dex Legerstee",
+                  "member_id": "5005067"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Thijs de Hoog",
+                  "member_id": "50007783"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 08:30"
+        },
+        {
+          "match_id": "286",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Ritvik Chawla",
+                  "seed": 1,
+                  "member_id": "10002752"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "67",
+                  "name": "Dex Legerstee",
+                  "member_id": "5005067"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:30"
+        },
+        {
+          "match_id": "288",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Ritvik Chawla",
+                  "seed": 1,
+                  "member_id": "10002752"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "11",
+                  "name": "Thijs de Hoog",
+                  "member_id": "50007783"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:30"
+        }
+      ]
     }
   }
 }
