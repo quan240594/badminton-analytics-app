@@ -170456,6 +170456,144 @@
           "played_at": "zo 22-11-2026 14:00"
         }
       ]
+    },
+    "55": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "97",
+              "name": "Elisa Been"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "44",
+              "name": "Ishana Sureka"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "50",
+              "name": "Amirthavarshini Meyarutchelvan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "554",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Ishana Sureka",
+                  "member_id": "50012590"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Amirthavarshini Meyarutchelvan",
+                  "member_id": "5101285"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "551",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Elisa Been",
+                  "member_id": "5001971"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "44",
+                  "name": "Ishana Sureka",
+                  "member_id": "50012590"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "553",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "97",
+                  "name": "Elisa Been",
+                  "member_id": "5001971"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "50",
+                  "name": "Amirthavarshini Meyarutchelvan",
+                  "member_id": "5101285"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        }
+      ]
     }
   }
 }
