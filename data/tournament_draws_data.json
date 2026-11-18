@@ -163942,6 +163942,144 @@
           "played_at": "zo 22-11-2026 13:30"
         }
       ]
+    },
+    "7": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "41",
+              "name": "Benjamin De Haan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "128",
+              "name": "Nathan Yuen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "43",
+              "name": "Tom Santing"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "70",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Nathan Yuen",
+                  "member_id": "50021276"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Tom Santing",
+                  "member_id": "50020277"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "67",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Benjamin De Haan",
+                  "member_id": "50006817"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "128",
+                  "name": "Nathan Yuen",
+                  "member_id": "50021276"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:30"
+        },
+        {
+          "match_id": "69",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "41",
+                  "name": "Benjamin De Haan",
+                  "member_id": "50006817"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "43",
+                  "name": "Tom Santing",
+                  "member_id": "50020277"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        }
+      ]
     }
   }
 }
