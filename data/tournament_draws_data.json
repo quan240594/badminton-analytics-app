@@ -173544,6 +173544,320 @@
           "played_at": "zo 22-11-2026 16:30"
         }
       ]
+    },
+    "75": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "111",
+              "name": "Ishaank Sagar"
+            },
+            {
+              "player_id": "85",
+              "name": "An Ru Wu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "14",
+              "name": "Bram van Baak"
+            },
+            {
+              "player_id": "51",
+              "name": "Beau Schreuder"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Marie Van Bruijnsvoort"
+            },
+            {
+              "player_id": "120",
+              "name": "Lelio Cavagnoli"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "62",
+              "name": "Jayden Lau"
+            },
+            {
+              "player_id": "61",
+              "name": "Quintin Tang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "748",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Marie Van Bruijnsvoort",
+                  "member_id": "50016244"
+                },
+                {
+                  "player_id": "120",
+                  "name": "Lelio Cavagnoli",
+                  "member_id": "50011322"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Jayden Lau",
+                  "member_id": "5008260"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Quintin Tang",
+                  "member_id": "5010845"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "734",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Beau Schreuder",
+                  "member_id": "5100207"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Marie Van Bruijnsvoort",
+                  "member_id": "50016244"
+                },
+                {
+                  "player_id": "120",
+                  "name": "Lelio Cavagnoli",
+                  "member_id": "50011322"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "746",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "85",
+                  "name": "An Ru Wu",
+                  "member_id": "50007043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Jayden Lau",
+                  "member_id": "5008260"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Quintin Tang",
+                  "member_id": "5010845"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "731",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "85",
+                  "name": "An Ru Wu",
+                  "member_id": "50007043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Beau Schreuder",
+                  "member_id": "5100207"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:45"
+        },
+        {
+          "match_id": "733",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                },
+                {
+                  "player_id": "85",
+                  "name": "An Ru Wu",
+                  "member_id": "50007043"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Marie Van Bruijnsvoort",
+                  "member_id": "50016244"
+                },
+                {
+                  "player_id": "120",
+                  "name": "Lelio Cavagnoli",
+                  "member_id": "50011322"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:30"
+        },
+        {
+          "match_id": "747",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "14",
+                  "name": "Bram van Baak",
+                  "member_id": "10001932"
+                },
+                {
+                  "player_id": "51",
+                  "name": "Beau Schreuder",
+                  "member_id": "5100207"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "62",
+                  "name": "Jayden Lau",
+                  "member_id": "5008260"
+                },
+                {
+                  "player_id": "61",
+                  "name": "Quintin Tang",
+                  "member_id": "5010845"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:30"
+        }
+      ]
     }
   }
 }
