@@ -169323,6 +169323,144 @@
           "played_at": "zo 22-11-2026 20:15"
         }
       ]
+    },
+    "46": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "26",
+              "name": "Ariya Swain"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "93",
+              "name": "Minh Thu Huyen Tran"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "148",
+              "name": "Avantika Bharath Kumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "478",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Minh Thu Huyen Tran",
+                  "member_id": "50006504"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "148",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "475",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "26",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "93",
+                  "name": "Minh Thu Huyen Tran",
+                  "member_id": "50006504"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "477",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "26",
+                  "name": "Ariya Swain",
+                  "member_id": "5005251"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "148",
+                  "name": "Avantika Bharath Kumar",
+                  "member_id": "50009313"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:30"
+        }
+      ]
     }
   }
 }
