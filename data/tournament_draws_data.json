@@ -173364,6 +173364,186 @@
           "played_at": "zo 22-11-2026 16:30"
         }
       ]
+    },
+    "74": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "Jente Buwalda"
+            },
+            {
+              "player_id": "108",
+              "name": "Pramod Punyakoti"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Rachel John"
+            },
+            {
+              "player_id": "83",
+              "name": "Alisa Misha"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "107",
+              "name": "Thomas van der Meer"
+            },
+            {
+              "player_id": "123",
+              "name": "Roue Wattimury"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "725",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Rachel John",
+                  "member_id": "5011639"
+                },
+                {
+                  "player_id": "83",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Thomas van der Meer",
+                  "member_id": "5001766"
+                },
+                {
+                  "player_id": "123",
+                  "name": "Roue Wattimury",
+                  "member_id": "5011462"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        },
+        {
+          "match_id": "722",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Jente Buwalda",
+                  "member_id": "50007037"
+                },
+                {
+                  "player_id": "108",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Rachel John",
+                  "member_id": "5011639"
+                },
+                {
+                  "player_id": "83",
+                  "name": "Alisa Misha",
+                  "member_id": "5011948"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:45"
+        },
+        {
+          "match_id": "724",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Jente Buwalda",
+                  "member_id": "50007037"
+                },
+                {
+                  "player_id": "108",
+                  "name": "Pramod Punyakoti",
+                  "member_id": "50010281"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "107",
+                  "name": "Thomas van der Meer",
+                  "member_id": "5001766"
+                },
+                {
+                  "player_id": "123",
+                  "name": "Roue Wattimury",
+                  "member_id": "5011462"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:30"
+        }
+      ]
     }
   }
 }
