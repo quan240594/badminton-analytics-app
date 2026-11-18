@@ -174109,6 +174109,188 @@
           "played_at": "zo 22-11-2026 17:45"
         }
       ]
+    },
+    "78": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Vedha Anandkumar"
+            },
+            {
+              "player_id": "56",
+              "name": "Linde van den Haak"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "66",
+              "name": "Huang Qijun"
+            },
+            {
+              "player_id": "115",
+              "name": "Tanya Zhang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "63",
+              "name": "Jim Groeneveld"
+            },
+            {
+              "player_id": "64",
+              "name": "Kashyap Kadiyala"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "766",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Huang Qijun",
+                  "member_id": "50011124"
+                },
+                {
+                  "player_id": "115",
+                  "name": "Tanya Zhang",
+                  "member_id": "50015071"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Jim Groeneveld",
+                  "member_id": "50009745"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Kashyap Kadiyala",
+                  "member_id": "50005811"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        },
+        {
+          "match_id": "763",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Vedha Anandkumar",
+                  "seed": 2,
+                  "member_id": "50016896"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Linde van den Haak",
+                  "member_id": "10003000"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "66",
+                  "name": "Huang Qijun",
+                  "member_id": "50011124"
+                },
+                {
+                  "player_id": "115",
+                  "name": "Tanya Zhang",
+                  "member_id": "50015071"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:00"
+        },
+        {
+          "match_id": "765",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Vedha Anandkumar",
+                  "seed": 2,
+                  "member_id": "50016896"
+                },
+                {
+                  "player_id": "56",
+                  "name": "Linde van den Haak",
+                  "member_id": "10003000"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "63",
+                  "name": "Jim Groeneveld",
+                  "member_id": "50009745"
+                },
+                {
+                  "player_id": "64",
+                  "name": "Kashyap Kadiyala",
+                  "member_id": "50005811"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:45"
+        }
+      ]
     }
   }
 }
