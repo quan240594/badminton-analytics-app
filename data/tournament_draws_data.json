@@ -170803,6 +170803,146 @@
           "played_at": "zo 22-11-2026 19:30"
         }
       ]
+    },
+    "58": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "32",
+              "name": "Anaira Sonare"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "109",
+              "name": "Xiuyun Ren"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "56",
+              "name": "Linde van den Haak"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "579",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Xiuyun Ren",
+                  "member_id": "10000676"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Linde van den Haak",
+                  "member_id": "10003000"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "576",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anaira Sonare",
+                  "seed": 2,
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Xiuyun Ren",
+                  "member_id": "10000676"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "578",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "32",
+                  "name": "Anaira Sonare",
+                  "seed": 2,
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "56",
+                  "name": "Linde van den Haak",
+                  "member_id": "10003000"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        }
+      ]
     }
   }
 }
