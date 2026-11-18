@@ -163664,6 +163664,146 @@
           "played_at": "zo 22-11-2026 11:00"
         }
       ]
+    },
+    "5": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "27",
+              "name": "Brandon Warmerdam"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "57",
+              "name": "Finn van Kuik"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "88",
+              "name": "Rens Buijsman"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "52",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Finn van Kuik",
+                  "member_id": "50016048"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Rens Buijsman",
+                  "member_id": "50011660"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 09:00"
+        },
+        {
+          "match_id": "49",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Brandon Warmerdam",
+                  "seed": 2,
+                  "member_id": "50006920"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "57",
+                  "name": "Finn van Kuik",
+                  "member_id": "50016048"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 10:00"
+        },
+        {
+          "match_id": "51",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "27",
+                  "name": "Brandon Warmerdam",
+                  "seed": 2,
+                  "member_id": "50006920"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "88",
+                  "name": "Rens Buijsman",
+                  "member_id": "50011660"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:00"
+        }
+      ]
     }
   }
 }
