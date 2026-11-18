@@ -172848,6 +172848,158 @@
           "played_at": "zo 22-11-2026 15:15"
         }
       ]
+    },
+    "71": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "685",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "D",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:00"
+        },
+        {
+          "match_id": "689",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "E",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "C",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:00"
+        },
+        {
+          "match_id": "686",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        },
+        {
+          "match_id": "684",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": []
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 18:30"
+        },
+        {
+          "match_id": "687",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "688",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": true,
+              "players": [],
+              "qualifier": {
+                "group": "D",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        },
+        {
+          "match_id": "690",
+          "round": "Kwartfinale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            },
+            {
+              "won": true,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
