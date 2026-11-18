@@ -171944,6 +171944,188 @@
           "played_at": "zo 22-11-2026 17:00"
         }
       ]
+    },
+    "66": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "74",
+              "name": "Winston de Groot"
+            },
+            {
+              "player_id": "75",
+              "name": "Simon Knobben"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "46",
+              "name": "Ritvik Chawla"
+            },
+            {
+              "player_id": "68",
+              "name": "Rishik Pabba"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "144",
+              "name": "Daniela Flores Galves"
+            },
+            {
+              "player_id": "130",
+              "name": "Xinoo Tjin A Soe"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "647",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Ritvik Chawla",
+                  "member_id": "10002752"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Rishik Pabba",
+                  "member_id": "50019190"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "144",
+                  "name": "Daniela Flores Galves",
+                  "member_id": "50011967"
+                },
+                {
+                  "player_id": "130",
+                  "name": "Xinoo Tjin A Soe",
+                  "member_id": "50011969"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        },
+        {
+          "match_id": "644",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Winston de Groot",
+                  "seed": 1,
+                  "member_id": "4996388"
+                },
+                {
+                  "player_id": "75",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "46",
+                  "name": "Ritvik Chawla",
+                  "member_id": "10002752"
+                },
+                {
+                  "player_id": "68",
+                  "name": "Rishik Pabba",
+                  "member_id": "50019190"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:45"
+        },
+        {
+          "match_id": "646",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "74",
+                  "name": "Winston de Groot",
+                  "seed": 1,
+                  "member_id": "4996388"
+                },
+                {
+                  "player_id": "75",
+                  "name": "Simon Knobben",
+                  "member_id": "5006077"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "144",
+                  "name": "Daniela Flores Galves",
+                  "member_id": "50011967"
+                },
+                {
+                  "player_id": "130",
+                  "name": "Xinoo Tjin A Soe",
+                  "member_id": "50011969"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        }
+      ]
     }
   }
 }
