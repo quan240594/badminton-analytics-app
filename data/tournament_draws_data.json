@@ -169628,6 +169628,146 @@
           "played_at": "zo 22-11-2026 20:15"
         }
       ]
+    },
+    "49": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "122",
+              "name": "Kayley Tsui"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "70",
+              "name": "Yara Appers"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "52",
+              "name": "Soraya Truong"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "498",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "122",
+                  "name": "Kayley Tsui",
+                  "seed": 1,
+                  "member_id": "5002308"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Soraya Truong",
+                  "member_id": "5002891"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        },
+        {
+          "match_id": "499",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Yara Appers",
+                  "member_id": "50010980"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "52",
+                  "name": "Soraya Truong",
+                  "member_id": "5002891"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:30"
+        },
+        {
+          "match_id": "496",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "122",
+                  "name": "Kayley Tsui",
+                  "seed": 1,
+                  "member_id": "5002308"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "70",
+                  "name": "Yara Appers",
+                  "member_id": "50010980"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 19:30"
+        }
+      ]
     }
   }
 }
