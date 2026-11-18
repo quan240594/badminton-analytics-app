@@ -169768,6 +169768,247 @@
           "played_at": "zo 22-11-2026 19:30"
         }
       ]
+    },
+    "50": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Kyra van den Haak"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "131",
+              "name": "Devina Jaggan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "144",
+              "name": "Daniela Flores Galves"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "40",
+              "name": "Dieudonnée Den Dulk"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "508",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Devina Jaggan",
+                  "member_id": "10002466"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "144",
+                  "name": "Daniela Flores Galves",
+                  "member_id": "50011967"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "516",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Kyra van den Haak",
+                  "seed": 2,
+                  "member_id": "5005313"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:45"
+        },
+        {
+          "match_id": "505",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Kyra van den Haak",
+                  "seed": 2,
+                  "member_id": "5005313"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Devina Jaggan",
+                  "member_id": "10002466"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:30"
+        },
+        {
+          "match_id": "518",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "144",
+                  "name": "Daniela Flores Galves",
+                  "member_id": "50011967"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:30"
+        },
+        {
+          "match_id": "507",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Kyra van den Haak",
+                  "seed": 2,
+                  "member_id": "5005313"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "144",
+                  "name": "Daniela Flores Galves",
+                  "member_id": "50011967"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 19:30"
+        },
+        {
+          "match_id": "517",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "131",
+                  "name": "Devina Jaggan",
+                  "member_id": "10002466"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 19:30"
+        }
+      ]
     }
   }
 }
