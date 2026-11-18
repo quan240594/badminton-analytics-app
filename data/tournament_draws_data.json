@@ -172488,6 +172488,186 @@
           "played_at": "zo 22-11-2026 15:15"
         }
       ]
+    },
+    "69": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "40",
+              "name": "Dieudonnée Den Dulk"
+            },
+            {
+              "player_id": "122",
+              "name": "Kayley Tsui"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "55",
+              "name": "Miruthve Elangovan"
+            },
+            {
+              "player_id": "12",
+              "name": "Aarush Walunj"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "47",
+              "name": "Kyra van den Haak"
+            },
+            {
+              "player_id": "52",
+              "name": "Soraya Truong"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "673",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Kayley Tsui",
+                  "member_id": "5002308"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Kyra van den Haak",
+                  "member_id": "5005313"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Soraya Truong",
+                  "member_id": "5002891"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "674",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Miruthve Elangovan",
+                  "member_id": "5001362"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Aarush Walunj",
+                  "member_id": "5010979"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "47",
+                  "name": "Kyra van den Haak",
+                  "member_id": "5005313"
+                },
+                {
+                  "player_id": "52",
+                  "name": "Soraya Truong",
+                  "member_id": "5002891"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "671",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "40",
+                  "name": "Dieudonnée Den Dulk",
+                  "member_id": "10001334"
+                },
+                {
+                  "player_id": "122",
+                  "name": "Kayley Tsui",
+                  "member_id": "5002308"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "55",
+                  "name": "Miruthve Elangovan",
+                  "member_id": "5001362"
+                },
+                {
+                  "player_id": "12",
+                  "name": "Aarush Walunj",
+                  "member_id": "5010979"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:45"
+        }
+      ]
     }
   }
 }
