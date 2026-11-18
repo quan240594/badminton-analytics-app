@@ -170178,6 +170178,146 @@
           "played_at": "zo 22-11-2026 13:30"
         }
       ]
+    },
+    "53": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "25",
+              "name": "Thirza Nieuwhoff"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "20",
+              "name": "Amy van Deudekom"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "82",
+              "name": "Rachel John"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "536",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Rachel John",
+                  "member_id": "5011639"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "533",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Thirza Nieuwhoff",
+                  "seed": 2,
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "20",
+                  "name": "Amy van Deudekom",
+                  "member_id": "10001885"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "535",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "25",
+                  "name": "Thirza Nieuwhoff",
+                  "seed": 2,
+                  "member_id": "50016144"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "82",
+                  "name": "Rachel John",
+                  "member_id": "5011639"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        }
+      ]
     }
   }
 }
