@@ -173927,6 +173927,188 @@
           "played_at": "zo 22-11-2026 18:30"
         }
       ]
+    },
+    "77": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "Varsha Mithun"
+            },
+            {
+              "player_id": "32",
+              "name": "Anaira Sonare"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "84",
+              "name": "Lok Man Tang"
+            },
+            {
+              "player_id": "145",
+              "name": "Melissa Vullinghs"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "109",
+              "name": "Xiuyun Ren"
+            },
+            {
+              "player_id": "116",
+              "name": "Stella Zhao"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "757",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "84",
+                  "name": "Lok Man Tang",
+                  "member_id": "5011273"
+                },
+                {
+                  "player_id": "145",
+                  "name": "Melissa Vullinghs",
+                  "member_id": "50025697"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Xiuyun Ren",
+                  "member_id": "10000676"
+                },
+                {
+                  "player_id": "116",
+                  "name": "Stella Zhao",
+                  "member_id": "50018141"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:00"
+        },
+        {
+          "match_id": "754",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Varsha Mithun",
+                  "seed": 1,
+                  "member_id": "50008691"
+                },
+                {
+                  "player_id": "32",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "84",
+                  "name": "Lok Man Tang",
+                  "member_id": "5011273"
+                },
+                {
+                  "player_id": "145",
+                  "name": "Melissa Vullinghs",
+                  "member_id": "50025697"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:00"
+        },
+        {
+          "match_id": "756",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Varsha Mithun",
+                  "seed": 1,
+                  "member_id": "50008691"
+                },
+                {
+                  "player_id": "32",
+                  "name": "Anaira Sonare",
+                  "member_id": "50010770"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "109",
+                  "name": "Xiuyun Ren",
+                  "member_id": "10000676"
+                },
+                {
+                  "player_id": "116",
+                  "name": "Stella Zhao",
+                  "member_id": "50018141"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 17:45"
+        }
+      ]
     }
   }
 }
