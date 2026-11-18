@@ -38815,10 +38815,13 @@
         "event_id": "1",
         "name": "Categorie Zilver - Enkel",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "9"
+          ],
+          [
+            "20"
           ],
           [
             "11"
@@ -38829,10 +38832,13 @@
         "event_id": "2",
         "name": "Categorie Zilver - Dubbel",
         "draws": 0,
-        "entries": 2,
+        "entries": 3,
         "participants": [
           [
             "9"
+          ],
+          [
+            "20"
           ],
           [
             "11"
@@ -38843,13 +38849,19 @@
         "event_id": "3",
         "name": "Categorie Goud - Enkel",
         "draws": 0,
-        "entries": 9,
+        "entries": 11,
         "participants": [
           [
             "10"
           ],
           [
+            "19"
+          ],
+          [
             "2"
+          ],
+          [
+            "21"
           ],
           [
             "13"
@@ -38878,21 +38890,22 @@
         "event_id": "4",
         "name": "Categorie Goud - Dubbel",
         "draws": 0,
-        "entries": 8,
+        "entries": 7,
         "participants": [
-          [
-            "6"
-          ],
-          [
-            "7"
-          ],
           [
             "10",
             "5"
           ],
           [
+            "19"
+          ],
+          [
             "2",
             "3"
+          ],
+          [
+            "21",
+            "16"
           ],
           [
             "13"
@@ -38902,9 +38915,6 @@
           ],
           [
             "15"
-          ],
-          [
-            "16"
           ]
         ]
       },
@@ -38966,10 +38976,16 @@
         "event_id": "8",
         "name": "Categorie C - Dames enkel",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
           [
+            "18"
+          ],
+          [
             "8"
+          ],
+          [
+            "22"
           ]
         ]
       },
@@ -39027,8 +39043,12 @@
         "event_id": "16",
         "name": "Categorie C - Dubbel",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
+          [
+            "18",
+            "22"
+          ],
           [
             "8"
           ]
@@ -39038,8 +39058,15 @@
         "event_id": "17",
         "name": "Categorie D - Dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "6"
+          ],
+          [
+            "7"
+          ]
+        ]
       }
     ],
     "draws": [],
@@ -39053,6 +39080,11 @@
         "country": null,
         "player_id": "7",
         "name": "Baak, Lotte Van"
+      },
+      {
+        "country": null,
+        "player_id": "18",
+        "name": "Bak, Maja"
       },
       {
         "country": null,
@@ -39071,13 +39103,28 @@
       },
       {
         "country": null,
+        "player_id": "19",
+        "name": "Kachhwaha, Tanvi Pal Singh"
+      },
+      {
+        "country": null,
         "player_id": "2",
         "name": "Kuik, Finn van"
       },
       {
         "country": null,
+        "player_id": "20",
+        "name": "Majumder, Ronit"
+      },
+      {
+        "country": null,
         "player_id": "11",
         "name": "Mehra, Avyaan"
+      },
+      {
+        "country": null,
+        "player_id": "21",
+        "name": "Meng, Shawn"
       },
       {
         "country": null,
@@ -39098,6 +39145,11 @@
         "country": null,
         "player_id": "4",
         "name": "Schie, Lisa Van"
+      },
+      {
+        "country": null,
+        "player_id": "22",
+        "name": "Seetaram, Shevaliny"
       },
       {
         "country": null,
