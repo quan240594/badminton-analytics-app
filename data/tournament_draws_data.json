@@ -170038,6 +170038,146 @@
           "played_at": "zo 22-11-2026 20:15"
         }
       ]
+    },
+    "52": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "113",
+              "name": "Anouk Wals"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "71",
+              "name": "Marie Van Bruijnsvoort"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "101",
+              "name": "Noa Buijs"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "527",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Marie Van Bruijnsvoort",
+                  "member_id": "50016244"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Noa Buijs",
+                  "member_id": "5001644"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "524",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Anouk Wals",
+                  "seed": 1,
+                  "member_id": "10003126"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "71",
+                  "name": "Marie Van Bruijnsvoort",
+                  "member_id": "50016244"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:30"
+        },
+        {
+          "match_id": "526",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "113",
+                  "name": "Anouk Wals",
+                  "seed": 1,
+                  "member_id": "10003126"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "101",
+                  "name": "Noa Buijs",
+                  "member_id": "5001644"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        }
+      ]
     }
   }
 }
