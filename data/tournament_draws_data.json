@@ -168207,6 +168207,146 @@
           "played_at": "zo 22-11-2026 13:30"
         }
       ]
+    },
+    "38": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "102",
+              "name": "Jente Buwalda"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "61",
+              "name": "Quintin Tang"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "111",
+              "name": "Ishaank Sagar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "399",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Quintin Tang",
+                  "member_id": "5010845"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 11:30"
+        },
+        {
+          "match_id": "396",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Jente Buwalda",
+                  "seed": 2,
+                  "member_id": "50007037"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "61",
+                  "name": "Quintin Tang",
+                  "member_id": "5010845"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:30"
+        },
+        {
+          "match_id": "398",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "102",
+                  "name": "Jente Buwalda",
+                  "seed": 2,
+                  "member_id": "50007037"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "111",
+                  "name": "Ishaank Sagar",
+                  "member_id": "10002457"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        }
+      ]
     }
   }
 }
