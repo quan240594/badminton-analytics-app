@@ -172668,6 +172668,186 @@
           "played_at": "zo 22-11-2026 14:45"
         }
       ]
+    },
+    "70": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "29",
+              "name": "Thomas Andrea"
+            },
+            {
+              "player_id": "11",
+              "name": "Thijs de Hoog"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "7",
+              "name": "Kyan Chan"
+            },
+            {
+              "player_id": "8",
+              "name": "Quentin Chan"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "9",
+              "name": "Shinto Cheung"
+            },
+            {
+              "player_id": "76",
+              "name": "John Michael Singcay"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "683",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                },
+                {
+                  "player_id": "8",
+                  "name": "Quentin Chan",
+                  "member_id": "10001335"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                },
+                {
+                  "player_id": "76",
+                  "name": "John Michael Singcay",
+                  "member_id": "50018162"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:30"
+        },
+        {
+          "match_id": "680",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Thomas Andrea",
+                  "member_id": "10001967"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Thijs de Hoog",
+                  "member_id": "50007783"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "7",
+                  "name": "Kyan Chan",
+                  "member_id": "10001336"
+                },
+                {
+                  "player_id": "8",
+                  "name": "Quentin Chan",
+                  "member_id": "10001335"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:30"
+        },
+        {
+          "match_id": "682",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "29",
+                  "name": "Thomas Andrea",
+                  "member_id": "10001967"
+                },
+                {
+                  "player_id": "11",
+                  "name": "Thijs de Hoog",
+                  "member_id": "50007783"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "9",
+                  "name": "Shinto Cheung",
+                  "member_id": "5004842"
+                },
+                {
+                  "player_id": "76",
+                  "name": "John Michael Singcay",
+                  "member_id": "50018162"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:15"
+        }
+      ]
     }
   }
 }
