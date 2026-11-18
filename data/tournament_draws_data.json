@@ -169461,6 +169461,144 @@
           "played_at": "zo 22-11-2026 15:30"
         }
       ]
+    },
+    "47": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "65",
+              "name": "Wenxi Liu"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "72",
+              "name": "Dhriti Sharma"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "45",
+              "name": "Vihana Sheth"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "487",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "Dhriti Sharma",
+                  "member_id": "50018529"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "484",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "72",
+                  "name": "Dhriti Sharma",
+                  "member_id": "50018529"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:30"
+        },
+        {
+          "match_id": "486",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "65",
+                  "name": "Wenxi Liu",
+                  "member_id": "10001963"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "45",
+                  "name": "Vihana Sheth",
+                  "member_id": "5010659"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        }
+      ]
     }
   }
 }
