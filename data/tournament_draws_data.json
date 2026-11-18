@@ -164523,6 +164523,188 @@
           "played_at": "zo 22-11-2026 19:00"
         }
       ]
+    },
+    "10": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "90",
+              "name": "Lara Ulusoy"
+            },
+            {
+              "player_id": "80",
+              "name": "Femke de Vries"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "146",
+              "name": "Lev Slager"
+            },
+            {
+              "player_id": "147",
+              "name": "Chiman Wong"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "54",
+              "name": "Benjamin Widjaja"
+            },
+            {
+              "player_id": "128",
+              "name": "Nathan Yuen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "108",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Lara Ulusoy",
+                  "seed": 1,
+                  "member_id": "5100223"
+                },
+                {
+                  "player_id": "80",
+                  "name": "Femke de Vries",
+                  "member_id": "5004874"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "146",
+                  "name": "Lev Slager",
+                  "member_id": "50007234"
+                },
+                {
+                  "player_id": "147",
+                  "name": "Chiman Wong",
+                  "member_id": "50007158"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 12:00"
+        },
+        {
+          "match_id": "111",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "146",
+                  "name": "Lev Slager",
+                  "member_id": "50007234"
+                },
+                {
+                  "player_id": "147",
+                  "name": "Chiman Wong",
+                  "member_id": "50007158"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Benjamin Widjaja",
+                  "member_id": "50012717"
+                },
+                {
+                  "player_id": "128",
+                  "name": "Nathan Yuen",
+                  "member_id": "50021276"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "110",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "90",
+                  "name": "Lara Ulusoy",
+                  "seed": 1,
+                  "member_id": "5100223"
+                },
+                {
+                  "player_id": "80",
+                  "name": "Femke de Vries",
+                  "member_id": "5004874"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "54",
+                  "name": "Benjamin Widjaja",
+                  "member_id": "50012717"
+                },
+                {
+                  "player_id": "128",
+                  "name": "Nathan Yuen",
+                  "member_id": "50021276"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:00"
+        }
+      ]
     }
   }
 }
