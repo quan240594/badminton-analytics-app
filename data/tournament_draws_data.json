@@ -171333,6 +171333,188 @@
           "played_at": "zo 22-11-2026 15:15"
         }
       ]
+    },
+    "62": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "81",
+              "name": "Arnav Behera"
+            },
+            {
+              "player_id": "37",
+              "name": "Sven Konings"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "106",
+              "name": "Sean Man"
+            },
+            {
+              "player_id": "110",
+              "name": "Jorim Roelofs"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "104",
+              "name": "Flynn van Eck"
+            },
+            {
+              "player_id": "117",
+              "name": "Gijs Peelen"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "613",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Sean Man",
+                  "member_id": "5003070"
+                },
+                {
+                  "player_id": "110",
+                  "name": "Jorim Roelofs",
+                  "member_id": "4994695"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                },
+                {
+                  "player_id": "117",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 13:00"
+        },
+        {
+          "match_id": "610",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Arnav Behera",
+                  "seed": 2,
+                  "member_id": "5005055"
+                },
+                {
+                  "player_id": "37",
+                  "name": "Sven Konings",
+                  "member_id": "5001006"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "106",
+                  "name": "Sean Man",
+                  "member_id": "5003070"
+                },
+                {
+                  "player_id": "110",
+                  "name": "Jorim Roelofs",
+                  "member_id": "4994695"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:00"
+        },
+        {
+          "match_id": "612",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "81",
+                  "name": "Arnav Behera",
+                  "seed": 2,
+                  "member_id": "5005055"
+                },
+                {
+                  "player_id": "37",
+                  "name": "Sven Konings",
+                  "member_id": "5001006"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "104",
+                  "name": "Flynn van Eck",
+                  "member_id": "4988069"
+                },
+                {
+                  "player_id": "117",
+                  "name": "Gijs Peelen",
+                  "member_id": "4992713"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 14:45"
+        }
+      ]
     }
   }
 }
