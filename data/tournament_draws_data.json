@@ -165067,6 +165067,76 @@
           "played_at": "zo 22-11-2026 16:00"
         }
       ]
+    },
+    "13": {
+      "standings": [],
+      "matches": [
+        {
+          "match_id": "132",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "C",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "B",
+                "rank": 1
+              }
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 18:15"
+        },
+        {
+          "match_id": "130",
+          "round": "Finale",
+          "sides": [
+            {
+              "won": false,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": []
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 18:45"
+        },
+        {
+          "match_id": "131",
+          "round": "Halve finale",
+          "sides": [
+            {
+              "won": true,
+              "players": [],
+              "qualifier": {
+                "group": "A",
+                "rank": 1
+              }
+            },
+            {
+              "won": false,
+              "players": [],
+              "bye": true
+            }
+          ],
+          "games": [],
+          "played_at": null
+        }
+      ]
     }
   }
 }
