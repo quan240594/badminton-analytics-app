@@ -170663,6 +170663,146 @@
           "played_at": "zo 22-11-2026 20:15"
         }
       ]
+    },
+    "57": {
+      "standings": [
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "15",
+              "name": "Lotte Van Baak"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "24",
+              "name": "Varsha Mithun"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        },
+        {
+          "rank": 1,
+          "players": [
+            {
+              "player_id": "38",
+              "name": "Vedha Anandkumar"
+            }
+          ],
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "match_record": "0-0",
+          "game_record": "0-0",
+          "points_record": "0-0"
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "570",
+          "round": "Ronde 1",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 15:30"
+        },
+        {
+          "match_id": "569",
+          "round": "Ronde 3",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Lotte Van Baak",
+                  "seed": 1,
+                  "member_id": "50010350"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "38",
+                  "name": "Vedha Anandkumar",
+                  "member_id": "50016896"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 16:15"
+        },
+        {
+          "match_id": "567",
+          "round": "Ronde 2",
+          "sides": [
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "15",
+                  "name": "Lotte Van Baak",
+                  "seed": 1,
+                  "member_id": "50010350"
+                }
+              ]
+            },
+            {
+              "won": false,
+              "players": [
+                {
+                  "player_id": "24",
+                  "name": "Varsha Mithun",
+                  "member_id": "50008691"
+                }
+              ]
+            }
+          ],
+          "games": [],
+          "played_at": "zo 22-11-2026 19:30"
+        }
+      ]
     }
   }
 }
