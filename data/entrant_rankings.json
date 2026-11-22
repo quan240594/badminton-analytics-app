@@ -1403,6 +1403,7 @@
   "62F3982D-557B-4942-8D62-F16C63B714CA:162": "50027847",
   "62F3982D-557B-4942-8D62-F16C63B714CA:163": "50016928",
   "62F3982D-557B-4942-8D62-F16C63B714CA:165": "50026822",
+  "62F3982D-557B-4942-8D62-F16C63B714CA:166": "873779",
   "62F3982D-557B-4942-8D62-F16C63B714CA:92": "4987962",
   "62F3982D-557B-4942-8D62-F16C63B714CA:93": "5005319",
   "62F3982D-557B-4942-8D62-F16C63B714CA:94": "10000065",
@@ -53866,7 +53867,7 @@
    }
   },
   "50015372": {
-   "fetched_at": "2026-11-09T02:13:10+00:00",
+   "fetched_at": "2026-11-22T03:16:23+00:00",
    "guid": "25914726-1EFE-4992-94C7-0E5F7456A096",
    "ranking": {
     "doubles": {
@@ -53878,7 +53879,7 @@
     "doubles": {
      "career": {
       "losses": 7,
-      "wins": 1
+      "wins": 2
      },
      "thisYear": {
       "losses": 4,
@@ -53887,7 +53888,7 @@
     },
     "mixed": {
      "career": {
-      "losses": 2,
+      "losses": 3,
       "wins": 1
      },
      "thisYear": {
@@ -53897,7 +53898,7 @@
     },
     "singles": {
      "career": {
-      "losses": 0,
+      "losses": 1,
       "wins": 0
      },
      "thisYear": {
@@ -53907,8 +53908,8 @@
     },
     "total": {
      "career": {
-      "losses": 9,
-      "wins": 2
+      "losses": 11,
+      "wins": 3
      },
      "form": [
       {
@@ -53920,15 +53921,15 @@
        "won": true
       },
       {
-       "date": "2026-10-03",
+       "date": "2026-11-14",
        "won": false
       },
       {
-       "date": "2026-10-03",
+       "date": "2026-11-14",
        "won": false
       },
       {
-       "date": "2026-10-03",
+       "date": "2026-11-14",
        "won": true
       }
      ],
@@ -54022,7 +54023,7 @@
    }
   },
   "50015400": {
-   "fetched_at": "2026-11-09T02:13:10+00:00",
+   "fetched_at": "2026-11-22T03:16:23+00:00",
    "guid": "41ED1BF7-3063-446F-BE00-D6483D9B6B90",
    "ranking": {
     "doubles": {
@@ -54041,7 +54042,7 @@
    "stats": {
     "doubles": {
      "career": {
-      "losses": 21,
+      "losses": 23,
       "wins": 20
      },
      "thisYear": {
@@ -54061,7 +54062,7 @@
     },
     "singles": {
      "career": {
-      "losses": 7,
+      "losses": 8,
       "wins": 10
      },
      "thisYear": {
@@ -54071,29 +54072,29 @@
     },
     "total": {
      "career": {
-      "losses": 52,
+      "losses": 55,
       "wins": 52
      },
      "form": [
       {
-       "date": "2026-11-05",
+       "date": "2026-11-06",
+       "won": true
+      },
+      {
+       "date": "2026-11-06",
+       "won": true
+      },
+      {
+       "date": "2026-11-20",
        "won": false
       },
       {
-       "date": "2026-11-05",
+       "date": "2026-11-20",
        "won": false
       },
       {
-       "date": "2026-11-06",
-       "won": true
-      },
-      {
-       "date": "2026-11-06",
-       "won": true
-      },
-      {
-       "date": "2026-11-06",
-       "won": true
+       "date": "2026-11-20",
+       "won": false
       }
      ],
      "thisYear": {
@@ -135462,6 +135463,75 @@
      "thisYear": {
       "losses": 7,
       "wins": 31
+     }
+    }
+   }
+  },
+  "873779": {
+   "fetched_at": "2026-11-22T03:16:23+00:00",
+   "guid": "108CDCD9-6751-4832-98F8-D9E9495B8250",
+   "ranking": {},
+   "stats": {
+    "doubles": {
+     "career": {
+      "losses": 104,
+      "wins": 62
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "mixed": {
+     "career": {
+      "losses": 0,
+      "wins": 0
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "singles": {
+     "career": {
+      "losses": 70,
+      "wins": 19
+     },
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
+     }
+    },
+    "total": {
+     "career": {
+      "losses": 174,
+      "wins": 81
+     },
+     "form": [
+      {
+       "date": "2019-09-11",
+       "won": true
+      },
+      {
+       "date": "2019-12-07",
+       "won": true
+      },
+      {
+       "date": "2019-12-07",
+       "won": true
+      },
+      {
+       "date": "2019-12-07",
+       "won": true
+      },
+      {
+       "date": "2020-01-22",
+       "won": false
+      }
+     ],
+     "thisYear": {
+      "losses": 0,
+      "wins": 0
      }
     }
    }
