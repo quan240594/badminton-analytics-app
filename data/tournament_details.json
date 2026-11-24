@@ -45511,8 +45511,15 @@
         "event_id": "14",
         "name": "Staand VE A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "3"
+          ],
+          [
+            "4"
+          ]
+        ]
       },
       {
         "event_id": "18",
@@ -45532,8 +45539,12 @@
         "event_id": "1",
         "name": "Rol ME A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "5",
@@ -45595,8 +45606,13 @@
         "event_id": "16",
         "name": "Staand VD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "4",
+            "3"
+          ]
+        ]
       },
       {
         "event_id": "20",
@@ -45637,8 +45653,12 @@
         "event_id": "15",
         "name": "Staand MD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "19",
@@ -45656,7 +45676,28 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": "NED",
+        "player_id": "1",
+        "name": "BEELEN, Bart"
+      },
+      {
+        "country": "NED",
+        "player_id": "3",
+        "name": "KLJAJIC, Sandra"
+      },
+      {
+        "country": "NED",
+        "player_id": "4",
+        "name": "KLJAJIC, Tanja"
+      },
+      {
+        "country": "BEL",
+        "player_id": "2",
+        "name": "SEYS, Rudi"
+      }
+    ]
   },
   "68E058F2-7702-4B2F-9099-9B8F7976EF80": {
     "events": [
