@@ -44142,7 +44142,7 @@
         "event_id": "1",
         "name": "ME -senioren-",
         "draws": 0,
-        "entries": 16,
+        "entries": 20,
         "participants": [
           [
             "19"
@@ -44166,16 +44166,28 @@
             "18"
           ],
           [
+            "33"
+          ],
+          [
             "8"
           ],
           [
             "17"
           ],
           [
+            "34"
+          ],
+          [
             "25"
           ],
           [
             "26"
+          ],
+          [
+            "35"
+          ],
+          [
+            "36"
           ],
           [
             "9"
@@ -44198,13 +44210,16 @@
         "event_id": "2",
         "name": "VE -senioren-",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
           [
             "30"
           ],
           [
             "7"
+          ],
+          [
+            "13"
           ],
           [
             "32"
@@ -44215,10 +44230,14 @@
         "event_id": "7",
         "name": "Dubbel toernooi 18+",
         "draws": 0,
-        "entries": 8,
+        "entries": 11,
         "participants": [
           [
             "19"
+          ],
+          [
+            "3",
+            "33"
           ],
           [
             "30",
@@ -44226,6 +44245,10 @@
           ],
           [
             "20"
+          ],
+          [
+            "28",
+            "36"
           ],
           [
             "29",
@@ -44236,7 +44259,12 @@
             "12"
           ],
           [
-            "17"
+            "17",
+            "35"
+          ],
+          [
+            "34",
+            "9"
           ],
           [
             "27"
@@ -44257,6 +44285,12 @@
             "4"
           ],
           [
+            "6"
+          ],
+          [
+            "11"
+          ],
+          [
             "21"
           ],
           [
@@ -44264,12 +44298,6 @@
           ],
           [
             "31"
-          ],
-          [
-            "6"
-          ],
-          [
-            "11"
           ]
         ]
       },
@@ -44277,12 +44305,8 @@
         "event_id": "4",
         "name": "U18 -jeugd-",
         "draws": 0,
-        "entries": 1,
-        "participants": [
-          [
-            "13"
-          ]
-        ]
+        "entries": 0,
+        "participants": []
       },
       {
         "event_id": "8",
@@ -44297,7 +44321,8 @@
             "22"
           ],
           [
-            "31"
+            "31",
+            "13"
           ]
         ]
       }
@@ -44376,6 +44401,11 @@
       },
       {
         "country": "NED",
+        "player_id": "33",
+        "name": "KOOREVAAR, Wouter"
+      },
+      {
+        "country": "NED",
         "player_id": "8",
         "name": "LAAN, Marcel van der"
       },
@@ -44383,6 +44413,11 @@
         "country": "NED",
         "player_id": "17",
         "name": "LIE ATJAM, Nethan"
+      },
+      {
+        "country": "NED",
+        "player_id": "34",
+        "name": "LOOPSTRA, Sietze"
       },
       {
         "country": "BEL",
@@ -44398,6 +44433,16 @@
         "country": "BEL",
         "player_id": "26",
         "name": "MARTENS, Xandro"
+      },
+      {
+        "country": "NED",
+        "player_id": "35",
+        "name": "RAFAY, Umair"
+      },
+      {
+        "country": "NED",
+        "player_id": "36",
+        "name": "RODRIGUEZ, Felix"
       },
       {
         "country": "NED",
