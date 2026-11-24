@@ -42591,8 +42591,15 @@
         "event_id": "37",
         "name": "Staand VE A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "8"
+          ],
+          [
+            "9"
+          ]
+        ]
       },
       {
         "event_id": "42",
@@ -42605,8 +42612,12 @@
         "event_id": "47",
         "name": "Staand VE C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "7"
+          ]
+        ]
       },
       {
         "event_id": "21",
@@ -42640,10 +42651,13 @@
         "event_id": "36",
         "name": "Staand ME A",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "3"
+          ],
+          [
+            "6"
           ]
         ]
       },
@@ -42665,10 +42679,13 @@
         "event_id": "25",
         "name": "Rol GD A",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
             "2"
+          ],
+          [
+            "3"
           ]
         ]
       },
@@ -42697,15 +42714,28 @@
         "event_id": "40",
         "name": "Staand GD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "8",
+            "6"
+          ]
+        ]
       },
       {
         "event_id": "45",
         "name": "Staand GD B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "7",
+            "5"
+          ],
+          [
+            "9"
+          ]
+        ]
       },
       {
         "event_id": "56",
@@ -42719,8 +42749,28 @@
     "entries": [
       {
         "country": "NED",
+        "player_id": "5",
+        "name": "BEELEN, Bart"
+      },
+      {
+        "country": "NED",
         "player_id": "4",
         "name": "BURGERING, Mariette"
+      },
+      {
+        "country": "NED",
+        "player_id": "7",
+        "name": "IJDEMA, Bridt"
+      },
+      {
+        "country": "NED",
+        "player_id": "8",
+        "name": "KLJAJIC, Sandra"
+      },
+      {
+        "country": "NED",
+        "player_id": "9",
+        "name": "KLJAJIC, Tanja"
       },
       {
         "country": "NED",
@@ -42736,6 +42786,11 @@
         "country": "BEL",
         "player_id": "1",
         "name": "SEYS, Rudi"
+      },
+      {
+        "country": "NED",
+        "player_id": "6",
+        "name": "WEIJDEN, Jareth van der"
       }
     ]
   },
