@@ -45190,13 +45190,19 @@
         "event_id": "21",
         "name": "HE-C",
         "draws": 0,
-        "entries": 2,
+        "entries": 4,
         "participants": [
           [
             "492"
           ],
           [
+            "497"
+          ],
+          [
             "493"
+          ],
+          [
+            "500"
           ]
         ]
       },
@@ -45253,11 +45259,18 @@
         "event_id": "15",
         "name": "HD C",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
           [
             "492",
             "493"
+          ],
+          [
+            "497",
+            "500"
+          ],
+          [
+            "498"
           ]
         ]
       },
@@ -45279,22 +45292,35 @@
         "event_id": "5",
         "name": "DD B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "496"
+          ]
+        ]
       },
       {
         "event_id": "8",
         "name": "DD C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "494",
+            "499"
+          ]
+        ]
       },
       {
         "event_id": "11",
         "name": "DD D",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "495"
+          ]
+        ]
       },
       {
         "event_id": "3",
@@ -45307,17 +45333,30 @@
         "event_id": "6",
         "name": "GD B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "498",
+            "496"
+          ]
+        ]
       },
       {
         "event_id": "16",
         "name": "GD C",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
           [
+            "497",
+            "494"
+          ],
+          [
             "493"
+          ],
+          [
+            "500",
+            "499"
           ]
         ]
       },
@@ -45325,12 +45364,31 @@
         "event_id": "12",
         "name": "GD D",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "495"
+          ]
+        ]
       }
     ],
     "draws": [],
     "entries": [
+      {
+        "country": null,
+        "player_id": "494",
+        "name": "Faaij, Marichelle"
+      },
+      {
+        "country": null,
+        "player_id": "495",
+        "name": "Langeweg, Manuela"
+      },
+      {
+        "country": null,
+        "player_id": "496",
+        "name": "Langeweg, Petra"
+      },
       {
         "country": null,
         "player_id": "492",
@@ -45338,8 +45396,28 @@
       },
       {
         "country": null,
+        "player_id": "497",
+        "name": "Nooyen, Lars"
+      },
+      {
+        "country": null,
+        "player_id": "498",
+        "name": "Rutjens, Daan"
+      },
+      {
+        "country": null,
         "player_id": "493",
         "name": "Rutjens, Jasper"
+      },
+      {
+        "country": null,
+        "player_id": "499",
+        "name": "Verwegen, Anita"
+      },
+      {
+        "country": null,
+        "player_id": "500",
+        "name": "Verwegen, Daan"
       }
     ]
   },
