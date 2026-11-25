@@ -45173,9 +45173,14 @@
         "event_id": "2",
         "name": "HD A",
         "draws": 0,
-        "entries": 1,
+        "entries": 2,
         "participants": [
           [
+            "307",
+            "311"
+          ],
+          [
+            "310",
             "306"
           ]
         ]
@@ -45191,22 +45196,39 @@
         "event_id": "4",
         "name": "DD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "308"
+          ]
+        ]
       },
       {
         "event_id": "3",
         "name": "DD B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "309"
+          ]
+        ]
       },
       {
         "event_id": "6",
         "name": "GD A",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 2,
+        "participants": [
+          [
+            "308",
+            "307"
+          ],
+          [
+            "309",
+            "311"
+          ]
+        ]
       },
       {
         "event_id": "5",
@@ -45218,6 +45240,31 @@
     ],
     "draws": [],
     "entries": [
+      {
+        "country": "NED",
+        "player_id": "307",
+        "name": "Gordijn, Charl"
+      },
+      {
+        "country": "NED",
+        "player_id": "308",
+        "name": "Kooistra, Christine"
+      },
+      {
+        "country": "NED",
+        "player_id": "309",
+        "name": "Sassenburg-Spaargaren, Jennifer"
+      },
+      {
+        "country": "NED",
+        "player_id": "310",
+        "name": "Shafeeq, Oday"
+      },
+      {
+        "country": "NED",
+        "player_id": "311",
+        "name": "Spaargaren-Sassenburg, Jacky"
+      },
       {
         "country": "NED",
         "player_id": "306",
