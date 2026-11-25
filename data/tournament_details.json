@@ -40821,13 +40821,16 @@
         "event_id": "8",
         "name": "Categorie C - Dames enkel",
         "draws": 0,
-        "entries": 5,
+        "entries": 6,
         "participants": [
           [
             "18"
           ],
           [
             "8"
+          ],
+          [
+            "28"
           ],
           [
             "25"
@@ -40873,8 +40876,12 @@
         "event_id": "18",
         "name": "Categorie A+ - Gemengd dubbel",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "29"
+          ]
+        ]
       },
       {
         "event_id": "15",
@@ -40912,6 +40919,7 @@
             "8"
           ],
           [
+            "28",
             "26"
           ],
           [
@@ -40978,6 +40986,11 @@
       },
       {
         "country": null,
+        "player_id": "28",
+        "name": "Honingh, Leanna"
+      },
+      {
+        "country": null,
         "player_id": "19",
         "name": "Kachhwaha, Tanvi Pal Singh"
       },
@@ -40985,6 +40998,11 @@
         "country": null,
         "player_id": "25",
         "name": "Kariyawasam, Sithuli"
+      },
+      {
+        "country": null,
+        "player_id": "29",
+        "name": "Kok, Mara"
       },
       {
         "country": null,
