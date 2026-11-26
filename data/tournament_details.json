@@ -41376,8 +41376,12 @@
         "event_id": "3",
         "name": "Jongens Enkel B",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "1"
+          ]
+        ]
       },
       {
         "event_id": "2",
@@ -41397,15 +41401,23 @@
         "event_id": "8",
         "name": "Enkel C",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "2"
+          ]
+        ]
       },
       {
         "event_id": "10",
         "name": "Enkel D",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "3"
+          ]
+        ]
       },
       {
         "event_id": "6",
@@ -41444,7 +41456,23 @@
       }
     ],
     "draws": [],
-    "entries": []
+    "entries": [
+      {
+        "country": null,
+        "player_id": "1",
+        "name": "Gnanaraj, Ethan"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Gnanaraj, Olivia"
+      },
+      {
+        "country": null,
+        "player_id": "3",
+        "name": "Vijver, Elliot van de"
+      }
+    ]
   },
   "DED6BA78-EC65-4BD2-9F70-AA8D8F62A891": {
     "events": [
