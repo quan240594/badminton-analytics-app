@@ -45838,8 +45838,50 @@
     "entries": []
   },
   "C30B9B4B-7BE3-4409-9FCB-35265C177509": {
-    "events": [],
-    "draws": [],
+    "events": [
+      {
+        "event_id": "4",
+        "name": "MixDubbel-D",
+        "draws": 1,
+        "entries": 6,
+        "participants": [
+          [
+            "42",
+            "11"
+          ],
+          [
+            "25",
+            "47"
+          ],
+          [
+            "45",
+            "37"
+          ],
+          [
+            "19",
+            "31"
+          ],
+          [
+            "3",
+            "26"
+          ],
+          [
+            "16",
+            "7"
+          ]
+        ]
+      }
+    ],
+    "draws": [
+      {
+        "draw_id": "13",
+        "name": "MixDubbel-D",
+        "size": 6,
+        "type": "Poule",
+        "stage": "Hoofdschema",
+        "loser_round": null
+      }
+    ],
     "entries": [
       {
         "country": null,
@@ -45948,6 +45990,11 @@
       },
       {
         "country": null,
+        "player_id": "20",
+        "name": "Kollen/Kuyper, Daniel/Paul /de"
+      },
+      {
+        "country": null,
         "player_id": "9",
         "name": "Kops, Saskia"
       },
@@ -45980,11 +46027,6 @@
         "country": null,
         "player_id": "18",
         "name": "Kusters, Marleen"
-      },
-      {
-        "country": null,
-        "player_id": "20",
-        "name": "Kuyper, Paul de"
       },
       {
         "country": null,
