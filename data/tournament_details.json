@@ -40880,7 +40880,7 @@
         "event_id": "3",
         "name": "Categorie Goud - Enkel",
         "draws": 0,
-        "entries": 11,
+        "entries": 12,
         "participants": [
           [
             "10"
@@ -40905,6 +40905,9 @@
           ],
           [
             "14"
+          ],
+          [
+            "34"
           ],
           [
             "5"
@@ -40960,7 +40963,7 @@
         "event_id": "5",
         "name": "Categorie B - Heren enkel",
         "draws": 0,
-        "entries": 3,
+        "entries": 4,
         "participants": [
           [
             "23"
@@ -40970,6 +40973,9 @@
           ],
           [
             "1"
+          ],
+          [
+            "33"
           ]
         ]
       },
@@ -40977,13 +40983,22 @@
         "event_id": "7",
         "name": "Categorie C - Heren enkel",
         "draws": 0,
-        "entries": 2,
+        "entries": 5,
         "participants": [
+          [
+            "30"
+          ],
+          [
+            "32"
+          ],
           [
             "12"
           ],
           [
             "27"
+          ],
+          [
+            "35"
           ]
         ]
       },
@@ -41016,7 +41031,7 @@
         "event_id": "8",
         "name": "Categorie C - Dames enkel",
         "draws": 0,
-        "entries": 6,
+        "entries": 7,
         "participants": [
           [
             "18"
@@ -41026,6 +41041,9 @@
           ],
           [
             "28"
+          ],
+          [
+            "31"
           ],
           [
             "25"
@@ -41074,7 +41092,8 @@
         "entries": 1,
         "participants": [
           [
-            "29"
+            "29",
+            "33"
           ]
         ]
       },
@@ -41104,18 +41123,23 @@
         "event_id": "16",
         "name": "Categorie C - Dubbel",
         "draws": 0,
-        "entries": 4,
+        "entries": 5,
         "participants": [
           [
             "18",
             "22"
           ],
           [
-            "8"
+            "8",
+            "30"
           ],
           [
             "28",
             "26"
+          ],
+          [
+            "32",
+            "35"
           ],
           [
             "27"
@@ -41181,8 +41205,18 @@
       },
       {
         "country": null,
+        "player_id": "30",
+        "name": "Haan, Bram den"
+      },
+      {
+        "country": null,
         "player_id": "28",
         "name": "Honingh, Leanna"
+      },
+      {
+        "country": null,
+        "player_id": "31",
+        "name": "John, Rachel"
       },
       {
         "country": null,
@@ -41208,6 +41242,11 @@
         "country": null,
         "player_id": "20",
         "name": "Majumder, Ronit"
+      },
+      {
+        "country": null,
+        "player_id": "32",
+        "name": "Meer, Thomas van der"
       },
       {
         "country": null,
@@ -41261,13 +41300,28 @@
       },
       {
         "country": null,
+        "player_id": "33",
+        "name": "Spigt, Daan"
+      },
+      {
+        "country": null,
         "player_id": "14",
         "name": "Trigt, Maurits van"
       },
       {
         "country": null,
+        "player_id": "34",
+        "name": "Vos, Isaiah de"
+      },
+      {
+        "country": null,
         "player_id": "5",
         "name": "Warmerdam, Brandon"
+      },
+      {
+        "country": null,
+        "player_id": "35",
+        "name": "Wattimury, Roue"
       },
       {
         "country": null,
