@@ -30238,7 +30238,7 @@
         "event_id": "1",
         "name": "MS",
         "draws": 0,
-        "entries": 7,
+        "entries": 9,
         "participants": [
           [
             "1"
@@ -30247,13 +30247,19 @@
             "5"
           ],
           [
+            "11"
+          ],
+          [
             "6"
           ],
           [
-            "2"
+            "10"
           ],
           [
-            "7"
+            "13"
+          ],
+          [
+            "2"
           ],
           [
             "9"
@@ -30267,8 +30273,12 @@
         "event_id": "2",
         "name": "WS",
         "draws": 0,
-        "entries": 0,
-        "participants": []
+        "entries": 1,
+        "participants": [
+          [
+            "12"
+          ]
+        ]
       }
     ],
     "draws": [],
@@ -30285,18 +30295,33 @@
       },
       {
         "country": null,
+        "player_id": "11",
+        "name": "Eversdijk, Dennis"
+      },
+      {
+        "country": null,
         "player_id": "6",
         "name": "Kumbha, Prabhat"
       },
       {
         "country": null,
-        "player_id": "2",
-        "name": "Shah, Vihaan"
+        "player_id": "12",
+        "name": "Misal, Dnyanada"
       },
       {
         "country": null,
-        "player_id": "7",
-        "name": "Van Bekkum, Dennis"
+        "player_id": "10",
+        "name": "Narayanam, Shashank"
+      },
+      {
+        "country": null,
+        "player_id": "13",
+        "name": "Sankaran, Dhivyesh"
+      },
+      {
+        "country": null,
+        "player_id": "2",
+        "name": "Shah, Vihaan"
       },
       {
         "country": null,
