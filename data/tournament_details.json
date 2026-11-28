@@ -14091,7 +14091,7 @@
         "event_id": "8",
         "name": "Dubbel Zilver",
         "draws": 0,
-        "entries": 6,
+        "entries": 5,
         "participants": [
           [
             "8",
@@ -14105,14 +14105,12 @@
             "6"
           ],
           [
-            "11"
+            "11",
+            "30"
           ],
           [
             "18",
             "7"
-          ],
-          [
-            "30"
           ]
         ]
       },
@@ -14120,10 +14118,11 @@
         "event_id": "2",
         "name": "Dubbel Goud",
         "draws": 0,
-        "entries": 7,
+        "entries": 6,
         "participants": [
           [
-            "5"
+            "5",
+            "25"
           ],
           [
             "24",
@@ -14133,18 +14132,15 @@
             "16"
           ],
           [
+            "36"
+          ],
+          [
             "9",
             "12"
           ],
           [
-            "1"
-          ],
-          [
             "26",
             "27"
-          ],
-          [
-            "25"
           ]
         ]
       },
@@ -14152,20 +14148,19 @@
         "event_id": "3",
         "name": "Dubbel Goud Recreant",
         "draws": 0,
-        "entries": 7,
+        "entries": 5,
         "participants": [
           [
             "32",
             "2"
           ],
           [
-            "19"
-          ],
-          [
+            "19",
             "4"
           ],
           [
-            "3"
+            "3",
+            "23"
           ],
           [
             "20"
@@ -14173,9 +14168,6 @@
           [
             "10",
             "28"
-          ],
-          [
-            "23"
           ]
         ]
       },
@@ -14195,10 +14187,17 @@
         "event_id": "6",
         "name": "Dubbel D",
         "draws": 0,
-        "entries": 1,
+        "entries": 3,
         "participants": [
           [
+            "34"
+          ],
+          [
             "33"
+          ],
+          [
+            "1",
+            "35"
           ]
         ]
       },
@@ -14221,6 +14220,16 @@
         "country": null,
         "player_id": "8",
         "name": "Appelman, Eef"
+      },
+      {
+        "country": null,
+        "player_id": "34",
+        "name": "Baak, Bram van"
+      },
+      {
+        "country": null,
+        "player_id": "35",
+        "name": "Baak, Lotte Van"
       },
       {
         "country": null,
@@ -14276,6 +14285,11 @@
         "country": null,
         "player_id": "21",
         "name": "Kunt, Ilayda"
+      },
+      {
+        "country": null,
+        "player_id": "36",
+        "name": "Le, Arya"
       },
       {
         "country": null,
